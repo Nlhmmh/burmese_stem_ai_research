@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+burmese_stem_ai/dist
+
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
