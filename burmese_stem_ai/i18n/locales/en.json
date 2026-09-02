@@ -1,5 +1,53 @@
 {
   "hello": "Hello",
   "welcome": "Welcome to the Burmese STEM AI Research Project",
-  "home": "Home"
+  "home": {
+    "eyebrow": "Bilingual STEM learning",
+    "title": "Burmese STEM AI",
+    "subtitle": "Understand STEM concepts in Burmese and English",
+    "askLabel": "Ask a STEM question",
+    "placeholder": "Ask any STEM question...",
+    "ask": "Ask",
+    "submitting": "Preparing explanation...",
+    "loading": "Loading...",
+    "examples": "Example prompts",
+    "errors": {
+      "create": "Unable to prepare the explanation right now.",
+      "loadPreferences": "Unable to load learning preferences.",
+      "savePreferences": "Unable to save learning preferences."
+    },
+    "preferences": {
+      "button": "Learning Preferences",
+      "title": "Learning Preferences",
+      "close": "Close preferences",
+      "save": "Save Preferences",
+      "saving": "Saving...",
+      "language": {
+        "label": "Language Support",
+        "bilingual": "Burmese + English Terms",
+        "burmese": "Burmese",
+        "english": "English"
+      },
+      "level": {
+        "label": "Explanation Level",
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      },
+      "style": {
+        "label": "Learning Style",
+        "guided": "Guided",
+        "concise": "Concise",
+        "examples": "More Examples"
+      }
+    }
+  },
+  "navigation": {
+    "label": "Primary navigation",
+    "newInquiry": "New Inquiry",
+    "history": "History",
+    "themeMode": "Toggle color theme",
+    "darkMode": "Switch to dark mode",
+    "lightMode": "Switch to light mode"
+  }
 }

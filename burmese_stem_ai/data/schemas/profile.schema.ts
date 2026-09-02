@@ -1,4 +1,5 @@
 import {
+  DEFAULT_PREFERENCES,
   EXPLANATION_LEVELS,
   ExplanationLevel,
   LEARNING_STYLES,
@@ -28,13 +29,6 @@ export const PreferenceOptions = {
   learningStyle: LEARNING_STYLES,
   theme: THEMES
 } as const;
-export const DEFAULT_PREFERENCES = {
-  uiLanguage: UI_LANGUAGES[0],
-  supportLanguage: SUPPORT_LANGUAGES[0],
-  explanationLevel: EXPLANATION_LEVELS[0],
-  learningStyle: LEARNING_STYLES[0],
-  theme: THEMES[0]
-};
 
 export type Profile = {
   learnerId: string;

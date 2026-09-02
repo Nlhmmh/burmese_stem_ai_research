@@ -40,3 +40,19 @@ export const SUPPORT_TYPES = [
 ];
 
 export const MAX_QUESTION_LENGTH = 1_000;
+
+export const APP_NAME = "Burmese STEM AI";
+
+export const EXAMPLE_PROMPTS = [
+  "What is Gradient Descent?",
+  "Explain Neural Networks.",
+  "What does Polymorphism mean?"
+] as const;
+
+export const DEFAULT_PREFERENCES = {
+  uiLanguage: UI_LANGUAGES[0],
+  supportLanguage: SUPPORT_LANGUAGES[0],
+  explanationLevel: EXPLANATION_LEVELS[0],
+  learningStyle: LEARNING_STYLES[0],
+  theme: THEMES[0]
+};

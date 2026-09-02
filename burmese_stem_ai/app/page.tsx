@@ -1,6 +1,5 @@
-import { useTranslations } from "next-intl";
+import HomeInquiry from "@/components/home/HomeInquiry";
 
 export default function Home() {
-  const t = useTranslations();
-  return <div>{t("home")}</div>;
+  return <HomeInquiry />;
 }

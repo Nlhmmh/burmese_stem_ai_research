@@ -1,6 +1,7 @@
 import { connectMongoDB } from "@/data/mongodb";
 import { ProfileModel } from "@/data/schema";
-import { DEFAULT_PREFERENCES, PreferenceOptions, Profile } from "@/data/schemas/profile.schema";
+import { PreferenceOptions, Profile } from "@/data/schemas/profile.schema";
+import { DEFAULT_PREFERENCES } from "@/lib/constants";
 
 type PreferenceKey = keyof typeof PreferenceOptions;
 
