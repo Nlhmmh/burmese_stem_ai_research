@@ -1,9 +1,6 @@
-import {
-  PreferenceValidationError,
-  updatePreferences,
-  validatePreferences
-} from "@/data/dao/profile.dao";
+import { updatePreferences } from "@/data/dao/profile.dao";
 import { LearnerIdentityError, requireLearner, requireLearnerId } from "@/services/learner.service";
+import { PreferenceValidationError, validatePreferences } from "@/services/profile.service";
 import { NextResponse, type NextRequest } from "next/server";
 
 // Route: /api/preferences

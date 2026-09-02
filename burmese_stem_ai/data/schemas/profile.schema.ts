@@ -1,17 +1,18 @@
+import {
+  EXPLANATION_LEVELS,
+  ExplanationLevel,
+  LEARNING_STYLES,
+  LearningStyle,
+  SUPPORT_LANGUAGES,
+  SupportLanguage,
+  Theme,
+  THEMES,
+  UI_LANGUAGES,
+  UILanguage
+} from "@/lib/constants";
 import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
-
-const UI_LANGUAGES = ["en", "my"] as const;
-export type UILanguage = (typeof UI_LANGUAGES)[number];
-const SUPPORT_LANGUAGES = ["bilingual", "burmese", "english"];
-export type SupportLanguage = (typeof SUPPORT_LANGUAGES)[number];
-const EXPLANATION_LEVELS = ["beginner", "intermediate", "advanced"];
-export type ExplanationLevel = (typeof EXPLANATION_LEVELS)[number];
-const LEARNING_STYLES = ["guided", "concise", "more_examples"];
-export type LearningStyle = (typeof LEARNING_STYLES)[number];
-const THEMES = ["light", "dark"];
-export type Theme = (typeof THEMES)[number];
 
 export type Preferences = {
   uiLanguage: UILanguage;
@@ -27,12 +28,12 @@ export const PreferenceOptions = {
   learningStyle: LEARNING_STYLES,
   theme: THEMES
 } as const;
-const DEFAULT_PREFERENCES = {
-  uiLanguage: "en",
-  supportLanguage: "bilingual",
-  explanationLevel: "beginner",
-  learningStyle: "guided",
-  theme: "light"
+export const DEFAULT_PREFERENCES = {
+  uiLanguage: UI_LANGUAGES[0],
+  supportLanguage: SUPPORT_LANGUAGES[0],
+  explanationLevel: EXPLANATION_LEVELS[0],
+  learningStyle: LEARNING_STYLES[0],
+  theme: THEMES[0]
 };
 
 export type Profile = {
@@ -43,23 +44,23 @@ export type Profile = {
 };
 const preferencesSchema = new Schema(
   {
-    uiLanguage: { type: String, enum: UI_LANGUAGES, default: "en" },
+    uiLanguage: { type: String, enum: UI_LANGUAGES, default: UI_LANGUAGES[0] }, // Default to "en"
     supportLanguage: {
       type: String,
       enum: SUPPORT_LANGUAGES,
-      default: "bilingual"
+      default: SUPPORT_LANGUAGES[0] // Default to "bilingual"
     },
     explanationLevel: {
       type: String,
       enum: EXPLANATION_LEVELS,
-      default: "beginner"
+      default: EXPLANATION_LEVELS[0] // Default to "beginner"
     },
     learningStyle: {
       type: String,
       enum: LEARNING_STYLES,
-      default: "guided"
+      default: LEARNING_STYLES[0] // Default to "guided"
     },
-    theme: { type: String, enum: THEMES, default: "light" }
+    theme: { type: String, enum: THEMES, default: THEMES[0] } // Default to "light"
   },
   { _id: false }
 );
@@ -89,15 +90,4 @@ const createFreshProfile = (learnerId: string) => ({
   updatedAt: new Date()
 });
 
-export {
-  createFreshProfile,
-  DEFAULT_PREFERENCES,
-  EXPLANATION_LEVELS,
-  LEARNING_STYLES,
-  preferencesSchema,
-  ProfileModel,
-  profileSchema,
-  SUPPORT_LANGUAGES,
-  THEMES,
-  UI_LANGUAGES
-};
+export { createFreshProfile, preferencesSchema, ProfileModel, profileSchema };

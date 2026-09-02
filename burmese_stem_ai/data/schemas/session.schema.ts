@@ -1,19 +1,13 @@
-import { MAX_ADAPTATION_ROUNDS } from "@/lib/constants";
+import {
+  MAX_ADAPTATION_ROUNDS,
+  SESSION_STATUSES,
+  SUPPORT_TYPES,
+  UNDERSTANDING_LEVELS
+} from "@/lib/constants";
 import mongoose from "mongoose";
 import { preferencesSchema } from "./profile.schema";
 
 const Schema = mongoose.Schema;
-
-const UNDERSTANDING_LEVELS = ["high", "medium", "needs_support", null];
-const SESSION_STATUSES = ["completed", "in_progress", "review_recommended"];
-const SUPPORT_TYPES = [
-  "key_takeaway",
-  "another_example",
-  "clarification",
-  "simpler_explanation",
-  "analogy",
-  "hint"
-];
 
 const bilingualTextSchema = new Schema(
   {
@@ -54,13 +48,13 @@ const sessionSchema = new Schema(
     },
     explanations: {
       simple: { type: bilingualTextSchema, required: true, trim: true },
-      realWorld: { type: bilingualTextSchema, required: true, trim: true },
+      realWorldExample: { type: bilingualTextSchema, required: true, trim: true },
       technical: { type: bilingualTextSchema, required: true, trim: true }
     },
     reflectivePrompt: { type: bilingualTextSchema, required: true, trim: true },
     hint: { type: bilingualTextSchema, required: true, trim: true },
     understanding: { type: String, enum: UNDERSTANDING_LEVELS, default: null },
-    status: { type: String, enum: SESSION_STATUSES, default: "in_progress" },
+    status: { type: String, enum: SESSION_STATUSES, default: SESSION_STATUSES[1] }, // Default to "in_progress"
     adaptationRound: { type: Number, default: 0, min: 0 },
     adaptations: { type: [adaptationSchema], default: [] },
     followUps: { type: [followUpSchema], default: [] },

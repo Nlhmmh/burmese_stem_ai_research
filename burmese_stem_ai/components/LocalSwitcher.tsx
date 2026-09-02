@@ -1,6 +1,6 @@
 "use client";
 
-import { LANGUAGE_CODES } from "@/lib/constants";
+import { UI_LANGUAGES } from "@/lib/constants";
 import { Locale, useLocale } from "next-intl";
 
 type Props = {
@@ -11,7 +11,7 @@ export default function LocaleSwitcher({ changeLocaleAction }: Props) {
   const locale = useLocale();
   return (
     <div style={{ display: "flex", gap: 5 }}>
-      {LANGUAGE_CODES.map((cur) => (
+      {UI_LANGUAGES.map((cur) => (
         <button
           key={cur}
           onClick={() => changeLocaleAction(cur as Locale)}
