@@ -6,6 +6,11 @@ node_modules
 .env
 .env.*
 !.env.example
+env.local
+
+*.pem
+db_dumps
+*.tsbuildinfo
 
 npm-debug.log*
 yarn-debug.log*

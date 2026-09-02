@@ -2525,3 +2525,9 @@ Do not expand the project into a production LMS or generic chatbot unless the re
 ```bash
 mongodump --uri="mongodb://localhost:27017/burmesestemai" --out="./db_dumps/burmesestemai_dump_$(date +%Y%m%d_%H%M%S)"
 ```
+
+## 26. Access to EC2
+
+```bash
+ssh -i ./EC2KeyPair.pem ec2-user@ec2-18-208-163-135.compute-1.amazonaws.com
+```
