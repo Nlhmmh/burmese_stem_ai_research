@@ -1,5 +1,7 @@
 import {
   MAX_ADAPTATION_ROUNDS,
+  MAX_FOLLOW_UP_QUESTION_LENGTH,
+  MAX_FOLLOW_UPS,
   SESSION_STATUSES,
   SUPPORT_TYPES,
   UNDERSTANDING_LEVELS
@@ -30,7 +32,12 @@ const adaptationSchema = new Schema(
 
 const followUpSchema = new Schema(
   {
-    question: { type: String, required: true, trim: true },
+    question: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: MAX_FOLLOW_UP_QUESTION_LENGTH
+    },
     answer: { type: bilingualTextSchema, required: true },
     createdAt: { type: Date, default: Date.now, required: true }
   },
@@ -57,7 +64,14 @@ const sessionSchema = new Schema(
     status: { type: String, enum: SESSION_STATUSES, default: SESSION_STATUSES[1] }, // Default to "in_progress"
     adaptationRound: { type: Number, default: 0, min: 0, max: MAX_ADAPTATION_ROUNDS },
     adaptations: { type: [adaptationSchema], default: [] },
-    followUps: { type: [followUpSchema], default: [] },
+    followUps: {
+      type: [followUpSchema],
+      default: [],
+      validate: {
+        validator: (followUps: unknown[]) => followUps.length <= MAX_FOLLOW_UPS,
+        message: `A session can have at most ${MAX_FOLLOW_UPS} follow-ups`
+      }
+    },
     preferencesSnapshot: { type: preferencesSchema },
     createdAt: { type: Date, default: Date.now, required: true },
     updatedAt: { type: Date, default: Date.now, required: true }

@@ -1,5 +1,5 @@
 import type { Preferences } from "@/data/schemas/profile.schema";
-import { MAX_ADAPTATION_ROUNDS } from "@/lib/constants";
+import { MAX_ADAPTATION_ROUNDS, MAX_FOLLOW_UPS } from "@/lib/constants";
 import type { SessionStatus, SupportType, UnderstandingLevel } from "@/lib/constants";
 import { connectMongoDB } from "../mongodb";
 import { SessionModel } from "../schema";
@@ -67,8 +67,15 @@ export type Adaptation = {
   createdAt: Date;
 };
 
+export type FollowUp = {
+  question: string;
+  answer: BilingualText;
+  createdAt: Date;
+};
+
 export type SessionRecord = CreatedSession & {
   adaptations: Adaptation[];
+  followUps: FollowUp[];
   preferencesSnapshot: Preferences;
 };
 
@@ -112,6 +119,29 @@ export async function recordSessionResponse(input: RecordResponseInput) {
       status: { $ne: "completed" }
     },
     update,
+    { returnDocument: "after", runValidators: true }
+  ).lean() as unknown as Promise<SessionRecord | null>;
+}
+
+export async function appendFollowUp(
+  learnerId: string,
+  sessionId: string,
+  followUp: FollowUp
+) {
+  await connectMongoDB();
+
+  return SessionModel.findOneAndUpdate(
+    {
+      learnerId,
+      sessionId,
+      $expr: {
+        $lt: [{ $size: { $ifNull: ["$followUps", []] } }, MAX_FOLLOW_UPS]
+      }
+    },
+    {
+      $push: { followUps: followUp },
+      $set: { updatedAt: new Date() }
+    },
     { returnDocument: "after", runValidators: true }
   ).lean() as unknown as Promise<SessionRecord | null>;
 }

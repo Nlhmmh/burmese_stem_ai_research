@@ -1,4 +1,6 @@
 export const MAX_ADAPTATION_ROUNDS = 2;
+export const MAX_FOLLOW_UPS = 2;
+export const MAX_FOLLOW_UP_QUESTION_LENGTH = 500;
 
 export const UI_LANGUAGES = ["en", "my"] as const;
 export type UILanguage = (typeof UI_LANGUAGES)[number];
