@@ -2517,3 +2517,11 @@ Ask
 ```
 
 Do not expand the project into a production LMS or generic chatbot unless the research scope changes.
+
+---
+
+## 26. mongoDB dump
+
+```bash
+mongodump --uri="mongodb://localhost:27017/burmesestemai" --out="./db_dumps/burmesestemai_dump_$(date +%Y%m%d_%H%M%S)"
+```

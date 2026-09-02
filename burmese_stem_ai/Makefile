@@ -32,3 +32,7 @@ dk-up: ## Docker Up
 .PHONY: dk-down
 dk-down: ## Docker Down
 	docker compose down
+
+.PHONY: db-dump
+db-dump: ## Dump Database
+	mongodump --uri="mongodb://localhost:27017/burmesestemai" --out="./db_dumps/burmesestemai_dump_$(date +%Y%m%d_%H%M%S)"

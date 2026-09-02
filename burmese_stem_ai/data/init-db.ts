@@ -24,7 +24,7 @@ async function main() {
   try {
     console.log("Connecting to MongoDB...");
     await mongoose.connect(databaseUrl);
-    await clearDatabase();
+    // await clearDatabase();
     await synchronizeIndexes();
   } catch (error) {
     console.error("Database initialization failed:", error);
