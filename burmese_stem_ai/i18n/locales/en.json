@@ -81,5 +81,59 @@
       "load": "Unable to load your learning sessions right now."
     },
     "retry": "Try Again"
+  },
+  "session": {
+    "learningSession": "STEM Learning Session",
+    "loading": "Loading learning session",
+    "backToHistory": "Back to History",
+    "sections": {
+      "simple": "Simple Explanation",
+      "realWorld": "Real-World Example",
+      "technical": "Technical Explanation",
+      "reflect": "Think About This"
+    },
+    "showHint": "Show Hint",
+    "hint": "Hint",
+    "understanding": {
+      "title": "Understanding Check",
+      "high": "I understand",
+      "medium": "I partially understand",
+      "needs_support": "I need more explanation",
+      "askAgain": "How do you feel after the additional explanation?",
+      "adapting": "Preparing additional support...",
+      "maximumSupport": "Maximum support provided. You can revisit this concept in your history."
+    },
+    "support": {
+      "key_takeaway": "Key Takeaway",
+      "another_example": "Adapted — Additional Example",
+      "simpler_explanation": "Adapted — Simpler Explanation",
+      "clarification": "Adapted — Clarification",
+      "analogy": "Adapted — Analogy",
+      "hint": "Adapted — Hint"
+    },
+    "finishLearning": "Finish Learning ✓",
+    "finishForNow": "Finish for Now",
+    "completing": "Finishing...",
+    "complete": {
+      "title": "Session Complete",
+      "description": "{concept} has been added to your learning history.",
+      "history": "View History"
+    },
+    "followUp": {
+      "title": "Still have a question about {concept}?",
+      "placeholder": "Ask a follow-up about this concept...",
+      "inputLabel": "Follow-up question",
+      "ask": "Ask",
+      "sending": "Preparing answer...",
+      "remaining": "{count, plural, one {# follow-up remaining} other {# follow-ups remaining}}",
+      "limit": "You have used both follow-up questions for this session."
+    },
+    "errors": {
+      "title": "Session could not be loaded",
+      "load": "Unable to load this learning session.",
+      "respond": "Unable to prepare additional support right now.",
+      "complete": "Unable to complete this session right now.",
+      "followUp": "Unable to prepare a follow-up answer right now."
+    }
   }
 }
