@@ -36,8 +36,8 @@ export default function AppHeader({ changeLocaleAction }: Props) {
           href="/"
           className="flex items-center gap-2.5 font-bold text-slate-900 transition hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-lg font-black text-white shadow-sm shadow-blue-600/30">
-            B
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg  text-lg font-black text-white shadow-sm shadow-blue-600/30">
+            <img src="/favicon.ico" alt="Logo" className="h-5 w-5" />
           </span>
           <span className="hidden text-lg sm:inline">Burmese STEM AI</span>
         </Link>

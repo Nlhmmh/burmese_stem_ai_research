@@ -49,5 +49,37 @@
     "themeMode": "Toggle color theme",
     "darkMode": "Switch to dark mode",
     "lightMode": "Switch to light mode"
+  },
+  "history": {
+    "title": "Learning History",
+    "subtitle": "Your STEM concepts and understanding progress",
+    "newInquiry": "New Inquiry",
+    "understanding": {
+      "label": "Understanding",
+      "high": "High",
+      "medium": "Medium",
+      "needs_support": "Needs Support",
+      "unrated": "Not Rated"
+    },
+    "status": {
+      "label": "Status",
+      "completed": "Completed",
+      "in_progress": "In Progress",
+      "review_recommended": "Review Recommended"
+    },
+    "actions": {
+      "completed": "Review",
+      "in_progress": "Resume",
+      "review_recommended": "Continue Learning"
+    },
+    "empty": {
+      "title": "No learning sessions yet",
+      "description": "Ask your first STEM question to start building your learning history."
+    },
+    "errors": {
+      "title": "History could not be loaded",
+      "load": "Unable to load your learning sessions right now."
+    },
+    "retry": "Try Again"
   }
 }
