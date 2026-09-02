@@ -8,6 +8,13 @@ async function clearDatabase() {
   console.log("Cleared Profiles and Sessions collections");
 }
 
+async function synchronizeIndexes() {
+  const removedProfileIndexes = await ProfileModel.syncIndexes();
+  const removedSessionIndexes = await SessionModel.syncIndexes();
+  console.log("Removed obsolete profile indexes:", removedProfileIndexes);
+  console.log("Removed obsolete session indexes:", removedSessionIndexes);
+}
+
 async function main() {
   const databaseUrl = process.env.DB_URL;
   if (!databaseUrl) {
@@ -17,7 +24,8 @@ async function main() {
   try {
     console.log("Connecting to MongoDB...");
     await mongoose.connect(databaseUrl);
-    // await clearDatabase();
+    await clearDatabase();
+    await synchronizeIndexes();
   } catch (error) {
     console.error("Database initialization failed:", error);
     process.exitCode = 1;

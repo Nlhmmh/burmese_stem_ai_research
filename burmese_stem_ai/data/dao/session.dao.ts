@@ -9,7 +9,7 @@ export async function findSessionsByLearner(learnerId: string) {
 export async function findSession(learnerId: string, sessionId: string) {
   await connectMongoDB();
   return SessionModel.findOne({
-    _id: sessionId,
+    sessionId,
     learnerId
   }).lean();
 }

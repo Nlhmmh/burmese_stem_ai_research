@@ -20,8 +20,10 @@ run: ## Run server
 lint: ## Lint
 	npm run lint
 
-
-# Docker
+.PHONY: init-db
+init-db: ## Init Database
+	docker compose up --build -d mongodb
+	npm run init-db
 
 .PHONY: dk-up
 dk-up: ## Docker Up

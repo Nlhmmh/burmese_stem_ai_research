@@ -80,8 +80,6 @@ profileSchema.pre("validate", function ensureLearnerId() {
   }
 });
 
-profileSchema.index({ learnerId: 1 });
-
 const ProfileModel = mongoose.models.Profile || mongoose.model("Profile", profileSchema);
 
 const createFreshProfile = (learnerId: string) => ({

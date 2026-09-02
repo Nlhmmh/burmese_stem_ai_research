@@ -77,7 +77,6 @@ sessionSchema.pre("validate", function ensureSessionId() {
   }
 });
 
-sessionSchema.index({ sessionId: 1 }); // Index to quickly find a session by its ID
 sessionSchema.index({ learnerId: 1, updatedAt: -1 }); // Index to quickly find the most recent session for a learner
 
 const SessionModel = mongoose.models.Session || mongoose.model("Session", sessionSchema);
