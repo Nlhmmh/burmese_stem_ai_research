@@ -46,7 +46,7 @@ const followUpSchema = new Schema(
 const sessionSchema = new Schema(
   {
     sessionId: { type: String, required: true, unique: true, trim: true },
-    learnerId: { type: String, required: true, unique: true, trim: true },
+    learnerId: { type: String, required: true, trim: true },
     originalQuestion: { type: String, required: true, trim: true },
     concept: {
       name: { type: String, required: true, trim: true },
@@ -77,7 +77,8 @@ sessionSchema.pre("validate", function ensureSessionId() {
   }
 });
 
-sessionSchema.index({ learnerId: 1 });
+sessionSchema.index({ sessionId: 1 }); // Index to quickly find a session by its ID
+sessionSchema.index({ learnerId: 1, updatedAt: -1 }); // Index to quickly find the most recent session for a learner
 
 const SessionModel = mongoose.models.Session || mongoose.model("Session", sessionSchema);
 
