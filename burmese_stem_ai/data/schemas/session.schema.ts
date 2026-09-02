@@ -19,7 +19,7 @@ const bilingualTextSchema = new Schema(
 
 const adaptationSchema = new Schema(
   {
-    understanding: { type: String, enum: UNDERSTANDING_LEVELS, required: true },
+    learnerResponse: { type: String, enum: UNDERSTANDING_LEVELS, required: true },
     supportType: { type: String, enum: SUPPORT_TYPES, required: true },
     content: { type: bilingualTextSchema, required: true },
     round: { type: Number, min: 1, max: MAX_ADAPTATION_ROUNDS, required: true },
@@ -55,7 +55,7 @@ const sessionSchema = new Schema(
     hint: { type: bilingualTextSchema, required: true, trim: true },
     understanding: { type: String, enum: UNDERSTANDING_LEVELS, default: null },
     status: { type: String, enum: SESSION_STATUSES, default: SESSION_STATUSES[1] }, // Default to "in_progress"
-    adaptationRound: { type: Number, default: 0, min: 0 },
+    adaptationRound: { type: Number, default: 0, min: 0, max: MAX_ADAPTATION_ROUNDS },
     adaptations: { type: [adaptationSchema], default: [] },
     followUps: { type: [followUpSchema], default: [] },
     preferencesSnapshot: { type: preferencesSchema },
@@ -73,6 +73,4 @@ sessionSchema.pre("validate", function ensureSessionId() {
 
 sessionSchema.index({ learnerId: 1, updatedAt: -1 }); // Index to quickly find the most recent session for a learner
 
-const SessionModel = mongoose.models.Session || mongoose.model("Session", sessionSchema);
-
-export { SessionModel, sessionSchema };
+export { sessionSchema };

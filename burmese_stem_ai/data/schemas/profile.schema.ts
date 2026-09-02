@@ -81,8 +81,6 @@ profileSchema.pre("validate", function ensureLearnerId() {
   }
 });
 
-const ProfileModel = mongoose.models.Profile || mongoose.model("Profile", profileSchema);
-
 const createFreshProfile = (learnerId: string) => ({
   learnerId,
   preferences: { ...DEFAULT_PREFERENCES },
@@ -90,4 +88,4 @@ const createFreshProfile = (learnerId: string) => ({
   updatedAt: new Date()
 });
 
-export { createFreshProfile, preferencesSchema, ProfileModel, profileSchema };
+export { createFreshProfile, preferencesSchema, profileSchema };

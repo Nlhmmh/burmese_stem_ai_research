@@ -1,6 +1,8 @@
+import type { Preferences } from "@/data/schemas/profile.schema";
+import { MAX_ADAPTATION_ROUNDS } from "@/lib/constants";
+import type { SessionStatus, SupportType, UnderstandingLevel } from "@/lib/constants";
 import { connectMongoDB } from "../mongodb";
 import { SessionModel } from "../schema";
-import { SessionStatus, UnderstandingLevel } from "../schemas/session.schema";
 
 export async function findSessionsByLearner(learnerId: string) {
   await connectMongoDB();
@@ -52,5 +54,64 @@ export async function findSession(learnerId: string, sessionId: string) {
   return SessionModel.findOne({
     sessionId,
     learnerId
-  }).lean();
+  }).lean() as unknown as Promise<SessionRecord | null>;
+}
+
+export type LearnerResponse = Exclude<UnderstandingLevel, null>;
+
+export type Adaptation = {
+  learnerResponse: LearnerResponse;
+  supportType: SupportType;
+  content: BilingualText;
+  round: number;
+  createdAt: Date;
+};
+
+export type SessionRecord = CreatedSession & {
+  adaptations: Adaptation[];
+  preferencesSnapshot: Preferences;
+};
+
+type RecordResponseInput = {
+  learnerId: string;
+  sessionId: string;
+  expectedRound: number;
+  understanding: LearnerResponse;
+  status: SessionStatus;
+  adaptation: Adaptation | null;
+};
+
+export async function recordSessionResponse(input: RecordResponseInput) {
+  await connectMongoDB();
+
+  const update = input.adaptation
+    ? {
+        $set: {
+          understanding: input.understanding,
+          status: input.status,
+          updatedAt: new Date()
+        },
+        $inc: { adaptationRound: 1 },
+        $push: { adaptations: input.adaptation }
+      }
+    : {
+        $set: {
+          understanding: input.understanding,
+          status: input.status,
+          updatedAt: new Date()
+        }
+      };
+
+  return SessionModel.findOneAndUpdate(
+    {
+      learnerId: input.learnerId,
+      sessionId: input.sessionId,
+      adaptationRound: input.adaptation
+        ? { $eq: input.expectedRound, $lt: MAX_ADAPTATION_ROUNDS }
+        : input.expectedRound,
+      status: { $ne: "completed" }
+    },
+    update,
+    { returnDocument: "after", runValidators: true }
+  ).lean() as unknown as Promise<SessionRecord | null>;
 }
