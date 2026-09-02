@@ -145,3 +145,22 @@ export async function appendFollowUp(
     { returnDocument: "after", runValidators: true }
   ).lean() as unknown as Promise<SessionRecord | null>;
 }
+
+export async function completeSession(learnerId: string, sessionId: string) {
+  await connectMongoDB();
+
+  return SessionModel.findOneAndUpdate(
+    {
+      learnerId,
+      sessionId,
+      status: { $in: ["in_progress", "review_recommended"] }
+    },
+    {
+      $set: {
+        status: "completed",
+        updatedAt: new Date()
+      }
+    },
+    { returnDocument: "after", runValidators: true }
+  ).lean() as unknown as Promise<SessionRecord | null>;
+}
