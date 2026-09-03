@@ -73,7 +73,7 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 ssh-keygen -t ed25519 \
   -C "burmese-stem-ai-ec2" \
-  -f ~/.ssh/github_burmese_stem_ai
+  -f ~/.ssh/burmese_stem_ai_deploy
 ```
 
 Enter a passphrase when prompted for better protection. If this server must pull
@@ -87,12 +87,12 @@ tee -a ~/.ssh/config >/dev/null <<'EOF'
 Host github.com
   HostName github.com
   User git
-  IdentityFile ~/.ssh/github_burmese_stem_ai
+  IdentityFile ~/.ssh/burmese_stem_ai_deploy
   IdentitiesOnly yes
 EOF
 
 chmod 600 ~/.ssh/config
-cat ~/.ssh/github_burmese_stem_ai.pub
+cat ~/.ssh/burmese_stem_ai_deploy.pub
 ```
 
 Copy the entire displayed line. In GitHub, open the repository and go to
@@ -313,6 +313,29 @@ MongoDB data lives in the named Docker volume
 `docker compose down --volumes` unless you intentionally want to delete it.
 
 ## Troubleshooting
+
+### Build fails while opening `.deploy/letsencrypt/accounts`
+
+An error similar to this:
+
+```text
+target init-db: failed to solve: error from sender: open .../.deploy/letsencrypt/accounts: permission denied
+```
+
+means Docker tried to include Certbot's root-owned runtime files in the image
+build context. The repository's `.dockerignore` excludes `.deploy`, so first
+make sure your EC2 checkout contains the current file:
+
+```bash
+cd ~/burmese_stem_ai_research/burmese_stem_ai
+grep -qxF '.deploy' .dockerignore || echo '.deploy' >> .dockerignore
+docker compose --env-file .env.production -f docker-compose.prod.yml build
+./deploy.sh deploy
+```
+
+Do not make `.deploy/letsencrypt` world-readable and do not run
+`chmod -R 777`; that directory contains the TLS private key. Excluding it from
+the build context fixes the problem without weakening its permissions.
 
 ### Compose or Buildx is missing or too old
 
