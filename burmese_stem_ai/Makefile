@@ -9,7 +9,7 @@ help: ## Help
 
 .PHONY: init
 init: ## Prepare Environment
-	cp .env.local .env
+	cp .env.example .env
 	npm install
 
 .PHONY: run
