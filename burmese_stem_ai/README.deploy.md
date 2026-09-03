@@ -63,7 +63,60 @@ ssh -i /path/to/key.pem ubuntu@18.208.163.135
 
 For Amazon Linux, replace `ubuntu` with `ec2-user`.
 
-## 3. Install Docker
+## 3. Configure GitHub SSH access
+
+Create a dedicated key on the EC2 instance. Do not reuse the `.pem` key that you
+use to log in to EC2:
+
+```bash
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+ssh-keygen -t ed25519 \
+  -C "burmese-stem-ai-ec2" \
+  -f ~/.ssh/github_burmese_stem_ai
+```
+
+Enter a passphrase when prompted for better protection. If this server must pull
+updates unattended, you may leave it empty; in that case, keep the GitHub key
+read-only and protect access to the EC2 instance carefully.
+
+Tell SSH to use this dedicated key for GitHub:
+
+```bash
+tee -a ~/.ssh/config >/dev/null <<'EOF'
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_burmese_stem_ai
+  IdentitiesOnly yes
+EOF
+
+chmod 600 ~/.ssh/config
+cat ~/.ssh/github_burmese_stem_ai.pub
+```
+
+Copy the entire displayed line. In GitHub, open the repository and go to
+**Settings > Deploy keys > Add deploy key**. Give it a descriptive name, paste
+the public key, and leave **Allow write access** disabled because this server
+only needs to clone and pull. If you cannot manage repository deploy keys, add
+it under your GitHub account's **Settings > SSH and GPG keys** instead; that
+grants the key access according to your account permissions.
+
+Test the connection:
+
+```bash
+ssh -T git@github.com
+```
+
+On the first connection, compare the displayed host-key fingerprint with
+GitHub's published fingerprint before accepting it. A successful test says that
+you authenticated but GitHub does not provide shell access. That command can
+still return exit status `1`; this is normal for GitHub's SSH test.
+
+If the repository belongs to an organization that enforces SAML SSO, authorize
+the SSH key for that organization in GitHub before cloning.
+
+## 4. Install Docker, Compose, and Buildx
 
 ### Ubuntu 22.04 or 24.04
 
@@ -95,7 +148,7 @@ sudo usermod -aG docker "$USER"
 
 Log out and reconnect so the Docker group change takes effect.
 
-### Amazon Linux 2023
+### Amazon Linux 2023 — your EC2 operating system
 
 ```bash
 sudo dnf update -y
@@ -108,21 +161,70 @@ Log out and reconnect. Confirm both commands work:
 
 ```bash
 docker version
+```
+
+The Amazon Linux Docker package may not include compatible Compose and Buildx
+plugins. Install both as Docker CLI plugins for `ec2-user`. These versions match
+the `x86_64` architecture reported by `uname -m` on this instance.
+
+#### Install Docker Compose manually
+
+Your current `Docker Compose version v5.5.0` is already correct, so you may skip
+this subsection. On a new instance where `docker compose version` fails, run:
+
+```bash
+mkdir -p ~/.docker/cli-plugins
+curl -fSL \
+  https://github.com/docker/compose/releases/download/v5.5.0/docker-compose-linux-x86_64 \
+  -o ~/.docker/cli-plugins/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
 docker compose version
 ```
 
-If `docker compose` is unavailable on Amazon Linux, install the Compose plugin
-using Docker's Linux Compose-plugin guide in the references below. This project
-requires Compose v2, not the old `docker-compose` command.
+The expected result is `Docker Compose version v5.5.0`.
+
+#### Install or upgrade Docker Buildx manually
+
+The error `compose build requires buildx 0.17.0 or later` means Compose is
+installed, but the Buildx plugin is missing or too old. Install Buildx v0.36.1
+for this instance's `x86_64`/`amd64` architecture:
+
+```bash
+mkdir -p ~/.docker/cli-plugins
+curl -fSL \
+  https://github.com/docker/buildx/releases/download/v0.36.1/buildx-v0.36.1.linux-amd64 \
+  -o ~/.docker/cli-plugins/docker-buildx
+
+echo "48af8a397ebd60178778bf63611dbcebe5f5e7a9be90eb9147b24b9587455778  $HOME/.docker/cli-plugins/docker-buildx" \
+  | sha256sum -c -
+
+chmod +x ~/.docker/cli-plugins/docker-buildx
+docker buildx version
+```
+
+The checksum command must report `OK`. The Buildx version must be `v0.17.0` or
+newer; the commands above install `v0.36.1`.
+
+Initialize and verify the default builder:
+
+```bash
+docker buildx inspect --bootstrap
+docker compose version
+docker info >/dev/null && echo "Docker is ready"
+```
+
+Manual CLI-plugin installations do not update automatically. Repeat these
+steps with a newer stable release when maintaining the instance.
 
 > Membership in the `docker` group grants root-equivalent access. Alternatively,
 > leave the user out of that group and run deployment commands with `sudo`.
 
-## 4. Clone and configure the application
+## 5. Clone and configure the application
 
 ```bash
-git clone YOUR_REPOSITORY_URL
-cd burmese_stem_ai
+cd ~
+git clone git@github.com:YOUR_GITHUB_USER/burmese_stem_ai_research.git
+cd ~/burmese_stem_ai_research/burmese_stem_ai
 cp .env.production.example .env.production
 chmod 600 .env.production
 nano .env.production
@@ -143,7 +245,7 @@ Replace the email and API key. Do not add `http://`, `https://`, a port, or a
 path to `PUBLIC_HOST`. The production environment file and generated
 certificates are ignored by Git.
 
-## 5. Deploy with HTTPS
+## 6. Deploy with HTTPS
 
 Run:
 
@@ -187,7 +289,7 @@ After testing, run `./deploy.sh stop`, set the value back to `0`, remove
 `.deploy/letsencrypt`, and run the deployment again. Do not repeatedly delete
 production certificates because certificate-authority rate limits apply.
 
-## 6. Operate and update
+## 7. Operate and update
 
 Run these commands from the repository directory:
 
@@ -211,6 +313,22 @@ MongoDB data lives in the named Docker volume
 `docker compose down --volumes` unless you intentionally want to delete it.
 
 ## Troubleshooting
+
+### Compose or Buildx is missing or too old
+
+Check the two plugins independently:
+
+```bash
+docker compose version
+docker buildx version
+ls -l ~/.docker/cli-plugins/
+```
+
+Compose being installed does not imply that Buildx is installed. If Compose
+works but deployment reports `compose build requires buildx 0.17.0 or later`,
+repeat the Buildx installation in section 4. The per-user binary at
+`~/.docker/cli-plugins/docker-buildx` takes precedence over an older system
+plugin.
 
 ### The HTTP endpoint is unreachable
 
@@ -239,8 +357,64 @@ docker compose --env-file .env.production -f docker-compose.prod.yml \
 ### Docker build runs out of memory
 
 A small free-tier instance may not have enough memory for the Next.js build.
-Add swap temporarily, resize the instance, or build the image in CI and pull it
-from a registry.
+
+#### Option 1: Use a larger instance or remote image build
+
+Resize the instance, or build the image in CI and pull it from a container
+registry. This is the better long-term option when builds remain slow or still
+run out of memory.
+
+#### Option 2: Add 2 GiB of swap space
+
+First stop the current build with `Ctrl+C`. Check the available memory, existing
+swap, and root-volume free space:
+
+```bash
+free -h
+swapon --show
+df -h /
+```
+
+Make sure the root volume has at least 2 GiB available. If `/swapfile` does not
+already exist, create it and restrict its permissions:
+
+```bash
+if ! sudo test -f /swapfile; then
+  sudo fallocate -l 2G /swapfile
+  sudo chmod 600 /swapfile
+  sudo mkswap /swapfile
+fi
+
+if ! grep -q '^/swapfile ' /proc/swaps; then
+  sudo swapon /swapfile
+fi
+```
+
+Make the swap file survive instance reboots. The check prevents adding the same
+line to `/etc/fstab` more than once:
+
+```bash
+grep -qF '/swapfile swap swap defaults 0 0' /etc/fstab || \
+  echo '/swapfile swap swap defaults 0 0' | sudo tee -a /etc/fstab
+```
+
+Verify that approximately 2 GiB of swap is active:
+
+```bash
+free -h
+swapon --show
+```
+
+Then return to the application directory and retry deployment:
+
+```bash
+cd ~/burmese_stem_ai_research/burmese_stem_ai
+./deploy.sh deploy
+```
+
+Swap uses disk and is much slower than RAM, but it can prevent a one-time Docker
+image build from being killed on a 1 GiB instance. Monitor available disk space
+because the swap file permanently consumes 2 GiB of the EBS root volume.
 
 ## Security notes
 
@@ -259,5 +433,10 @@ from a registry.
 - [AWS: install Docker on Amazon Linux 2023](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-container-image.html)
 - [Docker: install Docker Engine](https://docs.docker.com/engine/install/)
 - [Docker: install the Compose plugin](https://docs.docker.com/compose/install/linux/)
+- [Docker: Buildx installation options](https://github.com/docker/buildx#installing)
+- [Docker Buildx v0.36.1 release](https://github.com/docker/buildx/releases/tag/v0.36.1)
+- [GitHub: generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- [GitHub: add an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+- [GitHub: test the SSH connection](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
 - [Let's Encrypt: IP certificates with Certbot](https://letsencrypt.org/2026/03/11/shorter-certs-certbot/)
 - [Let's Encrypt: HTTP-01 validation](https://letsencrypt.org/docs/challenge-types/)

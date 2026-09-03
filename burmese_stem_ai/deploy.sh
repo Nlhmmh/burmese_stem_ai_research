@@ -65,10 +65,19 @@ load_environment() {
 }
 
 require_tools() {
+  local buildx_version
+  local minimum_buildx="0.17.0"
+
   command -v curl >/dev/null 2>&1 || fail "curl is not installed."
   command -v docker >/dev/null 2>&1 || fail "Docker is not installed. See README.deploy.md."
   docker compose version >/dev/null 2>&1 || fail "The Docker Compose plugin is not installed."
   docker info >/dev/null 2>&1 || fail "Cannot access Docker. Start Docker or add this user to the docker group."
+
+  buildx_version="$(docker buildx version 2>/dev/null | sed -nE 's/.* v?([0-9]+\.[0-9]+\.[0-9]+).*/\1/p' | head -n 1)"
+  [[ -n "$buildx_version" ]] || fail "Docker Buildx is not installed. See the Amazon Linux Buildx steps in README.deploy.md."
+  if [[ "$(printf '%s\n' "$minimum_buildx" "$buildx_version" | sort -V | head -n 1)" != "$minimum_buildx" ]]; then
+    fail "Docker Buildx $buildx_version is too old; version $minimum_buildx or later is required. See README.deploy.md."
+  fi
 }
 
 compose() {

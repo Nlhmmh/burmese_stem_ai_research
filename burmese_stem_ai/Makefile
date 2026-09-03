@@ -1,3 +1,4 @@
+# Makefile for burmese_stem_ai
 
 .PHONY: help
 help: ## Help
@@ -36,3 +37,7 @@ dk-down: ## Docker Down
 .PHONY: db-dump
 db-dump: ## Dump Database
 	mongodump --uri="mongodb://localhost:27017/burmesestemai" --out="./db_dumps/burmesestemai_dump_$(date +%Y%m%d_%H%M%S)"
+
+.PHONY: connect-ec2
+connect-ec2: ## Connect to EC2
+	ssh -i ./EC2KeyPair.pem ec2-user@ec2-18-208-163-135.compute-1.amazonaws.com
