@@ -2,9 +2,9 @@
 
 This guide is configured for the current EC2 endpoint:
 
-- Public IPv4: `18.208.163.135`
-- AWS public DNS: `ec2-18-208-163-135.compute-1.amazonaws.com`
-- HTTPS application URL: `https://18.208.163.135`
+- Public IPv4: `100.27.189.130`
+- AWS public DNS: `ec2-100-27-189-130.compute-1.amazonaws.com`
+- HTTPS application URL: `https://100.27.189.130`
 
 The deployment runs Next.js, MongoDB, Nginx, and Certbot with Docker Compose.
 Only Nginx publishes host ports `80` and `443`. The application port `3000`
@@ -57,8 +57,8 @@ response traffic.
 For Ubuntu:
 
 ```bash
-chmod 400 /path/to/key.pem
-ssh -i /path/to/key.pem ubuntu@18.208.163.135
+chmod 400 ./EC2KeyPair.pem
+ssh -i ./EC2KeyPair.pem ec2-user@ec2-100-27-189-130.compute-1.amazonaws.com
 ```
 
 For Amazon Linux, replace `ubuntu` with `ec2-user`.
@@ -223,7 +223,7 @@ steps with a newer stable release when maintaining the instance.
 
 ```bash
 cd ~
-git clone git@github.com:YOUR_GITHUB_USER/burmese_stem_ai_research.git
+git clone git@github.com:Nlhmmh/burmese_stem_ai_research.git
 cd ~/burmese_stem_ai_research/burmese_stem_ai
 cp .env.production.example .env.production
 chmod 600 .env.production
@@ -234,7 +234,7 @@ chmod +x deploy.sh
 Configure `.env.production` as follows:
 
 ```dotenv
-PUBLIC_HOST=18.208.163.135
+PUBLIC_HOST=100.27.189.130
 LETSENCRYPT_EMAIL=you@example.com
 OPENAI_API_KEY=your-real-api-key
 OPENAI_MODEL=gpt-5.4-mini
@@ -258,9 +258,9 @@ The script will:
 1. Validate the settings and Docker access.
 2. Build and start MongoDB, initialize it, and start Next.js.
 3. Start Nginx over HTTP for certificate validation.
-4. Request a short-lived Let's Encrypt certificate for `18.208.163.135`.
+4. Request a short-lived Let's Encrypt certificate for EC2 public IP.
 5. Redirect HTTP traffic to HTTPS and start automatic renewal checks.
-6. Verify `https://18.208.163.135/api` and print container status.
+6. Verify `https://100.27.189.130/api` and print container status.
 
 Let's Encrypt requires IP certificates to use its short-lived profile. They are
 valid for approximately six days. The Certbot container checks for renewal every
@@ -269,11 +269,11 @@ valid for approximately six days. The Certbot container checks for renewal every
 Open the application at:
 
 ```text
-https://18.208.163.135
+https://100.27.189.130
 ```
 
 Use the IP address in the HTTPS URL. The certificate is issued for the IP, so
-opening `https://ec2-18-208-163-135.compute-1.amazonaws.com` produces a hostname
+opening `https://ec2-100-27-189-130.compute-1.amazonaws.com` produces a hostname
 mismatch. The AWS hostname is still useful for SSH or plain HTTP.
 
 ### Optional staging test
@@ -355,11 +355,11 @@ plugin.
 
 ### The HTTP endpoint is unreachable
 
-- Confirm the instance is running and still has `18.208.163.135`.
+- Confirm the instance is running.
 - Confirm the security group allows TCP 80 from `0.0.0.0/0`.
 - Confirm the subnet has an Internet Gateway route.
 - Run `./deploy.sh status` and `./deploy.sh logs`.
-- Test `curl -v http://18.208.163.135/api` from outside AWS.
+- Test `curl -v http://100.27.189.130/api` from outside AWS.
 
 ### Certificate issuance fails
 
