@@ -17,9 +17,7 @@ export default function AppHeader({ changeLocaleAction }: Props) {
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("theme");
-    const shouldUseDark =
-      savedTheme === "dark" ||
-      (savedTheme === null && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const shouldUseDark = savedTheme === "dark";
     document.documentElement.classList.toggle("dark", shouldUseDark);
   }, []);
 
