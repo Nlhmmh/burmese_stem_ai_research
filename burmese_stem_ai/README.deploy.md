@@ -3,8 +3,7 @@
 This guide is configured for the current EC2 endpoint:
 
 - Public IPv4: `107.21.91.141`
-- AWS public DNS: `ec2-107-21-91-141.compute-1.amazonaws.com`
-- HTTPS application URL: `https://107.21.91.141`
+- HTTPS application URL: `https://burmesestemai.serveirc.com`
 
 The deployment runs Next.js, MongoDB, Nginx, and Certbot with Docker Compose.
 Only Nginx publishes host ports `80` and `443`. The application port `3000`
@@ -234,7 +233,7 @@ chmod +x deploy.sh
 Configure `.env.production` as follows:
 
 ```dotenv
-PUBLIC_HOST=107.21.91.141
+PUBLIC_HOST=burmesestemai.serveirc.com
 LETSENCRYPT_EMAIL=you@example.com
 OPENAI_API_KEY=your-real-api-key
 OPENAI_MODEL=gpt-5.4-mini
@@ -250,6 +249,7 @@ certificates are ignored by Git.
 Run:
 
 ```bash
+./deploy.sh stop
 ./deploy.sh deploy
 ```
 
@@ -260,7 +260,7 @@ The script will:
 3. Start Nginx over HTTP for certificate validation.
 4. Request a short-lived Let's Encrypt certificate for EC2 public IP.
 5. Redirect HTTP traffic to HTTPS and start automatic renewal checks.
-6. Verify `https://107.21.91.141/api` and print container status.
+6. Verify `https://burmesestemai.serveirc.com/api` and print container status.
 
 Let's Encrypt requires IP certificates to use its short-lived profile. They are
 valid for approximately six days. The Certbot container checks for renewal every
@@ -269,12 +269,8 @@ valid for approximately six days. The Certbot container checks for renewal every
 Open the application at:
 
 ```text
-https://107.21.91.141
+https://burmesestemai.serveirc.com
 ```
-
-Use the IP address in the HTTPS URL. The certificate is issued for the IP, so
-opening `https://ec2-107.21.91.141.compute-1.amazonaws.com` produces a hostname
-mismatch. The AWS hostname is still useful for SSH or plain HTTP.
 
 ### Optional staging test
 
@@ -359,7 +355,7 @@ plugin.
 - Confirm the security group allows TCP 80 from `0.0.0.0/0`.
 - Confirm the subnet has an Internet Gateway route.
 - Run `./deploy.sh status` and `./deploy.sh logs`.
-- Test `curl -v http://107-21-91-141./api` from outside AWS.
+- Test `curl -v http://burmesestemai.serveirc.com/api` from outside AWS.
 
 ### Certificate issuance fails
 
