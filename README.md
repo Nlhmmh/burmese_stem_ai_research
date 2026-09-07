@@ -2,7 +2,9 @@
 
 ## Scaffolding Low-Resource STEM Education with Large Language Models
 
-This repository contains the research design and planned proof-of-concept implementation for an **LLM-Based Adaptive STEM Scaffolding System** intended to support Burmese-speaking learners who study STEM concepts that are commonly expressed using specialised English terminology.
+This repository contains the research design and implemented proof-of-concept for an **LLM-Based Adaptive STEM Scaffolding System** intended to support Burmese-speaking learners who study STEM concepts that are commonly expressed using specialised English terminology.
+
+Implementation details, setup instructions, API contracts, and current feature status are documented in [`burmese_stem_ai/README.md`](burmese_stem_ai/README.md).
 
 The research does **not** treat the LLM itself as the artefact. The intended contribution is the way LLM capabilities are organised around:
 
@@ -647,7 +649,7 @@ Adapted content should differ meaningfully from the previous content.
 ### Follow-Up Handler
 
 **Responsibility**
-- allow one free-text follow-up path within the current concept.
+- allow up to two free-text follow-ups within the current concept.
 
 Example:
 
@@ -656,7 +658,7 @@ Current concept: Gradient Descent
 Follow-up: "Why is the learning rate important?"
 ```
 
-A materially different concept should not silently replace the current session. The UI should instead offer to begin a new learning session.
+A materially different concept does not silently replace the current session. The API recommends beginning a new learning session; a dedicated UI action is not yet implemented.
 
 ### LLM Service
 
@@ -699,8 +701,7 @@ Store anonymous preferences such as:
 - support language;
 - explanation level;
 - learning style;
-- theme;
-- text size.
+- theme.
 
 ## 6.4 Logical Architecture Diagram
 
@@ -1081,7 +1082,7 @@ Still have a question about Gradient Descent?
 
 Follow-ups remain scoped to the current concept.
 
-A materially different concept should trigger an option to start a **new learning session** rather than silently replacing the current session.
+Each session permits at most two follow-ups. A materially different concept returns a recommendation to start a **new learning session** rather than silently replacing the current session; the dedicated UI action remains planned.
 
 ## 7.4 Screen 3 — Learning History
 
@@ -1348,8 +1349,7 @@ The learner shall be able to configure:
 - support language;
 - explanation level;
 - learning style;
-- theme;
-- text size.
+- theme.
 
 ## FR-16 — Support English/Burmese UI
 
@@ -1377,7 +1377,6 @@ The interface shall support both English and Burmese locale text.
 - adequate contrast;
 - no status communicated through colour alone;
 - readable touch targets;
-- adjustable text size;
 - predictable heading structure.
 
 ## 11.3 Burmese Language Support
@@ -1559,7 +1558,7 @@ The proof of concept satisfies the intended research workflow when:
 - adapted support is meaningfully different from the previous explanation;
 - no more than two adaptation rounds occur;
 - follow-ups remain scoped to the current concept;
-- a different concept can start a new session;
+- a different concept is identified and a new session is recommended;
 - genuine session data can be saved and retrieved;
 - Review, Resume and Continue Learning restore appropriate state;
 - understanding and session status remain separate;
@@ -1568,7 +1567,6 @@ The proof of concept satisfies the intended research workflow when:
 - keyboard focus and accessible labels are available;
 - light/dark mode is usable;
 - excluded LMS, quiz, gamification, social and unrestricted-chat features are not introduced;
-- mock/static AI behaviour, if used, is clearly documented; and
 - the prototype does not claim untested educational effectiveness.
 
 ---

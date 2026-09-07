@@ -12,7 +12,7 @@ This README focuses only on the software implementation: architecture, stack, pr
 
 Burmese STEM AI is a three-screen educational web application for Burmese-speaking learners who want help understanding English STEM terminology and concepts.
 
-The target application flow is:
+The implemented application flow is:
 
 ```text
 Home / Ask
@@ -58,7 +58,7 @@ The prototype intentionally does **not** include authentication, quizzes, scorin
 
 ## 2. Current Implementation Status
 
-The current repository already contains the main application skeleton and data foundations.
+The current repository contains an end-to-end proof-of-concept learning flow. Automated tests and some production hardening remain outstanding.
 
 | Area | Status | Current State |
 |---|---|---|
@@ -67,14 +67,14 @@ The current repository already contains the main application skeleton and data f
 | Anonymous learner identity | Implemented | HTTP-only UUID cookie mapped to server-side learner ID |
 | Learner preferences | Implemented | MongoDB persistence, `GET` and `PATCH` API |
 | MongoDB profile schema | Implemented | Anonymous profile + preferences |
-| MongoDB learning-session schema | Implemented / needs correction | Schema exists but session routes are not wired |
-| Home screen | Placeholder / partial | Page exists; final UI is not complete |
-| Learning Session screen | Placeholder | Dynamic page exists |
-| Learning History screen | Placeholder | Page exists |
-| Session API routes | Placeholder | Routes exist and currently return `501` |
-| LLM integration | Not implemented | `OPENAI_API_KEY` is reserved but not used |
-| Adaptation logic | Not implemented | Planned maximum of two rounds |
-| Follow-up logic | Not implemented | Route exists, service behavior not implemented |
+| MongoDB learning-session schema | Implemented | UUID session ID, bilingual content, adaptations, follow-ups, lifecycle state, and preference snapshot |
+| Home screen | Implemented | Question input, example prompts, preferences dialog, loading/error states, and session navigation |
+| Learning Session screen | Implemented | Bilingual explanations, hint, understanding responses, adapted support, follow-ups, and completion |
+| Learning History screen | Implemented | Latest-first session list with status, understanding, and review/resume actions |
+| Session API routes | Implemented | Create/list/get/complete/respond/follow-up handlers with controlled errors |
+| LLM integration | Implemented | Server-side OpenAI Responses API calls with strict JSON Schema output and a 20-second timeout |
+| Adaptation logic | Implemented | Deterministic support strategy and a server-enforced maximum of two rounds |
+| Follow-up logic | Implemented | Concept-scoped bilingual answers with a maximum of two follow-ups per session |
 | Automated tests | Not implemented | Current checks are lint + production build |
 
 ---
@@ -90,6 +90,7 @@ The current repository already contains the main application skeleton and data f
 - **Node.js runtime**
 - **Tailwind CSS 4**
 - **next-intl** for interface localisation
+- **OpenAI Responses API** for structured bilingual content generation
 - **ESLint**
 
 ### Data
@@ -101,7 +102,8 @@ The current repository already contains the main application skeleton and data f
 
 - **Docker**
 - **Docker Compose**
-- **Nginx configuration** is present in the repository for reverse-proxy/deployment use
+- **Nginx** reverse proxy for production HTTP/HTTPS
+- **Certbot** for Let's Encrypt certificate issue and renewal
 - **Makefile** for convenience commands
 
 ### Package Management
@@ -116,9 +118,9 @@ The current repository already contains the main application skeleton and data f
 
 ---
 
-## 4. Target Technical Architecture
+## 4. Technical Architecture
 
-The proof of concept should remain a small monolithic Next.js application.
+The proof of concept is a small monolithic Next.js application.
 
 ```text
 +-----------------------------+
@@ -144,11 +146,11 @@ The proof of concept should remain a small monolithic Next.js application.
 |       |                         |                |
 |       v                         v                |
 | Application Services       Data Access Layer     |
-| - Learner Service          - Profile DAO         |
-| - STEM Interpreter         - Session DAO         |
-| - Scaffolding Service            |               |
-| - Adaptation Service             v               |
-| - LLM Service                MongoDB             |
+| - Learner/Profile          - Profile DAO         |
+| - Session Generation      - Session DAO         |
+| - Session Lifecycle             |               |
+| - Adaptation                    v               |
+| - Follow-Up                 MongoDB             |
 |       |                                          |
 +-------+------------------------------------------+
         |
@@ -156,7 +158,7 @@ The proof of concept should remain a small monolithic Next.js application.
         v
 +-----------------------------+
 |       External LLM API      |
-|  e.g. OpenAI provider       |
+|  OpenAI Responses API       |
 +-----------------------------+
 ```
 
@@ -187,10 +189,13 @@ The proof of concept should remain a small monolithic Next.js application.
 
 ```text
 .
+├── .env.example
+├── .env.production.example
 ├── Dockerfile
 ├── EC2KeyPair.pem
 ├── Makefile
 ├── README.md
+├── README.deploy.md
 ├── app
 │   ├── api
 │   │   ├── preferences
@@ -216,9 +221,17 @@ The proof of concept should remain a small monolithic Next.js application.
 ├── components
 │   ├── LocalSwitcher.tsx
 │   ├── history
+│   │   └── HistoryList.tsx
 │   ├── home
+│   │   ├── HomeInquiry.tsx
+│   │   └── PreferencesDialog.tsx
 │   ├── layout
-│   └── learning
+│   │   └── AppHeader.tsx
+│   └── learn
+│       ├── FollowUpSection.tsx
+│       ├── LearningSession.tsx
+│       ├── SessionContent.tsx
+│       └── types.ts
 ├── data
 │   ├── dao
 │   │   ├── profile.dao.ts
@@ -232,7 +245,8 @@ The proof of concept should remain a small monolithic Next.js application.
 │   └── tx
 │       └── index.js
 ├── docker-compose.yml
-├── env.local
+├── docker-compose.prod.yml
+├── deploy.sh
 ├── eslint.config.mjs
 ├── i18n
 │   ├── locales
@@ -245,14 +259,22 @@ The proof of concept should remain a small monolithic Next.js application.
 ├── next-env.d.ts
 ├── next.config.ts
 ├── nginx
-│   └── default.conf
+│   ├── default.conf
+│   ├── http.prod.conf.template
+│   └── https.prod.conf.template
 ├── package-lock.json
 ├── package.json
 ├── postcss.config.mjs
 ├── proxy.ts
 ├── public
+│   └── og.png
 ├── services
-│   └── learner.service.ts
+│   ├── adaptation.service.ts
+│   ├── followup.service.ts
+│   ├── learner.service.ts
+│   ├── profile.service.ts
+│   ├── session-lifecycle.service.ts
+│   └── session.service.ts
 └── tsconfig.json
 ```
 
@@ -274,45 +296,47 @@ The proof of concept should remain a small monolithic Next.js application.
 | `nginx/` | Reverse-proxy configuration |
 | `Dockerfile` | Application container image |
 | `docker-compose.yml` | Local/container orchestration |
+| `docker-compose.prod.yml` | Production app, database, Nginx, and Certbot orchestration |
+| `deploy.sh` / `README.deploy.md` | EC2 HTTPS deployment automation and instructions |
 
-### Planned Service Additions
+### Current Service Layer
 
-The target service layer should evolve toward:
+The service layer is currently organised as:
 
 ```text
 services/
+├── adaptation.service.ts
+├── followup.service.ts
 ├── learner.service.ts
-├── llm.service.ts
-├── stem-interpreter.service.ts
-├── scaffolding.service.ts
-└── adaptation.service.ts
+├── profile.service.ts
+├── session-lifecycle.service.ts
+└── session.service.ts
 ```
 
-Suggested responsibilities:
+Responsibilities:
 
 ```text
 learner.service.ts
   -> resolve anonymous learner/profile
 
-stem-interpreter.service.ts
-  -> validate STEM scope
-  -> identify concept
-  -> interpret technical context
-  -> detect ambiguity
+profile.service.ts
+  -> validate preference updates
 
-scaffolding.service.ts
-  -> apply language preferences
-  -> build initial structured learning response
-  -> build follow-up context
+session.service.ts
+  -> validate and classify STEM inquiries
+  -> generate structured initial bilingual content
+  -> create learning sessions
+
+session-lifecycle.service.ts
+  -> retrieve sessions and enforce completion updates
 
 adaptation.service.ts
   -> map learner response to support strategy
   -> enforce maximum adaptation rounds
   -> update understanding/status
 
-llm.service.ts
-  -> provider-specific LLM calls
-  -> structured response validation
+followup.service.ts
+  -> validate, scope, generate, and persist follow-up answers
 ```
 
 ---
@@ -324,29 +348,32 @@ llm.service.ts
 | Variable | Required | Purpose |
 |---|---|---|
 | `DB_URL` | Yes | MongoDB connection URI |
-| `OPENAI_API_KEY` | Required once LLM is enabled | Server-side LLM provider credential |
+| `OPENAI_API_KEY` | Yes for learning generation | Server-side OpenAI credential |
+| `OPENAI_MODEL` | No | OpenAI model override; examples use `gpt-5.4-mini` |
+| `NEXT_PUBLIC_APP_URL` | No | Absolute application URL used as the metadata base; defaults to `http://localhost:3000` |
 | `PORT` | No | Application port, default `3000` |
 | `HOSTNAME` | No | Bind address, typically `0.0.0.0` in Docker |
 
 ### Local Setup
 
-The current repository uses `env.local` as an example configuration file.
+The repository provides `.env.example` for local configuration.
 
 ```bash
-cp env.local .env.local
+cp .env.example .env.local
 ```
 
-Replace only local values in `.env.local`.
+Set `OPENAI_API_KEY`; the example `DB_URL` connects to the local Docker MongoDB port.
 
-### Recommended Future Convention
+### Environment File Convention
 
-Rename the committed example file to:
+Committed templates:
 
 ```text
 .env.example
+.env.production.example
 ```
 
-and keep all real environment files ignored:
+All real environment files remain ignored:
 
 ```text
 .env
@@ -364,7 +391,7 @@ Never commit real API keys or database credentials.
 
 ```bash
 npm install
-cp env.local .env.local
+cp .env.example .env.local
 docker compose up -d mongodb
 npm run dev
 ```
@@ -387,7 +414,7 @@ make run
 docker compose up --build -d
 ```
 
-The current stack is intended to start:
+The current stack starts:
 
 1. MongoDB;
 2. database connection initialisation;
@@ -480,7 +507,7 @@ This is anonymous persistence, **not authentication or authorisation**.
 
 # 10. Database Design
 
-The target MongoDB design needs only two primary collections:
+The MongoDB design uses two primary collections:
 
 ```text
 MongoDB
@@ -576,7 +603,7 @@ Represents one learner's learning interaction with one main STEM concept.
 
 A learner may have **many** learning sessions.
 
-### Target Shape
+### Current Shape
 
 ```ts
 LearningSession {
@@ -601,7 +628,7 @@ LearningSession {
 
   reflectivePrompt: BilingualText
 
-  hint?: BilingualText
+  hint: BilingualText
 
   understanding:
     "high" |
@@ -622,6 +649,9 @@ LearningSession {
   followUps: FollowUp[]
 
   preferencesSnapshot: {
+    uiLanguage:
+      "en" | "my"
+
     supportLanguage:
       "bilingual" | "burmese" | "english"
 
@@ -630,6 +660,9 @@ LearningSession {
 
     learningStyle:
       "guided" | "concise" | "more_examples"
+
+    theme:
+      "light" | "dark"
   }
 
   createdAt: Date
@@ -724,7 +757,7 @@ review_recommended
 
 describes the **learning-session lifecycle**.
 
-Recommended behavior:
+Current behavior:
 
 | Learner State | Understanding | Status |
 |---|---|---|
@@ -735,7 +768,7 @@ Recommended behavior:
 | Learner needs more explanation | `needs_support` | `in_progress` |
 | Still needs support after round 2 | `needs_support` or latest value | `review_recommended` |
 
-### Recommended Indexes
+### Current Indexes
 
 Profile:
 
@@ -750,18 +783,12 @@ sessionId unique
 learnerId + updatedAt descending
 ```
 
-### Important Existing Schema Corrections
+### Implemented Schema and Identifier Contract
 
-Before implementing the session APIs:
-
-1. **Remove `unique` from `LearningSession.learnerId`.**
-   - One learner must be able to create multiple learning sessions.
-
-2. **Choose one public session identifier contract.**
-   - The current code mixes MongoDB `_id` lookup with a declared `sessionId`.
-   - Recommended: expose `sessionId` in routes and make it unique.
-   - Alternatively, remove `sessionId` and consistently use `_id`.
-   - Do not keep both unless their roles are explicit.
+- `learnerId` is not unique on learning sessions, so one learner can own many sessions.
+- `sessionId` is a unique UUID and is the public identifier used by DAOs, APIs, and `/learn/[sessionId]` URLs.
+- MongoDB `_id` remains an internal database identifier.
+- `{ learnerId: 1, updatedAt: -1 }` supports latest-first history queries.
 
 ---
 
@@ -773,19 +800,19 @@ All APIs are under:
 /api
 ```
 
-### Target API Summary
+### Current API Summary
 
 | Method | Route | Status | Purpose |
 |---|---|---|---|
 | `GET` | `/api` | Implemented | Health/test response |
 | `GET` | `/api/preferences` | Implemented | Retrieve learner preferences |
 | `PATCH` | `/api/preferences` | Implemented | Update learner preferences |
-| `GET` | `/api/sessions` | Planned | List learner sessions |
-| `POST` | `/api/sessions` | Planned | Create learning session |
-| `GET` | `/api/sessions/:sessionId` | Planned | Get/review/resume one session |
-| `PATCH` | `/api/sessions/:sessionId` | Planned | Update controlled session lifecycle |
-| `POST` | `/api/sessions/:sessionId/respond` | Planned | Record understanding + adapt |
-| `POST` | `/api/sessions/:sessionId/followup` | Planned | Ask a scoped follow-up |
+| `GET` | `/api/sessions` | Implemented | List learner sessions |
+| `POST` | `/api/sessions` | Implemented | Create learning session |
+| `GET` | `/api/sessions/:sessionId` | Implemented | Get/review/resume one session |
+| `PATCH` | `/api/sessions/:sessionId` | Implemented | Mark a session completed |
+| `POST` | `/api/sessions/:sessionId/respond` | Implemented | Record understanding + adapt |
+| `POST` | `/api/sessions/:sessionId/followup` | Implemented | Ask a scoped follow-up |
 
 ---
 
@@ -875,7 +902,7 @@ POST /api/sessions
 Content-Type: application/json
 ```
 
-### Target Request
+### Request
 
 ```json
 {
@@ -885,7 +912,7 @@ Content-Type: application/json
 
 The learner ID should come from the server-side anonymous learner context, not the request body.
 
-### Target Server Flow
+### Server Flow
 
 ```text
 Validate request
@@ -916,12 +943,12 @@ Create LearningSession
 Return session
 ```
 
-### Target Success — `201`
+### Success — `201`
 
 ```json
 {
   "session": {
-    "sessionId": "uuid-or-selected-id",
+    "sessionId": "550e8400-e29b-41d4-a716-446655440000",
     "originalQuestion": "What is gradient descent?",
     "concept": {
       "name": "Gradient Descent",
@@ -956,13 +983,13 @@ Return session
 }
 ```
 
-### Target Error Cases
+### Error Cases
 
 | Code | Meaning |
 |---|---|
 | `400` | Invalid or empty question |
 | `422` | Query is ambiguous and needs clarification |
-| `422` or controlled `400` | Clearly outside prototype STEM scope |
+| `422` | Clearly outside prototype STEM scope |
 | `500` | Internal persistence/service error |
 | `502` | Upstream LLM failure |
 
@@ -987,7 +1014,7 @@ GET /api/sessions
 
 Return only sessions owned by the current anonymous learner.
 
-### Target Response — `200`
+### Response — `200`
 
 ```json
 {
@@ -1006,7 +1033,7 @@ Return only sessions owned by the current anonymous learner.
 }
 ```
 
-Recommended sort:
+Current sort:
 
 ```text
 updatedAt descending
@@ -1045,9 +1072,7 @@ PATCH /api/sessions/:sessionId
 Content-Type: application/json
 ```
 
-Keep updates controlled.
-
-Recommended initial use:
+Updates are restricted to:
 
 ```json
 {
@@ -1055,9 +1080,7 @@ Recommended initial use:
 }
 ```
 
-Do not allow arbitrary database field patching.
-
-The route should enforce valid lifecycle transitions.
+Arbitrary database field patching is rejected. The route accepts transitions from `in_progress` or `review_recommended` to `completed`, and treats an already-completed session as an idempotent success.
 
 ---
 
@@ -1084,7 +1107,7 @@ medium
 needs_support
 ```
 
-### Target Logic
+### Current Logic
 
 ```text
 Load session
@@ -1099,21 +1122,20 @@ Validate current adaptation round
 Record understanding
    |
    +--> high
-   |      -> key takeaway / optional deeper insight
+   |      -> key takeaway
    |
    +--> medium
-   |      -> clarification / another example / hint
+   |      -> another example
    |
    +--> needs_support
-          -> simpler explanation / different analogy /
-             more Burmese support / prerequisite clarification
+          -> simpler explanation
    |
    v
-If adaptation required:
+While fewer than two adaptations exist:
   adaptationRound += 1
    |
    v
-If learner still needs support at round 2:
+If the learner reports medium or needs_support at round 2:
   status = review_recommended
    |
    v
@@ -1162,7 +1184,7 @@ Content-Type: application/json
 }
 ```
 
-### Target Behavior
+### Current Behavior
 
 The LLM receives:
 
@@ -1172,6 +1194,8 @@ The LLM receives:
 - learner preferences;
 - latest understanding;
 - learner's follow-up question.
+
+Requests are limited to 500 characters and two persisted follow-ups per session.
 
 If the question is related to the current concept:
 
@@ -1204,7 +1228,7 @@ Do not silently replace the current session concept.
 
 The application has exactly **three primary screens**.
 
-Preferences should be implemented as a modal/drawer/popover, not a fourth main screen.
+Preferences are implemented as a modal, not a fourth main screen.
 
 ---
 
@@ -1284,11 +1308,9 @@ Learning Style
   guided (default)
   concise
   more_examples
-
-Theme
-  light
-  dark
 ```
+
+The preferences dialog currently saves these three learning-content preferences. UI language is changed in the header and stored in the `locale` cookie. The light/dark theme toggle is also in the header and is stored in browser `localStorage`.
 
 Learning-style semantics:
 
@@ -1448,7 +1470,7 @@ status = review_recommended
 
 ### Follow-Up
 
-Follow-ups remain related to the current concept.
+Follow-ups remain related to the current concept and are limited to two per session.
 
 This should not become a normal infinite chat transcript.
 
@@ -1526,10 +1548,10 @@ There are two different language concepts.
 
 ## 13.1 UI Language
 
-Controlled by:
+Controlled by the `locale` cookie:
 
 ```text
-uiLanguage = en | my
+locale = en | my
 ```
 
 Used for:
@@ -1561,7 +1583,7 @@ supportLanguage =
   english
 ```
 
-Used by the LLM/scaffolding service.
+Used by session generation and when rendering initial, adapted, and follow-up content.
 
 This does **not** have to match the UI language.
 
@@ -1574,9 +1596,9 @@ Support language: Bilingual
 
 is valid.
 
-### Accessibility Fix Required
+### Locale Metadata
 
-The root layout should set:
+The root layout sets:
 
 ```html
 <html lang="en">
@@ -1588,46 +1610,35 @@ or:
 <html lang="my">
 ```
 
-based on the resolved locale instead of always using English.
+from the resolved locale. The English and Burmese message files currently contain matching keys.
 
 ---
 
 # 14. LLM Integration Strategy
 
-The LLM integration is planned but not currently implemented.
-
-The first implementation may use OpenAI because `OPENAI_API_KEY` is already reserved, but provider-specific code should remain isolated.
+The LLM integration uses the OpenAI Responses API from server-side services. Browser code never receives the API key.
 
 ---
 
-## 14.1 LLM Service Boundary
+## 14.1 Current LLM Service Boundaries
 
-Target:
+Provider calls currently live in:
 
 ```text
-services/llm.service.ts
+services/session.service.ts
+services/adaptation.service.ts
+services/followup.service.ts
 ```
 
-Conceptual interface:
-
-```ts
-interface LLMService {
-  interpretStemInquiry(...)
-  generateInitialScaffolding(...)
-  generateAdaptedSupport(...)
-  answerScopedFollowUp(...)
-}
-```
-
-All calls must happen server-side.
+Each service uses a strict JSON Schema response format, disables provider storage with `store: false`, validates the parsed response, and applies a 20-second abort timeout. A shared provider client is not yet extracted.
 
 ---
 
-## 14.2 Recommended Call Strategy
+## 14.2 Current Call Strategy
 
 Do not create a separate LLM request for every display section.
 
-For the initial learning session, prefer **one structured generation request**:
+The initial learning session uses **one structured generation request**:
 
 ```text
 Learner Question
@@ -1663,15 +1674,14 @@ Adaptation and follow-up should use separate calls because they depend on later 
 
 ---
 
-## 14.3 Target Structured Initial Output
+## 14.3 Current Structured Initial Output
 
 Example contract:
 
 ```json
 {
-  "isStem": true,
-  "needsClarification": false,
-  "clarificationQuestion": null,
+  "outcome": "ready",
+  "message": "",
   "concept": {
     "name": "Gradient Descent",
     "domain": "Machine Learning"
@@ -1701,9 +1711,7 @@ Example contract:
 }
 ```
 
-The server must validate this structure before storing or rendering it.
-
-A schema-validation library such as Zod is recommended if not already present.
+The request uses OpenAI strict JSON Schema output, followed by application-level shape and non-empty-content validation before persistence.
 
 ---
 
@@ -1760,10 +1768,10 @@ high
   -> key_takeaway
 
 medium
-  -> another_example | clarification | analogy | hint
+  -> another_example
 
 needs_support
-  -> simpler_explanation | analogy | clarification
+  -> simpler_explanation
 ```
 
 Then the LLM generates content for that goal.
@@ -1796,11 +1804,12 @@ Learner Preferences
 Follow-Up Question
 ```
 
-Target output:
+Structured model output:
 
 ```json
 {
   "relatedToCurrentConcept": true,
+  "message": "",
   "answer": {
     "en": "...",
     "my": "..."
@@ -1813,25 +1822,28 @@ If false:
 ```json
 {
   "relatedToCurrentConcept": false,
-  "suggestedConcept": "...",
-  "answer": null
+  "message": "This appears to be a different STEM concept. Start a new learning session?",
+  "answer": {
+    "en": "",
+    "my": ""
+  }
 }
 ```
 
-The application can then offer to create a new session.
+The API maps the unrelated result to `422` with `newSessionRecommended: true`; the current UI displays the returned message.
 
 ---
 
 ## 14.7 Output Validation
 
-Before content is persisted:
+Before content is persisted, the current services:
 
 1. validate JSON/schema;
 2. ensure required English/Burmese fields exist;
-3. ensure strings are non-empty;
-4. ensure enum values are valid;
+3. ensure generated session and related-answer strings are non-empty;
+4. constrain model classifications through strict schemas;
 5. reject malformed output;
-6. never increment adaptation above round 2.
+6. enforce adaptation and follow-up limits in application/database logic.
 
 Do not parse uncontrolled prose with fragile string operations.
 
@@ -1839,7 +1851,7 @@ Do not parse uncontrolled prose with fragile string operations.
 
 ## 14.8 LLM Failure Handling
 
-Recommended behavior:
+Current behavior:
 
 ```text
 Timeout / provider error
@@ -1852,17 +1864,15 @@ UI shows:
 "Unable to prepare the explanation right now."
    |
    v
-[Retry]
+[Learner may submit again]
 ```
 
 Do not expose raw provider exceptions to the learner.
 
-Recommended initial approach:
-
-- short server-side timeout;
-- one controlled retry at most for transient failure;
-- log technical details server-side;
-- return generic user-facing error.
+- 20-second server-side timeout;
+- no automatic provider retry;
+- technical details logged server-side;
+- controlled `502` API errors and generic user-facing messages.
 
 ---
 
@@ -1900,6 +1910,10 @@ adaptationRound = 0
 in_progress
 understanding = high
        |
+       v
+key_takeaway adaptation (while round < 2)
+adaptationRound + 1
+       |
        | learner finishes
        v
 completed
@@ -1914,8 +1928,9 @@ understanding = medium
        v
 adaptationRound + 1
        |
-       v
-in_progress
+       +--> round < 2 -> in_progress
+       |
+       +--> round = 2 -> review_recommended
 ```
 
 ## Response: Needs Support
@@ -1933,43 +1948,35 @@ adaptationRound + 1
                   -> review_recommended
 ```
 
-These transitions should be enforced in service/API logic, not only visually.
+These transitions are enforced in service/API logic as well as reflected in the UI.
 
 ---
 
-# 16. Component Plan
+# 16. Component Structure
 
-Suggested target components:
+Current components:
 
 ```text
 components/
+├── LocalSwitcher.tsx
 ├── home/
-│   ├── QuestionInput.tsx
-│   ├── ExamplePrompts.tsx
+│   ├── HomeInquiry.tsx
 │   └── PreferencesDialog.tsx
 │
-├── learning/
-│   ├── ConceptHeader.tsx
-│   ├── SimpleExplanation.tsx
-│   ├── RealWorldExample.tsx
-│   ├── TechnicalExplanation.tsx
-│   ├── ReflectivePrompt.tsx
-│   ├── Hint.tsx
-│   ├── UnderstandingResponse.tsx
-│   ├── AdaptedSupport.tsx
-│   └── FollowUpInput.tsx
+├── learn/
+│   ├── FollowUpSection.tsx
+│   ├── LearningSession.tsx
+│   ├── SessionContent.tsx
+│   └── types.ts
 │
 ├── history/
-│   ├── HistoryList.tsx
-│   └── HistoryCard.tsx
+│   └── HistoryList.tsx
 │
 └── layout/
-    ├── Header.tsx
-    ├── Navigation.tsx
-    └── ThemeControl.tsx
+    └── AppHeader.tsx
 ```
 
-Component files should remain presentation-focused. Network calls and domain logic should not be spread across small UI components.
+`HomeInquiry`, `LearningSession`, and `HistoryList` own screen-level data fetching and interaction state. Smaller components render preferences, bilingual content, adaptations, follow-ups, navigation, locale controls, and theme controls.
 
 ---
 
@@ -2002,14 +2009,14 @@ Component files should remain presentation-focused. Network calls and domain log
 
 ### Themes
 
-Support:
+Implemented:
 
 ```text
 light
 dark
 ```
 
-Theme is a learner preference, not a separate screen.
+Theme is toggled in the application header and persisted in browser `localStorage`. Although the profile schema also contains a `theme` preference, the current toggle does not synchronize it to MongoDB.
 
 ---
 
@@ -2134,13 +2141,13 @@ Do not use it to protect sensitive personal information.
 
 ---
 
-# 20. Docker / Deployment Plan
+# 20. Docker / Deployment
 
-The target proof-of-concept deployment can remain simple:
+The repository includes local and production Docker Compose configurations. Production uses Nginx, Certbot, Next.js, and MongoDB; detailed EC2 and HTTPS instructions are in `README.deploy.md`.
 
 ```text
                  +----------------+
-Internet ------> | Nginx (optional)|
+Internet ------> | Nginx           |
                  +-------+--------+
                          |
                          v
@@ -2159,7 +2166,7 @@ Next.js server
       +------> External LLM API
 ```
 
-For local development, Nginx is optional.
+For local development, `docker-compose.yml` exposes the application on port `3000` and MongoDB on `27017`; Nginx is not used. In production, only Nginx publishes ports `80` and `443`, while the application and MongoDB remain on the internal Docker network.
 
 Do not introduce unnecessary infrastructure such as:
 
@@ -2180,7 +2187,7 @@ Legend:
 
 ```text
 [x] Implemented
-[~] Partially implemented / placeholder
+[~] Partially implemented
 [ ] Planned
 ```
 
@@ -2194,9 +2201,9 @@ Legend:
 - [x] English/Burmese locale foundation
 - [x] Anonymous learner UUID
 - [x] Profile schema
-- [~] LearningSession schema
-- [ ] Fix LearningSession learner-ID uniqueness
-- [ ] Standardise session identifier contract
+- [x] LearningSession schema
+- [x] Allow multiple sessions per learner
+- [x] UUID session identifier contract
 
 ## Preferences
 
@@ -2207,84 +2214,85 @@ Legend:
 - [x] Explanation-level preference model
 - [x] Learning-style preference model
 - [x] Theme preference model
-- [ ] Final preferences modal UI
-- [ ] Apply all saved preferences to visible learning behavior
+- [x] Learning-content preferences modal UI
+- [x] Apply support language, explanation level, and learning style
+- [~] Synchronize UI language and theme controls with profile preferences
 
 ## Screen 1 — Home
 
-- [~] Route/page exists
-- [ ] Final home layout
-- [ ] STEM question input
-- [ ] Send flow
-- [ ] Example prompts
-- [ ] Preferences modal
-- [x] Locale switch foundation
-- [ ] History navigation
-- [ ] Loading/error states
+- [x] Route/page and responsive home layout
+- [x] STEM question input
+- [x] Send flow
+- [x] Example prompts
+- [x] Preferences modal
+- [x] Locale switcher
+- [x] History navigation
+- [x] Loading/error states
 
 ## Session Creation
 
-- [~] Route exists
-- [ ] Request validation
-- [ ] Load learner preferences
-- [ ] STEM scope interpretation
-- [ ] Concept identification
-- [ ] Domain/context interpretation
-- [ ] Initial LLM structured generation
-- [ ] LLM output validation
-- [ ] Persist LearningSession
-- [ ] Return created session
+- [x] Route exists
+- [x] Request validation
+- [x] Load learner preferences
+- [x] STEM scope interpretation
+- [x] Concept identification
+- [x] Domain/context interpretation
+- [x] Initial LLM structured generation
+- [x] LLM output validation
+- [x] Persist LearningSession
+- [x] Return created session
 
 ## Screen 2 — Learning Session
 
-- [~] Dynamic route exists
-- [ ] Load session
-- [ ] Concept header
-- [ ] Simple explanation
-- [ ] Real-world example/analogy
-- [ ] Technical explanation
-- [ ] Reflective prompt
-- [ ] Optional hint
-- [ ] Understanding buttons
-- [ ] Adapted support rendering
-- [ ] Follow-up input
-- [ ] Finish learning action
-- [ ] Resume existing state
-- [ ] Burmese/English content rendering
+- [x] Dynamic route exists
+- [x] Load session
+- [x] Concept header
+- [x] Simple explanation
+- [x] Real-world example/analogy
+- [x] Technical explanation
+- [x] Reflective prompt
+- [x] Optional hint
+- [x] Understanding buttons
+- [x] Adapted support rendering
+- [x] Follow-up input
+- [x] Finish learning action
+- [x] Resume existing state
+- [x] Burmese/English content rendering
 
 ## Adaptation
 
-- [~] API route exists
-- [ ] Validate understanding
-- [ ] Use `high | medium | needs_support`
-- [ ] Adaptation strategy service
-- [ ] Structured adaptation LLM call
-- [ ] Persist adaptation
-- [ ] Increment round
-- [ ] Enforce maximum round = 2
-- [ ] `review_recommended` transition
-- [ ] Meaningfully different adapted support
+- [x] API route exists
+- [x] Validate understanding
+- [x] Use `high | medium | needs_support`
+- [x] Adaptation strategy service
+- [x] Structured adaptation LLM call
+- [x] Persist adaptation
+- [x] Increment round
+- [x] Enforce maximum round = 2
+- [x] `review_recommended` transition
+- [x] Prompt for support that differs from previous adaptations
 
 ## Follow-Up
 
-- [~] API route exists
-- [ ] Load current session context
-- [ ] Determine relation to current concept
-- [ ] Generate scoped answer
-- [ ] Persist follow-up
-- [ ] Offer new session for new primary concept
+- [x] API route exists
+- [x] Load current session context
+- [x] Determine relation to current concept
+- [x] Generate scoped answer
+- [x] Persist follow-up
+- [x] Enforce maximum of two follow-ups
+- [~] Recommend a new session for a different primary concept; no dedicated UI action yet
 
 ## Screen 3 — History
 
-- [~] Route/page exists
-- [ ] `GET /api/sessions`
-- [ ] Sort by latest update
-- [ ] History cards/list
-- [ ] Understanding display
-- [ ] Status display
-- [ ] Review action
-- [ ] Resume action
-- [ ] Continue Learning action
+- [x] Route/page exists
+- [x] `GET /api/sessions`
+- [x] Sort by latest update
+- [x] History cards/list
+- [x] Understanding display
+- [x] Status display
+- [x] Review action
+- [x] Resume action
+- [x] Continue Learning action
 
 ## Localisation
 
@@ -2292,35 +2300,36 @@ Legend:
 - [x] `my.json`
 - [x] Locale cookie
 - [x] Locale switcher
-- [ ] Keep locale keys fully aligned
-- [ ] Use active locale in `<html lang>`
-- [ ] Complete Burmese UI copy for all screens/errors
+- [x] Locale keys aligned
+- [x] Use active locale in `<html lang>`
+- [x] Burmese UI copy for all current screens
+- [~] Localize server-returned validation and scope messages
 
 ## LLM
 
-- [ ] Provider client
-- [ ] Server-only API key usage
-- [ ] Initial structured-output schema
-- [ ] Initial prompt
-- [ ] Adaptation prompt
-- [ ] Follow-up prompt
-- [ ] Response validation
-- [ ] Timeout handling
+- [x] Direct OpenAI Responses API integration
+- [x] Server-only API key usage
+- [x] Initial structured-output schema
+- [x] Initial prompt
+- [x] Adaptation prompt
+- [x] Follow-up prompt
+- [x] Response validation
+- [x] Timeout handling
 - [ ] Retry policy
-- [ ] Controlled provider errors
+- [x] Controlled provider errors
 - [ ] No fabricated citation behavior
 
 ## Accessibility / UX
 
-- [ ] Final responsive layouts
-- [ ] Light mode
-- [ ] Dark mode
-- [ ] Keyboard navigation
-- [ ] Visible focus states
-- [ ] Screen-reader labels
-- [ ] Non-colour-only status indicators
+- [x] Responsive layouts
+- [x] Light mode
+- [x] Dark mode
+- [~] Keyboard navigation and dialog focus management
+- [x] Visible focus states
+- [x] Screen-reader labels for primary controls
+- [x] Non-colour-only status indicators
 - [ ] Burmese typography review
-- [ ] Mobile/tablet layout review
+- [~] Mobile/tablet layout review
 
 ## Testing
 
@@ -2337,73 +2346,31 @@ Legend:
 
 # 22. Known Technical Debt / Immediate Priorities
 
-The current repository has several issues that should be resolved before building the full learning flow.
+The core learning flow is implemented. The remaining priorities are hardening, consistency, and verification.
 
-### Priority 1 — Session Schema
+### Priority 1 — Automated Tests
 
-Fix:
+Add schema, DAO, route-handler, lifecycle/adaptation, LLM-contract, and UI tests. The project currently relies only on ESLint and a production build.
 
-```text
-LearningSession.learnerId must NOT be unique
-```
+### Priority 2 — Shared OpenAI Boundary
 
-A learner needs many historical sessions.
+Extract the duplicated Responses API request/parsing logic from the session, adaptation, and follow-up services. Centralize the model default, timeout, error mapping, and any future retry policy.
 
-### Priority 2 — Session Identifier
+### Priority 3 — Preference Consistency
 
-Choose and consistently use:
+Synchronize the locale and theme controls with the stored `uiLanguage` and `theme` profile fields, or remove those database fields if cookie/localStorage-only behavior is intentional.
 
-```text
-sessionId
-```
+### Priority 4 — Locale and Error Hardening
 
-or:
+Validate the locale cookie before dynamically loading a message file, and localize server-returned validation and scope errors rather than displaying English service messages in the Burmese UI.
 
-```text
-MongoDB _id
-```
+### Priority 5 — Follow-Up New-Session UX
 
-across:
+The API returns `newSessionRecommended: true` for an unrelated primary concept. Add a dedicated action that carries the question into a new inquiry instead of showing only an error message.
 
-- schema;
-- DAO;
-- API;
-- URLs.
+### Priority 6 — Accessibility and Burmese QA
 
-### Priority 3 — Root Locale Metadata
-
-Use the resolved locale in:
-
-```html
-<html lang="...">
-```
-
-### Priority 4 — Session DAO
-
-Extend the DAO beyond current list/find behavior to support:
-
-- create;
-- controlled update;
-- append adaptation;
-- append follow-up;
-- lifecycle updates.
-
-### Priority 5 — Service Layer
-
-Implement:
-
-```text
-stem-interpreter.service
-scaffolding.service
-adaptation.service
-llm.service
-```
-
-before placing LLM logic inside route files.
-
-### Priority 6 — LLM Structured Contract
-
-Define and validate the output contract before building UI against generated responses.
+Complete dialog focus trapping/restoration, keyboard and mobile review, and native-speaker review of Burmese typography and generated content.
 
 ### Priority 7 — Secret Hygiene
 
@@ -2415,44 +2382,30 @@ Remove `EC2KeyPair.pem` from the project directory and verify whether it has eve
 
 ```text
 Phase 1
-Fix session schema + identifier contract
+Add automated coverage for current schemas,
+services, APIs, and session state transitions
         |
         v
 Phase 2
-Complete DAO + service boundaries
+Extract a shared OpenAI client and
+standardize model/timeout/error behavior
         |
         v
 Phase 3
-Implement POST /api/sessions
-+ LLM initial structured generation
+Synchronize or simplify locale/theme preferences
++ localize server errors
         |
         v
 Phase 4
-Build final Home + Learning Session UI
+Add the new-session follow-up action
++ complete accessibility/Burmese QA
         |
         v
 Phase 5
-Implement learner response + adaptation
-        |
-        v
-Phase 6
-Implement follow-up
-        |
-        v
-Phase 7
-Implement history + resume
-        |
-        v
-Phase 8
-Complete preferences integration,
-English/Burmese UI, themes, accessibility
-        |
-        v
-Phase 9
-Automated tests + deployment polish
+Deployment verification and production hardening
 ```
 
-The adaptive learning loop should work end-to-end before optional visual polish is prioritised.
+The adaptive learning loop already works end-to-end; remaining work should prioritize reliability and evaluation over expanding the feature scope.
 
 ---
 
