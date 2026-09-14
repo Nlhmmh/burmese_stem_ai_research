@@ -373,6 +373,157 @@ docker compose --env-file .env.production -f docker-compose.prod.yml \
   logs app mongodb init-db
 ```
 
+### MongoDB exits with code 14 after the root disk fills
+
+This recovery procedure was validated during the 2026-09-14 EC2 incident. The
+8 GiB root volume had reached 100% usage for both disk blocks and inodes.
+MongoDB then terminated with exit code 14 after its Full Time Diagnostic Data
+Capture (FTDC) process could not open this temporary metrics file:
+
+```text
+FileNotOpen: Failed to open interim file
+/data/db/diagnostic.data/metrics.interim.temp
+```
+
+The EBS root volume was expanded to 16 GiB, unused Docker data was pruned, the
+MongoDB diagnostic directory was preserved and moved aside, and the stale
+MongoDB container was recreated against the existing named volume. The
+database collections remained intact, and the application and HTTPS endpoint
+returned to a healthy state.
+
+First, inspect disk blocks, inodes, and Docker usage:
+
+```bash
+df -h /
+df -i /
+docker system df
+sudo du -xhd1 /var/lib/docker | sort -h
+```
+
+Unused build cache and images can be reclaimed without deleting named volumes:
+
+```bash
+docker builder prune -f
+docker image prune -a -f
+```
+
+Never add `--volumes` to a prune command, and do not run
+`docker compose down --volumes`; either action can delete the production
+MongoDB data. The production volume is named
+`burmese_stem_ai_prod_mongodb-data`.
+
+If the EC2 console shows that the EBS volume is larger but `df -h /` still
+shows the old size, extend the root partition and filesystem. Confirm the
+device and filesystem type before running the filesystem-specific command:
+
+```bash
+lsblk
+sudo growpart /dev/nvme0n1 1
+df -hT /
+
+# XFS
+sudo xfs_growfs -d /
+
+# ext4 (use this instead of the XFS command)
+sudo resize2fs /dev/nvme0n1p1
+```
+
+Verify that the new capacity and free inodes are visible:
+
+```bash
+df -h /
+df -i /
+```
+
+Before changing files in the MongoDB volume, stop MongoDB and create a
+read-only archive outside the repository. Keeping the archive outside the
+Docker build context prevents it from being copied into application images:
+
+```bash
+docker compose --env-file .env.production -f docker-compose.prod.yml \
+  stop mongodb
+
+mkdir -p /home/ec2-user/mongodb-recovery-backups
+
+docker run --rm \
+  -v burmese_stem_ai_prod_mongodb-data:/source:ro \
+  -v /home/ec2-user/mongodb-recovery-backups:/backup \
+  mongo:7 \
+  bash -lc '
+    tar -czf \
+      /backup/mongodb-before-ftdc-recovery-$(date -u +%Y%m%dT%H%M%SZ).tgz \
+      -C /source .
+  '
+```
+
+The `diagnostic.data` directory contains diagnostic metrics rather than
+application collections. Preserve and move it aside so MongoDB can create a
+fresh directory:
+
+```bash
+docker run --rm \
+  -v burmese_stem_ai_prod_mongodb-data:/data/db \
+  mongo:7 \
+  bash -lc '
+    if [ -d /data/db/diagnostic.data ]; then
+      target="/data/db/diagnostic.data.disk-full-$(date -u +%Y%m%dT%H%M%SZ)"
+      mv /data/db/diagnostic.data \
+         "$target"
+    fi
+  '
+```
+
+If Docker still reports the original `no space left on device` error and the
+container's start and finish timestamps have not changed, the old container
+filesystem is stuck in its failed state. Inspect it before recovery:
+
+```bash
+docker inspect \
+  --format='Started={{.State.StartedAt}} Finished={{.State.FinishedAt}} ExitCode={{.State.ExitCode}} Error={{.State.Error}}' \
+  burmese_stem_ai_prod-mongodb-1
+```
+
+Remove and recreate only the MongoDB container. These commands retain and
+reattach the named volume; do not add `-v` or `--volumes`:
+
+```bash
+docker compose --env-file .env.production -f docker-compose.prod.yml \
+  rm -sf mongodb
+
+docker compose --env-file .env.production -f docker-compose.prod.yml \
+  up -d --force-recreate mongodb
+```
+
+Confirm MongoDB is healthy and validate the application collections:
+
+```bash
+docker compose --env-file .env.production -f docker-compose.prod.yml \
+  ps mongodb
+
+docker compose --env-file .env.production -f docker-compose.prod.yml \
+  exec mongodb mongosh "mongodb://localhost:27017/burmesestemai"
+```
+
+Inside `mongosh`:
+
+```javascript
+show collections
+db.profiles.countDocuments()
+db.sessions.countDocuments()
+exit
+```
+
+Finish and verify the full deployment:
+
+```bash
+./deploy.sh deploy
+./deploy.sh status
+```
+
+Do not use `mongod --repair` unless new MongoDB logs show actual storage-engine
+corruption and a verified backup exists. Exit code 14 alone does not establish
+that application data is corrupt.
+
 ### Docker build runs out of memory
 
 A small free-tier instance may not have enough memory for the Next.js build.
