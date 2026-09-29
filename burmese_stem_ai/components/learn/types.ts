@@ -1,7 +1,10 @@
 import type { Preferences } from "@/data/schemas/profile.schema";
 import type { SessionStatus } from "@/lib/constants";
 import type {
+  AdaptationPresentationOverride,
+  ConceptCorrection,
   LegacyUnderstanding,
+  LearnerResponseEvent,
   OverallSupportNeed,
   SupportType
 } from "@/lib/session-domain";
@@ -12,6 +15,8 @@ export type Adaptation = {
   learnerResponse: OverallSupportNeed;
   supportType: SupportType;
   content: BilingualText;
+  presentationOverride?: AdaptationPresentationOverride;
+  conceptCorrection?: ConceptCorrection;
   round: number;
   createdAt: string;
 };
@@ -38,6 +43,7 @@ export type LearningSessionRecord = {
   status: SessionStatus;
   adaptationRound: number;
   adaptations: Adaptation[];
+  responseEvents: LearnerResponseEvent<string>[];
   followUps: FollowUp[];
   preferencesSnapshot?: Preferences;
 };

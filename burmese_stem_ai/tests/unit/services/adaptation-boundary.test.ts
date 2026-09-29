@@ -54,10 +54,38 @@ describe("adaptation service boundaries", () => {
       learnerId: "learner-a",
       sessionId: session.sessionId,
       expectedRound: 2,
+      expectedResponseEventCount: 0,
       understanding: "needs_support",
       status: "review_recommended",
-      adaptation: null
+      adaptation: null,
+      responseEvent: {
+        overallSupportNeed: "needs_support",
+        difficultyType: null,
+        route: "stage_5_scaffold",
+        roundBefore: 2,
+        roundAfter: 2,
+        createdAt: expect.any(Date)
+      }
     });
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("surfaces a conflict when a concurrent capped response wins first", async () => {
+    const session = makeSessionRecord({ adaptationRound: 2, responseEvents: [] });
+    daoMocks.findSession.mockResolvedValue(session);
+    daoMocks.recordSessionResponse.mockResolvedValue(null);
+
+    await expect(
+      respondToLearningSession("learner-a", session.sessionId, "needs_support")
+    ).rejects.toBeInstanceOf(SessionResponseConflictError);
+
+    expect(daoMocks.recordSessionResponse).toHaveBeenCalledWith(
+      expect.objectContaining({
+        expectedRound: 2,
+        expectedResponseEventCount: 0,
+        adaptation: null
+      })
+    );
     expect(fetchMock).not.toHaveBeenCalled();
   });
 

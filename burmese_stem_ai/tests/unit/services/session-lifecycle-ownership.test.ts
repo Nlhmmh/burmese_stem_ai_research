@@ -32,6 +32,16 @@ describe("session lifecycle ownership", () => {
     );
   });
 
+  it("normalises a legacy session without response events", async () => {
+    const legacySession = makeSessionRecord();
+    delete legacySession.responseEvents;
+    daoMocks.findSession.mockResolvedValue(legacySession);
+
+    await expect(
+      getLearningSession(legacySession.learnerId, legacySession.sessionId)
+    ).resolves.toMatchObject({ responseEvents: [] });
+  });
+
   it("keeps both ownership keys on completion", async () => {
     const existing = makeSessionRecord();
     const completed = makeSessionRecord({ status: "completed" });

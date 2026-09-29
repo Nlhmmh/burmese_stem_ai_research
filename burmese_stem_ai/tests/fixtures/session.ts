@@ -28,6 +28,7 @@ export function makeSessionRecord(overrides: Partial<SessionRecord> = {}): Sessi
     status: "in_progress",
     adaptationRound: 0,
     adaptations: [],
+    responseEvents: [],
     followUps: [],
     createdAt: timestamp,
     updatedAt: timestamp

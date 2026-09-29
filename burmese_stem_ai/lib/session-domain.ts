@@ -21,6 +21,19 @@ export const DIFFICULTY_TYPES = [
 ] as const;
 export type DifficultyType = (typeof DIFFICULTY_TYPES)[number];
 
+export const PRESENTATION_OVERRIDES = ["bilingual"] as const;
+export type AdaptationPresentationOverride = (typeof PRESENTATION_OVERRIDES)[number];
+
+export type ConceptReference = {
+  name: string;
+  domain: string;
+};
+
+export type ConceptCorrection = {
+  previous: ConceptReference;
+  corrected: ConceptReference;
+};
+
 /** Bounded Stage 7 route families. */
 export const ADAPTATION_ROUTES = [
   "fade",
@@ -60,6 +73,7 @@ export type Stage5Support = {
 export type LanguageSupport = {
   route: "language_support";
   supportType: ScaffoldSupportType;
+  presentationOverride: AdaptationPresentationOverride;
 };
 
 export type ConceptClarificationSupport = {
@@ -70,6 +84,7 @@ export type ConceptClarificationSupport = {
 export type ContextReinterpretationSupport = {
   route: "context_reinterpretation";
   supportType: ScaffoldSupportType;
+  conceptCorrection: ConceptCorrection;
 };
 
 /** A route and support-type pairing that is valid for the refined workflow. */
@@ -81,14 +96,14 @@ export type RouteSpecificSupport =
   | ContextReinterpretationSupport;
 
 /**
- * Canonical trace event for one Stage 6 response and its Stage 7 decision.
- * Persistence is added separately; this type establishes the shared contract.
+ * Canonical persisted trace event for one Stage 6 response and its Stage 7
+ * decision.
  */
-export type LearnerResponseEvent = {
+export type LearnerResponseEvent<Timestamp = Date> = {
   overallSupportNeed: OverallSupportNeed;
   difficultyType: DifficultyType | null;
   route: AdaptationRoute;
   roundBefore: number;
   roundAfter: number;
-  createdAt: Date;
+  createdAt: Timestamp;
 };

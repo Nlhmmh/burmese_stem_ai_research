@@ -7,6 +7,8 @@ import {
 import { MAX_ADAPTATION_ROUNDS, type SessionStatus } from "@/lib/constants";
 import {
   OVERALL_SUPPORT_NEEDS,
+  type AdaptationRoute,
+  type LearnerResponseEvent,
   type OverallSupportNeed,
   type SupportType
 } from "@/lib/session-domain";
@@ -94,14 +96,24 @@ export async function respondToLearningSession(
   const adaptation = canAdapt
     ? await createAdaptation(session, overallSupportNeed, nextRound)
     : null;
+  const responseEvent: LearnerResponseEvent = {
+    overallSupportNeed,
+    difficultyType: null,
+    route: selectTraceRoute(overallSupportNeed),
+    roundBefore: currentRound,
+    roundAfter: adaptation ? nextRound : currentRound,
+    createdAt: new Date()
+  };
 
   const updatedSession = await recordSessionResponse({
     learnerId,
     sessionId,
     expectedRound: currentRound,
+    expectedResponseEventCount: session.responseEvents?.length ?? 0,
     understanding: overallSupportNeed,
     status,
-    adaptation
+    adaptation,
+    responseEvent
   });
 
   if (!updatedSession) {
@@ -116,6 +128,10 @@ export async function respondToLearningSession(
     adaptationRound: updatedSession.adaptationRound,
     adaptation
   };
+}
+
+function selectTraceRoute(overallSupportNeed: OverallSupportNeed): AdaptationRoute {
+  return overallSupportNeed === "high" ? "fade" : "stage_5_scaffold";
 }
 
 function selectStatus(overallSupportNeed: OverallSupportNeed, round: number): SessionStatus {
