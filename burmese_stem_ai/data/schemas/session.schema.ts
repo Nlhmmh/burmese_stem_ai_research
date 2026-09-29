@@ -2,6 +2,7 @@ import {
   MAX_ADAPTATION_ROUNDS,
   MAX_FOLLOW_UP_QUESTION_LENGTH,
   MAX_FOLLOW_UPS,
+  OVERALL_SUPPORT_NEEDS,
   SESSION_STATUSES,
   SUPPORT_TYPES,
   UNDERSTANDING_LEVELS
@@ -21,7 +22,7 @@ const bilingualTextSchema = new Schema(
 
 const adaptationSchema = new Schema(
   {
-    learnerResponse: { type: String, enum: UNDERSTANDING_LEVELS, required: true },
+    learnerResponse: { type: String, enum: OVERALL_SUPPORT_NEEDS, required: true },
     supportType: { type: String, enum: SUPPORT_TYPES, required: true },
     content: { type: bilingualTextSchema, required: true },
     round: { type: Number, min: 1, max: MAX_ADAPTATION_ROUNDS, required: true },
@@ -60,6 +61,7 @@ const sessionSchema = new Schema(
     },
     reflectivePrompt: { type: bilingualTextSchema, required: true, trim: true },
     hint: { type: bilingualTextSchema, required: true, trim: true },
+    // Legacy field name: values represent learner-reported support need, not measured mastery.
     understanding: { type: String, enum: UNDERSTANDING_LEVELS, default: null },
     status: { type: String, enum: SESSION_STATUSES, default: SESSION_STATUSES[1] }, // Default to "in_progress"
     adaptationRound: { type: Number, default: 0, min: 0, max: MAX_ADAPTATION_ROUNDS },

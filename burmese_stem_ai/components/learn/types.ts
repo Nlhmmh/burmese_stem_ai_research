@@ -1,15 +1,15 @@
 import type { Preferences } from "@/data/schemas/profile.schema";
+import type { SessionStatus } from "@/lib/constants";
 import type {
-  SessionStatus,
-  SupportType,
-  UnderstandingLevel
-} from "@/lib/constants";
+  LegacyUnderstanding,
+  OverallSupportNeed,
+  SupportType
+} from "@/lib/session-domain";
 
 export type BilingualText = { en: string; my: string };
-export type LearnerResponse = Exclude<UnderstandingLevel, null>;
 
 export type Adaptation = {
-  learnerResponse: LearnerResponse;
+  learnerResponse: OverallSupportNeed;
   supportType: SupportType;
   content: BilingualText;
   round: number;
@@ -33,7 +33,8 @@ export type LearningSessionRecord = {
   };
   reflectivePrompt: BilingualText;
   hint: BilingualText;
-  understanding: UnderstandingLevel;
+  /** Legacy API field name; the value is a self-reported support need. */
+  understanding: LegacyUnderstanding;
   status: SessionStatus;
   adaptationRound: number;
   adaptations: Adaptation[];

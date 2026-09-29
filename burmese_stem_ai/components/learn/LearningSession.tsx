@@ -1,15 +1,16 @@
 "use client";
 
 import { MAX_ADAPTATION_ROUNDS, MAX_FOLLOW_UPS, type SessionStatus } from "@/lib/constants";
+import type { OverallSupportNeed } from "@/lib/session-domain";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import FollowUpSection from "./FollowUpSection";
 import { AdaptationCard, BilingualContent, ExplanationCard } from "./SessionContent";
-import type { Adaptation, ApiError, LearnerResponse, LearningSessionRecord } from "./types";
+import type { Adaptation, ApiError, LearningSessionRecord } from "./types";
 
-const understandingOptions: Array<{
-  value: LearnerResponse;
+const overallSupportNeedOptions: Array<{
+  value: OverallSupportNeed;
   emoji: string;
   color: string;
 }> = [
@@ -61,7 +62,7 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
     return () => controller.abort();
   }, [sessionId, t]);
 
-  async function submitUnderstanding(understanding: LearnerResponse) {
+  async function submitOverallSupportNeed(overallSupportNeed: OverallSupportNeed) {
     if (!session || isResponding) return;
     setIsResponding(true);
     setActionError("");
@@ -70,10 +71,11 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
       const response = await fetch(`/api/sessions/${sessionId}/respond`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ understanding })
+        // `understanding` remains the legacy API property during migration.
+        body: JSON.stringify({ understanding: overallSupportNeed })
       });
       const data = (await response.json()) as ApiError & {
-        understanding?: LearnerResponse;
+        understanding?: OverallSupportNeed;
         status?: SessionStatus;
         adaptationRound?: number;
         adaptation?: Adaptation | null;
@@ -303,11 +305,11 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
             )}
             {canRespond && (
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                {understandingOptions.map((option) => (
+                {overallSupportNeedOptions.map((option) => (
                   <button
                     key={option.value}
                     type="button"
-                    onClick={() => void submitUnderstanding(option.value)}
+                    onClick={() => void submitOverallSupportNeed(option.value)}
                     disabled={isResponding}
                     className={`flex min-h-28 flex-col items-center justify-center gap-2 rounded-xl border-2 border-slate-200 p-4 transition focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-wait disabled:opacity-50 dark:border-slate-700 ${option.color}`}
                   >

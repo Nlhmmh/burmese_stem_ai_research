@@ -17,8 +17,8 @@ export async function POST(request: NextRequest, context: RouteContext): Promise
   try {
     const learnerId = requireLearnerId(request);
     const { sessionId } = await context.params;
-    const understanding = validateUnderstandingResponse(await readJson(request));
-    const result = await respondToLearningSession(learnerId, sessionId, understanding);
+    const overallSupportNeed = validateUnderstandingResponse(await readJson(request));
+    const result = await respondToLearningSession(learnerId, sessionId, overallSupportNeed);
     return NextResponse.json(result);
   } catch (error) {
     if (error instanceof LearnerIdentityError) {

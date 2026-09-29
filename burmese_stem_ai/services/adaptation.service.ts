@@ -2,15 +2,17 @@ import {
   findSession,
   recordSessionResponse,
   type Adaptation,
-  type LearnerResponse,
   type SessionRecord
 } from "@/data/dao/session.dao";
-import { MAX_ADAPTATION_ROUNDS, type SessionStatus, type SupportType } from "@/lib/constants";
+import { MAX_ADAPTATION_ROUNDS, type SessionStatus } from "@/lib/constants";
+import {
+  OVERALL_SUPPORT_NEEDS,
+  type OverallSupportNeed,
+  type SupportType
+} from "@/lib/session-domain";
 
 const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
 const OPENAI_TIMEOUT_MS = 20_000;
-const ALLOWED_RESPONSES = ["high", "medium", "needs_support"] as const;
-
 const adaptationOutputSchema = {
   type: "object",
   properties: {
@@ -49,28 +51,29 @@ export class SessionNotFoundError extends Error {}
 export class SessionResponseConflictError extends Error {}
 export class AdaptationGenerationError extends Error {}
 
-export function validateUnderstandingResponse(input: unknown): LearnerResponse {
+/** Validates the legacy API field that carries the overall self-reported support need. */
+export function validateUnderstandingResponse(input: unknown): OverallSupportNeed {
   if (typeof input !== "object" || input === null || Array.isArray(input)) {
     throw new ResponseValidationError("Request body must be a JSON object");
   }
 
-  const understanding = (input as Record<string, unknown>).understanding;
+  const legacyUnderstanding = (input as Record<string, unknown>).understanding;
   if (
-    typeof understanding !== "string" ||
-    !ALLOWED_RESPONSES.includes(understanding as LearnerResponse)
+    typeof legacyUnderstanding !== "string" ||
+    !OVERALL_SUPPORT_NEEDS.includes(legacyUnderstanding as OverallSupportNeed)
   ) {
     throw new ResponseValidationError(
-      `Understanding must be one of: ${ALLOWED_RESPONSES.join(", ")}`
+      `Understanding must be one of: ${OVERALL_SUPPORT_NEEDS.join(", ")}`
     );
   }
 
-  return understanding as LearnerResponse;
+  return legacyUnderstanding as OverallSupportNeed;
 }
 
 export async function respondToLearningSession(
   learnerId: string,
   sessionId: string,
-  understanding: LearnerResponse
+  overallSupportNeed: OverallSupportNeed
 ) {
   const session = await findSession(learnerId, sessionId);
   if (!session) {
@@ -87,14 +90,16 @@ export async function respondToLearningSession(
 
   const canAdapt = currentRound < MAX_ADAPTATION_ROUNDS;
   const nextRound = canAdapt ? currentRound + 1 : currentRound;
-  const status = selectStatus(understanding, nextRound);
-  const adaptation = canAdapt ? await createAdaptation(session, understanding, nextRound) : null;
+  const status = selectStatus(overallSupportNeed, nextRound);
+  const adaptation = canAdapt
+    ? await createAdaptation(session, overallSupportNeed, nextRound)
+    : null;
 
   const updatedSession = await recordSessionResponse({
     learnerId,
     sessionId,
     expectedRound: currentRound,
-    understanding,
+    understanding: overallSupportNeed,
     status,
     adaptation
   });
@@ -113,8 +118,8 @@ export async function respondToLearningSession(
   };
 }
 
-function selectStatus(understanding: LearnerResponse, round: number): SessionStatus {
-  if (understanding !== "high" && round >= MAX_ADAPTATION_ROUNDS) {
+function selectStatus(overallSupportNeed: OverallSupportNeed, round: number): SessionStatus {
+  if (overallSupportNeed !== "high" && round >= MAX_ADAPTATION_ROUNDS) {
     return "review_recommended";
   }
   return "in_progress";
@@ -122,7 +127,7 @@ function selectStatus(understanding: LearnerResponse, round: number): SessionSta
 
 async function createAdaptation(
   session: SessionRecord,
-  learnerResponse: LearnerResponse,
+  learnerResponse: OverallSupportNeed,
   round: number
 ): Promise<Adaptation> {
   const supportType = selectSupportType(learnerResponse);
@@ -136,8 +141,8 @@ async function createAdaptation(
   };
 }
 
-function selectSupportType(understanding: LearnerResponse): SupportType {
-  switch (understanding) {
+function selectSupportType(overallSupportNeed: OverallSupportNeed): SupportType {
+  switch (overallSupportNeed) {
     case "high":
       return "key_takeaway";
     case "medium":
@@ -149,7 +154,7 @@ function selectSupportType(understanding: LearnerResponse): SupportType {
 
 async function generateAdaptation(
   session: SessionRecord,
-  learnerResponse: LearnerResponse,
+  learnerResponse: OverallSupportNeed,
   supportType: SupportType
 ): Promise<GeneratedAdaptation> {
   const apiKey = process.env.OPENAI_API_KEY;
@@ -215,7 +220,7 @@ async function generateAdaptation(
 }
 
 function buildAdaptationInstructions(
-  learnerResponse: LearnerResponse,
+  learnerResponse: OverallSupportNeed,
   supportType: SupportType
 ): string {
   return `

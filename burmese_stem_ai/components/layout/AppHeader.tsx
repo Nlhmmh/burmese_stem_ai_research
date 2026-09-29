@@ -3,6 +3,7 @@
 import LocaleSwitcher from "@/components/LocalSwitcher";
 import type { Locale } from "next-intl";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
@@ -35,7 +36,7 @@ export default function AppHeader({ changeLocaleAction }: Props) {
           className="flex items-center gap-2.5 font-bold text-slate-900 transition hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-lg  text-lg font-black text-white shadow-sm shadow-blue-600/30">
-            <img src="/favicon.ico" alt="Logo" className="h-5 w-5" />
+            <Image src="/favicon.ico" alt="Logo" className="h-5 w-5" width={20} height={20} />
           </span>
           <span className="hidden text-lg sm:inline">Burmese STEM AI</span>
         </Link>

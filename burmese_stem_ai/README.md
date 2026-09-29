@@ -735,7 +735,7 @@ FollowUp {
 
 ### Status Semantics
 
-Understanding and status are different concepts.
+The legacy `understanding` field and session status are different concepts.
 
 ```text
 Understanding
@@ -745,7 +745,10 @@ medium
 needs_support
 ```
 
-describes the learner's latest **self-reported understanding**.
+The stored values describe the learner's latest **self-reported overall support
+need**. They do not measure understanding, competence, or mastery. The
+`understanding` property name is retained temporarily for storage and API
+compatibility.
 
 ```text
 Status

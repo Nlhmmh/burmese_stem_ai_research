@@ -1,6 +1,11 @@
 import type { Preferences } from "@/data/schemas/profile.schema";
 import { MAX_ADAPTATION_ROUNDS, MAX_FOLLOW_UPS } from "@/lib/constants";
-import type { SessionStatus, SupportType, UnderstandingLevel } from "@/lib/constants";
+import type { SessionStatus } from "@/lib/constants";
+import type {
+  LegacyUnderstanding,
+  OverallSupportNeed,
+  SupportType
+} from "@/lib/session-domain";
 import { connectMongoDB } from "../mongodb";
 import { SessionModel } from "../schema";
 
@@ -31,7 +36,8 @@ export type NewSession = {
 };
 
 export type CreatedSession = NewSession & {
-  understanding: UnderstandingLevel;
+  /** Legacy field name; the value is a self-reported support need. */
+  understanding: LegacyUnderstanding;
   status: SessionStatus;
   adaptationRound: number;
   createdAt: Date;
@@ -57,10 +63,8 @@ export async function findSession(learnerId: string, sessionId: string) {
   }).lean() as unknown as Promise<SessionRecord | null>;
 }
 
-export type LearnerResponse = Exclude<UnderstandingLevel, null>;
-
 export type Adaptation = {
-  learnerResponse: LearnerResponse;
+  learnerResponse: OverallSupportNeed;
   supportType: SupportType;
   content: BilingualText;
   round: number;
@@ -83,7 +87,8 @@ type RecordResponseInput = {
   learnerId: string;
   sessionId: string;
   expectedRound: number;
-  understanding: LearnerResponse;
+  /** Legacy storage field name for the overall self-reported support need. */
+  understanding: OverallSupportNeed;
   status: SessionStatus;
   adaptation: Adaptation | null;
 };

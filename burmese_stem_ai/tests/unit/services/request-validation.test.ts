@@ -17,6 +17,7 @@ import {
   validateCreateSessionRequest
 } from "@/services/session.service";
 import { MAX_FOLLOW_UP_QUESTION_LENGTH, MAX_QUESTION_LENGTH } from "@/lib/constants";
+import { OVERALL_SUPPORT_NEEDS } from "@/lib/session-domain";
 
 describe("request validation guard rails", () => {
   it("trims a valid learning-session question", () => {
@@ -34,7 +35,7 @@ describe("request validation guard rails", () => {
     ).toThrow(SessionRequestValidationError);
   });
 
-  it.each(["high", "medium", "needs_support"] as const)(
+  it.each(OVERALL_SUPPORT_NEEDS)(
     "accepts the supported understanding value %s",
     (understanding) => {
       expect(validateUnderstandingResponse({ understanding })).toBe(understanding);
