@@ -272,6 +272,7 @@ The proof of concept is a small monolithic Next.js application.
 │   ├── adaptation.service.ts
 │   ├── followup.service.ts
 │   ├── learner.service.ts
+│   ├── llm-provider.ts
 │   ├── profile.service.ts
 │   ├── session-lifecycle.service.ts
 │   └── session.service.ts
@@ -318,6 +319,10 @@ Responsibilities:
 ```text
 learner.service.ts
   -> resolve anonymous learner/profile
+
+llm-provider.ts
+  -> shared Responses API URL, model, timeout, request, and output extraction
+  -> stable provider failure categories with no automatic retry
 
 profile.service.ts
   -> validate preference updates
@@ -2041,7 +2046,8 @@ The repository uses Vitest with deterministic DAO and provider mocks, jsdom
 component tests, and V8 structural coverage. Current tests cover domain and
 schema constraints, learner ownership, atomic persistence, route selection,
 the two-round and two-follow-up caps, strict model-output contracts, Stage 6B,
-follow-up scope, and Review/Resume state reconstruction.
+follow-up scope, Review/Resume state reconstruction, provider failure modes,
+API error envelopes, UUID validation, and locale-cookie validation.
 
 Run the current verification commands with:
 
@@ -2312,9 +2318,12 @@ The schema, DAO, lifecycle/adaptation, model-contract, and core session UI
 layers have automated coverage. Complete direct route-handler coverage for all
 HTTP status and error mappings.
 
-### Priority 2 — Shared OpenAI Boundary
+### Shared Provider Boundary — Resolved
 
-Extract the duplicated Responses API request/parsing logic from the session, adaptation, and follow-up services. Centralize the model default, timeout, error mapping, and any future retry policy.
+All generation services use `services/llm-provider.ts` for the Responses API
+URL, model selection, 20-second timeout, request execution, and output-text
+extraction. Domain prompts, schemas, and validators remain in their services.
+There is deliberately no automatic retry policy.
 
 ### Preference Ownership — Resolved
 
@@ -2323,9 +2332,11 @@ single profile-preference UI and synchronises only learning-content preferences.
 Legacy `uiLanguage` and `theme` database fields remain readable to avoid a
 destructive migration, but the current UI does not use them.
 
-### Priority 4 — Locale and Error Hardening
+### Priority 4 — Error Localisation
 
-Validate the locale cookie before dynamically loading a message file, and localize server-returned validation and scope errors rather than displaying English service messages in the Burmese UI.
+The locale cookie is validated before loading a message file, and API failures
+use stable `{ error: { code, message } }` envelopes. Localising server-returned
+validation and scope messages for the Burmese UI remains future work.
 
 ### Priority 5 — Follow-Up New-Session UX
 
@@ -2350,20 +2361,15 @@ and preserve the existing state-transition suite
         |
         v
 Phase 2
-Extract a shared OpenAI client and
-standardize model/timeout/error behavior
+Localize server validation and scope errors
         |
         v
 Phase 3
-Localize server errors and validate locale cookies
-        |
-        v
-Phase 4
 Add the new-session follow-up action
 + complete accessibility/Burmese QA
         |
         v
-Phase 5
+Phase 4
 Deployment verification and production hardening
 ```
 

@@ -23,9 +23,7 @@ import {
   selectAdaptationRoute,
   type GeneratingAdaptationDecision
 } from "@/services/adaptation-routing.service";
-
-const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
-const OPENAI_TIMEOUT_MS = 20_000;
+import { LlmProviderError, requestStructuredOutput } from "@/services/llm-provider";
 const adaptationOutputSchema = {
   type: "object",
   properties: {
@@ -103,15 +101,6 @@ type StandardAdaptationDecision = Exclude<
   GeneratingAdaptationDecision,
   { route: "context_reinterpretation" }
 >;
-
-type OpenAIResponse = {
-  output?: Array<{
-    content?: Array<{
-      type?: string;
-      text?: string;
-    }>;
-  }>;
-};
 
 export class ResponseValidationError extends Error {}
 export class SessionNotFoundError extends Error {}
@@ -372,61 +361,23 @@ async function generateAdaptation(
   learnerResponse: OverallSupportNeed,
   decision: StandardAdaptationDecision
 ): Promise<GeneratedAdaptation> {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey || apiKey === "your-key-here") {
-    throw new AdaptationGenerationError("OpenAI API key is not configured");
-  }
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), OPENAI_TIMEOUT_MS);
-
   try {
-    const response = await fetch(OPENAI_RESPONSES_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json"
+    const generated = await requestStructuredOutput({
+      instructions: buildAdaptationInstructions(learnerResponse, decision),
+      input: {
+        learnerResponse,
+        adaptationRoute: decision.route,
+        supportType: decision.supportType,
+        presentationOverride:
+          decision.route === "language_support" ? decision.presentationOverride : null,
+        concept: session.concept,
+        initialExplanations: session.explanations,
+        previousAdaptations: session.adaptations,
+        preferences: session.preferencesSnapshot
       },
-      body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-4o-mini",
-        store: false,
-        instructions: buildAdaptationInstructions(learnerResponse, decision),
-        input: JSON.stringify({
-          learnerResponse,
-          adaptationRoute: decision.route,
-          supportType: decision.supportType,
-          presentationOverride:
-            decision.route === "language_support" ? decision.presentationOverride : null,
-          concept: session.concept,
-          initialExplanations: session.explanations,
-          previousAdaptations: session.adaptations,
-          preferences: session.preferencesSnapshot
-        }),
-        text: {
-          format: {
-            type: "json_schema",
-            name: "learning_adaptation",
-            strict: true,
-            schema: adaptationOutputSchema
-          }
-        }
-      }),
-      signal: controller.signal
+      schemaName: "learning_adaptation",
+      schema: adaptationOutputSchema
     });
-
-    if (!response.ok) {
-      throw new AdaptationGenerationError(`OpenAI request failed with status ${response.status}`);
-    }
-
-    const data = (await response.json()) as OpenAIResponse;
-    const outputText = data.output
-      ?.flatMap((item) => item.content ?? [])
-      .find((content) => content.type === "output_text")?.text;
-    if (!outputText) {
-      throw new AdaptationGenerationError("OpenAI returned no structured output");
-    }
-
-    const generated: unknown = JSON.parse(outputText);
     if (!isGeneratedAdaptation(generated)) {
       throw new AdaptationGenerationError("OpenAI returned invalid adaptation content");
     }
@@ -436,9 +387,10 @@ async function generateAdaptation(
     return generated;
   } catch (error) {
     if (error instanceof AdaptationGenerationError) throw error;
+    if (error instanceof LlmProviderError) {
+      throw mapAdaptationProviderError(error, "adapted support");
+    }
     throw new AdaptationGenerationError("Unable to generate adapted support");
-  } finally {
-    clearTimeout(timeout);
   }
 }
 
@@ -446,60 +398,22 @@ async function generateConceptReinterpretation(
   session: SessionRecord,
   clarification: string
 ): Promise<GeneratedConceptReinterpretation> {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey || apiKey === "your-key-here") {
-    throw new AdaptationGenerationError("OpenAI API key is not configured");
-  }
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), OPENAI_TIMEOUT_MS);
-
   try {
-    const response = await fetch(OPENAI_RESPONSES_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json"
+    const generated = await requestStructuredOutput({
+      instructions: buildConceptReinterpretationInstructions(),
+      input: {
+        adaptationRoute: "context_reinterpretation",
+        supportType: "concept_correction",
+        originalQuestion: session.originalQuestion,
+        previousConcept: session.concept,
+        intendedTermOrContext: clarification,
+        initialExplanations: session.explanations,
+        previousAdaptations: session.adaptations,
+        preferences: session.preferencesSnapshot
       },
-      body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-4o-mini",
-        store: false,
-        instructions: buildConceptReinterpretationInstructions(),
-        input: JSON.stringify({
-          adaptationRoute: "context_reinterpretation",
-          supportType: "concept_correction",
-          originalQuestion: session.originalQuestion,
-          previousConcept: session.concept,
-          intendedTermOrContext: clarification,
-          initialExplanations: session.explanations,
-          previousAdaptations: session.adaptations,
-          preferences: session.preferencesSnapshot
-        }),
-        text: {
-          format: {
-            type: "json_schema",
-            name: "concept_reinterpretation",
-            strict: true,
-            schema: conceptReinterpretationOutputSchema
-          }
-        }
-      }),
-      signal: controller.signal
+      schemaName: "concept_reinterpretation",
+      schema: conceptReinterpretationOutputSchema
     });
-
-    if (!response.ok) {
-      throw new AdaptationGenerationError(`OpenAI request failed with status ${response.status}`);
-    }
-
-    const data = (await response.json()) as OpenAIResponse;
-    const outputText = data.output
-      ?.flatMap((item) => item.content ?? [])
-      .find((content) => content.type === "output_text")?.text;
-    if (!outputText) {
-      throw new AdaptationGenerationError("OpenAI returned no structured output");
-    }
-
-    const generated: unknown = JSON.parse(outputText);
     if (!isGeneratedConceptReinterpretation(generated, session.concept)) {
       throw new AdaptationGenerationError("OpenAI returned invalid concept reinterpretation");
     }
@@ -512,10 +426,27 @@ async function generateConceptReinterpretation(
     return generated;
   } catch (error) {
     if (error instanceof AdaptationGenerationError) throw error;
+    if (error instanceof LlmProviderError) {
+      throw mapAdaptationProviderError(error, "concept reinterpretation");
+    }
     throw new AdaptationGenerationError("Unable to reinterpret the concept");
-  } finally {
-    clearTimeout(timeout);
   }
+}
+
+function mapAdaptationProviderError(
+  error: LlmProviderError,
+  operation: "adapted support" | "concept reinterpretation"
+): AdaptationGenerationError {
+  if (error.code === "NOT_CONFIGURED") {
+    return new AdaptationGenerationError("OpenAI API key is not configured");
+  }
+  if (error.code === "MISSING_OUTPUT") {
+    return new AdaptationGenerationError("OpenAI returned no structured output");
+  }
+  if (error.code === "INVALID_JSON") {
+    return new AdaptationGenerationError("OpenAI returned invalid JSON");
+  }
+  return new AdaptationGenerationError(`Unable to generate ${operation}`);
 }
 
 function buildConceptReinterpretationInstructions(): string {

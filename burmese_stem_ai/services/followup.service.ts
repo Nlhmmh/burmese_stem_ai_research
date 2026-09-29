@@ -5,9 +5,7 @@ import {
   type SessionRecord
 } from "@/data/dao/session.dao";
 import { MAX_FOLLOW_UP_QUESTION_LENGTH, MAX_FOLLOW_UPS } from "@/lib/constants";
-
-const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
-const OPENAI_TIMEOUT_MS = 20_000;
+import { LlmProviderError, requestStructuredOutput } from "@/services/llm-provider";
 
 const followUpOutputSchema = {
   type: "object",
@@ -35,15 +33,6 @@ type GeneratedFollowUp = {
     en: string;
     my: string;
   };
-};
-
-type OpenAIResponse = {
-  output?: Array<{
-    content?: Array<{
-      type?: string;
-      text?: string;
-    }>;
-  }>;
 };
 
 export class FollowUpValidationError extends Error {}
@@ -112,68 +101,39 @@ async function generateFollowUp(
   session: SessionRecord,
   question: string
 ): Promise<GeneratedFollowUp> {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey || apiKey === "your-key-here") {
-    throw new FollowUpGenerationError("OpenAI API key is not configured");
-  }
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), OPENAI_TIMEOUT_MS);
-
   try {
-    const response = await fetch(OPENAI_RESPONSES_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json"
+    const generated = await requestStructuredOutput({
+      instructions: buildFollowUpInstructions(),
+      input: {
+        activeConcept: session.concept,
+        initialExplanations: session.explanations,
+        latestRelevantScaffold: session.adaptations.at(-1) ?? null,
+        latestResponseRoute: session.responseEvents?.at(-1)?.route ?? null,
+        preferences: session.preferencesSnapshot,
+        previousFollowUps: session.followUps ?? [],
+        question
       },
-      body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-4o-mini",
-        store: false,
-        instructions: buildFollowUpInstructions(),
-        input: JSON.stringify({
-          activeConcept: session.concept,
-          initialExplanations: session.explanations,
-          latestRelevantScaffold: session.adaptations.at(-1) ?? null,
-          latestResponseRoute: session.responseEvents?.at(-1)?.route ?? null,
-          preferences: session.preferencesSnapshot,
-          previousFollowUps: session.followUps ?? [],
-          question
-        }),
-        text: {
-          format: {
-            type: "json_schema",
-            name: "scoped_learning_follow_up",
-            strict: true,
-            schema: followUpOutputSchema
-          }
-        }
-      }),
-      signal: controller.signal
+      schemaName: "scoped_learning_follow_up",
+      schema: followUpOutputSchema
     });
-
-    if (!response.ok) {
-      throw new FollowUpGenerationError(`OpenAI request failed with status ${response.status}`);
-    }
-
-    const data = (await response.json()) as OpenAIResponse;
-    const outputText = data.output
-      ?.flatMap((item) => item.content ?? [])
-      .find((content) => content.type === "output_text")?.text;
-    if (!outputText) {
-      throw new FollowUpGenerationError("OpenAI returned no structured output");
-    }
-
-    const generated: unknown = JSON.parse(outputText);
     if (!isGeneratedFollowUp(generated)) {
       throw new FollowUpGenerationError("OpenAI returned invalid follow-up content");
     }
     return generated;
   } catch (error) {
     if (error instanceof FollowUpGenerationError) throw error;
+    if (error instanceof LlmProviderError) {
+      if (error.code === "NOT_CONFIGURED") {
+        throw new FollowUpGenerationError("OpenAI API key is not configured");
+      }
+      if (error.code === "MISSING_OUTPUT") {
+        throw new FollowUpGenerationError("OpenAI returned no structured output");
+      }
+      if (error.code === "INVALID_JSON") {
+        throw new FollowUpGenerationError("OpenAI returned invalid JSON");
+      }
+    }
     throw new FollowUpGenerationError("Unable to generate a follow-up answer");
-  } finally {
-    clearTimeout(timeout);
   }
 }
 

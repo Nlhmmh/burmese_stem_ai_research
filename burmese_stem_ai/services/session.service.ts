@@ -1,9 +1,7 @@
 import { createSession, type NewSession } from "@/data/dao/session.dao";
 import type { Preferences } from "@/data/schemas/profile.schema";
 import { MAX_QUESTION_LENGTH, UI_LANGUAGES } from "@/lib/constants";
-
-const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
-const OPENAI_TIMEOUT_MS = 20_000;
+import { LlmProviderError, requestStructuredOutput } from "@/services/llm-provider";
 
 const bilingualTextSchema = {
   type: "object",
@@ -86,16 +84,6 @@ type GeneratedSession = {
   hint: BilingualText;
 };
 
-type OpenAIResponse = {
-  output?: Array<{
-    type?: string;
-    content?: Array<{
-      type?: string;
-      text?: string;
-    }>;
-  }>;
-};
-
 export class SessionRequestValidationError extends Error {}
 
 export class SessionScopeError extends Error {
@@ -168,72 +156,36 @@ async function generateSession(
   question: string,
   preferences: Preferences
 ): Promise<GeneratedSession> {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey || apiKey === "your-key-here") {
-    throw new SessionGenerationError("OpenAI API key is not configured");
-  }
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), OPENAI_TIMEOUT_MS);
-
   try {
-    const response = await fetch(OPENAI_RESPONSES_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-5-mini",
-        store: false,
-        instructions: buildInstructions(preferences),
-        input: JSON.stringify({
-          learnerQuestion: question,
-          preferences: {
-            supportLanguage: preferences.supportLanguage,
-            explanationLevel: preferences.explanationLevel,
-            learningStyle: preferences.learningStyle
-          }
-        }),
-        text: {
-          format: {
-            type: "json_schema",
-            name: "initial_learning_session",
-            strict: true,
-            schema: generatedSessionSchema
-          }
+    const generated = await requestStructuredOutput({
+      instructions: buildInstructions(preferences),
+      input: {
+        learnerQuestion: question,
+        preferences: {
+          supportLanguage: preferences.supportLanguage,
+          explanationLevel: preferences.explanationLevel,
+          learningStyle: preferences.learningStyle
         }
-      }),
-      signal: controller.signal
+      },
+      schemaName: "initial_learning_session",
+      schema: generatedSessionSchema
     });
-
-    if (!response.ok) {
-      throw new SessionGenerationError(`OpenAI request failed with status ${response.status}`);
-    }
-
-    const data = (await response.json()) as OpenAIResponse;
-    const outputText = data.output
-      ?.flatMap((item) => item.content ?? [])
-      .find((content) => content.type === "output_text")?.text;
-
-    if (!outputText) {
-      throw new SessionGenerationError("OpenAI returned no structured output");
-    }
-
-    let generated: unknown;
-    try {
-      generated = JSON.parse(outputText);
-    } catch {
-      throw new SessionGenerationError("OpenAI returned invalid JSON");
-    }
     validateGeneratedOutput(generated);
     return generated;
   } catch (error) {
-    console.log("Error generating learning session:", error);
     if (error instanceof SessionGenerationError) throw error;
+    if (error instanceof LlmProviderError) {
+      if (error.code === "NOT_CONFIGURED") {
+        throw new SessionGenerationError("OpenAI API key is not configured");
+      }
+      if (error.code === "MISSING_OUTPUT") {
+        throw new SessionGenerationError("OpenAI returned no structured output");
+      }
+      if (error.code === "INVALID_JSON") {
+        throw new SessionGenerationError("OpenAI returned invalid JSON");
+      }
+    }
     throw new SessionGenerationError("Unable to generate the learning session");
-  } finally {
-    clearTimeout(timeout);
   }
 }
 

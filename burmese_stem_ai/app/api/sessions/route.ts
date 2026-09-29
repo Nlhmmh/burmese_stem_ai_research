@@ -1,4 +1,5 @@
 import { findSessionsByLearner, type CreatedSession } from "@/data/dao/session.dao";
+import { apiError } from "@/lib/api-error";
 import { LearnerIdentityError, requireLearner, requireLearnerId } from "@/services/learner.service";
 import {
   createLearningSession,
@@ -18,10 +19,10 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ sessions });
   } catch (error) {
     if (error instanceof LearnerIdentityError) {
-      return errorResponse("LEARNER_IDENTITY_UNAVAILABLE", error.message, 400);
+      return apiError("LEARNER_IDENTITY_UNAVAILABLE", error.message, 400);
     }
     console.error("Unable to list learning sessions:", error);
-    return errorResponse("SESSION_LIST_FAILED", "Unable to load learning sessions", 500);
+    return apiError("SESSION_LIST_FAILED", "Unable to load learning sessions", 500);
   }
 }
 
@@ -35,24 +36,24 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ session: toSessionResponse(session) }, { status: 201 });
   } catch (error) {
     if (error instanceof LearnerIdentityError) {
-      return errorResponse("LEARNER_IDENTITY_UNAVAILABLE", error.message, 400);
+      return apiError("LEARNER_IDENTITY_UNAVAILABLE", error.message, 400);
     }
     if (error instanceof SessionRequestValidationError) {
-      return errorResponse("INVALID_SESSION_REQUEST", error.message, 400);
+      return apiError("INVALID_SESSION_REQUEST", error.message, 400);
     }
     if (error instanceof SessionScopeError) {
-      return errorResponse(error.code, error.message, 422);
+      return apiError(error.code, error.message, 422);
     }
     if (error instanceof SessionGenerationError) {
       console.error("Unable to generate learning session:", error.message);
-      return errorResponse(
+      return apiError(
         "SESSION_GENERATION_FAILED",
         "Unable to prepare the explanation right now",
         502
       );
     }
     console.error("Unable to create learning session:", error);
-    return errorResponse("SESSION_CREATION_FAILED", "Unable to create learning session", 500);
+    return apiError("SESSION_CREATION_FAILED", "Unable to create learning session", 500);
   }
 }
 
@@ -62,10 +63,6 @@ async function readJson(request: NextRequest): Promise<unknown> {
   } catch {
     throw new SessionRequestValidationError("Request body must contain valid JSON");
   }
-}
-
-function errorResponse(code: string, message: string, status: number): NextResponse {
-  return NextResponse.json({ error: { code, message } }, { status });
 }
 
 function toSessionResponse(session: CreatedSession) {
