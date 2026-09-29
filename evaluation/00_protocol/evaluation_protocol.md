@@ -219,10 +219,12 @@ npm run lint
 npx tsc --noEmit
 npm test
 npm run test:coverage
+npm run test:integration
+npm run test:all
 npm run build -- --webpack
 ```
 
-Record missing dependencies as Blocked. The webpack build command is the documented verification path for this repository; retain any failed alternative build log and its reason. `npm test` uses deterministic Vitest mocks and is structural evidence only. Coverage does not establish Burmese quality, STEM accuracy, usability, or educational effectiveness. Protocol preparation and Step 13 documentation checks are not formal `B01` execution and make no paid model calls.
+Record missing dependencies as Blocked. The webpack build command is the documented verification path for this repository; retain any failed alternative build log and its reason. `npm test` uses deterministic Vitest mocks; `npm run test:integration` uses an isolated temporary MongoDB or an explicitly supplied database ending in `_test`; `npm run test:all` executes both modes. Structural coverage and database tests do not establish Burmese quality, STEM accuracy, usability, or educational effectiveness. Protocol preparation and refinement verification are not formal `B01` execution and make no paid model calls.
 
 For modest timing analysis, use Photosynthesis, gravity, electric current, programming inheritance and pH, **three independent fresh-session attempts each** (15 initial-generation attempts). Measure start/end around the same operation boundary, preferably monotonic client request-to-response time. Record operation, elapsed milliseconds, success, timeout, retries and environment for every attempt. Report per-query and pooled successful-attempt median/min/max with sample sizes, plus failure/timeout counts separately. Log adaptation/follow-up timings descriptively without pooling unlike operations. No latency pass threshold is asserted because no service-level target is specified.
 

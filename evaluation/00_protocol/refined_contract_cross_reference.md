@@ -46,6 +46,8 @@ Run from `burmese_stem_ai/`:
 ```sh
 npm test
 npm run test:coverage
+npm run test:integration
+npm run test:all
 npm run lint
 npx tsc --noEmit
 npm run build -- --webpack
@@ -71,6 +73,14 @@ baseline identity, evaluator, and database/provider modes were not captured as
 | `npm run lint` | Exit 0 |
 | `npx tsc --noEmit` | Exit 0 |
 | `npm run build -- --webpack` | Exit 0; Next.js production build completed |
+
+### Step 14 automated-refinement verification
+
+The Step 14 implementation-work run is recorded in detail in
+[`automated_refinement_coverage.md`](automated_refinement_coverage.md). The
+deterministic suite increased to 208 tests across 23 files, and five separate
+tests exercised real persistence and competing updates against an isolated
+temporary MongoDB database.
 
 ## Claim boundary
 

@@ -175,6 +175,24 @@ describe("initial Stage 1 to 5 generation contract", () => {
     expect(daoMocks.createSession).not.toHaveBeenCalled();
   });
 
+  it("maps missing configuration and missing provider output before persistence", async () => {
+    vi.stubEnv("OPENAI_API_KEY", "");
+    await expect(
+      createLearningSession("learner-a", "What is entropy?", preferences)
+    ).rejects.toThrow("OpenAI API key is not configured");
+    expect(fetchMock).not.toHaveBeenCalled();
+
+    vi.stubEnv("OPENAI_API_KEY", "test-api-key");
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: vi.fn().mockResolvedValue({ output: [{ content: [] }] })
+    });
+    await expect(
+      createLearningSession("learner-a", "What is entropy?", preferences)
+    ).rejects.toThrow("OpenAI returned no structured output");
+    expect(daoMocks.createSession).not.toHaveBeenCalled();
+  });
+
   function arrangeProviderOutput(output: unknown) {
     arrangeProviderText(JSON.stringify(output));
   }

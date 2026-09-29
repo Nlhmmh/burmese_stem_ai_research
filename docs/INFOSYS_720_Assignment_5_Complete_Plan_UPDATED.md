@@ -41,6 +41,8 @@ Current structural verification commands, run from `burmese_stem_ai/`, are:
 ```sh
 npm test
 npm run test:coverage
+npm run test:integration
+npm run test:all
 npm run lint
 npx tsc --noEmit
 npm run build -- --webpack
@@ -1567,6 +1569,8 @@ Do not claim a test was executed unless it was actually run.
 |---|---|---|---|---|
 | Unit/component tests | `npm test` | Bounded deterministic suite completes | Fill later | |
 | Structural coverage | `npm run test:coverage` | Report retained with scope/exclusions | Fill later | |
+| MongoDB integration | `npm run test:integration` | Isolated persistence/concurrency suite completes | Fill later | |
+| Complete automated suite | `npm run test:all` | Deterministic and isolated database modes complete | Fill later | |
 | Lint | `npm run lint` | No blocking errors | Fill later | |
 | TypeScript | `npx tsc --noEmit` | No type errors | Fill later | |
 | Build | `npm run build -- --webpack` | Successful production build | Fill later | |

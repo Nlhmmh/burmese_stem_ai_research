@@ -15,7 +15,8 @@ vi.mock("@/data/dao/session.dao", () => ({
 import {
   completeLearningSession,
   getLearningSession,
-  SessionDetailNotFoundError
+  SessionDetailNotFoundError,
+  SessionLifecycleConflictError
 } from "@/services/session-lifecycle.service";
 
 describe("session lifecycle ownership", () => {
@@ -76,5 +77,35 @@ describe("session lifecycle ownership", () => {
       existing.learnerId,
       existing.sessionId
     );
+  });
+
+  it("returns an already-completed session idempotently without another write", async () => {
+    const completed = makeSessionRecord({ status: "completed" });
+    daoMocks.findSession.mockResolvedValue(completed);
+
+    await expect(
+      completeLearningSession(completed.learnerId, completed.sessionId)
+    ).resolves.toMatchObject({ status: "completed" });
+    expect(daoMocks.completeSession).not.toHaveBeenCalled();
+  });
+
+  it("rejects missing, invalid-state, and concurrently changed completion targets", async () => {
+    daoMocks.findSession.mockResolvedValueOnce(null);
+    await expect(
+      completeLearningSession("learner-a", makeSessionRecord().sessionId)
+    ).rejects.toBeInstanceOf(SessionDetailNotFoundError);
+
+    daoMocks.findSession.mockResolvedValueOnce(
+      makeSessionRecord({ status: "invalid_state" as never })
+    );
+    await expect(
+      completeLearningSession("learner-a", makeSessionRecord().sessionId)
+    ).rejects.toBeInstanceOf(SessionLifecycleConflictError);
+
+    daoMocks.findSession.mockResolvedValueOnce(makeSessionRecord());
+    daoMocks.completeSession.mockResolvedValueOnce(null);
+    await expect(
+      completeLearningSession("learner-a", makeSessionRecord().sessionId)
+    ).rejects.toThrow("The session changed while it was being updated");
   });
 });

@@ -178,6 +178,36 @@ describe("standard adaptation generation contract", () => {
     expect(daoMocks.recordSessionResponse).not.toHaveBeenCalled();
   });
 
+  it("maps missing configuration, output, and provider JSON before persistence", async () => {
+    const session = makeSessionRecord();
+    daoMocks.findSession.mockResolvedValue(session);
+
+    vi.stubEnv("OPENAI_API_KEY", "");
+    await expect(
+      respondToLearningSession(session.learnerId, session.sessionId, "medium")
+    ).rejects.toThrow("OpenAI API key is not configured");
+
+    vi.stubEnv("OPENAI_API_KEY", "test-api-key");
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({ output: [{ content: [] }] })
+    });
+    await expect(
+      respondToLearningSession(session.learnerId, session.sessionId, "medium")
+    ).rejects.toThrow("OpenAI returned no structured output");
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        output: [{ content: [{ type: "output_text", text: "not-json" }] }]
+      })
+    });
+    await expect(
+      respondToLearningSession(session.learnerId, session.sessionId, "medium")
+    ).rejects.toThrow("OpenAI returned invalid JSON");
+    expect(daoMocks.recordSessionResponse).not.toHaveBeenCalled();
+  });
+
   function arrangeProviderOutput(output: unknown) {
     fetchMock.mockResolvedValue({
       ok: true,

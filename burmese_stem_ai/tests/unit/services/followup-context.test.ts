@@ -220,6 +220,56 @@ describe("concept-scoped follow-up", () => {
     expect(daoMocks.appendFollowUp).not.toHaveBeenCalled();
   });
 
+  it("rejects a missing session and a concurrent follow-up limit without generation", async () => {
+    daoMocks.findSession.mockResolvedValueOnce(null);
+    await expect(
+      askSessionFollowUp("learner-a", makeSessionRecord().sessionId, "Why?")
+    ).rejects.toThrow("Learning session was not found");
+    expect(fetchMock).not.toHaveBeenCalled();
+
+    const session = makeSessionRecord();
+    daoMocks.findSession.mockResolvedValueOnce(session);
+    daoMocks.appendFollowUp.mockResolvedValueOnce(null);
+    arrangeProviderOutput({
+      relatedToCurrentConcept: true,
+      message: "",
+      answer: { en: "Focused answer", my: "သက်ဆိုင်သော အဖြေ" }
+    });
+    await expect(
+      askSessionFollowUp(session.learnerId, session.sessionId, "Why?")
+    ).rejects.toThrow("already has the maximum");
+  });
+
+  it("maps missing configuration, output, and invalid JSON without persistence", async () => {
+    const session = makeSessionRecord();
+    daoMocks.findSession.mockResolvedValue(session);
+
+    vi.stubEnv("OPENAI_API_KEY", "");
+    await expect(
+      askSessionFollowUp(session.learnerId, session.sessionId, "Why?")
+    ).rejects.toThrow("OpenAI API key is not configured");
+
+    vi.stubEnv("OPENAI_API_KEY", "test-api-key");
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({ output: [{ content: [] }] })
+    });
+    await expect(
+      askSessionFollowUp(session.learnerId, session.sessionId, "Why?")
+    ).rejects.toThrow("OpenAI returned no structured output");
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        output: [{ content: [{ type: "output_text", text: "not-json" }] }]
+      })
+    });
+    await expect(
+      askSessionFollowUp(session.learnerId, session.sessionId, "Why?")
+    ).rejects.toThrow("OpenAI returned invalid JSON");
+    expect(daoMocks.appendFollowUp).not.toHaveBeenCalled();
+  });
+
   it("rejects model output that tries to assign a difficulty type", async () => {
     const session = makeSessionRecord();
     daoMocks.findSession.mockResolvedValue(session);

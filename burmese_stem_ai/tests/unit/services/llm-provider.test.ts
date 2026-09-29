@@ -17,6 +17,16 @@ describe("shared LLM provider boundary", () => {
 
   afterEach(() => vi.useRealTimers());
 
+  it.each(["", "your-key-here"])(
+    "rejects the non-secret placeholder API key %j before fetch",
+    async (apiKey) => {
+      vi.stubEnv("OPENAI_API_KEY", apiKey);
+
+      await expect(request()).rejects.toMatchObject({ code: "NOT_CONFIGURED" });
+      expect(fetchMock).not.toHaveBeenCalled();
+    }
+  );
+
   it("uses the central URL, model, timeout signal and strict output format once", async () => {
     fetchMock.mockResolvedValue(providerResponse(JSON.stringify({ value: "ok" })));
 

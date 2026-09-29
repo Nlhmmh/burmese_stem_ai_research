@@ -80,7 +80,7 @@ The current repository contains an end-to-end refined proof-of-concept learning 
 | LLM integration | Implemented | Server-side OpenAI Responses API calls with strict JSON Schema output and a 20-second timeout |
 | Adaptation logic | Implemented | Deterministic fade/scaffold/language/clarification/reinterpretation routes and a server-enforced maximum of two generated adaptations |
 | Follow-up logic | Implemented | Concept-scoped bilingual answers with a maximum of two follow-ups per session |
-| Automated tests | Implemented | Vitest unit/component tests with V8 coverage, plus lint, TypeScript, and production-build checks |
+| Automated tests | Implemented | Vitest unit/component/API tests with V8 coverage, isolated MongoDB integration tests, plus lint, TypeScript, and production-build checks |
 
 ---
 
@@ -2153,10 +2153,19 @@ Run the current verification commands with:
 ```bash
 npm test
 npm run test:coverage
+npm run test:integration
+npm run test:all
 npm run lint
 npx tsc --noEmit
 npm run build -- --webpack
 ```
+
+`npm test` and `npm run test:coverage` use deterministic mocks for provider and
+DAO boundaries. `npm run test:integration` launches an isolated temporary local
+MongoDB instance when `mongod` is available, or uses an explicitly supplied
+`TEST_MONGODB_URI` whose database name ends in `_test`. `npm run test:all` runs
+the deterministic unit/component/API suite and isolated database suite. The
+integration runner removes its temporary database directory after the run.
 
 These tests verify software behaviour and structural coverage. They do not by
 themselves establish Burmese linguistic quality, STEM-content correctness, or
@@ -2400,7 +2409,7 @@ Legend:
 - [x] Production build command
 - [x] Schema tests
 - [x] DAO tests
-- [~] API tests (session-detail continuity covered; full route matrix remains)
+- [x] API route success, validation, ownership, lifecycle, scope, provider, persistence, and controlled-error mappings
 - [x] Adaptation state tests
 - [x] LLM structured-output tests
 - [x] UI tests
@@ -2411,11 +2420,11 @@ Legend:
 
 The core learning flow is implemented. The remaining priorities are hardening, consistency, and verification.
 
-### Priority 1 — API Route Coverage
+### API Route Coverage — Resolved
 
-The schema, DAO, lifecycle/adaptation, model-contract, and core session UI
-layers have automated coverage. Complete direct route-handler coverage for all
-HTTP status and error mappings.
+The schema, DAO, lifecycle/adaptation, model-contract, core session UI, and
+public route-handler layers have automated structural coverage. The route tests
+assert successful projections and controlled 400/404/409/422/500/502 mappings.
 
 ### Shared Provider Boundary — Resolved
 
@@ -2455,8 +2464,8 @@ Remove `EC2KeyPair.pem` from the project directory and verify whether it has eve
 
 ```text
 Phase 1
-Complete direct API route-handler coverage
-and preserve the existing state-transition suite
+Preserve the route, state-transition,
+and isolated-database regression suites
         |
         v
 Phase 2

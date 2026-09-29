@@ -10,6 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
+    "test:integration": "bash scripts/run-integration-tests.sh",
+    "test:all": "npm test && npm run test:integration",
     "init-db": "tsx data/init-db.ts"
   },
   "dependencies": {
