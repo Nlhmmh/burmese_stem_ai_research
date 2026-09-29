@@ -46,6 +46,7 @@ describe("adaptation service boundaries", () => {
       understanding: "needs_support",
       status: "review_recommended",
       adaptationRound: 2,
+      route: "stage_5_scaffold",
       adaptation: null
     });
 

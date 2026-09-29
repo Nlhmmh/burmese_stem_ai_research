@@ -6,12 +6,16 @@ import {
 } from "@/data/dao/session.dao";
 import { MAX_ADAPTATION_ROUNDS, type SessionStatus } from "@/lib/constants";
 import {
+  DIFFICULTY_TYPES,
   OVERALL_SUPPORT_NEEDS,
-  type AdaptationRoute,
+  type DifficultyType,
   type LearnerResponseEvent,
-  type OverallSupportNeed,
-  type SupportType
+  type OverallSupportNeed
 } from "@/lib/session-domain";
+import {
+  selectAdaptationRoute,
+  type CoreStage5SupportType
+} from "@/services/adaptation-routing.service";
 
 const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
 const OPENAI_TIMEOUT_MS = 20_000;
@@ -53,29 +57,73 @@ export class SessionNotFoundError extends Error {}
 export class SessionResponseConflictError extends Error {}
 export class AdaptationGenerationError extends Error {}
 
-/** Validates the legacy API field that carries the overall self-reported support need. */
-export function validateUnderstandingResponse(input: unknown): OverallSupportNeed {
+export type ValidatedLearnerResponse = {
+  overallSupportNeed: OverallSupportNeed;
+  difficultyType: DifficultyType | null;
+};
+
+export function validateLearnerResponseRequest(input: unknown): ValidatedLearnerResponse {
   if (typeof input !== "object" || input === null || Array.isArray(input)) {
     throw new ResponseValidationError("Request body must be a JSON object");
   }
 
-  const legacyUnderstanding = (input as Record<string, unknown>).understanding;
+  const body = input as Record<string, unknown>;
+  const legacyUnderstanding = body.understanding;
+  const canonicalOverallSupportNeed = body.overallSupportNeed;
   if (
-    typeof legacyUnderstanding !== "string" ||
-    !OVERALL_SUPPORT_NEEDS.includes(legacyUnderstanding as OverallSupportNeed)
+    legacyUnderstanding !== undefined &&
+    canonicalOverallSupportNeed !== undefined &&
+    legacyUnderstanding !== canonicalOverallSupportNeed
   ) {
     throw new ResponseValidationError(
-      `Understanding must be one of: ${OVERALL_SUPPORT_NEEDS.join(", ")}`
+      "understanding and overallSupportNeed must match when both are provided"
     );
   }
 
-  return legacyUnderstanding as OverallSupportNeed;
+  const overallSupportNeed = canonicalOverallSupportNeed ?? legacyUnderstanding;
+  if (
+    typeof overallSupportNeed !== "string" ||
+    !OVERALL_SUPPORT_NEEDS.includes(overallSupportNeed as OverallSupportNeed)
+  ) {
+    throw new ResponseValidationError(
+      `Overall support need must be one of: ${OVERALL_SUPPORT_NEEDS.join(", ")}`
+    );
+  }
+
+  const suppliedDifficulty = body.difficultyType;
+  const difficultyType = suppliedDifficulty === undefined ? null : suppliedDifficulty;
+  if (
+    difficultyType !== null &&
+    (typeof difficultyType !== "string" ||
+      !DIFFICULTY_TYPES.includes(difficultyType as DifficultyType))
+  ) {
+    throw new ResponseValidationError(
+      `Difficulty type must be one of: ${DIFFICULTY_TYPES.join(", ")}`
+    );
+  }
+
+  if (overallSupportNeed === "high" && difficultyType !== null) {
+    throw new ResponseValidationError(
+      "Difficulty type is only available when additional support is requested"
+    );
+  }
+
+  return {
+    overallSupportNeed: overallSupportNeed as OverallSupportNeed,
+    difficultyType: difficultyType as DifficultyType | null
+  };
+}
+
+/** Compatibility helper for callers that only need the legacy field value. */
+export function validateUnderstandingResponse(input: unknown): OverallSupportNeed {
+  return validateLearnerResponseRequest(input).overallSupportNeed;
 }
 
 export async function respondToLearningSession(
   learnerId: string,
   sessionId: string,
-  overallSupportNeed: OverallSupportNeed
+  overallSupportNeed: OverallSupportNeed,
+  difficultyType: DifficultyType | null = null
 ) {
   const session = await findSession(learnerId, sessionId);
   if (!session) {
@@ -90,16 +138,23 @@ export async function respondToLearningSession(
     throw new SessionResponseConflictError("Session adaptation state is invalid");
   }
 
-  const canAdapt = currentRound < MAX_ADAPTATION_ROUNDS;
+  const decision = selectAdaptationRoute(overallSupportNeed, difficultyType);
+  const canAdapt =
+    decision.route === "stage_5_scaffold" && currentRound < MAX_ADAPTATION_ROUNDS;
   const nextRound = canAdapt ? currentRound + 1 : currentRound;
   const status = selectStatus(overallSupportNeed, nextRound);
   const adaptation = canAdapt
-    ? await createAdaptation(session, overallSupportNeed, nextRound)
+    ? await createAdaptation(
+        session,
+        overallSupportNeed,
+        decision.supportType,
+        nextRound
+      )
     : null;
   const responseEvent: LearnerResponseEvent = {
     overallSupportNeed,
-    difficultyType: null,
-    route: selectTraceRoute(overallSupportNeed),
+    difficultyType,
+    route: decision.route,
     roundBefore: currentRound,
     roundAfter: adaptation ? nextRound : currentRound,
     createdAt: new Date()
@@ -126,12 +181,9 @@ export async function respondToLearningSession(
     understanding: updatedSession.understanding,
     status: updatedSession.status,
     adaptationRound: updatedSession.adaptationRound,
+    route: decision.route,
     adaptation
   };
-}
-
-function selectTraceRoute(overallSupportNeed: OverallSupportNeed): AdaptationRoute {
-  return overallSupportNeed === "high" ? "fade" : "stage_5_scaffold";
 }
 
 function selectStatus(overallSupportNeed: OverallSupportNeed, round: number): SessionStatus {
@@ -144,9 +196,9 @@ function selectStatus(overallSupportNeed: OverallSupportNeed, round: number): Se
 async function createAdaptation(
   session: SessionRecord,
   learnerResponse: OverallSupportNeed,
+  supportType: CoreStage5SupportType,
   round: number
 ): Promise<Adaptation> {
-  const supportType = selectSupportType(learnerResponse);
   const generated = await generateAdaptation(session, learnerResponse, supportType);
   return {
     learnerResponse,
@@ -157,21 +209,10 @@ async function createAdaptation(
   };
 }
 
-function selectSupportType(overallSupportNeed: OverallSupportNeed): SupportType {
-  switch (overallSupportNeed) {
-    case "high":
-      return "key_takeaway";
-    case "medium":
-      return "another_example";
-    case "needs_support":
-      return "simpler_explanation";
-  }
-}
-
 async function generateAdaptation(
   session: SessionRecord,
   learnerResponse: OverallSupportNeed,
-  supportType: SupportType
+  supportType: CoreStage5SupportType
 ): Promise<GeneratedAdaptation> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey || apiKey === "your-key-here") {
@@ -237,7 +278,7 @@ async function generateAdaptation(
 
 function buildAdaptationInstructions(
   learnerResponse: OverallSupportNeed,
-  supportType: SupportType
+  supportType: CoreStage5SupportType
 ): string {
   return `
 # Role
@@ -254,11 +295,6 @@ learner understand the existing STEM concept.
 # Adaptation strategy
 
 Follow the selected support type exactly:
-
-- key_takeaway:
-  Summarise the central idea in 1–2 short sentences.
-  Reinforce what the learner should remember without introducing
-  another concept.
 
 - another_example:
   Provide one new, concrete example that was not used in the initial
@@ -302,7 +338,7 @@ Before returning the result, verify that:
 
 1. The content follows "${supportType}".
 2. It materially differs from previous support.
-3. It is concise and appropriate for the learner’s reported understanding.
+3. It is concise and appropriate for the learner’s reported support need.
 4. English and Burmese communicate the same technical meaning.
 5. Burmese sounds natural rather than machine-translated.
 6. No unsupported writing system appears.

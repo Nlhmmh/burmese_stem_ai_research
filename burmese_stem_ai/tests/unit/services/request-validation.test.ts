@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   ResponseValidationError,
+  validateLearnerResponseRequest,
   validateUnderstandingResponse
 } from "@/services/adaptation.service";
 import {
@@ -46,6 +47,43 @@ describe("request validation guard rails", () => {
     expect(() => validateUnderstandingResponse({ understanding: "low" })).toThrow(
       ResponseValidationError
     );
+  });
+
+  it("accepts legacy and canonical support-need request shapes", () => {
+    expect(
+      validateLearnerResponseRequest({
+        understanding: "medium",
+        difficultyType: "another_example"
+      })
+    ).toEqual({
+      overallSupportNeed: "medium",
+      difficultyType: "another_example"
+    });
+    expect(validateLearnerResponseRequest({ overallSupportNeed: "needs_support" })).toEqual({
+      overallSupportNeed: "needs_support",
+      difficultyType: null
+    });
+  });
+
+  it("rejects conflicting, unknown, and high-with-difficulty response combinations", () => {
+    expect(() =>
+      validateLearnerResponseRequest({
+        understanding: "medium",
+        overallSupportNeed: "needs_support"
+      })
+    ).toThrow(ResponseValidationError);
+    expect(() =>
+      validateLearnerResponseRequest({
+        understanding: "medium",
+        difficultyType: "free_text_help"
+      })
+    ).toThrow(ResponseValidationError);
+    expect(() =>
+      validateLearnerResponseRequest({
+        understanding: "high",
+        difficultyType: "another_example"
+      })
+    ).toThrow(ResponseValidationError);
   });
 
   it("trims a valid follow-up and rejects an oversized one", () => {
