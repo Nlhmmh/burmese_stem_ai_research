@@ -246,4 +246,118 @@ describe("Stage 7 provider and round branches", () => {
       );
     }
   );
+
+  it.each(["english", "burmese"] as const)(
+    "generates concept-scoped bilingual language support without changing an %s preference",
+    async (supportLanguage) => {
+      const session = makeSessionRecord({
+        adaptationRound: 0,
+        preferencesSnapshot: {
+          ...makeSessionRecord().preferencesSnapshot,
+          supportLanguage
+        }
+      });
+      daoMocks.findSession.mockResolvedValue(session);
+      daoMocks.recordSessionResponse.mockResolvedValue(
+        makeSessionRecord({
+          understanding: "medium",
+          adaptationRound: 1,
+          status: "in_progress"
+        })
+      );
+
+      const result = await respondToLearningSession(
+        session.learnerId,
+        session.sessionId,
+        "medium",
+        "language_terms"
+      );
+
+      expect(fetchMock).toHaveBeenCalledOnce();
+      expect(result).toMatchObject({
+        route: "language_support",
+        adaptation: {
+          learnerResponse: "medium",
+          supportType: "clarification",
+          presentationOverride: "bilingual",
+          content: generatedContent,
+          round: 1
+        }
+      });
+      expect(session.preferencesSnapshot.supportLanguage).toBe(supportLanguage);
+      expect(daoMocks.recordSessionResponse).toHaveBeenCalledWith(
+        expect.objectContaining({
+          adaptation: expect.objectContaining({
+            supportType: "clarification",
+            presentationOverride: "bilingual"
+          }),
+          responseEvent: expect.objectContaining({
+            difficultyType: "language_terms",
+            route: "language_support",
+            roundBefore: 0,
+            roundAfter: 1
+          })
+        })
+      );
+
+      const request = fetchMock.mock.calls[0]?.[1] as RequestInit;
+      const requestBody = JSON.parse(String(request.body)) as {
+        instructions: string;
+        input: string;
+      };
+      const promptInput = JSON.parse(requestBody.input) as {
+        adaptationRoute: string;
+        presentationOverride: string | null;
+        concept: { name: string; domain: string };
+        preferences: { supportLanguage: string };
+      };
+      expect(requestBody.instructions).toContain("Stage 3 → Stage 4 → Stage 5");
+      expect(requestBody.instructions).toContain(
+        "Do not translate every English technical term mechanically"
+      );
+      expect(promptInput).toMatchObject({
+        adaptationRoute: "language_support",
+        presentationOverride: "bilingual",
+        concept: session.concept,
+        preferences: { supportLanguage }
+      });
+    }
+  );
+
+  it("records a capped language route without calling the provider", async () => {
+    const session = makeSessionRecord({ adaptationRound: 2 });
+    daoMocks.findSession.mockResolvedValue(session);
+    daoMocks.recordSessionResponse.mockResolvedValue(
+      makeSessionRecord({
+        understanding: "needs_support",
+        adaptationRound: 2,
+        status: "review_recommended"
+      })
+    );
+
+    const result = await respondToLearningSession(
+      session.learnerId,
+      session.sessionId,
+      "needs_support",
+      "language_terms"
+    );
+
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(result).toMatchObject({
+      route: "language_support",
+      adaptationRound: 2,
+      adaptation: null
+    });
+    expect(daoMocks.recordSessionResponse).toHaveBeenCalledWith(
+      expect.objectContaining({
+        adaptation: null,
+        responseEvent: expect.objectContaining({
+          difficultyType: "language_terms",
+          route: "language_support",
+          roundBefore: 2,
+          roundAfter: 2
+        })
+      })
+    );
+  });
 });

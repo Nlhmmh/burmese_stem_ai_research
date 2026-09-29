@@ -14,7 +14,7 @@ import {
 } from "@/lib/session-domain";
 import {
   selectAdaptationRoute,
-  type CoreStage5SupportType
+  type GeneratingAdaptationDecision
 } from "@/services/adaptation-routing.service";
 
 const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
@@ -139,17 +139,11 @@ export async function respondToLearningSession(
   }
 
   const decision = selectAdaptationRoute(overallSupportNeed, difficultyType);
-  const canAdapt =
-    decision.route === "stage_5_scaffold" && currentRound < MAX_ADAPTATION_ROUNDS;
+  const canAdapt = decision.route !== "fade" && currentRound < MAX_ADAPTATION_ROUNDS;
   const nextRound = canAdapt ? currentRound + 1 : currentRound;
   const status = selectStatus(overallSupportNeed, nextRound);
   const adaptation = canAdapt
-    ? await createAdaptation(
-        session,
-        overallSupportNeed,
-        decision.supportType,
-        nextRound
-      )
+    ? await createAdaptation(session, overallSupportNeed, decision, nextRound)
     : null;
   const responseEvent: LearnerResponseEvent = {
     overallSupportNeed,
@@ -196,14 +190,17 @@ function selectStatus(overallSupportNeed: OverallSupportNeed, round: number): Se
 async function createAdaptation(
   session: SessionRecord,
   learnerResponse: OverallSupportNeed,
-  supportType: CoreStage5SupportType,
+  decision: GeneratingAdaptationDecision,
   round: number
 ): Promise<Adaptation> {
-  const generated = await generateAdaptation(session, learnerResponse, supportType);
+  const generated = await generateAdaptation(session, learnerResponse, decision);
   return {
     learnerResponse,
-    supportType,
+    supportType: decision.supportType,
     content: generated.content,
+    ...(decision.route === "language_support"
+      ? { presentationOverride: decision.presentationOverride }
+      : {}),
     round,
     createdAt: new Date()
   };
@@ -212,7 +209,7 @@ async function createAdaptation(
 async function generateAdaptation(
   session: SessionRecord,
   learnerResponse: OverallSupportNeed,
-  supportType: CoreStage5SupportType
+  decision: GeneratingAdaptationDecision
 ): Promise<GeneratedAdaptation> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey || apiKey === "your-key-here") {
@@ -232,8 +229,11 @@ async function generateAdaptation(
       body: JSON.stringify({
         model: process.env.OPENAI_MODEL || "gpt-4o-mini",
         store: false,
-        instructions: buildAdaptationInstructions(learnerResponse, supportType),
+        instructions: buildAdaptationInstructions(learnerResponse, decision),
         input: JSON.stringify({
+          adaptationRoute: decision.route,
+          presentationOverride:
+            decision.route === "language_support" ? decision.presentationOverride : null,
           concept: session.concept,
           initialExplanations: session.explanations,
           previousAdaptations: session.adaptations,
@@ -278,8 +278,30 @@ async function generateAdaptation(
 
 function buildAdaptationInstructions(
   learnerResponse: OverallSupportNeed,
-  supportType: CoreStage5SupportType
+  decision: GeneratingAdaptationDecision
 ): string {
+  const strategy = decision.route === "language_support"
+    ? `
+- language_support (Stage 3 → Stage 4 → Stage 5):
+  Reconsider how the active STEM terminology should be retained and
+  explained across English and Burmese before revising the scaffold.
+  Keep established English technical terms when they are clearer or commonly
+  used, and explain their meaning naturally in Burmese.
+  Do not translate every English technical term mechanically.
+  Produce a clear English explanation and a natural Burmese explanation of
+  the same active concept.`
+    : decision.supportType === "another_example"
+      ? `
+- another_example:
+  Provide one new, concrete example that was not used in the initial
+  explanation or previous adaptations.
+  Explain how the example connects to the concept.`
+      : `
+- simpler_explanation:
+  Explain only the most important idea using shorter sentences,
+  simpler language and lower technical complexity.
+  Use a different analogy or perspective when helpful.`;
+
   return `
 # Role
 
@@ -289,22 +311,14 @@ university student.
 # Goal
 
 The learner reported "${learnerResponse}".
-Generate exactly one "${supportType}" support item that helps the
+The application selected the "${decision.route}" route.
+Generate exactly one "${decision.supportType}" support item that helps the
 learner understand the existing STEM concept.
 
 # Adaptation strategy
 
 Follow the selected support type exactly:
-
-- another_example:
-  Provide one new, concrete example that was not used in the initial
-  explanation or previous adaptations.
-  Explain how the example connects to the concept.
-
-- simpler_explanation:
-  Explain only the most important idea using shorter sentences,
-  simpler language and lower technical complexity.
-  Use a different analogy or perspective when helpful.
+${strategy}
 
 # Context constraints
 
@@ -336,7 +350,7 @@ Follow the selected support type exactly:
 
 Before returning the result, verify that:
 
-1. The content follows "${supportType}".
+1. The content follows "${decision.supportType}" and the "${decision.route}" route.
 2. It materially differs from previous support.
 3. It is concise and appropriate for the learner’s reported support need.
 4. English and Burmese communicate the same technical meaning.

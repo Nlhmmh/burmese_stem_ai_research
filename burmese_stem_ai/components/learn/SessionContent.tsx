@@ -93,12 +93,30 @@ export function AdaptationCard({
       <p className={`mb-2 text-xs font-bold uppercase tracking-wide ${labelStyle}`}>
         {t(adaptation.supportType)}
       </p>
-      <BilingualContent
-        content={adaptation.content}
+      <AdaptationContent
+        adaptation={adaptation}
         locale={locale}
         supportLanguage={supportLanguage}
-        compact
       />
     </div>
+  );
+}
+
+export function AdaptationContent({
+  adaptation,
+  locale,
+  supportLanguage
+}: {
+  adaptation: Adaptation;
+  locale: string;
+  supportLanguage: Preferences["supportLanguage"];
+}) {
+  return (
+    <BilingualContent
+      content={adaptation.content}
+      locale={locale}
+      supportLanguage={adaptation.presentationOverride ?? supportLanguage}
+      compact
+    />
   );
 }

@@ -50,7 +50,18 @@ describe("deterministic Stage 7 route selection", () => {
     );
   });
 
-  it.each(["language_terms", "concept_unclear", "concept_mismatch"] as const)(
+  it.each(["medium", "needs_support"] as const)(
+    "selects bilingual language support for %s",
+    (overallSupportNeed) => {
+      expect(selectAdaptationRoute(overallSupportNeed, "language_terms")).toEqual({
+        route: "language_support",
+        supportType: "clarification",
+        presentationOverride: "bilingual"
+      });
+    }
+  );
+
+  it.each(["concept_unclear", "concept_mismatch"] as const)(
     "keeps the specialised %s route unavailable until its implementation step",
     (difficultyType) => {
       expect(() => selectAdaptationRoute("medium", difficultyType)).toThrow(

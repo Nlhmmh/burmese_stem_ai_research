@@ -1,6 +1,7 @@
 import type {
   DifficultyType,
   FadeSupport,
+  LanguageSupport,
   OverallSupportNeed,
   ScaffoldSupportType
 } from "@/lib/session-domain";
@@ -15,7 +16,8 @@ export type CoreStage5Decision = {
   supportType: CoreStage5SupportType;
 };
 
-export type CoreAdaptationDecision = FadeSupport | CoreStage5Decision;
+export type GeneratingAdaptationDecision = CoreStage5Decision | LanguageSupport;
+export type ImplementedAdaptationDecision = FadeSupport | GeneratingAdaptationDecision;
 
 export class InvalidAdaptationRouteInputError extends Error {}
 export class UnsupportedAdaptationRouteError extends Error {}
@@ -24,7 +26,7 @@ export class UnsupportedAdaptationRouteError extends Error {}
 export function selectAdaptationRoute(
   overallSupportNeed: OverallSupportNeed,
   difficultyType: DifficultyType | null
-): CoreAdaptationDecision {
+): ImplementedAdaptationDecision {
   if (overallSupportNeed === "high") {
     if (difficultyType !== null) {
       throw new InvalidAdaptationRouteInputError(
@@ -46,6 +48,11 @@ export function selectAdaptationRoute(
     case "another_example":
       return { route: "stage_5_scaffold", supportType: "another_example" };
     case "language_terms":
+      return {
+        route: "language_support",
+        supportType: "clarification",
+        presentationOverride: "bilingual"
+      };
     case "concept_unclear":
     case "concept_mismatch":
       throw new UnsupportedAdaptationRouteError(
