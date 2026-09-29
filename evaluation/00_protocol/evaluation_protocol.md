@@ -95,7 +95,7 @@ Before collecting results:
 4. Record model identifier, provider, available generation settings, prompt/schema hashes and timeout/retry configuration. Distinguish live model calls from mocks and database-backed integration from mocked persistence.
 5. Use dedicated artificial learner identities and evaluation sessions. Establish reset/cleanup procedures that affect only evaluation records. Retain identity continuity for persistence tests and separate identities for ownership tests.
 6. Freeze test inputs, expected outcomes, scoring anchors, assessor qualifications and execution order. Choose a Burmese-fluent assessor for language judgement; otherwise mark linguistic adequacy Not assessed.
-7. Save baseline/environment records in the planned `00_protocol/artefact_versions.md` and `00_protocol/environment.md`. These files are future outputs, not created by this protocol.
+7. Save baseline/environment records in `00_protocol/artefact_versions.md` and `00_protocol/environment.md`. The `B00-PRE-REFINEMENT` preparation records now exist, but they are not execution evidence or the final `B01` evaluation baseline.
 
 Use a unique run ID such as `RUN-B01-20260928-01`. Capture failures and first attempts, not only successful retries. Retry after recording the original failure and its reason; give every attempt its own identifier. Do not silently replace evidence. If code, prompts, criteria or inputs change, log the change and create a new baseline/protocol version as appropriate; retain pre-change results and run affected regression cases.
 
