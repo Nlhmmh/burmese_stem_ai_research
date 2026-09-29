@@ -42,6 +42,26 @@ describe("session lifecycle ownership", () => {
     ).resolves.toMatchObject({ responseEvents: [] });
   });
 
+  it("normalises legacy collections and preserves a missing preference snapshot", async () => {
+    const legacySession = makeSessionRecord();
+    Object.assign(legacySession, {
+      adaptations: undefined,
+      responseEvents: undefined,
+      followUps: undefined,
+      preferencesSnapshot: undefined
+    });
+    daoMocks.findSession.mockResolvedValue(legacySession);
+
+    await expect(
+      getLearningSession(legacySession.learnerId, legacySession.sessionId)
+    ).resolves.toMatchObject({
+      adaptations: [],
+      responseEvents: [],
+      followUps: [],
+      preferencesSnapshot: undefined
+    });
+  });
+
   it("keeps both ownership keys on completion", async () => {
     const existing = makeSessionRecord();
     const completed = makeSessionRecord({ status: "completed" });

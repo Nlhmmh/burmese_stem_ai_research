@@ -294,6 +294,7 @@ export async function respondToLearningSession(
     status: updatedSession.status,
     adaptationRound: updatedSession.adaptationRound,
     route: decision.route,
+    responseEvent,
     adaptation,
     ...(decision.route === "context_reinterpretation"
       ? {

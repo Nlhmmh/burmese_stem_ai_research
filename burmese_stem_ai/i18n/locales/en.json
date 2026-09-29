@@ -52,14 +52,14 @@
   },
   "history": {
     "title": "Learning History",
-    "subtitle": "Your STEM concepts and understanding progress",
+    "subtitle": "Your STEM concepts and self-reported support history",
     "newInquiry": "New Inquiry",
     "understanding": {
-      "label": "Understanding",
-      "high": "High",
-      "medium": "Medium",
-      "needs_support": "Needs Support",
-      "unrated": "Not Rated"
+      "label": "Self-reported support",
+      "high": "No support needed",
+      "medium": "Some support",
+      "needs_support": "More support needed",
+      "unrated": "No response yet"
     },
     "status": {
       "label": "Status",
@@ -132,6 +132,31 @@
         "skip": "Continue without a choice",
         "cancel": "Back to understanding choices",
         "submitting": "Preparing support..."
+      }
+    },
+    "review": {
+      "title": "Support and response history",
+      "noRecordedSupport": "No refined support response was recorded for this session.",
+      "responses": "Self-reported responses",
+      "responseNumber": "Response {number}",
+      "selfReportedSupport": "Self-reported support",
+      "requestedHelp": "Requested help",
+      "noSpecificHelp": "No specific help selected",
+      "route": "Support route",
+      "round": "Adaptation round",
+      "conceptTrace": "{outcome}: {previous} → {current}",
+      "legacyHistory": "This legacy session has stored adaptations but predates detailed response-route history.",
+      "adaptations": "Stored adaptations",
+      "adaptationRound": "Adaptation round {round}",
+      "needs": {
+        "high": "No additional support needed",
+        "medium": "Some support requested",
+        "needs_support": "More support requested"
+      },
+      "correctionOutcomes": {
+        "corrected": "Concept corrected",
+        "ambiguous": "Meaning remained ambiguous",
+        "limit_reached": "Correction limit reached"
       }
     },
     "support": {

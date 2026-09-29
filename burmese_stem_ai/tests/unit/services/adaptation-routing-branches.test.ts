@@ -179,7 +179,15 @@ describe("Stage 7 provider and round branches", () => {
         understanding: overallSupportNeed,
         status: expectedStatus,
         adaptationRound: roundAfter,
-        route: expectedRoute
+        route: expectedRoute,
+        responseEvent: {
+          overallSupportNeed,
+          difficultyType: null,
+          route: expectedRoute,
+          roundBefore,
+          roundAfter,
+          createdAt: expect.any(Date)
+        }
       });
 
       const expectedAdaptation = expectedSupportType

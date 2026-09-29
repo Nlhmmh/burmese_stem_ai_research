@@ -47,6 +47,14 @@ describe("adaptation service boundaries", () => {
       status: "review_recommended",
       adaptationRound: 2,
       route: "stage_5_scaffold",
+      responseEvent: {
+        overallSupportNeed: "needs_support",
+        difficultyType: null,
+        route: "stage_5_scaffold",
+        roundBefore: 2,
+        roundAfter: 2,
+        createdAt: expect.any(Date)
+      },
       adaptation: null
     });
 

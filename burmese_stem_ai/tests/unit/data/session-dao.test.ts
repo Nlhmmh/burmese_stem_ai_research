@@ -4,6 +4,7 @@ import { makeSessionRecord } from "../../fixtures/session";
 
 const persistenceMocks = vi.hoisted(() => ({
   connectMongoDB: vi.fn(),
+  find: vi.fn(),
   findOne: vi.fn(),
   findOneAndUpdate: vi.fn()
 }));
@@ -14,6 +15,7 @@ vi.mock("@/data/mongodb", () => ({
 
 vi.mock("@/data/schema", () => ({
   SessionModel: {
+    find: persistenceMocks.find,
     findOne: persistenceMocks.findOne,
     findOneAndUpdate: persistenceMocks.findOneAndUpdate
   }
@@ -22,6 +24,7 @@ vi.mock("@/data/schema", () => ({
 import {
   appendFollowUp,
   findSession,
+  findSessionsByLearner,
   recordSessionResponse,
   type Adaptation
 } from "@/data/dao/session.dao";
@@ -51,6 +54,22 @@ describe("session DAO persistence invariants", () => {
       sessionId: session.sessionId,
       learnerId: session.learnerId
     });
+  });
+
+  it("lists only the learner's sessions newest first", async () => {
+    const sessions = [makeSessionRecord()];
+    const lean = vi.fn().mockResolvedValue(sessions);
+    const sort = vi.fn().mockReturnValue({ lean });
+    const select = vi.fn().mockReturnValue({ sort });
+    persistenceMocks.find.mockReturnValue({ select });
+
+    await expect(findSessionsByLearner("learner-a")).resolves.toEqual(sessions);
+
+    expect(persistenceMocks.find).toHaveBeenCalledWith({ learnerId: "learner-a" });
+    expect(select).toHaveBeenCalledWith(
+      "sessionId concept understanding status updatedAt -_id"
+    );
+    expect(sort).toHaveBeenCalledWith({ updatedAt: -1 });
   });
 
   it("atomically increments the round and appends an adaptation", async () => {

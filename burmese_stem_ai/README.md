@@ -75,7 +75,7 @@ The current repository contains an end-to-end proof-of-concept learning flow. Au
 | LLM integration | Implemented | Server-side OpenAI Responses API calls with strict JSON Schema output and a 20-second timeout |
 | Adaptation logic | Implemented | Deterministic support strategy and a server-enforced maximum of two rounds |
 | Follow-up logic | Implemented | Concept-scoped bilingual answers with a maximum of two follow-ups per session |
-| Automated tests | Not implemented | Current checks are lint + production build |
+| Automated tests | Implemented | Vitest unit/component tests with V8 coverage, plus lint, TypeScript, and production-build checks |
 
 ---
 
@@ -1313,7 +1313,16 @@ Learning Style
   more_examples
 ```
 
-The preferences dialog currently saves these three learning-content preferences. UI language is changed in the header and stored in the `locale` cookie. The light/dark theme toggle is also in the header and is stored in browser `localStorage`.
+The preferences dialog saves these three learning-content preferences to the
+learner profile. UI locale and theme are intentionally browser-scoped display
+preferences rather than synchronised profile fields:
+
+- UI locale is selected in the header and stored in the `locale` cookie;
+- theme is selected in the header and stored in browser `localStorage`;
+- `supportLanguage`, `explanationLevel`, and `learningStyle` are synchronised to
+  MongoDB and copied into each new session's preference snapshot;
+- the existing profile `uiLanguage` and `theme` fields are retained only for
+  legacy document compatibility and are not read or updated by the current UI.
 
 Learning-style semantics:
 
@@ -2019,88 +2028,34 @@ light
 dark
 ```
 
-Theme is toggled in the application header and persisted in browser `localStorage`. Although the profile schema also contains a `theme` preference, the current toggle does not synchronize it to MongoDB.
+Theme is toggled in the application header and persisted in browser
+`localStorage`. This is the defined browser-preference contract; it is not
+synchronised to MongoDB. The legacy profile `theme` field is retained for
+document compatibility only.
 
 ---
 
-# 18. Testing Plan
+# 18. Automated Testing
 
-There is currently no automated test suite.
+The repository uses Vitest with deterministic DAO and provider mocks, jsdom
+component tests, and V8 structural coverage. Current tests cover domain and
+schema constraints, learner ownership, atomic persistence, route selection,
+the two-round and two-follow-up caps, strict model-output contracts, Stage 6B,
+follow-up scope, and Review/Resume state reconstruction.
 
-The target implementation should add tests in stages.
-
-## Priority 1 — Schema / Domain Tests
-
-Test:
-
-- valid/invalid preference enums;
-- understanding enum;
-- status enum;
-- adaptation round `0..2`;
-- learner can have multiple sessions;
-- session identifier uniqueness.
-
-## Priority 2 — API Tests
-
-Test:
-
-```text
-GET/PATCH preferences
-POST sessions
-GET sessions
-GET session
-PATCH session
-POST respond
-POST followup
-```
-
-Important cases:
-
-- missing learner;
-- invalid body;
-- invalid session ID;
-- session not owned by learner;
-- unknown understanding;
-- adaptation round 2 limit;
-- missing session;
-- provider failure.
-
-## Priority 3 — Service Tests
-
-Test adaptation mapping:
-
-```text
-high -> takeaway/progress
-medium -> clarification/example
-needs_support -> simplify/support
-```
-
-Test:
-
-- no round 3;
-- review recommendation transition;
-- new-concept follow-up detection contract.
-
-## Priority 4 — UI Tests
-
-Test:
-
-- home submission;
-- locale switching;
-- understanding buttons;
-- adapted support rendering;
-- history list;
-- resume navigation;
-- loading/error states.
-
-### Minimum Current Checks
-
-Until automated tests are added:
+Run the current verification commands with:
 
 ```bash
+npm test
+npm run test:coverage
 npm run lint
-npm run build
+npx tsc --noEmit
+npm run build -- --webpack
 ```
+
+These tests verify software behaviour and structural coverage. They do not by
+themselves establish Burmese linguistic quality, STEM-content correctness, or
+learner effectiveness; those require separate expert and learner evaluation.
 
 ---
 
@@ -2212,14 +2167,14 @@ Legend:
 
 - [x] `GET /api/preferences`
 - [x] `PATCH /api/preferences`
-- [x] UI language preference model
+- [x] Browser-scoped UI locale cookie
 - [x] Support-language preference model
 - [x] Explanation-level preference model
 - [x] Learning-style preference model
-- [x] Theme preference model
+- [x] Browser-scoped theme preference
 - [x] Learning-content preferences modal UI
 - [x] Apply support language, explanation level, and learning style
-- [~] Synchronize UI language and theme controls with profile preferences
+- [x] Define UI locale and theme as browser-scoped, not profile-synchronised
 
 ## Screen 1 — Home
 
@@ -2338,12 +2293,12 @@ Legend:
 
 - [x] ESLint command
 - [x] Production build command
-- [ ] Schema tests
-- [ ] DAO tests
-- [ ] API tests
-- [ ] Adaptation state tests
-- [ ] LLM structured-output tests
-- [ ] UI tests
+- [x] Schema tests
+- [x] DAO tests
+- [~] API tests (session-detail continuity covered; full route matrix remains)
+- [x] Adaptation state tests
+- [x] LLM structured-output tests
+- [x] UI tests
 
 ---
 
@@ -2351,17 +2306,22 @@ Legend:
 
 The core learning flow is implemented. The remaining priorities are hardening, consistency, and verification.
 
-### Priority 1 — Automated Tests
+### Priority 1 — API Route Coverage
 
-Add schema, DAO, route-handler, lifecycle/adaptation, LLM-contract, and UI tests. The project currently relies only on ESLint and a production build.
+The schema, DAO, lifecycle/adaptation, model-contract, and core session UI
+layers have automated coverage. Complete direct route-handler coverage for all
+HTTP status and error mappings.
 
 ### Priority 2 — Shared OpenAI Boundary
 
 Extract the duplicated Responses API request/parsing logic from the session, adaptation, and follow-up services. Centralize the model default, timeout, error mapping, and any future retry policy.
 
-### Priority 3 — Preference Consistency
+### Preference Ownership — Resolved
 
-Synchronize the locale and theme controls with the stored `uiLanguage` and `theme` profile fields, or remove those database fields if cookie/localStorage-only behavior is intentional.
+Locale and theme are browser-scoped display preferences. The modal remains the
+single profile-preference UI and synchronises only learning-content preferences.
+Legacy `uiLanguage` and `theme` database fields remain readable to avoid a
+destructive migration, but the current UI does not use them.
 
 ### Priority 4 — Locale and Error Hardening
 
@@ -2385,8 +2345,8 @@ Remove `EC2KeyPair.pem` from the project directory and verify whether it has eve
 
 ```text
 Phase 1
-Add automated coverage for current schemas,
-services, APIs, and session state transitions
+Complete direct API route-handler coverage
+and preserve the existing state-transition suite
         |
         v
 Phase 2
@@ -2395,8 +2355,7 @@ standardize model/timeout/error behavior
         |
         v
 Phase 3
-Synchronize or simplify locale/theme preferences
-+ localize server errors
+Localize server errors and validate locale cookies
         |
         v
 Phase 4

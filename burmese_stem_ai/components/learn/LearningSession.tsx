@@ -6,14 +6,15 @@ import type {
   DifficultyType,
   OverallSupportNeed
 } from "@/lib/session-domain";
+import { getSessionNextAction } from "@/lib/session-view";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import FollowUpSection from "./FollowUpSection";
 import {
-  AdaptationCard,
   BilingualContent,
   ExplanationCard,
+  SessionStateHistory,
   Stage6BPanel
 } from "./SessionContent";
 import type {
@@ -129,7 +130,10 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
               concept: data.concept ?? current.concept,
               adaptations: data.adaptation
                 ? [...current.adaptations, data.adaptation]
-                : current.adaptations
+                : current.adaptations,
+              responseEvents: data.responseEvent
+                ? [...current.responseEvents, data.responseEvent]
+                : current.responseEvents
             }
           : current
       );
@@ -265,15 +269,11 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
     );
   }
 
-  const latestAdaptation = session.adaptations.at(-1);
   const isCompleted = session.status === "completed";
-  const canRespond =
-    !isCompleted &&
-    session.understanding !== "high" &&
-    session.adaptationRound < MAX_ADAPTATION_ROUNDS;
-  const canFinish =
-    !isCompleted &&
-    (session.understanding === "high" || session.adaptationRound >= MAX_ADAPTATION_ROUNDS);
+  const nextAction = getSessionNextAction(session);
+  const canRespond = nextAction === "respond";
+  const canFinish = nextAction === "finish";
+  const latestPersistedRoute = session.responseEvents.at(-1)?.route ?? null;
   const language = session.preferencesSnapshot?.supportLanguage ?? "bilingual";
 
   return (
@@ -361,19 +361,18 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
             <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
               {t("understanding.title")}
             </h2>
-            {latestAdaptation && (
-              <AdaptationCard
-                adaptation={latestAdaptation}
-                locale={locale}
-                supportLanguage={language}
-              />
-            )}
-            {latestAdaptation && canRespond && (
+            <SessionStateHistory
+              adaptations={session.adaptations}
+              responseEvents={session.responseEvents}
+              locale={locale}
+              supportLanguage={language}
+            />
+            {session.adaptations.length > 0 && canRespond && (
               <p className="mb-3 mt-5 text-sm text-slate-500 dark:text-slate-400">
                 {t("understanding.askAgain")}
               </p>
             )}
-            {lastRoute && (
+            {lastRoute && lastRoute !== latestPersistedRoute && (
               <p
                 className="mb-3 mt-4 rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600 dark:bg-slate-800 dark:text-slate-300"
                 role="status"
@@ -431,7 +430,13 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
               </p>
             )}
             {canFinish && (
-              <div className={latestAdaptation ? "mt-4" : ""}>
+              <div
+                className={
+                  session.adaptations.length > 0 || session.responseEvents.length > 0
+                    ? "mt-4"
+                    : ""
+                }
+              >
                 {session.adaptationRound >= MAX_ADAPTATION_ROUNDS &&
                   session.understanding !== "high" && (
                     <p className="mb-3 text-xs text-slate-400 dark:text-slate-500">
@@ -467,6 +472,18 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
                 )}
               </div>
             )}
+          </section>
+        )}
+
+        {isCompleted && (
+          <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <SessionStateHistory
+              adaptations={session.adaptations}
+              responseEvents={session.responseEvents}
+              locale={locale}
+              supportLanguage={language}
+              showEmpty
+            />
           </section>
         )}
 

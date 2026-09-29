@@ -2,7 +2,11 @@
 
 import type { Preferences } from "@/data/schemas/profile.schema";
 import { MAX_CONCEPT_CLARIFICATION_LENGTH } from "@/lib/constants";
-import type { DifficultyType, OverallSupportNeed } from "@/lib/session-domain";
+import type {
+  DifficultyType,
+  LearnerResponseEvent,
+  OverallSupportNeed
+} from "@/lib/session-domain";
 import type { Adaptation, BilingualText } from "./types";
 import { useTranslations } from "next-intl";
 
@@ -128,6 +132,127 @@ export function AdaptationContent({
       supportLanguage={adaptation.presentationOverride ?? supportLanguage}
       compact
     />
+  );
+}
+
+export function SessionStateHistory({
+  adaptations,
+  responseEvents,
+  locale,
+  supportLanguage,
+  showEmpty = false
+}: {
+  adaptations: Adaptation[];
+  responseEvents: LearnerResponseEvent<string>[];
+  locale: string;
+  supportLanguage: Preferences["supportLanguage"];
+  showEmpty?: boolean;
+}) {
+  const t = useTranslations("session");
+  const hasHistory = adaptations.length > 0 || responseEvents.length > 0;
+  if (!hasHistory && !showEmpty) return null;
+
+  return (
+    <div
+      className="rounded-xl border border-slate-200 bg-slate-50/70 p-4 dark:border-slate-700 dark:bg-slate-800/40"
+      aria-label={t("review.title")}
+    >
+      <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+        {t("review.title")}
+      </h3>
+
+      {!hasHistory && (
+        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+          {t("review.noRecordedSupport")}
+        </p>
+      )}
+
+      {responseEvents.length > 0 && (
+        <div className="mt-4 space-y-3">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            {t("review.responses")}
+          </h4>
+          {responseEvents.map((event, index) => (
+            <article
+              key={`${event.createdAt}-${index}`}
+              className="rounded-lg border border-slate-200 bg-white p-3 dark:border-slate-700 dark:bg-slate-900"
+            >
+              <p className="text-xs font-bold text-slate-700 dark:text-slate-200">
+                {t("review.responseNumber", { number: index + 1 })}
+              </p>
+              <dl className="mt-2 grid gap-1.5 text-sm text-slate-600 dark:text-slate-300 sm:grid-cols-2">
+                <HistoryDetail
+                  label={t("review.selfReportedSupport")}
+                  value={t(`review.needs.${event.overallSupportNeed}`)}
+                />
+                <HistoryDetail
+                  label={t("review.requestedHelp")}
+                  value={
+                    event.difficultyType
+                      ? t(`understanding.stage6b.choices.${event.difficultyType}`)
+                      : t("review.noSpecificHelp")
+                  }
+                />
+                <HistoryDetail
+                  label={t("review.route")}
+                  value={t(`understanding.routes.${event.route}`)}
+                />
+                <HistoryDetail
+                  label={t("review.round")}
+                  value={`${event.roundBefore} → ${event.roundAfter}`}
+                />
+              </dl>
+              {event.conceptReinterpretation && (
+                <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                  {t("review.conceptTrace", {
+                    previous: event.conceptReinterpretation.previous.name,
+                    current: event.conceptReinterpretation.current.name,
+                    outcome: t(
+                      `review.correctionOutcomes.${event.conceptReinterpretation.outcome}`
+                    )
+                  })}
+                </p>
+              )}
+            </article>
+          ))}
+        </div>
+      )}
+
+      {responseEvents.length === 0 && adaptations.length > 0 && (
+        <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
+          {t("review.legacyHistory")}
+        </p>
+      )}
+
+      {adaptations.length > 0 && (
+        <div className="mt-4 space-y-3">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            {t("review.adaptations")}
+          </h4>
+          {adaptations.map((adaptation, index) => (
+            <div key={`${adaptation.createdAt}-${index}`}>
+              <p className="mb-1 text-xs text-slate-500 dark:text-slate-400">
+                {t("review.adaptationRound", { round: adaptation.round })}
+              </p>
+              <AdaptationCard
+                adaptation={adaptation}
+                locale={locale}
+                supportLanguage={supportLanguage}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function HistoryDetail({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <dt className="text-xs text-slate-400 dark:text-slate-500">{label}</dt>
+      <dd>{value}</dd>
+    </div>
   );
 }
 

@@ -66,6 +66,7 @@ export type LearnerResponseResult = {
   status: SessionStatus;
   adaptationRound: number;
   route: LearnerResponseEvent["route"];
+  responseEvent?: LearnerResponseEvent<string>;
   adaptation: Adaptation | null;
   concept?: LearningSessionRecord["concept"];
   correctionOutcome?: ConceptReinterpretationOutcome;
