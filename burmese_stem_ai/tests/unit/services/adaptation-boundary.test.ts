@@ -1,0 +1,94 @@
+import { beforeEach, describe, expect, it, vi } from "vitest";
+
+import { makeSessionRecord } from "../../fixtures/session";
+
+const daoMocks = vi.hoisted(() => ({
+  findSession: vi.fn(),
+  recordSessionResponse: vi.fn()
+}));
+
+vi.mock("@/data/dao/session.dao", () => ({
+  findSession: daoMocks.findSession,
+  recordSessionResponse: daoMocks.recordSessionResponse
+}));
+
+import {
+  respondToLearningSession,
+  SessionNotFoundError,
+  SessionResponseConflictError
+} from "@/services/adaptation.service";
+
+describe("adaptation service boundaries", () => {
+  const fetchMock = vi.fn();
+
+  beforeEach(() => {
+    vi.stubGlobal("fetch", fetchMock);
+  });
+
+  it("persists the response without an LLM call after two adaptation rounds", async () => {
+    const session = makeSessionRecord({
+      understanding: "medium",
+      adaptationRound: 2,
+      status: "in_progress"
+    });
+    daoMocks.findSession.mockResolvedValue(session);
+    daoMocks.recordSessionResponse.mockResolvedValue(
+      makeSessionRecord({
+        understanding: "needs_support",
+        adaptationRound: 2,
+        status: "review_recommended"
+      })
+    );
+
+    await expect(
+      respondToLearningSession("learner-a", session.sessionId, "needs_support")
+    ).resolves.toEqual({
+      understanding: "needs_support",
+      status: "review_recommended",
+      adaptationRound: 2,
+      adaptation: null
+    });
+
+    expect(daoMocks.findSession).toHaveBeenCalledWith("learner-a", session.sessionId);
+    expect(daoMocks.recordSessionResponse).toHaveBeenCalledWith({
+      learnerId: "learner-a",
+      sessionId: session.sessionId,
+      expectedRound: 2,
+      understanding: "needs_support",
+      status: "review_recommended",
+      adaptation: null
+    });
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("rejects an invalid stored round without a provider or persistence call", async () => {
+    const session = makeSessionRecord({ adaptationRound: 3 });
+    daoMocks.findSession.mockResolvedValue(session);
+
+    await expect(
+      respondToLearningSession("learner-a", session.sessionId, "needs_support")
+    ).rejects.toBeInstanceOf(SessionResponseConflictError);
+
+    expect(daoMocks.recordSessionResponse).not.toHaveBeenCalled();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("treats a session outside the learner boundary as not found", async () => {
+    daoMocks.findSession.mockResolvedValue(null);
+
+    await expect(
+      respondToLearningSession(
+        "different-learner",
+        "2fba6e7a-1225-4d1f-971f-5ae58704e3d5",
+        "needs_support"
+      )
+    ).rejects.toBeInstanceOf(SessionNotFoundError);
+
+    expect(daoMocks.findSession).toHaveBeenCalledWith(
+      "different-learner",
+      "2fba6e7a-1225-4d1f-971f-5ae58704e3d5"
+    );
+    expect(daoMocks.recordSessionResponse).not.toHaveBeenCalled();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+});
