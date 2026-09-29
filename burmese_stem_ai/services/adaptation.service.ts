@@ -4,10 +4,17 @@ import {
   type Adaptation,
   type SessionRecord
 } from "@/data/dao/session.dao";
-import { MAX_ADAPTATION_ROUNDS, type SessionStatus } from "@/lib/constants";
+import {
+  MAX_ADAPTATION_ROUNDS,
+  MAX_CONCEPT_CLARIFICATION_LENGTH,
+  type SessionStatus
+} from "@/lib/constants";
 import {
   DIFFICULTY_TYPES,
   OVERALL_SUPPORT_NEEDS,
+  type ConceptReference,
+  type ConceptReinterpretationOutcome,
+  type ConceptReinterpretationTrace,
   type DifficultyType,
   type LearnerResponseEvent,
   type OverallSupportNeed
@@ -36,12 +43,60 @@ const adaptationOutputSchema = {
   additionalProperties: false
 } as const;
 
+const conceptReinterpretationOutputSchema = {
+  type: "object",
+  properties: {
+    outcome: { type: "string", enum: ["corrected", "ambiguous"] },
+    message: {
+      type: "object",
+      properties: {
+        en: { type: "string" },
+        my: { type: "string" }
+      },
+      required: ["en", "my"],
+      additionalProperties: false
+    },
+    concept: {
+      type: "object",
+      properties: {
+        name: { type: "string" },
+        domain: { type: "string" }
+      },
+      required: ["name", "domain"],
+      additionalProperties: false
+    },
+    content: {
+      type: "object",
+      properties: {
+        en: { type: "string" },
+        my: { type: "string" }
+      },
+      required: ["en", "my"],
+      additionalProperties: false
+    }
+  },
+  required: ["outcome", "message", "concept", "content"],
+  additionalProperties: false
+} as const;
+
 type GeneratedAdaptation = {
   content: {
     en: string;
     my: string;
   };
 };
+
+type GeneratedConceptReinterpretation = {
+  outcome: "corrected" | "ambiguous";
+  message: GeneratedAdaptation["content"];
+  concept: ConceptReference;
+  content: GeneratedAdaptation["content"];
+};
+
+type StandardAdaptationDecision = Exclude<
+  GeneratingAdaptationDecision,
+  { route: "context_reinterpretation" }
+>;
 
 type OpenAIResponse = {
   output?: Array<{
@@ -60,6 +115,7 @@ export class AdaptationGenerationError extends Error {}
 export type ValidatedLearnerResponse = {
   overallSupportNeed: OverallSupportNeed;
   difficultyType: DifficultyType | null;
+  conceptClarification: string | null;
 };
 
 export function validateLearnerResponseRequest(input: unknown): ValidatedLearnerResponse {
@@ -108,9 +164,33 @@ export function validateLearnerResponseRequest(input: unknown): ValidatedLearner
     );
   }
 
+  const suppliedConceptClarification = body.conceptClarification;
+  let conceptClarification: string | null = null;
+  if (difficultyType === "concept_mismatch") {
+    if (
+      typeof suppliedConceptClarification !== "string" ||
+      suppliedConceptClarification.trim().length === 0
+    ) {
+      throw new ResponseValidationError(
+        "Concept clarification is required when correcting the interpreted concept"
+      );
+    }
+    conceptClarification = suppliedConceptClarification.trim();
+    if (conceptClarification.length > MAX_CONCEPT_CLARIFICATION_LENGTH) {
+      throw new ResponseValidationError(
+        `Concept clarification must be ${MAX_CONCEPT_CLARIFICATION_LENGTH} characters or fewer`
+      );
+    }
+  } else if (suppliedConceptClarification !== undefined) {
+    throw new ResponseValidationError(
+      "Concept clarification is only available for a concept-mismatch response"
+    );
+  }
+
   return {
     overallSupportNeed: overallSupportNeed as OverallSupportNeed,
-    difficultyType: difficultyType as DifficultyType | null
+    difficultyType: difficultyType as DifficultyType | null,
+    conceptClarification
   };
 }
 
@@ -123,7 +203,8 @@ export async function respondToLearningSession(
   learnerId: string,
   sessionId: string,
   overallSupportNeed: OverallSupportNeed,
-  difficultyType: DifficultyType | null = null
+  difficultyType: DifficultyType | null = null,
+  conceptClarification: string | null = null
 ) {
   const session = await findSession(learnerId, sessionId);
   if (!session) {
@@ -139,18 +220,48 @@ export async function respondToLearningSession(
   }
 
   const decision = selectAdaptationRoute(overallSupportNeed, difficultyType);
+  if (decision.route === "context_reinterpretation" && !conceptClarification) {
+    throw new ResponseValidationError(
+      "Concept clarification is required when correcting the interpreted concept"
+    );
+  }
   const canAdapt = decision.route !== "fade" && currentRound < MAX_ADAPTATION_ROUNDS;
   const nextRound = canAdapt ? currentRound + 1 : currentRound;
   const status = selectStatus(overallSupportNeed, nextRound);
-  const adaptation = canAdapt
-    ? await createAdaptation(session, overallSupportNeed, decision, nextRound)
-    : null;
+  let adaptation: Adaptation | null = null;
+  let activeConcept: ConceptReference | undefined;
+  let correctionOutcome: ConceptReinterpretationOutcome | undefined;
+  let conceptReinterpretation: ConceptReinterpretationTrace | undefined;
+
+  if (canAdapt && decision.route === "context_reinterpretation") {
+    const reinterpretation = await createConceptReinterpretation(
+      session,
+      overallSupportNeed,
+      conceptClarification as string,
+      nextRound
+    );
+    adaptation = reinterpretation.adaptation;
+    activeConcept = reinterpretation.activeConcept;
+    correctionOutcome = reinterpretation.trace.outcome;
+    conceptReinterpretation = reinterpretation.trace;
+  } else if (canAdapt && decision.route !== "context_reinterpretation") {
+    adaptation = await createAdaptation(session, overallSupportNeed, decision, nextRound);
+  } else if (decision.route === "context_reinterpretation") {
+    correctionOutcome = "limit_reached";
+    conceptReinterpretation = {
+      clarification: conceptClarification as string,
+      outcome: "limit_reached",
+      previous: session.concept,
+      current: session.concept
+    };
+  }
   const responseEvent: LearnerResponseEvent = {
     overallSupportNeed,
     difficultyType,
     route: decision.route,
     roundBefore: currentRound,
     roundAfter: adaptation ? nextRound : currentRound,
+    ...(conceptReinterpretation ? { conceptReinterpretation } : {}),
     createdAt: new Date()
   };
 
@@ -162,7 +273,8 @@ export async function respondToLearningSession(
     understanding: overallSupportNeed,
     status,
     adaptation,
-    responseEvent
+    responseEvent,
+    ...(activeConcept ? { activeConcept } : {})
   });
 
   if (!updatedSession) {
@@ -176,7 +288,13 @@ export async function respondToLearningSession(
     status: updatedSession.status,
     adaptationRound: updatedSession.adaptationRound,
     route: decision.route,
-    adaptation
+    adaptation,
+    ...(decision.route === "context_reinterpretation"
+      ? {
+          concept: activeConcept ?? updatedSession.concept,
+          correctionOutcome
+        }
+      : {})
   };
 }
 
@@ -190,7 +308,7 @@ function selectStatus(overallSupportNeed: OverallSupportNeed, round: number): Se
 async function createAdaptation(
   session: SessionRecord,
   learnerResponse: OverallSupportNeed,
-  decision: GeneratingAdaptationDecision,
+  decision: StandardAdaptationDecision,
   round: number
 ): Promise<Adaptation> {
   const generated = await generateAdaptation(session, learnerResponse, decision);
@@ -206,10 +324,46 @@ async function createAdaptation(
   };
 }
 
+async function createConceptReinterpretation(
+  session: SessionRecord,
+  learnerResponse: OverallSupportNeed,
+  clarification: string,
+  round: number
+): Promise<{
+  adaptation: Adaptation;
+  activeConcept?: ConceptReference;
+  trace: ConceptReinterpretationTrace;
+}> {
+  const generated = await generateConceptReinterpretation(session, clarification);
+  const corrected = generated.outcome === "corrected";
+  const current = corrected ? generated.concept : session.concept;
+  const conceptCorrection = corrected
+    ? { previous: session.concept, corrected: generated.concept }
+    : undefined;
+
+  return {
+    adaptation: {
+      learnerResponse,
+      supportType: "concept_correction",
+      content: corrected ? generated.content : generated.message,
+      ...(conceptCorrection ? { conceptCorrection } : {}),
+      round,
+      createdAt: new Date()
+    },
+    ...(corrected ? { activeConcept: generated.concept } : {}),
+    trace: {
+      clarification,
+      outcome: generated.outcome,
+      previous: session.concept,
+      current
+    }
+  };
+}
+
 async function generateAdaptation(
   session: SessionRecord,
   learnerResponse: OverallSupportNeed,
-  decision: GeneratingAdaptationDecision
+  decision: StandardAdaptationDecision
 ): Promise<GeneratedAdaptation> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey || apiKey === "your-key-here") {
@@ -279,9 +433,129 @@ async function generateAdaptation(
   }
 }
 
+async function generateConceptReinterpretation(
+  session: SessionRecord,
+  clarification: string
+): Promise<GeneratedConceptReinterpretation> {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey || apiKey === "your-key-here") {
+    throw new AdaptationGenerationError("OpenAI API key is not configured");
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), OPENAI_TIMEOUT_MS);
+
+  try {
+    const response = await fetch(OPENAI_RESPONSES_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+        store: false,
+        instructions: buildConceptReinterpretationInstructions(),
+        input: JSON.stringify({
+          originalQuestion: session.originalQuestion,
+          previousConcept: session.concept,
+          intendedTermOrContext: clarification,
+          initialExplanations: session.explanations,
+          previousAdaptations: session.adaptations,
+          preferences: session.preferencesSnapshot
+        }),
+        text: {
+          format: {
+            type: "json_schema",
+            name: "concept_reinterpretation",
+            strict: true,
+            schema: conceptReinterpretationOutputSchema
+          }
+        }
+      }),
+      signal: controller.signal
+    });
+
+    if (!response.ok) {
+      throw new AdaptationGenerationError(`OpenAI request failed with status ${response.status}`);
+    }
+
+    const data = (await response.json()) as OpenAIResponse;
+    const outputText = data.output
+      ?.flatMap((item) => item.content ?? [])
+      .find((content) => content.type === "output_text")?.text;
+    if (!outputText) {
+      throw new AdaptationGenerationError("OpenAI returned no structured output");
+    }
+
+    const generated: unknown = JSON.parse(outputText);
+    if (!isGeneratedConceptReinterpretation(generated, session.concept)) {
+      throw new AdaptationGenerationError("OpenAI returned invalid concept reinterpretation");
+    }
+    if (
+      generated.outcome === "corrected" &&
+      repeatsExistingSupport(session, generated.content)
+    ) {
+      throw new AdaptationGenerationError("OpenAI repeated existing support");
+    }
+    return generated;
+  } catch (error) {
+    if (error instanceof AdaptationGenerationError) throw error;
+    throw new AdaptationGenerationError("Unable to reinterpret the concept");
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function buildConceptReinterpretationInstructions(): string {
+  return `
+# Role
+
+You are a bilingual STEM educator handling one bounded correction to an
+already-created learning session.
+
+# Route
+
+Follow context_reinterpretation only:
+Stage 6B → Stage 7 → Stage 2 → Stage 1 if required → Stage 4 → Stage 5.
+
+Reconsider the previous concept and domain using only the original question
+and the learner's short intendedTermOrContext clarification. Do not start a
+conversation, ask multiple questions, or introduce an eighth framework stage.
+
+# Outcome contract
+
+Return "corrected" only when one STEM concept and domain are sufficiently
+clear and differ from the previous interpretation. For "corrected":
+
+- put the corrected term in concept.name and technical context in concept.domain;
+- leave both message fields empty;
+- provide revised bilingual downstream support in content, containing a clear
+  core explanation followed by one concise scaffold;
+- avoid repeating initialExplanations or previousAdaptations.
+
+Return "ambiguous" when the intended concept or domain is still not clear.
+For "ambiguous":
+
+- copy the previous concept and domain unchanged into concept;
+- put exactly one concise clarification request in message.en and message.my;
+- leave both content fields empty;
+- do not guess, generate alternative branches, or revise the active concept.
+
+# Boundaries
+
+- This is contextual reinterpretation, not deterministic automatic terminology extraction.
+- Do not choose the route, lifecycle state, round count, learner identity or persistence.
+- Stay within the supplied STEM inquiry and clarification.
+- Never claim that the previous interpretation was an objectively diagnosed misconception.
+- English and Burmese must communicate the same information.
+- Burmese must use natural Myanmar Unicode; useful English STEM terms may remain in Latin script.
+`;
+}
+
 function buildAdaptationInstructions(
   learnerResponse: OverallSupportNeed,
-  decision: GeneratingAdaptationDecision
+  decision: StandardAdaptationDecision
 ): string {
   const strategy = decision.route === "language_support"
     ? `
@@ -384,6 +658,62 @@ function isGeneratedAdaptation(value: unknown): value is GeneratedAdaptation {
     bilingual.en.trim().length > 0 &&
     typeof bilingual.my === "string" &&
     bilingual.my.trim().length > 0
+  );
+}
+
+function isGeneratedConceptReinterpretation(
+  value: unknown,
+  previousConcept: ConceptReference
+): value is GeneratedConceptReinterpretation {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
+  const generated = value as Record<string, unknown>;
+  if (generated.outcome !== "corrected" && generated.outcome !== "ambiguous") return false;
+  if (!isBilingualText(generated.message) || !isBilingualText(generated.content)) return false;
+  if (!isConceptReference(generated.concept)) return false;
+
+  const message = generated.message;
+  const content = generated.content;
+  const concept = generated.concept;
+  if (generated.outcome === "corrected") {
+    return (
+      !sameConcept(concept, previousConcept) &&
+      message.en.trim().length === 0 &&
+      message.my.trim().length === 0 &&
+      content.en.trim().length > 0 &&
+      content.my.trim().length > 0
+    );
+  }
+
+  return (
+    sameConcept(concept, previousConcept) &&
+    message.en.trim().length > 0 &&
+    message.my.trim().length > 0 &&
+    content.en.trim().length === 0 &&
+    content.my.trim().length === 0
+  );
+}
+
+function isBilingualText(value: unknown): value is GeneratedAdaptation["content"] {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
+  const content = value as Record<string, unknown>;
+  return typeof content.en === "string" && typeof content.my === "string";
+}
+
+function isConceptReference(value: unknown): value is ConceptReference {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
+  const concept = value as Record<string, unknown>;
+  return (
+    typeof concept.name === "string" &&
+    concept.name.trim().length > 0 &&
+    typeof concept.domain === "string" &&
+    concept.domain.trim().length > 0
+  );
+}
+
+function sameConcept(left: ConceptReference, right: ConceptReference): boolean {
+  return (
+    normaliseForComparison(left.name) === normaliseForComparison(right.name) &&
+    normaliseForComparison(left.domain) === normaliseForComparison(right.domain)
   );
 }
 

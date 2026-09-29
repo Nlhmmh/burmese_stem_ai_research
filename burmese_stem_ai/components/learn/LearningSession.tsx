@@ -1,13 +1,17 @@
 "use client";
 
-import { MAX_ADAPTATION_ROUNDS, MAX_FOLLOW_UPS, type SessionStatus } from "@/lib/constants";
+import { MAX_ADAPTATION_ROUNDS, MAX_FOLLOW_UPS } from "@/lib/constants";
 import type { OverallSupportNeed } from "@/lib/session-domain";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import FollowUpSection from "./FollowUpSection";
 import { AdaptationCard, BilingualContent, ExplanationCard } from "./SessionContent";
-import type { Adaptation, ApiError, LearningSessionRecord } from "./types";
+import type {
+  ApiError,
+  LearnerResponseResult,
+  LearningSessionRecord
+} from "./types";
 
 const overallSupportNeedOptions: Array<{
   value: OverallSupportNeed;
@@ -74,12 +78,7 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
         // `understanding` remains the legacy API property during migration.
         body: JSON.stringify({ understanding: overallSupportNeed })
       });
-      const data = (await response.json()) as ApiError & {
-        understanding?: OverallSupportNeed;
-        status?: SessionStatus;
-        adaptationRound?: number;
-        adaptation?: Adaptation | null;
-      };
+      const data = (await response.json()) as ApiError & Partial<LearnerResponseResult>;
       if (
         !response.ok ||
         !data.understanding ||
@@ -96,6 +95,7 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
               understanding: data.understanding ?? current.understanding,
               status: data.status ?? current.status,
               adaptationRound: data.adaptationRound ?? current.adaptationRound,
+              concept: data.concept ?? current.concept,
               adaptations: data.adaptation
                 ? [...current.adaptations, data.adaptation]
                 : current.adaptations

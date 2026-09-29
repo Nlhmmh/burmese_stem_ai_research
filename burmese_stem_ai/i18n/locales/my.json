@@ -109,6 +109,8 @@
       "simpler_explanation": "ပိုမို ရိုးရှင်းသော ရှင်းလင်းချက်",
       "clarification": "ထပ်မံ ရှင်းလင်းချက်",
       "concept_clarification": "အယူအဆကို ပြန်လည် ရှင်းလင်းချက်",
+      "concept_correction": "အယူအဆကို ပြန်လည် ပြင်ဆင်ချက်",
+      "correctionTrace": "{previous} မှ {current} သို့ ပြင်ဆင်ထားသည်",
       "analogy": "နှိုင်းယှဉ် ဥပမာ",
       "hint": "အရိပ်အမြွက်"
     },

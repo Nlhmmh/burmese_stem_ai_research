@@ -93,6 +93,14 @@ export function AdaptationCard({
       <p className={`mb-2 text-xs font-bold uppercase tracking-wide ${labelStyle}`}>
         {t(adaptation.supportType)}
       </p>
+      {adaptation.conceptCorrection && (
+        <p className="mb-3 text-xs text-slate-600 dark:text-slate-300">
+          {t("correctionTrace", {
+            previous: `${adaptation.conceptCorrection.previous.name} (${adaptation.conceptCorrection.previous.domain})`,
+            current: `${adaptation.conceptCorrection.corrected.name} (${adaptation.conceptCorrection.corrected.domain})`
+          })}
+        </p>
+      )}
       <AdaptationContent
         adaptation={adaptation}
         locale={locale}

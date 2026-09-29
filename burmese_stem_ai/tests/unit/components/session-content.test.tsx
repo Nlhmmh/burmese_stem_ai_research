@@ -5,8 +5,14 @@ import { AdaptationCard, AdaptationContent } from "@/components/learn/SessionCon
 import type { Adaptation } from "@/components/learn/types";
 
 vi.mock("next-intl", () => ({
-  useTranslations: () => (key: string) =>
-    key === "concept_clarification" ? "Adapted — Concept Clarification" : key
+  useTranslations: () => (key: string, values?: Record<string, string>) => {
+    if (key === "concept_clarification") return "Adapted — Concept Clarification";
+    if (key === "concept_correction") return "Adapted — Concept Correction";
+    if (key === "correctionTrace") {
+      return `Corrected from ${values?.previous} to ${values?.current}`;
+    }
+    return key;
+  }
 }));
 
 const languageAdaptation: Adaptation = {
@@ -78,5 +84,30 @@ describe("conceptual-clarification adaptation rendering", () => {
     expect(html).toContain("Adapted — Concept Clarification");
     expect(html).toContain(adaptation.content.en);
     expect(html).not.toContain(adaptation.content.my);
+  });
+
+  it("renders the previous and corrected interpretation with downstream support", () => {
+    const adaptation: Adaptation = {
+      learnerResponse: "medium",
+      supportType: "concept_correction",
+      content: {
+        en: "A spreadsheet cell stores data at a row-column intersection.",
+        my: "Spreadsheet cell သည် row နှင့် column ဆုံရာတွင် data ကို သိမ်းသည်။"
+      },
+      conceptCorrection: {
+        previous: { name: "Cell", domain: "Biology" },
+        corrected: { name: "Spreadsheet cell", domain: "Computing" }
+      },
+      round: 1,
+      createdAt: "2026-01-15T10:00:00.000Z"
+    };
+
+    const html = renderToStaticMarkup(
+      <AdaptationCard adaptation={adaptation} locale="en" supportLanguage="english" />
+    );
+
+    expect(html).toContain("Adapted — Concept Correction");
+    expect(html).toContain("Corrected from Cell (Biology) to Spreadsheet cell (Computing)");
+    expect(html).toContain(adaptation.content.en);
   });
 });

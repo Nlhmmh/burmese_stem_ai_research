@@ -17,7 +17,11 @@ import {
   SessionRequestValidationError,
   validateCreateSessionRequest
 } from "@/services/session.service";
-import { MAX_FOLLOW_UP_QUESTION_LENGTH, MAX_QUESTION_LENGTH } from "@/lib/constants";
+import {
+  MAX_CONCEPT_CLARIFICATION_LENGTH,
+  MAX_FOLLOW_UP_QUESTION_LENGTH,
+  MAX_QUESTION_LENGTH
+} from "@/lib/constants";
 import { OVERALL_SUPPORT_NEEDS } from "@/lib/session-domain";
 
 describe("request validation guard rails", () => {
@@ -57,12 +61,58 @@ describe("request validation guard rails", () => {
       })
     ).toEqual({
       overallSupportNeed: "medium",
-      difficultyType: "another_example"
+      difficultyType: "another_example",
+      conceptClarification: null
     });
     expect(validateLearnerResponseRequest({ overallSupportNeed: "needs_support" })).toEqual({
       overallSupportNeed: "needs_support",
-      difficultyType: null
+      difficultyType: null,
+      conceptClarification: null
     });
+  });
+
+  it("trims a bounded concept-mismatch clarification", () => {
+    expect(
+      validateLearnerResponseRequest({
+        overallSupportNeed: "medium",
+        difficultyType: "concept_mismatch",
+        conceptClarification: "  I meant a spreadsheet cell.  "
+      })
+    ).toEqual({
+      overallSupportNeed: "medium",
+      difficultyType: "concept_mismatch",
+      conceptClarification: "I meant a spreadsheet cell."
+    });
+  });
+
+  it("requires clarification only for concept mismatch and enforces its bound", () => {
+    expect(() =>
+      validateLearnerResponseRequest({
+        overallSupportNeed: "medium",
+        difficultyType: "concept_mismatch"
+      })
+    ).toThrow(ResponseValidationError);
+    expect(() =>
+      validateLearnerResponseRequest({
+        overallSupportNeed: "medium",
+        difficultyType: "concept_mismatch",
+        conceptClarification: "   "
+      })
+    ).toThrow(ResponseValidationError);
+    expect(() =>
+      validateLearnerResponseRequest({
+        overallSupportNeed: "medium",
+        difficultyType: "concept_mismatch",
+        conceptClarification: "x".repeat(MAX_CONCEPT_CLARIFICATION_LENGTH + 1)
+      })
+    ).toThrow(ResponseValidationError);
+    expect(() =>
+      validateLearnerResponseRequest({
+        overallSupportNeed: "medium",
+        difficultyType: "another_example",
+        conceptClarification: "This should not be silently ignored"
+      })
+    ).toThrow(ResponseValidationError);
   });
 
   it("rejects conflicting, unknown, and high-with-difficulty response combinations", () => {

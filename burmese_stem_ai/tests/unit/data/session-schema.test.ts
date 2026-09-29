@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { afterAll, describe, expect, it } from "vitest";
 
 import { sessionSchema } from "@/data/schemas/session.schema";
+import { MAX_CONCEPT_CLARIFICATION_LENGTH } from "@/lib/constants";
 import { makeSessionRecord } from "../../fixtures/session";
 
 const MODEL_NAME = "UnitTestLearningSession";
@@ -99,6 +100,46 @@ describe("session response-event schema", () => {
     await expect(new SessionSchemaModel(session).validate()).resolves.toBeUndefined();
   });
 
+  it("validates a reconstructable concept reinterpretation and correction", async () => {
+    const previous = { name: "Cell", domain: "Biology" };
+    const corrected = { name: "Spreadsheet cell", domain: "Computing" };
+    const session = makeSessionRecord({
+      concept: corrected,
+      adaptationRound: 1,
+      adaptations: [
+        {
+          learnerResponse: "medium",
+          supportType: "concept_correction",
+          content: {
+            en: "A spreadsheet cell stores a value at a row-column intersection.",
+            my: "Spreadsheet cell သည် row နှင့် column ဆုံရာတွင် value ကို သိမ်းသည်။"
+          },
+          conceptCorrection: { previous, corrected },
+          round: 1,
+          createdAt: new Date("2026-01-15T10:02:00.000Z")
+        }
+      ],
+      responseEvents: [
+        {
+          overallSupportNeed: "medium",
+          difficultyType: "concept_mismatch",
+          route: "context_reinterpretation",
+          roundBefore: 0,
+          roundAfter: 1,
+          conceptReinterpretation: {
+            clarification: "I meant a spreadsheet cell.",
+            outcome: "corrected",
+            previous,
+            current: corrected
+          },
+          createdAt: new Date("2026-01-15T10:02:00.000Z")
+        }
+      ]
+    });
+
+    await expect(new SessionSchemaModel(session).validate()).resolves.toBeUndefined();
+  });
+
   it("rejects an unbounded response route", async () => {
     const invalidSession = {
       ...makeSessionRecord(),
@@ -113,6 +154,31 @@ describe("session response-event schema", () => {
         }
       ]
     };
+
+    await expect(new SessionSchemaModel(invalidSession).validate()).rejects.toThrow();
+  });
+
+  it("rejects an oversized persisted concept clarification", async () => {
+    const concept = { name: "Cell", domain: "Biology" };
+    const invalidSession = makeSessionRecord({
+      concept,
+      responseEvents: [
+        {
+          overallSupportNeed: "medium",
+          difficultyType: "concept_mismatch",
+          route: "context_reinterpretation",
+          roundBefore: 0,
+          roundAfter: 0,
+          conceptReinterpretation: {
+            clarification: "x".repeat(MAX_CONCEPT_CLARIFICATION_LENGTH + 1),
+            outcome: "ambiguous",
+            previous: concept,
+            current: concept
+          },
+          createdAt: new Date()
+        }
+      ]
+    });
 
     await expect(new SessionSchemaModel(invalidSession).validate()).rejects.toThrow();
   });

@@ -109,6 +109,70 @@ describe("session DAO persistence invariants", () => {
     );
   });
 
+  it("atomically updates the active concept with its correction trace", async () => {
+    const previous = { name: "Cell", domain: "Biology" };
+    const corrected = { name: "Spreadsheet cell", domain: "Computing" };
+    const session = makeSessionRecord({ concept: previous });
+    const adaptation: Adaptation = {
+      learnerResponse: "medium",
+      supportType: "concept_correction",
+      content: { en: "Revised support", my: "ပြန်လည် ပြင်ဆင်ထားသော အကူအညီ" },
+      conceptCorrection: { previous, corrected },
+      round: 1,
+      createdAt: now
+    };
+    const responseEvent: LearnerResponseEvent = {
+      overallSupportNeed: "medium",
+      difficultyType: "concept_mismatch",
+      route: "context_reinterpretation",
+      roundBefore: 0,
+      roundAfter: 1,
+      conceptReinterpretation: {
+        clarification: "I meant a spreadsheet cell.",
+        outcome: "corrected",
+        previous,
+        current: corrected
+      },
+      createdAt: now
+    };
+    persistenceMocks.findOneAndUpdate.mockReturnValue({
+      lean: vi.fn().mockResolvedValue({ ...session, concept: corrected })
+    });
+
+    await recordSessionResponse({
+      learnerId: session.learnerId,
+      sessionId: session.sessionId,
+      expectedRound: 0,
+      expectedResponseEventCount: 0,
+      understanding: "medium",
+      status: "in_progress",
+      adaptation,
+      responseEvent,
+      activeConcept: corrected
+    });
+
+    expect(persistenceMocks.findOneAndUpdate).toHaveBeenCalledWith(
+      expect.objectContaining({
+        learnerId: session.learnerId,
+        sessionId: session.sessionId,
+        adaptationRound: { $eq: 0, $lt: 2 }
+      }),
+      expect.objectContaining({
+        $set: expect.objectContaining({
+          concept: corrected,
+          understanding: "medium",
+          status: "in_progress"
+        }),
+        $inc: { adaptationRound: 1 },
+        $push: {
+          adaptations: adaptation,
+          responseEvents: responseEvent
+        }
+      }),
+      { returnDocument: "after", runValidators: true }
+    );
+  });
+
   it("updates only response state when no adaptation is produced", async () => {
     const session = makeSessionRecord({ adaptationRound: 2 });
     const lean = vi.fn().mockResolvedValue(session);

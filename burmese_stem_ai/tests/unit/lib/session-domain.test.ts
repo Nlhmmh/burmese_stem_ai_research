@@ -2,6 +2,7 @@ import { describe, expect, expectTypeOf, it } from "vitest";
 
 import {
   ADAPTATION_ROUTES,
+  CONCEPT_REINTERPRETATION_OUTCOMES,
   DIFFICULTY_TYPES,
   OVERALL_SUPPORT_NEEDS,
   SUPPORT_TYPES,
@@ -17,6 +18,7 @@ describe("session domain vocabulary", () => {
     expect(OVERALL_SUPPORT_NEEDS).toEqual(["high", "medium", "needs_support"]);
     expect(SUPPORT_TYPES).toContain("key_takeaway");
     expect(SUPPORT_TYPES).toContain("concept_clarification");
+    expect(SUPPORT_TYPES).toContain("concept_correction");
   });
 
   it("defines the bounded Stage 6B and Stage 7 values", () => {
@@ -33,6 +35,11 @@ describe("session domain vocabulary", () => {
       "language_support",
       "concept_clarification",
       "context_reinterpretation"
+    ]);
+    expect(CONCEPT_REINTERPRETATION_OUTCOMES).toEqual([
+      "corrected",
+      "ambiguous",
+      "limit_reached"
     ]);
   });
 
@@ -58,6 +65,10 @@ describe("session domain vocabulary", () => {
     expectTypeOf<{
       route: "concept_clarification";
       supportType: "concept_clarification";
+    }>().toMatchTypeOf<RouteSpecificSupport>();
+    expectTypeOf<{
+      route: "context_reinterpretation";
+      supportType: "concept_correction";
     }>().toMatchTypeOf<RouteSpecificSupport>();
   });
 

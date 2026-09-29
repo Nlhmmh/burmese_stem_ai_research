@@ -4,6 +4,7 @@ import type { SessionStatus } from "@/lib/constants";
 import type {
   AdaptationPresentationOverride,
   ConceptCorrection,
+  ConceptReference,
   LegacyUnderstanding,
   LearnerResponseEvent,
   OverallSupportNeed,
@@ -100,18 +101,22 @@ type RecordResponseInput = {
   status: SessionStatus;
   adaptation: Adaptation | null;
   responseEvent: LearnerResponseEvent;
+  activeConcept?: ConceptReference;
 };
 
 export async function recordSessionResponse(input: RecordResponseInput) {
   await connectMongoDB();
 
+  const responseState = {
+    understanding: input.understanding,
+    status: input.status,
+    updatedAt: new Date(),
+    ...(input.activeConcept ? { concept: input.activeConcept } : {})
+  };
+
   const update = input.adaptation
     ? {
-        $set: {
-          understanding: input.understanding,
-          status: input.status,
-          updatedAt: new Date()
-        },
+        $set: responseState,
         $inc: { adaptationRound: 1 },
         $push: {
           adaptations: input.adaptation,
@@ -119,11 +124,7 @@ export async function recordSessionResponse(input: RecordResponseInput) {
         }
       }
     : {
-        $set: {
-          understanding: input.understanding,
-          status: input.status,
-          updatedAt: new Date()
-        },
+        $set: responseState,
         $push: { responseEvents: input.responseEvent }
       };
 

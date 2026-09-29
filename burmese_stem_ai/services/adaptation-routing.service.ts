@@ -1,5 +1,6 @@
 import type {
   ConceptClarificationSupport,
+  ContextReinterpretationSupport,
   DifficultyType,
   FadeSupport,
   LanguageSupport,
@@ -20,11 +21,11 @@ export type CoreStage5Decision = {
 export type GeneratingAdaptationDecision =
   | CoreStage5Decision
   | LanguageSupport
-  | ConceptClarificationSupport;
+  | ConceptClarificationSupport
+  | ContextReinterpretationSupport;
 export type ImplementedAdaptationDecision = FadeSupport | GeneratingAdaptationDecision;
 
 export class InvalidAdaptationRouteInputError extends Error {}
-export class UnsupportedAdaptationRouteError extends Error {}
 
 /** Pure Stage 7 selector for the routes implemented by the current PoC. */
 export function selectAdaptationRoute(
@@ -63,8 +64,9 @@ export function selectAdaptationRoute(
         supportType: "concept_clarification"
       };
     case "concept_mismatch":
-      throw new UnsupportedAdaptationRouteError(
-        `The ${difficultyType} adaptation route is not implemented yet`
-      );
+      return {
+        route: "context_reinterpretation",
+        supportType: "concept_correction"
+      };
   }
 }

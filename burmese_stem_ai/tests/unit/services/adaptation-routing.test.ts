@@ -2,8 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   InvalidAdaptationRouteInputError,
-  selectAdaptationRoute,
-  UnsupportedAdaptationRouteError
+  selectAdaptationRoute
 } from "@/services/adaptation-routing.service";
 
 describe("deterministic Stage 7 route selection", () => {
@@ -71,9 +70,13 @@ describe("deterministic Stage 7 route selection", () => {
     }
   );
 
-  it("keeps concept reinterpretation unavailable until its implementation step", () => {
-    expect(() => selectAdaptationRoute("medium", "concept_mismatch")).toThrow(
-      UnsupportedAdaptationRouteError
-    );
-  });
+  it.each(["medium", "needs_support"] as const)(
+    "selects bounded context reinterpretation for a %s concept mismatch",
+    (overallSupportNeed) => {
+      expect(selectAdaptationRoute(overallSupportNeed, "concept_mismatch")).toEqual({
+        route: "context_reinterpretation",
+        supportType: "concept_correction"
+      });
+    }
+  );
 });

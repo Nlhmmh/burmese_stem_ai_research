@@ -1,5 +1,6 @@
 import {
   MAX_ADAPTATION_ROUNDS,
+  MAX_CONCEPT_CLARIFICATION_LENGTH,
   MAX_FOLLOW_UP_QUESTION_LENGTH,
   MAX_FOLLOW_UPS,
   OVERALL_SUPPORT_NEEDS,
@@ -9,6 +10,7 @@ import {
 } from "@/lib/constants";
 import {
   ADAPTATION_ROUTES,
+  CONCEPT_REINTERPRETATION_OUTCOMES,
   DIFFICULTY_TYPES,
   PRESENTATION_OVERRIDES
 } from "@/lib/session-domain";
@@ -41,6 +43,21 @@ const conceptCorrectionSchema = new Schema(
   { _id: false }
 );
 
+const conceptReinterpretationSchema = new Schema(
+  {
+    clarification: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: MAX_CONCEPT_CLARIFICATION_LENGTH
+    },
+    outcome: { type: String, enum: CONCEPT_REINTERPRETATION_OUTCOMES, required: true },
+    previous: { type: conceptReferenceSchema, required: true },
+    current: { type: conceptReferenceSchema, required: true }
+  },
+  { _id: false }
+);
+
 const adaptationSchema = new Schema(
   {
     learnerResponse: { type: String, enum: OVERALL_SUPPORT_NEEDS, required: true },
@@ -61,6 +78,7 @@ const learnerResponseEventSchema = new Schema(
     route: { type: String, enum: ADAPTATION_ROUTES, required: true },
     roundBefore: { type: Number, min: 0, max: MAX_ADAPTATION_ROUNDS, required: true },
     roundAfter: { type: Number, min: 0, max: MAX_ADAPTATION_ROUNDS, required: true },
+    conceptReinterpretation: { type: conceptReinterpretationSchema },
     createdAt: { type: Date, default: Date.now, required: true }
   },
   { _id: false }

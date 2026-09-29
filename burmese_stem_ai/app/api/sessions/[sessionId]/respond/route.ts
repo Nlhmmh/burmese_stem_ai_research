@@ -6,10 +6,7 @@ import {
   SessionResponseConflictError,
   validateLearnerResponseRequest
 } from "@/services/adaptation.service";
-import {
-  InvalidAdaptationRouteInputError,
-  UnsupportedAdaptationRouteError
-} from "@/services/adaptation-routing.service";
+import { InvalidAdaptationRouteInputError } from "@/services/adaptation-routing.service";
 import { LearnerIdentityError, requireLearnerId } from "@/services/learner.service";
 import { NextResponse, type NextRequest } from "next/server";
 
@@ -21,14 +18,14 @@ export async function POST(request: NextRequest, context: RouteContext): Promise
   try {
     const learnerId = requireLearnerId(request);
     const { sessionId } = await context.params;
-    const { overallSupportNeed, difficultyType } = validateLearnerResponseRequest(
-      await readJson(request)
-    );
+    const { overallSupportNeed, difficultyType, conceptClarification } =
+      validateLearnerResponseRequest(await readJson(request));
     const result = await respondToLearningSession(
       learnerId,
       sessionId,
       overallSupportNeed,
-      difficultyType
+      difficultyType,
+      conceptClarification
     );
     return NextResponse.json(result);
   } catch (error) {
@@ -40,9 +37,6 @@ export async function POST(request: NextRequest, context: RouteContext): Promise
     }
     if (error instanceof InvalidAdaptationRouteInputError) {
       return errorResponse("INVALID_ADAPTATION_ROUTE", error.message, 400);
-    }
-    if (error instanceof UnsupportedAdaptationRouteError) {
-      return errorResponse("ADAPTATION_ROUTE_NOT_AVAILABLE", error.message, 422);
     }
     if (error instanceof SessionNotFoundError) {
       return errorResponse("SESSION_NOT_FOUND", error.message, 404);

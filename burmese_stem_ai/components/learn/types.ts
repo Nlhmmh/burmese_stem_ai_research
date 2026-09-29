@@ -3,6 +3,8 @@ import type { SessionStatus } from "@/lib/constants";
 import type {
   AdaptationPresentationOverride,
   ConceptCorrection,
+  ConceptReinterpretationOutcome,
+  DifficultyType,
   LegacyUnderstanding,
   LearnerResponseEvent,
   OverallSupportNeed,
@@ -51,4 +53,20 @@ export type LearningSessionRecord = {
 export type ApiError = {
   error?: string | { message?: string };
   message?: string;
+};
+
+export type LearnerResponseRequest = {
+  overallSupportNeed: OverallSupportNeed;
+  difficultyType?: DifficultyType;
+  conceptClarification?: string;
+};
+
+export type LearnerResponseResult = {
+  understanding: OverallSupportNeed;
+  status: SessionStatus;
+  adaptationRound: number;
+  route: LearnerResponseEvent["route"];
+  adaptation: Adaptation | null;
+  concept?: LearningSessionRecord["concept"];
+  correctionOutcome?: ConceptReinterpretationOutcome;
 };

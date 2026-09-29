@@ -34,6 +34,21 @@ export type ConceptCorrection = {
   corrected: ConceptReference;
 };
 
+export const CONCEPT_REINTERPRETATION_OUTCOMES = [
+  "corrected",
+  "ambiguous",
+  "limit_reached"
+] as const;
+export type ConceptReinterpretationOutcome =
+  (typeof CONCEPT_REINTERPRETATION_OUTCOMES)[number];
+
+export type ConceptReinterpretationTrace = {
+  clarification: string;
+  outcome: ConceptReinterpretationOutcome;
+  previous: ConceptReference;
+  current: ConceptReference;
+};
+
 /** Bounded Stage 7 route families. */
 export const ADAPTATION_ROUTES = [
   "fade",
@@ -53,6 +68,7 @@ export const SUPPORT_TYPES = [
   "another_example",
   "clarification",
   "concept_clarification",
+  "concept_correction",
   "simpler_explanation",
   "analogy",
   "hint"
@@ -84,8 +100,7 @@ export type ConceptClarificationSupport = {
 
 export type ContextReinterpretationSupport = {
   route: "context_reinterpretation";
-  supportType: ScaffoldSupportType;
-  conceptCorrection: ConceptCorrection;
+  supportType: Extract<ScaffoldSupportType, "concept_correction">;
 };
 
 /** A route and support-type pairing that is valid for the refined workflow. */
@@ -106,5 +121,6 @@ export type LearnerResponseEvent<Timestamp = Date> = {
   route: AdaptationRoute;
   roundBefore: number;
   roundAfter: number;
+  conceptReinterpretation?: ConceptReinterpretationTrace;
   createdAt: Timestamp;
 };

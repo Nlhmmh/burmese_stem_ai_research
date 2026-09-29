@@ -109,6 +109,8 @@
       "simpler_explanation": "Adapted — Simpler Explanation",
       "clarification": "Adapted — Clarification",
       "concept_clarification": "Adapted — Concept Clarification",
+      "concept_correction": "Adapted — Concept Correction",
+      "correctionTrace": "Corrected from {previous} to {current}",
       "analogy": "Adapted — Analogy",
       "hint": "Adapted — Hint"
     },
