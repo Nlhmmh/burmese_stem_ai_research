@@ -4,6 +4,12 @@
 
 This register records differences between the `B00-PRE-REFINEMENT` implementation and the authoritative refined specification in `evaluation/complete_system_artefacts_refined.md`.
 
+The “Current `B00` implementation” and original Status columns below are an
+immutable historical snapshot. They deliberately still describe the old High
+→ `key_takeaway` behaviour. They are **not** the current `B01` oracle. Later
+implementation state is recorded separately in the resolution addendum so the
+pre-refinement evidence is not rewritten retrospectively.
+
 These entries are design-preparation findings from repository inspection. They are not executed evaluation results, learner findings, or evidence that a later implementation has passed or failed formal FURPS testing.
 
 ## Status Vocabulary
@@ -44,6 +50,30 @@ The following are intentionally not recorded as implementation defects:
 - preferences may remain a modal rather than a fourth screen;
 - deterministic automatic term extraction, quizzes, mastery scoring, authentication, LMS functions, unrestricted chat, microservices, queues, and Kubernetes are not required;
 - structural validity does not establish generated-content accuracy or educational effectiveness.
+
+## Post-Refinement Resolution Addendum — 30 September 2026
+
+This addendum records repository implementation status after Steps 1–13. It is
+not a formal evaluation result and does not freeze `B01`; final commit,
+worktree, environment, prompt/schema hashes, and any database-backed evidence
+must still be recorded before formal execution.
+
+| ID | Current disposition | Implementation/verification locator |
+| --- | --- | --- |
+| `PRE-001` | Implemented; baseline freeze pending | `lib/session-domain.ts`; `components/learn/SessionContent.tsx`; `tests/unit/components/stage6b-interface.test.tsx` |
+| `PRE-002` | Implemented; baseline freeze pending | `services/adaptation-routing.service.ts`; `tests/unit/services/adaptation-routing.test.ts`; `tests/unit/services/adaptation-routing-branches.test.ts` |
+| `PRE-003` | Implemented; baseline freeze pending | Canonical route selector and all branch tests above |
+| `PRE-004` | Implemented; baseline freeze pending | `data/schemas/session.schema.ts`; `data/dao/session.dao.ts`; schema/DAO tests |
+| `PRE-005` | Implemented with bounded correction; baseline freeze pending | `services/adaptation.service.ts`; `tests/unit/services/concept-reinterpretation.test.ts` |
+| `PRE-006` | Implemented as required short clarification input | Request validation, Stage 6B component, and reinterpretation tests |
+| `PRE-007` | Implemented; baseline freeze pending | `components/learn/SessionContent.tsx`; `tests/unit/components/session-continuity.test.tsx` |
+| `PRE-008` | Implemented as self-reported support wording | `components/history/HistoryList.tsx`; locale dictionaries; continuity/component tests |
+| `PRE-009` | Defined as browser-owned UI locale/theme; profile fields retained only for compatibility | Technical README preference contract and preference tests |
+| `PRE-010` | Implemented shared provider boundary | `services/llm-provider.ts`; `tests/unit/services/llm-provider.test.ts` |
+| `PRE-011` | Implemented controlled API/locale boundaries | `lib/api-error.ts`; API boundary tests; `tests/unit/i18n/request.test.ts` |
+| `PRE-012` | Resolved by protocol v2.0 and Step 13 documentation alignment | Current READMEs, implementation-aligned Assignment 5 plan, and `refined_contract_cross_reference.md` |
+| `PRE-013` | Implemented Vitest/V8 harness | `package.json`; `vitest.config.mts`; `tests/` |
+| `PRE-014` | Not part of the Stage 6A/6B oracle change; retain as an explicit lifecycle item for formal baseline review | Follow-up service/component and lifecycle cases must be checked when `B01` is frozen |
 
 ## Resolution Rule
 

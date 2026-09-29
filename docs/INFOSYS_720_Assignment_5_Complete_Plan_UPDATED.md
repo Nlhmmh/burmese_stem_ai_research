@@ -1,5 +1,56 @@
 # INFOSYS 720 Assignment 5 — Complete Evaluation Plan
 
+| Document control | Value |
+| --- | --- |
+| Implementation-oracle version | 2.0 |
+| Aligned | 30 September 2026 |
+| Protocol | `A5-PROTOCOL-01` version 2.0 |
+| Formal evaluation status | Not run; `B01` still requires a reproducible freeze |
+
+## Refined PoC Contract Used by the Design Evaluation
+
+Stage 6 is a two-level learner self-report, not a measurement of learning:
+
+- **Stage 6A:** `high`, `medium`, or `needs_support` records overall support
+  need. The legacy storage/API property remains named `understanding` for
+  compatibility.
+- **Stage 6B:** after Medium or Needs Support, the learner may optionally choose
+  `simpler_explanation`, `another_example`, `language_terms`,
+  `concept_unclear`, or `concept_mismatch`, or continue without a choice.
+  `concept_mismatch` requires a short intended-term/context clarification.
+
+Stage 7 route selection is application-controlled:
+
+| Learner response | Route | Generation and state effect |
+| --- | --- | --- |
+| High | `fade` | Persist response event; no LLM call, adaptation, or round increment; Finish remains explicit |
+| Medium/Needs Support without Stage 6B | `stage_5_scaffold` | Generate default `another_example`/`simpler_explanation` below the cap |
+| Simpler explanation / another example | `stage_5_scaffold` | Generate the selected Stage 5 support below the cap |
+| Language terms | `language_support` | Revisit Stages 3–5 and display this adaptation bilingually |
+| Concept unclear | `concept_clarification` | Revise Stage 4 meaning and Stage 5 scaffold |
+| Concept mismatch + clarification | `context_reinterpretation` | Bounded context/term correction, ambiguity response, or capped outcome |
+
+Every accepted response appends a trace event containing overall need,
+optional difficulty, route, round before/after, timestamp, and any
+reinterpretation trace. `adaptationRound` counts only generated, persisted
+adaptations, with a maximum of two. At round 2 the response event is still
+stored, but the provider is not called and round 3 cannot be created.
+
+Current structural verification commands, run from `burmese_stem_ai/`, are:
+
+```sh
+npm test
+npm run test:coverage
+npm run lint
+npx tsc --noEmit
+npm run build -- --webpack
+```
+
+These commands can establish software structure and bounded behaviour only.
+They do not establish Burmese linguistic quality, STEM-content correctness,
+usability with learners, learning gains, retention, mastery, or that two
+generated adaptations are educationally optimal.
+
 ## Purpose of This Plan
 
 This document is a **working execution guide** for completing **INFOSYS 720 Assignment 5: Evaluate Information Systems Artefacts**.
@@ -433,10 +484,10 @@ Important implemented functionality includes:
 - technical explanation;
 - reflective prompt;
 - hint;
-- self-reported learner understanding;
+- self-reported learner support need;
 - adaptive scaffolding;
 - contingency/fading behaviour;
-- maximum two adaptation rounds;
+- maximum two generated, persisted adaptations;
 - concept-scoped follow-up;
 - learner preferences;
 - session persistence;
@@ -530,7 +581,8 @@ Do not claim:
 - better retention;
 - objective understanding.
 
-The system's understanding choices are **self-reported understanding**, not measured learning performance.
+The system's legacy `understanding` values are **self-reported support need**,
+not measured learning performance, competence, or mastery.
 
 ---
 
@@ -1229,16 +1281,18 @@ Example:
 
 Evaluation question:
 
-> Does the framework provide a usable signal for the next stage?
+> Does Stage 6A provide a clear overall support signal, and can Stage 6B
+> optionally identify the needed help without forcing a choice?
 
 ### Stage 7 — Adapt Support
 
 Expected:
 
-- simpler or alternative explanation;
-- step-by-step explanation;
-- additional Burmese support;
-- support fades if learner reports stronger understanding.
+- deterministic fade for High without generation;
+- default or explicitly selected Stage 5 support;
+- route-specific language or conceptual clarification;
+- bounded context reinterpretation for a mistaken concept/term;
+- response-event persistence even when generation is skipped or capped.
 
 Evaluation question:
 
@@ -1441,7 +1495,7 @@ Are the learning-support sections visually distinguishable?
 
 ## U3 — Interaction Clarity
 
-Are understanding choices understandable?
+Are the Stage 6A support choices, optional Stage 6B choices, and skip action understandable?
 
 ## U4 — Feedback Visibility
 
@@ -1495,19 +1549,14 @@ Possible evidence:
 
 ## 18.3 Commands
 
-Use the actual project commands.
-
-Possible examples:
+Use the actual project commands from `burmese_stem_ai/`:
 
 ```bash
+npm test
+npm run test:coverage
 npm run lint
-npm run build
-```
-
-If TypeScript check exists:
-
-```bash
 npx tsc --noEmit
+npm run build -- --webpack
 ```
 
 Do not claim a test was executed unless it was actually run.
@@ -1516,8 +1565,11 @@ Do not claim a test was executed unless it was actually run.
 
 | Check | Command | Expected | Actual | Result |
 |---|---|---|---|---|
+| Unit/component tests | `npm test` | Bounded deterministic suite completes | Fill later | |
+| Structural coverage | `npm run test:coverage` | Report retained with scope/exclusions | Fill later | |
 | Lint | `npm run lint` | No blocking errors | Fill later | |
-| Build | `npm run build` | Successful production build | Fill later | |
+| TypeScript | `npx tsc --noEmit` | No type errors | Fill later | |
+| Build | `npm run build -- --webpack` | Successful production build | Fill later | |
 
 ## 18.5 Architecture inspection
 
@@ -1713,7 +1765,8 @@ These help evaluate technical-context interpretation.
 ```text
 Initial explanation
 → High
-→ completion / fading
+→ persisted fade event at round 0
+→ explicit Finish
 ```
 
 ### Path B
@@ -1721,8 +1774,10 @@ Initial explanation
 ```text
 Initial explanation
 → Medium
-→ Adaptation 1
+→ skip Stage 6B
+→ default another-example adaptation at round 1
 → High
+→ persisted fade event; round remains 1
 ```
 
 ### Path C
@@ -1730,9 +1785,12 @@ Initial explanation
 ```text
 Initial explanation
 → Needs Support
+→ Simpler explanation
 → Adaptation 1
 → Needs Support
-→ Adaptation 2
+→ Concept unclear
+→ Adaptation 2 and review recommendation
+→ extra response persists without provider call or round 3
 → review/recommended state
 ```
 
@@ -1798,25 +1856,30 @@ Expected sections:
 - reflection;
 - hint.
 
-### BB06 — High understanding
+### BB06 — High / fade
 
 Expected:
 
-- no unnecessary extra adaptation;
-- support can progress/fade.
+- response event records `fade`;
+- no provider call, generated adaptation, or round increment;
+- Finish remains explicit.
 
-### BB07 — Medium understanding
+### BB07 — Default Stage 5 route
 
 Expected:
 
-- additional support;
+- Medium with no Stage 6B choice selects another example;
+- Needs Support with no choice selects simpler explanation;
 - adaptation round increment.
 
-### BB08 — Needs Support
+### BB08 — Explicit Stage 6B routes
 
 Expected:
 
-- simpler/additional/alternative support.
+- every bounded choice selects its documented route;
+- language support may override presentation to bilingual for that adaptation;
+- concept mismatch requires clarification and preserves its interpretation trace;
+- skip remains available.
 
 ### BB09 — First adaptation
 
@@ -2312,7 +2375,9 @@ The final Results section should distinguish four types of conclusion.
 
 Example:
 
-> Black-box and white-box tests confirmed that the application enforces the two-round adaptation limit under the evaluated paths.
+> After those tests have actually been executed and retained, an appropriately
+> bounded result could state that black-box and white-box evidence confirmed the
+> two-generated-adaptation limit under the evaluated paths.
 
 ## 31.2 Partial evidence
 
@@ -2650,7 +2715,7 @@ with actual learning.
 
 Use:
 
-> self-reported understanding.
+> self-reported support signal indicating perceived need for more assistance.
 
 ## Risk 5 — Weak white-box evidence
 
@@ -2972,7 +3037,7 @@ Finally:
 - [ ] Failures reported honestly
 - [ ] Limitations reported
 - [ ] No educational-effectiveness overclaim
-- [ ] Self-reported understanding described correctly
+- [ ] Self-reported support signal described correctly
 
 ## Evidence
 

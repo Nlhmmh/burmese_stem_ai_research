@@ -3,13 +3,20 @@
 | Document control | Value |
 | --- | --- |
 | Protocol ID | A5-PROTOCOL-01 |
-| Version | 1.0 |
-| Prepared | 28 September 2026 |
-| Status | Prepared for execution; evaluation not run |
+| Version | 2.0 |
+| Prepared | 30 September 2026 |
+| Status | Refined implementation oracle prepared; formal evaluation not run |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
-| Baseline | To be frozen and recorded before execution |
+| Baseline | `B01` to be frozen and recorded before formal execution; `B00-PRE-REFINEMENT` is historical only |
+
+### Version history
+
+| Version | Date | Role |
+| --- | --- | --- |
+| 1.0 | 28 September 2026 | Pre-refinement protocol. Its High → `key_takeaway` oracle and three-value-only route model are superseded and retained in the discrepancy register for provenance. |
+| 2.0 | 30 September 2026 | Current refined oracle aligned with implemented Stage 6A/6B routing, fade semantics, response-event persistence, and automated test entry points. This version change does not constitute evaluation execution or a pass result. |
 
 ## 1. Purpose and evidence boundary
 
@@ -23,7 +30,7 @@ The evaluation distinguishes:
 - **Functionality:** externally observable behaviour and internal implementation correctness.
 - **Usability:** structured evaluator inspection of the interface and interaction flow.
 - **Technical feasibility:** buildability, runtime behaviour, bounded state changes and persistence.
-- **Educational effectiveness:** outside the present evaluation. Neither artificial interactions nor self-reported understanding establish learning gains, retention or objective competence.
+- **Educational effectiveness:** outside the present evaluation. Neither artificial interactions nor a self-reported support signal establishes learning gains, retention or objective competence.
 
 No learner study, comparative experiment or production-readiness claim is planned. Optional expert feedback is supplementary and must not be reported unless collected.
 
@@ -33,7 +40,8 @@ Paths below are relative to this document. These are supplied project sources, n
 
 | Source | Use in this protocol |
 | --- | --- |
-| [Assignment 5 complete plan](../../docs/INFOSYS_720_Assignment_5_Complete_Plan.md), §§4–31, 37–41 | Evaluation methods, C1–C5, F1–F13, U1–U9, evidence discipline and reporting scope |
+| [Implementation-aligned Assignment 5 plan](../../docs/INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md) | Evaluation methods, C1–C5, F1–F13, U1–U9, current response routes, evidence discipline and reporting scope |
+| [Original Assignment 5 plan](../../docs/INFOSYS_720_Assignment_5_Complete_Plan.md) | Historical planning source only; it does not override this protocol's current implementation oracle |
 | [Assignment 1](../../docs/INFOSYS_720_Assignment_1.pdf), research background and problems | Historical motivation; its earlier glossary-focused scope does not add current requirements |
 | [Assignment 2](../../docs/INFOSYS_720_Assignment_2.pdf), SLR, SSR and Table 4 | Literature corpus, research gap and PIRQOA requirements/RQs |
 | [Assignment 3](../../docs/INFOSYS_720_Assignment_3.pdf), §§1, 2.1–2.4 and Figure 3 | Current TTF + Scaffolding Theory foundation and conceptual framework |
@@ -53,19 +61,26 @@ Preparation-time inspection of `services/adaptation.service.ts`, `services/sessi
 
 | Detail | Expected implementation behaviour to test |
 | --- | --- |
-| Understanding values | `high`, `medium`, `needs_support`; initially `null` |
+| Stage 6A overall support need | `high`, `medium`, `needs_support`; initially `null`. These are self-reports, not measured understanding. `understanding` remains the legacy storage/API field name. |
+| Stage 6B difficulty type | Optional for Medium/Needs Support: `simpler_explanation`, `another_example`, `language_terms`, `concept_unclear`, or `concept_mismatch`; skip is valid. High cannot include a difficulty type. |
 | Persisted statuses | `in_progress`, `review_recommended`, `completed`; `adapted` is not a persisted status |
-| Support mapping | High → `key_takeaway`; Medium → `another_example`; Needs Support → `simpler_explanation` |
-| Round counting | Any generated adaptation, including a High key takeaway, consumes a round; maximum two |
-| High response | While below the cap, generates a key takeaway; status remains `in_progress`. Completion is a separate action |
-| Medium/Needs Support | At the second adaptation, status becomes `review_recommended` |
-| Response at round two | Records response without generating a third adaptation; High can return status to `in_progress`, while other responses retain `review_recommended` |
-| Completion | Explicit completion accepts `in_progress` or `review_recommended`; repeat completion is idempotent; completed sessions reject new understanding responses |
+| High/fade route | Persist a `fade` response event, make no provider call, create no adaptation, and do not increment the round. Status remains `in_progress`; completion is a separate action. |
+| Default scaffold route | Medium with no Stage 6B choice → `another_example`; Needs Support with no choice → `simpler_explanation` |
+| Explicit scaffold routes | `simpler_explanation` and `another_example` select the corresponding Stage 5 scaffold |
+| Language route | `language_terms` → `language_support` with `clarification` support and a per-adaptation bilingual presentation override |
+| Conceptual route | `concept_unclear` → `concept_clarification` with revised Stage 4 meaning and Stage 5 support |
+| Reinterpretation route | `concept_mismatch` requires a short clarification and selects bounded `context_reinterpretation`; the outcome is `corrected`, `ambiguous`, or `limit_reached` |
+| Round counting | `adaptationRound` counts generated, persisted adaptations only; maximum two. Response events, fade, and capped responses do not consume a round. |
+| Response at round two | Persist the response event without a provider call or third adaptation. High remains `in_progress`; Medium/Needs Support is `review_recommended`. |
+| Completion | Explicit completion accepts `in_progress` or `review_recommended`; repeat completion is idempotent; completed sessions reject new learner responses |
 | Follow-ups | Maximum two persisted follow-ups; question maximum 500 characters |
 | Inquiry | Maximum 1,000 characters |
-| Existing scripts | `lint` and `build` exist; no `test` script is currently declared |
+| Existing scripts | `test`, `test:coverage`, `lint`, and `build` are declared; TypeScript is checked with `npx tsc --noEmit` |
 
-These are test-oracle inputs from static inspection, **not runtime passes**. In particular, the plan's “High → completion/fading” shorthand must be tested as reduced support followed by explicit completion. Whether response-driven key takeaways adequately represent fading remains a separate conceptual judgement.
+These are test-oracle inputs from static inspection, **not formal evaluation passes**. The pre-refinement oracle is preserved in `pre_refinement_discrepancies.md`; it must not be used for `B01` cases. The LLM chooses content within a selected route but does not choose route permission, lifecycle, identity, or round count.
+
+The Step 13 source/UI/test audit is recorded in
+[`refined_contract_cross_reference.md`](refined_contract_cross_reference.md).
 
 ## 3. PIRQOA and artefact traceability
 
@@ -163,11 +178,11 @@ For F2–F4/F6, assess content dimensions separately: technical correctness, con
 | --- | --- | --- |
 | U1 | Task clarity | Is the inquiry entry and its purpose evident on Home/Ask? |
 | U2 | Information structure | Are simple, example, technical, reflection and hint sections distinguishable? |
-| U3 | Interaction clarity | Are the three understanding choices and their consequences understandable? |
+| U3 | Interaction clarity | Are the three Stage 6A choices, optional Stage 6B choices, skip action, and consequences understandable? |
 | U4 | Feedback visibility | Are loading, adaptation and updated support/state visibly communicated? |
 | U5 | Navigation consistency | Can the evaluator find New Inquiry, History, Review/Resume and preferences without dead ends? |
 | U6 | Bilingual readability | Do Burmese glyphs, line breaks and mixed English terms display legibly without clipping? Is language quality separately assessed? |
-| U7 | State visibility | Are current understanding, completion and review recommendation distinguishable? |
+| U7 | State visibility | Are self-reported support need, selected route, completion and review recommendation distinguishable? |
 | U8 | Error clarity | Are errors understandable, appropriately localised and accompanied by an available recovery action? |
 | U9 | Consistency | Are labels, controls and interaction patterns consistent across screens/locales? |
 
@@ -201,11 +216,13 @@ Static command plan, run from `burmese_stem_ai/` only during execution:
 
 ```sh
 npm run lint
-./node_modules/.bin/tsc --noEmit
-npm run build
+npx tsc --noEmit
+npm test
+npm run test:coverage
+npm run build -- --webpack
 ```
 
-Record missing dependencies as Blocked. If a build requires an alternative configuration, record the exact command and reason and retain the initial log. Do not use an assumed `npm test`: select/configure the test harness and record its command before white-box execution. No application tests or paid model calls are executed by preparing this document.
+Record missing dependencies as Blocked. The webpack build command is the documented verification path for this repository; retain any failed alternative build log and its reason. `npm test` uses deterministic Vitest mocks and is structural evidence only. Coverage does not establish Burmese quality, STEM accuracy, usability, or educational effectiveness. Protocol preparation and Step 13 documentation checks are not formal `B01` execution and make no paid model calls.
 
 For modest timing analysis, use Photosynthesis, gravity, electric current, programming inheritance and pH, **three independent fresh-session attempts each** (15 initial-generation attempts). Measure start/end around the same operation boundary, preferably monotonic client request-to-response time. Record operation, elapsed milliseconds, success, timeout, retries and environment for every attempt. Report per-query and pooled successful-attempt median/min/max with sample sizes, plus failure/timeout counts separately. Log adaptation/follow-up timings descriptively without pooling unlike operations. No latency pass threshold is asserted because no service-level target is specified.
 
@@ -236,9 +253,11 @@ For SIM13–SIM16, record clarification or qualification behaviour before provid
 
 | Path | Script and implementation expectations |
 | --- | --- |
-| A | Initial → High: key takeaway at round 1, `in_progress` → explicit Finish: `completed` |
-| B | Initial → Medium: another example at round 1 → High: key takeaway at round 2, `in_progress` → explicit Finish |
-| C | Initial → Needs Support: simpler explanation at round 1 → Needs Support: simpler explanation at round 2, `review_recommended` → extra Needs Support: no third adaptation |
+| A | Initial → High: persist `fade` event at round 0, no generation or increment, `in_progress` → explicit Finish: `completed` |
+| B | Initial → Medium + skip: default `another_example` at round 1 → High: persist `fade` event, remain at round 1 → explicit Finish |
+| C | Initial → Needs Support + `simpler_explanation`: round 1 → Needs Support + `concept_unclear`: round 2 and `review_recommended` → extra Needs Support + skip: persist event, no provider call or third adaptation |
+
+Exercise `language_terms` and `concept_mismatch` as separately identified route cases. For the latter, use the fixed clarification strings for SIM13–SIM16 and record corrected, ambiguous, or capped outcomes without forcing a correction.
 
 Record actual content change as well as support-type labels. A different string or correct enum alone does not establish meaningful adaptation. Use separate BB04/BB17 cases for Burmese-only and English-only preferences; the core simulation does not claim exhaustive preference coverage.
 
@@ -253,9 +272,9 @@ Retain the plan's black-box IDs so later evidence remains traceable.
 | BB03 | Explicit technical context is honoured; include ambiguous/contextualised pair |
 | BB04 | Bilingual, Burmese and English support preferences affect relevant output/display |
 | BB05 | Required structured support and revealable hint are meaningful and accessible |
-| BB06 | High records response and yields key takeaway before cap; completion remains explicit |
-| BB07 | Medium yields another example before cap |
-| BB08 | Needs Support yields simpler explanation before cap |
+| BB06 | High records a `fade` event without provider call, adaptation, or round increment; completion remains explicit |
+| BB07 | Medium/Needs Support with no Stage 6B choice selects the correct default Stage 5 scaffold before cap |
+| BB08 | Each explicit Stage 6B choice selects its documented route; skip remains optional and concept mismatch requires clarification |
 | BB09 | First adaptation persists round 1 and matching content |
 | BB10 | Second adaptation persists round 2 and appropriate status |
 | BB11 | Attempt beyond round 2 creates no third adaptation |
@@ -272,7 +291,7 @@ Add explicitly labelled extensions `BB20` inquiry length 1,000/1,001; `BB21` fol
 
 White-box groups:
 
-- **WB01 adaptation:** all three support mappings, round 0/1/2, invalid rounds, status decisions and absence of model generation at cap.
+- **WB01 adaptation:** Stage 6A/6B validation, every route at rounds 0/1/2, default routes, fade, invalid combinations, status decisions, provider-call counts and absence of generation at cap.
 - **WB02 lifecycle:** legal completion, repeated completion, missing/foreign session, completed-response rejection; do not invent an `adapted` state.
 - **WB03 follow-up:** valid/invalid payloads, missing context, in-scope/out-of-scope structured outputs, length/count boundaries.
 - **WB04 model contracts:** valid output, missing fields, wrong types, blank required text, malformed JSON, refusal/empty response and transport failure; confirm no invalid save.
@@ -305,7 +324,7 @@ Use immutable, sequential evidence IDs **E001, E002, …**, result IDs **R001, R
 
 ```yaml
 baseline_id: TO_RECORD
-protocol_version: '1.0'
+protocol_version: '2.0'
 evaluator_and_role: TO_RECORD
 captured_at_with_timezone: TO_RECORD
 conceptual_sources_and_hashes: TO_RECORD
@@ -352,7 +371,7 @@ For GenAI coding, add transcript turn/paragraph locator and code. For informed a
 ### 10.5 Simulation and timing records
 
 ```csv
-run_id,baseline_id,case_id,path,attempt,query,preferences,session_alias,operation,understanding,round_before,round_after,status_before,status_after,output_evidence_ids,content_dimension_scores,execution_status,outcome,assessor,limitation
+run_id,baseline_id,case_id,path,attempt,query,preferences,session_alias,operation,overall_support_need,difficulty_type,selected_route,round_before,round_after,status_before,status_after,output_evidence_ids,content_dimension_scores,execution_status,outcome,assessor,limitation
 ```
 
 ```csv
@@ -393,7 +412,7 @@ Quote CSV fields containing commas/newlines. Retain raw generated text, logs and
 6. Resolve or explicitly retain contradictions. If source code enforces a cap but a runtime case exceeds it, report the runtime failure and investigate; do not vote across methods or hide it in an average.
 7. Map each substantive claim through problem → issue → requirement → RQ → artefact → criterion → method → evidence → result → limitation.
 
-A bounded implementation claim is strongly supported only when relevant external behaviour and internal/state evidence agree and no material counterexample remains in the evaluated coverage. Literature-based plausibility remains conceptual support. Incomplete domain/language coverage yields partial evidence. An observed High response remains self-reported understanding. No outcome in this protocol establishes improved achievement or retention, universal optimality of two rounds, or superiority over a baseline system.
+A bounded implementation claim is strongly supported only when relevant external behaviour and internal/state evidence agree and no material counterexample remains in the evaluated coverage. Literature-based plausibility remains conceptual support. Incomplete domain/language coverage yields partial evidence. A High response remains a self-reported low need for additional support, not a mastery judgement. No outcome in this protocol establishes improved achievement or retention, universal optimality of two generated adaptations, or superiority over a baseline system.
 
 ## 12. Completion and handover checklist
 

@@ -1,5 +1,13 @@
 # INFOSYS 720 Assignment 5 — Complete Evaluation Plan
 
+> **Historical planning version:** Retained unchanged as a provenance source for
+> the original evaluation design. Its terminology predates the refined Stage
+> 6A/6B implementation and must not be used as the current software test oracle.
+> Use
+> [`INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md`](INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md)
+> with evaluation protocol `A5-PROTOCOL-01` version 2.0. In particular, High now
+> persists a fade response event without generation or a round increment.
+
 ## Purpose of This Plan
 
 This document is a **working execution guide** for completing **INFOSYS 720 Assignment 5: Evaluate Information Systems Artefacts**.
