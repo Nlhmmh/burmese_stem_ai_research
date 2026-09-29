@@ -168,6 +168,8 @@ describe("bounded concept reinterpretation", () => {
         text: { format: { name: string; strict: boolean } };
       };
       const promptInput = JSON.parse(requestBody.input) as {
+        adaptationRoute: string;
+        supportType: string;
         originalQuestion: string;
         previousConcept: ConceptReference;
         intendedTermOrContext: string;
@@ -176,12 +178,18 @@ describe("bounded concept reinterpretation", () => {
         "Stage 6B → Stage 7 → Stage 2 → Stage 1 if required → Stage 4 → Stage 5"
       );
       expect(requestBody.instructions).toContain("one bounded correction");
+      expect(requestBody.instructions).toContain("# Stages 1–5 contract");
       expect(requestBody.instructions).toContain("Do not start a");
+      expect(requestBody.instructions).toContain(
+        "The application already selected context_reinterpretation and concept_correction"
+      );
       expect(requestBody.text.format).toMatchObject({
         name: "concept_reinterpretation",
         strict: true
       });
       expect(promptInput).toEqual({
+        adaptationRoute: "context_reinterpretation",
+        supportType: "concept_correction",
         originalQuestion,
         previousConcept: previous,
         intendedTermOrContext: clarification,
@@ -298,6 +306,44 @@ describe("bounded concept reinterpretation", () => {
         "medium",
         "concept_mismatch",
         "I meant cell."
+      )
+    ).rejects.toBeInstanceOf(AdaptationGenerationError);
+    expect(daoMocks.recordSessionResponse).not.toHaveBeenCalled();
+  });
+
+  it("rejects reinterpretation output containing application-controlled fields", async () => {
+    const previous = { name: "Cell", domain: "Biology" };
+    const session = makeSessionRecord({ concept: previous });
+    daoMocks.findSession.mockResolvedValue(session);
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        output: [
+          {
+            content: [
+              {
+                type: "output_text",
+                text: JSON.stringify({
+                  outcome: "corrected",
+                  message: { en: "", my: "" },
+                  concept: { name: "Spreadsheet cell", domain: "Computing" },
+                  content: { en: "Support", my: "အကူအညီ" },
+                  adaptationRound: 2
+                })
+              }
+            ]
+          }
+        ]
+      })
+    });
+
+    await expect(
+      respondToLearningSession(
+        session.learnerId,
+        session.sessionId,
+        "medium",
+        "concept_mismatch",
+        "I meant a spreadsheet cell."
       )
     ).rejects.toBeInstanceOf(AdaptationGenerationError);
     expect(daoMocks.recordSessionResponse).not.toHaveBeenCalled();

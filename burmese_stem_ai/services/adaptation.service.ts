@@ -30,6 +30,8 @@ const adaptationOutputSchema = {
   type: "object",
   properties: {
     content: {
+      description:
+        "Application-selected route output combining required Stage 4 meaning and/or Stage 5 scaffold",
       type: "object",
       properties: {
         en: { type: "string" },
@@ -48,6 +50,7 @@ const conceptReinterpretationOutputSchema = {
   properties: {
     outcome: { type: "string", enum: ["corrected", "ambiguous"] },
     message: {
+      description: "One bilingual clarification request only when outcome is ambiguous",
       type: "object",
       properties: {
         en: { type: "string" },
@@ -57,6 +60,7 @@ const conceptReinterpretationOutputSchema = {
       additionalProperties: false
     },
     concept: {
+      description: "Reinterpreted Stages 1 and 2 term and technical context",
       type: "object",
       properties: {
         name: { type: "string" },
@@ -66,6 +70,8 @@ const conceptReinterpretationOutputSchema = {
       additionalProperties: false
     },
     content: {
+      description:
+        "Revised Stage 4 core meaning plus one Stage 5 scaffold when corrected",
       type: "object",
       properties: {
         en: { type: "string" },
@@ -385,7 +391,9 @@ async function generateAdaptation(
         store: false,
         instructions: buildAdaptationInstructions(learnerResponse, decision),
         input: JSON.stringify({
+          learnerResponse,
           adaptationRoute: decision.route,
+          supportType: decision.supportType,
           presentationOverride:
             decision.route === "language_support" ? decision.presentationOverride : null,
           concept: session.concept,
@@ -457,6 +465,8 @@ async function generateConceptReinterpretation(
         store: false,
         instructions: buildConceptReinterpretationInstructions(),
         input: JSON.stringify({
+          adaptationRoute: "context_reinterpretation",
+          supportType: "concept_correction",
           originalQuestion: session.originalQuestion,
           previousConcept: session.concept,
           intendedTermOrContext: clarification,
@@ -523,6 +533,17 @@ Reconsider the previous concept and domain using only the original question
 and the learner's short intendedTermOrContext clarification. Do not start a
 conversation, ask multiple questions, or introduce an eighth framework stage.
 
+# Stages 1–5 contract
+
+- Stage 1: identify the corrected primary STEM term only when the learner's
+  clarification resolves it.
+- Stage 2: interpret the corrected technical context/domain; return ambiguous
+  rather than guessing between plausible contexts.
+- Stage 3: apply the stored language preferences as presentation constraints
+  without changing the learner profile or translating every English term.
+- Stage 4: when corrected, explain the revised concept's core meaning.
+- Stage 5: follow that meaning with exactly one concise scaffold.
+
 # Outcome contract
 
 Return "corrected" only when one STEM concept and domain are sufficiently
@@ -545,7 +566,9 @@ For "ambiguous":
 # Boundaries
 
 - This is contextual reinterpretation, not deterministic automatic terminology extraction.
-- Do not choose the route, lifecycle state, round count, learner identity or persistence.
+- The application already selected context_reinterpretation and concept_correction.
+- Do not choose or change the route, support type, lifecycle state, round count,
+  learner identity, persistence or follow-up allowance.
 - Stay within the supplied STEM inquiry and clarification.
 - Never claim that the previous interpretation was an objectively diagnosed misconception.
 - English and Burmese must communicate the same information.
@@ -604,6 +627,19 @@ The application selected the "${decision.route}" route.
 Generate exactly one "${decision.supportType}" support item that helps the
 learner understand the existing STEM concept.
 
+The application, not the model, selected both route and support type. Return
+only the bilingual content required by the strict schema.
+
+# Stages 3–5 contract
+
+- Stage 3 language strategy is a presentation constraint. Use the stored
+  preferences and retain useful English STEM terminology where appropriate;
+  do not alter the learner profile.
+- Stage 4 core meaning must remain technically consistent with the active
+  concept supplied by the application.
+- Stage 5 scaffold form is fixed by "${decision.supportType}". Do not choose a
+  different scaffold or return route, state or persistence fields.
+
 # Adaptation strategy
 
 Follow the selected support type exactly:
@@ -620,6 +656,8 @@ ${strategy}
 - Do not repeat the complete initial explanation.
 - Do not create a quiz, question sequence, grade or score.
 - Do not make decisions about understanding, status or adaptation round.
+- Do not choose learner identity, persistence, route permission, lifecycle or
+  follow-up allowance.
 - Do not claim that the learner now understands the concept.
 
 # Language contract
@@ -649,14 +687,10 @@ Before returning the result, verify that:
 }
 
 function isGeneratedAdaptation(value: unknown): value is GeneratedAdaptation {
-  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
-  const content = (value as Record<string, unknown>).content;
-  if (typeof content !== "object" || content === null || Array.isArray(content)) return false;
-  const bilingual = content as Record<string, unknown>;
+  if (!isExactRecord(value, ["content"]) || !isBilingualText(value.content)) return false;
+  const bilingual = value.content;
   return (
-    typeof bilingual.en === "string" &&
     bilingual.en.trim().length > 0 &&
-    typeof bilingual.my === "string" &&
     bilingual.my.trim().length > 0
   );
 }
@@ -665,8 +699,8 @@ function isGeneratedConceptReinterpretation(
   value: unknown,
   previousConcept: ConceptReference
 ): value is GeneratedConceptReinterpretation {
-  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
-  const generated = value as Record<string, unknown>;
+  if (!isExactRecord(value, ["outcome", "message", "concept", "content"])) return false;
+  const generated = value;
   if (generated.outcome !== "corrected" && generated.outcome !== "ambiguous") return false;
   if (!isBilingualText(generated.message) || !isBilingualText(generated.content)) return false;
   if (!isConceptReference(generated.concept)) return false;
@@ -694,14 +728,16 @@ function isGeneratedConceptReinterpretation(
 }
 
 function isBilingualText(value: unknown): value is GeneratedAdaptation["content"] {
-  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
-  const content = value as Record<string, unknown>;
-  return typeof content.en === "string" && typeof content.my === "string";
+  return (
+    isExactRecord(value, ["en", "my"]) &&
+    typeof value.en === "string" &&
+    typeof value.my === "string"
+  );
 }
 
 function isConceptReference(value: unknown): value is ConceptReference {
-  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
-  const concept = value as Record<string, unknown>;
+  if (!isExactRecord(value, ["name", "domain"])) return false;
+  const concept = value;
   return (
     typeof concept.name === "string" &&
     concept.name.trim().length > 0 &&
@@ -737,4 +773,14 @@ function repeatsExistingSupport(
 
 function normaliseForComparison(value: string): string {
   return value.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+function isExactRecord(value: unknown, keys: readonly string[]): value is Record<string, unknown> {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    !Array.isArray(value) &&
+    Object.keys(value).length === keys.length &&
+    keys.every((key) => key in value)
+  );
 }
