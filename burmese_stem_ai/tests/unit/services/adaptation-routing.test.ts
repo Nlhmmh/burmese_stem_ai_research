@@ -61,12 +61,19 @@ describe("deterministic Stage 7 route selection", () => {
     }
   );
 
-  it.each(["concept_unclear", "concept_mismatch"] as const)(
-    "keeps the specialised %s route unavailable until its implementation step",
-    (difficultyType) => {
-      expect(() => selectAdaptationRoute("medium", difficultyType)).toThrow(
-        UnsupportedAdaptationRouteError
-      );
+  it.each(["medium", "needs_support"] as const)(
+    "selects concept clarification for a %s concept-unclear self-report",
+    (overallSupportNeed) => {
+      expect(selectAdaptationRoute(overallSupportNeed, "concept_unclear")).toEqual({
+        route: "concept_clarification",
+        supportType: "concept_clarification"
+      });
     }
   );
+
+  it("keeps concept reinterpretation unavailable until its implementation step", () => {
+    expect(() => selectAdaptationRoute("medium", "concept_mismatch")).toThrow(
+      UnsupportedAdaptationRouteError
+    );
+  });
 });

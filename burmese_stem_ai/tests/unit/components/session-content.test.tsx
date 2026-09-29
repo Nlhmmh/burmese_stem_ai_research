@@ -1,8 +1,13 @@
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
-import { AdaptationContent } from "@/components/learn/SessionContent";
+import { AdaptationCard, AdaptationContent } from "@/components/learn/SessionContent";
 import type { Adaptation } from "@/components/learn/types";
+
+vi.mock("next-intl", () => ({
+  useTranslations: () => (key: string) =>
+    key === "concept_clarification" ? "Adapted — Concept Clarification" : key
+}));
 
 const languageAdaptation: Adaptation = {
   learnerResponse: "medium",
@@ -50,5 +55,28 @@ describe("language-support adaptation rendering", () => {
 
     expect(html).toContain('lang="en"');
     expect(html).not.toContain('lang="my"');
+  });
+});
+
+describe("conceptual-clarification adaptation rendering", () => {
+  it("renders the concept-specific label and revised support content", () => {
+    const adaptation: Adaptation = {
+      learnerResponse: "needs_support",
+      supportType: "concept_clarification",
+      content: {
+        en: "A revised core explanation followed by a short analogy.",
+        my: "ပြန်လည် ရှင်းလင်းထားသော အဓိက အဓိပ္ပာယ်နှင့် နှိုင်းယှဉ်ချက်တို။"
+      },
+      round: 1,
+      createdAt: "2026-01-15T10:00:00.000Z"
+    };
+
+    const html = renderToStaticMarkup(
+      <AdaptationCard adaptation={adaptation} locale="en" supportLanguage="english" />
+    );
+
+    expect(html).toContain("Adapted — Concept Clarification");
+    expect(html).toContain(adaptation.content.en);
+    expect(html).not.toContain(adaptation.content.my);
   });
 });

@@ -16,6 +16,7 @@ describe("session domain vocabulary", () => {
   it("preserves the legacy overall-support values", () => {
     expect(OVERALL_SUPPORT_NEEDS).toEqual(["high", "medium", "needs_support"]);
     expect(SUPPORT_TYPES).toContain("key_takeaway");
+    expect(SUPPORT_TYPES).toContain("concept_clarification");
   });
 
   it("defines the bounded Stage 6B and Stage 7 values", () => {
@@ -53,6 +54,10 @@ describe("session domain vocabulary", () => {
     expectTypeOf<{
       route: "stage_5_scaffold";
       supportType: "another_example";
+    }>().toMatchTypeOf<RouteSpecificSupport>();
+    expectTypeOf<{
+      route: "concept_clarification";
+      supportType: "concept_clarification";
     }>().toMatchTypeOf<RouteSpecificSupport>();
   });
 

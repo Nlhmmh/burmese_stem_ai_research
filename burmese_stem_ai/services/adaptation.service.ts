@@ -267,6 +267,9 @@ async function generateAdaptation(
     if (!isGeneratedAdaptation(generated)) {
       throw new AdaptationGenerationError("OpenAI returned invalid adaptation content");
     }
+    if (repeatsExistingSupport(session, generated.content)) {
+      throw new AdaptationGenerationError("OpenAI repeated existing support");
+    }
     return generated;
   } catch (error) {
     if (error instanceof AdaptationGenerationError) throw error;
@@ -290,6 +293,18 @@ function buildAdaptationInstructions(
   Do not translate every English technical term mechanically.
   Produce a clear English explanation and a natural Burmese explanation of
   the same active concept.`
+    : decision.route === "concept_clarification"
+      ? `
+- concept_clarification (Stage 4 → Stage 5):
+  Treat this only as the learner's self-reported request for conceptual help,
+  not as evidence of an objectively diagnosed misconception.
+  Reconsider the active concept's core meaning and provide a revised core
+  explanation from a different perspective than the initial explanation and
+  every previous adaptation.
+  Follow the revised core explanation with one concise, appropriate scaffold,
+  such as an analogy, concrete connection or short guided reasoning step.
+  Keep both parts focused on the active concept. Do not respond with merely
+  another example and do not repeat a prior explanation, example or analogy.`
     : decision.supportType === "another_example"
       ? `
 - another_example:
@@ -370,4 +385,26 @@ function isGeneratedAdaptation(value: unknown): value is GeneratedAdaptation {
     typeof bilingual.my === "string" &&
     bilingual.my.trim().length > 0
   );
+}
+
+function repeatsExistingSupport(
+  session: SessionRecord,
+  generated: GeneratedAdaptation["content"]
+): boolean {
+  const existingContent = [
+    session.explanations.simple,
+    session.explanations.realWorldExample,
+    session.explanations.technical,
+    ...session.adaptations.map((adaptation) => adaptation.content)
+  ];
+
+  return existingContent.some(
+    (content) =>
+      normaliseForComparison(content.en) === normaliseForComparison(generated.en) &&
+      normaliseForComparison(content.my) === normaliseForComparison(generated.my)
+  );
+}
+
+function normaliseForComparison(value: string): string {
+  return value.trim().replace(/\s+/g, " ").toLowerCase();
 }

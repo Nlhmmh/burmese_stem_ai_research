@@ -18,7 +18,10 @@ vi.mock("@/data/dao/session.dao", () => ({
   recordSessionResponse: daoMocks.recordSessionResponse
 }));
 
-import { respondToLearningSession } from "@/services/adaptation.service";
+import {
+  AdaptationGenerationError,
+  respondToLearningSession
+} from "@/services/adaptation.service";
 
 type BranchCase = {
   overallSupportNeed: OverallSupportNeed;
@@ -354,6 +357,225 @@ describe("Stage 7 provider and round branches", () => {
         responseEvent: expect.objectContaining({
           difficultyType: "language_terms",
           route: "language_support",
+          roundBefore: 2,
+          roundAfter: 2
+        })
+      })
+    );
+  });
+
+  it("generates and persists a distinct Stage 4 to 5 conceptual clarification", async () => {
+    const previousAdaptation = {
+      learnerResponse: "medium" as const,
+      supportType: "another_example" as const,
+      content: {
+        en: "A ball rolling downhill is an earlier example.",
+        my: "ကုန်းဆင်းတွင် ဘောလုံးလိမ့်ခြင်းသည် ယခင် ဥပမာဖြစ်သည်။"
+      },
+      round: 1,
+      createdAt: new Date("2026-01-15T10:01:00.000Z")
+    };
+    const session = makeSessionRecord({
+      adaptationRound: 1,
+      adaptations: [previousAdaptation]
+    });
+    daoMocks.findSession.mockResolvedValue(session);
+    daoMocks.recordSessionResponse.mockResolvedValue(
+      makeSessionRecord({
+        understanding: "needs_support",
+        adaptationRound: 2,
+        status: "review_recommended"
+      })
+    );
+
+    const result = await respondToLearningSession(
+      session.learnerId,
+      session.sessionId,
+      "needs_support",
+      "concept_unclear"
+    );
+
+    expect(fetchMock).toHaveBeenCalledOnce();
+    expect(result).toMatchObject({
+      route: "concept_clarification",
+      adaptationRound: 2,
+      adaptation: {
+        learnerResponse: "needs_support",
+        supportType: "concept_clarification",
+        content: generatedContent,
+        round: 2
+      }
+    });
+    expect(daoMocks.recordSessionResponse).toHaveBeenCalledWith(
+      expect.objectContaining({
+        adaptation: expect.objectContaining({
+          supportType: "concept_clarification",
+          content: generatedContent
+        }),
+        responseEvent: expect.objectContaining({
+          difficultyType: "concept_unclear",
+          route: "concept_clarification",
+          roundBefore: 1,
+          roundAfter: 2
+        })
+      })
+    );
+
+    const request = fetchMock.mock.calls[0]?.[1] as RequestInit;
+    const requestBody = JSON.parse(String(request.body)) as {
+      instructions: string;
+      input: string;
+      text: {
+        format: {
+          type: string;
+          strict: boolean;
+          schema: {
+            required: string[];
+            properties: { content: { required: string[] } };
+          };
+        };
+      };
+    };
+    const promptInput = JSON.parse(requestBody.input) as {
+      adaptationRoute: string;
+      concept: { name: string; domain: string };
+      previousAdaptations: typeof session.adaptations;
+    };
+    expect(requestBody.instructions).toContain("Stage 4 → Stage 5");
+    expect(requestBody.instructions).toContain("revised core");
+    expect(requestBody.instructions).toContain("one concise, appropriate scaffold");
+    expect(requestBody.instructions).toContain("not as evidence of an objectively diagnosed misconception");
+    expect(requestBody.instructions).toContain("Do not respond with merely");
+    expect(requestBody.text.format).toMatchObject({
+      type: "json_schema",
+      strict: true,
+      schema: {
+        required: ["content"],
+        properties: { content: { required: ["en", "my"] } }
+      }
+    });
+    expect(promptInput).toMatchObject({
+      adaptationRoute: "concept_clarification",
+      concept: session.concept,
+      previousAdaptations: [
+        expect.objectContaining({
+          supportType: "another_example",
+          content: previousAdaptation.content
+        })
+      ]
+    });
+  });
+
+  it("rejects a conceptual clarification that exactly repeats prior support", async () => {
+    const repeatedContent = {
+      en: "Earlier clarification",
+      my: "ယခင် ရှင်းလင်းချက်"
+    };
+    const session = makeSessionRecord({
+      adaptationRound: 1,
+      adaptations: [
+        {
+          learnerResponse: "medium",
+          supportType: "concept_clarification",
+          content: repeatedContent,
+          round: 1,
+          createdAt: new Date("2026-01-15T10:01:00.000Z")
+        }
+      ]
+    });
+    daoMocks.findSession.mockResolvedValue(session);
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        output: [
+          {
+            content: [
+              {
+                type: "output_text",
+                text: JSON.stringify({
+                  content: {
+                    en: "  EARLIER   CLARIFICATION ",
+                    my: " ယခင်   ရှင်းလင်းချက် "
+                  }
+                })
+              }
+            ]
+          }
+        ]
+      })
+    });
+
+    await expect(
+      respondToLearningSession(
+        session.learnerId,
+        session.sessionId,
+        "medium",
+        "concept_unclear"
+      )
+    ).rejects.toThrow(AdaptationGenerationError);
+    expect(daoMocks.recordSessionResponse).not.toHaveBeenCalled();
+  });
+
+  it("rejects malformed conceptual-clarification output before persistence", async () => {
+    const session = makeSessionRecord();
+    daoMocks.findSession.mockResolvedValue(session);
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        output: [
+          {
+            content: [
+              {
+                type: "output_text",
+                text: JSON.stringify({ content: { en: "English only is invalid" } })
+              }
+            ]
+          }
+        ]
+      })
+    });
+
+    await expect(
+      respondToLearningSession(
+        session.learnerId,
+        session.sessionId,
+        "needs_support",
+        "concept_unclear"
+      )
+    ).rejects.toThrow("OpenAI returned invalid adaptation content");
+    expect(daoMocks.recordSessionResponse).not.toHaveBeenCalled();
+  });
+
+  it("records a capped conceptual route without generating round three", async () => {
+    const session = makeSessionRecord({ adaptationRound: 2 });
+    daoMocks.findSession.mockResolvedValue(session);
+    daoMocks.recordSessionResponse.mockResolvedValue(
+      makeSessionRecord({
+        understanding: "needs_support",
+        adaptationRound: 2,
+        status: "review_recommended"
+      })
+    );
+
+    const result = await respondToLearningSession(
+      session.learnerId,
+      session.sessionId,
+      "needs_support",
+      "concept_unclear"
+    );
+
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(result).toMatchObject({
+      route: "concept_clarification",
+      adaptationRound: 2,
+      adaptation: null
+    });
+    expect(daoMocks.recordSessionResponse).toHaveBeenCalledWith(
+      expect.objectContaining({
+        adaptation: null,
+        responseEvent: expect.objectContaining({
+          difficultyType: "concept_unclear",
+          route: "concept_clarification",
           roundBefore: 2,
           roundAfter: 2
         })

@@ -52,6 +52,7 @@ export const SUPPORT_TYPES = [
   "key_takeaway",
   "another_example",
   "clarification",
+  "concept_clarification",
   "simpler_explanation",
   "analogy",
   "hint"
@@ -78,7 +79,7 @@ export type LanguageSupport = {
 
 export type ConceptClarificationSupport = {
   route: "concept_clarification";
-  supportType: ScaffoldSupportType;
+  supportType: Extract<ScaffoldSupportType, "concept_clarification">;
 };
 
 export type ContextReinterpretationSupport = {

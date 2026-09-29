@@ -1,4 +1,5 @@
 import type {
+  ConceptClarificationSupport,
   DifficultyType,
   FadeSupport,
   LanguageSupport,
@@ -16,7 +17,10 @@ export type CoreStage5Decision = {
   supportType: CoreStage5SupportType;
 };
 
-export type GeneratingAdaptationDecision = CoreStage5Decision | LanguageSupport;
+export type GeneratingAdaptationDecision =
+  | CoreStage5Decision
+  | LanguageSupport
+  | ConceptClarificationSupport;
 export type ImplementedAdaptationDecision = FadeSupport | GeneratingAdaptationDecision;
 
 export class InvalidAdaptationRouteInputError extends Error {}
@@ -54,6 +58,10 @@ export function selectAdaptationRoute(
         presentationOverride: "bilingual"
       };
     case "concept_unclear":
+      return {
+        route: "concept_clarification",
+        supportType: "concept_clarification"
+      };
     case "concept_mismatch":
       throw new UnsupportedAdaptationRouteError(
         `The ${difficultyType} adaptation route is not implemented yet`

@@ -79,6 +79,26 @@ describe("session response-event schema", () => {
     await expect(new SessionSchemaModel(session).validate()).resolves.toBeUndefined();
   });
 
+  it("validates persisted concept-focused clarification support", async () => {
+    const session = makeSessionRecord({
+      adaptationRound: 1,
+      adaptations: [
+        {
+          learnerResponse: "needs_support",
+          supportType: "concept_clarification",
+          content: {
+            en: "A revised core explanation followed by a short analogy.",
+            my: "ပြန်လည် ရှင်းလင်းထားသော အဓိက အဓိပ္ပာယ်နှင့် နှိုင်းယှဉ်ချက်တို။"
+          },
+          round: 1,
+          createdAt: new Date("2026-01-15T10:02:00.000Z")
+        }
+      ]
+    });
+
+    await expect(new SessionSchemaModel(session).validate()).resolves.toBeUndefined();
+  });
+
   it("rejects an unbounded response route", async () => {
     const invalidSession = {
       ...makeSessionRecord(),
