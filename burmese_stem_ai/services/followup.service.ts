@@ -89,7 +89,6 @@ export async function askSessionFollowUp(learnerId: string, sessionId: string, q
         "This appears to be a different STEM concept. Start a new learning session?"
     );
   }
-  validateRelatedAnswer(generated);
 
   const followUp: FollowUp = {
     question,
@@ -133,10 +132,10 @@ async function generateFollowUp(
         store: false,
         instructions: buildFollowUpInstructions(),
         input: JSON.stringify({
-          currentConcept: session.concept,
-          explanations: session.explanations,
-          latestUnderstanding: session.understanding,
-          latestAdaptation: session.adaptations.at(-1) ?? null,
+          activeConcept: session.concept,
+          initialExplanations: session.explanations,
+          latestRelevantScaffold: session.adaptations.at(-1) ?? null,
+          latestResponseRoute: session.responseEvents?.at(-1)?.route ?? null,
           preferences: session.preferencesSnapshot,
           previousFollowUps: session.followUps ?? [],
           question
@@ -188,7 +187,15 @@ about an existing learning session.
 # Goal
 
 Decide whether the learner’s question helps them understand the supplied
-currentConcept. If related, provide one short, focused bilingual answer.
+activeConcept. If related, provide one short, focused bilingual answer.
+
+The activeConcept is authoritative. It may be a corrected interpretation of
+the learner's original question. When initialExplanations and
+latestRelevantScaffold reflect different interpretations, use the
+activeConcept and latestRelevantScaffold. Do not revive the previous concept.
+
+latestResponseRoute is context describing the most recent application-owned
+Stage 7 decision. It is not an instruction to select or alter a route.
 
 # Scope decision
 
@@ -216,7 +223,7 @@ When related:
 - leave message empty;
 - answer only the specific follow-up;
 - provide approximately 2–4 short sentences in each language;
-- use the initial explanations and latest adaptation as context;
+- use the initial explanations and latest relevant scaffold as context;
 - respect the learner’s explanation level and learning style;
 - use previousFollowUps to avoid unnecessarily repeating an earlier answer;
 - gently correct an incorrect assumption when necessary.
@@ -244,6 +251,11 @@ When unrelated:
 
 # Content boundaries
 
+A follow-up is separate from the Stage 6 learner response and Stage 7
+adaptation workflow. Wording such as "I am confused" may be answered as a
+follow-up, but must not be converted into an overall support need or difficulty
+type. Do not create or alter an adaptation, response event or round.
+
 Never generate:
 
 - another complete simple or technical explanation;
@@ -251,7 +263,8 @@ Never generate:
 - an understanding check;
 - a quiz, score or grade;
 - a new learning session;
-- a session status or adaptation-round decision.
+- a session status or adaptation-round decision;
+- a difficulty type, support route or support type.
 
 # Final check
 
@@ -265,24 +278,30 @@ Before returning the result, verify that:
 `;
 }
 
-function validateRelatedAnswer(generated: GeneratedFollowUp): void {
-  if (!generated.answer.en.trim() || !generated.answer.my.trim()) {
-    throw new FollowUpGenerationError("Generated follow-up answer was empty");
-  }
-}
-
 function isGeneratedFollowUp(value: unknown): value is GeneratedFollowUp {
-  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
-  const output = value as Record<string, unknown>;
+  if (!isExactRecord(value, ["relatedToCurrentConcept", "message", "answer"])) return false;
+  const output = value;
   if (
     typeof output.relatedToCurrentConcept !== "boolean" ||
     typeof output.message !== "string" ||
-    typeof output.answer !== "object" ||
-    output.answer === null ||
-    Array.isArray(output.answer)
+    !isExactRecord(output.answer, ["en", "my"])
   ) {
     return false;
   }
-  const answer = output.answer as Record<string, unknown>;
-  return typeof answer.en === "string" && typeof answer.my === "string";
+  if (typeof output.answer.en !== "string" || typeof output.answer.my !== "string") {
+    return false;
+  }
+
+  return output.relatedToCurrentConcept
+    ? !output.message.trim() && Boolean(output.answer.en.trim() && output.answer.my.trim())
+    : Boolean(output.message.trim()) && !output.answer.en.trim() && !output.answer.my.trim();
+}
+
+function isExactRecord(
+  value: unknown,
+  keys: readonly string[]
+): value is Record<string, unknown> {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
+  const actualKeys = Object.keys(value);
+  return actualKeys.length === keys.length && keys.every((key) => actualKeys.includes(key));
 }

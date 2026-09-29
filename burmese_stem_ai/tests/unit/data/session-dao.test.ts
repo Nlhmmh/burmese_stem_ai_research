@@ -20,6 +20,7 @@ vi.mock("@/data/schema", () => ({
 }));
 
 import {
+  appendFollowUp,
   findSession,
   recordSessionResponse,
   type Adaptation
@@ -296,5 +297,54 @@ describe("session DAO persistence invariants", () => {
 
     expect(results.filter((result) => result !== null)).toHaveLength(1);
     expect(persistedEventCount).toBe(1);
+  });
+
+  it("appends a follow-up without altering Stage 7 state", async () => {
+    const session = makeSessionRecord({
+      adaptationRound: 1,
+      understanding: "medium",
+      status: "in_progress"
+    });
+    const followUp = {
+      question: "Why does the slope matter?",
+      answer: {
+        en: "It determines the update direction.",
+        my: "၎င်းက ပြောင်းလဲမည့် ဦးတည်ချက်ကို သတ်မှတ်သည်။"
+      },
+      createdAt: now
+    };
+    persistenceMocks.findOneAndUpdate.mockReturnValue({
+      lean: vi.fn().mockResolvedValue({ ...session, followUps: [followUp] })
+    });
+
+    await appendFollowUp(session.learnerId, session.sessionId, followUp);
+
+    expect(persistenceMocks.findOneAndUpdate).toHaveBeenCalledWith(
+      {
+        learnerId: session.learnerId,
+        sessionId: session.sessionId,
+        $expr: {
+          $lt: [{ $size: { $ifNull: ["$followUps", []] } }, 2]
+        }
+      },
+      {
+        $push: { followUps: followUp },
+        $set: { updatedAt: now }
+      },
+      { returnDocument: "after", runValidators: true }
+    );
+
+    const update = persistenceMocks.findOneAndUpdate.mock.calls[0]?.[1] as Record<
+      string,
+      unknown
+    >;
+    expect(update).not.toHaveProperty("$inc");
+    expect(update).not.toHaveProperty("$unset");
+    expect(update.$set).not.toHaveProperty("adaptationRound");
+    expect(update.$set).not.toHaveProperty("understanding");
+    expect(update.$set).not.toHaveProperty("status");
+    expect(update.$set).not.toHaveProperty("concept");
+    expect(update.$push).not.toHaveProperty("adaptations");
+    expect(update.$push).not.toHaveProperty("responseEvents");
   });
 });
