@@ -2,10 +2,10 @@
 
 | Document control | Value |
 | --- | --- |
-| Implementation-oracle version | 2.0 |
+| Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
-| Protocol | `A5-PROTOCOL-01` version 2.0 |
-| Formal evaluation status | Not run; `B01` still requires a reproducible freeze |
+| Protocol | `A5-PROTOCOL-01` version 2.1 |
+| Formal evaluation status | Step 10 static analysis completed against B01; Step 11 is next |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -61,8 +61,8 @@ It is **not** the final Assignment 5 paper. Its purpose is to guide the evaluati
 
 The plan is based on:
 
-- Assignment 5 specifications;
-- Assignment 5 marking rubric;
+- the supplied plan's account of the Assignment 5 specification and marking
+  rubric; the standalone brief must still be checked before submission;
 - Assignment 2 SLR and SSR findings;
 - Assignment 3 theoretical foundation and conceptual artefacts;
 - Assignment 4 system artefacts and Burmese STEM AI proof of concept.
@@ -73,13 +73,16 @@ The central rule for the whole assignment is:
 
 ---
 
-## Current Progress Snapshot — 28 September 2026
+## Current Progress Snapshot — 30 September 2026
 
 ### Completed
 
 The conceptual artefact evaluation has been completed through framework refinement.
 
 - [x] Evaluation protocol created
+- [x] Local B01 PoC baseline and environment frozen
+- [x] FURPS F1–F13 and U1–U9 criteria and recording rules frozen
+- [x] Step 10 static analysis executed and evidence E001–E003 retained
 - [x] Primary conceptual artefact selected
 - [x] Conceptual criteria defined
 - [x] GenAI interview completed and raw transcript preserved
@@ -98,39 +101,65 @@ The conceptual artefact evaluation has been completed through framework refineme
 ```text
 evaluation/
 ├── 00_protocol/
-│   └── evaluation_protocol.md
-└── 01_conceptual/
-    ├── conceptual_triangulation.md
-    ├── framework_refinements.md
-    ├── genai/
-    │   ├── GENAI-01_analysis.md
-    │   └── GENAI-01_interview.md
-    ├── informed_argument/
-    │   └── traceability.md
-    ├── literature/
-    │   ├── literature_matrix.csv
-    │   └── literature_synthesis.md
-    └── scenario/
-        └── photosynthesis_scenario.md
+│   ├── evaluation_protocol.md
+│   ├── b01_artefact_versions.md
+│   ├── b01_environment.md
+│   └── b01_evidence_index.md
+├── 01_conceptual/
+│   ├── conceptual_triangulation.md
+│   ├── framework_refinements.md
+│   ├── genai/
+│   │   ├── GENAI-01_analysis.md
+│   │   └── GENAI-01_interview.md
+│   ├── informed_argument/
+│   │   └── traceability.md
+│   ├── literature/
+│   │   ├── literature_matrix.csv
+│   │   └── literature_synthesis.md
+│   └── scenario/
+│       └── photosynthesis_scenario.md
+├── 02_design/
+│   ├── static/
+│   │   ├── static_analysis_test_cases.md
+│   │   └── raw/
+│   │       ├── STA-RUN-01-command-log.md
+│   │       └── STA-03-coverage-summary.json
+│   ├── dynamic/dynamic_analysis_test_cases.md
+│   ├── optimisation/bounds_analysis_test_cases.md
+│   ├── simulation/simulation_test_cases.md
+│   ├── black_box/black_box_test_cases.md
+│   └── white_box/white_box_test_cases.md
+└── 03_results/
+    └── evidence_register.csv
 ```
 
 ### Next major task
 
-> **Begin the Design Artefact Evaluation by finalizing FURPS Functionality and Usability criteria, then execute the required design-evaluation methods using recorded evidence.**
+> **Proceed to Step 11 Dynamic Analysis. Step 10 passed with recorded sandbox, Mongoose-warning, scoped-coverage, and protocol-hash qualifications.**
 
-### Remaining preparation item
+### Run-specific fields to record when Step 11 starts
 
-Before system testing, still record the exact PoC baseline:
+The baseline is already frozen. Before the first formal command, assign the
+run ID and record evaluator, timestamp, working-tree state, and dependency mode
+for that run. Do not include secrets or API keys.
 
-- Git commit hash;
-- date/time;
-- Node/runtime version;
-- deployed URL;
-- relevant model/API configuration at a high level;
-- database version;
-- test configuration.
+## How to execute this plan
 
-Do not include secrets or API keys.
+1. Start at the first heading marked **NEXT**; currently this is Step 11.
+2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
+3. Create only the listed evidence folder/files; leave actual-result fields
+   blank until execution.
+4. Execute against B01 and retain the first attempt, including failures.
+5. Add real artefacts to the evidence register; never pre-allocate evidence IDs
+   for files that do not exist.
+6. Update criteria/results only from retained evidence.
+7. Mark the step complete only when every completion criterion is met, then
+   move to the next item in the Phase C dashboard (§39).
+
+When an environment dependency blocks execution, record Blocked plus the exact
+reason and continue only where doing so does not invalidate later evidence.
+Never convert a preparation check, source inspection, or planned case into a
+formal Pass result.
 
 ---
 
@@ -609,30 +638,24 @@ The evaluation did **not** silently change the original artefact. Changes were r
 
 ---
 
-## 7.2 Freeze the PoC version
+## 7.2 Freeze the PoC version — COMPLETED
 
-Create a fixed Git commit/tag or record the current commit hash.
+The formal local baseline is `B01-A5-EVALUATION`. Its annotated tag is
+`a5-evaluation-b01`; its executable source commit is
+`37faefa236829aa3d79e023faa1fb72a086b5c2a`.
 
-Suggested commands:
+The commit, worktree, package lock, runtime, database, browser, non-secret model
+configuration, prompt/schema hashes, commands, and local-only deployment
+qualification are recorded in:
 
-```bash
-git status
-git rev-parse HEAD
+```text
+evaluation/00_protocol/b01_artefact_versions.md
+evaluation/00_protocol/b01_environment.md
+evaluation/00_protocol/b01_evidence_index.md
 ```
 
-Record:
-
-- commit hash;
-- date/time;
-- application version if used;
-- Node version;
-- relevant environment;
-- deployed URL;
-- model/API configuration at a high level;
-- database version;
-- test configuration.
-
-Do not store secrets or API keys in the evidence.
+B01 baseline-freeze checks are prerequisites, not formal FURPS or method
+results. Do not copy their Pass outcomes into Steps 10–18.
 
 ---
 
@@ -643,7 +666,10 @@ The actual folder structure currently is:
 ```text
 evaluation/
 ├── 00_protocol/
-│   └── evaluation_protocol.md
+│   ├── evaluation_protocol.md
+│   ├── b01_artefact_versions.md
+│   ├── b01_environment.md
+│   └── b01_evidence_index.md
 └── 01_conceptual/
     ├── conceptual_triangulation.md
     ├── framework_refinements.md
@@ -659,14 +685,13 @@ evaluation/
         └── photosynthesis_scenario.md
 ```
 
-### Recommended next folders
+### Create remaining folders only when their step starts
 
 Create the design-evaluation folders only as they become necessary:
 
 ```text
 evaluation/
 ├── 02_design/
-│   ├── furps/
 │   ├── static/
 │   ├── dynamic/
 │   ├── optimisation/
@@ -678,32 +703,26 @@ evaluation/
 │   ├── scenario/
 │   └── literature/
 └── 03_results/
+    ├── evidence_register.csv
     ├── master_results.csv
     └── pirqoa_traceability.csv
 ```
 
-No `04_expert/` folder is required because the optional Human Expert Interview will not be conducted.
-
-### Still recommended under `00_protocol/`
-
-Before running system tests, add:
-
-```text
-evaluation/00_protocol/environment.md
-evaluation/00_protocol/artefact_versions.md
-```
-
-These should record the evaluated PoC version and environment without storing secrets.
+No `04_expert/` folder is required because the optional Human Expert Interview
+will not be conducted. Do not create empty evidence files merely to make the
+tree look complete.
 
 ---
 
-# 8. Step 2 — Define Evaluation Criteria Before Testing — PARTIALLY COMPLETED
+# 8. Step 2 — Define Evaluation Criteria Before Testing — COMPLETED
 
-Conceptual criteria were defined before the conceptual evaluation. The next task is to finalize the design FURPS Functionality and Usability criteria before executing design tests.
+Conceptual C1–C5 and design F1–F13/U1–U9 criteria were defined before formal
+execution. The governing protocol is
+`evaluation/00_protocol/evaluation_protocol.md`, version 2.1.
 
-Do not create criteria after seeing results.
-
-Create a protocol first.
+Do not change criteria after seeing results. If a genuine correction is
+required, version the protocol, record the amendment, retain prior results, and
+rerun affected cases.
 
 ---
 
@@ -1401,417 +1420,519 @@ This does not leave a gap in the four required conceptual methods; it only means
 
 ---
 
-# 16. Step 9 — Define FURPS Evaluation Criteria — NEXT
+# 16. Step 9 — Define FURPS Evaluation Criteria — COMPLETED
 
-This is the **immediate next execution step**.
+## 16.1 Goal
 
-Assignment 5 emphasizes **Functionality** and **Usability**.
+Freeze the Functionality and Usability criteria, decision rules, planned cases,
+and blank recording fields **before** formal design evaluation begins.
 
----
+Assignment 5 emphasises the Functionality and Usability dimensions of FURPS.
+Reliability, Performance and Supportability may provide enabling technical
+observations, but they are not independently scored in this evaluation.
 
-# 17. FURPS — Functionality Criteria
+## 16.2 Authoritative output
 
-## F1 — Inquiry Handling
+The completed criteria and execution rules are in:
 
-System should accept a valid natural-language STEM question and create a learning session.
-
-## F2 — Terminology and Context
-
-System should return a plausible primary STEM concept and domain/context.
-
-## F3 — Bilingual Support
-
-System should produce Burmese/English support according to configured preferences and preserve useful English STEM terminology where appropriate.
-
-## F4 — Structured Learning Support
-
-System should generate the required learning components:
-
-- simple explanation;
-- example/analogy;
-- technical explanation;
-- reflective prompt;
-- optional hint.
-
-## F5 — Learner Response
-
-System should accept:
-
-- High;
-- Medium;
-- Needs Support.
-
-## F6 — Adaptive Support
-
-System should change assistance based on learner response.
-
-## F7 — Adaptation Bound
-
-System should prevent adaptation from exceeding the implementation maximum of two rounds.
-
-This evaluates implementation control.
-
-It does **not** claim that two rounds are pedagogically optimal.
-
-## F8 — Concept-Scoped Follow-Up
-
-System should:
-
-- accept relevant follow-up;
-- maintain active concept context;
-- restrict unrelated interaction appropriately.
-
-## F9 — Persistence
-
-System should store learning-session state.
-
-## F10 — Learning History
-
-Stored sessions should appear in Learning History.
-
-## F11 — Review/Resume
-
-Previous sessions should be reconstructable and accessible.
-
-## F12 — Preferences
-
-Learner preferences should affect relevant output/interaction and persist appropriately.
-
-## F13 — Error Handling
-
-Invalid inputs or service failures should not cause uncontrolled behaviour.
-
----
-
-# 18. FURPS — Usability Criteria
-
-Without a human study, frame this as a **structured usability inspection**.
-
-## U1 — Task Clarity
-
-Can a learner immediately identify where to ask a question?
-
-## U2 — Information Structure
-
-Are the learning-support sections visually distinguishable?
-
-## U3 — Interaction Clarity
-
-Are the Stage 6A support choices, optional Stage 6B choices, and skip action understandable?
-
-## U4 — Feedback Visibility
-
-Can the learner see that the system has adapted or updated state?
-
-## U5 — Navigation Consistency
-
-Are New Inquiry, History, Review, Resume, and preferences understandable?
-
-## U6 — Bilingual Readability
-
-Are English and Burmese content presented clearly together?
-
-## U7 — State Visibility
-
-Can the learner tell whether the session is:
-
-- in progress;
-- completed;
-- requires more support;
-- review recommended?
-
-## U8 — Error Clarity
-
-Are invalid/error states understandable?
-
-## U9 — Consistency
-
-Are labels, button positions, interaction patterns, and terminology consistent across screens?
-
----
-
-# 19. Step 10 — Analytical Evaluation: Static Analysis
-
-## 18.1 Purpose
-
-Examine structural/static qualities without relying only on interactive execution.
-
-## 18.2 Evidence to collect
-
-Possible evidence:
-
-- ESLint output;
-- production build result;
-- TypeScript checking if configured;
-- schema validation;
-- source structure;
-- separation of application responsibilities;
-- database schema review;
-- API contract review.
-
-## 18.3 Commands
-
-Use the actual project commands from `burmese_stem_ai/`:
-
-```bash
-npm test
-npm run test:coverage
-npm run lint
-npx tsc --noEmit
-npm run build -- --webpack
+```text
+evaluation/00_protocol/evaluation_protocol.md
 ```
 
-Do not claim a test was executed unless it was actually run.
+Use `A5-PROTOCOL-01`, version `2.1`, with baseline
+`B01-A5-EVALUATION`. Do not create a second FURPS plan: the protocol is the
+single source of truth for F1–F13, U1–U9, case mappings, result scales,
+inspection coverage, and evidence templates.
 
-## 18.4 Record
+## 16.3 Actions completed for this step
 
-| Check | Command | Expected | Actual | Result |
-|---|---|---|---|---|
-| Unit/component tests | `npm test` | Bounded deterministic suite completes | Fill later | |
-| Structural coverage | `npm run test:coverage` | Report retained with scope/exclusions | Fill later | |
-| MongoDB integration | `npm run test:integration` | Isolated persistence/concurrency suite completes | Fill later | |
-| Complete automated suite | `npm run test:all` | Deterministic and isolated database modes complete | Fill later | |
-| Lint | `npm run lint` | No blocking errors | Fill later | |
-| TypeScript | `npx tsc --noEmit` | No type errors | Fill later | |
-| Build | `npm run build -- --webpack` | Successful production build | Fill later | |
+- [x] Defined F1–F13 and their acceptance observations.
+- [x] Mapped each Functionality criterion to BB, WB, simulation, bounds,
+  dynamic, scenario, or UI evidence.
+- [x] Defined U1–U9 as a structured evaluator inspection rather than a human
+  usability study.
+- [x] Fixed desktop/mobile, locale, theme, keyboard, state, and screen coverage.
+- [x] Defined execution status separately from outcome.
+- [x] Defined content-adequacy scoring for F2–F4/F6.
+- [x] Defined usability issue severity 0–3.
+- [x] Added blank F1–F13 and U1–U9 pre-execution registers.
+- [x] Preserved the rule that no evidence means Not assessed, never Pass.
 
-## 18.5 Architecture inspection
+## 16.4 Decision rules to use in every later step
 
-Confirm the design separation described in A4:
+### Execution status
 
-- UI;
-- Application/Scaffolding;
-- AI/LLM;
-- Data/Persistence.
+| Status | Use when |
+|---|---|
+| Not run | The case is planned but has no execution evidence |
+| Executed | The procedure is complete and evidence is retained |
+| Blocked | A dependency prevented execution; record the exact reason |
+| Not applicable | The case is outside scope with a written justification; it is not a pass |
 
-Inspect whether:
+### Outcome
 
-- UI directly calls LLM or not;
-- LLM writes directly to database or not;
-- application controls state;
-- structured generation is validated;
-- adaptation bound exists in application logic.
+| Outcome | Use when |
+|---|---|
+| Pass | Every mandatory predefined assertion holds and evidence exists |
+| Partial | A composite criterion has incomplete coverage or limited adequacy; list each gap |
+| Fail | At least one mandatory assertion is contradicted |
+| Not assessed | Evidence or qualified judgement is insufficient |
+
+Binary code/API assertions use Pass or Fail. Never convert a failed mandatory
+assertion to Partial. Do not calculate one combined FURPS score.
+
+## 16.5 Completion check
+
+Step 9 is complete because the criteria, case mappings, evidence boundaries,
+inspection matrix, and blank registers are recorded in protocol 2.1. This is
+preparation evidence only: **no FURPS criterion has yet been evaluated**.
+
+FURPS is not one extra test run. Build F1–F13 outcomes from the evidence
+collected in Steps 10–15 and the executable scenario. Execute U1–U9 once the
+main routes and states are available, using the checkpoint in §18 below. Then
+consolidate both registers; do not count the same screenshot or test several
+times as independent evidence.
+
+## 16.6 Next action
+
+Proceed to **Step 10 — Static Analysis**. Create formal B01 execution evidence;
+do not reuse baseline-freeze verification as though it were the Step 10 run.
 
 ---
 
-# 20. Step 11 — Analytical Evaluation: Dynamic Analysis
+# 17. FURPS — Functionality Criteria Summary
 
-## 19.1 Purpose
+The table below is a navigation summary. The complete acceptance observations
+and mappings in `evaluation/00_protocol/evaluation_protocol.md` govern the run.
 
-Evaluate behaviour during real execution.
+| ID | What must be evaluated | Main planned evidence |
+|---|---|---|
+| F1 | Valid inquiry creates a retrievable session; invalid and 1,001-character inquiry does not create corrupt state | BB01, BB02, BB20 |
+| F2 | Explicit context is honoured; ambiguity is clarified or explicitly qualified | BB03, SIM13–SIM16 |
+| F3 | Language preference is followed and useful English STEM terms are retained without observed material mistranslation | BB04, simulation, qualified language review |
+| F4 | Simple, example, technical, reflection, and revealable hint support is present and meaningful | BB05, simulation, scenario |
+| F5 | High, Medium, and Needs Support persist; invalid response/Stage 6B combinations are rejected without mutation | BB06–BB08, BB23, WB01 |
+| F6 | Correct route is selected and support changes meaningfully; High records fade without implying mastery | BB06–BB10, WB01, simulation |
+| F7 | Generated adaptation remains within rounds 0–2; capped/concurrent requests create no round 3 | BB09–BB11, BB24, bounds, WB05 |
+| F8 | Relevant follow-up retains active context; unrelated, over-length, and third follow-up are controlled | BB12, BB13, BB21, WB03 |
+| F9 | Creation, response events, adaptations, interpretation trace, and follow-ups survive retrieval without unintended duplicates | BB09–BB16, WB05, dynamic analysis |
+| F10 | History is newest-first and learner-scoped with accurate state | BB14, BB22 |
+| F11 | Review/Resume reconstructs stored state and completed sessions reject new responses | BB15, BB16, BB24, WB02 |
+| F12 | Valid preferences persist and affect intended behaviour; invalid values and snapshot semantics are handled correctly | BB04, BB17, WB06 |
+| F13 | Invalid input, missing/foreign/completed sessions, provider failures, and malformed output return controlled errors without invalid persistence | BB02, BB18–BB24, WB02–WB04 |
 
-## 19.2 Dynamic behaviours to observe
+For F2–F4/F6, score technical correctness, contextual relevance, language
+adequacy, explanation beyond translation, and adaptation appropriateness using
+2 = adequate, 1 = limited, 0 = materially wrong/absent, and NA = not
+assessable. A required 0 fails the case; a required NA prevents a full content
+judgement.
 
-- session creation;
-- LLM generation;
-- database persistence;
-- state transitions;
-- adaptation transitions;
-- follow-up handling;
-- history retrieval;
-- error behaviour;
-- response timing.
+---
 
-## 19.3 Timing measurement
+# 18. FURPS — Usability Criteria Summary
 
-Keep performance testing modest because Performance is not the main FURPS focus.
+This is a **structured usability inspection**, not participant testing.
 
-Use a fixed set of representative questions.
+| ID | Inspection question |
+|---|---|
+| U1 | Is inquiry entry and purpose evident on Home/Ask? |
+| U2 | Are simple, example, technical, reflection, and hint sections distinguishable? |
+| U3 | Are Stage 6A choices, optional Stage 6B choices, skip, and consequences understandable? |
+| U4 | Are loading, adaptation, route/limit, error, and updated-state feedback visible? |
+| U5 | Can the evaluator find New Inquiry, History, Review/Resume, and preferences without a dead end? |
+| U6 | Are Burmese glyphs, line breaks, and mixed English terms legible without clipping? |
+| U7 | Are self-reported support need, route, round/limit, completion, and review recommendation distinguishable? |
+| U8 | Are errors localised, understandable, and accompanied by recovery where applicable? |
+| U9 | Are labels, controls, positions, patterns, and terminology consistent across screens/locales? |
 
-Example:
+Inspect Chrome at 1440 × 900 and 390 × 844, English and Burmese UI,
+bilingual support, light and dark themes, keyboard navigation, visible focus,
+and normal/loading/empty/error/adapted/completed/review states.
+
+Record severity as 0 = none, 1 = cosmetic, 2 = task impeded with a workaround,
+or 3 = task blocked/materially misleading. Pass requires all planned checks and
+no severity 2/3 issue; Partial means incomplete coverage or severity 2; Fail
+means severity 3. Retain severity 1 issues even when the criterion passes.
+
+## 18.1 Usability execution checkpoint
+
+Complete this checkpoint after Steps 14–15 have made the required states
+repeatable and before Step 16 synthesis.
+
+Create:
+
+```text
+evaluation/02_design/usability/usability_inspection.md
+evaluation/02_design/usability/issues.csv
+evaluation/02_design/usability/raw/
+```
+
+Use the screen/state matrix in protocol §5.4. For every observation, record
+criterion, screen, state, locale, support language, theme, viewport, keyboard
+steps, actual observation, severity, task effect, recovery/recommendation,
+evidence ID, evaluator, and language competence.
+
+This checkpoint is complete when U1–U9 each have an execution status and
+outcome; every planned combination is executed or explicitly accounted for;
+all severity 1–3 issues remain visible; and no evaluator observation is
+described as participant feedback or accessibility certification.
+
+---
+
+# 19. Step 10 — Analytical Evaluation: Static Analysis — COMPLETED
+
+## 19.1 Goal
+
+Create the first formal B01 design-evaluation evidence by checking buildability,
+automated structural checks, code organisation, validation boundaries, and
+application-controlled state without relying on UI behaviour.
+
+## 19.2 Inputs and outputs
+
+Use:
+
+- baseline `B01-A5-EVALUATION`;
+- protocol `A5-PROTOCOL-01` version `2.1`; and
+- the versions and constraints in `evaluation/00_protocol/b01_environment.md`.
+
+Create:
+
+```text
+evaluation/02_design/static/static_analysis_test_cases.md
+evaluation/02_design/static/raw/
+```
+
+The test-case file now serves as the combined specification and executed result
+record. Command output and coverage data are retained in `raw/`.
+
+## 19.3 Execute in this order
+
+Run from `burmese_stem_ai/` in a clean B01 evaluation checkout:
+
+```bash
+npm run lint
+npm test
+npm run test:coverage
+npm run test:integration
+npm run test:all
+npm run build -- --webpack
+npx tsc --noEmit
+```
+
+The production build precedes the final standalone TypeScript check because a
+fresh checkout may not yet contain Next.js generated types. If an earlier
+TypeScript attempt fails for that reason, retain the failed log and the later
+result; do not erase the first attempt. Record missing dependencies or blocked
+network access as Blocked rather than Fail when the application was not the
+cause.
+
+## 19.4 Inspect the source structure
+
+Record file/symbol locators and answer each question:
+
+- Does UI call application/API boundaries rather than the provider directly?
+- Do services own validation, routing, lifecycle, and round decisions?
+- Do DAOs own persistence rather than model prompts or UI components?
+- Is provider output validated before persistence?
+- Are learner ownership and session UUIDs validated at route/service/DAO
+  boundaries?
+- Is `MAX_ADAPTATION_ROUNDS` enforced by application and persistence logic?
+- Are provider URL/model/timeout/output extraction centralised while prompts
+  and validators remain domain-specific?
+- Do schema fields reconstruct response events, adaptations, follow-ups,
+  preferences, and interpretation history?
+
+## 19.5 Record the results
+
+| Check | Expected | Actual | Execution status | Outcome | Evidence ID |
+|---|---|---|---|---|---|
+| Lint | Exit 0 | Exit 0; no blocking diagnostic | Executed | Pass | E001 |
+| Deterministic tests | Exit 0 with exact test counts retained | 23 files; 208 tests passed | Executed | Pass | E001 |
+| V8 coverage | Report retained with tool scope/exclusions | 89.54% statements; 91.33% branches; 91.17% functions; 90.98% lines | Executed | Pass | E001, E003 |
+| MongoDB integration | Isolated persistence/concurrency suite completes | First sandbox attempt Blocked; unchanged permitted retry passed 1 file/5 tests | Executed | Pass | E001 |
+| Combined suite | Deterministic and database modes complete | 208 deterministic and 5 integration tests passed | Executed | Pass | E001 |
+| Production build | Exit 0 using webpack path | Exit 0; compile, TypeScript, 8 pages and route manifest completed | Executed | Pass | E001 |
+| TypeScript | Exit 0 after generated types exist | Exit 0; no diagnostic | Executed | Pass | E001 |
+| Architecture inspection | Separation and controls recorded with locators | STA-08–STA-14 passed with source locators and legacy/runtime qualifications | Executed | Pass | E002 |
+
+Coverage is structural evidence only. It cannot establish Burmese quality,
+STEM correctness, usability, or educational effectiveness.
+
+## 19.6 Completion criteria
+
+Step 10 completed under run `RUN-B01-20260930-STATIC-01`. All STA-01–STA-14
+assertions passed. The first integration attempt was retained as an environment
+block before a successful unchanged retry. Coverage scope, Mongoose warning,
+legacy-snapshot qualification, and static-only claim boundaries remain visible
+in E001–E003. Proceed to Step 11.
+
+---
+
+# 20. Step 11 — Analytical Evaluation: Dynamic Analysis — NEXT
+
+## 20.1 Goal
+
+Observe the real application, API, provider boundary, and database working
+together. Preserve UI/API output and state before/after each operation.
+
+## 20.2 Outputs
+
+Create:
+
+```text
+evaluation/02_design/dynamic/dynamic_analysis_test_cases.md
+evaluation/02_design/dynamic/dynamic_analysis.md
+evaluation/02_design/dynamic/timings.csv
+evaluation/02_design/dynamic/raw/
+```
+
+## 20.3 Preparation
+
+1. Record the run ID and confirm B01/protocol 2.1.
+2. Start the dedicated evaluation MongoDB and application.
+3. Record non-secret provider/model configuration and whether each operation
+   uses a mock, real database, or live provider.
+4. Create artificial learner aliases and capture their initial database state.
+5. Open browser developer tools or equivalent request logging.
+
+## 20.4 Execute and record
+
+For at least one controlled workflow, capture:
+
+1. session creation and initial generation;
+2. persisted initial state;
+3. High/fade and generated adaptation transitions;
+4. response event, round, status, route, and adaptation before/after state;
+5. relevant and unrelated follow-up behaviour;
+6. History retrieval;
+7. Review/Resume reconstruction;
+8. explicit completion and post-completion rejection; and
+9. a controlled error with verification that valid state was preserved.
+
+For each operation, retain the request/action, response, visible UI, stored
+state, execution status, outcome, evidence ID, and any discrepancy. Do not use
+source inspection to fill a missing runtime observation.
+
+## 20.5 Timing procedure
+
+Run three independent fresh-session initial-generation attempts for each fixed
+question below: 15 attempts in total, excluding separately identified retries.
 
 1. What is photosynthesis, and how do plants make food?
 2. What is gravity?
 3. What is electric current?
-4. What is inheritance in programming?
+4. What is inheritance in object-oriented programming?
 5. What is pH?
 
-Run each multiple times if practical.
+Measure the same client request-to-response boundary using a monotonic timer.
+Record query, attempt, operation, start/end, elapsed milliseconds, success,
+timeout, retry relationship, and environment. Report per-query and pooled
+successful-attempt median/minimum/maximum with sample sizes. Report failures
+and timeouts separately. Adaptation and follow-up timings may be descriptive
+but must not be pooled with initial generation.
 
-Record:
+No latency pass threshold is specified, so timing is descriptive evidence—not
+a claim of acceptable performance.
 
-- start time;
-- end time;
-- elapsed time;
-- success/failure;
-- operation type.
+## 20.6 Completion criteria
 
-Use:
-
-- median;
-- minimum;
-- maximum.
-
-Avoid presenting one response time as representative.
+Step 11 is complete when all listed behaviours are observed or transparently
+Blocked/Not assessed, state and visible behaviour are linked, all 15 timing
+attempts are accounted for, raw evidence is retained, and the evidence register
+is updated.
 
 ---
 
 # 21. Step 12 — Analytical Evaluation: Optimisation / Bounds
 
-## 20.1 Important interpretation
+## 21.1 Goal and claim boundary
 
-Do **not** attempt to prove the system is globally optimal.
+Test the implemented interaction bounds and state invariants. Do **not** claim
+global optimisation or that two adaptations are pedagogically optimal.
 
-Use **bounded behavioural analysis**.
+Create:
 
-## 20.2 Main bound
+```text
+evaluation/02_design/optimisation/bounds_analysis_test_cases.md
+evaluation/02_design/optimisation/bounds_analysis.md
+evaluation/02_design/optimisation/raw/
+```
 
-The strongest existing bound is:
+## 21.2 Execute the bounds matrix
 
-> adaptation rounds are limited to a maximum of two.
+Record round/status/event/adaptation counts before and after every action.
 
-Evaluate:
+1. Start a fresh session at round 0.
+2. Generate the first adaptation and verify round 1.
+3. Generate the second adaptation and verify round 2 plus the documented
+   status.
+4. Send a further Medium/Needs Support response and verify that the response
+   event persists but there is no provider call, third adaptation, or round 3.
+5. Send High at rounds 0, 1, and 2 and verify `fade`, no generation, and no
+   round increment.
+6. At round 2, check High, Medium, and Needs Support separately.
+7. Complete an `in_progress` session and a `review_recommended` session.
+8. Repeat completion and verify idempotent behaviour.
+9. Attempt a response after completion and verify controlled rejection.
+10. Race two adaptation requests near the cap using the real evaluation
+    database; verify stored invariants and record conflict handling.
 
-- starting round;
-- first adaptation;
-- second adaptation;
-- attempted extra adaptation;
-- final/review status.
+For generation cases, record provider-call count as well as visible output and
+stored state. A correct enum alone is insufficient.
 
-## 20.3 What this shows
+## 21.3 Interpretation
 
-If enforced correctly, it supports:
+If the cases pass, the evidence supports bounded interaction,
+application-level control, prevention of unlimited generated adaptations, and
+predictable state transitions under the tested conditions.
 
-- bounded interaction;
-- application-level control;
-- prevention of unlimited adaptation loops;
-- predictable state transitions.
+It does not show that two rounds maximise learning, suit every learner, or are
+globally optimal.
 
-## 20.4 What this does not show
+## 21.4 Completion criteria
 
-It does not show:
-
-- two rounds are educationally optimal;
-- two rounds maximize learning;
-- two rounds are suitable for all learners.
+Step 12 is complete when all ten actions have recorded expected and actual
+state, execution status, outcome, evidence ID, and limitations, including the
+real-database concurrency case. Update F7 and relevant F5/F6/F9/F13 records.
 
 ---
 
 # 22. Step 13 — Experimental Evaluation: Simulation
 
-## 21.1 Purpose
+## 22.1 Goal
 
-Execute the artefact using **artificial test data**.
+Execute a fixed multi-domain artificial corpus through repeatable response
+paths. These are artificial cases, not learner data or independent learner
+observations.
 
-Do not call artificial input "learner data."
-
-## 21.2 Recommended simulation set
-
-Use around **12–20 artificial STEM questions** across domains.
-
-### Biology
-
-- What is photosynthesis?
-- What is a cell?
-- What is DNA?
-- What is osmosis?
-
-### Physics
-
-- What is gravity?
-- What is electric current?
-- What is force?
-- What is momentum?
-
-### Chemistry
-
-- What is pH?
-- What is an ion?
-- What is oxidation?
-- What is a catalyst?
-
-### Computing / Engineering
-
-- What is a network?
-- What is inheritance in object-oriented programming?
-- What is an algorithm?
-- What is carbon fibre?
-
-## 21.3 Include ambiguous terminology
-
-Useful examples:
-
-### Cell
-
-Could mean:
-
-- biological cell;
-- battery cell;
-- spreadsheet cell.
-
-### Current
-
-Could mean:
-
-- electric current;
-- current time/state.
-
-### Network
-
-Could mean:
-
-- computer network;
-- biological/social network.
-
-### Inheritance
-
-Could mean:
-
-- object-oriented programming;
-- genetic inheritance.
-
-These help evaluate technical-context interpretation.
-
-## 21.4 Learner-response simulation
-
-### Path A
+Create:
 
 ```text
-Initial explanation
-→ High
-→ persisted fade event at round 0
-→ explicit Finish
+evaluation/02_design/simulation/simulation_test_cases.md
+evaluation/02_design/simulation/simulation_cases.csv
+evaluation/02_design/simulation/content_reference_notes.md
+evaluation/02_design/simulation/simulation_results.csv
+evaluation/02_design/simulation/raw/
 ```
 
-### Path B
+## 22.2 Freeze the 16 cases before execution
+
+Use the exact inputs below; do not replace a difficult case after seeing its
+output.
+
+| ID | Domain | Exact input |
+|---|---|---|
+| SIM01 | Biology | What is photosynthesis, and how do plants make food? |
+| SIM02 | Biology | What is DNA? |
+| SIM03 | Biology | What is osmosis? |
+| SIM04 | Physics | What is gravity? |
+| SIM05 | Physics | What is electric current? |
+| SIM06 | Physics | What is momentum? |
+| SIM07 | Chemistry | What is pH? |
+| SIM08 | Chemistry | What is an ion? |
+| SIM09 | Chemistry | What is a catalyst? |
+| SIM10 | Computing | What is inheritance in object-oriented programming? |
+| SIM11 | Computing | What is an algorithm? |
+| SIM12 | Engineering | What is carbon fibre? |
+| SIM13 | Ambiguous | What is a cell? |
+| SIM14 | Ambiguous | What is current? |
+| SIM15 | Ambiguous | What is a network? |
+| SIM16 | Ambiguous | What is inheritance? |
+
+Before execution, write an expected concept/domain, key facts, unacceptable
+misconceptions, and source/reference basis for each case. Use fixed
+beginner/bilingual/guided preferences and record the UI locale.
+
+For SIM13–SIM16, first preserve the system's ambiguity behaviour. Then use the
+fixed clarifications below where the workflow permits:
+
+- SIM13: `I mean a biological cell`;
+- SIM14: `I mean electric current`;
+- SIM15: `I mean a computer network`; and
+- SIM16: `I mean inheritance in object-oriented programming`.
+
+If no clarification flow is available, record the limitation. A new explicitly
+contextualised inquiry is a separate continuation, not a retroactive pass.
+
+## 22.3 Execute three paths per case
+
+This produces **48 planned fresh sessions**, excluding retries.
+
+### Path A — Fade
 
 ```text
-Initial explanation
-→ Medium
-→ skip Stage 6B
-→ default another-example adaptation at round 1
-→ High
-→ persisted fade event; round remains 1
+Initial → High → persist fade at round 0 → no generation/increment
+→ explicit Finish → completed
 ```
 
-### Path C
+### Path B — Default Medium route
 
 ```text
-Initial explanation
-→ Needs Support
-→ Simpler explanation
-→ Adaptation 1
-→ Needs Support
-→ Concept unclear
-→ Adaptation 2 and review recommendation
-→ extra response persists without provider call or round 3
-→ review/recommended state
+Initial → Medium + skip → default another_example at round 1
+→ High → persist fade at round 1 → explicit Finish
 ```
 
-## 21.5 Simulation output table
+### Path C — Two adaptations and cap
 
-| ID | Domain | Query | Response Path | Expected behaviour | Actual behaviour | Result |
-|---|---|---|---|---|---|---|
+```text
+Initial → Needs Support + simpler_explanation → round 1
+→ Needs Support + concept_unclear → round 2 + review_recommended
+→ extra Needs Support + skip → persist event, no provider call/round 3
+```
+
+Exercise `language_terms` and `concept_mismatch` as separately labelled route
+cases. For concept mismatch, record `corrected`, `ambiguous`, or
+`limit_reached` without forcing a correction.
+
+## 22.4 Record and assess
+
+For every session, retain:
+
+- exact input, preferences, session alias, path and attempt;
+- initial and adapted generated content;
+- overall support need, difficulty type, selected route;
+- round/status before and after each response;
+- provider-call observation and persisted state;
+- F2–F4/F6 content-dimension scores and assessor;
+- execution status, outcome, evidence IDs, retry and limitation.
+
+A different string or correct route label does not prove meaningful adaptation.
+Judge the actual content using the frozen reference notes.
+
+## 22.5 Completion criteria
+
+Step 13 is complete when all 48 sessions plus the separately labelled language
+and concept-mismatch cases are accounted for; no missing case is silently
+dropped; exact output/state evidence and content ratings are retained; and F2,
+F3, F4, F6, F7, F9, and F13 are updated as applicable.
 
 ---
 
 # 23. Step 14 — Black-Box Testing
 
-## 22.1 Purpose
+## 23.1 Goal and outputs
 
-Test externally observable behaviour without depending on internal implementation.
+Test externally observable behaviour through public UI/API boundaries without
+using source code to infer an outcome.
 
-## 22.2 Recommended core tests
+Create:
+
+```text
+evaluation/02_design/black_box/black_box_test_cases.md
+evaluation/02_design/black_box/black_box_results.csv
+evaluation/02_design/black_box/raw/
+```
+
+Before execution, copy BB01–BB24 from protocol 2.1 into the cases file. Record
+preconditions, artificial learner alias, dependency mode, exact action/input,
+expected HTTP/state/UI assertions, FURPS IDs, REQ/RQ mapping, and blank actual
+fields. Fix expected HTTP codes from frozen B01 routes; do not guess them from
+this plan.
+
+For every attempt, capture public output plus stored state only when state is
+part of the predefined assertion. Record the first failure before retrying.
+
+## 23.2 Required core tests
 
 ### BB01 — Valid STEM inquiry
 
@@ -1965,114 +2086,155 @@ Expected:
 
 - validation/recovery/error handling.
 
-## 22.3 Test record format
+### BB20 — Inquiry length boundary
 
-| Test ID | Precondition | Input / Action | Expected | Actual | Pass/Fail | Evidence |
-|---|---|---|---|---|---|---|
+Expected:
+
+- 1,000 characters follows the documented valid path;
+- 1,001 characters is rejected without session creation.
+
+### BB21 — Follow-up boundaries
+
+Expected:
+
+- 500 characters follows the documented valid path;
+- 501 characters is rejected;
+- a third follow-up is rejected without an extra persisted answer.
+
+### BB22 — Learner isolation
+
+Expected:
+
+- one artificial learner cannot retrieve another learner's session/history.
+
+### BB23 — Invalid response/session
+
+Expected:
+
+- invalid overall-support value and invalid Stage 6A/6B combination are
+  rejected without mutation;
+- missing, invalid, and foreign session identifiers return controlled errors.
+
+### BB24 — Completion boundary
+
+Expected:
+
+- legal completion succeeds;
+- repeated completion is idempotent;
+- post-completion learner response is rejected without mutation.
+
+Use controlled dependency fault injection for BB18–BB19. Do not wait for a
+random provider failure.
+
+## 23.3 Test record format
+
+| Test / attempt | Preconditions | Input / action | Expected assertions | Actual | Execution status | Outcome | Evidence IDs | FURPS / RQ |
+|---|---|---|---|---|---|---|---|---|
+
+## 23.4 Completion criteria
+
+Step 14 is complete when BB01–BB24 are each Executed, Blocked, or explicitly
+Not applicable; every mandatory assertion has an individual outcome; actual UI,
+API, and state evidence is retained where required; and F1–F13 registers and
+the master evidence register are updated. A screenshot alone is insufficient
+for content or persistence judgement.
 
 ---
 
 # 24. Step 15 — White-Box Testing
 
-## 23.1 Purpose
+## 24.1 Goal and outputs
 
-Evaluate internal execution logic and important code paths.
+Evaluate the requirement-critical internal paths that explain black-box and
+bounds behaviour. Do not attempt exhaustive testing of every implementation
+detail.
 
-Do not try to test the entire application if time is limited.
-
-Prioritize logic directly connected to research requirements.
-
-## 23.2 Priority modules
-
-### Adaptation strategy
-
-Test:
-
-- High;
-- Medium;
-- Needs Support.
-
-### Adaptation bound
-
-Test:
-
-- round 0;
-- round 1;
-- round 2;
-- attempt beyond round 2.
-
-### Session lifecycle
-
-Test transitions such as:
+Create:
 
 ```text
-in_progress
-→ adapted
-→ completed
+evaluation/02_design/white_box/white_box_test_cases.md
+evaluation/02_design/white_box/white_box_evaluation.md
+evaluation/02_design/white_box/raw/
 ```
 
-and where implemented:
+Retain the exact test-source version, command, output, coverage scope, database
+mode, inspected symbols, branches exercised, uncovered branches, and evidence
+IDs. Mock-based results establish logic only; persistence/concurrency claims
+require the real evaluation database.
 
-```text
-in_progress
-→ repeated difficulty
-→ review_recommended
-```
+## 24.2 Execute the six required groups
 
-### Follow-up scope
+### WB01 — Adaptation
 
-Test:
+Test Stage 6A/6B validation, every route at rounds 0/1/2, default routes,
+`fade`, invalid combinations, status decisions, provider-call counts, and no
+generation at the cap.
 
-- relevant question;
-- unrelated question;
-- missing active concept;
-- invalid payload.
+### WB02 — Lifecycle
 
-### Structured LLM response validation
+Test legal completion from `in_progress` and `review_recommended`, repeated
+completion, missing/foreign session, and completed-response rejection. The
+persisted statuses are only `in_progress`, `review_recommended`, and
+`completed`; do not invent an `adapted` status.
 
-Test:
+### WB03 — Follow-up
 
-- valid schema;
-- missing field;
-- wrong data type;
-- malformed JSON;
-- unexpected output.
+Test valid/invalid payloads, missing context, in-scope/out-of-scope output,
+500/501-character boundary, and the two-question limit.
 
-### Persistence mapping
+### WB04 — Model contracts
 
-Test:
+Test valid output, missing fields, wrong types, blank required text, malformed
+JSON, refusal/empty response, transport failure, timeout, and non-2xx response.
+Confirm that invalid content is not persisted.
 
-- create session;
-- update understanding;
-- append adaptation;
-- append follow-up;
-- retrieve history;
-- reconstruct session.
+### WB05 — Persistence
 
-### Preferences
+Test creation/retrieval, response-event/adaptation/follow-up append, concept
+interpretation trace, preference snapshot, ordering, ownership, and legacy
+documents. With the real evaluation database, race two requests near the cap
+and verify stored invariants/conflict handling.
 
-Test:
+### WB06 — Preferences
 
-- create preferences;
-- update preferences;
-- retrieve;
-- use in generation request.
+Test valid/invalid values, creation/update/retrieval, propagation to generation
+and display, and existing-session snapshot behaviour after profile changes.
 
-## 23.3 Coverage evidence
+## 24.3 Commands and decision rule
 
-If code coverage tooling is practical, record it.
+Use the relevant deterministic and integration commands from Step 10. Add or
+run a narrower test file only when its path and command are retained. Each
+assertion is Pass or Fail; a group may be Partial only for explicitly incomplete
+coverage, not for a known failed assertion.
 
-However:
+Coverage percentages must identify tool, selected files, exclusions, and
+whether the database suite is included. High coverage is not proof of content
+quality, usability, or educational effectiveness.
 
-> high code coverage is not proof of educational effectiveness.
+## 24.4 Completion criteria
 
-Use coverage only to demonstrate structural testing completeness.
+Step 15 is complete when WB01–WB06 each have cases, actual results, evidence,
+and uncovered-branch notes; real-database evidence supports persistence and
+concurrency claims; provider-call counts are asserted for fade/cap paths; and
+the relevant FURPS/results registers are updated.
 
 ---
 
 # 25. Step 16 — Design Artefact Descriptive Evaluation: Informed Argument
 
-Evaluate whether each implemented feature exists for a defensible requirement.
+## 25.1 Goal and output
+
+Evaluate whether each implemented feature exists for a defensible requirement
+and whether its observed behaviour matches that rationale.
+
+Create:
+
+```text
+evaluation/02_design/informed_argument/traceability.md
+```
+
+Do this after Steps 10–15 so every implementation statement can cite actual
+runtime or test evidence rather than source intent alone.
 
 | System feature | Requirement | Conceptual basis | Literature/theory | Evaluation question |
 |---|---|---|---|---|
@@ -2083,6 +2245,26 @@ Evaluate whether each implemented feature exists for a defensible requirement.
 | Scoped follow-up | RQ3 | Structured Scaffolding | system-control rationale | Is interaction bounded? |
 | History/preferences | RQ3 | Adaptive/task-aligned support | TTF | Does persistence support continuity? |
 
+## 25.2 Procedure
+
+For every row:
+
+1. state the problem/issue and requirement;
+2. identify the conceptual stage and theory/literature warrant;
+3. cite the frozen implementation feature and runtime evidence;
+4. explain why the feature is necessary or what is lost if removed;
+5. state a counterargument, mismatch, or scope limitation; and
+6. conclude Supported, Partially supported, Not supported, or Not assessed.
+
+Do not use literature-based plausibility as proof that generated content is
+correct or that learning improves.
+
+## 25.3 Completion criteria
+
+Step 16 is complete when every major implemented capability is traced through
+problem → requirement → RQ → conceptual basis → implementation → observed
+evidence → limitation, with no evidence-free “implemented successfully” claim.
+
 ---
 
 # 26. Step 17 — Design Artefact Scenario Evaluation
@@ -2091,7 +2273,19 @@ Use the same **Photosynthesis** scenario for the PoC.
 
 This is useful because the conceptual and system evaluations can be compared.
 
-## 25.1 Step-by-step PoC scenario
+Create:
+
+```text
+evaluation/02_design/scenario/photosynthesis_scenario.md
+evaluation/02_design/scenario/raw/
+```
+
+Use a dedicated artificial identity and record protocol, B01, run ID,
+preferences, browser/viewport, provider mode, exact content, state, screenshots,
+and evidence IDs. The conceptual walkthrough and executable PoC scenario must
+retain separate evidence IDs and conclusions.
+
+## 26.1 Step-by-step PoC scenario
 
 ### Step A — Preferences
 
@@ -2134,9 +2328,10 @@ Choose:
 
 Verify:
 
-- adaptation occurs;
-- state updates;
-- support changes form.
+- skip Stage 6B selects default `another_example`;
+- adaptation round becomes 1;
+- the response event and adaptation persist;
+- support changes meaningfully.
 
 ### Step E — Second learner response
 
@@ -2146,8 +2341,10 @@ Choose:
 
 Verify:
 
-- second adaptation occurs;
-- adaptation-bound state updates.
+- choose `concept_unclear`;
+- second adaptation occurs and differs from prior support;
+- round becomes 2 and status becomes `review_recommended`;
+- response, route, and adaptation persist.
 
 ### Step F — Stronger understanding
 
@@ -2157,8 +2354,10 @@ If the workflow allows:
 
 Verify:
 
-- no unnecessary support;
-- session can progress toward completion/fading.
+- a `fade` response event is recorded;
+- no provider call, generated adaptation, or round increment occurs;
+- status at the cap matches the documented contract;
+- explicit Finish is still required for completion.
 
 ### Step G — Relevant follow-up
 
@@ -2194,7 +2393,10 @@ Verify:
 
 Verify the session can be reconstructed.
 
-## 25.2 Scenario evaluation questions
+Then finish explicitly, return through History, review the completed session,
+and attempt a post-completion response to confirm controlled rejection.
+
+## 26.2 Scenario evaluation questions
 
 1. Does the PoC implement every important framework stage?
 2. Does the output match the intended language-support strategy?
@@ -2206,11 +2408,25 @@ Verify the session can be reconstructed.
 8. Are any framework elements missing in implementation?
 9. Are any implemented features not traceable to the conceptual design?
 
+## 26.3 Completion criteria
+
+Step 17 is complete when every scenario action has expected and actual results,
+the exact generated content and state trail are retained, unreachable actions
+and failures remain visible, U1–U9 observations are linked where applicable,
+and no input is changed mid-run to force a success narrative.
+
 ---
 
 # 27. Step 18 — Design Artefact SLR Evaluation
 
 Use Assignment 2 and the SSR as benchmarks.
+
+Create:
+
+```text
+evaluation/02_design/literature/literature_matrix.csv
+evaluation/02_design/literature/literature_synthesis.md
+```
 
 The five SSR systems include:
 
@@ -2241,6 +2457,19 @@ Suggested table:
 | Specialized terminology | ATE literature | terminology/context stage | |
 | Controlled learning workflow | literature gap/design rationale | application-controlled flow | |
 
+For every row, record the Assignment 2 page/section and source identity,
+evidence summary, whether support is direct or transferable, context limits or
+counterevidence, observed PoC evidence ID, and a Strong/Moderate/Limited/
+Contradictory-or-uncertain support rating. Check the original paper before
+making a claim beyond the supplied Assignment 2 summary.
+
+## 27.1 Completion criteria
+
+Step 18 is complete when every evaluated capability has a literature locator,
+fit/transfer limitation, implementation evidence, outcome, and limitation; gaps
+and conflicting evidence are visible; and the synthesis does not claim PoC
+superiority or educational effectiveness.
+
 ---
 
 # 28. Step 19 — Optional Human Expert Evaluation of PoC — SKIPPED
@@ -2270,34 +2499,68 @@ The Design Artefact Evaluation should instead focus on completing the required m
 
 # 29. Step 20 — Master Evidence Register
 
-Maintain one evidence register.
+## 29.1 Goal and output
 
-| Evidence ID | Method | Artefact | Description | File/path | Related RQ |
-|---|---|---|---|---|---|
-| E01 | GenAI | Conceptual | Raw interview + coded analysis | `01_conceptual/genai/GENAI-01_interview.md`; `GENAI-01_analysis.md` | RQ1–RQ3 |
-| E02 | SLR | Conceptual | Literature matrix + synthesis | `01_conceptual/literature/literature_matrix.csv`; `literature_synthesis.md` | RQ1–RQ3 |
-| E03 | Informed argument | Conceptual | PIRQOA/theory traceability | `01_conceptual/informed_argument/traceability.md` | RQ1–RQ3 |
-| E04 | Scenario | Conceptual | Photosynthesis evaluation | `01_conceptual/scenario/photosynthesis_scenario.md` | RQ1–RQ3 |
-| E05 | Triangulation | Conceptual | Four-method synthesis | `01_conceptual/conceptual_triangulation.md` | RQ1–RQ3 |
-| E06 | Refinement | Conceptual | Accepted/rejected framework refinements | `01_conceptual/framework_refinements.md` | RQ1–RQ3 |
-| E07 | Static | PoC | Build output | ... | technical |
-| E08 | Black-box | PoC | BB01 valid inquiry | ... | RQ1/RQ2 |
-| E09 | White-box | PoC | Adaptation unit test | ... | RQ3 |
-| E10 | Simulation | PoC | 12-query test set | ... | RQ1–RQ3 |
-| E11 | Scenario | PoC | Photosynthesis screenshots | ... | RQ1–RQ3 |
+Create this register when Step 10 produces the first formal evidence, maintain
+it after every later step, and audit/finalise it at Step 20:
 
-This makes final traceability much easier.
+```text
+evaluation/03_results/evidence_register.csv
+```
+
+Use immutable sequential IDs `E001`, `E002`, and so on. Allocate an ID only
+when the file/record exists. A case ID such as BB01 is not an evidence ID; one
+case may have multiple evidence items and one evidence item may support several
+criteria.
+
+Use this schema:
+
+```csv
+evidence_id,run_id,baseline_id,method_id,case_id,artefact,description,path,locator_or_hash,captured_at,evaluator,dependency_mode,criteria,requirements,research_questions
+```
+
+## 29.2 Procedure
+
+1. Register the existing conceptual evidence and verify every path/locator.
+2. After each design step, append its raw logs, exact outputs, screenshots,
+   state snapshots, inspection sheets, and synthesis files.
+3. Reuse an existing evidence ID when the same artefact supports another
+   criterion; do not duplicate it to inflate evidence counts.
+4. Store no API keys, credentials, personal data, or anonymous identity tokens
+   in shareable evidence.
+5. Distinguish original and redacted evidence where redaction is necessary.
+
+## 29.3 Completion criteria
+
+Step 20 is complete when every cited evidence ID resolves to a retained
+artefact with baseline/run/method/criteria/RQ metadata and no placeholder paths
+remain.
 
 ---
 
 # 30. Step 21 — Consolidated Results Table
 
-After all evaluation is complete, create a master results table.
+After all evaluation methods are executed or accounted for, create:
 
-| Result ID | Evaluation method | Criterion | Evidence | Result | Limitation | PIRQOA mapping |
-|---|---|---|---|---|---|---|
+```text
+evaluation/03_results/master_results.csv
+```
+
+Use immutable result IDs `R001`, `R002`, and so on, with this schema:
+
+```csv
+result_id,baseline_id,artefact,method_ids,criteria,requirements,research_questions,execution_status,outcome,evidence_ids,interpretation,limitations,conflicting_evidence,follow_up
+```
+
+For each result, verify that evidence supports the wording, retain conflicts,
+and distinguish Fail, Blocked, Not applicable, and Not assessed. If reporting a
+rate, use `Pass / executed assessable cases` and disclose the denominator and
+exclusions.
 
 Do not write the final interpretation before this table is completed.
+
+Step 21 is complete when every substantive conceptual and design result is
+represented, evidence-linked, and bounded by a limitation.
 
 ---
 
@@ -2305,12 +2568,19 @@ Do not write the final interpretation before this table is completed.
 
 This is one of the most important final tables.
 
-Use:
+Create:
 
-| Problem / Issue | Requirement | RQ | Artefact | Evaluation evidence | Result | Interpretation |
-|---|---|---|---|---|---|---|
+```text
+evaluation/03_results/pirqoa_traceability.csv
+```
 
-## 30.1 RQ1
+Use this schema:
+
+```csv
+problem,issue,requirement_id,requirement,rq,objective,artefact,framework_stages,criteria,result_ids,evidence_ids,supported_claim,unsupported_claim_or_gap
+```
+
+## 31.1 RQ1
 
 Evaluate:
 
@@ -2327,7 +2597,7 @@ Evidence:
 - black-box;
 - GenAI/informed argument.
 
-## 30.2 RQ2
+## 31.2 RQ2
 
 Evaluate:
 
@@ -2346,7 +2616,7 @@ Evidence:
 - simulation;
 - usability inspection.
 
-## 30.3 RQ3
+## 31.3 RQ3
 
 Evaluate:
 
@@ -2369,13 +2639,19 @@ Evidence:
 - state inspection;
 - literature.
 
+## 31.4 Completion criteria
+
+Step 22 is complete when REQ-01/RQ1, REQ-02/RQ2, and REQ-03/RQ3 each trace
+through artefact → criteria → result IDs → evidence IDs → supported claim and
+remaining gap. No claim may rely on a path or result that does not exist.
+
 ---
 
 # 32. Step 23 — Interpretation Rules
 
 The final Results section should distinguish four types of conclusion.
 
-## 31.1 Strong evidence
+## 32.1 Strong evidence
 
 Example:
 
@@ -2383,19 +2659,19 @@ Example:
 > bounded result could state that black-box and white-box evidence confirmed the
 > two-generated-adaptation limit under the evaluated paths.
 
-## 31.2 Partial evidence
+## 32.2 Partial evidence
 
 Example:
 
 > The scenario demonstrated that the system can produce context-sensitive bilingual explanations for the evaluated Photosynthesis case, but the evaluation does not establish equivalent quality across all STEM domains.
 
-## 31.3 Conceptual support
+## 32.3 Conceptual support
 
 Example:
 
 > The SLR and informed argument support the conceptual rationale for selective terminology preservation, but this does not establish educational effectiveness for Burmese learners.
 
-## 31.4 Unsupported claim
+## 32.4 Unsupported claim
 
 Avoid:
 
@@ -2723,9 +2999,10 @@ Use:
 
 ## Risk 5 — Weak white-box evidence
 
-A4 noted that automated tests were not yet complete.
-
-A5 is the opportunity to add meaningful automated tests.
+A4 noted that automated tests were not yet complete. The refined B01 source now
+contains deterministic and database-integration coverage, but Assignment 5
+still requires formal execution records tied to the frozen baseline. Do not
+report baseline-freeze checks as the final white-box evaluation.
 
 Prioritize:
 
@@ -2739,7 +3016,8 @@ Prioritize:
 
 Do not use only Photosynthesis.
 
-Use multiple STEM domains and ambiguous terminology.
+Execute the fixed 16-case, 48-session protocol across multiple STEM domains and
+ambiguous terminology; account for every case and deviation.
 
 ## Risk 7 — No clear PIRQOA mapping
 
@@ -2767,36 +3045,36 @@ If improvements arise, document them.
 
 # 39. Step 30 — Practical Execution Order — UPDATED STATUS
 
-## Phase A — Preparation
+Use this section as the progress dashboard. The numbered sections above contain
+the full procedure and completion criteria. Complete one evidence-producing
+step at a time and update this dashboard only after its artefacts exist.
+
+## Phase A — Preparation — COMPLETE
 
 ### A1 — COMPLETED
 Conceptual framework baseline evaluated and refinement history preserved.
 
-### A2 — NEXT / REQUIRED BEFORE SYSTEM TESTING
-Freeze the PoC commit/version.
-
-Record:
-
-```bash
-git status
-git rev-parse HEAD
-```
-
-Also record environment information in:
+### A2 — COMPLETED
+The formal local baseline is `B01-A5-EVALUATION`, with annotated tag
+`a5-evaluation-b01`. Baseline records are in:
 
 ```text
-evaluation/00_protocol/environment.md
-evaluation/00_protocol/artefact_versions.md
+evaluation/00_protocol/b01_environment.md
+evaluation/00_protocol/b01_artefact_versions.md
+evaluation/00_protocol/b01_evidence_index.md
 ```
 
 ### A3 — COMPLETED
 `evaluation/` folder created.
 
 ### A4 — COMPLETED
-`evaluation/00_protocol/evaluation_protocol.md` created.
+`evaluation/00_protocol/evaluation_protocol.md` version 2.1 contains the
+current criteria and execution rules.
 
 ### A5 — PARTIAL
-Conceptual evidence is organized. Continue assigning evidence IDs to design-evaluation outputs as they are created.
+Conceptual evidence is organised. Create the master evidence register when
+Step 10 produces its first formal artefact and maintain it continuously; do
+not pre-allocate IDs to missing files.
 
 ---
 
@@ -2836,65 +3114,73 @@ Human Expert Interview not conducted; optional bonus only.
 
 ## Phase C — Design Artefact Evaluation — CURRENT NEXT PHASE
 
-### C1 — NEXT
-Finalize and record FURPS **Functionality** and **Usability** criteria.
+### C1 / Step 9 — COMPLETED PREPARATION
+F1–F13, U1–U9, decision rules, case mappings, and blank registers are frozen
+in protocol 2.1. No FURPS result is implied.
 
-### C2
-Prepare black-box cases before running them.
+### C2 / Step 10 — COMPLETED
+Run `RUN-B01-20260930-STATIC-01` executed STA-01–STA-14. All assertions passed;
+E001–E003 retain command, coverage, and architecture evidence plus the initial
+sandbox-blocked integration attempt and subsequent unchanged pass.
 
-### C3
-Prepare targeted white-box tests for requirement-critical logic.
+### C3 / Step 11 — NEXT
+Execute dynamic workflows and the 15 fixed timing attempts. Preserve UI/API
+and database before/after evidence.
 
-### C4
-Run static analysis and preserve raw command output.
+### C4 / Step 12
+Execute the bounds matrix, including round-two responses, post-completion
+rejection, and the real-database concurrency case.
 
-### C5
-Run black-box tests and record actual results/evidence.
+### C5 / Step 13
+Freeze reference notes, then execute the 16 cases × 3 paths = 48 artificial
+sessions plus separately labelled language and concept-mismatch cases.
 
-### C6
-Run white-box tests and preserve test output/coverage where practical.
+### C6 / Step 14
+Freeze and execute BB01–BB24 through public boundaries. Update F1–F13 only
+from retained evidence.
 
-### C7
-Run dynamic analysis and timing observations.
+### C7 / Step 15
+Execute WB01–WB06. Preserve exact test versions, commands, output, coverage
+scope, real-database evidence, and uncovered branches.
 
-### C8
-Run adaptation bounds analysis.
+### C8 / §18.1 usability execution checkpoint
+Execute U1–U9 across the required screens, states, locales, themes, desktop/
+mobile viewports, and keyboard interactions. Save inspection sheets and issue
+evidence under `evaluation/02_design/usability/`, then update the protocol's
+Usability register.
 
-### C9
-Create the artificial multi-domain simulation dataset.
+### C9 / Step 16
+Complete the design informed argument using actual results from C2–C8.
 
-### C10
-Execute simulation and preserve outputs.
+### C10 / Step 17
+Execute the full Photosynthesis PoC scenario and preserve exact generated
+content, screenshots, requests, and state transitions.
 
-### C11
-Perform structured usability inspection.
+### C11 / Step 18
+Complete the design literature matrix and synthesis with source locators,
+transfer limitations, and links to observed PoC evidence.
 
-### C12
-Complete the design informed-argument evaluation.
-
-### C13
-Run the full Photosynthesis PoC scenario and preserve screenshots/state evidence.
-
-### C14
-Complete the design academic-literature comparison.
-
-### C15 — SKIPPED
-Human Expert Interview will not be conducted.
-
-### C16
-Create the design-evaluation summary table.
+### C12 / Step 19 — SKIPPED
+Human Expert Interview will not be conducted. Do not imply participant or
+expert evidence.
 
 ---
 
 ## Phase D — Consolidation
 
-### D1
-Create `evaluation/03_results/master_results.csv`.
+### D1 / Step 20
+Audit and finalise `evaluation/03_results/evidence_register.csv`; verify every
+ID and path before consolidation.
 
-### D2
-Create `evaluation/03_results/pirqoa_traceability.csv`.
+### D2 / Step 21
+Create `evaluation/03_results/master_results.csv` only after every method is
+executed or transparently accounted for.
 
-### D3
+### D3 / Step 22
+Create `evaluation/03_results/pirqoa_traceability.csv` and link REQ/RQ claims
+to result and evidence IDs.
+
+### D4
 Identify converging evidence.
 
 Example:
@@ -2904,17 +3190,18 @@ Example:
 - black-box testing shows external behaviour;
 - white-box testing confirms internal state/control logic.
 
-### D4
+### D5
 Identify conflicting, failed, partial, or weak evidence.
 
-### D5
+### D6
 Write explicit limitations and claim boundaries.
 
 ---
 
 ## Phase E — Drafting
 
-Draft only after the design evidence exists.
+Draft only after Phase D is complete. Do not write result sentences while
+actual-result fields are blank.
 
 Recommended order:
 
@@ -2931,57 +3218,57 @@ Recommended order:
 
 ---
 
-# 40. Step 31 — What to Ask ChatGPT For Next — UPDATED
+# 40. Step 31 — How to Continue From Here
 
-The conceptual-evaluation requests are complete. The next requests should focus only on the remaining Design Artefact Evaluation.
+The master plan, protocol, B01 baseline, and Step 10 static evidence are ready.
+Do not rerun Step 10 unless the baseline/protocol changes or a recorded
+regression requires it.
 
-## Next Request 1 — Immediate
+## 40.1 Immediate request
 
-> Using my Assignment 5 plan, conceptual evaluation results, Assignment 4 PoC design, and current implementation, create the exact FURPS Functionality and Usability evaluation criteria and recording templates for the Burmese STEM AI PoC. Do not invent results. Save the protocol under `evaluation/02_design/furps/`.
+Use this request next:
 
-## Next Request 2
+> Execute Step 11 — Dynamic Analysis from
+> `INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md` against
+> `B01-A5-EVALUATION`. Use the dedicated evaluation database and artificial
+> learner aliases, preserve UI/API/database before-and-after evidence, execute
+> DYN-01–DYN-13 and all 15 timing attempts, and retain failures/retries without
+> replacing them.
 
-> Create the full black-box test specification for Burmese STEM AI with IDs, preconditions, input/actions, expected results, actual-result fields, pass/fail fields, evidence paths, FURPS mapping, and PIRQOA/RQ mapping. Do not invent actual results.
+## 40.2 Requests after each completed step
 
-## Next Request 3
+Proceed one step at a time:
 
-> Review the relevant repository/code and create the targeted white-box testing plan for adaptation, session lifecycle, follow-up scope, structured LLM output validation, persistence, and preferences. Prioritize logic directly connected to RQ1–RQ3.
+1. `Execute Step 12 — Bounds Analysis, including concurrency near the cap.`
+2. `Prepare the fixed reference notes, then execute Step 13 — Simulation.`
+3. `Freeze expected assertions, then execute BB01–BB24 for Step 14.`
+4. `Execute WB01–WB06 for Step 15 and preserve exact test evidence.`
+5. `Execute the U1–U9 structured usability inspection from protocol 2.1.`
+6. `Complete Step 16 using only recorded design evidence.`
+7. `Execute the Step 17 Photosynthesis scenario without changing inputs to
+   force success.`
+8. `Complete Step 18 literature evaluation with source locators and transfer
+   limitations.`
+9. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
 
-## Next Request 4
+At every stage, ask for execution—not a replacement plan—unless the frozen
+protocol contains a real ambiguity. The agent should inspect current files,
+perform the in-scope work, preserve raw evidence, and leave actual-result fields
+blank when execution is blocked.
 
-> Create the artificial STEM simulation dataset and execution protocol across Biology, Physics, Chemistry, Computing, and Engineering, including ambiguous terminology. Do not invent results.
+## 40.3 Drafting requests
 
-## Next Request 5
+Only after Steps 20–22 are complete:
 
-> Create the static, dynamic, and optimisation/bounds evaluation protocol and evidence templates. Include exact commands/measurements only where supported by my project.
+> Write Section 2: Conceptual Artefact Evaluation in 800–1200 words using only
+> recorded conceptual evidence and verified references.
 
-## Next Request 6
+> Write Section 3: Design Artefact Evaluation in 800–1200 words using only
+> actual design-evaluation evidence.
 
-> Create a structured usability-inspection checklist for the three-screen PoC, focusing on task clarity, bilingual readability, information structure, interaction clarity, feedback/state visibility, navigation consistency, error clarity, and consistency. Do not claim human usability testing.
-
-## Next Request 7
-
-> Create the Design Artefact informed-argument and literature-evaluation matrices, tracing each implemented feature to PIRQOA, conceptual artefacts, theory, and Assignment 2 evidence.
-
-## Next Request 8
-
-> Create the complete executable Photosynthesis PoC scenario test protocol with evidence fields for initial inquiry, structured support, Medium/Needs Support adaptation, adaptation bounds, relevant/unrelated follow-up, History, and Review/Resume.
-
-## Next Request 9 — After Real Design Results Exist
-
-> Here are my real design-evaluation results. Analyze them without changing the data. Identify supported findings, failures, partial results, limitations, FURPS implications, and PIRQOA/RQ implications.
-
-## Next Request 10 — Only After Evaluation Is Complete
-
-> Write Section 2: Conceptual Artefact Evaluation in 800–1200 words using only my recorded conceptual evidence and verified references.
-
-Then:
-
-> Write Section 3: Design Artefact Evaluation in 800–1200 words using only my actual design-evaluation evidence.
-
-Finally:
-
-> Write Section 4: Results and Interpretation in 500–750 words, triangulating conceptual and design results against PIRQOA and clearly separating what the evaluation does and does not demonstrate.
+> Write Section 4: Results and Interpretation in 500–750 words, triangulating
+> conceptual and design results against PIRQOA and separating demonstrated,
+> partial, failed, blocked, and unsupported claims.
 
 ---
 
@@ -3017,9 +3304,10 @@ Finally:
 
 ## Design evaluation
 
+- [x] FURPS F1–F13 and U1–U9 criteria, case mappings, and decision rules frozen
 - [ ] FURPS Functionality evaluated
 - [ ] FURPS Usability evaluated
-- [ ] Static analysis executed
+- [x] Static analysis executed (`RUN-B01-20260930-STATIC-01`)
 - [ ] Dynamic analysis executed
 - [ ] Optimisation/bounds analysis executed
 - [ ] Simulation executed
@@ -3046,10 +3334,10 @@ Finally:
 ## Evidence
 
 - [ ] Screenshots preserved
-- [ ] Test logs preserved
-- [ ] Build/lint outputs preserved
-- [ ] Test outputs preserved
-- [ ] Coverage saved if used
+- [x] Step 10 test logs preserved
+- [x] Step 10 build/lint outputs preserved
+- [x] Step 10 deterministic/integration outputs preserved
+- [x] Step 10 scoped coverage summary saved
 - [ ] Simulation inputs saved
 - [ ] Simulation outputs saved
 - [ ] Timing data saved
@@ -3061,7 +3349,7 @@ Finally:
 - [x] Conceptual scenario saved
 - [x] Conceptual triangulation saved
 - [x] Framework refinement decisions saved
-- [ ] PoC artefact/environment versions recorded
+- [x] PoC artefact/environment versions recorded for local baseline B01
 
 ---
 

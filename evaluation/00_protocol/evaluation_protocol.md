@@ -3,13 +3,13 @@
 | Document control | Value |
 | --- | --- |
 | Protocol ID | A5-PROTOCOL-01 |
-| Version | 2.0 |
+| Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | Refined implementation oracle prepared; formal evaluation not run |
+| Status | B01 frozen; consolidated pre-execution oracle prepared; formal evaluation not run |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
-| Baseline | `B01` to be frozen and recorded before formal execution; `B00-PRE-REFINEMENT` is historical only |
+| Baseline | `B01-A5-EVALUATION`; `B00-PRE-REFINEMENT` is historical only |
 
 ### Version history
 
@@ -17,6 +17,7 @@
 | --- | --- | --- |
 | 1.0 | 28 September 2026 | Pre-refinement protocol. Its High → `key_takeaway` oracle and three-value-only route model are superseded and retained in the discrepancy register for provenance. |
 | 2.0 | 30 September 2026 | Current refined oracle aligned with implemented Stage 6A/6B routing, fade semantics, response-event persistence, and automated test entry points. This version change does not constitute evaluation execution or a pass result. |
+| 2.1 | 30 September 2026 | Consolidates the Step 9 FURPS execution details into this governing protocol after B01 was frozen. Criteria and acceptance semantics are unchanged from 2.0; no formal case was executed. Runs using this revision must cite protocol 2.1 and the exact protocol commit because the B01 freeze record preserves the earlier 2.0 file hash. |
 
 ## 1. Purpose and evidence boundary
 
@@ -33,6 +34,14 @@ The evaluation distinguishes:
 - **Educational effectiveness:** outside the present evaluation. Neither artificial interactions nor a self-reported support signal establishes learning gains, retention or objective competence.
 
 No learner study, comparative experiment or production-readiness claim is planned. Optional expert feedback is supplementary and must not be reported unless collected.
+
+The supplied Assignment 5 plan formally emphasises the **Functionality** and
+**Usability** dimensions of FURPS. F1–F13 and U1–U9 therefore receive
+criterion-level judgements. Reliability, Performance and Supportability are
+not independently scored. Relevant failure-control, timing, reproducibility
+and maintainability observations may be retained as enabling technical
+evidence, but they must not be presented as complete evaluations of those
+three dimensions.
 
 ## 2. Source basis and precedence
 
@@ -102,17 +111,53 @@ F9–F12 support interaction continuity and task fit; persistence alone does not
 
 ## 4. Baseline, environment and execution controls
 
-Before collecting results:
+The executable baseline is `B01-A5-EVALUATION`, represented by annotated tag
+`a5-evaluation-b01`. The evaluated application source is commit
+`37faefa236829aa3d79e023faa1fb72a086b5c2a`; the tag also contains the later
+baseline documentation commit. Verify the exact source tree, dependency,
+prompt/schema and environment identities in
+[`b01_artefact_versions.md`](b01_artefact_versions.md) and
+[`b01_environment.md`](b01_environment.md) before collecting results. B00 is a
+historical pre-refinement snapshot and must not be used for formal cases.
 
-1. Record evaluator, date/time with timezone, protocol version, conceptual source file hashes and exact diagram/section locators. Preserve the Assignment 3 framework, definitions and PIRQOA together.
-2. Record `git rev-parse HEAD`, `git status --short`, relevant uncommitted changes, and hashes/copies of untracked evaluation inputs. A commit hash alone does not identify a dirty working tree. Assign baseline ID `B01` only after the snapshot is reproducible.
-3. Record application version, Node/npm versions, dependency lockfile hash, OS, browser/version, viewport, database version, local/deployed environment, and deployed commit if different. Record configuration names/values only when non-secret.
-4. Record model identifier, provider, available generation settings, prompt/schema hashes and timeout/retry configuration. Distinguish live model calls from mocks and database-backed integration from mocked persistence.
-5. Use dedicated artificial learner identities and evaluation sessions. Establish reset/cleanup procedures that affect only evaluation records. Retain identity continuity for persistence tests and separate identities for ownership tests.
-6. Freeze test inputs, expected outcomes, scoring anchors, assessor qualifications and execution order. Choose a Burmese-fluent assessor for language judgement; otherwise mark linguistic adequacy Not assessed.
-7. Save baseline/environment records in `00_protocol/artefact_versions.md` and `00_protocol/environment.md`. The `B00-PRE-REFINEMENT` preparation records now exist, but they are not execution evidence or the final `B01` evaluation baseline.
+Complete and record these controls before the first formal case:
 
-Use a unique run ID such as `RUN-B01-20260928-01`. Capture failures and first attempts, not only successful retries. Retry after recording the original failure and its reason; give every attempt its own identifier. Do not silently replace evidence. If code, prompts, criteria or inputs change, log the change and create a new baseline/protocol version as appropriate; retain pre-change results and run affected regression cases.
+1. Verify the B01 tag, executable source tree and working-tree state. Record
+   relevant uncommitted changes and hashes/copies of all untracked evaluation
+   inputs; a commit hash alone does not identify a dirty worktree.
+2. Record evaluator, role, date/time with the `Pacific/Auckland` timezone,
+   protocol version, conceptual source hashes and exact diagram/section
+   locators. Preserve the Assignment 3 framework, definitions and PIRQOA
+   together.
+3. Assign a unique run ID, such as `RUN-B01-20260930-01`.
+4. Record application version, Node/npm versions, lockfile hash, OS,
+   browser/version, viewport, database version and local/deployed environment.
+   Record configuration names/values only when non-secret.
+5. Record model identifier, provider, available generation settings,
+   prompt/schema hashes and timeout/retry configuration. Mark every case as
+   deterministic mock, real database or live provider.
+6. Use dedicated artificial learner identities and a dedicated evaluation
+   database. Establish a cleanup procedure that targets only evaluation
+   records. Retain identity continuity for persistence tests and separate
+   identities for ownership tests.
+7. Freeze exact inputs, preference settings, expected outcomes, scoring
+   anchors, unacceptable misconceptions, reference basis, assessor
+   qualifications and execution order. Use a Burmese-fluent assessor for
+   language judgement; otherwise mark linguistic adequacy Not assessed.
+8. For UI inspection, use Chrome at 1440 × 900 and 390 × 844 unless a
+   deviation is recorded. Cover English and Burmese UI, bilingual support, and
+   light and dark themes.
+9. Allocate evidence IDs only when an artefact has actually been captured.
+
+B01 is a local-only baseline because the documented EC2 deployment could not
+be verified without a trusted SSH host key. Deployment behaviour is outside
+this run unless a separately controlled and recorded baseline is created.
+
+Capture failures and first attempts, not only successful retries. Retry only
+after recording the original failure and its reason; give every attempt its
+own identifier. Do not silently replace evidence. If code, prompts, criteria
+or fixed inputs change, log the change and create a new baseline/protocol
+version as appropriate; retain pre-change results and rerun affected cases.
 
 ## 5. Criteria and decision rules
 
@@ -154,19 +199,19 @@ Each row requires both specified behaviour and preserved evidence; use exact gen
 
 | ID | Criterion | Acceptance observations | Planned cases / methods |
 | --- | --- | --- | --- |
-| F1 | Inquiry handling | Valid inquiry creates a retrievable session; empty/invalid inquiry is controlled and does not create a corrupt session | BB01–BB02; SIM; WB |
-| F2 | Terminology/context | Primary term and domain match explicit context; materially ambiguous terms receive clarification or an explicit qualified interpretation, not an unmarked confident guess | BB03; SIM |
+| F1 | Inquiry handling | Valid inquiry creates a correctly initialised, retrievable session; empty, whitespace, over-length or otherwise invalid inquiry is controlled and creates no corrupt session | BB01–BB02, BB20; public UI/API; retrieval |
+| F2 | Terminology/context | Primary term and domain match explicit context; materially ambiguous terms receive clarification or an explicit qualified interpretation, not an unmarked confident guess | BB03; SIM13–SIM16; exact-output review |
 | F3 | Bilingual support | Output follows support-language preference and preserves useful English terminology; no observed material technical mistranslation | BB04; SIM; language review |
 | F4 | Structured support | Simple explanation, example/analogy, technical explanation and reflective prompt are present and meaningful; hint is available as specified and may be optionally revealed | BB05; SIM; SCN |
-| F5 | Learner response | All three allowed responses persist correctly; unknown values are rejected without mutation | BB06–BB08; WB |
-| F6 | Adaptive support | Correct support type is selected and content changes meaningfully for the response; High reduces support without implying proven competence | BB06–BB10; WB; SIM |
-| F7 | Adaptation bound | Round stays within 0–2; extra response creates no third adaptation; expected status and stored count agree | BB09–BB11; BND; WB |
-| F8 | Scoped follow-up | Relevant query retains active context; unrelated query is restricted/redirected without becoming unrestricted chat; length and count caps hold | BB12–BB13; WB; boundary extensions |
-| F9 | Persistence | Creation, response, adaptation and follow-up survive retrieval/reload with matching fields and no unintended duplicate writes | BB14–BB16; WB; DYN |
-| F10 | Learning History | Correct learner's sessions appear in documented order with accurate state; unrelated learner records are absent | BB14; ownership extension |
-| F11 | Review/Resume | Stored content and state reconstruct correctly; unfinished sessions resume within existing limits; completed sessions preserve completion | BB15–BB16; WB; SCN |
-| F12 | Preferences | Valid settings persist and affect their intended UI/generation behaviour; invalid settings are rejected; distinguish existing snapshots from new sessions | BB17; WB; UI |
-| F13 | Error handling | Invalid input, model failure and malformed output produce controlled errors, recoverable UI and no invalid persisted content | BB02, BB18–BB19; WB; UI |
+| F5 | Learner response | All three allowed responses persist correctly; unknown values and invalid Stage 6A/6B combinations are rejected without mutation | BB06–BB08, BB23; WB01; persistence inspection |
+| F6 | Adaptive support | Deterministic route is correct for the response and optional Stage 6B choice; generated support changes meaningfully. High selects `fade` without implying proven competence | BB06–BB10; WB01; SIM; provider-call count and content review |
+| F7 | Adaptation bound | Round stays within 0–2; extra response creates no third adaptation; expected response event, status and stored count agree | BB09–BB11, BB24; BND; WB01/WB05; real-database concurrency |
+| F8 | Scoped follow-up | Relevant query retains current active concept and support context; unrelated query is restricted/redirected without becoming unrestricted chat; the 500-character and two-question caps hold | BB12–BB13, BB21; WB03; persisted follow-up inspection |
+| F9 | Persistence | Creation, response events, adaptations, interpretation trace and follow-ups survive retrieval/reload with matching fields and no unintended duplicate writes | BB09–BB16; WB05; DYN; real-database/concurrency evidence |
+| F10 | Learning History | Correct learner's sessions appear newest-first with accurate state; unrelated learner records are absent | BB14, BB22; UI/API ownership inspection |
+| F11 | Review/Resume | Stored content and interaction history reconstruct correctly; unfinished sessions resume within existing limits; completed sessions preserve completion and reject further responses | BB15–BB16, BB24; WB02; SCN |
+| F12 | Preferences | Valid settings persist and affect their intended UI/generation behaviour; invalid settings are rejected; existing-session snapshots remain distinguishable from changed profile settings for new sessions | BB04, BB17; WB06; UI/reload comparison |
+| F13 | Error handling | Invalid input, missing/foreign/completed sessions, model/API failure and malformed structured output produce stable controlled errors, recoverable UI where applicable and no invalid persisted content | BB02, BB18–BB24; WB02–WB04; UI; controlled fault injection |
 
 F2 is a design-adequacy expectation, not a claim that clarification is already implemented. Record an implementation gap if the system cannot meet it.
 
@@ -189,6 +234,58 @@ For F2–F4/F6, assess content dimensions separately: technical correctness, con
 Inspect desktop (1440 × 900) and mobile (390 × 844), English and Burmese UI, with bilingual support; inspect both themes for readability. Record actual browser/viewport and any variation. Include keyboard navigation, visible focus and preference-dialog use. Capture normal, loading, empty, error, adapted and completed/review states where reachable.
 
 Record issue severity: **0 none observed**, **1 cosmetic**, **2 impedes a task but workaround exists**, **3 blocks completion or materially misleads**. U criterion Pass requires all planned checks executed and no severity 2/3 issue; Partial denotes severity 2 or incomplete coverage; Fail denotes severity 3. Preserve severity 1 issues even on a pass. Report evaluator judgement, not user satisfaction, measured learnability or accessibility certification.
+
+Use this minimum inspection matrix. Exercise each reachable state in both
+viewports and distribute both UI locales, both themes and bilingual content
+across the matrix rather than treating one screenshot as complete coverage.
+
+| Screen or flow | Required states/checks | Main criteria |
+| --- | --- | --- |
+| Home / Ask | Normal, empty/invalid input, loading, provider error, keyboard submission | U1, U4, U8, U9 |
+| Learning Session content | Initial support, section hierarchy, hint reveal, bilingual wrapping, long content | U2, U6, U9 |
+| Stage 6A / 6B | High, Medium, Needs Support, every optional choice, skip, clarification input, keyboard focus/order | U3, U4, U7, U9 |
+| Adaptation outcomes | Adapting, fade, generated support, corrected/ambiguous concept, round limit, retry/error | U3, U4, U7, U8 |
+| History | Empty and populated, newest-first order, state labels, learner isolation | U5, U7, U9 |
+| Review / Resume | In-progress, review-recommended, completed, round 0/1/2, response history, legacy session | U4, U5, U7, U9 |
+| Preferences modal | Open/close, keyboard use, focus visibility, valid update, validation error, persistence | U5, U8, U9 |
+
+For keyboard inspection, record tab order, visible focus, activation with the
+expected keys, dialog focus behaviour, and whether any interactive control is
+unreachable. This is a bounded inspection, not a full WCAG conformance audit.
+
+### 5.5 FURPS pre-execution registers
+
+The initial values below deliberately record that formal FURPS execution has
+not started. Replace them only when the corresponding procedure is executed
+and evidence is retained.
+
+| Functionality criterion | Execution status | Outcome | Evidence IDs | Deviation or note |
+| --- | --- | --- | --- | --- |
+| F1 | Not run | Not assessed | — | — |
+| F2 | Not run | Not assessed | — | — |
+| F3 | Not run | Not assessed | — | — |
+| F4 | Not run | Not assessed | — | — |
+| F5 | Not run | Not assessed | — | — |
+| F6 | Not run | Not assessed | — | — |
+| F7 | Not run | Not assessed | — | — |
+| F8 | Not run | Not assessed | — | — |
+| F9 | Not run | Not assessed | — | — |
+| F10 | Not run | Not assessed | — | — |
+| F11 | Not run | Not assessed | — | — |
+| F12 | Not run | Not assessed | — | — |
+| F13 | Not run | Not assessed | — | — |
+
+| Usability criterion | Execution status | Outcome | Highest severity | Evidence IDs | Deviation or note |
+| --- | --- | --- | --- | --- | --- |
+| U1 | Not run | Not assessed | — | — | — |
+| U2 | Not run | Not assessed | — | — | — |
+| U3 | Not run | Not assessed | — | — | — |
+| U4 | Not run | Not assessed | — | — | — |
+| U5 | Not run | Not assessed | — | — | — |
+| U6 | Not run | Not assessed | — | — | — |
+| U7 | Not run | Not assessed | — | — | — |
+| U8 | Not run | Not assessed | — | — | — |
+| U9 | Not run | Not assessed | — | — | — |
 
 ## 6. Evaluation methods and procedures
 
@@ -227,6 +324,54 @@ npm run build -- --webpack
 Record missing dependencies as Blocked. The webpack build command is the documented verification path for this repository; retain any failed alternative build log and its reason. `npm test` uses deterministic Vitest mocks; `npm run test:integration` uses an isolated temporary MongoDB or an explicitly supplied database ending in `_test`; `npm run test:all` executes both modes. Structural coverage and database tests do not establish Burmese quality, STEM accuracy, usability, or educational effectiveness. Protocol preparation and refinement verification are not formal `B01` execution and make no paid model calls.
 
 For modest timing analysis, use Photosynthesis, gravity, electric current, programming inheritance and pH, **three independent fresh-session attempts each** (15 initial-generation attempts). Measure start/end around the same operation boundary, preferably monotonic client request-to-response time. Record operation, elapsed milliseconds, success, timeout, retries and environment for every attempt. Report per-query and pooled successful-attempt median/min/max with sample sizes, plus failure/timeout counts separately. Log adaptation/follow-up timings descriptively without pooling unlike operations. No latency pass threshold is asserted because no service-level target is specified.
+
+### 6.1 FURPS execution sequence
+
+**Phase 1 — Prepare the run**
+
+1. Verify B01 identity and complete the controls in §4.
+2. Create the run folder and evidence register without treating baseline-freeze
+   checks as formal FURPS outcomes.
+3. Freeze case inputs, preference snapshots and content-reference notes.
+4. Start the application and dedicated database; record commands, versions,
+   ports and non-secret configuration.
+5. Capture the initial database state for the artificial learner identities.
+
+**Phase 2 — Execute Functionality cases**
+
+1. Run BB01–BB24 through public UI/API boundaries.
+2. Execute the fixed artificial simulation and executable Photosynthesis
+   scenario where they provide content evidence for F2–F6.
+3. Use controlled dependency fault injection for BB18–BB19 rather than waiting
+   for random provider failures.
+4. Execute WB01–WB06, including the real-database race near the adaptation cap.
+5. Preserve expected, actual, execution status, outcome and evidence for every
+   attempt. Record the first failure before any retry.
+6. Consolidate case evidence into F1–F13 without turning structural test passes
+   into content-quality passes.
+
+**Phase 3 — Conduct structured Usability inspection**
+
+1. Reset to the documented starting state without deleting prior evidence.
+2. Inspect the matrix in §5.4 at desktop and mobile viewports.
+3. Cover English/Burmese UI, bilingual support and both themes.
+4. Record keyboard interaction, visible focus and preference-dialog behaviour.
+5. Log every issue with severity, reproduction steps and evidence.
+6. Apply U1–U9 decision rules without reporting evaluator inspection as
+   participant feedback.
+
+**Phase 4 — Reconcile and report**
+
+1. Cross-check each result against its exact B01 UI/API state and stored record
+   where applicable.
+2. Record discrepancies between expected and observed behaviour.
+3. Distinguish application defects, content limitations, environment failures,
+   blocked checks and design limitations.
+4. Summarise Functionality and Usability separately; do not calculate one
+   FURPS percentage.
+5. Map supported findings to REQ-01/RQ1, REQ-02/RQ2 and REQ-03/RQ3 while
+   separating direct from enabling evidence.
+6. State residual limitations and every Not assessed criterion.
 
 ## 7. Artificial simulation design
 
@@ -322,11 +467,19 @@ Planned locations follow the Assignment 5 plan: `01_conceptual/` (GenAI, literat
 
 Use immutable, sequential evidence IDs **E001, E002, …**, result IDs **R001, R002, …**, and concern IDs **ISS001, ISS002, …**. Case IDs describe procedures; evidence IDs identify actual files/records. Allocate evidence IDs when evidence is captured, not as fabricated completed records. A result may cite several evidence IDs; reused evidence keeps its original ID. Each evidence entry includes run, baseline, criteria and RQ mapping.
 
+Keep case attempts stable and distinct from evidence identifiers, for example
+`FURPS-B01-BB01-A01`, `FURPS-B01-WB01-A01`, or
+`FURPS-B01-U03-MY-MOBILE`. Each attempt must record baseline, protocol, run,
+evaluator, timestamp, dependency mode, artificial learner alias, exact
+input/action, frozen expected assertions, full actual output where content is
+judged, relevant HTTP/state/storage observations, outcome, evidence locators,
+issue IDs and retry/deviation details.
+
 ### 10.1 Baseline/environment record
 
 ```yaml
 baseline_id: TO_RECORD
-protocol_version: '2.0'
+protocol_version: '2.1'
 evaluator_and_role: TO_RECORD
 captured_at_with_timezone: TO_RECORD
 conceptual_sources_and_hashes: TO_RECORD
@@ -420,7 +573,9 @@ A bounded implementation claim is strongly supported only when relevant external
 
 - [ ] Baseline, environment, evaluator competence and execution inputs frozen.
 - [ ] C1–C5 evaluated using GenAI, literature, informed argument and conceptual scenario.
-- [ ] F1–F13 and U1–U9 covered with explicit outcomes or transparent gaps.
+- [ ] Every F1–F13 and U1–U9 row has an execution status and outcome; every Pass/Partial/Fail links to retained evidence, and every Blocked/Not applicable/Not assessed item has a written reason.
+- [ ] Every planned black-box, white-box and usability-inspection case is executed or explicitly accounted for.
+- [ ] Generated-content judgements identify the assessor, competence boundary and reference basis.
 - [ ] Static, dynamic, bounds, simulation, black-box, white-box, design argument, design scenario and design literature methods recorded.
 - [ ] All 48 planned simulation sessions and 15 timing attempts accounted for, including blocked/failed cases and deviations.
 - [ ] Raw evidence, logs, actual outputs, state records and all retries retained and indexed.
