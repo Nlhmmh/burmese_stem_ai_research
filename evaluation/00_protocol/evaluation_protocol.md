@@ -253,39 +253,42 @@ For keyboard inspection, record tab order, visible focus, activation with the
 expected keys, dialog focus behaviour, and whether any interactive control is
 unreachable. This is a bounded inspection, not a full WCAG conformance audit.
 
-### 5.5 FURPS pre-execution registers
+### 5.5 FURPS execution registers
 
-The initial values below deliberately record that formal FURPS execution has
-not started. Replace them only when the corresponding procedure is executed
-and evidence is retained.
+The registers began as pre-execution records. Step 11 runtime evidence and its
+manual-browser addendum now provide partial technical support for F1–F13 and
+U1–U9. The required black-box, simulation, white-box, content-review, full
+locale/theme/viewport matrix, keyboard inspection and participant evidence are
+not complete. The rows therefore remain Partial rather than being promoted to
+final Pass outcomes.
 
 | Functionality criterion | Execution status | Outcome | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- |
-| F1 | Not run | Not assessed | — | — |
-| F2 | Not run | Not assessed | — | — |
-| F3 | Not run | Not assessed | — | — |
-| F4 | Not run | Not assessed | — | — |
-| F5 | Not run | Not assessed | — | — |
-| F6 | Not run | Not assessed | — | — |
-| F7 | Not run | Not assessed | — | — |
-| F8 | Not run | Not assessed | — | — |
-| F9 | Not run | Not assessed | — | — |
-| F10 | Not run | Not assessed | — | — |
-| F11 | Not run | Not assessed | — | — |
-| F12 | Not run | Not assessed | — | — |
-| F13 | Not run | Not assessed | — | — |
+| F1 | Executed | Partial | E004–E006, E008, E010–E013 | Valid live inquiry and visible Home/session creation passed; invalid/boundary BB cases remain pending |
+| F2 | Executed | Partial | E005–E006, E008 | One bounded `cell` reinterpretation corrected to biology; fixed ambiguity corpus/content review pending |
+| F3 | Executed | Partial | E005–E006, E008, E010–E013 | Language route returned bilingual payload/override without profile mutation and rendered both languages; preference modes and qualified Burmese judgement pending |
+| F4 | Executed | Partial | E004–E006, E008, E010–E013 | Initial sections and hint interaction were visible; meaningfulness and content-quality evaluation remain pending |
+| F5 | Executed | Partial | E005–E006, E008, E010–E013 | High, default, language, conceptual and mismatch inputs were accepted, and five Stage 6B options/skip/back rendered; every choice and invalid combination are not yet executed through public boundaries |
+| F6 | Executed | Partial | E004–E006, E008 | Observed routes and persistence matched tested branches; explicit simpler/example branches and content differentiation pending |
+| F7 | Executed | Partial | E004–E006, E008, E010–E013 | Fade, round cap, visible limit/lifecycle state, completion, idempotence and post-completion rejection passed; planned BB/WB corroboration pending |
+| F8 | Executed | Partial | E005–E006, E008–E009 | Relevant/unrelated follow-ups behaved and persisted as expected; length/count boundaries pending |
+| F9 | Executed | Partial | E004–E006, E008 | Tested transitions reconstructed from isolated storage; concurrency, legacy and broader route cases pending |
+| F10 | Executed | Partial | E005–E006, E008, E010–E013 | History API was owner-scoped/newest-first and the captured History UI used self-reported-support/status/action labels; broader state/ownership UI coverage pending |
+| F11 | Executed | Partial | E005–E006, E008, E010–E013 | Detail/lifecycle state and visible completed Review/reload Resume reconstruction passed; remaining status/legacy variants pending |
+| F12 | Executed | Partial | E004–E006, E008 | Valid preferences and unchanged language-route profile passed; invalid values, reload and snapshot comparisons pending |
+| F13 | Executed | Partial | E004–E006, E008–E013 | Ownership, scope, conflict, safe controlled-provider error and same-question recovery UI passed; malformed output and remaining invalid inputs pending |
 
 | Usability criterion | Execution status | Outcome | Highest severity | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- | --- |
-| U1 | Not run | Not assessed | — | — | — |
-| U2 | Not run | Not assessed | — | — | — |
-| U3 | Not run | Not assessed | — | — | — |
-| U4 | Not run | Not assessed | — | — | — |
-| U5 | Not run | Not assessed | — | — | — |
-| U6 | Not run | Not assessed | — | — | — |
-| U7 | Not run | Not assessed | — | — | — |
-| U8 | Not run | Not assessed | — | — | — |
-| U9 | Not run | Not assessed | — | — | — |
+| U1 | Executed | Partial | 0 | E010–E013 | Inquiry entry and purpose were evident in captured desktop Home; invalid/loading and keyboard paths remain pending |
+| U2 | Executed | Partial | 0 | E010–E013 | Structured explanation, example, technical, reflection and hint areas were distinguishable in English/Light desktop; other themes/locales/mobile pending |
+| U3 | Executed | Partial | 0 | E010–E013 | Stage 6A, five Stage 6B choices, continue, skip and back were visible; every choice, consequence wording and keyboard interaction remain pending |
+| U4 | Executed | Partial | 0 | E010–E013 | Adapted content, route/history, limit, error and recovered state were visible; transient loading/adapting feedback was not captured |
+| U5 | Executed | Partial | 0 | E010–E013 | Home, History, Review/Resume and primary navigation were observed without a dead end; preferences-dialog and full matrix inspection remain pending |
+| U6 | Executed | Partial | 0 | E010–E013 | English+Burmese support rendered together without visible clipping in the captured desktop view; Burmese UI, mobile, Dark theme and linguistic quality remain pending |
+| U7 | Executed | Partial | 0 | E010–E013 | Self-reported support, route/history, limit, completion and review recommendation were distinguishable in captured states; broader matrix pending |
+| U8 | Executed | Partial | 0 | E010–E013 | Controlled provider error was learner-safe and recoverable with the same question; localisation and other error classes remain pending |
+| U9 | Executed | Partial | 0 | E010–E013 | Labels and interaction patterns were consistent across captured English desktop screens; other locales, themes, mobile and keyboard remain pending |
 
 ## 6. Evaluation methods and procedures
 
