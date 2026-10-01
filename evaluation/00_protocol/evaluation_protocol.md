@@ -255,9 +255,9 @@ unreachable. This is a bounded inspection, not a full WCAG conformance audit.
 
 ### 5.5 FURPS execution registers
 
-The registers began as pre-execution records. Step 11 runtime evidence and its
-manual-browser addendum now provide partial technical support for F1–F13 and
-U1–U9. The required black-box, simulation, white-box, content-review, full
+The registers began as pre-execution records. Step 11 runtime/browser evidence
+and Step 12 bounds evidence now provide partial technical support for F1–F13
+and U1–U9. The required black-box, simulation, white-box, content-review, full
 locale/theme/viewport matrix, keyboard inspection and participant evidence are
 not complete. The rows therefore remain Partial rather than being promoted to
 final Pass outcomes.
@@ -268,15 +268,15 @@ final Pass outcomes.
 | F2 | Executed | Partial | E005–E006, E008 | One bounded `cell` reinterpretation corrected to biology; fixed ambiguity corpus/content review pending |
 | F3 | Executed | Partial | E005–E006, E008, E010–E013 | Language route returned bilingual payload/override without profile mutation and rendered both languages; preference modes and qualified Burmese judgement pending |
 | F4 | Executed | Partial | E004–E006, E008, E010–E013 | Initial sections and hint interaction were visible; meaningfulness and content-quality evaluation remain pending |
-| F5 | Executed | Partial | E005–E006, E008, E010–E013 | High, default, language, conceptual and mismatch inputs were accepted, and five Stage 6B options/skip/back rendered; every choice and invalid combination are not yet executed through public boundaries |
-| F6 | Executed | Partial | E004–E006, E008 | Observed routes and persistence matched tested branches; explicit simpler/example branches and content differentiation pending |
-| F7 | Executed | Partial | E004–E006, E008, E010–E013 | Fade, round cap, visible limit/lifecycle state, completion, idempotence and post-completion rejection passed; planned BB/WB corroboration pending |
+| F5 | Executed | Partial | E005–E006, E008, E010–E017 | High, default, simpler, language, conceptual and mismatch bound inputs persisted correctly in tested cases, and five Stage 6B options/skip/back rendered; the complete invalid-combination public-boundary matrix remains pending |
+| F6 | Executed | Partial | E004–E006, E008, E014–E017 | Deterministic routes and provider-call permission matched the tested fade/generated/capped branches; content differentiation and the full BB/simulation matrix remain pending |
+| F7 | Executed | Partial | E004–E006, E008, E010–E017 | BND-01–BND-17 passed: rounds 0–2, all cap routes, fade at 0/1/2, completion, idempotence, post-completion rejection and same-snapshot races preserved the bound; planned BB/WB corroboration remains |
 | F8 | Executed | Partial | E005–E006, E008–E009 | Relevant/unrelated follow-ups behaved and persisted as expected; length/count boundaries pending |
-| F9 | Executed | Partial | E004–E006, E008 | Tested transitions reconstructed from isolated storage; concurrency, legacy and broader route cases pending |
+| F9 | Executed | Partial | E004–E006, E008, E014–E017 | Tested transitions and both same-snapshot concurrency cases preserved atomic stored counts; legacy and broader route reconstruction remain pending |
 | F10 | Executed | Partial | E005–E006, E008, E010–E013 | History API was owner-scoped/newest-first and the captured History UI used self-reported-support/status/action labels; broader state/ownership UI coverage pending |
-| F11 | Executed | Partial | E005–E006, E008, E010–E013 | Detail/lifecycle state and visible completed Review/reload Resume reconstruction passed; remaining status/legacy variants pending |
+| F11 | Executed | Partial | E005–E006, E008, E010–E017 | Visible Review/Resume plus explicit completion from rounds 0/2, idempotent repeat and post-completion rejection passed; remaining status/legacy variants pending |
 | F12 | Executed | Partial | E004–E006, E008 | Valid preferences and unchanged language-route profile passed; invalid values, reload and snapshot comparisons pending |
-| F13 | Executed | Partial | E004–E006, E008–E013 | Ownership, scope, conflict, safe controlled-provider error and same-question recovery UI passed; malformed output and remaining invalid inputs pending |
+| F13 | Executed | Partial | E004–E006, E008–E017 | Ownership, scope, completed/concurrent/invalid-round conflicts, safe provider error and recovery passed; malformed output and remaining invalid inputs pending |
 
 | Usability criterion | Execution status | Outcome | Highest severity | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- | --- |

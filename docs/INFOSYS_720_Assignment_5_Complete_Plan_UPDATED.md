@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–11 completed against B01; the Step 11 manual-browser addendum passed UI-01–UI-12, with direct provider-call instrumentation still qualified for DYN-05/DYN-06; Step 12 is next |
+| Formal evaluation status | Steps 10–12 completed against B01; Step 12 passed BND-01–BND-17 and directly instrumented the provider-call boundaries; Step 13 is next |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -84,6 +84,7 @@ The conceptual artefact evaluation has been completed through framework refineme
 - [x] FURPS F1–F13 and U1–U9 criteria and recording rules frozen
 - [x] Step 10 static analysis executed and evidence E001–E003 retained
 - [x] Step 11 dynamic API/database/provider analysis, all 15 timing attempts, and UI-01–UI-12 manual-browser observations executed
+- [x] Step 12 optimisation/bounds analysis executed; BND-01–BND-17 passed with deterministic provider instrumentation and real MongoDB concurrency
 - [x] Primary conceptual artefact selected
 - [x] Conceptual criteria defined
 - [x] GenAI interview completed and raw transcript preserved
@@ -130,7 +131,10 @@ evaluation/
 │   │   ├── dynamic_analysis.md
 │   │   ├── timings.csv
 │   │   └── raw/
-│   ├── optimisation/bounds_analysis_test_cases.md
+│   ├── optimisation/
+│   │   ├── bounds_analysis_test_cases.md
+│   │   ├── bounds_analysis.md
+│   │   └── raw/
 │   ├── simulation/simulation_test_cases.md
 │   ├── black_box/black_box_test_cases.md
 │   └── white_box/white_box_test_cases.md
@@ -140,9 +144,9 @@ evaluation/
 
 ### Next major task
 
-> **Proceed to Step 12 Bounds Analysis. Step 11 completed with API/database/provider evidence, 15 successful timing attempts, and 12 passed manual-browser observations. Direct provider-call absence for DYN-05/DYN-06 remains indirect.**
+> **Proceed to Step 13 Simulation. Step 12 passed BND-01–BND-17, including direct provider-call instrumentation, all capped/fade boundaries, lifecycle checks, invalid-round guards, and two real-MongoDB same-snapshot races.**
 
-### Run-specific fields to record when Step 12 starts
+### Run-specific fields to record when Step 13 starts
 
 The baseline is already frozen. Before the first formal command, assign the
 run ID and record evaluator, timestamp, working-tree state, and dependency mode
@@ -150,7 +154,7 @@ for that run. Do not include secrets or API keys.
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is Step 12.
+1. Start at the first heading marked **NEXT**; currently this is Step 13.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1770,11 +1774,11 @@ theme. Evidence E010–E013 records the observations, metadata, screenshot
 manifest and localhost HAR. Direct zero-provider-call assertions for DYN-05
 and DYN-06 remain indirect; mobile, Burmese UI, Dark theme, keyboard and
 participant usability remain later work. Evidence E004–E013 now supports the
-Step 11 result. Proceed to Step 12.
+Step 11 result. Step 12 was subsequently executed as recorded below.
 
 ---
 
-# 21. Step 12 — Analytical Evaluation: Optimisation / Bounds — NEXT
+# 21. Step 12 — Analytical Evaluation: Optimisation / Bounds — COMPLETED
 
 ## 21.1 Goal and claim boundary
 
@@ -1826,9 +1830,31 @@ Step 12 is complete when all ten actions have recorded expected and actual
 state, execution status, outcome, evidence ID, and limitations, including the
 real-database concurrency case. Update F7 and relevant F5/F6/F9/F13 records.
 
+### Actual completion record
+
+Run `RUN-B01-20261001-BOUNDS-01` executed BND-01–BND-17 using a deterministic
+provider spy and real isolated MongoDB 8.2.6 persistence. All 17 cases passed.
+Generated adaptations advanced 0→1→2 with one provider call each; every capped
+route and High/fade at rounds 0, 1 and 2 made zero provider calls and created
+no extra adaptation. Explicit completion, idempotent repeat, HTTP 409 after
+completion, and invalid rounds -1/0.5/3 behaved as specified.
+
+Both concurrency cases began from the same stored snapshot. Near the cap,
+exactly one response write succeeded and one returned a controlled conflict,
+leaving round/adaptation/event counts 2/2/2. At the cap, exactly one event
+append succeeded, leaving 2/2/3 with zero provider calls. The near-cap race did
+perform two provider calls before the atomic write conflict, so stored state is
+protected but duplicate provider work remains possible during that race.
+
+Evidence E014–E017 retains the first environment/runner failures, exact runner,
+machine results and analysed report. The unchanged application also passed 208
+deterministic tests, 5 integration tests, lint and TypeScript. This establishes
+the implemented bound under tested conditions; it does not show that two
+adaptations are educationally or globally optimal. Proceed to Step 13.
+
 ---
 
-# 22. Step 13 — Experimental Evaluation: Simulation
+# 22. Step 13 — Experimental Evaluation: Simulation — NEXT
 
 ## 22.1 Goal
 
@@ -3161,9 +3187,10 @@ and all 15 timing attempts. Manual-browser addendum
 desktop English/Light configuration. E004–E013 retain the evidence. Direct
 provider-call absence for DYN-05/DYN-06 remains indirect.
 
-### C4 / Step 12 — NEXT
-Execute the bounds matrix, including round-two responses, post-completion
-rejection, and the real-database concurrency case.
+### C4 / Step 12 — COMPLETED
+Run `RUN-B01-20261001-BOUNDS-01` passed BND-01–BND-17. E014–E017 retain direct
+provider-call counts, before/after state, lifecycle/invalid-round results, and
+both real-database same-snapshot concurrency races.
 
 ### C5 / Step 13
 Freeze reference notes, then execute the 16 cases × 3 paths = 48 artificial
@@ -3254,37 +3281,35 @@ Recommended order:
 
 # 40. Step 31 — How to Continue From Here
 
-The master plan, protocol, B01 baseline, Step 10 static evidence, and Step 11
-dynamic/runtime plus manual-browser evidence are ready. Do not rerun Steps
-10–11 unless the baseline/protocol changes or a recorded regression requires
-it. The later structured usability checkpoint still covers mobile, Burmese UI,
-Dark theme, keyboard interaction and the wider preferences/state matrix.
+The master plan, protocol, B01 baseline, and Steps 10–12 evidence are ready. Do
+not rerun them unless the baseline/protocol changes or a recorded regression
+requires it. The later structured usability checkpoint still covers mobile,
+Burmese UI, Dark theme, keyboard interaction and the wider preferences/state
+matrix.
 
 ## 40.1 Immediate request
 
 Use this request next:
 
-> Execute Step 12 — Bounds Analysis from
-> `INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md` against
-> `B01-A5-EVALUATION`. Use artificial learner aliases and an isolated MongoDB
-> database, execute BND-01–BND-17 including concurrency near the cap, preserve
-> every before/after state and first failure, and do not interpret the
-> two-adaptation bound as pedagogically optimal.
+> Prepare the fixed content reference notes, then execute Step 13 — Simulation
+> from `INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md` against
+> `B01-A5-EVALUATION`. Freeze SIM01–SIM16 before execution, run all 48 planned
+> paths without replacing difficult outputs, preserve retries separately, and
+> keep artificial-session evidence distinct from learner effectiveness.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Prepare the fixed reference notes, then execute Step 13 — Simulation.`
-2. `Freeze expected assertions, then execute BB01–BB24 for Step 14.`
-3. `Execute WB01–WB06 for Step 15 and preserve exact test evidence.`
-4. `Execute the U1–U9 structured usability inspection from protocol 2.1.`
-5. `Complete Step 16 using only recorded design evidence.`
-6. `Execute the Step 17 Photosynthesis scenario without changing inputs to
+1. `Freeze expected assertions, then execute BB01–BB24 for Step 14.`
+2. `Execute WB01–WB06 for Step 15 and preserve exact test evidence.`
+3. `Execute the U1–U9 structured usability inspection from protocol 2.1.`
+4. `Complete Step 16 using only recorded design evidence.`
+5. `Execute the Step 17 Photosynthesis scenario without changing inputs to
    force success.`
-7. `Complete Step 18 literature evaluation with source locators and transfer
+6. `Complete Step 18 literature evaluation with source locators and transfer
    limitations.`
-8. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
+7. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
