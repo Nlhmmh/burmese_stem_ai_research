@@ -20,7 +20,15 @@ export default defineConfig({
       provider: "v8",
       reporter: ["text", "json-summary", "html"],
       reportsDirectory: "coverage",
-      include: ["services/**/*.ts", "data/dao/**/*.ts"]
+      include: [
+        "app/**/*.{ts,tsx}",
+        "components/**/*.{ts,tsx}",
+        "services/**/*.ts",
+        "data/**/*.{ts,js}",
+        "lib/**/*.ts",
+        "i18n/**/*.ts",
+        "proxy.ts"
+      ]
     }
   }
 });

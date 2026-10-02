@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–13 recorded (including endorsed simulation content); Step 14 black-box completed with qualifications on 2 October 2026; Step 15 white-box testing next; remaining evaluations not yet complete |
+| Status | B01 frozen; Steps 10–15 recorded, including simulation/black-box findings and WB01–WB06 structural Pass on 2 October 2026; full structured usability inspection next; remaining evaluations not yet complete |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -110,6 +110,26 @@ Research questions retained from the plan and Assignment 2:
 F9–F12 support interaction continuity and task fit; persistence alone does not demonstrate adaptive pedagogy. F13 and general interface checks may support multiple RQs indirectly; label such evidence “enabling technical evidence”.
 
 ## 4. Baseline, environment and execution controls
+
+### Dated test/configuration amendment — 2 October 2026
+
+Per user instruction, production code remains B01 while tests/configuration may
+be extended in the root `burmese_stem_ai` project. Active test version
+`ROOTTESTS-02` adds the white-box supplements to the normal project suite and
+expands V8 reporting to 42 application files. The recorded root run passed
+361 deterministic and 12 isolated MongoDB tests; lint/TypeScript passed.
+Application-wide coverage is 72.54% statements, 76.37% branches, 64% functions
+and 73.75% lines. Integration/browser evidence is separate from these
+deterministic coverage totals.
+
+See [dated amendment and results](../02_design/white_box/root_project_test_run.md)
+(E033–E035). Production/test hashes are recorded separately; 66 production files
+still match B01. No source-copy tree is required. On 2 October 2026 the user
+requested removal of the superseded white-box run and duplicate helpers.
+Evidence IDs 28–32 are retired; E033–E035 index the retained root execution and
+post-cleanup manifest. Original root captures remain unchanged. Acceptance
+criteria and black-box/simulation findings are unchanged. Run the project
+commands directly for future technical checks.
 
 The executable baseline is `B01-A5-EVALUATION`, represented by annotated tag
 `a5-evaluation-b01`. The evaluated application source is commit
@@ -259,10 +279,10 @@ The registers began as pre-execution records. Step 11 runtime/browser evidence,
 Step 12 bounds evidence, and Step 13 live artificial simulation now provide partial technical support for F1–F13
 and U1–U9. Nathan's simulation content review is completed and endorsed on
 2 October 2026 (E022–E023). Step 14 public HTTP/browser black-box execution is
-accounted for with qualifications (E024–E027). The required white-box, full
-locale/theme/viewport matrix, keyboard inspection and participant evidence are
-not complete. The rows therefore remain Partial rather than being promoted to
-final Pass outcomes.
+accounted for with qualifications (E024–E027). Step 15 WB01–WB06 is structurally
+complete (E033–E035). The full locale/theme/viewport matrix, keyboard inspection
+and participant evidence are not complete. The rows therefore remain Partial
+rather than being promoted to final Pass outcomes.
 
 Simulation execution `RUN-B01-20261001-SIMULATION-02` accounted for all 55
 planned attempts (48 core plus seven separate routes): 44 technical Pass,
@@ -301,21 +321,38 @@ recovery. Four false browser predicates and explicit rechecks are retained;
 they do not establish app defects. No external provider call or new human
 content endorsement occurred. See [black-box analysis](../02_design/black_box/black_box_analysis.md).
 
+White-box run `RUN-B01-20261002-ROOTTESTS-02` completed WB01–WB06 against
+root-project production files matching B01, with test/config profile ROOTTESTS-02.
+All 361 deterministic tests across 26 files passed, including all 39 route/round
+combinations. Two real isolated MongoDB files passed 12 tests covering legacy
+reads, scoped persistence, correction reconstruction, immutable preferences,
+follow-up state isolation, legal completion and round/follow-up contention.
+Lint/TypeScript passed. Application-wide V8 coverage spans 42 executable files:
+72.54% statements, 76.37% branches, 64.00% functions and 73.75% lines.
+Real database/browser coverage is separate. E033–E035 identify root commands,
+coverage and the post-cleanup manifest; [analysis](../02_design/white_box/white_box_evaluation.md)
+maps assertions and gaps. Structural Pass does not establish semantic novelty,
+Myanmar-script enforcement, live interpretation accuracy or learning benefit;
+script constraints are prompt-only where no runtime validator exists.
+BB07/BB08 partials, BB22’s public-boundary oracle failure and simulation findings
+remain unchanged. Handler-level identity tests do not override the public proxy
+observation. The full structured usability checkpoint is next.
+
 | Functionality criterion | Execution status | Outcome | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- |
-| F1 | Executed | Partial | E004–E006, E008, E010–E013, E024–E027 | BB01/02/20 passed real HTTP creation, invalid/malformed inquiry and 1000/1001 boundaries without rejected-input writes/provider-seam calls; browser creation/recovery observed. Controlled provider is not live content validation; overall synthesis/WB remain |
-| F2 | Executed | Partial | E005–E006, E008, E018–E027 | BB03/08 passed controlled context/ambiguity and correction trace through HTTP/browser; addendum verified corrected active context. This does not erase simulation cell/inheritance qualification score 1, no-session limits or SIM-CM-13/16 live correction failures |
-| F3 | Executed | Partial | E005–E006, E008, E010–E013, E018–E027 | BB04 and language choices displayed all three preference modes and bilingual overrides, with original snapshots retained. Exact initial fixture assessment already endorsed; new fixture adaptations are not qualified language-quality evidence. Simulation's foreign-script/material wording defects remain |
-| F4 | Executed | Partial | E004–E006, E008, E010–E013, E018–E027 | BB05 browser support structure and revealable hint passed with previously endorsed initial fixture. Simulation's 91 ratings remain 18 Pass/71 Partial/2 Fail, including SIM04-B/SIM08-B initial failures. No learning effectiveness claim |
-| F5 | Executed | Partial | E005–E006, E008, E010–E017, E024–E027 | All five Stage6B options, default/skip/back, clarification requirement and BB23 invalid/conflicting-response public inputs executed; correct routes/state returned. Fixture semantic quality not inferred; wider localisation/WB remain |
-| F6 | Executed | Partial | E004–E006, E008, E014–E027 | BB06–11 bounded route/state/persistence and browser routes passed mechanically; BB07/08 Partial because prefixed fixture paragraphs do not prove meaningful novelty. Generated ambiguous clarification consumes a bounded round; unsupported zero-round assertion retained as Fail. Simulation timeout/correction failures remain |
-| F7 | Executed | Partial | E004–E006, E008, E010–E027 | BB06/09–11/21/24 corroborate fade/cap, two-adaptation/two-question limits and post-completion rejection with provider-seam counts, state and UI. All 42 black-box stored sessions stay within bounds. Formal WB corroboration remains; no pedagogical optimality claim |
-| F8 | Executed | Partial | E005–E006, E008–E009, E024–E027 | BB12/13/21 passed scoped/unrelated fixture outcomes, 500/501 lengths and third-question limit. Corrected-context addendum passed provider-input/state checks; its fixture answer is not scientific-content evidence |
-| F9 | Executed | Partial | E004–E006, E008, E014–E027 | Black-box stored 42 sessions/25 adaptations/28 events/7 follow-ups; 29 detail projections match stored state. Failure injections made no writes; completed Review exact text verified. Prior bounds concurrency separate; legacy/formal WB coverage remains |
-| F10 | Executed | Partial | E005–E006, E008, E010–E013, E024–E027 | BB14/22 API foreign access/forged header and browser rejection passed; browser History exactly its own ten sessions newest-first with self-report/status/action labels. Cookie-less 400 oracle failed because public proxy provisions identity, not because of observed leakage; mobile/localised inspection remains |
-| F11 | Executed | Partial | E005–E006, E008, E010–E017, E024–E027 | BB15/16/24 confirmed completed Review with all support/event entries, Resume rounds 0/1/2, corrected concept continuity, idempotent completion and post-completion 409. Raw clarification/preferences are not individually displayed as history fields; legacy/WB remain |
-| F12 | Executed | Partial | E004–E006, E008, E024–E027 | BB04/17 valid/invalid/unknown/type preference updates, reload and independent old/new snapshots passed; modal preserved. Language overrides did not change the profile. Wider theme/locale inspection remains |
-| F13 | Executed | Partial | E004–E006, E008–E027 | BB18 six failure injections and BB19 24 malformed outputs returned safe 502 with no state corruption/automatic seam retry; BB02/20–24 invalid-input boundaries executed; browser recovery passed. Fixture timers ~20s do not supersede slower live simulation abort; unresolved oracle discrepancies retained |
+| F1 | Executed | Partial | E004–E006, E008, E010–E013, E024–E027, E033–E035 | BB01/02/20 passed real HTTP creation, invalid/malformed inquiry and 1000/1001 boundaries without rejected-input writes/provider-seam calls; browser creation/recovery observed. Controlled provider is not live content validation; overall synthesis remains WB04 accepts/rejects initial structured contracts and provider faults before save. |
+| F2 | Executed | Partial | E005–E006, E008, E018–E027, E033–E035 | BB03/08 passed controlled context/ambiguity and correction trace through HTTP/browser; addendum verified corrected active context. This does not erase simulation cell/inheritance qualification score 1, no-session limits or SIM-CM-13/16 live correction failures WB01/WB04 verifies corrected/ambiguous/unchanged output handling, not live interpretation correctness. |
+| F3 | Executed | Partial | E005–E006, E008, E010–E013, E018–E027, E033–E035 | BB04 and language choices displayed all three preference modes and bilingual overrides, with original snapshots retained. Exact initial fixture assessment already endorsed; new fixture adaptations are not qualified language-quality evidence. Simulation's foreign-script/material wording defects remain WB01/WB06 verifies bilingual override and unchanged saved preferences; script constraints remain prompt-only. |
+| F4 | Executed | Partial | E004–E006, E008, E010–E013, E018–E027, E033–E035 | BB05 browser support structure and revealable hint passed with previously endorsed initial fixture. Simulation's 91 ratings remain 18 Pass/71 Partial/2 Fail, including SIM04-B/SIM08-B initial failures. No learning effectiveness claim WB04 verifies complete initial shape and bounded fields, not pedagogical quality. |
+| F5 | Executed | Partial | E005–E006, E008, E010–E017, E024–E027, E033–E035 | All five Stage6B options, default/skip/back, clarification requirement and BB23 invalid/conflicting-response public inputs executed; correct routes/state returned. Fixture semantic quality not inferred; wider localisation remains WB01 verifies all 39 route/round combinations and invalid response inputs. |
+| F6 | Executed | Partial | E004–E006, E008, E014–E027, E033–E035 | BB06–11 bounded route/state/persistence and browser routes passed mechanically; BB07/08 Partial because prefixed fixture paragraphs do not prove meaningful novelty. Generated ambiguous clarification consumes a bounded round; unsupported zero-round assertion retained as Fail. Simulation timeout/correction failures remain WB01 verifies deterministic route/provider/save decisions and exact repetition rejection, not meaningful novelty. |
+| F7 | Executed | Partial | E004–E006, E008, E010–E027, E033–E035 | BB06/09–11/21/24 corroborate fade/cap, two-adaptation/two-question limits and post-completion rejection with provider-seam counts, state and UI. All 42 black-box stored sessions stay within bounds. Formal WB corroboration is recorded; no pedagogical optimality claim WB01/WB05 verifies zero-generation fade/cap and real round-1→2 race invariants. |
+| F8 | Executed | Partial | E005–E006, E008–E009, E024–E027, E033–E035 | BB12/13/21 passed scoped/unrelated fixture outcomes, 500/501 lengths and third-question limit. Corrected-context addendum passed provider-input/state checks; its fixture answer is not scientific-content evidence WB03 verifies previous/corrected/legacy context, safe failures and real Stage 7 invariance. |
+| F9 | Executed | Partial | E004–E006, E008, E014–E027, E033–E035 | Black-box stored 42 sessions/25 adaptations/28 events/7 follow-ups; 29 detail projections match stored state. Failure injections made no writes; completed Review exact text verified. Prior bounds concurrency separate; legacy/formal WB coverage is recorded; overall synthesis remains WB05 records real legacy retrieval, correction projection and adaptation/follow-up contention. |
+| F10 | Executed | Partial | E005–E006, E008, E010–E013, E024–E027, E033–E035 | BB14/22 API foreign access/forged header and browser rejection passed; browser History exactly its own ten sessions newest-first with self-report/status/action labels. Cookie-less 400 oracle failed because public proxy provisions identity, not because of observed leakage; mobile/localised inspection remains WB02/WB05 verifies owned lookup/write/order; handler tests do not supersede public BB22. |
+| F11 | Executed | Partial | E005–E006, E008, E010–E017, E024–E027, E033–E035 | BB15/16/24 confirmed completed Review with all support/event entries, Resume rounds 0/1/2, corrected concept continuity, idempotent completion and post-completion 409. Raw clarification/preferences are not individually displayed as history fields; legacy/WB coverage is recorded; wider inspection remains WB02 verifies legal/idempotent completion, legacy normalisation and completed-response rejection. |
+| F12 | Executed | Partial | E004–E006, E008, E024–E027, E033–E035 | BB04/17 valid/invalid/unknown/type preference updates, reload and independent old/new snapshots passed; modal preserved. Language overrides did not change the profile. Wider theme/locale inspection remains WB06 verifies defaults/partial updates/write guards and real old/new immutable snapshots. |
+| F13 | Executed | Partial | E004–E006, E008–E027, E033–E035 | BB18 six failure injections and BB19 24 malformed outputs returned safe 502 with no state corruption/automatic seam retry; BB02/20–24 invalid-input boundaries executed; browser recovery passed. Fixture timers ~20s do not supersede slower live simulation abort; unresolved oracle discrepancies retained WB04 propagates eight provider faults through four operations with safe errors and no invalid save. |
 
 | Usability criterion | Execution status | Outcome | Highest severity | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- | --- |

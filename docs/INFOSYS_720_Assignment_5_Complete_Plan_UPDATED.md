@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–13 recorded, including Nathan's endorsed simulation review; Step 14 black-box completed with qualifications (`RUN-B01-20261002-BLACKBOX-01`: assessed 21 Pass, 2 Partial, 1 Fail; first API 22 Pass/2 Fail retained); Step 15 white-box testing NEXT |
+| Formal evaluation status | Steps 10–15 recorded: simulation and black-box findings retained; Step 15 WB01–WB06 structural Pass (`RUN-B01-20261002-ROOTTESTS-02`: 361 deterministic + 12 MongoDB tests; E033–E035); §18.1 full structured usability inspection NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -73,7 +73,7 @@ The central rule for the whole assignment is:
 
 ---
 
-## Current Progress Snapshot — 1 October 2026
+## Current Progress Snapshot — 2 October 2026
 
 ### Completed
 
@@ -85,6 +85,9 @@ The conceptual artefact evaluation has been completed through framework refineme
 - [x] Step 10 static analysis executed and evidence E001–E003 retained
 - [x] Step 11 dynamic API/database/provider analysis, all 15 timing attempts, and UI-01–UI-12 manual-browser observations executed
 - [x] Step 12 optimisation/bounds analysis executed; BND-01–BND-17 passed with deterministic provider instrumentation and real MongoDB concurrency
+- [x] Step 13 simulation executed and Nathan's review endorsed; mixed findings retained (E018–E023)
+- [x] Step 14 black-box executed; 21 assessed Pass, 2 Partial, 1 Fail retained (E024–E027)
+- [x] Step 15 white-box executed; WB01–WB06 structural Pass, 361 deterministic + 12 MongoDB tests, application-wide coverage and limitations retained (E033–E035)
 - [x] Primary conceptual artefact selected
 - [x] Conceptual criteria defined
 - [x] GenAI interview completed and raw transcript preserved
@@ -144,7 +147,15 @@ evaluation/
 
 ### Next major task
 
-> **Execute Step 15 white-box testing NEXT. Step 14 accounted for BB01–BB24 through real HTTP/proxy/database and controlled-provider browser workflows. Retain its oracle discrepancies and fixture-content limitations; do not silently fix B01 or erase the simulation failures. Execute WB01–WB06 and retain exact test/command/coverage/database evidence.**
+Technical test workflow amended on 2 October 2026: active tests now live in the
+root `burmese_stem_ai/tests/`; normal npm commands run 361 deterministic and
+12 isolated MongoDB tests. Production code remains B01, with a separately
+versioned test/configuration tree. Full application coverage is available at
+`burmese_stem_ai/coverage/index.html` (42 files; 72.54% statements / 76.37%
+branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
+(E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
+
+> **Execute the §18.1 U1–U9 structured usability inspection NEXT. Step 15 WB01–WB06 is complete: 361 deterministic and 12 isolated MongoDB named tests passed; application-wide coverage is 72.54% statements / 76.37% branches. See [white-box evaluation](../evaluation/02_design/white_box/white_box_evaluation.md). Retain uncovered-path notes, black-box partials/oracle failure and simulation findings. After the usability checkpoint, continue to Step 16's informed argument.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -152,7 +163,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is Step 15 white-box testing, not another black-box or simulation generation run.
+1. Start at the first heading marked **NEXT**; currently this is the §18.1 structured usability checkpoint, not another black-box, white-box or simulation generation run.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1561,7 +1572,7 @@ or 3 = task blocked/materially misleading. Pass requires all planned checks and
 no severity 2/3 issue; Partial means incomplete coverage or severity 2; Fail
 means severity 3. Retain severity 1 issues even when the criterion passes.
 
-## 18.1 Usability execution checkpoint
+## 18.1 Usability execution checkpoint — NEXT
 
 Complete this checkpoint after Steps 14–15 have made the required states
 repeatable and before Step 16 synthesis.
@@ -2237,7 +2248,19 @@ for content or persistence judgement.
 
 ---
 
-# 24. Step 15 — White-Box Testing — NEXT
+# 24. Step 15 — White-Box Testing — COMPLETED WITH SCOPE NOTES
+
+Executed 2 October 2026: `RUN-B01-20261002-ROOTTESTS-02`, E033–E035.
+WB01–WB06 structural Pass: 361 deterministic tests and 12 separate real
+MongoDB tests; all 39 planned route/round combinations executed against the
+root project. Application-wide V8 coverage spans 42 files: 72.54% statements,
+76.37% branches, 64.00% functions and 73.75% lines. Lint/TypeScript passed.
+Coverage gaps and evidence boundaries are disclosed in
+[white_box_evaluation.md](../evaluation/02_design/white_box/white_box_evaluation.md).
+Production files match B01; tests/configuration have profile ROOTTESTS-02.
+The superseded source-copy run and duplicate helpers were removed under user
+direction. These results do not establish content quality, resolve black-box/
+simulation findings or complete browser usability.
 
 ## 24.1 Goal and outputs
 
@@ -3065,7 +3088,7 @@ Better:
 - [x] Optimisation/bounds
 - [x] Simulation (endorsed review; mixed findings retained)
 - [x] Black-box (completed with oracle/content-scope qualifications)
-- [ ] White-box
+- [x] White-box (WB01–WB06 structural Pass; scope notes retained)
 - [ ] Informed argument
 - [ ] Scenario
 - [ ] SLR
@@ -3245,11 +3268,13 @@ first API 22 Pass/2 Fail; assessed 21 Pass/2 Partial/1 Fail, preserving oracle
 discrepancies and fixture-content limits. Nine supplementary HTTP attempts and
 44 Chrome observations are retained. F1–F13 updated; B01 source unchanged.
 
-### C7 / Step 15 — NEXT
-Execute WB01–WB06. Preserve exact test versions, commands, output, coverage
-scope, real-database evidence, and uncovered branches.
+### C7 / Step 15 — COMPLETED WITH SCOPE NOTES
+WB01–WB06 executed in `RUN-B01-20261002-ROOTTESTS-02` (E033–E035):
+361 deterministic + 12 MongoDB tests passed; all 39 route/round combinations.
+Application-wide V8 coverage 72.54% statements / 76.37% branches across 42 files; lint/TypeScript passed.
+Coverage gaps and root captures retained; production B01 unchanged. Structural Pass is not a language/content/usability Pass.
 
-### C8 / §18.1 usability execution checkpoint
+### C8 / §18.1 usability execution checkpoint — NEXT
 Execute U1–U9 across the required screens, states, locales, themes, desktop/
 mobile viewports, and keyboard interactions. Save inspection sheets and issue
 evidence under `evaluation/02_design/usability/`, then update the protocol's
@@ -3336,25 +3361,23 @@ matrix.
 
 Use this request next:
 
-> Execute Step 15 using
-> `evaluation/02_design/white_box/white_box_test_cases.md`.
-> Execute WB01–WB06 against B01, retaining exact tests, commands, first outcomes,
-> scoped coverage, real-database evidence and uncovered branches. Do not alter
-> the frozen application, silently repair the black-box oracles, or replace
-> simulation failures. Keep structural coverage separate from content quality.
+> Execute the §18.1 U1–U9 structured usability inspection using protocol 2.1
+> §5.4. Retain the required screen/state/locale/theme/viewport and keyboard
+> evidence under `evaluation/02_design/usability/`. Keep evaluator observation
+> separate from participant research. Do not overwrite earlier black-box,
+> white-box or simulation evidence. After the checkpoint, proceed to Step 16.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Execute WB01–WB06 for Step 15 and preserve exact test evidence.`
-2. `Execute the U1–U9 structured usability inspection from protocol 2.1.`
-3. `Complete Step 16 using only recorded design evidence.`
-4. `Execute the Step 17 Photosynthesis scenario without changing inputs to
+1. `Execute the U1–U9 structured usability inspection from protocol 2.1.`
+2. `Complete Step 16 using only recorded design evidence.`
+3. `Execute the Step 17 Photosynthesis scenario without changing inputs to
    force success.`
-5. `Complete Step 18 literature evaluation with source locators and transfer
+4. `Complete Step 18 literature evaluation with source locators and transfer
    limitations.`
-6. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
+5. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3417,7 +3440,7 @@ Only after Steps 20–22 are complete:
 - [x] Optimisation/bounds analysis executed
 - [x] Simulation executed and reviewed (mixed findings retained)
 - [x] Black-box tests executed (qualifications retained; E024–E027)
-- [ ] White-box tests executed
+- [x] White-box tests executed (WB01–WB06 structural Pass; E033–E035)
 - [ ] Informed argument completed
 - [ ] Scenario completed
 - [ ] Academic literature used
