@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–12 completed against B01; Step 13 completed with findings: 55 attempts accounted for (44 technical Pass, 8 controlled ambiguity, 3 Fail); Nathan endorsed all 55 worksheets/91 output assessments on 2 October 2026 (18 content Pass, 71 Partial, 2 Fail); Step 14 black-box testing NEXT |
+| Formal evaluation status | Steps 10–13 recorded, including Nathan's endorsed simulation review; Step 14 black-box completed with qualifications (`RUN-B01-20261002-BLACKBOX-01`: assessed 21 Pass, 2 Partial, 1 Fail; first API 22 Pass/2 Fail retained); Step 15 white-box testing NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -144,7 +144,7 @@ evaluation/
 
 ### Next major task
 
-> **Execute Step 14 black-box testing NEXT. Step 13 simulation and content review are complete with mixed findings and retained failures. Nathan confirmed reviewing and accepting all worksheets and authorised typed sign-offs on 2 October 2026. Freeze expected assertions, then execute BB01–BB24 against B01; retain first attempts and controlled failures.**
+> **Execute Step 15 white-box testing NEXT. Step 14 accounted for BB01–BB24 through real HTTP/proxy/database and controlled-provider browser workflows. Retain its oracle discrepancies and fixture-content limitations; do not silently fix B01 or erase the simulation failures. Execute WB01–WB06 and retain exact test/command/coverage/database evidence.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -152,7 +152,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is Step 14 black-box testing, not another simulation generation run.
+1. Start at the first heading marked **NEXT**; currently this is Step 15 white-box testing, not another black-box or simulation generation run.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1984,7 +1984,27 @@ F3, F4, F6, F7, F9, and F13 are updated as applicable.
 
 ---
 
-# 23. Step 14 — Black-Box Testing — NEXT
+# 23. Step 14 — Black-Box Testing — COMPLETED WITH QUALIFICATIONS
+
+Run `RUN-B01-20261002-BLACKBOX-01` executed all 24 cases using real production
+HTTP/proxy/services/DAOs and isolated MongoDB, with an evaluation-only controlled
+provider seam. First API outcomes: 22 Pass/2 Fail, 370 assertions. Assessed
+cases: 21 Pass/2 Partial/1 Fail; fixture semantic novelty is Not assessed,
+and the public missing-identity 400 oracle failed because the proxy provisions
+an anonymous cookie. An unsupported supplemental zero-round ambiguity
+expectation also failed; generated clarification consumed a bounded round.
+First failures and post-observation addendum are retained.
+
+Forty-four browser observations/45 screenshots covered all Stage6B choices,
+skip/back, language modes/overrides, History, full Review, Resume at rounds
+0/1/2 and error recovery. Four failed display predicates and their explicit
+rechecks remain recorded. Final export retained 42 synthetic sessions,
+25 adaptations, 28 response events and seven follow-ups. Source diff against
+B01 is empty; isolated servers are stopped. No external provider call or new
+human content approval was made. E024–E027 index the evidence. See
+[black-box analysis](../evaluation/02_design/black_box/black_box_analysis.md),
+[metadata](../evaluation/02_design/black_box/00_run_metadata.md), and
+[case register](../evaluation/02_design/black_box/black_box_results.csv).
 
 ## 23.1 Goal and outputs
 
@@ -2217,7 +2237,7 @@ for content or persistence judgement.
 
 ---
 
-# 24. Step 15 — White-Box Testing
+# 24. Step 15 — White-Box Testing — NEXT
 
 ## 24.1 Goal and outputs
 
@@ -3036,15 +3056,15 @@ Better:
 - [x] Framework refinement decisions
 - [x] Optional expert intentionally skipped
 
-### Design — pending
+### Design — partially completed; remaining methods not yet complete
 
 - [ ] FURPS Functionality
 - [ ] FURPS Usability
-- [ ] Static analysis
-- [ ] Dynamic analysis
-- [ ] Optimisation/bounds
-- [ ] Simulation
-- [ ] Black-box
+- [x] Static analysis
+- [x] Dynamic analysis (recorded qualifications retained)
+- [x] Optimisation/bounds
+- [x] Simulation (endorsed review; mixed findings retained)
+- [x] Black-box (completed with oracle/content-scope qualifications)
 - [ ] White-box
 - [ ] Informed argument
 - [ ] Scenario
@@ -3219,11 +3239,13 @@ retained. Nathan endorsed the 55 worksheets/91 output-level ratings on
 Authorised typed sign-offs and AI assistance are disclosed. Do not silently
 rerun or replace failures; completion does not imply all criteria passed.
 
-### C6 / Step 14 — NEXT
-Freeze and execute BB01–BB24 through public boundaries. Update F1–F13 only
-from retained evidence.
+### C6 / Step 14 — COMPLETED WITH QUALIFICATIONS
+All BB01–BB24 accounted for in `RUN-B01-20261002-BLACKBOX-01` (E024–E027):
+first API 22 Pass/2 Fail; assessed 21 Pass/2 Partial/1 Fail, preserving oracle
+discrepancies and fixture-content limits. Nine supplementary HTTP attempts and
+44 Chrome observations are retained. F1–F13 updated; B01 source unchanged.
 
-### C7 / Step 15
+### C7 / Step 15 — NEXT
 Execute WB01–WB06. Preserve exact test versions, commands, output, coverage
 scope, real-database evidence, and uncovered branches.
 
@@ -3304,7 +3326,7 @@ Recommended order:
 
 # 40. Step 31 — How to Continue From Here
 
-The master plan, protocol, B01 baseline, and Steps 10–12 evidence are ready. Do
+The master plan, protocol, B01 baseline, and Steps 10–14 evidence are ready. Do
 not rerun them unless the baseline/protocol changes or a recorded regression
 requires it. The later structured usability checkpoint still covers mobile,
 Burmese UI, Dark theme, keyboard interaction and the wider preferences/state
@@ -3314,26 +3336,25 @@ matrix.
 
 Use this request next:
 
-> Execute Step 14 using
-> `evaluation/02_design/black_box/black_box_test_cases.md`.
-> Freeze expected assertions, then execute BB01–BB24 against B01 through public
-> boundaries. Retain exact commands, first outcomes, state/provider evidence,
-> and limitations; update F1–F13 only from recorded results. Do not alter the
-> frozen application or silently replace simulation failures.
+> Execute Step 15 using
+> `evaluation/02_design/white_box/white_box_test_cases.md`.
+> Execute WB01–WB06 against B01, retaining exact tests, commands, first outcomes,
+> scoped coverage, real-database evidence and uncovered branches. Do not alter
+> the frozen application, silently repair the black-box oracles, or replace
+> simulation failures. Keep structural coverage separate from content quality.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Freeze expected assertions, then execute BB01–BB24 for Step 14.`
-2. `Execute WB01–WB06 for Step 15 and preserve exact test evidence.`
-3. `Execute the U1–U9 structured usability inspection from protocol 2.1.`
-4. `Complete Step 16 using only recorded design evidence.`
-5. `Execute the Step 17 Photosynthesis scenario without changing inputs to
+1. `Execute WB01–WB06 for Step 15 and preserve exact test evidence.`
+2. `Execute the U1–U9 structured usability inspection from protocol 2.1.`
+3. `Complete Step 16 using only recorded design evidence.`
+4. `Execute the Step 17 Photosynthesis scenario without changing inputs to
    force success.`
-6. `Complete Step 18 literature evaluation with source locators and transfer
+5. `Complete Step 18 literature evaluation with source locators and transfer
    limitations.`
-7. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
+6. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3392,10 +3413,10 @@ Only after Steps 20–22 are complete:
 - [ ] FURPS Functionality evaluated
 - [ ] FURPS Usability evaluated
 - [x] Static analysis executed (`RUN-B01-20260930-STATIC-01`)
-- [ ] Dynamic analysis executed
-- [ ] Optimisation/bounds analysis executed
-- [ ] Simulation executed
-- [ ] Black-box tests executed
+- [x] Dynamic analysis executed (qualifications retained)
+- [x] Optimisation/bounds analysis executed
+- [x] Simulation executed and reviewed (mixed findings retained)
+- [x] Black-box tests executed (qualifications retained; E024–E027)
 - [ ] White-box tests executed
 - [ ] Informed argument completed
 - [ ] Scenario completed
@@ -3422,8 +3443,8 @@ Only after Steps 20–22 are complete:
 - [x] Step 10 build/lint outputs preserved
 - [x] Step 10 deterministic/integration outputs preserved
 - [x] Step 10 scoped coverage summary saved
-- [ ] Simulation inputs saved
-- [ ] Simulation outputs saved
+- [x] Simulation inputs saved
+- [x] Simulation outputs saved and review endorsed
 - [ ] Timing data saved
 - [x] GenAI transcript saved
 - [x] GenAI analysis saved

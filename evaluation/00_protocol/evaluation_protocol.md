@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–12 recorded; Step 13 execution and Nathan's content review completed with mixed findings (2 October 2026); Step 14 black-box testing next; remaining evaluations not yet complete |
+| Status | B01 frozen; Steps 10–13 recorded (including endorsed simulation content); Step 14 black-box completed with qualifications on 2 October 2026; Step 15 white-box testing next; remaining evaluations not yet complete |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -258,7 +258,8 @@ unreachable. This is a bounded inspection, not a full WCAG conformance audit.
 The registers began as pre-execution records. Step 11 runtime/browser evidence,
 Step 12 bounds evidence, and Step 13 live artificial simulation now provide partial technical support for F1–F13
 and U1–U9. Nathan's simulation content review is completed and endorsed on
-2 October 2026 (E022–E023). The required black-box, white-box, full
+2 October 2026 (E022–E023). Step 14 public HTTP/browser black-box execution is
+accounted for with qualifications (E024–E027). The required white-box, full
 locale/theme/viewport matrix, keyboard inspection and participant evidence are
 not complete. The rows therefore remain Partial rather than being promoted to
 final Pass outcomes.
@@ -285,33 +286,48 @@ all-content pass. Review clock times are not recorded; AI source consultation
 is not attributed to Nathan. No learner-benefit or independent-review claim
 is made. E018–E021 retain their historical capture state unchanged.
 
+Black-box run `RUN-B01-20261002-BLACKBOX-01` executed all BB01–BB24 using real
+production-build HTTP/proxy/services/DAOs, an isolated MongoDB database and
+controlled provider fixtures. First API outcomes were 22 Pass/2 Fail across
+370 assertions. The assessed register is 21 Pass/2 Partial/1 Fail: BB07/BB08
+retain fixture-content quality limits, and BB22 retains the frozen missing-
+identity oracle failure (the public proxy instead issues a scoped cookie).
+A supplemental ambiguity expectation incorrectly assumed no generated
+clarification/round increment; the first failure and post-observation addendum
+are both retained. Nine supplementary HTTP attempts/11 checks passed.
+Forty-four Chrome observations/45 screenshots cover desktop English/Light
+UI, all support-language modes, routes/skip/back, History, Review/Resume and
+recovery. Four false browser predicates and explicit rechecks are retained;
+they do not establish app defects. No external provider call or new human
+content endorsement occurred. See [black-box analysis](../02_design/black_box/black_box_analysis.md).
+
 | Functionality criterion | Execution status | Outcome | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- |
-| F1 | Executed | Partial | E004–E006, E008, E010–E013 | Valid live inquiry and visible Home/session creation passed; invalid/boundary BB cases remain pending |
-| F2 | Executed | Partial | E005–E006, E008, E018–E023 | Nathan endorsed appropriate contextual clarification for current/network, with English-only/no-session limitations. Initial cell/inheritance outputs name a domain but do not clearly invite confirmation or contrast other senses: contextual score 1/Partial. SIM-CM-13/16 unchanged corrections remain rejected (502); other separate corrections lacked sessions. No simulation correction-path Pass claimed |
-| F3 | Executed | Partial | E005–E006, E008, E010–E013, E018–E023 | Three language-help profile modes passed payload/override and unchanged-profile assertions. Nathan's endorsed review records eight unrelated-script outputs, material mass/net-charge wording defects, charge/rate terminology limitations and limited term-focused revision. Language adequacy is mixed, not universally adequate; earlier browser evidence remains separate |
-| F4 | Executed | Partial | E004–E006, E008, E010–E013, E018–E023 | 47 initial sessions and 44 persisted adaptations retained as exact text; all 91 outputs assessed and endorsed by Nathan: 18 Pass, 71 Partial, 2 Fail. SIM04-B initial and SIM08-B initial remain material content failures; NA/missing outputs are not counted as delivered content. Earlier rendering evidence is separate; no learning effectiveness claim |
-| F5 | Executed | Partial | E005–E006, E008, E010–E017 | High, default, simpler, language, conceptual and mismatch bound inputs persisted correctly in tested cases, and five Stage 6B options/skip/back rendered; the complete invalid-combination public-boundary matrix remains pending |
-| F6 | Executed | Partial | E004–E006, E008, E014–E023 | Nathan endorsed new settings/perspectives where present, but several simpler/conceptual/language revisions repeat earlier support or leave terminology unresolved. Fade/cap generate no content. One conceptual timeout and two same-interpretation correction failures remain Fail; full BB matrix not yet executed |
-| F7 | Executed | Partial | E004–E006, E008, E010–E021 | BND-01–BND-17 plus simulation stored rounds ≤2; 41 observed fade/cap steps made zero provider calls. SIM05-C cap was not reached after timeout. BB/WB corroboration remains |
-| F8 | Executed | Partial | E005–E006, E008–E009 | Relevant/unrelated follow-ups behaved and persisted as expected; length/count boundaries pending |
-| F9 | Executed | Partial | E004–E006, E008, E014–E021 | Simulation retained 47 sessions, 44 adaptations and 85 response events with reconstructable chronology; three failed response steps left documents unchanged. Concurrency remains supported by separate bounds run; legacy/broader reconstruction pending |
-| F10 | Executed | Partial | E005–E006, E008, E010–E013 | History API was owner-scoped/newest-first and the captured History UI used self-reported-support/status/action labels; broader state/ownership UI coverage pending |
-| F11 | Executed | Partial | E005–E006, E008, E010–E017 | Visible Review/Resume plus explicit completion from rounds 0/2, idempotent repeat and post-completion rejection passed; remaining status/legacy variants pending |
-| F12 | Executed | Partial | E004–E006, E008 | Valid preferences and unchanged language-route profile passed; invalid values, reload and snapshot comparisons pending |
-| F13 | Executed | Partial | E004–E006, E008–E021 | Prior controlled failures/recovery plus simulation timeout/invalid unchanged corrections returned safe 502 and preserved state; measured abort elapsed time exceeded configured budget. Intended-route failures remain Fail; broader invalid-input matrix pending |
+| F1 | Executed | Partial | E004–E006, E008, E010–E013, E024–E027 | BB01/02/20 passed real HTTP creation, invalid/malformed inquiry and 1000/1001 boundaries without rejected-input writes/provider-seam calls; browser creation/recovery observed. Controlled provider is not live content validation; overall synthesis/WB remain |
+| F2 | Executed | Partial | E005–E006, E008, E018–E027 | BB03/08 passed controlled context/ambiguity and correction trace through HTTP/browser; addendum verified corrected active context. This does not erase simulation cell/inheritance qualification score 1, no-session limits or SIM-CM-13/16 live correction failures |
+| F3 | Executed | Partial | E005–E006, E008, E010–E013, E018–E027 | BB04 and language choices displayed all three preference modes and bilingual overrides, with original snapshots retained. Exact initial fixture assessment already endorsed; new fixture adaptations are not qualified language-quality evidence. Simulation's foreign-script/material wording defects remain |
+| F4 | Executed | Partial | E004–E006, E008, E010–E013, E018–E027 | BB05 browser support structure and revealable hint passed with previously endorsed initial fixture. Simulation's 91 ratings remain 18 Pass/71 Partial/2 Fail, including SIM04-B/SIM08-B initial failures. No learning effectiveness claim |
+| F5 | Executed | Partial | E005–E006, E008, E010–E017, E024–E027 | All five Stage6B options, default/skip/back, clarification requirement and BB23 invalid/conflicting-response public inputs executed; correct routes/state returned. Fixture semantic quality not inferred; wider localisation/WB remain |
+| F6 | Executed | Partial | E004–E006, E008, E014–E027 | BB06–11 bounded route/state/persistence and browser routes passed mechanically; BB07/08 Partial because prefixed fixture paragraphs do not prove meaningful novelty. Generated ambiguous clarification consumes a bounded round; unsupported zero-round assertion retained as Fail. Simulation timeout/correction failures remain |
+| F7 | Executed | Partial | E004–E006, E008, E010–E027 | BB06/09–11/21/24 corroborate fade/cap, two-adaptation/two-question limits and post-completion rejection with provider-seam counts, state and UI. All 42 black-box stored sessions stay within bounds. Formal WB corroboration remains; no pedagogical optimality claim |
+| F8 | Executed | Partial | E005–E006, E008–E009, E024–E027 | BB12/13/21 passed scoped/unrelated fixture outcomes, 500/501 lengths and third-question limit. Corrected-context addendum passed provider-input/state checks; its fixture answer is not scientific-content evidence |
+| F9 | Executed | Partial | E004–E006, E008, E014–E027 | Black-box stored 42 sessions/25 adaptations/28 events/7 follow-ups; 29 detail projections match stored state. Failure injections made no writes; completed Review exact text verified. Prior bounds concurrency separate; legacy/formal WB coverage remains |
+| F10 | Executed | Partial | E005–E006, E008, E010–E013, E024–E027 | BB14/22 API foreign access/forged header and browser rejection passed; browser History exactly its own ten sessions newest-first with self-report/status/action labels. Cookie-less 400 oracle failed because public proxy provisions identity, not because of observed leakage; mobile/localised inspection remains |
+| F11 | Executed | Partial | E005–E006, E008, E010–E017, E024–E027 | BB15/16/24 confirmed completed Review with all support/event entries, Resume rounds 0/1/2, corrected concept continuity, idempotent completion and post-completion 409. Raw clarification/preferences are not individually displayed as history fields; legacy/WB remain |
+| F12 | Executed | Partial | E004–E006, E008, E024–E027 | BB04/17 valid/invalid/unknown/type preference updates, reload and independent old/new snapshots passed; modal preserved. Language overrides did not change the profile. Wider theme/locale inspection remains |
+| F13 | Executed | Partial | E004–E006, E008–E027 | BB18 six failure injections and BB19 24 malformed outputs returned safe 502 with no state corruption/automatic seam retry; BB02/20–24 invalid-input boundaries executed; browser recovery passed. Fixture timers ~20s do not supersede slower live simulation abort; unresolved oracle discrepancies retained |
 
 | Usability criterion | Execution status | Outcome | Highest severity | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- | --- |
-| U1 | Executed | Partial | 0 | E010–E013 | Inquiry entry and purpose were evident in captured desktop Home; invalid/loading and keyboard paths remain pending |
-| U2 | Executed | Partial | 0 | E010–E013 | Structured explanation, example, technical, reflection and hint areas were distinguishable in English/Light desktop; other themes/locales/mobile pending |
-| U3 | Executed | Partial | 0 | E010–E013 | Stage 6A, five Stage 6B choices, continue, skip and back were visible; every choice, consequence wording and keyboard interaction remain pending |
-| U4 | Executed | Partial | 0 | E010–E013 | Adapted content, route/history, limit, error and recovered state were visible; transient loading/adapting feedback was not captured |
-| U5 | Executed | Partial | 0 | E010–E013 | Home, History, Review/Resume and primary navigation were observed without a dead end; preferences-dialog and full matrix inspection remain pending |
-| U6 | Executed | Partial | 0 | E010–E013 | English+Burmese support rendered together without visible clipping in the captured desktop view; Burmese UI, mobile, Dark theme and linguistic quality remain pending |
-| U7 | Executed | Partial | 0 | E010–E013 | Self-reported support, route/history, limit, completion and review recommendation were distinguishable in captured states; broader matrix pending |
-| U8 | Executed | Partial | 0 | E010–E013 | Controlled provider error was learner-safe and recoverable with the same question; localisation and other error classes remain pending |
-| U9 | Executed | Partial | 0 | E010–E013 | Labels and interaction patterns were consistent across captured English desktop screens; other locales, themes, mobile and keyboard remain pending |
+| U1 | Executed | Partial | 0 | E010–E013, E025–E026 | Desktop inquiry, disabled empty submit, ambiguity and provider-error recovery observed; comprehensive loading/keyboard/localised matrix remains |
+| U2 | Executed | Partial | 0 | E010–E013, E025–E026 | All initial support areas, revealed hint, stored adaptations and follow-ups distinguishable in English/Light desktop; other themes/locales/mobile remain |
+| U3 | Executed | Partial | 0 | E010–E013, E025–E026 | All five Stage6B choices, both default skips and Back exercised, including bounded clarification input; full consequence-wording/keyboard/localisation matrix remains |
+| U4 | Executed | Partial | 0 | E010–E013, E025–E026 | Route/history, language overrides, limit and controlled retry/recovery visible in desktop black-box workflows; comprehensive transient loading/adapting and keyboard matrix remains |
+| U5 | Executed | Partial | 0 | E010–E013, E025–E026 | Home, History, Review/Resume, modal preference save/reload, foreign-session error and Back-to-History observed; full multi-viewport/keyboard matrix remains |
+| U6 | Executed | Partial | 0 | E010–E013, E022–E023, E025–E026 | All support-language presentations and bilingual overrides visible in desktop English UI; simulation linguistic quality mixed. Burmese UI/mobile/Dark/full inspection remain |
+| U7 | Executed | Partial | 0 | E010–E013, E025–E026 | Fade/route/round/history/limit/completion and corrected previous/current concept visible after reload. Raw clarification is stored but not shown as an event field; broader matrix remains |
+| U8 | Executed | Partial | 0 | E010–E013, E025–E026 | Controlled initial/adaptation/follow-up failures and malformed-output recovery observed, retaining questions/state; localisation and comprehensive error inspection remain |
+| U9 | Executed | Partial | 0 | E010–E013, E025–E026 | Consistent observed English desktop navigation/control patterns, including preferences and recovery; other locales/themes/mobile/keyboard remain |
 
 ## 6. Evaluation methods and procedures
 
@@ -601,7 +617,7 @@ A bounded implementation claim is strongly supported only when relevant external
 - [ ] C1–C5 evaluated using GenAI, literature, informed argument and conceptual scenario.
 - [ ] Every F1–F13 and U1–U9 row has an execution status and outcome; every Pass/Partial/Fail links to retained evidence, and every Blocked/Not applicable/Not assessed item has a written reason.
 - [ ] Every planned black-box, white-box and usability-inspection case is executed or explicitly accounted for.
-- [ ] Generated-content judgements identify the assessor, competence boundary and reference basis.
+- [x] Generated-content judgements identify the assessor, competence boundary and reference basis (endorsed simulation E022–E023; black-box fixture semantic limits explicitly Not assessed).
 - [ ] Static, dynamic, bounds, simulation, black-box, white-box, design argument, design scenario and design literature methods recorded.
 - [ ] All 48 planned simulation sessions and 15 timing attempts accounted for, including blocked/failed cases and deviations.
 - [ ] Raw evidence, logs, actual outputs, state records and all retries retained and indexed.

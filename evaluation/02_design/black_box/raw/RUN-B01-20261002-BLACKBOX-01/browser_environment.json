@@ -1,0 +1,16 @@
+{
+  "browser": "Google Chrome",
+  "version": "154.0.8037.97",
+  "versionEvidence": "Installed Google Chrome.app Info.plist read via PlistBuddy",
+  "surface": "Chrome extension; dedicated bb-b01.localhost hostname; browser-minted anonymous learner separate from API owners A/B",
+  "viewport": {
+    "height": 992,
+    "htmlClass": "__variable_ed3508 __variable_c29908 h-full antialiased",
+    "htmlLang": "en",
+    "width": 1654
+  },
+  "locale": "English UI",
+  "theme": "Light",
+  "participantStudy": false,
+  "capturedAt": "2026-10-02T06:14:01.458Z"
+}
