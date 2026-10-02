@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; consolidated pre-execution oracle prepared; formal evaluation not run |
+| Status | B01 frozen; Steps 10–12 recorded; Step 13 execution and Nathan's content review completed with mixed findings (2 October 2026); Step 14 black-box testing next; remaining evaluations not yet complete |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -23,7 +23,7 @@
 
 Evaluate whether the conceptual framework and implemented proof of concept provide a coherent, literature-grounded and demonstrable response to terminology support, conceptual explanation, and adaptive scaffolding requirements for Burmese-speaking STEM learners.
 
-This protocol defines criteria, procedures, planned coverage, decision rules and recording templates **before evaluation execution**. It contains no evaluation results. Source/code inspection used to prepare the protocol is not a substitute for executing its tests. All proposed counts and thresholds below are protocol choices, not claims that the assignment mandates them.
+This protocol defined criteria, procedures, planned coverage, decision rules and recording templates **before evaluation execution**. Its execution registers are subsequently updated only from retained evidence; the original acceptance rules are unchanged. Source/code inspection used to prepare the protocol is not a substitute for executing its tests. All proposed counts and thresholds below are protocol choices, not claims that the assignment mandates them.
 
 The evaluation distinguishes:
 
@@ -255,28 +255,51 @@ unreachable. This is a bounded inspection, not a full WCAG conformance audit.
 
 ### 5.5 FURPS execution registers
 
-The registers began as pre-execution records. Step 11 runtime/browser evidence
-and Step 12 bounds evidence now provide partial technical support for F1–F13
-and U1–U9. The required black-box, simulation, white-box, content-review, full
+The registers began as pre-execution records. Step 11 runtime/browser evidence,
+Step 12 bounds evidence, and Step 13 live artificial simulation now provide partial technical support for F1–F13
+and U1–U9. Nathan's simulation content review is completed and endorsed on
+2 October 2026 (E022–E023). The required black-box, white-box, full
 locale/theme/viewport matrix, keyboard inspection and participant evidence are
 not complete. The rows therefore remain Partial rather than being promoted to
 final Pass outcomes.
 
+Simulation execution `RUN-B01-20261001-SIMULATION-02` accounted for all 55
+planned attempts (48 core plus seven separate routes): 44 technical Pass,
+eight controlled initial ambiguity outcomes without sessions, and three
+technical Fail. SIM05-C aborted generation (20-second configured timer,
+52.825-second measured fetch); SIM-CM-13/16 rejected unchanged interpretations
+labelled corrected. Failed response steps left stored state unchanged. The
+aborted evaluation-runner attempt is retained separately. E018–E021 link exact
+text, provider calls, stored documents and references as captured at execution.
+See [simulation analysis](../02_design/simulation/simulation_analysis.md) and
+[qualified human review](../02_design/simulation/qualified_human_judgement.md).
+This is route-handler/service/database evidence, not a browser or deployed
+HTTP/middleware run. Nathan subsequently confirmed reviewing and accepting
+all 55 AI-assisted worksheets and authorised typed sign-offs on 2 October
+2026. The 91 delivered-output assessments are 18 Pass, 71 Partial and two Fail;
+his saved SIM04-A amendment is preserved. The eight ambiguity assessments and
+three technical failures retain their limitations. E022–E023 identify the
+[dated approval](../02_design/simulation/review_completion/approval_record.md)
+and endorsed review manifest. Step 13 is complete with findings, not an
+all-content pass. Review clock times are not recorded; AI source consultation
+is not attributed to Nathan. No learner-benefit or independent-review claim
+is made. E018–E021 retain their historical capture state unchanged.
+
 | Functionality criterion | Execution status | Outcome | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- |
 | F1 | Executed | Partial | E004–E006, E008, E010–E013 | Valid live inquiry and visible Home/session creation passed; invalid/boundary BB cases remain pending |
-| F2 | Executed | Partial | E005–E006, E008 | One bounded `cell` reinterpretation corrected to biology; fixed ambiguity corpus/content review pending |
-| F3 | Executed | Partial | E005–E006, E008, E010–E013 | Language route returned bilingual payload/override without profile mutation and rendered both languages; preference modes and qualified Burmese judgement pending |
-| F4 | Executed | Partial | E004–E006, E008, E010–E013 | Initial sections and hint interaction were visible; meaningfulness and content-quality evaluation remain pending |
+| F2 | Executed | Partial | E005–E006, E008, E018–E023 | Nathan endorsed appropriate contextual clarification for current/network, with English-only/no-session limitations. Initial cell/inheritance outputs name a domain but do not clearly invite confirmation or contrast other senses: contextual score 1/Partial. SIM-CM-13/16 unchanged corrections remain rejected (502); other separate corrections lacked sessions. No simulation correction-path Pass claimed |
+| F3 | Executed | Partial | E005–E006, E008, E010–E013, E018–E023 | Three language-help profile modes passed payload/override and unchanged-profile assertions. Nathan's endorsed review records eight unrelated-script outputs, material mass/net-charge wording defects, charge/rate terminology limitations and limited term-focused revision. Language adequacy is mixed, not universally adequate; earlier browser evidence remains separate |
+| F4 | Executed | Partial | E004–E006, E008, E010–E013, E018–E023 | 47 initial sessions and 44 persisted adaptations retained as exact text; all 91 outputs assessed and endorsed by Nathan: 18 Pass, 71 Partial, 2 Fail. SIM04-B initial and SIM08-B initial remain material content failures; NA/missing outputs are not counted as delivered content. Earlier rendering evidence is separate; no learning effectiveness claim |
 | F5 | Executed | Partial | E005–E006, E008, E010–E017 | High, default, simpler, language, conceptual and mismatch bound inputs persisted correctly in tested cases, and five Stage 6B options/skip/back rendered; the complete invalid-combination public-boundary matrix remains pending |
-| F6 | Executed | Partial | E004–E006, E008, E014–E017 | Deterministic routes and provider-call permission matched the tested fade/generated/capped branches; content differentiation and the full BB/simulation matrix remain pending |
-| F7 | Executed | Partial | E004–E006, E008, E010–E017 | BND-01–BND-17 passed: rounds 0–2, all cap routes, fade at 0/1/2, completion, idempotence, post-completion rejection and same-snapshot races preserved the bound; planned BB/WB corroboration remains |
+| F6 | Executed | Partial | E004–E006, E008, E014–E023 | Nathan endorsed new settings/perspectives where present, but several simpler/conceptual/language revisions repeat earlier support or leave terminology unresolved. Fade/cap generate no content. One conceptual timeout and two same-interpretation correction failures remain Fail; full BB matrix not yet executed |
+| F7 | Executed | Partial | E004–E006, E008, E010–E021 | BND-01–BND-17 plus simulation stored rounds ≤2; 41 observed fade/cap steps made zero provider calls. SIM05-C cap was not reached after timeout. BB/WB corroboration remains |
 | F8 | Executed | Partial | E005–E006, E008–E009 | Relevant/unrelated follow-ups behaved and persisted as expected; length/count boundaries pending |
-| F9 | Executed | Partial | E004–E006, E008, E014–E017 | Tested transitions and both same-snapshot concurrency cases preserved atomic stored counts; legacy and broader route reconstruction remain pending |
+| F9 | Executed | Partial | E004–E006, E008, E014–E021 | Simulation retained 47 sessions, 44 adaptations and 85 response events with reconstructable chronology; three failed response steps left documents unchanged. Concurrency remains supported by separate bounds run; legacy/broader reconstruction pending |
 | F10 | Executed | Partial | E005–E006, E008, E010–E013 | History API was owner-scoped/newest-first and the captured History UI used self-reported-support/status/action labels; broader state/ownership UI coverage pending |
 | F11 | Executed | Partial | E005–E006, E008, E010–E017 | Visible Review/Resume plus explicit completion from rounds 0/2, idempotent repeat and post-completion rejection passed; remaining status/legacy variants pending |
 | F12 | Executed | Partial | E004–E006, E008 | Valid preferences and unchanged language-route profile passed; invalid values, reload and snapshot comparisons pending |
-| F13 | Executed | Partial | E004–E006, E008–E017 | Ownership, scope, completed/concurrent/invalid-round conflicts, safe provider error and recovery passed; malformed output and remaining invalid inputs pending |
+| F13 | Executed | Partial | E004–E006, E008–E021 | Prior controlled failures/recovery plus simulation timeout/invalid unchanged corrections returned safe 502 and preserved state; measured abort elapsed time exceeded configured budget. Intended-route failures remain Fail; broader invalid-input matrix pending |
 
 | Usability criterion | Execution status | Outcome | Highest severity | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- | --- |

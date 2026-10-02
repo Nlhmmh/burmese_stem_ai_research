@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–12 completed against B01; Step 12 passed BND-01–BND-17 and directly instrumented the provider-call boundaries; Step 13 is next |
+| Formal evaluation status | Steps 10–12 completed against B01; Step 13 completed with findings: 55 attempts accounted for (44 technical Pass, 8 controlled ambiguity, 3 Fail); Nathan endorsed all 55 worksheets/91 output assessments on 2 October 2026 (18 content Pass, 71 Partial, 2 Fail); Step 14 black-box testing NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -144,17 +144,15 @@ evaluation/
 
 ### Next major task
 
-> **Proceed to Step 13 Simulation. Step 12 passed BND-01–BND-17, including direct provider-call instrumentation, all capped/fade boundaries, lifecycle checks, invalid-round guards, and two real-MongoDB same-snapshot races.**
+> **Execute Step 14 black-box testing NEXT. Step 13 simulation and content review are complete with mixed findings and retained failures. Nathan confirmed reviewing and accepting all worksheets and authorised typed sign-offs on 2 October 2026. Freeze expected assertions, then execute BB01–BB24 against B01; retain first attempts and controlled failures.**
 
-### Run-specific fields to record when Step 13 starts
+### Step 13 recorded execution and endorsed review
 
-The baseline is already frozen. Before the first formal command, assign the
-run ID and record evaluator, timestamp, working-tree state, and dependency mode
-for that run. Do not include secrets or API keys.
+The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and failure analysis are under `evaluation/02_design/simulation/`. E018–E021 retain the historical execution evidence; E022–E023 identify the completed review and its manifest. Nathan's user-provided competence, 91 endorsed ratings, conclusions and authorised typed sign-offs are recorded in [qualified_human_judgement.md](../evaluation/02_design/simulation/qualified_human_judgement.md) and the [approval record](../evaluation/02_design/simulation/review_completion/approval_record.md). Review clock times were not supplied and are recorded as not recorded. Source checks/AI assistance are disclosed. Application source remains identical to B01. Do not include secrets or API keys.
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is Step 13.
+1. Start at the first heading marked **NEXT**; currently this is Step 14 black-box testing, not another simulation generation run.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1854,7 +1852,28 @@ adaptations are educationally or globally optimal. Proceed to Step 13.
 
 ---
 
-# 22. Step 13 — Experimental Evaluation: Simulation — NEXT
+# 22. Step 13 — Experimental Evaluation: Simulation — COMPLETED WITH FINDINGS
+
+Execution `RUN-B01-20261001-SIMULATION-02` accounted for all 48 core attempts
+and seven separate routes: 44 technical Pass, eight initial controlled
+ambiguity outcomes with no session, three technical Fail. Exact generated
+text, provider calls and before/after documents are retained. SIM05-C timed
+out/aborted; SIM-CM-13/16 rejected unchanged concepts labelled corrected.
+Failed response steps did not change stored state. No frozen source was fixed
+or failed model call retried. The aborted runner-comparison attempt is retained
+separately. See [technical analysis](../evaluation/02_design/simulation/simulation_analysis.md),
+[failure analysis](../evaluation/02_design/simulation/failure_analysis.md), and
+[qualified human worksheets](../evaluation/02_design/simulation/qualified_human_judgement.md).
+
+**Review completed:** Nathan confirmed reviewing and accepting all 55
+AI-assisted worksheets on 2 October 2026 and authorised Codex to record typed
+sign-offs. The 91 delivered-output findings are 18 Pass, 71 Partial and two
+Fail; Nathan's saved SIM04-A amendment is preserved. The eight ambiguity
+messages and three technical failures retain their separate assessments and
+NA limitations. F2–F4/F6 are updated in the protocol (E022–E023). This is
+completed evaluation with mixed findings, not universal adequacy or learning
+effectiveness. Review times were not supplied. See the dated
+[approval record](../evaluation/02_design/simulation/review_completion/approval_record.md).
 
 ## 22.1 Goal
 
@@ -1965,7 +1984,7 @@ F3, F4, F6, F7, F9, and F13 are updated as applicable.
 
 ---
 
-# 23. Step 14 — Black-Box Testing
+# 23. Step 14 — Black-Box Testing — NEXT
 
 ## 23.1 Goal and outputs
 
@@ -3192,11 +3211,15 @@ Run `RUN-B01-20261001-BOUNDS-01` passed BND-01–BND-17. E014–E017 retain dire
 provider-call counts, before/after state, lifecycle/invalid-round results, and
 both real-database same-snapshot concurrency races.
 
-### C5 / Step 13
-Freeze reference notes, then execute the 16 cases × 3 paths = 48 artificial
-sessions plus separately labelled language and concept-mismatch cases.
+### C5 / Step 13 — COMPLETED WITH FINDINGS
+All 55 attempts are recorded in E018–E021 (44 technical Pass, eight controlled
+ambiguity/no session, three Fail). Frozen references and exact text/state are
+retained. Nathan endorsed the 55 worksheets/91 output-level ratings on
+2 October 2026: 18 content Pass, 71 Partial and two Fail (E022–E023).
+Authorised typed sign-offs and AI assistance are disclosed. Do not silently
+rerun or replace failures; completion does not imply all criteria passed.
 
-### C6 / Step 14
+### C6 / Step 14 — NEXT
 Freeze and execute BB01–BB24 through public boundaries. Update F1–F13 only
 from retained evidence.
 
@@ -3291,11 +3314,12 @@ matrix.
 
 Use this request next:
 
-> Prepare the fixed content reference notes, then execute Step 13 — Simulation
-> from `INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md` against
-> `B01-A5-EVALUATION`. Freeze SIM01–SIM16 before execution, run all 48 planned
-> paths without replacing difficult outputs, preserve retries separately, and
-> keep artificial-session evidence distinct from learner effectiveness.
+> Execute Step 14 using
+> `evaluation/02_design/black_box/black_box_test_cases.md`.
+> Freeze expected assertions, then execute BB01–BB24 against B01 through public
+> boundaries. Retain exact commands, first outcomes, state/provider evidence,
+> and limitations; update F1–F13 only from recorded results. Do not alter the
+> frozen application or silently replace simulation failures.
 
 ## 40.2 Requests after each completed step
 
