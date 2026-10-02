@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; design literature completed with qualifications on 3 October 2026, E045–E048; earlier mixed findings retained; optional expert study skipped; Step 20 evidence-register audit next; consolidation not yet complete |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; Step 20 register audit complete on 3 October 2026, E049–E057; 52 retained entries; mixed findings and restricted-original release limits retained; optional expert study skipped; Step 21 consolidation next |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -457,9 +457,27 @@ STEM content, exact pedagogical bounds, superiority and learner outcomes are
 not established. All 39 prior registered artefacts and 66 production identities
 remain unchanged; 121-entry manifest retained. No new application/provider/
 human run or earlier result promotion. Step 19 optional expert study remains
-Skipped. Step 20 register audit is next, followed by results/PIRQOA consolidation.
+Skipped. Step 20's audit is recorded below; Step 21 results consolidation is next,
+followed by Step 22 PIRQOA traceability.
 Acceptance criteria, historical conceptual literature conclusions and B01
 production remain unchanged.
+
+**Step 20 / EV-REG — recorded, 3 October 2026.**
+[E057 audit](../03_results/evidence_register_audit.md) preserves the 43 existing
+design rows and retrospectively indexes eight conceptual files as E049–E056.
+The register now has 52 entries; all registered paths/hashes, ten manifests /
+1,174 entries and 66 production identities match. E028–E032 remain retired.
+Unknown historical capture dates and conceptual version identities are explicit,
+not assigned to B01. Historical DE-SIM/DE-BB/DE-WB are aliases for protocol
+DA-SIM/DA-BB/DA-WB; CA-SYN/CA-REF are derived-document categories, not new
+independent methods. Historical conceptual C4 is completeness/boundary clarity,
+not this protocol's literature-consistency C4: use E051–E052 for the latter and
+the audit crosswalk when consolidating. Original synthetic cookie-bearing
+black-box captures are restricted and need labelled redacted derivatives before
+public sharing. No release clearance, new human approval, outcome promotion,
+application/provider/database execution or B01 source change is inferred.
+Criteria remain version 2.1; this is an administrative index completion record,
+not a retrospective oracle amendment. Step 21 is next; Steps 21–22 remain open.
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 
@@ -730,7 +748,7 @@ A bounded implementation claim is strongly supported only when relevant external
 - [x] Generated-content judgements identify the assessor, competence boundary and reference basis (endorsed simulation E022–E023; black-box fixture semantic limits explicitly Not assessed).
 - [x] Static, dynamic, bounds, simulation, black-box, white-box, design argument, design scenario and design literature methods recorded (mixed findings and source/access limits retained; E001–E027/E033–E048).
 - [ ] All 48 planned simulation sessions and 15 timing attempts accounted for, including blocked/failed cases and deviations.
-- [ ] Raw evidence, logs, actual outputs, state records and all retries retained and indexed.
+- [x] Retained raw evidence, logs, actual outputs, state records and recorded retries indexed (Step 20, E057; 52 entries; restricted originals not cleared for public release).
 - [ ] Master results and PIRQOA matrix link claims to evidence and limitations.
 - [ ] Design/code discrepancies and unresolved concerns remain visible; fixes have separate baseline/retest records.
 - [ ] Optional expert work is labelled completed with evidence or not performed.

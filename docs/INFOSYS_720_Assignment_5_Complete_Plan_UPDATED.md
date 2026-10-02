@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–18 and §18.1 recorded; Step 18 design literature completed with qualifications (E045–E048); earlier mixed findings retained; Step 19 optional expert study skipped; Step 20 evidence-register audit NEXT |
+| Formal evaluation status | Steps 10–18 and §18.1 recorded; Step 20 register audit complete, 52 retained entries (E001–E027/E033–E057); mixed findings, historical mappings and restricted originals retained; Step 19 optional expert study skipped; Step 21 results consolidation NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Continue to Step 20's master evidence-register audit NEXT. Step 18 is recorded in [design literature synthesis](../evaluation/02_design/literature/literature_synthesis.md), E045–E048: 13 capability comparisons, all five A2 SSR systems, explicit source/access/transfer limits and implementation counterevidence. Integration is partially supported; no superiority, generated-content certification or learner-benefit claim. Step 19 is intentionally skipped. Retain Step 17's provisional content concerns and API-only qualifications (E042–E044), Step 16's qualified argument (E039–E041), §18.1's six Pass/three Partial and all earlier mixed findings. Production B01 remains unchanged.**
+> **Continue to Step 21 results consolidation NEXT. Step 20 is recorded in the [register audit](../evaluation/03_results/evidence_register_audit.md), E057: 43 historical rows preserved, eight conceptual artefacts indexed, 52 retained records verified. Historical C4/method aliases and restricted cookie-bearing originals are explicit. Step 18's qualified literature findings (E045–E048), Step 17's provisional content/API-only limitations (E042–E044), Step 16's qualified argument (E039–E041), §18.1's six Pass/three Partial and earlier mixed outcomes remain unchanged. Step 19 is intentionally skipped. No B01 rerun, fix or public-release clearance.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -163,7 +163,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is D1 / Step 20's master evidence-register audit. Do not rerun or relabel completed evidence.
+1. Start at the first heading marked **NEXT**; currently this is D2 / Step 21's consolidated results table. Do not rerun or relabel completed evidence.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1531,7 +1531,7 @@ Steps 11–18 and §18.1 also have recorded results. The usability checkpoint is
 complete with findings (six Pass / three Partial, E036–E038); the literature-
 grounded informed argument is recorded as E039–E041; the fresh live scenario is
 recorded as E042–E044; the design literature comparison as E045–E048.
-Proceed to **Step 20's master evidence-register audit**,
+Step 20's audit is also complete (E049–E057). Proceed to **Step 21's consolidated results table**,
 retaining all earlier qualifications and the three
 usability issues; do not treat completion as an all-criteria Pass.
 
@@ -2696,7 +2696,20 @@ The Design Artefact Evaluation should instead focus on completing the required m
 
 ---
 
-# 29. Step 20 — Master Evidence Register — NEXT
+# 29. Step 20 — Master Evidence Register — COMPLETE WITH QUALIFICATIONS
+
+Recorded on 3 October 2026 as [E057 register audit](../evaluation/03_results/evidence_register_audit.md).
+The [register](../evaluation/03_results/evidence_register.csv) now has 52 entries:
+43 design records unchanged, eight retrospective conceptual records (E049–E056)
+and one administrative audit. All file hashes, ten manifests / 1,174 entries
+and 66 B01 production identities match. E028–E032 remain retired. Unknown
+historical dates, conceptual versus production baselines and derived-document
+categories are explicit. Historical conceptual C4 (completeness/boundaries) is
+not protocol C4 (literature consistency); use the audit crosswalk in Step 21.
+Cookie-bearing synthetic black-box originals are restricted, not cleared for
+sharing; redacted derivatives and a release-specific review are required before
+public distribution. No historical outcomes, human approvals or B01 code were
+changed, and no application/test/provider/database run was executed.
 
 ## 29.1 Goal and output
 
@@ -2737,7 +2750,7 @@ remain.
 
 ---
 
-# 30. Step 21 — Consolidated Results Table
+# 30. Step 21 — Consolidated Results Table — NEXT
 
 After all evaluation methods are executed or accounted for, create:
 
@@ -3388,11 +3401,12 @@ expert evidence.
 
 ## Phase D — Consolidation — CURRENT NEXT PHASE
 
-### D1 / Step 20 — NEXT
-Audit and finalise `evaluation/03_results/evidence_register.csv`; verify every
-ID and path before consolidation.
+### D1 / Step 20 — COMPLETE WITH QUALIFICATIONS
+Register audited: 52 entries, E001–E027/E033–E057. All paths/hashes verified;
+historical oracle mappings, unknown capture dates and restricted-original
+release boundaries documented in E057. No result promotion or B01 rerun.
 
-### D2 / Step 21
+### D2 / Step 21 — NEXT
 Create `evaluation/03_results/master_results.csv` only after every method is
 executed or transparently accounted for.
 
@@ -3440,7 +3454,7 @@ Recommended order:
 
 # 40. Step 31 — How to Continue From Here
 
-The master plan, protocol, B01 baseline, Steps 10–18 and §18.1 evidence are ready. Do
+The master plan, protocol, B01 baseline, Steps 10–18, §18.1 and Step 20 audit are ready. Do
 not rerun them unless the baseline/protocol changes or a recorded regression
 requires it. Structured usability now covers the planned desktop/mobile,
 Burmese/English, light/dark and keyboard matrix with six Pass / three Partial;
@@ -3450,21 +3464,20 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 Use this request next:
 
-> Complete Step 20 — Master Evidence Register. Audit the current 43 retained
-> design evidence records (E001–E027 and E033–E048), reconcile the conceptual
-> artefacts required by §29.2, and verify every path/hash/locator and method,
-> baseline, criterion and REQ/RQ mapping. Keep retired E028–E032 retired;
-> reuse existing IDs rather than duplicate evidence. Preserve mixed outcomes,
-> source-access limits, technical-versus-content distinctions and skipped expert
-> work. Do not rerun/fix B01 or invent results. Then proceed to Steps 21–22.
+> Complete Step 21 — Consolidated Results Table. Use the 52 retained evidence
+> entries (E001–E027 and E033–E057), including E057's historical C4/method
+> crosswalk. Create master_results.csv with the §30 schema. Preserve mixed
+> outcomes, source-access limits, temporal supersession, restricted originals,
+> technical-versus-content distinctions and skipped expert work. Do not treat
+> retrospective indexing as new runs or promote Partial/Fail findings. Do not
+> rerun/fix B01 or invent results. Step 22 follows after consolidation.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Complete Step 20: audit and finalise the master evidence register.`
-2. `Complete Step 21: consolidate results without promoting partial findings.`
-3. `Complete Step 22: map results and evidence to PIRQOA and research questions.`
+1. `Complete Step 21: consolidate results without promoting partial findings.`
+2. `Complete Step 22: map results and evidence to PIRQOA and research questions.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3548,14 +3561,15 @@ Only after Steps 20–22 are complete:
 
 ## Evidence
 
-- [ ] Screenshots preserved
+- [x] Master evidence register audited (Step 20, E057; 52 retained entries; mapping/privacy qualifications explicit)
+- [x] Screenshots preserved (E012/E027/E038/E044 bundle manifests; not automatic public-release clearance)
 - [x] Step 10 test logs preserved
 - [x] Step 10 build/lint outputs preserved
 - [x] Step 10 deterministic/integration outputs preserved
 - [x] Step 10 scoped coverage summary saved
 - [x] Simulation inputs saved
 - [x] Simulation outputs saved and review endorsed
-- [ ] Timing data saved
+- [x] Timing data saved (E007; fifteen descriptive live-provider measurements)
 - [x] GenAI transcript saved
 - [x] GenAI analysis saved
 - [x] Literature matrix saved
