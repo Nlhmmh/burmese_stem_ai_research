@@ -1,0 +1,31 @@
+{
+  "checkedAtUtc": "2026-10-02T23:22:58.995Z",
+  "analysisId": "ANALYSIS-B01-20261003-DESIGN-LITERATURE-01",
+  "checks": {
+    "result": "Pass: retained source/evidence and final register integrity",
+    "records": 43,
+    "unchangedPrevious": 39,
+    "added": [
+      "E045",
+      "E046",
+      "E047",
+      "E048"
+    ],
+    "matrixRows": 13,
+    "ratingCounts": {
+      "Strong": 1,
+      "Moderate": 9,
+      "Limited": 2,
+      "Contradictory/uncertain": 1
+    },
+    "productionFilesUnchanged": 66,
+    "manifestEntries": 121
+  },
+  "gitDiffCheck": "Pass",
+  "finalNavigationAndRegisterHashes": {
+    "docs/INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md": "b73f4443161df1179ff7c835c03a654976fb03dfa2dc964291e4a458790063da",
+    "evaluation/00_protocol/evaluation_protocol.md": "ef647dda23ae35904b4728113cb791ad8388e940cc2f2e09d170358ac228d14c",
+    "evaluation/03_results/evidence_register.csv": "095d63d78db0d98ae0d3e16b2f373680cac6cd6aacdc539e8dd1d748b5707ccf"
+  },
+  "note": "Post-register companion check excluded from E048 manifest to avoid a register-manifest hash cycle; no application execution."
+}

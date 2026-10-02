@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–17 and §18.1 recorded; live Photosynthesis scenario completed with qualifications on 3 October 2026, E042–E044; earlier mixed findings retained; Step 18 design literature next; remaining evaluations not yet complete |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; design literature completed with qualifications on 3 October 2026, E045–E048; earlier mixed findings retained; optional expert study skipped; Step 20 evidence-register audit next; consolidation not yet complete |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -417,7 +417,7 @@ new learner-effectiveness evidence. E039 identifies the analysis, E040 the
 and E041 the 116-entry input/output/source integrity manifest. No prior result,
 oracle, score or content approval changed. F1–F13 retain existing mixed
 qualifications; U1–U9 outcomes are unchanged. Empirical learner task fit,
-mastery, gains and pedagogically optimal bounds remain Not assessed. The
+mastery, gains and pedagogically optimal bounds remain Not assessed.
 At that checkpoint Step 17 / DA-SCN was next; its subsequent execution is
 recorded below. Step 18 / DA-LIT remains separate.
 
@@ -437,8 +437,29 @@ checks passed; preserved recorder/verifier corrections are not application
 failures. Design/content conclusion remains provisional Partial because of
 limited first-example novelty, extensive English retention and technical-scope
 wording. No new qualified human endorsement, learner benefit or earlier FURPS
-promotion is inferred. Production unchanged; servers stopped. Step 18 / DA-LIT
-is next. Protocol criteria and the conceptual scenario remain unchanged.
+promotion is inferred. Production unchanged; servers stopped. At that
+checkpoint Step 18 / DA-LIT was next; its analysis is recorded below.
+Protocol criteria and the conceptual scenario remain unchanged.
+
+**Step 18 / DA-LIT — recorded, 3 October 2026.**
+`ANALYSIS-B01-20261003-DESIGN-LITERATURE-01` provides the separate
+[design capability matrix](../02_design/literature/literature_matrix.csv) and
+[synthesis](../02_design/literature/literature_synthesis.md), E045–E048.
+Thirteen comparisons include all five A2 SSR systems, explicit Assignment 2
+locators, literature/implementation separation, counterevidence and source
+access/transfer limits. Rationale ratings: one Strong, nine Moderate, two
+Limited, one Contradictory/uncertain; not FURPS or content scores. The
+[source record](../02_design/literature/reference_verification.md) distinguishes
+three named primary-locator inspections, one publisher-index abstract and
+seven Assignment-mediated sources; no new corpus publication. Bounded
+integration is partially supported; validated ATE, uniformly adequate Burmese/
+STEM content, exact pedagogical bounds, superiority and learner outcomes are
+not established. All 39 prior registered artefacts and 66 production identities
+remain unchanged; 121-entry manifest retained. No new application/provider/
+human run or earlier result promotion. Step 19 optional expert study remains
+Skipped. Step 20 register audit is next, followed by results/PIRQOA consolidation.
+Acceptance criteria, historical conceptual literature conclusions and B01
+production remain unchanged.
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 
@@ -707,7 +728,7 @@ A bounded implementation claim is strongly supported only when relevant external
 - [ ] Every F1–F13 and U1–U9 row has an execution status and outcome; every Pass/Partial/Fail links to retained evidence, and every Blocked/Not applicable/Not assessed item has a written reason.
 - [ ] Every planned black-box, white-box and usability-inspection case is executed or explicitly accounted for.
 - [x] Generated-content judgements identify the assessor, competence boundary and reference basis (endorsed simulation E022–E023; black-box fixture semantic limits explicitly Not assessed).
-- [ ] Static, dynamic, bounds, simulation, black-box, white-box, design argument, design scenario and design literature methods recorded.
+- [x] Static, dynamic, bounds, simulation, black-box, white-box, design argument, design scenario and design literature methods recorded (mixed findings and source/access limits retained; E001–E027/E033–E048).
 - [ ] All 48 planned simulation sessions and 15 timing attempts accounted for, including blocked/failed cases and deviations.
 - [ ] Raw evidence, logs, actual outputs, state records and all retries retained and indexed.
 - [ ] Master results and PIRQOA matrix link claims to evidence and limitations.

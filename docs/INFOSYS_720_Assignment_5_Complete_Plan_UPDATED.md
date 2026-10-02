@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–17 and §18.1 recorded; Step 17 live Photosynthesis scenario completed with qualifications (E042–E044); earlier mixed findings retained; Step 18 design literature evaluation NEXT |
+| Formal evaluation status | Steps 10–18 and §18.1 recorded; Step 18 design literature completed with qualifications (E045–E048); earlier mixed findings retained; Step 19 optional expert study skipped; Step 20 evidence-register audit NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Continue to Step 18's design literature evaluation NEXT. Step 17 is recorded in [Photosynthesis scenario](../evaluation/02_design/scenario/photosynthesis_scenario.md), E042–E044: one fresh live-model session, two adaptations, four response events, one stored follow-up; 15 recorded technical checks Pass. High at round 2 is unavailable in the UI and was checked separately through the API, as were cap and completed-response boundaries. Content remains provisionally Partial; no new human endorsement or learner-benefit claim. Retain Step 16's qualified literature argument (E039–E041), §18.1's six Pass/three Partial and all earlier mixed findings. Production B01 remains unchanged.**
+> **Continue to Step 20's master evidence-register audit NEXT. Step 18 is recorded in [design literature synthesis](../evaluation/02_design/literature/literature_synthesis.md), E045–E048: 13 capability comparisons, all five A2 SSR systems, explicit source/access/transfer limits and implementation counterevidence. Integration is partially supported; no superiority, generated-content certification or learner-benefit claim. Step 19 is intentionally skipped. Retain Step 17's provisional content concerns and API-only qualifications (E042–E044), Step 16's qualified argument (E039–E041), §18.1's six Pass/three Partial and all earlier mixed findings. Production B01 remains unchanged.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -163,7 +163,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is C11 / Step 18's separate design literature evaluation. Do not rerun or relabel completed evidence.
+1. Start at the first heading marked **NEXT**; currently this is D1 / Step 20's master evidence-register audit. Do not rerun or relabel completed evidence.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1527,10 +1527,11 @@ still match B01. This check is not a new execution of STA-01–STA-14. Preserve
 the original results, including the blocked integration attempt, permitted
 retry, historical service/DAO coverage scope and recorded limitations.
 
-Steps 11–17 and §18.1 also have recorded results. The usability checkpoint is
+Steps 11–18 and §18.1 also have recorded results. The usability checkpoint is
 complete with findings (six Pass / three Partial, E036–E038); the literature-
 grounded informed argument is recorded as E039–E041; the fresh live scenario is
-recorded as E042–E044. Proceed to **Step 18's design literature evaluation**,
+recorded as E042–E044; the design literature comparison as E045–E048.
+Proceed to **Step 20's master evidence-register audit**,
 retaining all earlier qualifications and the three
 usability issues; do not treat completion as an all-criteria Pass.
 
@@ -2445,7 +2446,8 @@ API-only; round-2 UI does not offer High. Recorded preflight/recorder/verifier
 corrections are not attributed to production. Content judgement remains
 provisional Partial (novelty, English retention, technical-scope wording).
 No fresh human endorsement, learning gain, production fix or prior-result
-promotion is claimed. Isolated servers stopped; Step 18 is next.
+promotion is claimed. Isolated servers stopped. At that checkpoint Step 18
+was next; it is now recorded separately in §27.
 
 Use the same **Photosynthesis** scenario for the PoC.
 
@@ -2595,7 +2597,26 @@ and no input is changed mid-run to force a success narrative.
 
 ---
 
-# 27. Step 18 — Design Artefact SLR Evaluation — NEXT
+# 27. Step 18 — Design Artefact SLR Evaluation — COMPLETED WITH QUALIFICATIONS
+
+Recorded on 3 October 2026 as
+`ANALYSIS-B01-20261003-DESIGN-LITERATURE-01`, DA-LIT:
+
+- E045: [13-row capability matrix](../evaluation/02_design/literature/literature_matrix.csv), including all five SSR systems.
+- E046: [design synthesis](../evaluation/02_design/literature/literature_synthesis.md), with qualified integration/REQ/RQ conclusions.
+- E047: [source verification and references](../evaluation/02_design/literature/reference_verification.md), including A2 locators and original-access/transfer/version limits.
+- E048: 121-entry integrity manifest; 39 previous registered artefacts and 66 production identities unchanged. CSV/source/evidence/local-link checks Pass.
+
+Literature-rationale ratings: one Strong, nine Moderate, two Limited, one
+Contradictory/uncertain. These are not FURPS passes or content scores. The
+PoC partially demonstrates the integration opportunity **within A2's reviewed
+corpus**; ATE accuracy, consistent Burmese/STEM content quality, pedagogically
+optimal two rounds, superiority and learning gains are not established. Three
+primary named-locator inspections and one publisher-index abstract are
+distinguished from seven Assignment-mediated sources. No new publication was
+added to the corpus; no prior conceptual rating/empirical result changed; no
+application run or new human approval occurred. Original execution guidance
+is retained below. Next is Step 20; optional Step 19 remains skipped.
 
 Use Assignment 2 and the SSR as benchmarks.
 
@@ -2675,7 +2696,7 @@ The Design Artefact Evaluation should instead focus on completing the required m
 
 ---
 
-# 29. Step 20 — Master Evidence Register
+# 29. Step 20 — Master Evidence Register — NEXT
 
 ## 29.1 Goal and output
 
@@ -3290,7 +3311,7 @@ Human Expert Interview not conducted; optional bonus only.
 
 ---
 
-## Phase C — Design Artefact Evaluation — CURRENT NEXT PHASE
+## Phase C — Design Artefact Evaluation — METHODS RECORDED WITH QUALIFICATIONS
 
 ### C1 / Step 9 — COMPLETED PREPARATION
 F1–F13, U1–U9, decision rules, case mappings, and blank registers are frozen
@@ -3353,9 +3374,11 @@ bound, one scoped follow-up, Resume/Review and explicit Finish observed.
 High-at-cap unavailable in UI; three API-only boundaries separately labelled.
 Content provisionally Partial; no human endorsement or learner-benefit claim.
 
-### C11 / Step 18 — NEXT
-Complete the design literature matrix and synthesis with source locators,
-transfer limitations, and links to observed PoC evidence.
+### C11 / Step 18 — COMPLETED WITH QUALIFICATIONS
+13 capability comparisons recorded on 3 October (E045–E048), including all
+five SSR systems, source locators/access limits, transfer limits and observed
+PoC evidence. Qualified integration rationale only; mixed content/technical
+findings retained; no superiority or learning claim. See §27.
 
 ### C12 / Step 19 — SKIPPED
 Human Expert Interview will not be conducted. Do not imply participant or
@@ -3363,9 +3386,9 @@ expert evidence.
 
 ---
 
-## Phase D — Consolidation
+## Phase D — Consolidation — CURRENT NEXT PHASE
 
-### D1 / Step 20
+### D1 / Step 20 — NEXT
 Audit and finalise `evaluation/03_results/evidence_register.csv`; verify every
 ID and path before consolidation.
 
@@ -3417,7 +3440,7 @@ Recommended order:
 
 # 40. Step 31 — How to Continue From Here
 
-The master plan, protocol, B01 baseline, Steps 10–17 and §18.1 evidence are ready. Do
+The master plan, protocol, B01 baseline, Steps 10–18 and §18.1 evidence are ready. Do
 not rerun them unless the baseline/protocol changes or a recorded regression
 requires it. Structured usability now covers the planned desktop/mobile,
 Burmese/English, light/dark and keyboard matrix with six Pass / three Partial;
@@ -3427,20 +3450,21 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 Use this request next:
 
-> Complete Step 18 — Design Artefact SLR Evaluation using Assignment 2's
-> recorded literature set and the actual B01 design evidence, including the
-> Step 17 scenario. Create the design literature matrix and synthesis with
-> proper citations, primary-source locators and access/transfer limitations.
-> Register additional sources separately. Do not treat literature as proof of
-> generated Burmese correctness or learning gains, or rerun/fix the application.
+> Complete Step 20 — Master Evidence Register. Audit the current 43 retained
+> design evidence records (E001–E027 and E033–E048), reconcile the conceptual
+> artefacts required by §29.2, and verify every path/hash/locator and method,
+> baseline, criterion and REQ/RQ mapping. Keep retired E028–E032 retired;
+> reuse existing IDs rather than duplicate evidence. Preserve mixed outcomes,
+> source-access limits, technical-versus-content distinctions and skipped expert
+> work. Do not rerun/fix B01 or invent results. Then proceed to Steps 21–22.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Complete Step 18 literature evaluation with source locators and transfer
-   limitations.`
-2. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
+1. `Complete Step 20: audit and finalise the master evidence register.`
+2. `Complete Step 21: consolidate results without promoting partial findings.`
+3. `Complete Step 22: map results and evidence to PIRQOA and research questions.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3506,7 +3530,7 @@ Only after Steps 20–22 are complete:
 - [x] White-box tests executed (WB01–WB06 structural Pass; E033–E035)
 - [x] Informed argument completed (Step 16; eight feature arguments; qualifications retained; E039–E041)
 - [x] Scenario completed (Step 17; E042–E044; technical and provisional content conclusions separated)
-- [ ] Academic literature used
+- [x] Academic literature used (Step 18 DA-LIT; 13 comparisons, five SSR systems; source/transfer limits retained; E045–E048)
 - [x] Optional expert interview intentionally skipped
 - [ ] Procedures reproducible
 
