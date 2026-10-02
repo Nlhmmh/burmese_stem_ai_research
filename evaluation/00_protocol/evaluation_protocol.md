@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–15 recorded; §18.1 usability executed on 2 October 2026: 6 Pass / 3 Partial, E036–E038; simulation/black-box findings and structural-only WB Pass retained; Step 16 next; remaining evaluations not yet complete |
+| Status | B01 frozen; Steps 10–16 and §18.1 recorded; informed argument completed with qualifications on 3 October 2026, E039–E041; mixed simulation/black-box/usability findings and structural-only WB Pass retained; Step 17 next; remaining evaluations not yet complete |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -404,6 +404,21 @@ and [issues](../02_design/usability/issues.csv). No production fixes were made.
 | EX-C / EX-D | Optional expert review of framework/PoC using the same criteria and recorded interview prompts | Expertise, consent, date, notes/transcript and disagreements. If absent, record Not run/optional; do not imply participation |
 
 Literature support labels: **Strong** = directly relevant and convergent support with no unresolved material contradiction; **Moderate** = relevant but indirect/limited transfer; **Limited** = weak or narrowly applicable support; **Contradictory/uncertain** = conflicting findings or unclear applicability. Record missing evidence explicitly. Several summaries of the same paper do not create independent corroboration.
+
+**Step 16 / DA-ARG — recorded, 3 October 2026.**
+`ANALYSIS-B01-20261003-INFORMED-ARGUMENT-01` provides eight feature-level
+[informed arguments](../02_design/informed_argument/traceability.md) grounded in
+proper literature citations and existing E001–E027/E033–E038, not new executions.
+Two explicitly bounded claims are Supported; six overall feature claims are
+Partially supported. TTF/scaffolding remain the theoretical foundation;
+Hevner's descriptive method and FEDS delimit interpretation rather than supply
+new learner-effectiveness evidence. E039 identifies the analysis, E040 the
+[reference verification/access/version record](../02_design/informed_argument/reference_verification.md),
+and E041 the 116-entry input/output/source integrity manifest. No prior result,
+oracle, score or content approval changed. F1–F13 retain existing mixed
+qualifications; U1–U9 outcomes are unchanged. Empirical learner task fit,
+mastery, gains and pedagogically optimal bounds remain Not assessed. The
+next method is Step 17 / DA-SCN; Step 18 / DA-LIT remains separate.
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 

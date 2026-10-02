@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–15 recorded; §18.1 usability completed with findings (6 Pass / 3 Partial; E036–E038); simulation/black-box qualifications and structural-only WB01–WB06 Pass retained; Step 16 informed argument NEXT |
+| Formal evaluation status | Steps 10–16 and §18.1 recorded; Step 16 literature-grounded informed argument completed with qualifications (E039–E041); simulation/black-box/usability findings and structural-only WB Pass retained; Step 17 Photosynthesis scenario NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Continue to Step 16's design informed argument NEXT. §18.1 U1–U9 is completed with findings: six Pass, three Partial; two severity-2 issues (modal focus and Burmese error localisation) and one severity-1 ambiguity-label issue retained. See [usability inspection](../evaluation/02_design/usability/usability_inspection.md), E036–E038. WB01–WB06 remains structural-only Pass; retain its coverage gaps, black-box partials/oracle failure and simulation findings. Production B01 is unchanged.**
+> **Continue to Step 17's Photosynthesis design scenario NEXT. Step 16 is complete with qualifications: eight feature arguments, seven cited primary references, two bounded Supported and six Partially supported conclusions. See [design informed argument](../evaluation/02_design/informed_argument/traceability.md) and [reference verification](../evaluation/02_design/informed_argument/reference_verification.md), E039–E041. Retain §18.1's six Pass/three Partial and all simulation, black-box and coverage qualifications. Production B01 is unchanged; no new application execution occurred in Step 16.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -163,7 +163,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is C9 / Step 16's design informed argument, not another black-box, white-box, simulation or usability run.
+1. Start at the first heading marked **NEXT**; currently this is C10 / Step 17's separately recorded Photosynthesis scenario, not a rerun or relabelling of earlier tests/fixtures.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1527,10 +1527,11 @@ still match B01. This check is not a new execution of STA-01–STA-14. Preserve
 the original results, including the blocked integration attempt, permitted
 retry, historical service/DAO coverage scope and recorded limitations.
 
-Steps 11–15 and §18.1 also have recorded results. The usability checkpoint is
-complete with findings (six Pass / three Partial, E036–E038). Proceed to
-**Step 16's informed argument**, retaining all earlier qualifications and the
-three usability issues; do not treat completion as an all-criteria Pass.
+Steps 11–16 and §18.1 also have recorded results. The usability checkpoint is
+complete with findings (six Pass / three Partial, E036–E038); the literature-
+grounded informed argument is recorded as E039–E041. Proceed to **Step 17's
+Photosynthesis scenario**, retaining all earlier qualifications and the three
+usability issues; do not treat completion as an all-criteria Pass.
 
 ---
 
@@ -1599,7 +1600,8 @@ Burmese UI are severity 2; USI-03 ambiguity badge is severity 1. UI-unreachable
 invalid preference values and other exclusions are explicitly accounted for.
 The 66 root production files match B01; no source copies, external provider
 calls, production fixes, participant study or new qualified content review.
-Proceed to Step 16. The checkpoint procedure below is retained as the run plan.
+Step 16 was the next action at checkpoint completion and is now recorded in
+§25 (E039–E041). The checkpoint procedure below is retained as the run plan.
 
 Complete this checkpoint after Steps 14–15 have made the required states
 repeatable and before Step 16 synthesis.
@@ -2366,7 +2368,21 @@ the relevant FURPS/results registers are updated.
 
 ---
 
-# 25. Step 16 — Design Artefact Descriptive Evaluation: Informed Argument
+# 25. Step 16 — Design Artefact Descriptive Evaluation: Informed Argument — COMPLETED WITH QUALIFICATIONS
+
+Recorded on 3 October 2026 as `ANALYSIS-B01-20261003-INFORMED-ARGUMENT-01`.
+[Traceability](../evaluation/02_design/informed_argument/traceability.md) covers
+eight major feature groups with proper author–date citations, a reference list,
+recorded case/evidence IDs, counterarguments and bounded conclusions: two
+Supported (optional stated-need collection; scoped follow-up mechanism) and
+six Partially supported. Learning benefit and calibrated learner fit remain
+Not assessed. [Source verification](../evaluation/02_design/informed_argument/reference_verification.md)
+records seven primary references, access limits and additional-source/version
+differences; the 2023 Tran preprint is not misrepresented as the 2026 text.
+E039–E041 preserve the argument, source record and 116-entry integrity manifest.
+All 33 previously registered artefacts and 66 production files verified unchanged;
+no new PoC run, model call, human approval or production fix. Step 17 is next;
+Step 18's wider design literature evaluation is not completed by this source check.
 
 ## 25.1 Goal and output
 
@@ -2413,7 +2429,7 @@ evidence → limitation, with no evidence-free “implemented successfully” cl
 
 ---
 
-# 26. Step 17 — Design Artefact Scenario Evaluation
+# 26. Step 17 — Design Artefact Scenario Evaluation — NEXT
 
 Use the same **Photosynthesis** scenario for the PoC.
 
@@ -3116,7 +3132,7 @@ Better:
 - [x] Simulation (endorsed review; mixed findings retained)
 - [x] Black-box (completed with oracle/content-scope qualifications)
 - [x] White-box (WB01–WB06 structural Pass; scope notes retained)
-- [ ] Informed argument
+- [x] Informed argument (Step 16; E039–E041; qualified literature-grounded conclusions)
 - [ ] Scenario
 - [ ] SLR
 - [x] Optional expert intentionally skipped
@@ -3308,10 +3324,13 @@ one severity-1 issue retained in `evaluation/02_design/usability/issues.csv`.
 Inspection sheets, exclusions and protocol register are updated. Technical
 evaluator evidence only; root production B01 unchanged; no participant claim.
 
-### C9 / Step 16 — NEXT
-Complete the design informed argument using actual results from C2–C8.
+### C9 / Step 16 — COMPLETED WITH QUALIFICATIONS
+Eight literature-grounded feature arguments recorded on 3 October 2026
+(E039–E041): two bounded Supported, six Partially supported; seven primary
+references with explicit access/version/transfer limits. Uses recorded C2–C8
+evidence; no new execution or learner-benefit claim. See §25 and traceability.md.
 
-### C10 / Step 17
+### C10 / Step 17 — NEXT
 Execute the full Photosynthesis PoC scenario and preserve exact generated
 content, screenshots, requests, and state transitions.
 
@@ -3379,7 +3398,7 @@ Recommended order:
 
 # 40. Step 31 — How to Continue From Here
 
-The master plan, protocol, B01 baseline, Steps 10–15 and §18.1 evidence are ready. Do
+The master plan, protocol, B01 baseline, Steps 10–16 and §18.1 evidence are ready. Do
 not rerun them unless the baseline/protocol changes or a recorded regression
 requires it. Structured usability now covers the planned desktop/mobile,
 Burmese/English, light/dark and keyboard matrix with six Pass / three Partial;
@@ -3389,21 +3408,21 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 Use this request next:
 
-> Complete Step 16 — Design Informed Argument using only recorded design
-> evidence, including §18.1 usability findings (E036–E038). Link each claim to
-> evidence and retain failures, partials, contradictions and transfer limits.
-> Do not change production or overwrite earlier evaluation evidence.
+> Execute Step 17 — Design Photosynthesis Scenario using protocol §9 and B01.
+> Give the scenario a separate run/evidence identity, preserve exact inputs,
+> generated support, preferences, screenshots and state transitions, and retain
+> failures. Do not relabel earlier fixtures as new scenario execution or change
+> inputs/production to force success.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Complete Step 16 using only recorded design evidence.`
-2. `Execute the Step 17 Photosynthesis scenario without changing inputs to
+1. `Execute the Step 17 Photosynthesis scenario without changing inputs to
    force success.`
-3. `Complete Step 18 literature evaluation with source locators and transfer
+2. `Complete Step 18 literature evaluation with source locators and transfer
    limitations.`
-4. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
+3. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3467,7 +3486,7 @@ Only after Steps 20–22 are complete:
 - [x] Simulation executed and reviewed (mixed findings retained)
 - [x] Black-box tests executed (qualifications retained; E024–E027)
 - [x] White-box tests executed (WB01–WB06 structural Pass; E033–E035)
-- [ ] Informed argument completed
+- [x] Informed argument completed (Step 16; eight feature arguments; qualifications retained; E039–E041)
 - [ ] Scenario completed
 - [ ] Academic literature used
 - [x] Optional expert interview intentionally skipped
