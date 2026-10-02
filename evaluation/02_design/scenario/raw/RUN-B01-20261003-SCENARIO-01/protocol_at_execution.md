@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–17 and §18.1 recorded; live Photosynthesis scenario completed with qualifications on 3 October 2026, E042–E044; earlier mixed findings retained; Step 18 design literature next; remaining evaluations not yet complete |
+| Status | B01 frozen; Steps 10–16 and §18.1 recorded; informed argument completed with qualifications on 3 October 2026, E039–E041; mixed simulation/black-box/usability findings and structural-only WB Pass retained; Step 17 next; remaining evaluations not yet complete |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -418,27 +418,7 @@ and E041 the 116-entry input/output/source integrity manifest. No prior result,
 oracle, score or content approval changed. F1–F13 retain existing mixed
 qualifications; U1–U9 outcomes are unchanged. Empirical learner task fit,
 mastery, gains and pedagogically optimal bounds remain Not assessed. The
-At that checkpoint Step 17 / DA-SCN was next; its subsequent execution is
-recorded below. Step 18 / DA-LIT remains separate.
-
-**Step 17 / DA-SCN — recorded, 3 October 2026.**
-`RUN-B01-20261003-SCENARIO-02` executed §9 against the actual root B01
-production build with live `gpt-5.4-mini` (reported version
-`gpt-5.4-mini-2026-03-17`) and an empty isolated MongoDB database.
-[Scenario analysis](../02_design/scenario/photosynthesis_scenario.md), E042–E044,
-retains 18 public HTTP records/state snapshots, five provider calls, 24 browser
-observations and 27 screenshots. Initial generation, Medium/skip, Needs
-Support/concept_unclear, scoped follow-up, History, Resume, explicit Finish
-and completed Review executed. Final state: two adaptations, four response
-events, one stored relevant follow-up, round 2, completed. High-at-cap was
-unavailable in UI; cap/fade/post-completion actions are separately labelled
-API-only checks, not invented learner clicks. Fifteen final recorded-evidence
-checks passed; preserved recorder/verifier corrections are not application
-failures. Design/content conclusion remains provisional Partial because of
-limited first-example novelty, extensive English retention and technical-scope
-wording. No new qualified human endorsement, learner benefit or earlier FURPS
-promotion is inferred. Production unchanged; servers stopped. Step 18 / DA-LIT
-is next. Protocol criteria and the conceptual scenario remain unchanged.
+next method is Step 17 / DA-SCN; Step 18 / DA-LIT remains separate.
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 

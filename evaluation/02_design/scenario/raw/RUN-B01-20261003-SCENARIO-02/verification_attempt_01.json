@@ -1,0 +1,98 @@
+{
+  "runId": "RUN-B01-20261003-SCENARIO-02",
+  "verifiedAt": "2026-10-02T22:53:00.968Z",
+  "mode": "Read-only analysis of stored execution; no new app/provider/database/test invocation",
+  "checks": [
+    {
+      "id": "SCN-V01",
+      "detail": "All 18 public HTTP requests have ordered IDs and post-request state snapshots",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V02",
+      "detail": "Saved bilingual beginner guided profile and immutable preference snapshot match",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V03",
+      "detail": "Fixed inquiry, one initial call, identified concept/context and five bilingual content fields",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V04",
+      "detail": "Atomic response/adaptation at round 1 has the specified route and one provider call",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V05",
+      "detail": "Atomic response/adaptation at round 2 has the specified route and one provider call",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V06",
+      "detail": "Capped and High API checks each append one 2-to-2 event without provider work or another adaptation",
+      "result": "Fail",
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- true\n"
+    },
+    {
+      "id": "SCN-V07",
+      "detail": "Both separate cap/fade API checks and post-completion check are recorded as Pass",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V08",
+      "detail": "Relevant follow-up uses active concept, latest scaffold and latest response route without changing Stage 7",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V09",
+      "detail": "Unrelated follow-up is rejected without persisting another follow-up or changing any session field",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V10",
+      "detail": "History and Resume preserve active content, event/adaptation/follow-up counts and session identity",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V11",
+      "detail": "Explicit Finish changes lifecycle only; completed Review and rejected response retain exact recorded content",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V12",
+      "detail": "Five live provider requests, no retry/failure, strict schemas, store=false and recorded model version",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V13",
+      "detail": "24 browser observations and 27 JPEGs cover all planned UI actions; High at cap is explicitly unavailable",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V14",
+      "detail": "One synthetic completed session, two adaptations, four events and one relevant follow-up; exported identity pseudonymised",
+      "result": "Pass"
+    },
+    {
+      "id": "SCN-V15",
+      "detail": "66 root production identities, lock, protocol-at-execution and frozen reference remain verifiable",
+      "result": "Pass"
+    }
+  ],
+  "passed": 14,
+  "failed": 1,
+  "finalState": {
+    "sessions": 1,
+    "adaptations": 2,
+    "responseEvents": 4,
+    "followUps": 1,
+    "round": 2,
+    "status": "completed"
+  },
+  "providerCalls": 5,
+  "httpRequests": 18,
+  "browserObservations": 24,
+  "screenshots": 27,
+  "contentQuality": "Not established by these structural checks; provisional report observations only"
+}

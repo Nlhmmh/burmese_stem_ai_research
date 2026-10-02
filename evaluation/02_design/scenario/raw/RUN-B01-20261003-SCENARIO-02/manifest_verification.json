@@ -1,0 +1,21 @@
+{
+  "verifiedAt": "2026-10-02T23:02:25.593Z",
+  "manifestEntries": 156,
+  "manifestHash": "2943350964e5a435bc66223fb8934ffceef84666904333557b8ad06644923b21",
+  "oldEvidenceRegisterRowsPreserved": 36,
+  "newRows": [
+    "E042",
+    "E043",
+    "E044"
+  ],
+  "productionFilesVerifiedAgainstB01": 66,
+  "localReportLinksChecked": 21,
+  "furpsCriteriaAndOutcomeRowsUnchanged": true,
+  "protocolScenarioInstructionsUnchanged": true,
+  "checks": {
+    "passed": 15,
+    "failed": 0
+  },
+  "sourceCopiesCreated": 0,
+  "result": "Pass: recorded execution and documentation integrity; no new application run"
+}
