@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–15 recorded: simulation and black-box findings retained; Step 15 WB01–WB06 structural Pass (`RUN-B01-20261002-ROOTTESTS-02`: 361 deterministic + 12 MongoDB tests; E033–E035); §18.1 full structured usability inspection NEXT |
+| Formal evaluation status | Steps 10–15 recorded; §18.1 usability completed with findings (6 Pass / 3 Partial; E036–E038); simulation/black-box qualifications and structural-only WB01–WB06 Pass retained; Step 16 informed argument NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Execute the §18.1 U1–U9 structured usability inspection NEXT. Step 15 WB01–WB06 is complete: 361 deterministic and 12 isolated MongoDB named tests passed; application-wide coverage is 72.54% statements / 76.37% branches. See [white-box evaluation](../evaluation/02_design/white_box/white_box_evaluation.md). Retain uncovered-path notes, black-box partials/oracle failure and simulation findings. After the usability checkpoint, continue to Step 16's informed argument.**
+> **Continue to Step 16's design informed argument NEXT. §18.1 U1–U9 is completed with findings: six Pass, three Partial; two severity-2 issues (modal focus and Burmese error localisation) and one severity-1 ambiguity-label issue retained. See [usability inspection](../evaluation/02_design/usability/usability_inspection.md), E036–E038. WB01–WB06 remains structural-only Pass; retain its coverage gaps, black-box partials/oracle failure and simulation findings. Production B01 is unchanged.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -163,7 +163,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is the §18.1 structured usability checkpoint, not another black-box, white-box or simulation generation run.
+1. Start at the first heading marked **NEXT**; currently this is C9 / Step 16's design informed argument, not another black-box, white-box, simulation or usability run.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1513,8 +1513,24 @@ times as independent evidence.
 
 ## 16.6 Next action
 
-Proceed to **Step 10 — Static Analysis**. Create formal B01 execution evidence;
-do not reuse baseline-freeze verification as though it were the Step 10 run.
+**Step 10 is complete.** Formal run `RUN-B01-20260930-STATIC-01` executed
+STA-01–STA-14 on 30 September 2026. Its command results and architecture
+inspections are recorded in
+[static_analysis_test_cases.md](../evaluation/02_design/static/static_analysis_test_cases.md),
+with the separate [formal command log](../evaluation/02_design/static/raw/STA-RUN-01-command-log.md)
+and coverage summary indexed as E001–E003. These are not the baseline-freeze
+verification results.
+
+Evidence-integrity check on 2 October 2026 confirmed that all three registered
+SHA-256 hashes match their artefacts and that the 66 current production files
+still match B01. This check is not a new execution of STA-01–STA-14. Preserve
+the original results, including the blocked integration attempt, permitted
+retry, historical service/DAO coverage scope and recorded limitations.
+
+Steps 11–15 and §18.1 also have recorded results. The usability checkpoint is
+complete with findings (six Pass / three Partial, E036–E038). Proceed to
+**Step 16's informed argument**, retaining all earlier qualifications and the
+three usability issues; do not treat completion as an all-criteria Pass.
 
 ---
 
@@ -1572,7 +1588,18 @@ or 3 = task blocked/materially misleading. Pass requires all planned checks and
 no severity 2/3 issue; Partial means incomplete coverage or severity 2; Fail
 means severity 3. Retain severity 1 issues even when the criterion passes.
 
-## 18.1 Usability execution checkpoint — NEXT
+## 18.1 Usability execution checkpoint — COMPLETED WITH FINDINGS
+
+Executed on 2 October 2026 as `RUN-B01-20261002-USABILITY-01` (E036–E038).
+[Inspection](../evaluation/02_design/usability/usability_inspection.md) records
+133 observations/screenshots (131 main plus two Back-navigation rechecks) across eight desktop/mobile × locale × theme
+configurations, routes/states and native keyboard checks. U1/U2/U3/U4/U6/U7
+Pass; U5/U8/U9 Partial. USI-01 modal focus and USI-02 English-only errors in
+Burmese UI are severity 2; USI-03 ambiguity badge is severity 1. UI-unreachable
+invalid preference values and other exclusions are explicitly accounted for.
+The 66 root production files match B01; no source copies, external provider
+calls, production fixes, participant study or new qualified content review.
+Proceed to Step 16. The checkpoint procedure below is retained as the run plan.
 
 Complete this checkpoint after Steps 14–15 have made the required states
 repeatable and before Step 16 synthesis.
@@ -3274,13 +3301,14 @@ WB01–WB06 executed in `RUN-B01-20261002-ROOTTESTS-02` (E033–E035):
 Application-wide V8 coverage 72.54% statements / 76.37% branches across 42 files; lint/TypeScript passed.
 Coverage gaps and root captures retained; production B01 unchanged. Structural Pass is not a language/content/usability Pass.
 
-### C8 / §18.1 usability execution checkpoint — NEXT
-Execute U1–U9 across the required screens, states, locales, themes, desktop/
-mobile viewports, and keyboard interactions. Save inspection sheets and issue
-evidence under `evaluation/02_design/usability/`, then update the protocol's
-Usability register.
+### C8 / §18.1 usability execution checkpoint — COMPLETED WITH FINDINGS
+`RUN-B01-20261002-USABILITY-01` executed U1–U9 with 133 browser captures across
+eight configurations (E036–E038). Six Pass / three Partial; two severity-2 and
+one severity-1 issue retained in `evaluation/02_design/usability/issues.csv`.
+Inspection sheets, exclusions and protocol register are updated. Technical
+evaluator evidence only; root production B01 unchanged; no participant claim.
 
-### C9 / Step 16
+### C9 / Step 16 — NEXT
 Complete the design informed argument using actual results from C2–C8.
 
 ### C10 / Step 17
@@ -3351,33 +3379,31 @@ Recommended order:
 
 # 40. Step 31 — How to Continue From Here
 
-The master plan, protocol, B01 baseline, and Steps 10–14 evidence are ready. Do
+The master plan, protocol, B01 baseline, Steps 10–15 and §18.1 evidence are ready. Do
 not rerun them unless the baseline/protocol changes or a recorded regression
-requires it. The later structured usability checkpoint still covers mobile,
-Burmese UI, Dark theme, keyboard interaction and the wider preferences/state
-matrix.
+requires it. Structured usability now covers the planned desktop/mobile,
+Burmese/English, light/dark and keyboard matrix with six Pass / three Partial;
+retain its issue severity, fixture limitations and unexecuted checks.
 
 ## 40.1 Immediate request
 
 Use this request next:
 
-> Execute the §18.1 U1–U9 structured usability inspection using protocol 2.1
-> §5.4. Retain the required screen/state/locale/theme/viewport and keyboard
-> evidence under `evaluation/02_design/usability/`. Keep evaluator observation
-> separate from participant research. Do not overwrite earlier black-box,
-> white-box or simulation evidence. After the checkpoint, proceed to Step 16.
+> Complete Step 16 — Design Informed Argument using only recorded design
+> evidence, including §18.1 usability findings (E036–E038). Link each claim to
+> evidence and retain failures, partials, contradictions and transfer limits.
+> Do not change production or overwrite earlier evaluation evidence.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Execute the U1–U9 structured usability inspection from protocol 2.1.`
-2. `Complete Step 16 using only recorded design evidence.`
-3. `Execute the Step 17 Photosynthesis scenario without changing inputs to
+1. `Complete Step 16 using only recorded design evidence.`
+2. `Execute the Step 17 Photosynthesis scenario without changing inputs to
    force success.`
-4. `Complete Step 18 literature evaluation with source locators and transfer
+3. `Complete Step 18 literature evaluation with source locators and transfer
    limitations.`
-5. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
+4. `Complete Steps 20–22: evidence register, results table, and PIRQOA matrix.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3434,7 +3460,7 @@ Only after Steps 20–22 are complete:
 
 - [x] FURPS F1–F13 and U1–U9 criteria, case mappings, and decision rules frozen
 - [ ] FURPS Functionality evaluated
-- [ ] FURPS Usability evaluated
+- [x] FURPS Usability inspected (§18.1: six Pass / three Partial; issues/exclusions retained; E036–E038)
 - [x] Static analysis executed (`RUN-B01-20260930-STATIC-01`)
 - [x] Dynamic analysis executed (qualifications retained)
 - [x] Optimisation/bounds analysis executed

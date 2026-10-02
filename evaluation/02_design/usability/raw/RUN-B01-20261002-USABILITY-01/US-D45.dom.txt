@@ -1,0 +1,20 @@
+- banner:
+  - link "Logo Burmese STEM AI":
+    - /url: /
+    - img "Logo"
+    - generic: Burmese STEM AI
+  - navigation "Primary navigation":
+    - link "New Inquiry":
+      - /url: /
+    - link "History":
+      - /url: /history
+    - button "မြန်မာဘာသာသို့ ပြောင်းရန်": မြန်မာ
+    - button "Toggle color theme": ◑
+- alert
+- main:
+  - generic: "!"
+  - heading "Session could not be loaded" [level=1]
+  - paragraph: Learning session was not found
+  - button "Try again"
+  - link "Back to History":
+    - /url: /history

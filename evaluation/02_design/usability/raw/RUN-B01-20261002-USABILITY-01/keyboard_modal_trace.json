@@ -1,0 +1,119 @@
+{
+  "viewport": "390x844",
+  "locale": "my",
+  "theme": "light",
+  "trace": [
+    {
+      "insideDialog": false,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "What is Gradient Descent?"
+    },
+    {
+      "insideDialog": false,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "Explain Neural Networks."
+    },
+    {
+      "insideDialog": false,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "What does Polymorphism mean?"
+    },
+    {
+      "insideDialog": true,
+      "label": "ဦးစားပေးချက်များ ပိတ်ရန်",
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "×"
+    },
+    {
+      "insideDialog": true,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "✓မြန်မာ + အင်္ဂလိပ် စကားရပ်"
+    },
+    {
+      "insideDialog": true,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "မြန်မာ"
+    },
+    {
+      "insideDialog": true,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "အင်္ဂလိပ်"
+    },
+    {
+      "insideDialog": true,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "စတင်သူ"
+    },
+    {
+      "insideDialog": true,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "✓အလယ်အလတ်"
+    },
+    {
+      "insideDialog": true,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "အဆင့်မြင့်"
+    },
+    {
+      "insideDialog": true,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "✓လမ်းညွှန်မှု"
+    },
+    {
+      "insideDialog": true,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "တိုတောင်း"
+    },
+    {
+      "insideDialog": true,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "ဥပမာများ"
+    },
+    {
+      "insideDialog": true,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "BUTTON",
+      "text": "ဦးစားပေးချက် သိမ်းဆည်းပါ"
+    },
+    {
+      "insideDialog": false,
+      "label": null,
+      "outline": "rgb(15, 23, 42) none 3px",
+      "tag": "BODY",
+      "text": "မေးခွန်းသစ်\nမှတ်တမ်း\nEN\n◑\nဘာသာနှစ်မျိုးဖြင့် STEM သင်ယူခြင်း\nမြန်မာ STEM AI\n\nSTEM သဘောတရားများကို မြ"
+    },
+    {
+      "insideDialog": false,
+      "label": null,
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "tag": "A",
+      "text": ""
+    }
+  ]
+}

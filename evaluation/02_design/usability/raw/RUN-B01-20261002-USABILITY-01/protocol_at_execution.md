@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–15 recorded; §18.1 usability executed on 2 October 2026: 6 Pass / 3 Partial, E036–E038; simulation/black-box findings and structural-only WB Pass retained; Step 16 next; remaining evaluations not yet complete |
+| Status | B01 frozen; Steps 10–15 recorded, including simulation/black-box findings and WB01–WB06 structural Pass on 2 October 2026; full structured usability inspection next; remaining evaluations not yet complete |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -280,10 +280,9 @@ Step 12 bounds evidence, and Step 13 live artificial simulation now provide part
 and U1–U9. Nathan's simulation content review is completed and endorsed on
 2 October 2026 (E022–E023). Step 14 public HTTP/browser black-box execution is
 accounted for with qualifications (E024–E027). Step 15 WB01–WB06 is structurally
-complete (E033–E035). §18.1 structured usability inspection is now executed
-(E036–E038): six U criteria Pass and three Partial within technical evaluator
-scope. Participant research was not conducted and is not implied. Functionality
-rows retain their mixed evidence/remaining synthesis qualifications.
+complete (E033–E035). The full locale/theme/viewport matrix, keyboard inspection
+and participant evidence are not complete. The rows therefore remain Partial
+rather than being promoted to final Pass outcomes.
 
 Simulation execution `RUN-B01-20261001-SIMULATION-02` accounted for all 55
 planned attempts (48 core plus seven separate routes): 44 technical Pass,
@@ -337,23 +336,7 @@ Myanmar-script enforcement, live interpretation accuracy or learning benefit;
 script constraints are prompt-only where no runtime validator exists.
 BB07/BB08 partials, BB22’s public-boundary oracle failure and simulation findings
 remain unchanged. Handler-level identity tests do not override the public proxy
-observation. The subsequent structured usability checkpoint is recorded below;
-it does not retrospectively turn white-box coverage into usability evidence.
-
-Usability run `RUN-B01-20261002-USABILITY-01` inspected 133 states/captures (131 main plus two separate Back-navigation rechecks) in
-Chrome across both required widths, both UI locales and both themes (eight
-basic configurations). All five routes, optional responses, fade/cap, Review/
-Resume, legacy reconstruction, History, controlled errors/recovery and keyboard
-interaction were inspected on the root production build. All 66 production
-files still match B01. Final 29 owned History links match newest-first stored
-order; foreign owner is excluded; 30 synthetic sessions stay within bounds.
-Controlled provider fixtures made zero external calls; synthetic adaptations
-do not establish content novelty or language quality. USI-01 modal focus and
-USI-02 Burmese error localisation are severity 2; USI-03 remaining-ambiguity
-badge is severity 1. Invalid preference options are UI-unreachable (NA), not
-forced; preference-save infrastructure faults and full WCAG/participant work
-were not executed. See [inspection and accountability](../02_design/usability/usability_inspection.md)
-and [issues](../02_design/usability/issues.csv). No production fixes were made.
+observation. The full structured usability checkpoint is next.
 
 | Functionality criterion | Execution status | Outcome | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- |
@@ -373,15 +356,15 @@ and [issues](../02_design/usability/issues.csv). No production fixes were made.
 
 | Usability criterion | Execution status | Outcome | Highest severity | Evidence IDs | Deviation or note |
 | --- | --- | --- | --- | --- | --- |
-| U1 | Executed | Pass | 0 | E010–E013, E025–E026, E036–E038 | Purpose, labelled inquiry, empty/whitespace prevention, keyboard submission, pending and recovery inspected in both viewports/locales |
-| U2 | Executed | Pass | 0 | E010–E013, E025–E026, E036–E038 | Initial hierarchy, hint, adaptations and follow-up answers distinguishable in both viewports/themes/locales |
-| U3 | Executed | Pass | 0 | E010–E013, E025–E026, E036–E038 | Three overall responses, five optional choices, skip/back, required bounded clarification and Space/ArrowDown selection inspected; no meaningful-novelty claim |
-| U4 | Executed | Pass | 0 | E010–E013, E025–E026, E036–E038 | Actual pending/adapting feedback, routes/rounds, fade, cap, completion and controlled retry observed; localisation scored separately under U8/U9 |
-| U5 | Executed | Partial | 2 | E010–E013, E025–E026, E036–E038 | Navigation, owned newest-first History, Review/Resume and preference save/reload work; USI-01 modal fails focus entry/containment/restoration in keyboard inspection |
-| U6 | Executed | Pass | 0 | E010–E013, E022–E023, E025–E026, E036–E038 | Visual glyph/wrapping readability and bilingual override inspected in both widths/themes/locales; no material clipping observed. Visual-only Pass; simulation language quality remains mixed; not WCAG certification |
-| U7 | Executed | Pass | 1 | E010–E013, E025–E026, E036–E038 | Self-report, route/round/limit, completed/review-recommended and correction trace distinguishable; USI-03 generic correction badge retained on still-ambiguous outcome |
-| U8 | Executed | Partial | 2 | E010–E013, E025–E026, E036–E038 | Safe failure/resubmission and foreign-session recovery work; USI-02 English-only messages in Burmese UI. Invalid preference validation UI-unreachable NA; preference-save infrastructure fault not injected |
-| U9 | Executed | Partial | 2 | E010–E013, E025–E026, E036–E038 | Eight basic configurations inspected; USI-01 modal focus, USI-02 error localisation and severity-1 USI-03 ambiguity terminology inconsistencies retained |
+| U1 | Executed | Partial | 0 | E010–E013, E025–E026 | Desktop inquiry, disabled empty submit, ambiguity and provider-error recovery observed; comprehensive loading/keyboard/localised matrix remains |
+| U2 | Executed | Partial | 0 | E010–E013, E025–E026 | All initial support areas, revealed hint, stored adaptations and follow-ups distinguishable in English/Light desktop; other themes/locales/mobile remain |
+| U3 | Executed | Partial | 0 | E010–E013, E025–E026 | All five Stage6B choices, both default skips and Back exercised, including bounded clarification input; full consequence-wording/keyboard/localisation matrix remains |
+| U4 | Executed | Partial | 0 | E010–E013, E025–E026 | Route/history, language overrides, limit and controlled retry/recovery visible in desktop black-box workflows; comprehensive transient loading/adapting and keyboard matrix remains |
+| U5 | Executed | Partial | 0 | E010–E013, E025–E026 | Home, History, Review/Resume, modal preference save/reload, foreign-session error and Back-to-History observed; full multi-viewport/keyboard matrix remains |
+| U6 | Executed | Partial | 0 | E010–E013, E022–E023, E025–E026 | All support-language presentations and bilingual overrides visible in desktop English UI; simulation linguistic quality mixed. Burmese UI/mobile/Dark/full inspection remain |
+| U7 | Executed | Partial | 0 | E010–E013, E025–E026 | Fade/route/round/history/limit/completion and corrected previous/current concept visible after reload. Raw clarification is stored but not shown as an event field; broader matrix remains |
+| U8 | Executed | Partial | 0 | E010–E013, E025–E026 | Controlled initial/adaptation/follow-up failures and malformed-output recovery observed, retaining questions/state; localisation and comprehensive error inspection remain |
+| U9 | Executed | Partial | 0 | E010–E013, E025–E026 | Consistent observed English desktop navigation/control patterns, including preferences and recovery; other locales/themes/mobile/keyboard remain |
 
 ## 6. Evaluation methods and procedures
 

@@ -1,0 +1,21 @@
+{
+  "verifiedAt": "2026-10-02T10:42:44.278Z",
+  "result": "Pass",
+  "manifestEntries": 375,
+  "manifestSha256": "6fde2530a34beff6f41cd818713fce21d899f8c88d9126fac8bf3b3f6b56c4ea",
+  "observations": 133,
+  "screenshots": 133,
+  "domSnapshots": 133,
+  "previousEvidenceRegisterRowsUnchanged": true,
+  "newEvidenceHashesVerified": [
+    "E036",
+    "E037",
+    "E038"
+  ],
+  "reportLinksResolve": true,
+  "productionFilesUnchanged": 66,
+  "sourceCopiesCreated": 0,
+  "mainVerification": "verification.json",
+  "navigationVerification": "navigation_addendum_verification.json",
+  "note": "Integrity checks only; not a replacement usability/content evaluation"
+}

@@ -1,0 +1,21 @@
+- banner:
+  - link "Logo Burmese STEM AI":
+    - /url: /
+    - img "Logo"
+    - generic: Burmese STEM AI
+  - navigation "Primary navigation":
+    - link "New Inquiry":
+      - /url: /
+    - link "History":
+      - /url: /history
+    - button "မြန်မာဘာသာသို့ ပြောင်းရန်": မြန်မာ
+    - button "Toggle color theme": ◑
+- main:
+  - heading "Learning History" [level=1]
+  - paragraph: Your STEM concepts and self-reported support history
+  - generic: ◇
+  - heading "No learning sessions yet" [level=2]
+  - paragraph: Ask your first STEM question to start building your learning history.
+  - link "New Inquiry":
+    - /url: /
+- alert

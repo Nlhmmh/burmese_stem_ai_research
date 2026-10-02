@@ -1,0 +1,48 @@
+- banner:
+  - link "Logo":
+    - /url: /
+    - img "Logo"
+  - navigation "Primary navigation":
+    - link "New Inquiry":
+      - /url: /
+    - link "History":
+      - /url: /history
+    - button "မြန်မာဘာသာသို့ ပြောင်းရန်": မြန်မာ
+    - button "Toggle color theme": ◑
+- alert
+- main:
+  - generic: biology, plant physiology
+  - heading "photosynthesis" [level=1]
+  - paragraph: STEM Learning Session
+  - generic: 📖
+  - heading "Simple Explanation" [level=2]
+  - paragraph: Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.
+  - paragraph: Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။
+  - generic: ◉
+  - heading "Real-World Example" [level=2]
+  - paragraph: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.
+  - paragraph: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။
+  - generic: ⚙
+  - heading "Technical Explanation" [level=2]
+  - paragraph: Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.
+  - paragraph: Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။
+  - generic: ◇
+  - heading "Think About This" [level=2]
+  - paragraph: What inputs does a plant need for photosynthesis, and what useful product does it make?
+  - paragraph: Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။
+  - button "Show Hint"
+  - heading "Still have a question about photosynthesis?" [level=2]
+  - textbox "Follow-up question":
+    - /placeholder: Ask a follow-up about this concept...
+  - button "Ask" [disabled]
+  - paragraph: 2 follow-ups remaining
+  - heading "Understanding Check" [level=2]
+  - button "I understand":
+    - generic: 😊
+    - generic: I understand
+  - button "I partially understand":
+    - generic: 😐
+    - generic: I partially understand
+  - button "I need more explanation":
+    - generic: 😕
+    - generic: I need more explanation

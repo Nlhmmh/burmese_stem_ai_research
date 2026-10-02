@@ -1,0 +1,24 @@
+{
+  "verification": "Pass",
+  "checkedAt": "2026-10-02T10:22:15.163Z",
+  "productionFilesUnchanged": 66,
+  "observations": 131,
+  "screenshots": 131,
+  "configurations": [
+    "1440x900 en light",
+    "1440x900 my dark",
+    "390x844 en dark",
+    "390x844 my light",
+    "1440x900 en dark",
+    "1440x900 my light",
+    "390x844 en light",
+    "390x844 my dark"
+  ],
+  "historyOrderMatchesOwnedDatabase": true,
+  "visibleOwnedHistorySessions": 29,
+  "foreignSessionExcluded": true,
+  "storedSessionsWithinBounds": 30,
+  "externalProviderCalls": 0,
+  "sourceCopiesCreated": 0,
+  "note": "Technical evidence integrity and controlled synthetic state only; not usability effectiveness or content quality."
+}
