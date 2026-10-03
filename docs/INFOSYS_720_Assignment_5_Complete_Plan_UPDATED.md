@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–18 and §18.1 recorded; Step 20 audit and conceptual argument v2 retained; Step 21 has 225 immutable results, E061–E063; Step 22 has 24 PIRQOA rows, E064–E066; Step 23 complete with 17 scoped interpretation claims, E067–E068; 63 current evidence entries (E001–E027/E033–E068); mixed findings and restricted originals retained; Step 24 figures/tables NEXT |
+| Formal evaluation status | Steps 10–18 and §18.1 recorded; audit and conceptual argument v2 retained; Step 21 has 225 immutable results; Step 22 has 24 PIRQOA rows; Step 23 has 17 scoped claims; Step 24 complete with five tables/two figures, E069–E072; 67 current evidence entries (E001–E027/E033–E072); mixed findings and restricted originals retained; Step 25 final assignment structure NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Continue to Step 24 figures/tables NEXT. Step 23 is complete in [results interpretation](../evaluation/03_results/results_interpretation.md), E067, with strong bounded mechanical evidence, partial evidence, conceptual support and unsupported claims. Its 17 scoped claims retain convergence, failures, native scales, scholarly warrants and qualified RQ answers; E068 records integrity. The register now has 63 entries. All 225 master results, 24 PIRQOA chains and original evidence remain unchanged. Step 19 remains skipped; no B01 rerun, fix, new endorsement or public-release clearance.**
+> **Continue to Step 25 final assignment structure NEXT. Step 24 is complete in [paper figures and tables](../evaluation/03_results/paper_figures_and_tables.md), E069: five editable Markdown tables, the unchanged Assignment 3 framework extract (E070), and an editable Photosynthesis flow (E071) distinguishing API-only checks. Optional timing Figure 3 is omitted with a stated reason. E072 records integrity; the register has 67 entries. All 225 results, 24 PIRQOA chains, Step 23 interpretation and original evidence remain unchanged. Step 19 remains skipped; no B01 rerun, fix, new endorsement or public-release clearance. Final paper typesetting is not yet verified.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -163,7 +163,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is Step 24's figures/tables (§33). Do not rerun or relabel completed evidence.
+1. Start at the first heading marked **NEXT**; currently this is Step 25's final assignment structure (§34). Do not rerun or relabel completed evidence.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1547,7 +1547,7 @@ Steps 11–18 and §18.1 also have recorded results. The usability checkpoint is
 complete with findings (six Pass / three Partial, E036–E038); the literature-
 grounded informed argument is recorded as E039–E041; the fresh live scenario is
 recorded as E042–E044; the design literature comparison as E045–E048.
-Step 20's audit is also complete (E049–E057), Step 21's results are recorded (E061–E063), Step 22's traceability is complete (E064–E066), and Step 23's interpretation is recorded (E067–E068). Proceed to **Step 24's figures/tables**,
+Step 20's audit is also complete (E049–E057), Step 21's results are recorded (E061–E063), Step 22's traceability is complete (E064–E066), Step 23's interpretation is recorded (E067–E068), and Step 24's figures/tables are prepared (E069–E072). Proceed to **Step 25's final assignment structure**,
 retaining all earlier qualifications and the three
 usability issues; do not treat completion as an all-criteria Pass.
 
@@ -2925,11 +2925,11 @@ E068's [manifest](../evaluation/03_results/raw/INTERPRET-RUN-01-manifest.sha256)
 and [verification](../evaluation/03_results/raw/INTERPRET-RUN-01-verification.json)
 check original 61-row index preservation, result/evidence provenance, all 225
 master results, 24 PIRQOA chains and 66 B01 production identities. The register
-now has 63 entries. No Partial/Fail is promoted and no pooled pass rate,
+had 63 entries at Step 23 capture (67 after Step 24). No Partial/Fail is promoted and no pooled pass rate,
 educational-effect claim, new human endorsement, execution, fix or public-release
 clearance is introduced. Phase D4–D6 is complete within this scope.
 
-**Next: Step 24 (§33).** Original interpretation rules (applied, retained):
+Step 24's subsequent completion is recorded in §33. Original interpretation rules (applied, retained):
 
 The final Results section should distinguish four types of conclusion.
 
@@ -2963,7 +2963,33 @@ Unless real learner-outcome evidence exists.
 
 ---
 
-# 33. Step 24 — Recommended Figures and Tables — NEXT
+# 33. Step 24 — Recommended Figures and Tables — COMPLETE WITH QUALIFICATIONS
+
+Recorded 3 October 2026: [paper_figures_and_tables.md](../evaluation/03_results/paper_figures_and_tables.md),
+E069, contains five numbered tables and two captioned figures, with source/RQ
+mapping and placement guidance. Table 1 covers five conceptual criteria; Table 2
+combines all four conceptual methods and the current qualified synthesis;
+Table 3 includes all 13 F and nine U criteria; Table 4 summarises six required
+design methods plus four completed supplementary methods/inspection; Table 5
+condenses the three RQ chains with the full 24-row matrix retained separately.
+
+E070 is the unchanged original Assignment 3 Figure 3 extracted from PDF page 7.
+Its caption explains refined A5 semantics without redrawing the historical
+figure. E071 is the editable SVG of the actual fresh Photosynthesis sequence;
+cap/High/completed-response checks are labelled API-only. Its rendered PNG is
+an insertion derivative, not independent evidence. Optional Figure 3 is omitted
+because the local 15-request sample supports descriptive timing only.
+
+E072's [manifest](../evaluation/03_results/raw/PAPER-RUN-01-manifest.sha256)
+and [verification](../evaluation/03_results/raw/PAPER-RUN-01-verification.json)
+check table coverage/IDs, figure identities, the original 63-row index,
+unchanged 225 results/24 PIRQOA chains/Step 23 interpretation, source PDF and
+66 B01 production files. The register has 67 entries. Both figures and table
+previews were inspected; final Word/PDF pagination/widths are deferred.
+No outcome promotion, new execution, expert/participant endorsement, source-copy
+checkout, production fix or restricted-original release clearance occurred.
+
+**Next: Step 25 (§34).** Original presentation specification (fulfilled, retained):
 
 Keep the final paper focused.
 
@@ -3045,7 +3071,7 @@ This should be one of the strongest tables in the paper.
 
 ---
 
-# 34. Step 25 — Recommended Final Assignment Structure
+# 34. Step 25 — Recommended Final Assignment Structure — NEXT
 
 ```text
 Title
@@ -3492,7 +3518,7 @@ Step 23's subsequent completion is recorded in D4–D6 below.
 
 E067 §6 records convergence and non-independence. Its 17 claims distinguish
 strong bounded mechanical evidence, partial evidence, conceptual support and
-unsupported claims; E068 records integrity. The register has 63 entries.
+unsupported claims; E068 records integrity. The register had 63 entries at this capture.
 No original R/E identity, outcome, PIRQOA row or B01 source is changed.
 
 Identify converging evidence.
@@ -3516,13 +3542,17 @@ Identify conflicting, failed, partial, or weak evidence.
 E067 §§8–9 preserve native counts, qualified RQ answers and unsupported learning,
 mastery, optimal-dose, fit, superiority and accessibility claims. Scholarly
 warrants are referenced without claiming new source appraisal or learner evidence.
-Proceed to **Step 24 — figures/tables (§33)** before final-paper assembly.
+Step 24's subsequent figure/table pack is recorded in §33; Step 25 is next.
 
 Write explicit limitations and claim boundaries.
 
 ---
 
-## Phase E — Drafting
+## Phase E — Drafting — READY AFTER STEP 24
+
+E069–E072 supply the prepared figures/tables. Begin with Step 25's prescribed
+structure; use Step 26's word allocation and preserve E067's evidence limits.
+The paper itself has not been drafted by this figure/table preparation.
 
 Draft only after Phase D is complete. Do not write result sentences while
 actual-result fields are blank.
@@ -3554,21 +3584,21 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 Use this request next:
 
-> Complete Step 24 — Recommended Figures and Tables (§33). Use E061/E062's
-> immutable results, E064/E065's PIRQOA chains and E067's interpretation to
-> prepare focused paper figures/tables. Preserve all four claim categories,
-> native outcomes, conflicting/failed findings, scholarly source limits,
-> self-report boundaries and skipped expert/participant work. Do not promote
-> Partial/Fail, pool heterogeneous outcomes, rerun/fix B01, invent endorsements
-> or claim educational effectiveness. Do not write the complete paper or clear
-> restricted originals yet.
+> Complete Step 25 — Recommended Final Assignment Structure (§34). Prepare
+> the paper structure using the prescribed sections and place E069's figures/
+> tables appropriately. Use E061/E064/E067's recorded results, traceability
+> and interpretation; retain scholarly warrants, native outcomes, failures,
+> self-report boundaries and skipped expert/participant work. Distinguish the
+> paper scaffold from completed prose and apply Step 26's word allocation
+> before drafting. Do not invent evidence, rerun/fix B01, promote outcomes or
+> clear restricted originals for publication.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Complete Step 24: prepare the paper figures/tables using the recorded results and interpretation.`
-2. `Proceed to final-paper drafting after the figures/tables and their evidence limits are checked.`
+1. `Complete Step 25: prepare the final assignment structure and position the recorded figures/tables.`
+2. `Apply Step 26's word allocation, then draft the paper sections using only recorded evidence and verified scholarly warrants.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3643,6 +3673,7 @@ Only after Steps 20–23 are complete and Step 24's figures/tables are checked:
 - [x] Master results table created (Step 21, 225 immutable rows; E061–E063)
 - [x] Results mapped to PIRQOA (Step 22; 24 complete chains; E064–E066)
 - [x] Four interpretation categories, convergence, conflicts and claim limits recorded (Step 23; 17 scoped claims; E067–E068; no original outcome promotion)
+- [x] Paper figures/tables prepared with source locators, captions, all criteria and retained qualifications (Step 24; E069–E072; final paper typesetting still pending)
 - [x] RQ1 addressed with qualified support and explicit gaps (not reliable language quality or learner benefit)
 - [x] RQ2 addressed with qualified support and explicit gaps (not improved understanding/retention)
 - [x] RQ3 addressed with qualified support and explicit gaps (not calibrated contingency/fading or optimal support dose)

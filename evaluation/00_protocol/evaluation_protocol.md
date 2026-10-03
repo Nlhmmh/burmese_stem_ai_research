@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; audit/current conceptual argument retained; Step 21 has 225 results; Step 22 has 24 qualified PIRQOA chains, E064–E066; Step 23 has 17 scoped interpretation claims, E067–E068; 63 current evidence entries; mixed findings/release limits retained; Step 24 figures/tables next |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; audit/current argument retained; 225 results, 24 PIRQOA chains and 17 scoped interpretation claims preserved; Step 24 has five tables/two figures, E069–E072; 67 current evidence entries; mixed findings/release limits retained; Step 25 final assignment structure next |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -458,7 +458,7 @@ not established. All 39 prior registered artefacts and 66 production identities
 remain unchanged; 121-entry manifest retained. No new application/provider/
 human run or earlier result promotion. Step 19 optional expert study remains
 Skipped. The subsequent Step 20 audit, Step 21 consolidation and Step 22
-traceability and Step 23 interpretation are recorded below. Step 24 figures/tables is now next.
+traceability, Step 23 interpretation and Step 24 presentation are recorded below. Step 25 final assignment structure is now next.
 Acceptance criteria, historical conceptual literature conclusions and B01
 production remain unchanged.
 
@@ -533,10 +533,27 @@ RQ answers. No original case or F/U outcome is promoted. Educational
 effectiveness, calibrated scaffolding, optimal dose and independent expert/
 participant evidence remain unestablished. E068 indexes the integrity manifest;
 all 61 intake register rows, 225 master results, 24 PIRQOA chains and 66 B01
-production hashes are preserved. The register has 63 entries. No new
+production hashes are preserved. The register had 63 entries at this capture. No new
 application/test/provider/database run, human endorsement, production fix or
 restricted-original release clearance. Acceptance criteria remain 2.1.
-**Next: Step 24 — figures/tables.**
+Step 24's subsequent presentation record follows.
+
+**Step 24 / paper figures and tables — complete with qualifications, 3 October 2026.**
+[E069 pack](../03_results/paper_figures_and_tables.md) contains five editable
+Markdown tables, five conceptual criteria/all four methods, all 13 F/nine U
+criteria, six required and four supplementary design-method/inspection rows,
+and a three-row presentation of the complete E064 PIRQOA matrix. E070 is the
+unchanged Assignment 3 framework-diagram extract; the caption identifies later
+refined semantics. E071 is an editable SVG of the actual fresh Photosynthesis
+flow, with cap/High/completed checks explicitly API-only; its PNG is a render
+derivative. The optional timing chart is omitted with a descriptive-sample reason.
+E072 records identities/integrity. All 63 intake register rows, 225 results,
+24 PIRQOA chains, E067 interpretation, source PDF and 66 production hashes are
+unchanged; the register has 67 entries. Visual/source/ID checks passed; final
+paper pagination/table widths remain unverified. No criteria/oracle change,
+outcome promotion, new app/test/provider/database/participant execution or
+public-release clearance. Acceptance criteria remain 2.1.
+**Next: Step 25 — final assignment structure.**
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 
@@ -816,6 +833,7 @@ FURPS Partials; all four claim categories retain source and coverage limits.
 - [x] Master results link claims to evidence and limitations (Step 21, E061–E063).
 - [x] PIRQOA matrix links all three REQ/RQs to existing result/evidence IDs, qualified supported claims and explicit gaps (Step 22, E064–E066; not educational-effectiveness proof).
 - [x] Four claim categories, convergence/non-independence, conflicts and limitations applied to existing results (Step 23, E067–E068; no regrading or pooled success score).
+- [x] Five paper tables and two source-traceable figures prepared (Step 24, E069–E072; optional timing figure omitted with reason; final paper typesetting pending).
 - [ ] Design/code discrepancies and unresolved concerns remain visible; fixes have separate baseline/retest records.
 - [x] Optional expert work is explicitly Skipped / Not assessed (R220; no independent expert study).
 - [ ] Original Assignment 5 brief checked for method/rubric alignment; primary references checked before final scholarly attribution.
