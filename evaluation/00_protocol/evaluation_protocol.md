@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; Step 20 audit and conceptual argument v2 retained; Step 21 complete with 225 results, E061–E063; 58 current evidence entries; mixed findings/release limits and skipped optional expert study retained; Step 22 PIRQOA matrix next |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; audit/current conceptual argument retained; Step 21 has 225 results; Step 22 complete with 24 qualified PIRQOA chains, E064–E066; 61 current evidence entries; mixed findings/release limits and skipped experts retained; Step 23 Interpretation Rules next |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -457,8 +457,8 @@ STEM content, exact pedagogical bounds, superiority and learner outcomes are
 not established. All 39 prior registered artefacts and 66 production identities
 remain unchanged; 121-entry manifest retained. No new application/provider/
 human run or earlier result promotion. Step 19 optional expert study remains
-Skipped. Step 20's audit and Step 21 consolidation are now recorded below;
-Step 22 PIRQOA traceability is next.
+Skipped. The subsequent Step 20 audit, Step 21 consolidation and Step 22
+traceability are recorded below. Step 23 Interpretation Rules is now next.
 Acceptance criteria, historical conceptual literature conclusions and B01
 production remain unchanged.
 
@@ -505,8 +505,23 @@ C1 supports explicit responsibility coverage only; C2–C5 remain qualified.
 Thirteen F Partials, six U Pass/three Partial, assessed BB 21 Pass/two Partial/
 one Fail, live simulation failures and mixed delivered content remain intact.
 No pooled success rate, new execution, human endorsement or public-release
-clearance is implied. Criteria/oracles stay version 2.1. Step 22's PIRQOA matrix
-is next and remains uncreated; RQ1–RQ3 are not declared fully answered here.
+clearance is implied. Criteria/oracles stay version 2.1. At Step 21 capture,
+Step 22's matrix was still uncreated; its subsequent qualified completion is
+recorded below.
+
+**Step 22 / PIRQOA traceability — complete, 3 October 2026.**
+[E064 matrix](../03_results/pirqoa_traceability.csv) records 24 complete chains:
+seven REQ-01/RQ1, six REQ-02/RQ2 and eleven REQ-03/RQ3. It links 140 existing
+immutable result IDs and 53 original evidence IDs to supported claims and
+explicit gaps. [E065 notes](../03_results/pirqoa_traceability_notes.md) explain
+the three qualified overall answers, native result scopes and direct versus
+enabling evidence; E066 indexes the integrity manifest. All 58 intake evidence
+rows/hashes, 225 master results and 66 B01 production identities are unchanged;
+the register now has 61 entries. RQ traceability is complete, not proof of full
+empirical requirement satisfaction or learning effectiveness. Mixed F/U,
+simulation/content/BB outcomes and restricted-original boundaries remain.
+Acceptance criteria stay 2.1; no new application/test/provider/database run or
+human endorsement. Step 23 Interpretation Rules is next.
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 
@@ -779,7 +794,7 @@ A bounded implementation claim is strongly supported only when relevant external
 - [ ] All 48 planned simulation sessions and 15 timing attempts accounted for, including blocked/failed cases and deviations.
 - [x] Retained raw evidence, logs, actual outputs, state records and recorded retries indexed (Step 20, E057; 52 entries; restricted originals not cleared for public release).
 - [x] Master results link claims to evidence and limitations (Step 21, E061–E063).
-- [ ] PIRQOA matrix links requirements/RQs to result IDs, evidence and supported/unsupported claims (Step 22 next).
+- [x] PIRQOA matrix links all three REQ/RQs to existing result/evidence IDs, qualified supported claims and explicit gaps (Step 22, E064–E066; not educational-effectiveness proof).
 - [ ] Design/code discrepancies and unresolved concerns remain visible; fixes have separate baseline/retest records.
 - [x] Optional expert work is explicitly Skipped / Not assessed (R220; no independent expert study).
 - [ ] Original Assignment 5 brief checked for method/rubric alignment; primary references checked before final scholarly attribution.

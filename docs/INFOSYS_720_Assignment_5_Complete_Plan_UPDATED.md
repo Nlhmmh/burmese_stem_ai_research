@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–18 and §18.1 recorded; Step 20 audit retained; conceptual argument v2 E058–E060 retained; Step 21 complete with 225 result rows, E061–E063; 58 current evidence entries (E001–E027/E033–E063); mixed findings/restricted originals and skipped optional expert study retained; Step 22 PIRQOA matrix NEXT |
+| Formal evaluation status | Steps 10–18 and §18.1 recorded; Step 20 audit and conceptual argument v2 retained; Step 21 has 225 immutable results, E061–E063; Step 22 complete with 24 PIRQOA rows, E064–E066; 61 current evidence entries (E001–E027/E033–E066); qualified RQ answers, mixed findings, restricted originals and skipped experts retained; Step 23 Interpretation Rules NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Continue to Step 22 PIRQOA traceability NEXT. Step 21 is complete in [master results](../evaluation/03_results/master_results.csv), E061, with 225 immutable IDs and [consolidation rules/coverage](../evaluation/03_results/consolidation_notes.md), E062. E063 records integrity; the evidence register now has 58 entries. Step 20's 52-entry checkpoint remains historical, not a constraint against append-only indexing. C4/method crosswalks, qualified literature/arguments, provisional scenario content, six U Pass/three Partial, thirteen F Partials, failures and restricted originals remain explicit. Step 19 is intentionally skipped. No B01 rerun, fix or public-release clearance.**
+> **Continue to Step 23 Interpretation Rules NEXT. Step 22 is complete in [PIRQOA traceability](../evaluation/03_results/pirqoa_traceability.csv), E064, with 24 rows linking all three REQ/RQs to 140 existing results and 53 original evidence IDs. [Mapping notes](../evaluation/03_results/pirqoa_traceability_notes.md), E065, retain qualified overall answers and explicit gaps; E066 records integrity. The register now has 61 entries. All 225 master results and original evidence remain unchanged. Complete traceability does not upgrade content, pedagogical or usability outcomes. Step 19 remains skipped; no B01 rerun, fix, new endorsement or public-release clearance.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -163,7 +163,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is D3 / Step 22's PIRQOA matrix. Do not rerun or relabel completed evidence.
+1. Start at the first heading marked **NEXT**; currently this is Step 23's Interpretation Rules (§32). Do not rerun or relabel completed evidence.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1547,7 +1547,7 @@ Steps 11–18 and §18.1 also have recorded results. The usability checkpoint is
 complete with findings (six Pass / three Partial, E036–E038); the literature-
 grounded informed argument is recorded as E039–E041; the fresh live scenario is
 recorded as E042–E044; the design literature comparison as E045–E048.
-Step 20's audit is also complete (E049–E057), and Step 21's results are now recorded (E061–E063). Proceed to **Step 22's PIRQOA matrix**,
+Step 20's audit is also complete (E049–E057), Step 21's results are recorded (E061–E063), and Step 22's traceability is complete (E064–E066). Proceed to **Step 23's Interpretation Rules**,
 retaining all earlier qualifications and the three
 usability issues; do not treat completion as an all-criteria Pass.
 
@@ -2784,7 +2784,8 @@ F1–F13 remain Partial; U1–U9 remain six Pass/three Partial; black-box remain
 21 Pass/two Partial/one Fail. Conceptual rationale, structural mechanics and
 delivered-content judgements are not pooled into a success rate. No app/test/
 provider/database run, original-result edit, new human endorsement or release
-clearance occurred. The register now has 58 entries. Step 22 is next.
+clearance occurred. At Step 21 capture the register had 58 entries. Step 22's
+subsequent completion is recorded below; its current register has 61 entries.
 
 Original execution instructions (fulfilled, retained):
 
@@ -2812,7 +2813,21 @@ represented, evidence-linked, and bounded by a limitation.
 
 ---
 
-# 31. Step 22 — Final PIRQOA Evaluation Matrix — NEXT
+# 31. Step 22 — Final PIRQOA Evaluation Matrix — COMPLETE WITH QUALIFICATIONS
+
+Recorded 3 October 2026: [pirqoa_traceability.csv](../evaluation/03_results/pirqoa_traceability.csv),
+E064, has 24 rows using the exact schema below: seven REQ-01/RQ1, six
+REQ-02/RQ2 and eleven REQ-03/RQ3. All three questions have bounded overall
+answers and explicit unsupported claims/gaps, linked to 140 immutable master
+results and 53 original evidence IDs. [Mapping notes](../evaluation/03_results/pirqoa_traceability_notes.md),
+E065, distinguish conceptual, behavioural, content and enabling evidence;
+E066 records input/output integrity. All 58 intake register rows/hashes, all
+225 master results and 66 B01 production files remain unchanged. The register
+now has 61 entries. Traceability is complete; empirical requirement satisfaction
+and learner effectiveness are not asserted. No application/test/provider/
+database run or new human endorsement. Step 23 is next.
+
+Original instructions (fulfilled, retained):
 
 This is one of the most important final tables.
 
@@ -2895,7 +2910,7 @@ remaining gap. No claim may rely on a path or result that does not exist.
 
 ---
 
-# 32. Step 23 — Interpretation Rules
+# 32. Step 23 — Interpretation Rules — NEXT
 
 The final Results section should distinguish four types of conclusion.
 
@@ -3444,12 +3459,15 @@ release boundaries documented in E057. No result promotion or B01 rerun.
 
 ### D2 / Step 21 — COMPLETE WITH QUALIFICATIONS
 225 immutable results recorded in E061; rules/coverage/conflicts in E062 and
-integrity manifest E063. Prior 55 rows preserved; current register 58 entries.
+integrity manifest E063. Prior 55 rows preserved; register had 58 entries at
+that capture, before Step 22's append-only extension.
 Mixed outcomes and explicit unassessed/skipped/NA/Blocked work remain visible.
 
-### D3 / Step 22 — NEXT
-Create `evaluation/03_results/pirqoa_traceability.csv` and link REQ/RQ claims
-to result and evidence IDs.
+### D3 / Step 22 — COMPLETE WITH QUALIFICATIONS
+E064's 24 rows link all three REQ/RQs to existing results/evidence and supported
+claims/gaps; E065 documents scope and E066 integrity. All 58 intake rows and
+225 master results preserved; current evidence register has 61 entries.
+Proceed to **Step 23 — Interpretation Rules (§32)**, applying D4–D6 below.
 
 ### D4
 Identify converging evidence.
@@ -3501,22 +3519,21 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 Use this request next:
 
-> Complete Step 22 — Final PIRQOA Evaluation Matrix. Use E061's 225 immutable
-> result IDs, E062's synthesis rules and the 58-entry evidence register with
-> E057's historical C4/method crosswalk. Create pirqoa_traceability.csv with
-> the §31 schema. Map REQ-01/RQ1, REQ-02/RQ2 and REQ-03/RQ3 to supported claims
-> and explicit gaps. Preserve Partial/Fail, literature-transfer limits,
-> provisional scenario content, temporal supersession and skipped expert work.
-> E058/E059 is the current conceptual argument; E053 is historical, not an
-> independent second method. No B01 rerun/fix or invented results, participants,
-> endorsements or public-release clearance. Do not write the final paper yet.
+> Complete Step 23 — Interpretation Rules. Use E061/E062's immutable results
+> and E064/E065's PIRQOA chains to distinguish strong bounded mechanical
+> support, partial evidence, conceptual rationale and unsupported claims.
+> Retain conflicting/failed findings, source-transfer limits, provisional
+> content, self-report boundaries and skipped expert/participant work. Reuse
+> existing R/E IDs; do not promote Partial/Fail, pool heterogeneous outcomes,
+> rerun/fix B01, invent endorsements or claim educational effectiveness.
+> Do not write the complete final paper or clear restricted originals yet.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Complete Step 22: map results and evidence to PIRQOA and research questions.`
-2. `Complete the next interpretation step only after the PIRQOA matrix exists.`
+1. `Complete Step 23: interpret the recorded results using the four claim categories.`
+2. `Proceed to Step 24's paper figures/tables after the interpretation is recorded.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3589,10 +3606,10 @@ Only after Steps 20–22 are complete:
 ## Results
 
 - [x] Master results table created (Step 21, 225 immutable rows; E061–E063)
-- [ ] Results mapped to PIRQOA
-- [ ] RQ1 addressed
-- [ ] RQ2 addressed
-- [ ] RQ3 addressed
+- [x] Results mapped to PIRQOA (Step 22; 24 complete chains; E064–E066)
+- [x] RQ1 addressed with qualified support and explicit gaps (not reliable language quality or learner benefit)
+- [x] RQ2 addressed with qualified support and explicit gaps (not improved understanding/retention)
+- [x] RQ3 addressed with qualified support and explicit gaps (not calibrated contingency/fading or optimal support dose)
 - [x] Failures reported honestly in Step 21 (including original oracle failures; no promotion)
 - [x] Limitations reported for every Step 21 result
 - [x] Step 21 makes no educational-effectiveness claim (final paper remains to be checked)
