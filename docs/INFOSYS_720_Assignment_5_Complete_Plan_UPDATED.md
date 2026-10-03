@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–18 and §18.1 recorded; Step 20 audit retained; conceptual informed argument v2 added as E058–E060, 55 current entries (E001–E027/E033–E060); mixed findings and restricted originals retained; Step 19 optional expert study skipped; Step 21 results consolidation NEXT |
+| Formal evaluation status | Steps 10–18 and §18.1 recorded; Step 20 audit retained; conceptual argument v2 E058–E060 retained; Step 21 complete with 225 result rows, E061–E063; 58 current evidence entries (E001–E027/E033–E063); mixed findings/restricted originals and skipped optional expert study retained; Step 22 PIRQOA matrix NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Continue to Step 21 results consolidation NEXT. Step 20 is recorded in the [register audit](../evaluation/03_results/evidence_register_audit.md), E057: 43 historical rows preserved, eight conceptual artefacts indexed, 52 retained records verified. Historical C4/method aliases and restricted cookie-bearing originals are explicit. Step 18's qualified literature findings (E045–E048), Step 17's provisional content/API-only limitations (E042–E044), Step 16's qualified argument (E039–E041), §18.1's six Pass/three Partial and earlier mixed outcomes remain unchanged. Step 19 is intentionally skipped. No B01 rerun, fix or public-release clearance.**
+> **Continue to Step 22 PIRQOA traceability NEXT. Step 21 is complete in [master results](../evaluation/03_results/master_results.csv), E061, with 225 immutable IDs and [consolidation rules/coverage](../evaluation/03_results/consolidation_notes.md), E062. E063 records integrity; the evidence register now has 58 entries. Step 20's 52-entry checkpoint remains historical, not a constraint against append-only indexing. C4/method crosswalks, qualified literature/arguments, provisional scenario content, six U Pass/three Partial, thirteen F Partials, failures and restricted originals remain explicit. Step 19 is intentionally skipped. No B01 rerun, fix or public-release clearance.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -163,7 +163,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is D2 / Step 21's consolidated results table. Do not rerun or relabel completed evidence.
+1. Start at the first heading marked **NEXT**; currently this is D3 / Step 22's PIRQOA matrix. Do not rerun or relabel completed evidence.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1547,7 +1547,7 @@ Steps 11–18 and §18.1 also have recorded results. The usability checkpoint is
 complete with findings (six Pass / three Partial, E036–E038); the literature-
 grounded informed argument is recorded as E039–E041; the fresh live scenario is
 recorded as E042–E044; the design literature comparison as E045–E048.
-Step 20's audit is also complete (E049–E057). Proceed to **Step 21's consolidated results table**,
+Step 20's audit is also complete (E049–E057), and Step 21's results are now recorded (E061–E063). Proceed to **Step 22's PIRQOA matrix**,
 retaining all earlier qualifications and the three
 usability issues; do not treat completion as an all-criteria Pass.
 
@@ -2772,7 +2772,21 @@ remain.
 
 ---
 
-# 30. Step 21 — Consolidated Results Table — NEXT
+# 30. Step 21 — Consolidated Results Table — COMPLETE WITH QUALIFICATIONS
+
+Recorded 3 October 2026: [master_results.csv](../evaluation/03_results/master_results.csv),
+E061, contains 225 immutable IDs R001–R225 with the exact schema below.
+[Consolidation notes](../evaluation/03_results/consolidation_notes.md), E062,
+index all substantive method findings, all C/F/U aggregates, conflicts and
+unassessed/blocked/NA/skipped work. E063 hashes the retained inputs and derived
+outputs; all 55 prior evidence rows and 66 B01 production identities are unchanged.
+F1–F13 remain Partial; U1–U9 remain six Pass/three Partial; black-box remains
+21 Pass/two Partial/one Fail. Conceptual rationale, structural mechanics and
+delivered-content judgements are not pooled into a success rate. No app/test/
+provider/database run, original-result edit, new human endorsement or release
+clearance occurred. The register now has 58 entries. Step 22 is next.
+
+Original execution instructions (fulfilled, retained):
 
 After all evaluation methods are executed or accounted for, create:
 
@@ -2798,7 +2812,7 @@ represented, evidence-linked, and bounded by a limitation.
 
 ---
 
-# 31. Step 22 — Final PIRQOA Evaluation Matrix
+# 31. Step 22 — Final PIRQOA Evaluation Matrix — NEXT
 
 This is one of the most important final tables.
 
@@ -3428,11 +3442,12 @@ Register audited: 52 entries, E001–E027/E033–E057. All paths/hashes verified
 historical oracle mappings, unknown capture dates and restricted-original
 release boundaries documented in E057. No result promotion or B01 rerun.
 
-### D2 / Step 21 — NEXT
-Create `evaluation/03_results/master_results.csv` only after every method is
-executed or transparently accounted for.
+### D2 / Step 21 — COMPLETE WITH QUALIFICATIONS
+225 immutable results recorded in E061; rules/coverage/conflicts in E062 and
+integrity manifest E063. Prior 55 rows preserved; current register 58 entries.
+Mixed outcomes and explicit unassessed/skipped/NA/Blocked work remain visible.
 
-### D3 / Step 22
+### D3 / Step 22 — NEXT
 Create `evaluation/03_results/pirqoa_traceability.csv` and link REQ/RQ claims
 to result and evidence IDs.
 
@@ -3486,22 +3501,22 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 Use this request next:
 
-> Complete Step 21 — Consolidated Results Table. Use the 55 retained evidence
-> entries (E001–E027 and E033–E060), including E057's historical C4/method
-> crosswalk. Create master_results.csv with the §30 schema. Preserve mixed
-> outcomes, source-access limits, temporal supersession, restricted originals,
-> technical-versus-content distinctions and skipped expert work. Do not treat
-> retrospective indexing as new runs or promote Partial/Fail findings. Do not
-> rerun/fix B01 or invent results. Step 22 follows after consolidation.
-> Use E058/E059 as the current conceptual informed argument; E053 is historical.
-> Do not count the versions as independent methods or upgrade empirical results.
+> Complete Step 22 — Final PIRQOA Evaluation Matrix. Use E061's 225 immutable
+> result IDs, E062's synthesis rules and the 58-entry evidence register with
+> E057's historical C4/method crosswalk. Create pirqoa_traceability.csv with
+> the §31 schema. Map REQ-01/RQ1, REQ-02/RQ2 and REQ-03/RQ3 to supported claims
+> and explicit gaps. Preserve Partial/Fail, literature-transfer limits,
+> provisional scenario content, temporal supersession and skipped expert work.
+> E058/E059 is the current conceptual argument; E053 is historical, not an
+> independent second method. No B01 rerun/fix or invented results, participants,
+> endorsements or public-release clearance. Do not write the final paper yet.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Complete Step 21: consolidate results without promoting partial findings.`
-2. `Complete Step 22: map results and evidence to PIRQOA and research questions.`
+1. `Complete Step 22: map results and evidence to PIRQOA and research questions.`
+2. `Complete the next interpretation step only after the PIRQOA matrix exists.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3557,7 +3572,7 @@ Only after Steps 20–22 are complete:
 ## Design evaluation
 
 - [x] FURPS F1–F13 and U1–U9 criteria, case mappings, and decision rules frozen
-- [ ] FURPS Functionality evaluated
+- [x] FURPS Functionality evaluated and consolidated (F1–F13 all Partial; R080–R092; E061–E062; not an all-pass judgement)
 - [x] FURPS Usability inspected (§18.1: six Pass / three Partial; issues/exclusions retained; E036–E038)
 - [x] Static analysis executed (`RUN-B01-20260930-STATIC-01`)
 - [x] Dynamic analysis executed (qualifications retained)
@@ -3573,15 +3588,15 @@ Only after Steps 20–22 are complete:
 
 ## Results
 
-- [ ] Master results table created
+- [x] Master results table created (Step 21, 225 immutable rows; E061–E063)
 - [ ] Results mapped to PIRQOA
 - [ ] RQ1 addressed
 - [ ] RQ2 addressed
 - [ ] RQ3 addressed
-- [ ] Failures reported honestly
-- [ ] Limitations reported
-- [ ] No educational-effectiveness overclaim
-- [ ] Self-reported support signal described correctly
+- [x] Failures reported honestly in Step 21 (including original oracle failures; no promotion)
+- [x] Limitations reported for every Step 21 result
+- [x] Step 21 makes no educational-effectiveness claim (final paper remains to be checked)
+- [x] Self-reported support signal described correctly in Step 21 (not mastery or diagnosis)
 
 ## Evidence
 

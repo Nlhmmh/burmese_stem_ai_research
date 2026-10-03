@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; Step 20 audit retained; conceptual informed argument v2 added on 3 October 2026, E058–E060; 55 current entries; mixed findings/release limits retained; optional expert study skipped; Step 21 consolidation next |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; Step 20 audit and conceptual argument v2 retained; Step 21 complete with 225 results, E061–E063; 58 current evidence entries; mixed findings/release limits and skipped optional expert study retained; Step 22 PIRQOA matrix next |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -457,8 +457,8 @@ STEM content, exact pedagogical bounds, superiority and learner outcomes are
 not established. All 39 prior registered artefacts and 66 production identities
 remain unchanged; 121-entry manifest retained. No new application/provider/
 human run or earlier result promotion. Step 19 optional expert study remains
-Skipped. Step 20's audit is recorded below; Step 21 results consolidation is next,
-followed by Step 22 PIRQOA traceability.
+Skipped. Step 20's audit and Step 21 consolidation are now recorded below;
+Step 22 PIRQOA traceability is next.
 Acceptance criteria, historical conceptual literature conclusions and B01
 production remain unchanged.
 
@@ -477,7 +477,8 @@ black-box captures are restricted and need labelled redacted derivatives before
 public sharing. No release clearance, new human approval, outcome promotion,
 application/provider/database execution or B01 source change is inferred.
 Criteria remain version 2.1; this is an administrative index completion record,
-not a retrospective oracle amendment. Step 21 is next; Steps 21–22 remain open.
+not a retrospective oracle amendment. At this historical capture, Steps 21–22
+were open; the current Step 21 completion is recorded below.
 
 **User-requested CA-ARG scholarly revision — recorded, 3 October 2026.**
 [E058 conceptual argument v2](../01_conceptual/informed_argument/traceability_v2.md)
@@ -492,6 +493,20 @@ not an empirical outcome change. The register now has 55 entries and the prior
 52 rows/hashes are preserved. Use the revision for current CA-ARG synthesis,
 without counting versions as independent methods. Acceptance criteria remain
 2.1; no new application, provider, participant or expert evaluation occurred.
+
+**Step 21 / recorded-results consolidation — complete, 3 October 2026.**
+[E061 master results](../03_results/master_results.csv) supplies 225 immutable
+IDs R001–R225 with the prescribed 14-column schema. [E062 notes](../03_results/consolidation_notes.md)
+explain native scales, criterion synthesis, coverage, conflicts, omissions and
+denominators; E063 indexes the consolidation manifest. All 55 intake evidence
+rows/hashes and 66 B01 production identities are unchanged; the register now
+contains 58 entries. All C1–C5/F1–F13/U1–U9 are accounted for. Current conceptual
+C1 supports explicit responsibility coverage only; C2–C5 remain qualified.
+Thirteen F Partials, six U Pass/three Partial, assessed BB 21 Pass/two Partial/
+one Fail, live simulation failures and mixed delivered content remain intact.
+No pooled success rate, new execution, human endorsement or public-release
+clearance is implied. Criteria/oracles stay version 2.1. Step 22's PIRQOA matrix
+is next and remains uncreated; RQ1–RQ3 are not declared fully answered here.
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 
@@ -756,17 +771,18 @@ A bounded implementation claim is strongly supported only when relevant external
 ## 12. Completion and handover checklist
 
 - [ ] Baseline, environment, evaluator competence and execution inputs frozen.
-- [ ] C1–C5 evaluated using GenAI, literature, informed argument and conceptual scenario.
-- [ ] Every F1–F13 and U1–U9 row has an execution status and outcome; every Pass/Partial/Fail links to retained evidence, and every Blocked/Not applicable/Not assessed item has a written reason.
+- [x] C1–C5 accounted for using recorded GenAI, literature, current informed argument and historical conceptual scenario (E061–E062; historical gaps and C4 crosswalk retained).
+- [x] Every F1–F13 and U1–U9 row has an execution status, outcome, evidence and limitation (E061–E062); separate Blocked/Not applicable/Not assessed items have written reasons.
 - [ ] Every planned black-box, white-box and usability-inspection case is executed or explicitly accounted for.
 - [x] Generated-content judgements identify the assessor, competence boundary and reference basis (endorsed simulation E022–E023; black-box fixture semantic limits explicitly Not assessed).
 - [x] Static, dynamic, bounds, simulation, black-box, white-box, design argument, design scenario and design literature methods recorded (mixed findings and source/access limits retained; E001–E027/E033–E048).
 - [ ] All 48 planned simulation sessions and 15 timing attempts accounted for, including blocked/failed cases and deviations.
 - [x] Retained raw evidence, logs, actual outputs, state records and recorded retries indexed (Step 20, E057; 52 entries; restricted originals not cleared for public release).
-- [ ] Master results and PIRQOA matrix link claims to evidence and limitations.
+- [x] Master results link claims to evidence and limitations (Step 21, E061–E063).
+- [ ] PIRQOA matrix links requirements/RQs to result IDs, evidence and supported/unsupported claims (Step 22 next).
 - [ ] Design/code discrepancies and unresolved concerns remain visible; fixes have separate baseline/retest records.
-- [ ] Optional expert work is labelled completed with evidence or not performed.
+- [x] Optional expert work is explicitly Skipped / Not assessed (R220; no independent expert study).
 - [ ] Original Assignment 5 brief checked for method/rubric alignment; primary references checked before final scholarly attribution.
 - [ ] Final paper written only after results exist, using the plan's presentation limits and APA 7 requirements.
 
-Completion means the planned work is accounted for honestly, not that every test passes. Blocked or unassessed items remain coverage limitations. This protocol prepares the evaluation; it does not claim those checklist items have been completed.
+Completion means the planned work is accounted for honestly, not that every test passes. Blocked or unassessed items remain coverage limitations. Checked items refer to the cited recorded scope; unchecked items remain for later handover and final-paper verification.
