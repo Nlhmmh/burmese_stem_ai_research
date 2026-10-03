@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="990" viewBox="0 0 1280 990" role="img" aria-labelledby="title desc">
+  <title id="title">Photosynthesis scenario evaluation flow</title>
+  <desc id="desc">Recorded live Photosynthesis walkthrough. Initial inquiry and five support responsibilities use one call. Medium with skip yields round one. Needs Support with concept unclear yields round two. Separate API-only cap and High fade checks add events without generation, followed by reload, relevant and unrelated follow-up, History, Resume, explicit Finish, Review, and API-only completed-response rejection. Content remains provisional.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#34495e"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;fill:#1d2d3d;font-size:19px}
+      .head{font-size:23px;font-weight:700}
+      .sub{font-size:18px;fill:#405466}
+      .label{font-size:18px;font-weight:700}
+      .small{font-size:17px}
+      .box{fill:#f6f8fa;stroke:#405466;stroke-width:1.5;rx:9}
+      .api{fill:#fffaf0;stroke:#805c28;stroke-width:1.8;stroke-dasharray:8 5;rx:9}
+      .link{fill:none;stroke:#34495e;stroke-width:2.1;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1280" height="990" fill="white"/>
+  <text x="35" y="38" class="head">Photosynthesis scenario: observed sequence</text>
+  <text x="35" y="65" class="sub">3 October 2026 · scripted technical observation, not a learner study</text>
+
+  <rect x="35" y="90" width="595" height="122" class="box"/>
+  <text x="55" y="119" class="label">Inquiry and initial support</text>
+  <text x="55" y="147">“What is photosynthesis, and how do plants make food?”</text>
+  <text x="55" y="174">Stages 1–5: term/context → bilingual meaning → scaffolds</text>
+  <text x="55" y="199" class="small">One live call · round 0 · five initial support fields</text>
+  <path d="M333 212 V242" class="link"/>
+  <rect x="35" y="243" width="595" height="103" class="box"/>
+  <text x="55" y="273" class="label">Stage 6A: Medium → Stage 6B: skip</text>
+  <text x="55" y="301">Stage 7 → another example</text>
+  <text x="55" y="328" class="small">One call · round 0 → 1 · event 1 · adaptation 1</text>
+  <path d="M333 346 V377" class="link"/>
+  <rect x="35" y="378" width="595" height="103" class="box"/>
+  <text x="55" y="408" class="label">Needs Support → conceptual difficulty</text>
+  <text x="55" y="436">Stage 7 → revised meaning + scaffold</text>
+  <text x="55" y="463" class="small">One call · round 1 → 2 · event 2 · review recommended</text>
+  <path d="M333 481 V512" class="link"/>
+  <rect x="35" y="513" width="595" height="94" class="box"/>
+  <text x="55" y="543" class="label">Cap UI: “Maximum support provided”</text>
+  <text x="55" y="572">Round 2 UI offers no further response or High choice</text>
+  <text x="55" y="597" class="small">Next recorded requests are separate API checks, not clicks</text>
+  <path d="M630 560 H690 V430 H725" class="link"/>
+
+  <rect x="725" y="345" width="520" height="173" class="api"/>
+  <text x="745" y="375" class="label">API-only: cap then High/fade</text>
+  <text x="745" y="405">Capped support: event 3 · round 2 → 2</text>
+  <text x="745" y="434">High/fade: event 4 · round 2 → 2 · ongoing session</text>
+  <text x="745" y="463">Zero calls · two adaptations retained · not completed</text>
+  <text x="745" y="492" class="small">Reload reconstructs the API-updated state</text>
+  <path d="M985 518 V548" class="link"/>
+  <rect x="725" y="549" width="520" height="122" class="box"/>
+  <text x="745" y="579" class="label">Concept-scoped follow-up</text>
+  <text x="745" y="609">Sunlight question: answered and stored (count 1)</text>
+  <text x="745" y="638">Gravity question: 422; no state change or extra save</text>
+  <text x="745" y="661" class="small">Two calls total · adaptation round remains 2</text>
+  <path d="M985 671 V701" class="link"/>
+  <rect x="725" y="702" width="520" height="122" class="box"/>
+  <text x="745" y="732" class="label">History → Resume → explicit Finish → Review</text>
+  <text x="745" y="762">Owned state retained · Finish sets completed</text>
+  <text x="745" y="791">Two adaptations · four response events · one follow-up</text>
+  <text x="745" y="814" class="small">No generation for retrieval or Finish</text>
+  <path d="M985 824 V854" class="link"/>
+  <rect x="725" y="855" width="520" height="97" class="api"/>
+  <text x="745" y="885" class="label">API-only: completed response rejected</text>
+  <text x="745" y="915">409 conflict · unchanged document · zero calls</text>
+  <text x="745" y="940" class="small">Final Review retrieval confirms unchanged state</text>
+
+  <rect x="35" y="672" width="595" height="180" fill="#fff" stroke="#a8b3bc" rx="9"/>
+  <text x="55" y="703" class="label">Reading the figure</text>
+  <text x="55" y="733">Solid boxes: recorded browser workflow and support</text>
+  <text x="55" y="762">Dashed boxes: separately executed API-only boundaries</text>
+  <text x="55" y="791">Five live calls overall; this is one scenario, not five trials</text>
+  <text x="55" y="821">No objective mastery or learning outcome measured</text>
+  <text x="35" y="900" class="small">Content qualification: provisional Photosynthesis appraisal.</text>
+  <text x="35" y="928" class="small">First example novelty, English retention and technical scope concerns remain.</text>
+  <text x="35" y="956" class="small">Follow-up, History and lifecycle enable the framework; they are not an eighth stage.</text>
+</svg>

@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Phase E's [working paper](../evaluation/04_paper/assignment_5_working_paper.md) is drafted: 3,050 local narrative tokens across §§1–5, the reconciled 140-word abstract, eight-word title and exactly six keywords. Twelve cited references and all seven unchanged figure/table insertions are included. The [drafting record](../evaluation/04_paper/phase_e_drafting_record.md) separates narrative, insertion and reference counts and records citation/access checks. The earlier five-keyword account is not a verified official rule. Next review the draft against the original brief and prepare the required submission format; official counting rules, final rendered layout and sharing review remain open. Insertion overhead is about 2,453 words, not automatically exempt. All 69 evidence entries, E073, earlier drafting captures, results and 66 B01 identities are unchanged; no new evaluation, endorsement or release clearance.**
+> **Phase E's [working paper](../evaluation/04_paper/assignment_5_working_paper.md) is drafted and now has the author-requested [reader-facing revision](../evaluation/04_paper/draft_review_revision.md): Introduction, explicit application/RQ descriptions, and findings without unexplained archive codes. Tables/captions and the scenario figure are paper-only derivatives; captured evidence remains unchanged. The [original Phase E snapshot](../evaluation/04_paper/raw/PHASE-E-01-working-paper.md) preserves its 3,050 narrative tokens and 2,453 insertion tokens; those are historical counts, not the revision's totals. The [current verification](../evaluation/04_paper/raw/READER-REV-01-verification-02.json) recomputes counts and checks preservation. The 140-word abstract, eight-word title, six keywords and twelve references remain unchanged. Next review against the original brief and prepare the required submission format; official counting rules, final rendered layout and sharing review remain open. All 69 evidence entries, E073, earlier drafting captures, results and 66 B01 identities are unchanged; no new evaluation, endorsement or release clearance.**
 
 Step 29's [submission-risk review](../evaluation/04_paper/submission_risk_review.md)
 is complete. Recorded Functionality, Usability and design literature are no
@@ -3581,8 +3581,8 @@ Write explicit limitations and claim boundaries.
 
 ## Phase E — Drafting — BODY COMPLETE; NEXT: FINAL SUBMISSION CHECKS
 
-**Drafted 3 October 2026**, as `DRAFT-20261003-PHASE-E-01`.
-[Working paper](../evaluation/04_paper/assignment_5_working_paper.md) contains
+**First drafted 3 October 2026**, as `DRAFT-20261003-PHASE-E-01`.
+The [original paper snapshot](../evaluation/04_paper/raw/PHASE-E-01-working-paper.md) contains
 all 28 prescribed headings, two figures, five tables, the prepared front matter
 and twelve actually cited reference entries. E073 remains the unchanged
 captured scaffold. [Drafting record](../evaluation/04_paper/phase_e_drafting_record.md)
@@ -3609,6 +3609,20 @@ is 3,050; a whitespace counter gives 2,943. Tables/captions/notes add about
 All seven insertion blocks and 69 registered artefacts/register, twelve prior
 drafting captures and 66 B01 production identities remain unchanged.
 No new E/R ID, formal test, production fix or human endorsement occurs.
+
+**Reader-facing revision, 3 October 2026 (`READER-REV-01`).** The current
+[working paper](../evaluation/04_paper/assignment_5_working_paper.md) uses
+“Introduction”, names the study/framework/application explicitly, defines all
+three RQs and explains observations without archive/run identifiers. Five
+tables and the scenario figure are paper-only presentation derivatives;
+original evidence, scaffold and presentation assets are not changed.
+[Revision record](../evaluation/04_paper/draft_review_revision.md) retains the
+section/evidence map outside the paper; [current verification](../evaluation/04_paper/raw/READER-REV-01-verification-02.json)
+checks revised counts, citations, labels and unchanged identities. Earlier
+Phase E counts and verification describe the first draft, not this revision.
+“Research Question Traceability” replaces the unexplained PIRQOA section
+heading. These author-requested editorial changes are not official-brief
+confirmation, new results, typeset QA or release clearance.
 
 **NEXT:** researcher review of the complete paper; original brief/rubric
 confirmation (counts, keyword/method rules and submission format); required

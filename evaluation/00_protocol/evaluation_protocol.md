@@ -651,7 +651,7 @@ sharing package. The review is not a grade prediction. **Next: draft Section 2
 at 1,000 narrative words in a separate working paper; do not edit captured E073.**
 
 **Phase E / drafting — all body sections complete with final submission gates
-open, 3 October 2026.** [Working paper](../04_paper/assignment_5_working_paper.md)
+open, 3 October 2026.** The [original paper snapshot](../04_paper/raw/PHASE-E-01-working-paper.md)
 contains 28 prescribed headings, unchanged two figures/five tables, the
 reconciled 140-word abstract/eight-word title/six keywords and twelve actually
 cited APA-style references. [Drafting record](../04_paper/phase_e_drafting_record.md)
@@ -666,6 +666,20 @@ registered artefacts/register, twelve prior drafting captures and 66 B01
 production files. No E/R ID, new result, formal execution, production fix or
 human endorsement is created. All native Fail/Partial, source/transfer,
 API-only, provisional-content and restricted-original limits remain.
+
+**Reader-facing revision, 3 October 2026 (`READER-REV-01`).** The current
+[working paper](../04_paper/assignment_5_working_paper.md) uses Introduction,
+defines the application workflow and research questions, and replaces archive
+codes with descriptions of methods/findings. Tables/captions and the scenario
+figure are separately identified paper-only derivatives. Captured evidence,
+scaffold, first-draft records and production identities remain unchanged.
+The [revision record](../04_paper/draft_review_revision.md) retains archive
+traceability outside the paper; [current verification](../04_paper/raw/READER-REV-01-verification-02.json)
+recomputes counts and checks preservation. The preceding Phase E totals and
+verification describe the original draft, not the current revision. All native
+outcomes, failures, source-access limits and unassessed checks remain; criteria
+and acceptance rules are unchanged. Official-brief, rendered submission and
+sharing review remain open.
 Acceptance criteria are still 2.1. **Next: researcher review, attach/check the
 official brief, prepare the required rendered submission format and review
 the intended sharing package.** No final Word/PDF, official overall compliance
