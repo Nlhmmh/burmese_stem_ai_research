@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; audit/current conceptual argument retained; Step 21 has 225 results; Step 22 complete with 24 qualified PIRQOA chains, E064–E066; 61 current evidence entries; mixed findings/release limits and skipped experts retained; Step 23 Interpretation Rules next |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; audit/current conceptual argument retained; Step 21 has 225 results; Step 22 has 24 qualified PIRQOA chains, E064–E066; Step 23 has 17 scoped interpretation claims, E067–E068; 63 current evidence entries; mixed findings/release limits retained; Step 24 figures/tables next |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -458,7 +458,7 @@ not established. All 39 prior registered artefacts and 66 production identities
 remain unchanged; 121-entry manifest retained. No new application/provider/
 human run or earlier result promotion. Step 19 optional expert study remains
 Skipped. The subsequent Step 20 audit, Step 21 consolidation and Step 22
-traceability are recorded below. Step 23 Interpretation Rules is now next.
+traceability and Step 23 interpretation are recorded below. Step 24 figures/tables is now next.
 Acceptance criteria, historical conceptual literature conclusions and B01
 production remain unchanged.
 
@@ -517,11 +517,26 @@ explicit gaps. [E065 notes](../03_results/pirqoa_traceability_notes.md) explain
 the three qualified overall answers, native result scopes and direct versus
 enabling evidence; E066 indexes the integrity manifest. All 58 intake evidence
 rows/hashes, 225 master results and 66 B01 production identities are unchanged;
-the register now has 61 entries. RQ traceability is complete, not proof of full
+the register had 61 entries at this capture. RQ traceability is complete, not proof of full
 empirical requirement satisfaction or learning effectiveness. Mixed F/U,
 simulation/content/BB outcomes and restricted-original boundaries remain.
 Acceptance criteria stay 2.1; no new application/test/provider/database run or
-human endorsement. Step 23 Interpretation Rules is next.
+human endorsement. Step 23's subsequent completion is recorded below.
+
+**Step 23 / interpretation — complete with qualifications, 3 October 2026.**
+[E067 interpretation](../03_results/results_interpretation.md) applies §11 to
+17 scoped claims across strong bounded mechanical evidence, partial evidence,
+conceptual support and unsupported claims. It records convergence without
+counting derived/shared sources as independent, unresolved failures/conflicts,
+native denominators, scholarly warrants/access limits and the three qualified
+RQ answers. No original case or F/U outcome is promoted. Educational
+effectiveness, calibrated scaffolding, optimal dose and independent expert/
+participant evidence remain unestablished. E068 indexes the integrity manifest;
+all 61 intake register rows, 225 master results, 24 PIRQOA chains and 66 B01
+production hashes are preserved. The register has 63 entries. No new
+application/test/provider/database run, human endorsement, production fix or
+restricted-original release clearance. Acceptance criteria remain 2.1.
+**Next: Step 24 — figures/tables.**
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 
@@ -783,6 +798,11 @@ Quote CSV fields containing commas/newlines. Retain raw generated text, logs and
 
 A bounded implementation claim is strongly supported only when relevant external behaviour and internal/state evidence agree and no material counterexample remains in the evaluated coverage. Literature-based plausibility remains conceptual support. Incomplete domain/language coverage yields partial evidence. A High response remains a self-reported low need for additional support, not a mastery judgement. No outcome in this protocol establishes improved achievement or retention, universal optimality of two generated adaptations, or superiority over a baseline system.
 
+Applied interpretation is recorded in [E067](../03_results/results_interpretation.md),
+Step 23. Its INT labels are derived claim locators, not new test/result IDs or
+an amendment to these rules. Strong narrow subclaims do not promote composite
+FURPS Partials; all four claim categories retain source and coverage limits.
+
 ## 12. Completion and handover checklist
 
 - [ ] Baseline, environment, evaluator competence and execution inputs frozen.
@@ -795,6 +815,7 @@ A bounded implementation claim is strongly supported only when relevant external
 - [x] Retained raw evidence, logs, actual outputs, state records and recorded retries indexed (Step 20, E057; 52 entries; restricted originals not cleared for public release).
 - [x] Master results link claims to evidence and limitations (Step 21, E061–E063).
 - [x] PIRQOA matrix links all three REQ/RQs to existing result/evidence IDs, qualified supported claims and explicit gaps (Step 22, E064–E066; not educational-effectiveness proof).
+- [x] Four claim categories, convergence/non-independence, conflicts and limitations applied to existing results (Step 23, E067–E068; no regrading or pooled success score).
 - [ ] Design/code discrepancies and unresolved concerns remain visible; fixes have separate baseline/retest records.
 - [x] Optional expert work is explicitly Skipped / Not assessed (R220; no independent expert study).
 - [ ] Original Assignment 5 brief checked for method/rubric alignment; primary references checked before final scholarly attribution.
