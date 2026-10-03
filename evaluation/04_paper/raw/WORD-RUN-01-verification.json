@@ -1,0 +1,102 @@
+{
+  "runId": "ALLOCATE-20261003-PAPER-01",
+  "checkedAt": "2026-10-03T04:02:44.324Z",
+  "bodyTarget": 3050,
+  "abstractTarget": 140,
+  "bodyAndAbstractTarget": 3190,
+  "sectionTargets": [
+    {
+      "section": "1. Evaluation Context",
+      "words": 200
+    },
+    {
+      "section": "2. Conceptual Artefact Evaluation",
+      "words": 1000
+    },
+    {
+      "section": "3. Design Artefact Evaluation",
+      "words": 1100
+    },
+    {
+      "section": "4. Results and Interpretation",
+      "words": 600
+    },
+    {
+      "section": "5. Conclusion",
+      "words": 150
+    }
+  ],
+  "conceptualSum": 1000,
+  "designSum": 1100,
+  "resultsSum": 600,
+  "sourceMetrics": {
+    "counter": "Unicode letter/number tokens; internal apostrophes/hyphens kept; link labels kept and URLs/image alt text removed",
+    "status": "Approximate insertion-block estimate, not final submission count",
+    "items": [
+      {
+        "item": "Figure 1",
+        "section": 2,
+        "tableWords": 0,
+        "captionNoteSourceWords": 192,
+        "total": 192
+      },
+      {
+        "item": "Table 1",
+        "section": 2,
+        "tableWords": 111,
+        "captionNoteSourceWords": 95,
+        "total": 206
+      },
+      {
+        "item": "Table 2",
+        "section": 2,
+        "tableWords": 236,
+        "captionNoteSourceWords": 88,
+        "total": 324
+      },
+      {
+        "item": "Table 3",
+        "section": 3,
+        "tableWords": 394,
+        "captionNoteSourceWords": 88,
+        "total": 482
+      },
+      {
+        "item": "Table 4",
+        "section": 3,
+        "tableWords": 490,
+        "captionNoteSourceWords": 93,
+        "total": 583
+      },
+      {
+        "item": "Figure 2",
+        "section": 3,
+        "tableWords": 0,
+        "captionNoteSourceWords": 182,
+        "total": 182
+      },
+      {
+        "item": "Table 5",
+        "section": 4,
+        "tableWords": 340,
+        "captionNoteSourceWords": 144,
+        "total": 484
+      }
+    ],
+    "bySection": {
+      "2": 722,
+      "3": 1247,
+      "4": 484
+    },
+    "total": 2453,
+    "captionReferences": 91
+  },
+  "priorRegisteredArtefactsPreserved": 69,
+  "evidenceRegisterUnchanged": true,
+  "productionFilesPreserved": 66,
+  "officialBriefAvailable": false,
+  "officialCountingRules": "Unconfirmed; planning ledger only",
+  "paperProse": "not drafted",
+  "allocationHash": "501c3a1a3f640a42fbc7dd171d5e7049d1c5a48ad3b9a07cd40262d0a7b5ec32",
+  "failures": []
+}

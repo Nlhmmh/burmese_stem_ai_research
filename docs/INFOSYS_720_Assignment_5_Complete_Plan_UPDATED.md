@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–18 and §18.1 recorded; audit and conceptual argument v2 retained; Step 21 has 225 immutable results; Step 22 has 24 PIRQOA rows; Step 23 has 17 scoped claims; Step 24 has five tables/two figures; Step 25 scaffold complete, E073–E074; 69 current evidence entries (E001–E027/E033–E074); mixed findings and restricted originals retained; prose/frontmatter/typesetting not complete; Step 26 Word Allocation NEXT |
+| Formal evaluation status | Steps 10–18 and §18.1 recorded; audit/current argument retained; 225 immutable results, 24 PIRQOA rows and 17 scoped claims; Step 24 presentation and Step 25 scaffold complete; Step 26 drafting allocation complete with unconfirmed official counting rules; 69 evidence entries unchanged (E001–E027/E033–E074); mixed findings/restricted originals retained; body drafting §2 NEXT; Step 27 frontmatter deferred until body complete |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Continue to Step 26 Word Allocation NEXT. Step 25 is complete in the [editable paper scaffold](../evaluation/04_paper/assignment_5_paper_scaffold.md), E073: all 28 prescribed headings, evidence-linked prose placeholders, and Step 24's five tables/two figures placed with captions and qualifications intact. E074 records integrity; the register has 69 entries. The original 67 register rows, 225 results, 24 PIRQOA chains, interpretation, presentation assets and 66 B01 production hashes remain unchanged. Step 19 remains skipped; no new evaluation, fix, endorsement or public-release clearance. Prose, final title/abstract/keywords, word allocation and Word/PDF typesetting remain unfinished.**
+> **Step 26 drafting allocation is complete in [word_allocation.md](../evaluation/04_paper/word_allocation.md): body targets 200/1,000/1,100/600/150 total 3,050, plus a separate 140-word abstract. Subsection sums reconcile. Official table/caption/reference counting remains unconfirmed; the unchanged insertion blocks add approximately 2,453 words, so the narrative targets alone do not establish final compliance. Next draft §2 using recorded evidence, then §3/§4/§1/conclusion; Step 27 frontmatter stays deferred until the body is complete. E073, all 69 registered artefacts, the register, results/PIRQOA/interpretation and 66 B01 production identities are unchanged. No new evaluation, outcome promotion or release clearance.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -163,7 +163,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is Step 26's Word Allocation (§35). Do not rerun or relabel completed evidence.
+1. Start at the first heading marked **NEXT**; currently this is Phase E's body drafting (§39), beginning with §2 under the recorded Step 26 allocation. Step 27 frontmatter is deliberately deferred until the body is written. Do not rerun or relabel completed evidence.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1547,7 +1547,7 @@ Steps 11–18 and §18.1 also have recorded results. The usability checkpoint is
 complete with findings (six Pass / three Partial, E036–E038); the literature-
 grounded informed argument is recorded as E039–E041; the fresh live scenario is
 recorded as E042–E044; the design literature comparison as E045–E048.
-Step 20's audit is also complete (E049–E057), Step 21's results are recorded (E061–E063), Step 22's traceability is complete (E064–E066), Step 23's interpretation is recorded (E067–E068), Step 24's figures/tables are prepared (E069–E072), and Step 25's paper scaffold is complete (E073–E074). Proceed to **Step 26's Word Allocation**,
+Step 20's audit is also complete (E049–E057), Step 21's results are recorded (E061–E063), Step 22's traceability is complete (E064–E066), Step 23's interpretation is recorded (E067–E068), Step 24's figures/tables are prepared (E069–E072), Step 25's paper scaffold is complete (E073–E074), and Step 26's drafting budget is recorded with unconfirmed official counting rules. Proceed to **Phase E body drafting, beginning with §2**,
 retaining all earlier qualifications and the three
 usability issues; do not treat completion as an all-criteria Pass.
 
@@ -3092,7 +3092,7 @@ retired. This is document structuring, not a new evaluation method, final
 paper, human endorsement or release clearance. No app/test/provider/database
 execution, production fix or fresh literature appraisal occurred.
 
-**Next: Step 26 (§35).** Set a reconciled word budget before drafting. Title,
+Subsequent Step 26 allocation is recorded in §35. Title,
 abstract and keywords remain placeholders for Step 27; final Word/PDF layout,
 word count, APA 7 and original-brief checks remain open.
 
@@ -3142,61 +3142,47 @@ References
 
 ---
 
-# 35. Step 26 — Word Allocation — NEXT
+# 35. Step 26 — Word Allocation — DRAFTING BUDGET COMPLETE; OFFICIAL RULES UNCONFIRMED
 
-## Abstract
+Completed 3 October 2026 as `ALLOCATE-20261003-PAPER-01`.
+The authoritative [operational word allocation](../evaluation/04_paper/word_allocation.md)
+contains all subsection targets, introduction allowances, analytical/testing/
+argument sub-budgets, context/conclusion/abstract splits, counting ledger,
+insertion estimates and adjustment rules. Use it rather than combining the
+old independent ranges, which could exceed their own section suggestions.
 
-**130–150 words**
+Narrative targets (including in-text citations):
 
-## 1. Evaluation Context
+- Context: **200**.
+- Conceptual evaluation: **1,000** (all four methods and synthesis).
+- Design evaluation: **1,100** (all methods plus structured usability).
+- Results/interpretation: **600** (qualified RQ answers and limitations).
+- Conclusion: **150** (local planning target, not a stated brief requirement).
+- **Body: 3,050. Abstract: 140 separately. Body plus abstract: 3,190.**
 
-Approximately **150–250 words**
+The supplied plan's 800–1,200/800–1,200/500–750 ranges are suggestions, not
+verified official limits. No overall maximum or table/caption/reference
+exemption is established: the standalone brief is still absent. The current
+seven insertion blocks add approximately 2,453 words; §3's insertions alone
+are about 1,247. If these count within section limits, concise paper-only
+derivatives and a revised budget are needed before claiming compliance.
+Keep E069/E073 and their qualifications unchanged. No shortening occurs here.
 
-Keep this short because A5 is evaluation-focused.
+[Verification](../evaluation/04_paper/raw/WORD-RUN-01-verification.json) confirms
+reconciled subtotals, every scaffold subsection's allocation, local links,
+insertion estimates and preservation of the register/all 69 registered
+artefacts and 66 production identities. This is administrative word planning,
+not new evaluation evidence; no E/R ID or new CSV entry is assigned. Protocol
+2.1 and existing outcomes remain unchanged. No prose, frontmatter, app/test/
+provider/database execution, fix or endorsement is produced by this step.
 
-## 2. Conceptual Artefact Evaluation
-
-**800–1200 words**
-
-Suggested internal allocation:
-
-- selection + criteria: 120–180
-- GenAI: 150–220
-- literature: 200–300
-- informed argument: 150–220
-- scenario: 150–220
-- triangulation/refinement summary: 100–150
-
-## 3. Design Artefact Evaluation
-
-**800–1200 words**
-
-Suggested internal allocation:
-
-- FURPS criteria: 100–150
-- analytical: 180–260
-- simulation: 100–150
-- black/white-box: 200–300
-- informed argument/scenario: 150–220
-- literature: 100–150
-- summary: 70–100
-
-## 4. Results and Interpretation
-
-**500–750 words**
-
-Do not repeat every test.
-
-Summarize:
-
-- main supported findings;
-- limitations;
-- RQ mapping;
-- problem-resolution assessment.
+**Next: Phase E body drafting (§39), starting with §2.** Keep title, abstract
+and keywords pending until the body is complete, then execute Step 27. Check
+the original brief's counting rules before declaring final compliance.
 
 ---
 
-# 36. Step 27 — Title, Abstract, and Keywords
+# 36. Step 27 — Title, Abstract, and Keywords — DEFERRED UNTIL BODY IS DRAFTED
 
 Do these last.
 
@@ -3568,19 +3554,23 @@ E067 §§8–9 preserve native counts, qualified RQ answers and unsupported lear
 mastery, optimal-dose, fit, superiority and accessibility claims. Scholarly
 warrants are referenced without claiming new source appraisal or learner evidence.
 Step 24's subsequent figure/table pack is recorded in §33; Step 25's scaffold
-is recorded in §34. Step 26 Word Allocation is next.
+is recorded in §34 and Step 26's allocation in §35. Body drafting is next;
+retain the unconfirmed counting rules.
 
 Write explicit limitations and claim boundaries.
 
 ---
 
-## Phase E — Drafting — STRUCTURE READY; WORD ALLOCATION NEXT
+## Phase E — Drafting — NEXT: SECTION 2
 
 E069–E072 supply the prepared figures/tables; E073–E074 supply Step 25's
 evidence-linked scaffold with the prescribed headings and seven insertions.
-Complete Step 26's word allocation before drafting. Preserve E067's evidence
-limits. Scaffold preparation has not completed the paper's prose/frontmatter,
-full references audit or final typesetting.
+Step 26's [word allocation](../evaluation/04_paper/word_allocation.md) is ready
+for narrative drafting, with official counting rules still unconfirmed.
+Begin §2 at 1,000 narrative words in a new working paper draft. Keep E073
+unchanged as the captured scaffold. Preserve E067's evidence limits.
+The paper's prose/frontmatter, full references audit and final typesetting
+remain unfinished; do not finalise Step 27 before the body.
 
 Draft only after Phase D is complete. Do not write result sentences while
 actual-result fields are blank.
@@ -3612,20 +3602,23 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 Use this request next:
 
-> Complete Step 26 — Word Allocation (§35) for the E073 paper scaffold.
-> Reconcile subsection budgets with the conceptual/design section totals and
-> account explicitly for the conclusion, abstract and table/caption/reference
-> counting rules in the original brief. Record unresolved counting rules rather
-> than inventing them. Preserve E061/E064/E067's outcomes, scholarly warrants,
-> failures and self-report boundaries. Do not draft the final title/abstract/
-> keywords yet, rerun/fix B01, promote results or clear restricted originals.
+> Draft Section 2 — Conceptual Artefact Evaluation at the recorded 1,000-word
+> narrative target, following the Step 26 subsection allocation. Create a
+> working paper draft separately from captured E073; use its headings and
+> existing presentation material. Use only recorded conceptual findings and
+> verified scholarly warrants, retaining source-access/transfer limits,
+> historical/current identities, the C4 crosswalk and qualified conclusions.
+> Report narrative and table/caption counts separately; official counting rules
+> remain unconfirmed. Do not finalise frontmatter, invent evidence, rerun/fix
+> B01, promote results or clear restricted originals for publication.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Complete Step 26: set a reconciled word allocation for the existing paper scaffold, retaining unresolved original-brief counting rules.`
-2. `Draft the paper sections within that allocation using only recorded evidence and verified scholarly warrants; finalise frontmatter last.`
+1. `Draft Section 2 at the Step 26 target of 1,000 narrative words, using recorded evidence and verified scholarly warrants in a separate working paper draft.`
+2. `Draft Sections 3, 4, 1 and the conclusion at 1,100, 600, 200 and 150 narrative words respectively; report non-prose counts separately.`
+3. `After the body is complete, do Step 27: finalise the title, abstract and keywords, then complete reference and formatting audits.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3635,15 +3628,16 @@ blank when execution is blocked.
 ## 40.3 Drafting requests
 
 Only after Steps 20–23 are complete, Step 24's figures/tables and Step 25's
-structure are checked, and Step 26's word allocation is recorded:
+structure are checked, and Step 26's word allocation is recorded (now fulfilled;
+official counting rules remain unconfirmed):
 
-> Write Section 2: Conceptual Artefact Evaluation in 800–1200 words using only
+> Write Section 2: Conceptual Artefact Evaluation at the 1,000-word narrative target using only
 > recorded conceptual evidence and verified references.
 
-> Write Section 3: Design Artefact Evaluation in 800–1200 words using only
+> Write Section 3: Design Artefact Evaluation at the 1,100-word narrative target using only
 > actual design-evaluation evidence.
 
-> Write Section 4: Results and Interpretation in 500–750 words, triangulating
+> Write Section 4: Results and Interpretation at the 600-word narrative target, triangulating
 > conceptual and design results against PIRQOA and separating demonstrated,
 > partial, failed, blocked, and unsupported claims.
 

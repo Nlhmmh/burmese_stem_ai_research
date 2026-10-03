@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; audit/current argument retained; 225 results, 24 PIRQOA chains and 17 scoped interpretation claims preserved; Step 24 has five tables/two figures; Step 25 scaffold complete, E073–E074; 69 current evidence entries; mixed findings/release limits retained; prose/frontmatter/typesetting incomplete; Step 26 word allocation next |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; audit/current argument retained; 225 results, 24 PIRQOA chains and 17 scoped interpretation claims preserved; Step 24 presentation/Step 25 scaffold complete; Step 26 drafting budget recorded with unconfirmed official counting rules; 69 evidence entries unchanged; mixed findings/release limits retained; body drafting §2 next; frontmatter/typesetting incomplete |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -459,7 +459,8 @@ remain unchanged; 121-entry manifest retained. No new application/provider/
 human run or earlier result promotion. Step 19 optional expert study remains
 Skipped. The subsequent Step 20 audit, Step 21 consolidation and Step 22
 traceability, Step 23 interpretation, Step 24 presentation and Step 25 structure
-are recorded below. Step 26 word allocation is now next.
+are recorded below. Step 26's subsequent drafting budget is also recorded;
+body drafting is now next, with official counting rules unconfirmed.
 Acceptance criteria, historical conceptual literature conclusions and B01
 production remain unchanged.
 
@@ -572,7 +573,26 @@ change, outcome promotion, new evaluation, app/test/provider/database run,
 human endorsement, production fix or public-release clearance occurred.
 Acceptance criteria remain 2.1. Word allocation, complete citation audit,
 original-brief confirmation and final Word/PDF layout remain open.
-**Next: Step 26 — Word Allocation.**
+Step 26's subsequent allocation record follows.
+
+**Step 26 / word allocation — drafting budget complete with unconfirmed official rules, 3 October 2026.**
+The [allocation](../04_paper/word_allocation.md) reconciles all narrative
+subsections to 200 context, 1,000 conceptual, 1,100 design, 600 results and
+150 conclusion words: 3,050 body, plus a separate 140-word abstract target.
+It reserves cited informed arguments, all required methods, technical
+usability, qualified RQ answers and limitations. Prose is not drafted.
+The standalone brief is absent, so table/caption/reference/overall counting
+rules remain unconfirmed. Current insertion blocks add about 2,453 words
+by the disclosed local counter; these narrative targets are not proof of
+final compliance. Confirm the rule before declaring compliance or preparing
+shorter paper-only derivatives. E069/E073 remain unchanged.
+[Verification](../04_paper/raw/WORD-RUN-01-verification.json) checks sums,
+subsection coverage, estimates/links and preservation of all 69 registered
+artefacts, the register and 66 B01 production identities. This administrative
+allocation creates no E/R result or CSV entry. Acceptance criteria remain
+2.1; there is no new evaluation, execution, endorsement, fix or release
+clearance. **Next: body drafting §2, then §3/§4/§1/conclusion. Step 27 title,
+abstract and keywords are deferred until the body is complete.**
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 
