@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; audit/current argument retained; 225 results, 24 PIRQOA chains and 17 scoped interpretation claims preserved; Step 24 has five tables/two figures, E069–E072; 67 current evidence entries; mixed findings/release limits retained; Step 25 final assignment structure next |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; audit/current argument retained; 225 results, 24 PIRQOA chains and 17 scoped interpretation claims preserved; Step 24 has five tables/two figures; Step 25 scaffold complete, E073–E074; 69 current evidence entries; mixed findings/release limits retained; prose/frontmatter/typesetting incomplete; Step 26 word allocation next |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -458,7 +458,8 @@ not established. All 39 prior registered artefacts and 66 production identities
 remain unchanged; 121-entry manifest retained. No new application/provider/
 human run or earlier result promotion. Step 19 optional expert study remains
 Skipped. The subsequent Step 20 audit, Step 21 consolidation and Step 22
-traceability, Step 23 interpretation and Step 24 presentation are recorded below. Step 25 final assignment structure is now next.
+traceability, Step 23 interpretation, Step 24 presentation and Step 25 structure
+are recorded below. Step 26 word allocation is now next.
 Acceptance criteria, historical conceptual literature conclusions and B01
 production remain unchanged.
 
@@ -549,11 +550,29 @@ flow, with cap/High/completed checks explicitly API-only; its PNG is a render
 derivative. The optional timing chart is omitted with a descriptive-sample reason.
 E072 records identities/integrity. All 63 intake register rows, 225 results,
 24 PIRQOA chains, E067 interpretation, source PDF and 66 production hashes are
-unchanged; the register has 67 entries. Visual/source/ID checks passed; final
+unchanged; the register had 67 entries at this capture. Visual/source/ID checks passed; final
 paper pagination/table widths remain unverified. No criteria/oracle change,
 outcome promotion, new app/test/provider/database/participant execution or
 public-release clearance. Acceptance criteria remain 2.1.
-**Next: Step 25 — final assignment structure.**
+Step 25's subsequent structure record follows.
+
+**Step 25 / final assignment structure — scaffold complete, 3 October 2026.**
+[E073 scaffold](../04_paper/assignment_5_paper_scaffold.md) follows all 28
+prescribed headings, with evidence-linked prose placeholders and seven E069
+figure/table insertions in their planned sections. Captions, notes, native
+outcomes, scholarly warrants and failures remain intact; existing figure
+assets are linked in place. This is not finished prose or a final submission.
+Title, abstract and keywords remain pending for Step 27. E074 records the
+[structure manifest](../03_results/raw/STRUCTURE-RUN-01-manifest.sha256);
+[verification](../03_results/raw/STRUCTURE-RUN-01-verification.json) checks
+headings, placements, IDs, local links, 67 prior register rows/artefacts,
+225 results, 24 PIRQOA chains, E067/E069 and all 66 production hashes.
+The register has 69 entries; E028–E032 remain retired. No acceptance-rule
+change, outcome promotion, new evaluation, app/test/provider/database run,
+human endorsement, production fix or public-release clearance occurred.
+Acceptance criteria remain 2.1. Word allocation, complete citation audit,
+original-brief confirmation and final Word/PDF layout remain open.
+**Next: Step 26 — Word Allocation.**
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 

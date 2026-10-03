@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–18 and §18.1 recorded; audit and conceptual argument v2 retained; Step 21 has 225 immutable results; Step 22 has 24 PIRQOA rows; Step 23 has 17 scoped claims; Step 24 complete with five tables/two figures, E069–E072; 67 current evidence entries (E001–E027/E033–E072); mixed findings and restricted originals retained; Step 25 final assignment structure NEXT |
+| Formal evaluation status | Steps 10–18 and §18.1 recorded; audit and conceptual argument v2 retained; Step 21 has 225 immutable results; Step 22 has 24 PIRQOA rows; Step 23 has 17 scoped claims; Step 24 has five tables/two figures; Step 25 scaffold complete, E073–E074; 69 current evidence entries (E001–E027/E033–E074); mixed findings and restricted originals retained; prose/frontmatter/typesetting not complete; Step 26 Word Allocation NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Continue to Step 25 final assignment structure NEXT. Step 24 is complete in [paper figures and tables](../evaluation/03_results/paper_figures_and_tables.md), E069: five editable Markdown tables, the unchanged Assignment 3 framework extract (E070), and an editable Photosynthesis flow (E071) distinguishing API-only checks. Optional timing Figure 3 is omitted with a stated reason. E072 records integrity; the register has 67 entries. All 225 results, 24 PIRQOA chains, Step 23 interpretation and original evidence remain unchanged. Step 19 remains skipped; no B01 rerun, fix, new endorsement or public-release clearance. Final paper typesetting is not yet verified.**
+> **Continue to Step 26 Word Allocation NEXT. Step 25 is complete in the [editable paper scaffold](../evaluation/04_paper/assignment_5_paper_scaffold.md), E073: all 28 prescribed headings, evidence-linked prose placeholders, and Step 24's five tables/two figures placed with captions and qualifications intact. E074 records integrity; the register has 69 entries. The original 67 register rows, 225 results, 24 PIRQOA chains, interpretation, presentation assets and 66 B01 production hashes remain unchanged. Step 19 remains skipped; no new evaluation, fix, endorsement or public-release clearance. Prose, final title/abstract/keywords, word allocation and Word/PDF typesetting remain unfinished.**
 
 ### Step 13 recorded execution and endorsed review
 
@@ -163,7 +163,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is Step 25's final assignment structure (§34). Do not rerun or relabel completed evidence.
+1. Start at the first heading marked **NEXT**; currently this is Step 26's Word Allocation (§35). Do not rerun or relabel completed evidence.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -1547,7 +1547,7 @@ Steps 11–18 and §18.1 also have recorded results. The usability checkpoint is
 complete with findings (six Pass / three Partial, E036–E038); the literature-
 grounded informed argument is recorded as E039–E041; the fresh live scenario is
 recorded as E042–E044; the design literature comparison as E045–E048.
-Step 20's audit is also complete (E049–E057), Step 21's results are recorded (E061–E063), Step 22's traceability is complete (E064–E066), Step 23's interpretation is recorded (E067–E068), and Step 24's figures/tables are prepared (E069–E072). Proceed to **Step 25's final assignment structure**,
+Step 20's audit is also complete (E049–E057), Step 21's results are recorded (E061–E063), Step 22's traceability is complete (E064–E066), Step 23's interpretation is recorded (E067–E068), Step 24's figures/tables are prepared (E069–E072), and Step 25's paper scaffold is complete (E073–E074). Proceed to **Step 26's Word Allocation**,
 retaining all earlier qualifications and the three
 usability issues; do not treat completion as an all-criteria Pass.
 
@@ -3071,7 +3071,32 @@ This should be one of the strongest tables in the paper.
 
 ---
 
-# 34. Step 25 — Recommended Final Assignment Structure — NEXT
+# 34. Step 25 — Recommended Final Assignment Structure — COMPLETE
+
+Completed 3 October 2026 as `STRUCTURE-20261003-PAPER-01`.
+The [paper scaffold](../evaluation/04_paper/assignment_5_paper_scaffold.md), E073,
+contains all 28 prescribed headings in order, evidence-linked drafting notes
+and prose placeholders. Figure 1/Table 1 appear in §2.1, Table 2 in §2.6,
+Table 3 in §3.1, Figure 2 in §3.5, Table 4 in §3.7 and Table 5 in §4.2.
+The seven insertion blocks reuse E069's captions/notes and native outcomes;
+figure assets are linked in place, not copied or redrawn. The four existing
+caption references retain their source-access limits. Further substantive
+citations and the full bibliography must be completed when drafting.
+
+The [manifest](../evaluation/03_results/raw/STRUCTURE-RUN-01-manifest.sha256),
+E074, and [verification](../evaluation/03_results/raw/STRUCTURE-RUN-01-verification.json)
+check preservation of 67 prior register rows, registered artefacts, 225 results,
+24 PIRQOA chains, E067/E069 and all 66 B01 production hashes, plus headings,
+placements, IDs and local links. The register has 69 entries; E028–E032 stay
+retired. This is document structuring, not a new evaluation method, final
+paper, human endorsement or release clearance. No app/test/provider/database
+execution, production fix or fresh literature appraisal occurred.
+
+**Next: Step 26 (§35).** Set a reconciled word budget before drafting. Title,
+abstract and keywords remain placeholders for Step 27; final Word/PDF layout,
+word count, APA 7 and original-brief checks remain open.
+
+Prescribed structure (fulfilled by the scaffold, retained as specification):
 
 ```text
 Title
@@ -3117,7 +3142,7 @@ References
 
 ---
 
-# 35. Step 26 — Word Allocation
+# 35. Step 26 — Word Allocation — NEXT
 
 ## Abstract
 
@@ -3542,17 +3567,20 @@ Identify conflicting, failed, partial, or weak evidence.
 E067 §§8–9 preserve native counts, qualified RQ answers and unsupported learning,
 mastery, optimal-dose, fit, superiority and accessibility claims. Scholarly
 warrants are referenced without claiming new source appraisal or learner evidence.
-Step 24's subsequent figure/table pack is recorded in §33; Step 25 is next.
+Step 24's subsequent figure/table pack is recorded in §33; Step 25's scaffold
+is recorded in §34. Step 26 Word Allocation is next.
 
 Write explicit limitations and claim boundaries.
 
 ---
 
-## Phase E — Drafting — READY AFTER STEP 24
+## Phase E — Drafting — STRUCTURE READY; WORD ALLOCATION NEXT
 
-E069–E072 supply the prepared figures/tables. Begin with Step 25's prescribed
-structure; use Step 26's word allocation and preserve E067's evidence limits.
-The paper itself has not been drafted by this figure/table preparation.
+E069–E072 supply the prepared figures/tables; E073–E074 supply Step 25's
+evidence-linked scaffold with the prescribed headings and seven insertions.
+Complete Step 26's word allocation before drafting. Preserve E067's evidence
+limits. Scaffold preparation has not completed the paper's prose/frontmatter,
+full references audit or final typesetting.
 
 Draft only after Phase D is complete. Do not write result sentences while
 actual-result fields are blank.
@@ -3584,21 +3612,20 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 Use this request next:
 
-> Complete Step 25 — Recommended Final Assignment Structure (§34). Prepare
-> the paper structure using the prescribed sections and place E069's figures/
-> tables appropriately. Use E061/E064/E067's recorded results, traceability
-> and interpretation; retain scholarly warrants, native outcomes, failures,
-> self-report boundaries and skipped expert/participant work. Distinguish the
-> paper scaffold from completed prose and apply Step 26's word allocation
-> before drafting. Do not invent evidence, rerun/fix B01, promote outcomes or
-> clear restricted originals for publication.
+> Complete Step 26 — Word Allocation (§35) for the E073 paper scaffold.
+> Reconcile subsection budgets with the conceptual/design section totals and
+> account explicitly for the conclusion, abstract and table/caption/reference
+> counting rules in the original brief. Record unresolved counting rules rather
+> than inventing them. Preserve E061/E064/E067's outcomes, scholarly warrants,
+> failures and self-report boundaries. Do not draft the final title/abstract/
+> keywords yet, rerun/fix B01, promote results or clear restricted originals.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Complete Step 25: prepare the final assignment structure and position the recorded figures/tables.`
-2. `Apply Step 26's word allocation, then draft the paper sections using only recorded evidence and verified scholarly warrants.`
+1. `Complete Step 26: set a reconciled word allocation for the existing paper scaffold, retaining unresolved original-brief counting rules.`
+2. `Draft the paper sections within that allocation using only recorded evidence and verified scholarly warrants; finalise frontmatter last.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3607,7 +3634,8 @@ blank when execution is blocked.
 
 ## 40.3 Drafting requests
 
-Only after Steps 20–23 are complete and Step 24's figures/tables are checked:
+Only after Steps 20–23 are complete, Step 24's figures/tables and Step 25's
+structure are checked, and Step 26's word allocation is recorded:
 
 > Write Section 2: Conceptual Artefact Evaluation in 800–1200 words using only
 > recorded conceptual evidence and verified references.
