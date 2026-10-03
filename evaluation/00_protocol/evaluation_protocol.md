@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; Step 20 register audit complete on 3 October 2026, E049–E057; 52 retained entries; mixed findings and restricted-original release limits retained; optional expert study skipped; Step 21 consolidation next |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; Step 20 audit retained; conceptual informed argument v2 added on 3 October 2026, E058–E060; 55 current entries; mixed findings/release limits retained; optional expert study skipped; Step 21 consolidation next |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -478,6 +478,20 @@ public sharing. No release clearance, new human approval, outcome promotion,
 application/provider/database execution or B01 source change is inferred.
 Criteria remain version 2.1; this is an administrative index completion record,
 not a retrospective oracle amendment. Step 21 is next; Steps 21–22 remain open.
+
+**User-requested CA-ARG scholarly revision — recorded, 3 October 2026.**
+[E058 conceptual argument v2](../01_conceptual/informed_argument/traceability_v2.md)
+adds seven explicitly literature-grounded arguments and nine references;
+[E059 verification](../01_conceptual/informed_argument/reference_verification_v2.md)
+records passage/access/version limits. E060 indexes its revision manifest.
+It evaluates E056 §26's final conceptual version, while E053's original argument
+and E055's historical triangulation remain unchanged. Task alignment is
+plausible; self-report responsiveness does not establish calibrated contingency,
+fading or transfer of responsibility. This is a dated analytic qualification,
+not an empirical outcome change. The register now has 55 entries and the prior
+52 rows/hashes are preserved. Use the revision for current CA-ARG synthesis,
+without counting versions as independent methods. Acceptance criteria remain
+2.1; no new application, provider, participant or expert evaluation occurred.
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 

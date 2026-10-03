@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–18 and §18.1 recorded; Step 20 register audit complete, 52 retained entries (E001–E027/E033–E057); mixed findings, historical mappings and restricted originals retained; Step 19 optional expert study skipped; Step 21 results consolidation NEXT |
+| Formal evaluation status | Steps 10–18 and §18.1 recorded; Step 20 audit retained; conceptual informed argument v2 added as E058–E060, 55 current entries (E001–E027/E033–E060); mixed findings and restricted originals retained; Step 19 optional expert study skipped; Step 21 results consolidation NEXT |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -1109,7 +1109,19 @@ The goal is evaluation, not another literature review.
 
 # 12. Step 5 — Conceptual Evaluation Method 3: Informed Argument — COMPLETED
 
-Evidence:
+**Literature-grounded revision, 3 October 2026:** use
+[traceability_v2.md](../evaluation/01_conceptual/informed_argument/traceability_v2.md),
+E058, with [source verification](../evaluation/01_conceptual/informed_argument/reference_verification_v2.md),
+E059, and E060's revision manifest. Nine scholarly references now supply explicit
+warrants and counterarguments for all seven responsibilities. The revision
+evaluates the final conceptual interpretation in E056 §26, qualifies the
+scaffolding/TTF claims and distinguishes protocol C4 from historical C4.
+The original `traceability.md`, E053, remains unchanged; it is historical
+evidence, not the current literature-grounded version. E055/E056 and all
+empirical outcomes are not retrospectively revised. This is additional dated
+CA-ARG reasoning, not an independent replication, new expert review or B01 run.
+
+Original evidence (retained):
 
 ```text
 evaluation/01_conceptual/informed_argument/traceability.md
@@ -1209,11 +1221,15 @@ RQ3
 
 ## 12.4 Evaluation questions — COMPLETED
 
-The detailed traceability and informed-argument results are preserved in:
+The current literature-grounded traceability and informed-argument results are in:
 
 ```text
-evaluation/01_conceptual/informed_argument/traceability.md
+evaluation/01_conceptual/informed_argument/traceability_v2.md
 ```
+
+The original `traceability.md` remains E053 historical evidence. E058–E060
+identify the dated revision, source checks and integrity manifest; its scholarly
+strengthening does not retroactively regrade previous conceptual results.
 
 For every stage the evaluation asked:
 
@@ -2699,7 +2715,7 @@ The Design Artefact Evaluation should instead focus on completing the required m
 # 29. Step 20 — Master Evidence Register — COMPLETE WITH QUALIFICATIONS
 
 Recorded on 3 October 2026 as [E057 register audit](../evaluation/03_results/evidence_register_audit.md).
-The [register](../evaluation/03_results/evidence_register.csv) now has 52 entries:
+At Step 20 capture the [register](../evaluation/03_results/evidence_register.csv) had 52 entries:
 43 design records unchanged, eight retrospective conceptual records (E049–E056)
 and one administrative audit. All file hashes, ten manifests / 1,174 entries
 and 66 B01 production identities match. E028–E032 remain retired. Unknown
@@ -2710,6 +2726,12 @@ Cookie-bearing synthetic black-box originals are restricted, not cleared for
 sharing; redacted derivatives and a release-specific review are required before
 public distribution. No historical outcomes, human approvals or B01 code were
 changed, and no application/test/provider/database run was executed.
+
+Subsequently, the user requested a literature-grounded conceptual informed
+argument revision. E058–E060 extend the current register to 55 entries; all
+52 captured records and their artefact hashes remain unchanged. Use the revised
+CA-ARG conclusions at Step 21 without counting the two argument versions as
+independent corroboration. The Step 20 manifest remains an as-captured record.
 
 ## 29.1 Goal and output
 
@@ -3464,13 +3486,15 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 Use this request next:
 
-> Complete Step 21 — Consolidated Results Table. Use the 52 retained evidence
-> entries (E001–E027 and E033–E057), including E057's historical C4/method
+> Complete Step 21 — Consolidated Results Table. Use the 55 retained evidence
+> entries (E001–E027 and E033–E060), including E057's historical C4/method
 > crosswalk. Create master_results.csv with the §30 schema. Preserve mixed
 > outcomes, source-access limits, temporal supersession, restricted originals,
 > technical-versus-content distinctions and skipped expert work. Do not treat
 > retrospective indexing as new runs or promote Partial/Fail findings. Do not
 > rerun/fix B01 or invent results. Step 22 follows after consolidation.
+> Use E058/E059 as the current conceptual informed argument; E053 is historical.
+> Do not count the versions as independent methods or upgrade empirical results.
 
 ## 40.2 Requests after each completed step
 

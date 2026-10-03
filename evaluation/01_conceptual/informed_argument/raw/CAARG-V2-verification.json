@@ -1,0 +1,17 @@
+{
+  "analysis": "ANALYSIS-20261003-CONCEPTUAL-ARGUMENT-02",
+  "capturedAt": "2026-10-03T00:09:57.669Z",
+  "head": "4c74ae5038528cea54912979e3f9a53226cbbe24",
+  "registerHash": "9b601a1f92f68e83b620d7602a2c4c898acbd86d85f9d3f24f966596443786d8",
+  "registerRecords": 55,
+  "prior52RowsPreserved": true,
+  "prior52ArtefactHashesUnchanged": true,
+  "productionFilesUnchanged": 66,
+  "stageArguments": 7,
+  "citationReferencePairs": 9,
+  "localLinksChecked": 15,
+  "anchorsChecked": 3,
+  "manifestEntries": 78,
+  "failures": [],
+  "inspection": "{\"kind\":\"table\",\"sheet\":\"Evidence\",\"address\":\"A54:D56\",\"rows\":3,\"cols\":4,\"values\":[[\"E058\",\"ANALYSIS-20261003-CONCEPTUAL-ARGUMENT-02\",\"Final conceptual framework E056 section 26 / conceptual argument v2; not a new B01 baseline\",\"CA-ARG\"],[\"E059\",\"ANALYSIS-20261003-CONCEPTUAL-ARGUMENT-02\",\"Final conceptual framework E056 section 26 / conceptual argument v2; not a new B01 baseline\",\"CA-ARG\"],[\"E060\",\"ANALYSIS-20261003-CONCEPTUAL-ARGUMENT-02\",\"Final conceptual framework E056 section 26 / conceptual argument v2; not a new B01 baseline\",\"EV-REG\"]]}"
+}
