@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; audit/current argument retained; 225 results, 24 PIRQOA chains and 17 scoped interpretation claims preserved; Step 24 presentation/Step 25 scaffold complete; Step 26 drafting budget recorded with unconfirmed official counting rules; 69 evidence entries unchanged; mixed findings/release limits retained; body drafting §2 next; frontmatter/typesetting incomplete |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; 225 results, 24 PIRQOA chains and 17 scoped claims preserved; Steps 24–29 presentation/scaffold/budget/front matter/references/risk review retained; Phase E body drafted, front matter reconciled, current-paper citation/Markdown checks complete; 69 evidence entries unchanged; mixed findings/release limits retained; NEXT: researcher review, official brief and rendered submission/sharing checks |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -591,8 +591,85 @@ subsection coverage, estimates/links and preservation of all 69 registered
 artefacts, the register and 66 B01 production identities. This administrative
 allocation creates no E/R result or CSV entry. Acceptance criteria remain
 2.1; there is no new evaluation, execution, endorsement, fix or release
-clearance. **Next: body drafting §2, then §3/§4/§1/conclusion. Step 27 title,
-abstract and keywords are deferred until the body is complete.**
+clearance. At this capture, Step 27 front matter was deferred until the body.
+The subsequent user-requested preparation follows below.
+
+**Step 27 / front matter — prepared with final body check pending, 3 October 2026.**
+[Front matter](../04_paper/assignment_5_front_matter.md) contains the title
+(eight words, nine with the hyphen split), abstract (140 words, 147 with
+hyphens split) and exactly six distinct keywords. The user's explicit request
+overrides the recommended drafting order and earlier five-keyword plan account;
+it does not establish a change to an independently verified marking brief.
+Confirm that brief's keyword rule before submission. The abstract uses recorded
+conceptual/design findings, bounded mechanical scope, researcher-endorsed
+mixed content ratings and technical usability outcomes. Learning gains,
+calibrated scaffolding and optimal dose remain unestablished.
+[Verification](../04_paper/raw/FRONT-RUN-01-verification.json) records counts,
+claim support/qualifications and preservation of 69 prior registered artefacts,
+the unchanged register, Step 26 budget and 66 production identities. E073 and
+earlier planning captures retain historical wording. This writing produces no
+E/R ID, new evaluation, source appraisal, endorsement or release clearance.
+Acceptance criteria remain 2.1. The body is still unwritten; reconcile front
+matter after it is drafted. **Next: body drafting §2, then §3/§4/§1/conclusion,
+front-matter reconciliation, Step 28 references and final formatting.**
+
+**Step 28 / reference strategy — prepared with final body audit pending,
+3 October 2026.** [Reference strategy](../04_paper/reference_strategy.md)
+contains a 15-source claim/access inventory, 15 candidate APA 7 references,
+secondary-citation/version safeguards and a final paper audit checklist.
+The four scholarly keys currently cited in E069/E073 resolve to matching
+references. The body remains unwritten, so this is not a complete final-paper
+citation audit or final bibliography. Access limits inherited from E040/E047/
+E059 are retained; selected publisher/repository metadata checks are disclosed,
+not treated as full-text appraisal of every original. Tran's 2023 preprint and
+2026 journal record, and Ji's version 7 and earlier records, remain distinct.
+[Verification](../04_paper/raw/REF-RUN-01-verification.json) checks inventory,
+candidate-reference correspondence, local links and unchanged 69 registered
+artefacts/register, six prior drafting captures and 66 B01 production identities.
+No new E/R ID, CSV entry, formal execution, provider call, participant evidence,
+endorsement or release clearance is created. Acceptance criteria remain 2.1.
+**Next: draft §2 using the source strategy, finish the body, then reconcile front
+matter, execute the final citation/reference audit and complete formatting.**
+
+**Step 29 / submission-risk review — complete with submission gates open,
+3 October 2026.** [Risk review](../04_paper/submission_risk_review.md) accounts
+for all fourteen performed protocol methods and skipped optional experts,
+disposes of the ten original mark risks and identifies four further submission
+risks. The master's unchecked Functionality, Usability and design literature
+items were outdated; correcting them means evaluated, not passed. All F1–F13
+remain Partial, Usability remains six Pass/three Partial, and all RQs remain
+Partially supported overall. Original delivery/content failures, BB/oracle
+qualifications, UI issues, source-access and restricted-original boundaries are
+retained. [Verification](../04_paper/raw/RISK-RUN-01-verification.json) checks
+the review/link inventory, existing register/manifests and unchanged 69
+registered artefacts/register, nine prior drafting captures and 66 B01 production
+identities. No E/R ID, CSV row, new formal run, production fix, human endorsement
+or public-release clearance is created; acceptance criteria remain 2.1.
+Open submission gates are original brief/counting/method confirmation, body
+drafting, full citation/front-matter/layout checks and review of the intended
+sharing package. The review is not a grade prediction. **Next: draft Section 2
+at 1,000 narrative words in a separate working paper; do not edit captured E073.**
+
+**Phase E / drafting — all body sections complete with final submission gates
+open, 3 October 2026.** [Working paper](../04_paper/assignment_5_working_paper.md)
+contains 28 prescribed headings, unchanged two figures/five tables, the
+reconciled 140-word abstract/eight-word title/six keywords and twelve actually
+cited APA-style references. [Drafting record](../04_paper/phase_e_drafting_record.md)
+records claim/access/version and citation correspondence checks, focused
+publisher/repository retrieval and Markdown structural review. Earlier pending
+captures remain unchanged; this dated record resolves working-body checks only.
+Local narrative counts are 200/1,000/1,100/600/150 (3,050 total); whitespace
+count is 2,943. Insertion overhead is 2,453 and references 314, neither assumed
+exempt from official limits. [Verification](../04_paper/raw/PHASE-E-01-verification.json)
+checks assembly, counts, citations, R/E/link resolution and unchanged 69
+registered artefacts/register, twelve prior drafting captures and 66 B01
+production files. No E/R ID, new result, formal execution, production fix or
+human endorsement is created. All native Fail/Partial, source/transfer,
+API-only, provisional-content and restricted-original limits remain.
+Acceptance criteria are still 2.1. **Next: researcher review, attach/check the
+official brief, prepare the required rendered submission format and review
+the intended sharing package.** No final Word/PDF, official overall compliance
+or public-release clearance is claimed.
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 

@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–18 and §18.1 recorded; audit/current argument retained; 225 immutable results, 24 PIRQOA rows and 17 scoped claims; Step 24 presentation and Step 25 scaffold complete; Step 26 drafting allocation complete with unconfirmed official counting rules; 69 evidence entries unchanged (E001–E027/E033–E074); mixed findings/restricted originals retained; body drafting §2 NEXT; Step 27 frontmatter deferred until body complete |
+| Formal evaluation status | Steps 10–18 and §18.1 recorded; 225 immutable results, 24 PIRQOA rows and 17 scoped claims retained; Steps 24–29 presentation/scaffold/budget/front matter/reference strategy/risk review recorded; Phase E body drafted, front matter reconciled and current-paper citation/Markdown checks complete; 69 evidence entries unchanged (E001–E027/E033–E074); mixed findings/restricted originals retained; NEXT: researcher review, official brief and final submission formatting/sharing checks |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,7 +155,16 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Step 26 drafting allocation is complete in [word_allocation.md](../evaluation/04_paper/word_allocation.md): body targets 200/1,000/1,100/600/150 total 3,050, plus a separate 140-word abstract. Subsection sums reconcile. Official table/caption/reference counting remains unconfirmed; the unchanged insertion blocks add approximately 2,453 words, so the narrative targets alone do not establish final compliance. Next draft §2 using recorded evidence, then §3/§4/§1/conclusion; Step 27 frontmatter stays deferred until the body is complete. E073, all 69 registered artefacts, the register, results/PIRQOA/interpretation and 66 B01 production identities are unchanged. No new evaluation, outcome promotion or release clearance.**
+> **Phase E's [working paper](../evaluation/04_paper/assignment_5_working_paper.md) is drafted: 3,050 local narrative tokens across §§1–5, the reconciled 140-word abstract, eight-word title and exactly six keywords. Twelve cited references and all seven unchanged figure/table insertions are included. The [drafting record](../evaluation/04_paper/phase_e_drafting_record.md) separates narrative, insertion and reference counts and records citation/access checks. The earlier five-keyword account is not a verified official rule. Next review the draft against the original brief and prepare the required submission format; official counting rules, final rendered layout and sharing review remain open. Insertion overhead is about 2,453 words, not automatically exempt. All 69 evidence entries, E073, earlier drafting captures, results and 66 B01 identities are unchanged; no new evaluation, endorsement or release clearance.**
+
+Step 29's [submission-risk review](../evaluation/04_paper/submission_risk_review.md)
+is complete. Recorded Functionality, Usability and design literature are no
+longer marked unexecuted. Results remain mixed: all F Partials and six U Pass/
+three U Partials are retained. Before submission, confirm the original brief/
+counting rules, finish rendered-format checks, and review
+the intended evidence package. No rerun, source fix or grade assurance follows
+from this risk review. Phase E subsequently completes body drafting and current
+Markdown/citation checks; original risk captures keep their dated pending wording.
 
 ### Step 13 recorded execution and endorsed review
 
@@ -163,7 +172,7 @@ The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and fail
 
 ## How to execute this plan
 
-1. Start at the first heading marked **NEXT**; currently this is Phase E's body drafting (§39), beginning with §2 under the recorded Step 26 allocation. Step 27 frontmatter is deliberately deferred until the body is written. Do not rerun or relabel completed evidence.
+1. Start at the first heading marked **NEXT**; currently this is Phase E's final submission checks (§39–40): researcher review, original-brief confirmation, required rendered format and sharing review. All body sections are drafted and front-matter/citation correspondence checked. Do not rerun or relabel completed evidence.
 2. Read that step's Goal, Inputs/Outputs, Procedure, and Completion Criteria.
 3. Create only the listed evidence folder/files; leave actual-result fields
    blank until execution.
@@ -209,7 +218,7 @@ Requirements:
 
 - Title: **maximum 10 words**
 - Abstract: **maximum 150 words**
-- Keywords: **maximum 5**
+- Keywords: **exactly 6**, per the user's 3 October 2026 instruction. The earlier supplied plan reported a maximum of five; this is a user-directed change, not verification of the standalone brief. Confirm the official requirement before submission.
 - These must be revised to reflect:
   - the evaluation performed;
   - the main findings;
@@ -1547,7 +1556,7 @@ Steps 11–18 and §18.1 also have recorded results. The usability checkpoint is
 complete with findings (six Pass / three Partial, E036–E038); the literature-
 grounded informed argument is recorded as E039–E041; the fresh live scenario is
 recorded as E042–E044; the design literature comparison as E045–E048.
-Step 20's audit is also complete (E049–E057), Step 21's results are recorded (E061–E063), Step 22's traceability is complete (E064–E066), Step 23's interpretation is recorded (E067–E068), Step 24's figures/tables are prepared (E069–E072), Step 25's paper scaffold is complete (E073–E074), and Step 26's drafting budget is recorded with unconfirmed official counting rules. Proceed to **Phase E body drafting, beginning with §2**,
+Step 20's audit is also complete (E049–E057), Step 21's results are recorded (E061–E063), Step 22's traceability is complete (E064–E066), Step 23's interpretation is recorded (E067–E068), Step 24's figures/tables are prepared (E069–E072), Step 25's paper scaffold is complete (E073–E074), and Step 26's drafting budget is recorded with unconfirmed official counting rules. Phase E now has a complete working draft. Proceed to **researcher review, official-brief and rendered submission/sharing checks**,
 retaining all earlier qualifications and the three
 usability issues; do not treat completion as an all-criteria Pass.
 
@@ -3176,189 +3185,198 @@ not new evaluation evidence; no E/R ID or new CSV entry is assigned. Protocol
 2.1 and existing outcomes remain unchanged. No prose, frontmatter, app/test/
 provider/database execution, fix or endorsement is produced by this step.
 
-**Next: Phase E body drafting (§39), starting with §2.** Keep title, abstract
-and keywords pending until the body is complete, then execute Step 27. Check
-the original brief's counting rules before declaring final compliance.
+**At this capture, next was Phase E body drafting (§39), starting with §2.** At the Step 26
+capture, front matter was deferred until the body. The subsequent Step 27
+record below followed the user's request to prepare it early. Phase E has
+subsequently drafted the body and reconciled front matter. Check the original brief's counting rules before
+declaring final compliance.
 
 ---
 
-# 36. Step 27 — Title, Abstract, and Keywords — DEFERRED UNTIL BODY IS DRAFTED
+# 36. Step 27 — Title, Abstract, and Keywords — PREPARED; BODY RECONCILED IN PHASE E
 
-Do these last.
+Prepared 3 October 2026 as `FRONT-20261003-PAPER-01` in
+[assignment_5_front_matter.md](../evaluation/04_paper/assignment_5_front_matter.md).
+The user's direct request executes this step before body drafting, overriding
+the recommended order. This supplies usable front matter, not a completed
+paper. Reconcile it with the eventual body before final submission.
 
-## Possible working title
+Title: **Evaluating Adaptive LLM Scaffolding for Burmese-Speaking STEM Learners**.
+Eight whitespace-separated words, or nine with its hyphen split.
 
-> **Evaluating Adaptive LLM Scaffolding for Burmese-Speaking STEM Learners**
+The abstract is **140 words**, or **147** when hyphens are split, below the
+reported 150-word maximum either way. It identifies the problem, both
+artefacts, conceptual/design methods, bounded mechanical findings, mixed
+content/usability judgements and the unestablished learning/dose claims.
+Its source crosswalk points to recorded results, not new evidence.
 
-Count words before finalizing.
+Exactly **six keywords**, per the user's instruction:
 
-## Abstract structure
+1. Adaptive STEM Scaffolding
+2. Burmese-Speaking Learners
+3. Large Language Models
+4. STEM Terminology Support
+5. Task–Technology Fit
+6. Design Science Evaluation
 
-Use approximately:
+The earlier five-keyword maximum was the supplied plan's account, not an
+independently verified brief. Follow the current user instruction in the
+working paper, while retaining original-brief confirmation as an open check.
+Captured E073/Step 26 records keep their historical wording; no evidence
+record is rewritten to pretend it originally specified six keywords.
 
-1. problem/context — 1–2 sentences;
-2. conceptual/system artefacts — 1 sentence;
-3. evaluation methods — 2 sentences;
-4. key results — 2–3 sentences;
-5. limitation/contribution — 1 sentence.
+[Verification](../evaluation/04_paper/raw/FRONT-RUN-01-verification.json) checks
+title/abstract counts under both hyphen treatments, six distinct keywords,
+recorded count support, qualification language and unchanged prior inputs:
+all 69 registered artefacts/register, Step 26 allocation and 66 B01 production
+hashes. No E/R ID, new CSV entry, evaluation, source appraisal or endorsement
+is created by front-matter writing.
 
-Do not invent the key-results sentences now.
-
-## Keywords
-
-A5 allows **maximum 5**.
-
-Possible final set:
-
-- Adaptive STEM Scaffolding
-- Burmese-Speaking Learners
-- Large Language Models
-- STEM Terminology Support
-- Educational Information Systems
-
-Only finalize later.
-
----
-
-# 37. Step 28 — Reference Strategy
-
-## Core evaluation-method sources
-
-- Hevner et al. (2004)
-- Grady & Caswell (1987)
-
-## Core theory sources
-
-- Goodhue & Thompson (1995)
-- Wood et al. (1976)
-- van de Pol et al. (2010)
-
-## Main SLR/SSR sources from Assignment 2
-
-High-value sources include:
-
-- Athukorala & De Silva (2025)
-- Candé & Martinho (2026)
-- He et al. (2025)
-- Kleidermacher & Zou (2026)
-- Kuzu (2026)
-- Nair et al. (2026)
-- Rakhimova et al. (2024)
-- Sakunkoo et al. (2025)
-- Tran et al. (2026)
-- Vatsal et al. (2026)
-- Zhang & Pang (2025)
-- Bal & Mandal (2026)
-- Khoboko et al. (2025)
-
-Use only sources that actually support the claim being made.
+At the Step 27 capture the body was pending. Phase E subsequently copied this
+front matter unchanged into the completed working paper and checked its
+consistency. See [drafting record](../evaluation/04_paper/phase_e_drafting_record.md).
+Original-brief confirmation and rendered submission checks remain open.
 
 ---
 
-# 38. Step 29 — Risks to an Excellent Mark
+# 37. Step 28 — Reference Strategy — PREPARED; WORKING-PAPER AUDIT RECORDED IN PHASE E
 
-## Risk 1 — Describing instead of evaluating
+**Prepared 3 October 2026.** The working strategy and candidate bibliography
+are in [reference_strategy.md](../evaluation/04_paper/reference_strategy.md).
+It was captured before the body; the candidate pool is not itself the final
+paper bibliography. Phase E's working paper subsequently retains twelve cited
+entries with source/version limits and citation correspondence checked.
 
-Bad:
+## Completed outputs
 
-> The framework has seven stages.
+- A 15-source claim-to-source/access inventory, grounded in the retained
+  conceptual/design reference checks (E040, E047 and E059).
+- An alphabetised 15-entry candidate APA 7 pool, including the principal
+  Task–Technology Fit and complementary scaffolding sources, design-science
+  evaluation methods, relevant original-source candidates and Assignment 2.
+- Explicit limits for abstract/excerpt, metadata-only and assignment-mediated
+  access. Grady & Caswell and Wood et al. metadata checks do not establish
+  original-text appraisal. A secondary citation identifies Assignment 2 rather
+  than pretending an unread original was consulted.
+- Version rules separating Tran's 2023 five-author preprint from the 2026
+  six-author journal record and Ji's 2024 version 7 from earlier versions.
+- A check of the four currently used scholarly citation keys in E069/E073:
+  Goodhue & Thompson (1995), Hevner et al. (2004), van de Pol et al. (2010)
+  and Venable et al. (2016). All resolve to corresponding reference entries.
+- A concrete final audit checklist covering claim support, citation/reference
+  correspondence, secondary citations, version identities and APA formatting.
 
-Better:
+Selected publisher/repository metadata was rechecked and its access scope is
+recorded in the strategy. This is not a new SLR or full-text reappraisal of every
+source. Candidate-only entries are not yet final-paper orphan references;
+include them only if the drafted paper actually cites supported claims.
 
-> The framework was evaluated for completeness and sequence using literature, GenAI critique, informed argument, and a Photosynthesis scenario.
+[Verification](../evaluation/04_paper/raw/REF-RUN-01-verification.json) checks
+the 15-source inventory, candidate entries, four existing citation keys, local
+links and unchanged prior identities: 69 registered artefacts/register, six
+prior drafting captures and 66 B01 production files. No new E/R ID, CSV entry,
+evaluation result, endorsement or release clearance is created.
 
-## Risk 2 — Missing one required method
+## Subsequent audit and remaining execution
 
-### Conceptual — completed
+Phase E's [drafting record](../evaluation/04_paper/phase_e_drafting_record.md)
+records twelve citation–reference pairs, manuscript claim/access/version review,
+unused-candidate removal and current Markdown structure checks. Front matter
+matches the drafted body; captured Step 28 records retain their historical
+pending status. Official rules, final Word/PDF layout and any further citation
+changes still require final submission checks. Neither Step 29 nor Phase E
+promotes original outcomes or clears restricted evidence.
 
-- [x] GenAI
-- [x] SLR
-- [x] Informed argument
-- [x] Scenario
-- [x] Triangulation
-- [x] Framework refinement decisions
-- [x] Optional expert intentionally skipped
+---
 
-### Design — partially completed; remaining methods not yet complete
+# 38. Step 29 — Risks to an Excellent Mark — REVIEW COMPLETE; SUBMISSION GATES OPEN
 
-- [ ] FURPS Functionality
-- [ ] FURPS Usability
-- [x] Static analysis
-- [x] Dynamic analysis (recorded qualifications retained)
-- [x] Optimisation/bounds
-- [x] Simulation (endorsed review; mixed findings retained)
-- [x] Black-box (completed with oracle/content-scope qualifications)
-- [x] White-box (WB01–WB06 structural Pass; scope notes retained)
-- [x] Informed argument (Step 16; E039–E041; qualified literature-grounded conclusions)
-- [x] Scenario (Step 17; E042–E044; technical Pass / provisional content Partial; UI/API boundaries retained)
-- [ ] SLR
-- [x] Optional expert intentionally skipped
+**Reviewed 3 October 2026.** See
+[submission_risk_review.md](../evaluation/04_paper/submission_risk_review.md)
+for the 14-risk register, method/evidence mapping, counterevidence and closure
+actions. This is a recorded-evidence administrative review, not a grade
+prediction, new evaluation, fix, endorsement or release clearance.
 
-## Risk 3 — Inventing usability evidence
+## Recorded-method checklist — corrected
 
-Without participants, call it:
+Checked means **accounted for/evaluated**, not **passed**. Method compliance
+still follows the supplied plan's account until the original brief is checked.
 
-> structured usability inspection
+### Conceptual — recorded with scope limits
 
-Do not call it:
+- [x] GenAI interview/analysis (E049–E050; original framework input)
+- [x] SLR/literature evaluation (E051–E052; retained A2/access limits)
+- [x] Informed argument (current E058–E060; historical E053 retained)
+- [x] Scenario (E054; historical execution/lifecycle gaps retained)
+- [x] Triangulation and refinement (E055–E056; derived, not extra independent methods)
+- [x] Optional expert intentionally skipped, not performed
 
-> user usability study.
+### Design — recorded with mixed findings
 
-## Risk 4 — Overclaiming learning outcomes
+- [x] FURPS Functionality (protocol §6.1; E061/E062 R080–R092; all thirteen Partial)
+- [x] FURPS Usability / structured inspection (E036–E038; six Pass/three Partial)
+- [x] Static analysis (E001–E003; first blocked attempt retained)
+- [x] Dynamic analysis (E004–E013; historical qualifications retained)
+- [x] Optimisation/bounds (E014–E017; bounded state behaviour, not global optimisation)
+- [x] Simulation (E018–E023; delivery/content scales separate, failures retained)
+- [x] Black-box (E024–E027; 21 Pass/two Partial/one Fail assessed cases)
+- [x] White-box (E033–E035; 373 root tests, structural evidence only)
+- [x] Informed argument (E039–E041; cited research warrants and limits)
+- [x] Scenario (E042–E044; technical Pass/provisional content Partial, API-only boundaries)
+- [x] SLR/literature evaluation (E045–E048; 13 comparisons/all five SSR systems)
+- [x] Optional expert intentionally skipped, not performed
 
-Do not equate:
+The previous unchecked Functionality, Usability and design SLR entries were
+outdated. Their reconciliation does not promote FURPS results or RQ answers.
+All fourteen performed protocol methods are accounted for; FURPS is the
+criteria framework and derived syntheses are not extra independent evaluations.
 
-> "I understand"
+## Disposition of the ten original risks
 
-with actual learning.
+1. **Description instead of evaluation:** still a body-drafting control.
+   Write criterion → finding → counterevidence → qualified judgement; use
+   scholarly warrants for theoretical arguments, not descriptive assertions.
+2. **Missing method:** recorded-method accounting is complete; confirm official
+   requirements, particularly the optimisation/bounds interpretation.
+3. **Invented usability:** retain structured technical inspection wording,
+   no participants/full WCAG claim, and the unassessed preference-save fault.
+4. **Learning overclaims:** retain self-reported need, not mastery or measured
+   learning. Calibrated fading, transfer and optimal dose are unestablished.
+5. **Weak white-box evidence:** cite the formal root run/ROOTTESTS-02 and
+   coverage scope; do not substitute freeze checks or claim complete coverage.
+6. **Weak simulation:** multi-domain execution exists; retain 55 attempts
+   (48 main/seven supplemental), three technical Fail/eight initial ambiguities,
+   and 91 delivered ratings (18 Pass/71 Partial/two Fail), not a pooled success rate.
+7. **PIRQOA gaps:** 24 chains exist (E064–E066); each main body claim still
+   needs its existing R/E IDs and gap, with RQ1–RQ3 partially supported overall.
+8. **GenAI as validation:** preserve shared-input/version boundaries; critique,
+   revised arguments and derived reports are not independent replications.
+9. **Literature repetition:** use Step 28's claim/access map and correct
+   secondary/version attribution, not a retelling of the entire Assignment 2 SLR.
+10. **Silent changes:** preserve B01 and all captured identities/oracles; an
+    authorised production change needs a new baseline and affected reruns.
 
-Use:
+## Remaining submission gates
 
-> self-reported support signal indicating perceived need for more assistance.
+- [ ] Confirm the standalone brief/rubric, official counting/method/format rules
+  and evidence packaging. Six requested keywords remain; the old five-keyword
+  plan account is not independently verified.
+- [x] Draft the body separately from E073, reconcile front matter and check
+  working-paper citations (Phase E); final Word/PDF checks remain open below.
+- [x] Audit current body claims against E067; retain BB22, simulation/Burmese/STEM
+  failures, U5/U8/U9 Partials, provider-call/timer distinctions and source limits.
+- [ ] Complete the required rendered submission format and official counts.
+- [ ] Review any intended sharing package; preserve restricted originals and
+  use tracked, labelled redacted derivatives where necessary (E057 §5).
 
-## Risk 5 — Weak white-box evidence
+[Verification](../evaluation/04_paper/raw/RISK-RUN-01-verification.json) checks
+risk/method accounting, links and preservation of 69 registered artefacts/
+register, nine prior drafting captures and 66 B01 production identities, with
+the existing manifest audit. No new E/R ID or CSV entry is created.
 
-A4 noted that automated tests were not yet complete. The refined B01 source now
-contains deterministic and database-integration coverage, but Assignment 5
-still requires formal execution records tied to the frozen baseline. Do not
-report baseline-freeze checks as the final white-box evaluation.
-
-Prioritize:
-
-- adaptation;
-- state transitions;
-- scope validation;
-- structured response validation;
-- persistence.
-
-## Risk 6 — Weak simulation design
-
-Do not use only Photosynthesis.
-
-Execute the fixed 16-case, 48-session protocol across multiple STEM domains and
-ambiguous terminology; account for every case and deviation.
-
-## Risk 7 — No clear PIRQOA mapping
-
-Every main result should have an RQ/requirement mapping.
-
-## Risk 8 — Treating GenAI critique as validation
-
-Use it only as one evidence source.
-
-Triangulate.
-
-## Risk 9 — Literature repetition
-
-Do not rewrite the whole Assignment 2 SLR.
-
-Use literature **as evaluation evidence**.
-
-## Risk 10 — Changing artefacts during evaluation without recording it
-
-Freeze the baseline first.
-
-If improvements arise, document them.
+Phase E subsequently completes the body/current-paper audit. **Next: review
+the working paper and confirm the brief, rendered format and sharing package.**
+The risk review is complete; submission readiness is not asserted.
 
 ---
 
@@ -3554,39 +3572,50 @@ E067 §§8–9 preserve native counts, qualified RQ answers and unsupported lear
 mastery, optimal-dose, fit, superiority and accessibility claims. Scholarly
 warrants are referenced without claiming new source appraisal or learner evidence.
 Step 24's subsequent figure/table pack is recorded in §33; Step 25's scaffold
-is recorded in §34 and Step 26's allocation in §35. Body drafting is next;
-retain the unconfirmed counting rules.
+is recorded in §34 and Step 26's allocation in §35. Phase E now supplies the
+complete working draft; retain the unconfirmed counting rules and final gates.
 
 Write explicit limitations and claim boundaries.
 
 ---
 
-## Phase E — Drafting — NEXT: SECTION 2
+## Phase E — Drafting — BODY COMPLETE; NEXT: FINAL SUBMISSION CHECKS
 
-E069–E072 supply the prepared figures/tables; E073–E074 supply Step 25's
-evidence-linked scaffold with the prescribed headings and seven insertions.
-Step 26's [word allocation](../evaluation/04_paper/word_allocation.md) is ready
-for narrative drafting, with official counting rules still unconfirmed.
-Begin §2 at 1,000 narrative words in a new working paper draft. Keep E073
-unchanged as the captured scaffold. Preserve E067's evidence limits.
-The paper's prose/frontmatter, full references audit and final typesetting
-remain unfinished; do not finalise Step 27 before the body.
+**Drafted 3 October 2026**, as `DRAFT-20261003-PHASE-E-01`.
+[Working paper](../evaluation/04_paper/assignment_5_working_paper.md) contains
+all 28 prescribed headings, two figures, five tables, the prepared front matter
+and twelve actually cited reference entries. E073 remains the unchanged
+captured scaffold. [Drafting record](../evaluation/04_paper/phase_e_drafting_record.md)
+and [verification](../evaluation/04_paper/raw/PHASE-E-01-verification.json)
+record source/claim checks, assembly, actual counts and preservation.
 
-Draft only after Phase D is complete. Do not write result sentences while
-actual-result fields are blank.
+Completed writing/check sequence:
 
-Recommended order:
+1. Section 2 — 1,000 local narrative tokens, including cited informed argument
+2. Section 3 — 1,100, retaining mixed mechanical/content/usability findings
+3. Section 4 — 600, with all RQs partially supported and explicit gaps
+4. Section 1 — 200, preserving artefact/baseline and evaluation identities
+5. Conclusion — 150, with no new effect or superiority claim
+6. Reconcile the unchanged eight-word title with the body
+7. Reconcile the unchanged 140-word abstract with the body
+8. Check all six distinct keyword phrases against the actual body
+9. Check twelve citation/reference pairs and claim/access/version limits
+10. Check Markdown headings, insertion identity, labels, local links and absence
+    of pending prose placeholders
 
-1. Section 2 — Conceptual Artefact Evaluation
-2. Section 3 — Design Artefact Evaluation
-3. Section 4 — Results and Interpretation
-4. Section 1 — Evaluation Context
-5. Conclusion
-6. Title
-7. Abstract
-8. Keywords
-9. References audit
-10. Formatting audit
+These are **local drafting counts**, not an official Word count. Body total
+is 3,050; a whitespace counter gives 2,943. Tables/captions/notes add about
+2,453 tokens; references add 314. Do not assume those categories are exempt.
+All seven insertion blocks and 69 registered artefacts/register, twelve prior
+drafting captures and 66 B01 production identities remain unchanged.
+No new E/R ID, formal test, production fix or human endorsement occurs.
+
+**NEXT:** researcher review of the complete paper; original brief/rubric
+confirmation (counts, keyword/method rules and submission format); required
+rendered Word/PDF checks and sharing-package review. These gates remain open.
+No submission-ready typesetting, overall compliance or release clearance is
+claimed. Any brief-driven shortening must use paper-only derivatives while
+preserving captured evidence and essential counterexamples.
 
 ---
 
@@ -3600,32 +3629,30 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 ## 40.1 Immediate request
 
-Use this request next:
+Review [the complete working paper](../evaluation/04_paper/assignment_5_working_paper.md)
+and attach the official Assignment 5 brief/rubric. Then use:
 
-> Draft Section 2 — Conceptual Artefact Evaluation at the recorded 1,000-word
-> narrative target, following the Step 26 subsection allocation. Create a
-> working paper draft separately from captured E073; use its headings and
-> existing presentation material. Use only recorded conceptual findings and
-> verified scholarly warrants, retaining source-access/transfer limits,
-> historical/current identities, the C4 crosswalk and qualified conclusions.
-> Report narrative and table/caption counts separately; official counting rules
-> remain unconfirmed. Do not finalise frontmatter, invent evidence, rerun/fix
-> B01, promote results or clear restricted originals for publication.
+> Check the working paper against the supplied official brief, including all
+> counting, keyword, method and submission-format rules. Preserve evidence,
+> native outcomes and source-access limits. Identify any conflict before
+> changing scope. Prepare and inspect the required submission format, using
+> labelled paper-only derivatives if shortening is required; do not overwrite
+> E069/E073, alter B01, invent results or distribute restricted captures.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Draft Section 2 at the Step 26 target of 1,000 narrative words, using recorded evidence and verified scholarly warrants in a separate working paper draft.`
-2. `Draft Sections 3, 4, 1 and the conclusion at 1,100, 600, 200 and 150 narrative words respectively; report non-prose counts separately.`
-3. `After the body is complete, do Step 27: finalise the title, abstract and keywords, then complete reference and formatting audits.`
+1. `Review the Phase E working paper and confirm the original brief's counting, keyword, method and submission-format requirements.`
+2. `Resolve any confirmed compliance conflict with tracked paper-only edits; retain evidence originals, failures, scholarly warrants and qualifications.`
+3. `Prepare and visually inspect the required submission format, rerun citation/count checks on that version, and review the intended sharing package.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
 perform the in-scope work, preserve raw evidence, and leave actual-result fields
 blank when execution is blocked.
 
-## 40.3 Drafting requests
+## 40.3 Historical drafting requests — fulfilled in Phase E
 
 Only after Steps 20–23 are complete, Step 24's figures/tables and Step 25's
 structure are checked, and Step 26's word allocation is recorded (now fulfilled;
@@ -3645,16 +3672,19 @@ official counting rules remain unconfirmed):
 
 # 41. Final Pre-Submission Checklist
 
-## Assignment requirements
+## Assignment requirements — current Markdown checks versus official compliance
 
-- [ ] Title ≤10 words
-- [ ] Abstract ≤150 words
-- [ ] Keywords ≤5
-- [ ] Conceptual evaluation 800–1200 suggested
-- [ ] Design evaluation 800–1200 suggested
-- [ ] Results 500–750 suggested
-- [ ] APA 7
-- [ ] All tables/figures labeled consistently
+- [x] Title ≤10 words (eight; nine with hyphen split)
+- [x] Abstract ≤150 words (140; 147 with hyphens split)
+- [x] Exactly six distinct keywords per current user instruction, body-reconciled
+- [x] Conceptual narrative within suggested 800–1200 (1,000 local tokens; insertions separate)
+- [x] Design narrative within suggested 800–1200 (1,100 local tokens; insertions separate)
+- [x] Results narrative within suggested 500–750 (600 local tokens; insertions separate)
+- [x] Working-paper author–year/reference correspondence and APA-style source/version records checked (twelve pairs)
+- [x] All two figures/five tables numbered, referenced and unchanged in Markdown
+- [ ] Original brief confirms official counting, six-keyword, method and overall requirements
+- [ ] Required rendered format, official editor counts and final APA 7 page layout inspected
+- [ ] Intended evidence/submission package reviewed; restricted originals not distributed
 
 ## Conceptual evaluation — COMPLETE
 
@@ -3701,7 +3731,7 @@ official counting rules remain unconfirmed):
 - [x] RQ3 addressed with qualified support and explicit gaps (not calibrated contingency/fading or optimal support dose)
 - [x] Failures reported honestly in Step 21 (including original oracle failures; no promotion)
 - [x] Limitations reported for every Step 21 result
-- [x] Step 21 makes no educational-effectiveness claim (final paper remains to be checked)
+- [x] Step 21 and Phase E working paper make no educational-effectiveness claim (required rendered version still to be checked)
 - [x] Self-reported support signal described correctly in Step 21 (not mastery or diagnosis)
 
 ## Evidence
