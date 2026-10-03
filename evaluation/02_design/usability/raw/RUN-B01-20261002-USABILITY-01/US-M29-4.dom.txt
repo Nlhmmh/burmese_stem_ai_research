@@ -1,0 +1,61 @@
+- banner:
+  - link "Logo":
+    - /url: /
+    - img "Logo"
+  - navigation "ပင်မ လမ်းညွှန်":
+    - link "မေးခွန်းသစ်":
+      - /url: /
+    - link "မှတ်တမ်း":
+      - /url: /history
+    - button "Switch to English": EN
+    - button "အရောင်ပုံစံ ပြောင်းရန်": ◑
+- alert
+- main:
+  - generic: biology, plant physiology
+  - heading "photosynthesis" [level=1]
+  - paragraph: STEM သင်ယူမှု အစည်းအဝေး
+  - generic: 📖
+  - heading "ရိုးရှင်းသော ရှင်းလင်းချက်" [level=2]
+  - paragraph: Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။
+  - paragraph: Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.
+  - generic: ◉
+  - heading "လက်တွေ့ ဥပမာ" [level=2]
+  - paragraph: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။
+  - paragraph: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.
+  - generic: ⚙
+  - heading "နည်းပညာ ရှင်းလင်းချက်" [level=2]
+  - paragraph: Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။
+  - paragraph: Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.
+  - generic: ◇
+  - heading "ဤအကြောင်း တွေးကြည့်ပါ" [level=2]
+  - paragraph: Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။
+  - paragraph: What inputs does a plant need for photosynthesis, and what useful product does it make?
+  - button "အရိပ်အမြွက် ပြရန်"
+  - heading "photosynthesis အကြောင်း မေးချင်သေးပါသလား။" [level=2]
+  - textbox "နောက်ဆက်တွဲ မေးခွန်း":
+    - /placeholder: ဤ concept အကြောင်း နောက်ထပ် မေးပါ...
+  - button "မေးရန်" [disabled]
+  - paragraph: နောက်ဆက်တွဲ မေးခွန်း 2 ခု ကျန်သည်
+  - heading "နားလည်မှု စစ်ဆေးခြင်း" [level=2]
+  - paragraph: ရွေးထားသော တုံ့ပြန်မှု — အသင့်အတင့် နားလည်ပါသည်
+  - heading "မည်သည့် အကူအညီက အသင့်တော်ဆုံး ဖြစ်မလဲ။" [level=3]
+  - paragraph: ရွေးချယ်မှုတစ်ခုကို ရွေးပါ၊ သို့မဟုတ် မရွေးဘဲ ဆက်လုပ်နိုင်ပါသည်။
+  - radiogroup "မည်သည့် အကူအညီက အသင့်တော်ဆုံး ဖြစ်မလဲ။":
+    - radio "ပိုမို ရိုးရှင်းသော ရှင်းလင်းချက်"
+    - generic: ◒
+    - generic: ပိုမို ရိုးရှင်းသော ရှင်းလင်းချက်
+    - radio "နောက်ထပ် ဥပမာ"
+    - generic: ▣
+    - generic: နောက်ထပ် ဥပမာ
+    - radio "မြန်မာ / အင်္ဂလိပ် ဝေါဟာရ အကူအညီ"
+    - generic: Aa
+    - generic: မြန်မာ / အင်္ဂလိပ် ဝေါဟာရ အကူအညီ
+    - radio "အယူအဆကို နားမလည်ပါ" [checked] [active]
+    - generic: "?"
+    - generic: အယူအဆကို နားမလည်ပါ
+    - radio "ကျွန်ုပ် ဆိုလိုသည့် အယူအဆ သို့မဟုတ် ဝေါဟာရ မဟုတ်ပါ"
+    - generic: ↺
+    - generic: ကျွန်ုပ် ဆိုလိုသည့် အယူအဆ သို့မဟုတ် ဝေါဟာရ မဟုတ်ပါ
+  - button "ဤရွေးချယ်မှုဖြင့် ဆက်လုပ်ရန်"
+  - button "မရွေးဘဲ ဆက်လုပ်ရန်"
+  - button "နားလည်မှု ရွေးချယ်မှုများသို့ ပြန်ရန်"

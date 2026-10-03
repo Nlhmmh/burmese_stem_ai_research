@@ -1,3 +1,4 @@
+import { apiError } from "@/lib/api-error";
 import { LearnerIdentityError, requireLearnerId } from "@/services/learner.service";
 import {
   completeLearningSession,
@@ -55,29 +56,25 @@ async function readJson(request: NextRequest): Promise<unknown> {
 
 function handleRouteError(error: unknown, operation: "retrieve" | "update"): NextResponse {
   if (error instanceof LearnerIdentityError) {
-    return errorResponse("LEARNER_IDENTITY_UNAVAILABLE", error.message, 400);
+    return apiError("LEARNER_IDENTITY_UNAVAILABLE", error.message, 400);
   }
   if (error instanceof SessionIdValidationError) {
-    return errorResponse("INVALID_SESSION_ID", error.message, 400);
+    return apiError("INVALID_SESSION_ID", error.message, 400);
   }
   if (error instanceof SessionUpdateValidationError) {
-    return errorResponse("INVALID_SESSION_UPDATE", error.message, 400);
+    return apiError("INVALID_SESSION_UPDATE", error.message, 400);
   }
   if (error instanceof SessionDetailNotFoundError) {
-    return errorResponse("SESSION_NOT_FOUND", error.message, 404);
+    return apiError("SESSION_NOT_FOUND", error.message, 404);
   }
   if (error instanceof SessionLifecycleConflictError) {
-    return errorResponse("SESSION_LIFECYCLE_CONFLICT", error.message, 409);
+    return apiError("SESSION_LIFECYCLE_CONFLICT", error.message, 409);
   }
 
   console.error(`Unable to ${operation} learning session:`, error);
-  return errorResponse(
+  return apiError(
     operation === "retrieve" ? "SESSION_RETRIEVAL_FAILED" : "SESSION_UPDATE_FAILED",
     operation === "retrieve" ? "Unable to load learning session" : "Unable to update session",
     500
   );
-}
-
-function errorResponse(code: string, message: string, status: number): NextResponse {
-  return NextResponse.json({ error: { code, message } }, { status });
 }

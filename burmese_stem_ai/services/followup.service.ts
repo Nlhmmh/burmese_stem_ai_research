@@ -5,9 +5,7 @@ import {
   type SessionRecord
 } from "@/data/dao/session.dao";
 import { MAX_FOLLOW_UP_QUESTION_LENGTH, MAX_FOLLOW_UPS } from "@/lib/constants";
-
-const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
-const OPENAI_TIMEOUT_MS = 20_000;
+import { LlmProviderError, requestStructuredOutput } from "@/services/llm-provider";
 
 const followUpOutputSchema = {
   type: "object",
@@ -35,15 +33,6 @@ type GeneratedFollowUp = {
     en: string;
     my: string;
   };
-};
-
-type OpenAIResponse = {
-  output?: Array<{
-    content?: Array<{
-      type?: string;
-      text?: string;
-    }>;
-  }>;
 };
 
 export class FollowUpValidationError extends Error {}
@@ -89,7 +78,6 @@ export async function askSessionFollowUp(learnerId: string, sessionId: string, q
         "This appears to be a different STEM concept. Start a new learning session?"
     );
   }
-  validateRelatedAnswer(generated);
 
   const followUp: FollowUp = {
     question,
@@ -113,68 +101,39 @@ async function generateFollowUp(
   session: SessionRecord,
   question: string
 ): Promise<GeneratedFollowUp> {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey || apiKey === "your-key-here") {
-    throw new FollowUpGenerationError("OpenAI API key is not configured");
-  }
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), OPENAI_TIMEOUT_MS);
-
   try {
-    const response = await fetch(OPENAI_RESPONSES_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json"
+    const generated = await requestStructuredOutput({
+      instructions: buildFollowUpInstructions(),
+      input: {
+        activeConcept: session.concept,
+        initialExplanations: session.explanations,
+        latestRelevantScaffold: session.adaptations.at(-1) ?? null,
+        latestResponseRoute: session.responseEvents?.at(-1)?.route ?? null,
+        preferences: session.preferencesSnapshot,
+        previousFollowUps: session.followUps ?? [],
+        question
       },
-      body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-4o-mini",
-        store: false,
-        instructions: buildFollowUpInstructions(),
-        input: JSON.stringify({
-          currentConcept: session.concept,
-          explanations: session.explanations,
-          latestUnderstanding: session.understanding,
-          latestAdaptation: session.adaptations.at(-1) ?? null,
-          preferences: session.preferencesSnapshot,
-          previousFollowUps: session.followUps ?? [],
-          question
-        }),
-        text: {
-          format: {
-            type: "json_schema",
-            name: "scoped_learning_follow_up",
-            strict: true,
-            schema: followUpOutputSchema
-          }
-        }
-      }),
-      signal: controller.signal
+      schemaName: "scoped_learning_follow_up",
+      schema: followUpOutputSchema
     });
-
-    if (!response.ok) {
-      throw new FollowUpGenerationError(`OpenAI request failed with status ${response.status}`);
-    }
-
-    const data = (await response.json()) as OpenAIResponse;
-    const outputText = data.output
-      ?.flatMap((item) => item.content ?? [])
-      .find((content) => content.type === "output_text")?.text;
-    if (!outputText) {
-      throw new FollowUpGenerationError("OpenAI returned no structured output");
-    }
-
-    const generated: unknown = JSON.parse(outputText);
     if (!isGeneratedFollowUp(generated)) {
       throw new FollowUpGenerationError("OpenAI returned invalid follow-up content");
     }
     return generated;
   } catch (error) {
     if (error instanceof FollowUpGenerationError) throw error;
+    if (error instanceof LlmProviderError) {
+      if (error.code === "NOT_CONFIGURED") {
+        throw new FollowUpGenerationError("OpenAI API key is not configured");
+      }
+      if (error.code === "MISSING_OUTPUT") {
+        throw new FollowUpGenerationError("OpenAI returned no structured output");
+      }
+      if (error.code === "INVALID_JSON") {
+        throw new FollowUpGenerationError("OpenAI returned invalid JSON");
+      }
+    }
     throw new FollowUpGenerationError("Unable to generate a follow-up answer");
-  } finally {
-    clearTimeout(timeout);
   }
 }
 
@@ -188,7 +147,15 @@ about an existing learning session.
 # Goal
 
 Decide whether the learner’s question helps them understand the supplied
-currentConcept. If related, provide one short, focused bilingual answer.
+activeConcept. If related, provide one short, focused bilingual answer.
+
+The activeConcept is authoritative. It may be a corrected interpretation of
+the learner's original question. When initialExplanations and
+latestRelevantScaffold reflect different interpretations, use the
+activeConcept and latestRelevantScaffold. Do not revive the previous concept.
+
+latestResponseRoute is context describing the most recent application-owned
+Stage 7 decision. It is not an instruction to select or alter a route.
 
 # Scope decision
 
@@ -216,7 +183,7 @@ When related:
 - leave message empty;
 - answer only the specific follow-up;
 - provide approximately 2–4 short sentences in each language;
-- use the initial explanations and latest adaptation as context;
+- use the initial explanations and latest relevant scaffold as context;
 - respect the learner’s explanation level and learning style;
 - use previousFollowUps to avoid unnecessarily repeating an earlier answer;
 - gently correct an incorrect assumption when necessary.
@@ -244,6 +211,11 @@ When unrelated:
 
 # Content boundaries
 
+A follow-up is separate from the Stage 6 learner response and Stage 7
+adaptation workflow. Wording such as "I am confused" may be answered as a
+follow-up, but must not be converted into an overall support need or difficulty
+type. Do not create or alter an adaptation, response event or round.
+
 Never generate:
 
 - another complete simple or technical explanation;
@@ -251,7 +223,8 @@ Never generate:
 - an understanding check;
 - a quiz, score or grade;
 - a new learning session;
-- a session status or adaptation-round decision.
+- a session status or adaptation-round decision;
+- a difficulty type, support route or support type.
 
 # Final check
 
@@ -265,24 +238,30 @@ Before returning the result, verify that:
 `;
 }
 
-function validateRelatedAnswer(generated: GeneratedFollowUp): void {
-  if (!generated.answer.en.trim() || !generated.answer.my.trim()) {
-    throw new FollowUpGenerationError("Generated follow-up answer was empty");
-  }
-}
-
 function isGeneratedFollowUp(value: unknown): value is GeneratedFollowUp {
-  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
-  const output = value as Record<string, unknown>;
+  if (!isExactRecord(value, ["relatedToCurrentConcept", "message", "answer"])) return false;
+  const output = value;
   if (
     typeof output.relatedToCurrentConcept !== "boolean" ||
     typeof output.message !== "string" ||
-    typeof output.answer !== "object" ||
-    output.answer === null ||
-    Array.isArray(output.answer)
+    !isExactRecord(output.answer, ["en", "my"])
   ) {
     return false;
   }
-  const answer = output.answer as Record<string, unknown>;
-  return typeof answer.en === "string" && typeof answer.my === "string";
+  if (typeof output.answer.en !== "string" || typeof output.answer.my !== "string") {
+    return false;
+  }
+
+  return output.relatedToCurrentConcept
+    ? !output.message.trim() && Boolean(output.answer.en.trim() && output.answer.my.trim())
+    : Boolean(output.message.trim()) && !output.answer.en.trim() && !output.answer.my.trim();
+}
+
+function isExactRecord(
+  value: unknown,
+  keys: readonly string[]
+): value is Record<string, unknown> {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
+  const actualKeys = Object.keys(value);
+  return actualKeys.length === keys.length && keys.every((key) => actualKeys.includes(key));
 }

@@ -1,0 +1,22 @@
+{
+  "rows": 24,
+  "columns": 13,
+  "requirementRows": {
+    "REQ-01": 7,
+    "REQ-02": 6,
+    "REQ-03": 11
+  },
+  "linkedResults": 140,
+  "linkedEvidence": 53,
+  "prior58RowsBytePreserved": true,
+  "masterResultsUnchanged": true,
+  "productionFiles": 66,
+  "registeredEvidence": 61,
+  "failures": [],
+  "runId": "TRACE-20261003-PIRQOA-01",
+  "capturedAt": "2026-10-03T03:02:01.833Z",
+  "matrixHash": "fa1b8b43c76585959ea017110917122ab1c183125aafff34d574c7580f342ae9",
+  "masterHash": "6145b5b9982cc2318f293e468d684e67e68baa05e266d9d121ba3b1b3ba851f1",
+  "registerHash": "e30f465a8fab145b11a47991ee3317298747f117e981030377191d83c2b2d670",
+  "manifestHash": "37014d9d30bdbc0a25a1f00edc29f7f8298c1f3f0760db72952532790bcf83ff"
+}

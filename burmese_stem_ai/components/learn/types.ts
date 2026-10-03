@@ -1,17 +1,24 @@
 import type { Preferences } from "@/data/schemas/profile.schema";
+import type { SessionStatus } from "@/lib/constants";
 import type {
-  SessionStatus,
-  SupportType,
-  UnderstandingLevel
-} from "@/lib/constants";
+  AdaptationPresentationOverride,
+  ConceptCorrection,
+  ConceptReinterpretationOutcome,
+  DifficultyType,
+  LegacyUnderstanding,
+  LearnerResponseEvent,
+  OverallSupportNeed,
+  SupportType
+} from "@/lib/session-domain";
 
 export type BilingualText = { en: string; my: string };
-export type LearnerResponse = Exclude<UnderstandingLevel, null>;
 
 export type Adaptation = {
-  learnerResponse: LearnerResponse;
+  learnerResponse: OverallSupportNeed;
   supportType: SupportType;
   content: BilingualText;
+  presentationOverride?: AdaptationPresentationOverride;
+  conceptCorrection?: ConceptCorrection;
   round: number;
   createdAt: string;
 };
@@ -33,10 +40,12 @@ export type LearningSessionRecord = {
   };
   reflectivePrompt: BilingualText;
   hint: BilingualText;
-  understanding: UnderstandingLevel;
+  /** Legacy API field name; the value is a self-reported support need. */
+  understanding: LegacyUnderstanding;
   status: SessionStatus;
   adaptationRound: number;
   adaptations: Adaptation[];
+  responseEvents: LearnerResponseEvent<string>[];
   followUps: FollowUp[];
   preferencesSnapshot?: Preferences;
 };
@@ -44,4 +53,21 @@ export type LearningSessionRecord = {
 export type ApiError = {
   error?: string | { message?: string };
   message?: string;
+};
+
+export type LearnerResponseRequest = {
+  overallSupportNeed: OverallSupportNeed;
+  difficultyType?: DifficultyType;
+  conceptClarification?: string;
+};
+
+export type LearnerResponseResult = {
+  understanding: OverallSupportNeed;
+  status: SessionStatus;
+  adaptationRound: number;
+  route: LearnerResponseEvent["route"];
+  responseEvent?: LearnerResponseEvent<string>;
+  adaptation: Adaptation | null;
+  concept?: LearningSessionRecord["concept"];
+  correctionOutcome?: ConceptReinterpretationOutcome;
 };

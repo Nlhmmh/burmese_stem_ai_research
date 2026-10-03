@@ -1,0 +1,17 @@
+{
+  "reason": "Capture helper retained its original directory binding; moved formal screenshots and AX files by observed URL port, no evidence content altered",
+  "ids": [
+    "SCN-A01",
+    "SCN-B01",
+    "SCN-B02",
+    "SCN-C01",
+    "SCN-C02",
+    "SCN-D01",
+    "SCN-D02"
+  ],
+  "preflightPreferenceScreenshot": "Overwritten by formal SCN-A01; original preflight AX remains in browser_observations_original.jsonl",
+  "actionLabelCorrection": {
+    "original": "First adaptation returned; additional potted-basil example and round 1 response history",
+    "corrected": "First adaptation returned; additional houseplant-by-window example and round 1 response history"
+  }
+}

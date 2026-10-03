@@ -1,0 +1,19 @@
+Browser tab: 542535733, Title: "Burmese STEM AI", URL: "http://scenario-b01.localhost:57927/history".
+1 AXWebArea Burmese STEM AI, URL: scenario-b01.localhost:57927/history
+	2 container
+		3 link Description: Logo Burmese STEM AI, Value: scenario-b01.localhost:57927/
+		4 container Primary navigation
+			5 link Description: New Inquiry, Value: scenario-b01.localhost:57927/
+			6 link Description: History, Value: scenario-b01.localhost:57927/history
+			7 button မြန်မာဘာသာသို့ ပြောင်းရန်
+			8 button Toggle color theme
+		9 heading Learning History, Value: 1
+			10 text Learning History
+		11 text Your STEM concepts and self-reported support history
+		12 container
+			13 heading photosynthesis, Value: 2
+				14 text photosynthesis
+			15 text plant biology 3 Oct 2026 Self-reported support No support needed Status In Progress
+			16 link Description: Resume, Value: scenario-b01.localhost:57927/learn/a62cb72b-eb3f-4538-a74a-74ee467834d7
+
+The focused UI element is 6 link Description: History, URL: scenario-b01.localhost:57927/history

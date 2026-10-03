@@ -1,15 +1,31 @@
 "use client";
 
-import { MAX_ADAPTATION_ROUNDS, MAX_FOLLOW_UPS, type SessionStatus } from "@/lib/constants";
+import { MAX_ADAPTATION_ROUNDS, MAX_FOLLOW_UPS } from "@/lib/constants";
+import type {
+  AdaptationRoute,
+  DifficultyType,
+  OverallSupportNeed
+} from "@/lib/session-domain";
+import { getSessionNextAction } from "@/lib/session-view";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import FollowUpSection from "./FollowUpSection";
-import { AdaptationCard, BilingualContent, ExplanationCard } from "./SessionContent";
-import type { Adaptation, ApiError, LearnerResponse, LearningSessionRecord } from "./types";
+import {
+  BilingualContent,
+  ExplanationCard,
+  SessionStateHistory,
+  Stage6BPanel
+} from "./SessionContent";
+import type {
+  ApiError,
+  LearnerResponseRequest,
+  LearnerResponseResult,
+  LearningSessionRecord
+} from "./types";
 
-const understandingOptions: Array<{
-  value: LearnerResponse;
+const overallSupportNeedOptions: Array<{
+  value: OverallSupportNeed;
   emoji: string;
   color: string;
 }> = [
@@ -38,10 +54,19 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
   const locale = useLocale();
   const [session, setSession] = useState<LearningSessionRecord | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadAttempt, setLoadAttempt] = useState(0);
   const [loadError, setLoadError] = useState("");
   const [actionError, setActionError] = useState("");
   const [showHint, setShowHint] = useState(false);
   const [isResponding, setIsResponding] = useState(false);
+  const [pendingSupportNeed, setPendingSupportNeed] = useState<Exclude<
+    OverallSupportNeed,
+    "high"
+  > | null>(null);
+  const [selectedDifficulty, setSelectedDifficulty] = useState<DifficultyType | null>(null);
+  const [conceptClarification, setConceptClarification] = useState("");
+  const [lastRoute, setLastRoute] = useState<AdaptationRoute | null>(null);
+  const [retryRequest, setRetryRequest] = useState<LearnerResponseRequest | null>(null);
   const [isCompleting, setIsCompleting] = useState(false);
   const [followUpQuestion, setFollowUpQuestion] = useState("");
   const [isSendingFollowUp, setIsSendingFollowUp] = useState(false);
@@ -59,9 +84,21 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
         if (!controller.signal.aborted) setIsLoading(false);
       });
     return () => controller.abort();
-  }, [sessionId, t]);
+  }, [sessionId, t, loadAttempt]);
 
-  async function submitUnderstanding(understanding: LearnerResponse) {
+  function chooseOverallSupportNeed(overallSupportNeed: OverallSupportNeed) {
+    setActionError("");
+    setRetryRequest(null);
+    if (overallSupportNeed === "high") {
+      void submitLearnerResponse({ overallSupportNeed });
+      return;
+    }
+    setPendingSupportNeed(overallSupportNeed);
+    setSelectedDifficulty(null);
+    setConceptClarification("");
+  }
+
+  async function submitLearnerResponse(request: LearnerResponseRequest) {
     if (!session || isResponding) return;
     setIsResponding(true);
     setActionError("");
@@ -70,18 +107,14 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
       const response = await fetch(`/api/sessions/${sessionId}/respond`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ understanding })
+        body: JSON.stringify(request)
       });
-      const data = (await response.json()) as ApiError & {
-        understanding?: LearnerResponse;
-        status?: SessionStatus;
-        adaptationRound?: number;
-        adaptation?: Adaptation | null;
-      };
+      const data = (await response.json()) as ApiError & Partial<LearnerResponseResult>;
       if (
         !response.ok ||
         !data.understanding ||
         !data.status ||
+        !data.route ||
         typeof data.adaptationRound !== "number"
       ) {
         throw new Error(getErrorMessage(data, t("errors.respond")));
@@ -94,17 +127,47 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
               understanding: data.understanding ?? current.understanding,
               status: data.status ?? current.status,
               adaptationRound: data.adaptationRound ?? current.adaptationRound,
+              concept: data.concept ?? current.concept,
               adaptations: data.adaptation
                 ? [...current.adaptations, data.adaptation]
-                : current.adaptations
+                : current.adaptations,
+              responseEvents: data.responseEvent
+                ? [...current.responseEvents, data.responseEvent]
+                : current.responseEvents
             }
           : current
       );
+      setLastRoute(data.route);
+      setPendingSupportNeed(null);
+      setSelectedDifficulty(null);
+      setConceptClarification("");
+      setRetryRequest(null);
     } catch (error) {
       setActionError(error instanceof Error ? error.message : t("errors.respond"));
+      setRetryRequest(request);
     } finally {
       setIsResponding(false);
     }
+  }
+
+  function submitSelectedDifficulty() {
+    if (!pendingSupportNeed || !selectedDifficulty) return;
+    void submitLearnerResponse({
+      overallSupportNeed: pendingSupportNeed,
+      difficultyType: selectedDifficulty,
+      ...(selectedDifficulty === "concept_mismatch"
+        ? { conceptClarification: conceptClarification.trim() }
+        : {})
+    });
+  }
+
+  function cancelStage6B() {
+    if (isResponding) return;
+    setPendingSupportNeed(null);
+    setSelectedDifficulty(null);
+    setConceptClarification("");
+    setActionError("");
+    setRetryRequest(null);
   }
 
   async function completeLearning() {
@@ -182,26 +245,35 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
           <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
             {loadError || t("errors.load")}
           </p>
-          <Link
-            href="/history"
-            className="mt-5 inline-flex rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700"
-          >
-            {t("backToHistory")}
-          </Link>
+          <div className="mt-5 flex flex-col justify-center gap-2 sm:flex-row">
+            <button
+              type="button"
+              onClick={() => {
+                setLoadError("");
+                setIsLoading(true);
+                setLoadAttempt((attempt) => attempt + 1);
+              }}
+              className="min-h-11 rounded-xl bg-blue-600 px-4 text-sm font-semibold text-white transition hover:bg-blue-700"
+            >
+              {t("errors.retry")}
+            </button>
+            <Link
+              href="/history"
+              className="inline-flex min-h-11 items-center justify-center rounded-xl border border-slate-300 px-4 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:text-slate-200"
+            >
+              {t("backToHistory")}
+            </Link>
+          </div>
         </div>
       </main>
     );
   }
 
-  const latestAdaptation = session.adaptations.at(-1);
   const isCompleted = session.status === "completed";
-  const canRespond =
-    !isCompleted &&
-    session.understanding !== "high" &&
-    session.adaptationRound < MAX_ADAPTATION_ROUNDS;
-  const canFinish =
-    !isCompleted &&
-    (session.understanding === "high" || session.adaptationRound >= MAX_ADAPTATION_ROUNDS);
+  const nextAction = getSessionNextAction(session);
+  const canRespond = nextAction === "respond";
+  const canFinish = nextAction === "finish";
+  const latestPersistedRoute = session.responseEvents.at(-1)?.route ?? null;
   const language = session.preferencesSnapshot?.supportLanguage ?? "bilingual";
 
   return (
@@ -289,25 +361,34 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
             <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
               {t("understanding.title")}
             </h2>
-            {latestAdaptation && (
-              <AdaptationCard
-                adaptation={latestAdaptation}
-                locale={locale}
-                supportLanguage={language}
-              />
-            )}
-            {latestAdaptation && canRespond && (
+            <SessionStateHistory
+              adaptations={session.adaptations}
+              responseEvents={session.responseEvents}
+              locale={locale}
+              supportLanguage={language}
+            />
+            {session.adaptations.length > 0 && canRespond && (
               <p className="mb-3 mt-5 text-sm text-slate-500 dark:text-slate-400">
                 {t("understanding.askAgain")}
               </p>
             )}
-            {canRespond && (
+            {lastRoute && lastRoute !== latestPersistedRoute && (
+              <p
+                className="mb-3 mt-4 rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                role="status"
+              >
+                {t("understanding.routeApplied", {
+                  route: t(`understanding.routes.${lastRoute}`)
+                })}
+              </p>
+            )}
+            {canRespond && !pendingSupportNeed && (
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                {understandingOptions.map((option) => (
+                {overallSupportNeedOptions.map((option) => (
                   <button
                     key={option.value}
                     type="button"
-                    onClick={() => void submitUnderstanding(option.value)}
+                    onClick={() => chooseOverallSupportNeed(option.value)}
                     disabled={isResponding}
                     className={`flex min-h-28 flex-col items-center justify-center gap-2 rounded-xl border-2 border-slate-200 p-4 transition focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-wait disabled:opacity-50 dark:border-slate-700 ${option.color}`}
                   >
@@ -321,6 +402,25 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
                 ))}
               </div>
             )}
+            {canRespond && pendingSupportNeed && (
+              <Stage6BPanel
+                overallSupportNeed={pendingSupportNeed}
+                selectedDifficulty={selectedDifficulty}
+                conceptClarification={conceptClarification}
+                isSubmitting={isResponding}
+                onSelect={(difficulty) => {
+                  setSelectedDifficulty(difficulty);
+                  if (difficulty !== "concept_mismatch") setConceptClarification("");
+                  if (actionError) setActionError("");
+                }}
+                onClarificationChange={setConceptClarification}
+                onSubmit={submitSelectedDifficulty}
+                onSkip={() =>
+                  void submitLearnerResponse({ overallSupportNeed: pendingSupportNeed })
+                }
+                onCancel={cancelStage6B}
+              />
+            )}
             {isResponding && (
               <p
                 className="mt-3 text-center text-sm text-blue-600 dark:text-blue-400"
@@ -330,7 +430,13 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
               </p>
             )}
             {canFinish && (
-              <div className={latestAdaptation ? "mt-4" : ""}>
+              <div
+                className={
+                  session.adaptations.length > 0 || session.responseEvents.length > 0
+                    ? "mt-4"
+                    : ""
+                }
+              >
                 {session.adaptationRound >= MAX_ADAPTATION_ROUNDS &&
                   session.understanding !== "high" && (
                     <p className="mb-3 text-xs text-slate-400 dark:text-slate-500">
@@ -352,10 +458,32 @@ export default function LearningSession({ sessionId }: { sessionId: string }) {
               </div>
             )}
             {actionError && (
-              <p className="mt-3 text-sm text-rose-600 dark:text-rose-400" role="alert">
-                {actionError}
-              </p>
+              <div className="mt-3 text-sm text-rose-600 dark:text-rose-400" role="alert">
+                <p>{actionError}</p>
+                {retryRequest && (
+                  <button
+                    type="button"
+                    onClick={() => void submitLearnerResponse(retryRequest)}
+                    disabled={isResponding}
+                    className="mt-2 min-h-11 rounded-lg border border-rose-300 px-4 font-semibold transition hover:bg-rose-50 disabled:opacity-50 dark:border-rose-800 dark:hover:bg-rose-950/30"
+                  >
+                    {t("errors.retry")}
+                  </button>
+                )}
+              </div>
             )}
+          </section>
+        )}
+
+        {isCompleted && (
+          <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <SessionStateHistory
+              adaptations={session.adaptations}
+              responseEvents={session.responseEvents}
+              locale={locale}
+              supportLanguage={language}
+              showEmpty
+            />
           </section>
         )}
 

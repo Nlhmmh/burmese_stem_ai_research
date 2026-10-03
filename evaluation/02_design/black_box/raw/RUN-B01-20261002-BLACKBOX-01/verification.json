@@ -1,0 +1,40 @@
+{
+  "runId": "RUN-B01-20261002-BLACKBOX-01",
+  "verification": "Pass",
+  "mainApiCases": 24,
+  "firstApiCaseOutcomes": {
+    "Pass": 22,
+    "Fail": 2
+  },
+  "firstApiAssertions": 370,
+  "firstApiFailedAssertions": 2,
+  "publicAddendumAttempts": 9,
+  "publicAddendumAssertions": 11,
+  "publicAddendumFailedAssertions": 0,
+  "browserObservations": 44,
+  "browserAssertions": 46,
+  "browserFailedAssertions": 4,
+  "browserRechecks": "Four retained failed predicates have explicit corrected observations; original records not overwritten",
+  "screenshots": 45,
+  "httpRequests": 164,
+  "providerFixtureAttempts": 112,
+  "externalProviderRequests": 0,
+  "verifiedSuccessfulDetailProjections": 29,
+  "visibleHistorySessions": 10,
+  "historyOwnershipAndOrdering": "Pass",
+  "completeStoredReviewContent": "Pass",
+  "timeoutElapsedMs": [
+    20016,
+    20014,
+    20016
+  ],
+  "persisted": {
+    "sessions": 42,
+    "profiles": 3,
+    "adaptations": 25,
+    "responseEvents": 28,
+    "followUps": 7
+  },
+  "applicationDiffAgainstB01": "empty",
+  "qualification": "Evidence integrity/accounting Pass, not all frozen assertions or content quality Pass. Controlled fixtures are not live LLM or educational-effectiveness evidence."
+}

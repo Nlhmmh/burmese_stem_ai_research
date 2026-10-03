@@ -1,0 +1,1949 @@
+{
+  "sessions": [
+    {
+      "_id": "6abf80e78895988ecc5a4268",
+      "sessionId": "fe43ec92-8a32-45c3-a5d9-a728e0facaca",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "simpler_explanation",
+          "content": {
+            "en": "simpler_explanation fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "simpler_explanation fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:02:54.750Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": null,
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:02:54.750Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:01:11.249Z",
+      "updatedAt": "2026-10-02T10:02:54.750Z"
+    },
+    {
+      "_id": "6abf812bab59dbf229e754db",
+      "sessionId": "3af49fb6-2e65-4dc0-a335-7790c254e8d1",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": null,
+      "status": "in_progress",
+      "adaptationRound": 0,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [],
+      "responseEvents": [],
+      "followUps": [
+        {
+          "question": "Why sunlight?",
+          "answer": {
+            "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+            "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+          },
+          "createdAt": "2026-10-02T10:19:19.710Z"
+        }
+      ],
+      "createdAt": "2026-10-02T10:02:19.983Z",
+      "updatedAt": "2026-10-02T10:19:19.710Z"
+    },
+    {
+      "_id": "6abf812bab59dbf229e754dc",
+      "sessionId": "d5246d93-9ed8-4f3f-886f-0d9359c47819",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "medium",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "medium",
+          "supportType": "another_example",
+          "content": {
+            "en": "Stored inspection scaffold 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "သိမ်းဆည်းထားသော အထောက်အကူ 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:02:19.985Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "medium",
+          "difficultyType": null,
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:02:19.985Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:02:19.984Z",
+      "updatedAt": "2026-10-02T10:02:20.984Z"
+    },
+    {
+      "_id": "6abf812bab59dbf229e754dd",
+      "sessionId": "a2a63bdf-5c82-43fb-a249-2342dff594c3",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "medium",
+      "status": "review_recommended",
+      "adaptationRound": 2,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "medium",
+          "supportType": "another_example",
+          "content": {
+            "en": "Stored inspection scaffold 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "သိမ်းဆည်းထားသော အထောက်အကူ 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:02:19.985Z"
+        },
+        {
+          "learnerResponse": "medium",
+          "supportType": "another_example",
+          "content": {
+            "en": "Stored inspection scaffold 2: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "သိမ်းဆည်းထားသော အထောက်အကူ 2: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 2,
+          "createdAt": "2026-10-02T10:02:19.985Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "medium",
+          "difficultyType": null,
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:02:19.985Z"
+        },
+        {
+          "overallSupportNeed": "medium",
+          "difficultyType": null,
+          "route": "stage_5_scaffold",
+          "roundBefore": 1,
+          "roundAfter": 2,
+          "createdAt": "2026-10-02T10:02:19.985Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:02:19.985Z",
+      "updatedAt": "2026-10-02T10:02:21.985Z"
+    },
+    {
+      "_id": "6abf812bab59dbf229e754de",
+      "sessionId": "e20dc419-e29f-4650-99ee-ffe913745773",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "medium",
+      "status": "completed",
+      "adaptationRound": 2,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "medium",
+          "supportType": "another_example",
+          "content": {
+            "en": "Stored inspection scaffold 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "သိမ်းဆည်းထားသော အထောက်အကူ 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:02:19.986Z"
+        },
+        {
+          "learnerResponse": "medium",
+          "supportType": "another_example",
+          "content": {
+            "en": "Stored inspection scaffold 2: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "သိမ်းဆည်းထားသော အထောက်အကူ 2: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 2,
+          "createdAt": "2026-10-02T10:02:19.986Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "medium",
+          "difficultyType": null,
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:02:19.986Z"
+        },
+        {
+          "overallSupportNeed": "medium",
+          "difficultyType": null,
+          "route": "stage_5_scaffold",
+          "roundBefore": 1,
+          "roundAfter": 2,
+          "createdAt": "2026-10-02T10:02:19.986Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:02:19.986Z",
+      "updatedAt": "2026-10-02T10:02:22.986Z"
+    },
+    {
+      "_id": "6abf812bab59dbf229e754df",
+      "sessionId": "9e40f2a0-b76a-4086-88f8-a2373544e841",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": null,
+      "status": "in_progress",
+      "adaptationRound": 0,
+      "createdAt": "2026-10-02T10:02:19.987Z",
+      "updatedAt": "2026-10-02T10:02:23.987Z"
+    },
+    {
+      "_id": "6abf812bab59dbf229e754e0",
+      "sessionId": "e8e6d92f-3e9f-4bca-a25c-9b8a181f471c",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy. Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy. Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy. Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy. ",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။ Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။ Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။ Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။ "
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow. For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow. For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow. For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow. ",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။ ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။ ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။ ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။ "
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen. Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen. Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen. Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen. ",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။ Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။ Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။ Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။ "
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": null,
+      "status": "in_progress",
+      "adaptationRound": 0,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [],
+      "responseEvents": [],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:02:19.987Z",
+      "updatedAt": "2026-10-02T10:02:24.987Z"
+    },
+    {
+      "_id": "6abf812bab59dbf229e754e1",
+      "sessionId": "0c1d0d8b-868a-4e10-8700-cb8af751a33e",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": null,
+      "status": "in_progress",
+      "adaptationRound": 0,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "english",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [],
+      "responseEvents": [],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:02:19.988Z",
+      "updatedAt": "2026-10-02T10:02:25.988Z"
+    },
+    {
+      "_id": "6abf812bab59dbf229e754e2",
+      "sessionId": "cef8ee9d-d23b-4fe1-a55e-6ed33c4e84d2",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": null,
+      "status": "in_progress",
+      "adaptationRound": 0,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "burmese",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [],
+      "responseEvents": [],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:02:19.988Z",
+      "updatedAt": "2026-10-02T10:02:26.988Z"
+    },
+    {
+      "_id": "6abf812bab59dbf229e754e3",
+      "sessionId": "27d9094a-0216-4420-a93e-2a6cdaaf578b",
+      "learnerId": "SYNTHETIC-LEARNER-FOREIGN",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": null,
+      "status": "in_progress",
+      "adaptationRound": 0,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [],
+      "responseEvents": [],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:02:19.989Z",
+      "updatedAt": "2026-10-02T10:02:27.989Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482246",
+      "sessionId": "d673f77c-6988-4402-aaa8-9349127456e4",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "simpler_explanation",
+          "content": {
+            "en": "simpler_explanation fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "simpler_explanation fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:06:00.729Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "simpler_explanation",
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:06:00.729Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.967Z",
+      "updatedAt": "2026-10-02T10:06:00.729Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482247",
+      "sessionId": "c2bdde1c-37b9-46f4-bc3a-2f26ea65a6af",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "another_example",
+          "content": {
+            "en": "another_example fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "another_example fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:06:04.098Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "another_example",
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:06:04.098Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.968Z",
+      "updatedAt": "2026-10-02T10:06:04.098Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482248",
+      "sessionId": "7fb62ea7-9daa-407d-aff7-3e6d1045180c",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "english",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "clarification",
+          "content": {
+            "en": "clarification fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "clarification fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "presentationOverride": "bilingual",
+          "round": 1,
+          "createdAt": "2026-10-02T10:06:07.258Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "language_terms",
+          "route": "language_support",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:06:07.258Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.969Z",
+      "updatedAt": "2026-10-02T10:06:07.258Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482249",
+      "sessionId": "853c3abf-6076-4235-8156-119c0fbae8d3",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "concept_clarification",
+          "content": {
+            "en": "concept_clarification fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "concept_clarification fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:06:11.197Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "concept_unclear",
+          "route": "concept_clarification",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:06:11.197Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.970Z",
+      "updatedAt": "2026-10-02T10:06:11.197Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad48224a",
+      "sessionId": "6bedefa1-e474-4a15-a914-01782ac64848",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is a cell?",
+      "concept": {
+        "name": "electrochemical cell",
+        "domain": "electrochemistry"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "concept_correction",
+          "content": {
+            "en": "An electrochemical cell converts chemical energy into electrical energy; a battery cell is an example.",
+            "my": "Electrochemical cell သည် ဓာတုစွမ်းအင်ကို လျှပ်စစ်စွမ်းအင်အဖြစ် ပြောင်းလဲပေးသည်။ battery cell သည် ဥပမာတစ်ခုဖြစ်သည်။"
+          },
+          "conceptCorrection": {
+            "previous": {
+              "name": "cell",
+              "domain": "biology"
+            },
+            "corrected": {
+              "name": "electrochemical cell",
+              "domain": "electrochemistry"
+            }
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:05:24.651Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "concept_mismatch",
+          "route": "context_reinterpretation",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "conceptReinterpretation": {
+            "clarification": "I mean a battery cell",
+            "outcome": "corrected",
+            "previous": {
+              "name": "cell",
+              "domain": "biology"
+            },
+            "current": {
+              "name": "electrochemical cell",
+              "domain": "electrochemistry"
+            }
+          },
+          "createdAt": "2026-10-02T10:05:24.651Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.970Z",
+      "updatedAt": "2026-10-02T10:05:24.652Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad48224b",
+      "sessionId": "e66fd92a-725e-4711-8010-1c06be50a57c",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is a cell?",
+      "concept": {
+        "name": "cell",
+        "domain": "biology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "concept_correction",
+          "content": {
+            "en": "Do you mean a battery cell or a biological cell?",
+            "my": "battery cell ကို ဆိုလိုပါသလား၊ သက်ရှိ cell ကို ဆိုလိုပါသလား။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:06:14.878Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "concept_mismatch",
+          "route": "context_reinterpretation",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "conceptReinterpretation": {
+            "clarification": "I mean some cell",
+            "outcome": "ambiguous",
+            "previous": {
+              "name": "cell",
+              "domain": "biology"
+            },
+            "current": {
+              "name": "cell",
+              "domain": "biology"
+            }
+          },
+          "createdAt": "2026-10-02T10:06:14.878Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.970Z",
+      "updatedAt": "2026-10-02T10:06:14.879Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad48224c",
+      "sessionId": "7d2f6424-c13f-4b2f-adff-faf4b4512d40",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": null,
+      "status": "in_progress",
+      "adaptationRound": 0,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [],
+      "responseEvents": [],
+      "followUps": [
+        {
+          "question": "Why do plants need sunlight?",
+          "answer": {
+            "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+            "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+          },
+          "createdAt": "2026-10-02T10:18:34.615Z"
+        },
+        {
+          "question": "Why water?",
+          "answer": {
+            "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+            "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+          },
+          "createdAt": "2026-10-02T10:19:14.357Z"
+        }
+      ],
+      "createdAt": "2026-10-02T10:04:03.971Z",
+      "updatedAt": "2026-10-02T10:19:14.357Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad48224d",
+      "sessionId": "9ea0c86e-f682-4433-bf90-f68956fb9842",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "high",
+      "status": "completed",
+      "adaptationRound": 0,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "high",
+          "difficultyType": null,
+          "route": "fade",
+          "roundBefore": 0,
+          "roundAfter": 0,
+          "createdAt": "2026-10-02T10:04:22.057Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.971Z",
+      "updatedAt": "2026-10-02T10:04:34.753Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad48224e",
+      "sessionId": "1418deb0-59f7-4520-a9dd-30da90e5b0e9",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "medium",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "medium",
+          "supportType": "another_example",
+          "content": {
+            "en": "another_example fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "another_example fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:07:03.128Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "medium",
+          "difficultyType": null,
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:07:03.128Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.972Z",
+      "updatedAt": "2026-10-02T10:07:03.128Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad48224f",
+      "sessionId": "1eac9415-0ce1-4b4e-aeda-84b024e98701",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "simpler_explanation",
+          "content": {
+            "en": "simpler_explanation fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "simpler_explanation fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:10:01.068Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "simpler_explanation",
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:10:01.068Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.972Z",
+      "updatedAt": "2026-10-02T10:10:01.068Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482250",
+      "sessionId": "6eabaca6-2226-402d-b317-37b8d78d072e",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "another_example",
+          "content": {
+            "en": "another_example fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "another_example fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:10:04.456Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "another_example",
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:10:04.456Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.973Z",
+      "updatedAt": "2026-10-02T10:10:04.456Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482251",
+      "sessionId": "d047dc02-fa55-45ab-bb07-06e95b0699ce",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "english",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "clarification",
+          "content": {
+            "en": "clarification fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "clarification fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "presentationOverride": "bilingual",
+          "round": 1,
+          "createdAt": "2026-10-02T10:10:07.265Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "language_terms",
+          "route": "language_support",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:10:07.265Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.973Z",
+      "updatedAt": "2026-10-02T10:10:07.265Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482252",
+      "sessionId": "3f2ba447-ecb3-4436-8ab6-fcb7c49a44ff",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "concept_clarification",
+          "content": {
+            "en": "concept_clarification fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "concept_clarification fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:10:10.435Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "concept_unclear",
+          "route": "concept_clarification",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:10:10.435Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.974Z",
+      "updatedAt": "2026-10-02T10:10:10.435Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482253",
+      "sessionId": "543bf5b5-9d67-4227-9511-d67e21a984f8",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is a cell?",
+      "concept": {
+        "name": "electrochemical cell",
+        "domain": "electrochemistry"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "concept_correction",
+          "content": {
+            "en": "An electrochemical cell converts chemical energy into electrical energy; a battery cell is an example.",
+            "my": "Electrochemical cell သည် ဓာတုစွမ်းအင်ကို လျှပ်စစ်စွမ်းအင်အဖြစ် ပြောင်းလဲပေးသည်။ battery cell သည် ဥပမာတစ်ခုဖြစ်သည်။"
+          },
+          "conceptCorrection": {
+            "previous": {
+              "name": "cell",
+              "domain": "biology"
+            },
+            "corrected": {
+              "name": "electrochemical cell",
+              "domain": "electrochemistry"
+            }
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:10:13.993Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "concept_mismatch",
+          "route": "context_reinterpretation",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "conceptReinterpretation": {
+            "clarification": "I mean a battery cell",
+            "outcome": "corrected",
+            "previous": {
+              "name": "cell",
+              "domain": "biology"
+            },
+            "current": {
+              "name": "electrochemical cell",
+              "domain": "electrochemistry"
+            }
+          },
+          "createdAt": "2026-10-02T10:10:13.993Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.974Z",
+      "updatedAt": "2026-10-02T10:10:13.993Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482254",
+      "sessionId": "ede2687b-5ba2-485d-8e2f-91052f11ea5e",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is a cell?",
+      "concept": {
+        "name": "cell",
+        "domain": "biology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "needs_support",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "needs_support",
+          "supportType": "concept_correction",
+          "content": {
+            "en": "Do you mean a battery cell or a biological cell?",
+            "my": "battery cell ကို ဆိုလိုပါသလား၊ သက်ရှိ cell ကို ဆိုလိုပါသလား။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:10:18.111Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "needs_support",
+          "difficultyType": "concept_mismatch",
+          "route": "context_reinterpretation",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "conceptReinterpretation": {
+            "clarification": "I mean some cell",
+            "outcome": "ambiguous",
+            "previous": {
+              "name": "cell",
+              "domain": "biology"
+            },
+            "current": {
+              "name": "cell",
+              "domain": "biology"
+            }
+          },
+          "createdAt": "2026-10-02T10:10:18.111Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.974Z",
+      "updatedAt": "2026-10-02T10:10:18.111Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482255",
+      "sessionId": "50b7d4fa-4f1a-4ea4-a2a9-4bdab7f4385b",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "medium",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "medium",
+          "supportType": "another_example",
+          "content": {
+            "en": "another_example fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "another_example fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:11:07.904Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "medium",
+          "difficultyType": null,
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:11:07.904Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.975Z",
+      "updatedAt": "2026-10-02T10:11:07.904Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482256",
+      "sessionId": "c62f99a8-11de-4aab-975b-39f9c8d57f19",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "high",
+      "status": "completed",
+      "adaptationRound": 0,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "high",
+          "difficultyType": null,
+          "route": "fade",
+          "roundBefore": 0,
+          "roundAfter": 0,
+          "createdAt": "2026-10-02T10:11:05.491Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.975Z",
+      "updatedAt": "2026-10-02T10:11:05.683Z"
+    },
+    {
+      "_id": "6abf8193fc81f660ad482257",
+      "sessionId": "e3b74f4e-8e86-474c-be7a-26bbf5c91356",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": "medium",
+      "status": "in_progress",
+      "adaptationRound": 1,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [
+        {
+          "learnerResponse": "medium",
+          "supportType": "another_example",
+          "content": {
+            "en": "another_example fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+            "my": "another_example fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T10:12:52.015Z"
+        }
+      ],
+      "responseEvents": [
+        {
+          "overallSupportNeed": "medium",
+          "difficultyType": null,
+          "route": "stage_5_scaffold",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "createdAt": "2026-10-02T10:12:52.015Z"
+        }
+      ],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:04:03.976Z",
+      "updatedAt": "2026-10-02T10:12:52.015Z"
+    },
+    {
+      "_id": "6abf824b8895988ecc5a4269",
+      "sessionId": "9d24235b-1fa6-4722-a637-5aff6edce10f",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": null,
+      "status": "in_progress",
+      "adaptationRound": 0,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [],
+      "responseEvents": [],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:07:07.186Z",
+      "updatedAt": "2026-10-02T10:07:07.186Z"
+    },
+    {
+      "_id": "6abf83648895988ecc5a426a",
+      "sessionId": "7f7d45e7-ef2c-4a6b-bc27-170c33838f9b",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "originalQuestion": "What is photosynthesis?",
+      "concept": {
+        "name": "photosynthesis",
+        "domain": "biology, plant physiology"
+      },
+      "explanations": {
+        "simple": {
+          "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+        },
+        "realWorldExample": {
+          "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+          "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+        },
+        "technical": {
+          "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+          "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+        }
+      },
+      "reflectivePrompt": {
+        "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+        "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+      },
+      "hint": {
+        "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+        "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+      },
+      "understanding": null,
+      "status": "in_progress",
+      "adaptationRound": 0,
+      "preferencesSnapshot": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "advanced",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "adaptations": [],
+      "responseEvents": [],
+      "followUps": [],
+      "createdAt": "2026-10-02T10:11:48.343Z",
+      "updatedAt": "2026-10-02T10:11:48.343Z"
+    }
+  ],
+  "profiles": [
+    {
+      "_id": "6abf80807dd077fd5c1cf6e1",
+      "learnerId": "SYNTHETIC-LEARNER-PRIMARY",
+      "createdAt": "2026-10-02T09:59:28.220Z",
+      "preferences": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "intermediate",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "updatedAt": "2026-10-02T09:59:28.226Z"
+    }
+  ]
+}

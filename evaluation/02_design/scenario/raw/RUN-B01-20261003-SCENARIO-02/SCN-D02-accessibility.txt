@@ -1,0 +1,65 @@
+Browser tab: 542535733, Title: "Burmese STEM AI", URL: "http://scenario-b01.localhost:57927/learn/a62cb72b-eb3f-4538-a74a-74ee467834d7".
+1 AXWebArea Burmese STEM AI, URL: scenario-b01.localhost:57927/learn/a62cb72b-eb3f-4538-a74a-74ee467834d7
+	2 container
+		3 link Description: Logo Burmese STEM AI, Value: scenario-b01.localhost:57927/
+		4 container Primary navigation
+			5 link Description: New Inquiry, Value: scenario-b01.localhost:57927/
+			6 link Description: History, Value: scenario-b01.localhost:57927/history
+			7 button မြန်မာဘာသာသို့ ပြောင်းရန်
+			8 button Toggle color theme
+		9 container
+			10 text PLANT BIOLOGY
+			11 heading photosynthesis, Value: 1
+				12 text photosynthesis
+			13 text STEM Learning Session
+		14 container
+			15 heading SIMPLE EXPLANATION, Value: 2
+				16 text SIMPLE EXPLANATION
+			17 text Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. The plant captures light energy and turns it into chemical energy stored in sugar. Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေ၊ နဲ့ carbon dioxide ကို သုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အပင်က အလင်းစွမ်းအင်ကို ဖမ်းယူပြီး သကြားထဲမှာ သိမ်းထားတဲ့ chemical energy အဖြစ် ပြောင်းပေးတယ်။
+		18 container
+			19 heading REAL-WORLD EXAMPLE, Value: 2
+				20 text REAL-WORLD EXAMPLE
+			21 text A green leaf in the sun takes in water through the roots and carbon dioxide from the air. Using chlorophyll, it makes glucose, which the plant uses for growth and energy. နေထဲက အစိမ်းရောင်ရွက်တစ်ရွက်က root ကနေ ရေကိုယူတယ်။ လေထဲက carbon dioxide ကိုလည်းယူတယ်။ chlorophyll ရဲ့ အကူအညီနဲ့ glucose ကိုလုပ်တယ်။ အဲဒီ glucose ကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးတယ်။
+		22 container
+			23 heading TECHNICAL EXPLANATION, Value: 2
+				24 text TECHNICAL EXPLANATION
+			25 text Photosynthesis is an energy-conversion process in plants, algae, and some bacteria. In chloroplasts, light energy drives reactions that convert carbon dioxide and water into glucose, releasing oxygen as a byproduct. Photosynthesis ဟာ အပင်တွေ၊ algae တွေ၊ နဲ့ တချို့ bacteria တွေမှာ ဖြစ်တဲ့ energy conversion process ပါ။ chloroplast ထဲမှာ အလင်းစွမ်းအင်က reaction တွေကို လှုံ့ဆော်ပြီး carbon dioxide နဲ့ water ကို glucose အဖြစ် ပြောင်းတယ်။ ဒီလုပ်ငန်းစဉ်မှာ oxygen က byproduct အနေနဲ့ ထွက်လာတယ်။
+		26 container
+			27 heading THINK ABOUT THIS, Value: 2
+				28 text THINK ABOUT THIS
+			29 text What do you think the plant needs from sunlight versus from the air to make food? အပင်က အစာလုပ်ဖို့ sunlight ကနေ ဘာလိုတယ်၊ air ကနေ ဘာလိုတယ်လို့ သင်ထင်ပါသလဲ။ HINT Focus on the three main inputs: light, water, and carbon dioxide. အဓိက input သုံးခုကို တွေးပါ။ light, water, နဲ့ carbon dioxide ပါ။
+		31 container
+			32 heading Still have a question about photosynthesis?, Value: 2
+				33 text Still have a question about photosynthesis?
+			34 text field (settable) Follow-up question
+			35 button (disabled) Ask
+			36 text 2 follow-ups remaining
+		37 container
+			38 heading UNDERSTANDING CHECK, Value: 2
+				39 text UNDERSTANDING CHECK
+			40 text SELECTED RESPONSE: I PARTIALLY UNDERSTAND
+			41 heading What would help you most?, Value: 3
+				42 text What would help you most?
+			43 text Choose one option, or continue without choosing.
+			44 What would help you most?
+				45 container
+					46 radio button (disabled, settable, integer) Description: A simpler explanation, Value: 0
+					47 text A simpler explanation
+				48 container
+					49 radio button (disabled, settable, integer) Description: Another example, Value: 0
+					50 text Another example
+				51 container
+					52 radio button (disabled, settable, integer) Description: Help with Burmese / English terms, Value: 0
+					53 text Help with Burmese / English terms
+				54 container
+					55 radio button (disabled, settable, integer) Description: I do not understand the concept, Value: 0
+					56 text I do not understand the concept
+				57 container
+					58 radio button (disabled, settable, integer) Description: The concept or term is not what I meant, Value: 0
+					59 text The concept or term is not what I meant
+			60 button (disabled) Preparing support...
+			61 button (disabled) Continue without a choice
+			62 button (disabled) Back to understanding choices
+			63 text Preparing additional support...
+
+The focused UI element is 1 AXWebArea Burmese STEM AI, URL: scenario-b01.localhost:57927/learn/a62cb72b-eb3f-4538-a74a-74ee467834d7

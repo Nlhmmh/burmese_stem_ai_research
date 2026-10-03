@@ -1,0 +1,48 @@
+- banner:
+  - link "Logo":
+    - /url: /
+    - img "Logo"
+  - navigation "ပင်မ လမ်းညွှန်":
+    - link "မေးခွန်းသစ်":
+      - /url: /
+    - link "မှတ်တမ်း":
+      - /url: /history
+    - button "Switch to English": EN
+    - button "အရောင်ပုံစံ ပြောင်းရန်": ◑
+- alert
+- main:
+  - generic: ဘာသာနှစ်မျိုးဖြင့် STEM သင်ယူခြင်း
+  - heading "မြန်မာ STEM AI" [level=1]
+  - paragraph: STEM သဘောတရားများကို မြန်မာနှင့် အင်္ဂလိပ်ဘာသာဖြင့် နားလည်ပါ
+  - region "STEM မေးခွန်း မေးရန်":
+    - heading "STEM မေးခွန်း မေးရန်" [level=2]
+    - textbox "STEM မေးခွန်းတစ်ခု မေးပါ..."
+    - button "ဖွင့်နေသည်..." [disabled]:
+      - generic: ⚙
+      - text: ဖွင့်နေသည်...
+    - button "မေးပါ" [disabled]:
+      - text: မေးပါ
+      - generic: →
+    - paragraph: ဥပမာ မေးခွန်းများ
+    - button "What is Gradient Descent?"
+    - button "Explain Neural Networks."
+    - button "What does Polymorphism mean?"
+  - dialog "သင်ယူမှု ဦးစားပေးချက်":
+    - heading "သင်ယူမှု ဦးစားပေးချက်" [level=2]
+    - button "ဦးစားပေးချက်များ ပိတ်ရန်": ×
+    - group "ဘာသာစကား ပံ့ပိုးမှု":
+      - generic: ဘာသာစကား ပံ့ပိုးမှု
+      - button "✓မြန်မာ + အင်္ဂလိပ် စကားရပ်" [pressed]
+      - button "မြန်မာ"
+      - button "အင်္ဂလိပ်"
+    - group "ရှင်းလင်းချက် အဆင့်":
+      - generic: ရှင်းလင်းချက် အဆင့်
+      - button "✓စတင်သူ" [pressed]
+      - button "အလယ်အလတ်"
+      - button "အဆင့်မြင့်"
+    - group "သင်ယူမှု ပုံစံ":
+      - generic: သင်ယူမှု ပုံစံ
+      - button "✓လမ်းညွှန်မှု" [pressed]
+      - button "တိုတောင်း"
+      - button "ဥပမာများ"
+    - button "ဦးစားပေးချက် သိမ်းဆည်းပါ"

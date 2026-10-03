@@ -1,0 +1,18 @@
+{
+  "runId": "FRONT-20261003-PAPER-01",
+  "checkedAt": "2026-10-03T04:11:55.492Z",
+  "titleWords": 8,
+  "titleWordsWithHyphensSplit": 9,
+  "abstractWords": 140,
+  "abstractWordsWithHyphensSplit": 147,
+  "keywords": 6,
+  "keywordsRequired": 6,
+  "bodyReconciliationPending": true,
+  "officialBriefAvailable": false,
+  "priorRegisteredArtefactsPreserved": 69,
+  "productionFilesPreserved": 66,
+  "evidenceRegisterUnchanged": true,
+  "allocationUnchanged": true,
+  "frontMatterHash": "4de566c34545cfe15865a67450427b059d890487092513d1a5ec15208913af4c",
+  "failures": []
+}

@@ -23,8 +23,9 @@ The core learner journey is:
 Ask
   -> Learn
   -> Reflect
-  -> Report Understanding
-  -> Receive Adapted Support
+  -> Report Overall Support Need (Stage 6A)
+  -> Optionally Identify the Needed Help (Stage 6B)
+  -> Fade or Receive Adapted Support
   -> Ask a Scoped Follow-Up if Needed
   -> Finish, Review, or Resume
 ```
@@ -46,8 +47,9 @@ A useful learning system therefore needs to do more than translate an isolated w
 3. decide whether the English term should be preserved, translated, presented bilingually, or further explained;
 4. explain the underlying concept;
 5. provide structured educational support;
-6. collect learner feedback about understanding; and
-7. adapt subsequent support according to that feedback.
+6. collect a learner-reported overall support need and, when more help is requested,
+   an optional bounded difficulty choice; and
+7. deterministically fade or adapt subsequent support according to that response.
 
 The research focuses on integrating these capabilities into one coherent scaffolding approach.
 
@@ -98,7 +100,7 @@ Within this prototype, scaffolding is represented through:
 - examples and analogies;
 - optional hints;
 - reflective prompts;
-- learner understanding responses; and
+- learner-reported support responses; and
 - adapted support.
 
 ## 2.3 Supporting Concepts and Processes
@@ -159,7 +161,7 @@ Together, they provide the conceptual basis for the later system artefacts.
    Organise learning support through explanation, examples, analogies, reflection, hints and guidance rather than unrestricted chatbot interaction.
 
 5. **Adaptive Support**  
-   Adjust subsequent support according to learner interaction and self-reported understanding.
+   Adjust subsequent support according to learner interaction and self-reported support need.
 
 ### Text Diagram
 
@@ -230,7 +232,7 @@ LLM-Based Scaffolding
 - The low resource language barrier can hinder STEM understanding.
 - LLM-based scaffolding is intended to reduce that barrier rather than claim to eliminate it.
 - LLM-based scaffolding is intended to support STEM understanding through explanation and structured assistance.
-- Scaffolding produces learner interaction and self-reported understanding.
+- Scaffolding produces learner interaction and a self-reported support signal.
 - Learner response guides subsequent scaffolding.
 
 The prototype can instantiate these mechanisms, but later learner evaluation is required to determine whether the expected educational relationships are actually achieved.
@@ -365,8 +367,8 @@ A structured learning session containing:
 | Select Language Support | Context + preferences | Choose Burmese, English preservation, bilingual support or explanation | Language strategy | shapes explanation |
 | Explain STEM Concept | Concept + context + strategy | Generate understandable conceptual content | Concept explanation | enables scaffolding |
 | Provide Scaffolding | Explanation + learner state | Structure support using examples, analogy, reflection and hints | Learning scaffold | leads to learner response |
-| Collect Learner Response | Learning scaffold | Capture self-reported understanding | Understanding level | guides adaptation |
-| Adapt Support | Understanding + current scaffold | Increase, simplify, clarify or progress support | Updated scaffold | updates scaffolding |
+| Collect Learner Response | Learning scaffold | Stage 6A captures overall support need; Stage 6B optionally captures the kind of help requested | Response event | guides adaptation |
+| Adapt Support | Response event + current scaffold | Select a bounded fade, scaffold, language, clarification, or reinterpretation route | Route decision and, where applicable, updated scaffold | updates scaffolding |
 
 ## 5.4 Full System Framework Diagram
 
@@ -415,14 +417,15 @@ A structured learning session containing:
                            v
 +--------------------------------------------------+
 |            6. Collect Learner Response           |
-| High / Medium / Needs Support                    |
+| 6A: High / Medium / Needs Support                |
+| 6B: optional bounded help choice                 |
 +--------------------------+-----------------------+
                            |
                          guides
                            v
 +--------------------------------------------------+
 |                 7. Adapt Support                 |
-| Progress / clarify / simplify / new analogy      |
+| Fade / scaffold / language / clarify / correct   |
 +--------------------------+-----------------------+
                            |
                          updates
@@ -452,7 +455,7 @@ Updated Support
         +---------------------> next learner response
 ```
 
-For the proof of concept, adaptation is deliberately bounded to **a maximum of two adaptation rounds per concept**. This is a prototype implementation constraint, not a theoretical claim that two rounds are universally optimal.
+For the proof of concept, generation is deliberately bounded to **a maximum of two generated adaptations per concept**. `adaptationRound` counts persisted generated adaptations, not learner responses. A High/fade response and any response received at the cap are still persisted as response events but do not consume a round. This is a prototype implementation constraint, not a theoretical claim that two rounds are universally optimal.
 
 ---
 
@@ -603,7 +606,7 @@ Initial scaffold normally contains:
 ### Learner Response Handler
 
 **Responsibility**
-- accept exactly one of three understanding signals:
+- accept exactly one of three Stage 6A overall-support signals:
 
 ```text
 high
@@ -619,29 +622,41 @@ UI mapping:
 "I need more explanation"   -> needs_support
 ```
 
-These values represent **self-reported understanding**, not objective test scores.
+These values represent **self-reported support need**, not objective understanding,
+competence, mastery, or test scores. The stored/API field name `understanding` is
+retained for backward compatibility.
+
+When Stage 6A is `medium` or `needs_support`, Stage 6B may optionally select one
+bounded difficulty type: `simpler_explanation`, `another_example`,
+`language_terms`, `concept_unclear`, or `concept_mismatch`. The learner may also
+continue without a Stage 6B choice. `concept_mismatch` additionally requires a
+short intended-term or context clarification.
 
 ### Adaptation Logic
 
 **Responsibility**
-- translate learner understanding into a new scaffolding strategy.
+- deterministically translate the learner response into one bounded route.
 
 ```text
-high
-  -> key takeaway
-  -> optional deeper insight
-  -> allow completion
+high + no difficulty
+  -> fade
+  -> no provider call, generated adaptation, or round increment
+  -> explicit Finish remains available
 
-medium
-  -> clarification
-  -> alternative example
-  -> analogy or hint
+medium / needs_support + no difficulty
+  -> default Stage 5 scaffold
 
-needs_support
-  -> simpler wording
-  -> more Burmese support where appropriate
-  -> different analogy
-  -> prerequisite clarification
+simpler_explanation / another_example
+  -> selected Stage 5 scaffold
+
+language_terms
+  -> Stage 3 -> 4 -> 5 language-support route with a bilingual presentation override
+
+concept_unclear
+  -> Stage 4 -> 5 conceptual-clarification route
+
+concept_mismatch + short clarification
+  -> bounded context reinterpretation and downstream concept support
 ```
 
 Adapted content should differ meaningfully from the previous content.
@@ -977,11 +992,12 @@ I need more explanation   -> needs_support
 #### `high`
 
 ```text
-Understanding: high
+Overall support need: high
 
 System:
-  -> show concise key takeaway
-  -> optionally show one deeper insight
+  -> persist a fade response event
+  -> do not call the provider or create an adaptation
+  -> do not increment adaptationRound
   -> allow learner to finish
 
 If learner finishes:
@@ -991,7 +1007,7 @@ If learner finishes:
 #### `medium`
 
 ```text
-Understanding: medium
+Overall support need: medium
 Status: in_progress
 
 System:
@@ -1005,7 +1021,7 @@ System:
 #### `needs_support`
 
 ```text
-Understanding: needs_support
+Overall support need: needs_support
 Status: in_progress
 
 System:
@@ -1019,7 +1035,7 @@ System:
 
 ### Bounded Adaptation
 
-Maximum adaptation rounds:
+Maximum generated adaptation rounds:
 
 ```text
 0 = initial explanation
@@ -1027,7 +1043,8 @@ Maximum adaptation rounds:
 2 = second/final adapted support
 ```
 
-After round 2, if the learner still reports insufficient understanding:
+At round 2, every valid response is persisted, but no provider call, generated
+adaptation, or round 3 is allowed. If the learner still requests support:
 
 ```text
 Status -> review_recommended
@@ -1045,7 +1062,7 @@ The learner can still:
 Initial Scaffolding
         |
         v
-Understanding Check
+Stage 6A Support Check
         |
    +----+---------------------+
    |            |             |
@@ -1053,14 +1070,13 @@ Understanding Check
  high         medium     needs_support
    |            |             |
    v            v             v
-Key Takeaway   Clarify /      Simplify /
-Optional       New Example    New Analogy
-Insight        / Hint         / More Support
+Persist Fade   Optional Stage 6B choice or skip
+No Generation          |
    |            |             |
    |            +------+------+ 
    |                   |
    |                   v
-   |          Understanding Check Again
+   |          Support Check Again
    |                   |
    |          maximum adaptation round = 2
    |                   |
@@ -1131,7 +1147,7 @@ Each history item shows:
 
 ### Important Distinction
 
-**Understanding** and **Status** must remain separate.
+The legacy **`understanding`** storage field and **Status** must remain separate.
 
 Understanding values:
 
@@ -1151,7 +1167,7 @@ review_recommended
 
 Meaning:
 
-- `high` describes perceived understanding.
+- `high` describes a self-reported low need for more support.
 - `completed` describes the session lifecycle.
 - `medium` does not automatically mean completed.
 - `review_recommended` means the learner should revisit the concept, normally because bounded adaptation has ended without sufficient reported understanding.
@@ -1172,9 +1188,9 @@ Meaning:
 - technical explanation;
 - reflective prompt;
 - optional hint;
-- three understanding responses;
+- three Stage 6A support responses and five optional Stage 6B choices;
 - adaptive support;
-- maximum two adaptation rounds;
+- maximum two generated adaptations (`adaptationRound` 0–2);
 - concept-scoped free-text follow-up;
 - anonymous learner state;
 - learning preferences;
@@ -1297,7 +1313,7 @@ The learning screen shall present:
 - reflective prompt;
 - optional hint.
 
-## FR-08 — Collect Understanding
+## FR-08 — Collect Learner-Reported Support Need
 
 The system shall provide exactly three self-report choices:
 
@@ -1307,13 +1323,17 @@ medium
 needs_support
 ```
 
+For `medium` and `needs_support`, it shall also provide five optional bounded
+Stage 6B help choices plus a skip action.
+
 ## FR-09 — Adapt Support
 
 The system shall generate meaningfully different subsequent support according to learner response.
 
 ## FR-10 — Bound Adaptation
 
-The system shall support no more than two adaptation rounds per concept.
+The system shall support no more than two generated, persisted adaptations per
+concept. Fade and capped response events do not increment this count.
 
 ## FR-11 — Support Scoped Follow-Up
 
@@ -1454,13 +1474,13 @@ Support:
 | Context-Sensitive Language Support | Select Language Support | Language Support Logic | Burmese/English presentation |
 | Conceptual Explanation | Explain STEM Concept | Scaffolding Orchestrator + LLM | Simple + technical explanations |
 | Structured Scaffolding | Provide Scaffolding | Scaffolding Orchestrator | Example, analogy, reflection, hint |
-| Learner Response | Collect Learner Response | Learner Response Handler | Three understanding choices |
-| Adaptive Support | Adapt Support | Adaptation Logic | Meaningfully changed support |
+| Learner Response | Collect Learner Response | Learner Response Handler | Three Stage 6A choices plus optional bounded Stage 6B choice |
+| Adaptive Support | Adapt Support | Adaptation Logic | Persisted fade or meaningfully changed route-specific support |
 | Feedback Loop | Update Scaffolding | Response + Adaptation components | Response -> adapted explanation |
 | Learning Continuity | Persist Session | Data Layer | History + Resume |
 | Task–Capability Alignment | All stages | Overall design | Only research-relevant features |
 | Low Resource Language Barrier | Language-support stages | Language Support Logic | Burmese support + English term retention |
-| STEM Understanding | Learning session | UI + learner state | Self-reported understanding, not objective score |
+| Learner support signal | Learning session | UI + learner state | Self-reported support need, not objective understanding or score |
 
 ---
 
@@ -1524,8 +1544,8 @@ Support:
        |            +------+------+
        |                   |
        v                   v
-   Complete         Generate adapted
-   or follow-up     support
+   Persist fade     Optional Stage 6B
+   Finish remains  then generate support
                            |
                            v
                    Understanding again
@@ -1553,10 +1573,12 @@ The proof of concept satisfies the intended research workflow when:
 - a learning session shows simple, example/analogy and technical explanations;
 - one reflective prompt is provided;
 - an optional hint is available;
-- exactly three learner-understanding choices are used;
-- learner understanding changes session state correctly;
+- exactly three Stage 6A support choices are used;
+- Medium/Needs Support expose five optional Stage 6B choices plus skip;
+- learner responses create traceable response events and change session state correctly;
+- High persists a fade event without generation or a round increment;
 - adapted support is meaningfully different from the previous explanation;
-- no more than two adaptation rounds occur;
+- no more than two generated adaptation rounds occur;
 - follow-ups remain scoped to the current concept;
 - a different concept is identified and a new session is recommended;
 - genuine session data can be saved and retrieved;
@@ -1595,7 +1617,7 @@ Later empirical evaluation may investigate:
 - perceived Task–Technology Fit;
 - whether the scaffolding approach supports actual STEM understanding.
 
-Objective learning improvement should be evaluated separately from self-reported understanding.
+Objective learning improvement should be evaluated separately from the self-reported support signal.
 
 If future evaluation uses pre/post knowledge questions, those should be treated as **research evaluation instruments**, not automatically added as a permanent quiz feature in the core system.
 

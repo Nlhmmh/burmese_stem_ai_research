@@ -1,0 +1,14 @@
+{
+  "browser": "Chrome",
+  "version": "154.0.8037.97",
+  "viewport": {
+    "height": 992,
+    "width": 1654
+  },
+  "uiLocale": "en",
+  "theme": "light",
+  "supportLanguage": "bilingual",
+  "explanationLevel": "beginner",
+  "learningStyle": "guided",
+  "viewportOverride": false
+}

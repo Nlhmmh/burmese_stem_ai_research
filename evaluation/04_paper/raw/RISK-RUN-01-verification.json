@@ -1,0 +1,22 @@
+{
+  "runId": "RISKS-20261003-PAPER-01",
+  "checkedAt": "2026-10-03T04:34:46.513Z",
+  "riskRows": 14,
+  "methodRows": 15,
+  "reviewComplete": true,
+  "submissionReady": false,
+  "gradePrediction": false,
+  "priorRegisteredArtefactsPreserved": 69,
+  "priorDraftingCapturesPreserved": 9,
+  "productionFilesPreserved": 66,
+  "registerUnchanged": true,
+  "retainedAudit": {
+    "records": 69,
+    "manifests": 16,
+    "manifestEntries": 1907,
+    "priorRowsPreserved": true,
+    "privacyFindingLocations": 7
+  },
+  "reviewHash": "4e5423c8ae082b38edebfd56a95320759940611a8edfe3531cedef4287f3cd02",
+  "failures": []
+}

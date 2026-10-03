@@ -1,0 +1,105 @@
+$ npm run test:coverage -- --reporter=default --reporter=json --outputFile=/Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261002-ROOTTESTS-02/02-project-coverage.json
+
+> burmese_stem_ai@0.1.0 test:coverage
+> vitest run --coverage --reporter=default --reporter=json --outputFile=/Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261002-ROOTTESTS-02/02-project-coverage.json
+
+
+ RUN  v4.1.11 /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai
+      Coverage enabled with v8
+
+ ✓ tests/unit/services/adaptation-full-matrix.test.ts (47 tests) 37ms
+ ✓ tests/unit/data/session-schema.test.ts (8 tests) 54ms
+ ✓ tests/unit/api/preference-error-boundary.test.ts (5 tests) 35ms
+ ✓ tests/unit/services/generation-error-extensions.test.ts (99 tests) 372ms
+ ✓ tests/unit/api/refined-route-contracts.test.ts (26 tests) 210ms
+ ✓ tests/unit/components/session-content.test.tsx (5 tests) 27ms
+ ✓ tests/unit/services/session-lifecycle-ownership.test.ts (6 tests) 21ms
+ ✓ tests/unit/api/session-detail-route.test.ts (2 tests) 42ms
+ ✓ tests/unit/services/adaptation-routing-branches.test.ts (20 tests) 49ms
+ ✓ tests/unit/services/session-generation-contract.test.ts (13 tests) 26ms
+ ✓ tests/unit/services/adaptation-boundary.test.ts (4 tests) 14ms
+ ✓ tests/unit/services/concept-reinterpretation.test.ts (8 tests) 23ms
+ ✓ tests/unit/api/provider-route-boundary.test.ts (2 tests) 36ms
+ ✓ tests/unit/api/preference-write-guards.test.ts (7 tests) 64ms
+ ✓ tests/unit/services/followup-context.test.ts (8 tests) 22ms
+ ✓ tests/unit/data/session-dao.test.ts (8 tests) 24ms
+ ✓ tests/unit/services/llm-provider.test.ts (9 tests) 18ms
+ ✓ tests/unit/services/adaptation-generation-contract.test.ts (9 tests) 30ms
+ ✓ tests/unit/lib/session-domain.test.ts (5 tests) 8ms
+ ✓ tests/unit/api/session-action-error-boundary.test.ts (2 tests) 77ms
+ ✓ tests/unit/components/session-continuity.test.tsx (9 tests) 822ms
+     ✓ renders every stored response route and adaptation during completed review  425ms
+ ✓ tests/unit/lib/session-view.test.ts (10 tests) 6ms
+ ✓ tests/unit/i18n/request.test.ts (6 tests) 7ms
+ ✓ tests/unit/services/adaptation-routing.test.ts (14 tests) 7ms
+ ✓ tests/unit/services/request-validation.test.ts (13 tests) 6ms
+ ✓ tests/unit/components/stage6b-interface.test.tsx (16 tests) 1741ms
+     ✓ submits High immediately through the fade route  444ms
+
+ Test Files  26 passed (26)
+      Tests  361 passed (361)
+   Start at  21:58:56
+   Duration  3.90s (transform 1.50s, setup 628ms, import 6.25s, tests 3.78s, environment 2.38s)
+
+JSON report written to /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261002-ROOTTESTS-02/02-project-coverage.json
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   72.54 |    76.37 |      64 |   73.75 |                   
+ burmese_stem_ai   |       0 |        0 |       0 |       0 |                   
+  proxy.ts         |       0 |        0 |       0 |       0 | 3-48              
+ ...se_stem_ai/app |       0 |        0 |       0 |       0 |                   
+  layout.tsx       |       0 |        0 |       0 |       0 | 10-56             
+  page.tsx         |       0 |      100 |       0 |       0 | 4                 
+ ...tem_ai/app/api |       0 |      100 |       0 |       0 |                   
+  route.ts         |       0 |      100 |       0 |       0 | 4                 
+ ...pi/preferences |   95.83 |     87.5 |     100 |   95.83 |                   
+  route.ts         |   95.83 |     87.5 |     100 |   95.83 | 37                
+ ...ns/[sessionId] |     100 |    85.71 |     100 |     100 |                   
+  route.ts         |     100 |    85.71 |     100 |     100 | 76-77             
+ ...ionId]/respond |   96.29 |    92.85 |     100 |   96.29 |                   
+  route.ts         |   96.29 |    92.85 |     100 |   96.29 | 48                
+ ...ai/app/history |       0 |      100 |       0 |       0 |                   
+  page.tsx         |       0 |      100 |       0 |       0 | 5-7               
+ ...rn/[sessionId] |       0 |      100 |       0 |       0 |                   
+  page.tsx         |       0 |      100 |       0 |       0 | 8-9               
+ ..._ai/components |       0 |        0 |       0 |       0 |                   
+  ...lSwitcher.tsx |       0 |        0 |       0 |       0 | 1-21              
+ ...onents/history |   69.38 |    42.42 |   66.66 |   72.09 |                   
+  HistoryList.tsx  |   69.38 |    42.42 |   66.66 |   72.09 | ...10,235-236,244 
+ ...omponents/home |       0 |        0 |       0 |       0 |                   
+  HomeInquiry.tsx  |       0 |        0 |       0 |       0 | 1-202             
+  ...cesDialog.tsx |       0 |        0 |       0 |       0 | 1-132             
+ ...ponents/layout |       0 |        0 |       0 |       0 |                   
+  AppHeader.tsx    |       0 |        0 |       0 |       0 | 1-76              
+ ...mponents/learn |   73.98 |    69.56 |   77.77 |   78.06 |                   
+  ...UpSection.tsx |      50 |    35.71 |      25 |   57.14 | 47-74             
+  ...ngSession.tsx |   69.85 |     64.7 |      75 |   74.16 | ...31,324-356,448 
+  ...onContent.tsx |     100 |    89.47 |     100 |     100 | 48,51,86-93       
+ ...e_stem_ai/data |   22.22 |    35.29 |      25 |   22.22 |                   
+  init-db.ts       |       0 |        0 |       0 |       0 | 13-38             
+  mongodb.ts       |      20 |       25 |       0 |      20 | 20-42             
+  schema.ts        |   83.33 |    57.14 |     100 |   83.33 | 11                
+ ...em_ai/data/dao |   43.47 |      100 |      40 |   43.47 |                   
+  profile.dao.ts   |       0 |      100 |       0 |       0 | 9-41              
+  session.dao.ts   |   66.66 |      100 |   66.66 |   66.66 | 57-59,175-177     
+ ...i/data/schemas |    82.6 |       25 |      50 |   86.36 |                   
+  ...ile.schema.ts |   66.66 |        0 |       0 |      75 | 75-76             
+  ...ion.schema.ts |   92.85 |       50 |     100 |   92.85 | 140               
+ ...tem_ai/data/tx |       0 |        0 |       0 |       0 |                   
+  index.js         |       0 |        0 |       0 |       0 | 3-49              
+ ...e_stem_ai/i18n |   16.66 |      100 |   33.33 |      20 |                   
+  request.ts       |   16.66 |      100 |   33.33 |      20 | 6-10              
+ ...em_ai/services |   99.14 |    97.73 |     100 |   99.39 |                   
+  ...on.service.ts |   97.81 |    97.72 |     100 |   98.44 | 393,432           
+  ...up.service.ts |     100 |    97.05 |     100 |     100 | 77,125            
+  ...on.service.ts |     100 |    95.08 |     100 |     100 | 130,137,177       
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 72.54% ( 708/976 )
+Branches     : 76.37% ( 627/821 )
+Functions    : 64% ( 128/200 )
+Lines        : 73.75% ( 680/922 )
+================================================================================

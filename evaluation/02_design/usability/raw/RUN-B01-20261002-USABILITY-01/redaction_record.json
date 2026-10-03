@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-02T10:28:59.948Z",
+  "purpose": "Anonymous identity-cookie values replaced by synthetic learner aliases in shareable text exports",
+  "originalsStorage": "/tmp/burmese-usability-SyZHwX/restricted-export-originals",
+  "originalDirectoryMode": "0700",
+  "originalFileMode": "0600",
+  "sessionIds": "Artificial session UUIDs retained for UI/state traceability; not identity-cookie values",
+  "files": [
+    {
+      "file": "database_snapshot.json",
+      "replacements": 31,
+      "originalSha256": "9be76c2e571ac415066745c2cbb201e70b84dac43798ee3d574617148f3809b5",
+      "shareableSha256": "e1ab40b8126b5b746e0e05d82f5f9e078beaf3e64ba3dbc9844af2910d6800f4"
+    },
+    {
+      "file": "route_seed_documents.json",
+      "replacements": 18,
+      "originalSha256": "cc24b55722a140cd0fb37711587b83e19440030946c0c687e7fb39c7ec114bda",
+      "shareableSha256": "449deceb3573605acc5666e14f62e027861cd7a8ded44e315f0fa5feb2fbe727"
+    },
+    {
+      "file": "seeded_documents.json",
+      "replacements": 10,
+      "originalSha256": "92809df0e64af49a72382e50b06c6452d757bddf01e7bb3e55d11b3500d1617f",
+      "shareableSha256": "6021baa4c053b6aea9a43bb008a8fc14b34d3a455ed8e42f36cc49607acf7728"
+    }
+  ]
+}

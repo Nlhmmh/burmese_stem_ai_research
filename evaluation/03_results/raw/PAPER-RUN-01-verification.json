@@ -1,0 +1,32 @@
+{
+  "runId": "PRESENT-20261003-PAPER-01",
+  "capturedAt": "2026-10-03T03:39:28.970Z",
+  "tables": 5,
+  "tableDataRows": [
+    5,
+    5,
+    22,
+    10,
+    3
+  ],
+  "mainFigures": 2,
+  "optionalTimingFigure": "Omitted with reason",
+  "originalFigureSourceUnchanged": true,
+  "scenarioSVGPNGMatch": true,
+  "citedResults": 224,
+  "citedEvidence": 72,
+  "prior63RowsBytePreserved": true,
+  "registeredEvidence": 67,
+  "masterResults": 225,
+  "pirqoaRows": 24,
+  "immutableInputHashes": {
+    "evaluation/03_results/master_results.csv": "6145b5b9982cc2318f293e468d684e67e68baa05e266d9d121ba3b1b3ba851f1",
+    "evaluation/03_results/pirqoa_traceability.csv": "fa1b8b43c76585959ea017110917122ab1c183125aafff34d574c7580f342ae9",
+    "evaluation/03_results/results_interpretation.md": "ddcac30a2c198c911484cb0e2e2200d558cceaaa34a9f601f7df9235d644e7c5"
+  },
+  "productionFiles": 66,
+  "documentHash": "7405d423cefc7c6f3c7b65ce5ada2467eb2621d76a86278b507af62064d04dd5",
+  "registerHash": "93d9db5884394f3b3906d5c58be462cd161656b5ff3e25d841faa30df6eaf4fd",
+  "manifestHash": "90ec1d4c450330e5993e1cc800f020d84fd8181b2dece88c3c02e00750264abd",
+  "failures": []
+}

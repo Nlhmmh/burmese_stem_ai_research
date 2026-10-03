@@ -4,9 +4,15 @@ import {
   ResponseValidationError,
   SessionNotFoundError,
   SessionResponseConflictError,
-  validateUnderstandingResponse
+  validateLearnerResponseRequest
 } from "@/services/adaptation.service";
+import { InvalidAdaptationRouteInputError } from "@/services/adaptation-routing.service";
+import { apiError } from "@/lib/api-error";
 import { LearnerIdentityError, requireLearnerId } from "@/services/learner.service";
+import {
+  SessionIdValidationError,
+  validateSessionId
+} from "@/services/session-lifecycle.service";
 import { NextResponse, type NextRequest } from "next/server";
 
 type RouteContext = {
@@ -16,33 +22,47 @@ type RouteContext = {
 export async function POST(request: NextRequest, context: RouteContext): Promise<NextResponse> {
   try {
     const learnerId = requireLearnerId(request);
-    const { sessionId } = await context.params;
-    const understanding = validateUnderstandingResponse(await readJson(request));
-    const result = await respondToLearningSession(learnerId, sessionId, understanding);
+    const { sessionId: rawSessionId } = await context.params;
+    const sessionId = validateSessionId(rawSessionId);
+    const { overallSupportNeed, difficultyType, conceptClarification } =
+      validateLearnerResponseRequest(await readJson(request));
+    const result = await respondToLearningSession(
+      learnerId,
+      sessionId,
+      overallSupportNeed,
+      difficultyType,
+      conceptClarification
+    );
     return NextResponse.json(result);
   } catch (error) {
     if (error instanceof LearnerIdentityError) {
-      return errorResponse("LEARNER_IDENTITY_UNAVAILABLE", error.message, 400);
+      return apiError("LEARNER_IDENTITY_UNAVAILABLE", error.message, 400);
+    }
+    if (error instanceof SessionIdValidationError) {
+      return apiError("INVALID_SESSION_ID", error.message, 400);
     }
     if (error instanceof ResponseValidationError) {
-      return errorResponse("INVALID_UNDERSTANDING_RESPONSE", error.message, 400);
+      return apiError("INVALID_UNDERSTANDING_RESPONSE", error.message, 400);
+    }
+    if (error instanceof InvalidAdaptationRouteInputError) {
+      return apiError("INVALID_ADAPTATION_ROUTE", error.message, 400);
     }
     if (error instanceof SessionNotFoundError) {
-      return errorResponse("SESSION_NOT_FOUND", error.message, 404);
+      return apiError("SESSION_NOT_FOUND", error.message, 404);
     }
     if (error instanceof SessionResponseConflictError) {
-      return errorResponse("SESSION_RESPONSE_CONFLICT", error.message, 409);
+      return apiError("SESSION_RESPONSE_CONFLICT", error.message, 409);
     }
     if (error instanceof AdaptationGenerationError) {
       console.error("Unable to generate adapted support:", error.message);
-      return errorResponse(
+      return apiError(
         "ADAPTATION_GENERATION_FAILED",
         "Unable to prepare additional support right now",
         502
       );
     }
     console.error("Unable to record learner response:", error);
-    return errorResponse("SESSION_RESPONSE_FAILED", "Unable to record learner response", 500);
+    return apiError("SESSION_RESPONSE_FAILED", "Unable to record learner response", 500);
   }
 }
 
@@ -52,8 +72,4 @@ async function readJson(request: NextRequest): Promise<unknown> {
   } catch {
     throw new ResponseValidationError("Request body must contain valid JSON");
   }
-}
-
-function errorResponse(code: string, message: string, status: number): NextResponse {
-  return NextResponse.json({ error: { code, message } }, { status });
 }

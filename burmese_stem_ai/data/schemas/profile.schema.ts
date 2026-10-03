@@ -16,10 +16,12 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 export type Preferences = {
+  /** Legacy-compatible profile field; the active UI locale is browser-cookie scoped. */
   uiLanguage: UILanguage;
   supportLanguage: SupportLanguage;
   explanationLevel: ExplanationLevel;
   learningStyle: LearningStyle;
+  /** Legacy-compatible profile field; the active UI theme is browser-localStorage scoped. */
   theme: Theme;
 };
 export const PreferenceOptions = {

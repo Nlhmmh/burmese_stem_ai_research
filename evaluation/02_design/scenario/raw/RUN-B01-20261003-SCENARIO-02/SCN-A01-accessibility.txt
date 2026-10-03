@@ -1,0 +1,47 @@
+Browser tab: 542535733, Title: "Burmese STEM AI", URL: "http://scenario-b01.localhost:57927/".
+1 AXWebArea Burmese STEM AI, URL: scenario-b01.localhost:57927/
+	2 container
+		3 link Description: Logo Burmese STEM AI, Value: scenario-b01.localhost:57927/
+		4 container Primary navigation
+			5 link Description: New Inquiry, Value: scenario-b01.localhost:57927/
+			6 link Description: History, Value: scenario-b01.localhost:57927/history
+			7 button မြန်မာဘာသာသို့ ပြောင်းရန်
+			8 button Toggle color theme
+	9 container
+		10 text BILINGUAL STEM LEARNING
+		11 heading Burmese STEM AI, Value: 1
+			12 text Burmese STEM AI
+		13 text Understand STEM concepts in Burmese and English
+		14 container Ask a STEM question
+			15 heading Ask a STEM question, Value: 2, ID: inquiry-label
+				16 text Ask a STEM question
+			17 text entry area (settable)
+			18 button Learning Preferences
+			19 button (disabled) Ask
+			20 text EXAMPLE PROMPTS
+			21 button What is Gradient Descent?
+			22 button Explain Neural Networks.
+			23 button What does Polymorphism mean?
+		24 container Learning Preferences
+			25 container
+				26 heading Learning Preferences, Value: 2, ID: preferences-title
+					27 text Learning Preferences
+				28 button Close preferences
+			29 container Language Support
+				30 text Language Support
+				31 checkbox ✓Burmese + English Terms, Value: 1
+				32 checkbox Burmese, Value: 0
+				33 checkbox English, Value: 0
+			34 container Explanation Level
+				35 text Explanation Level
+				36 checkbox ✓Beginner, Value: 1
+				37 checkbox Intermediate, Value: 0
+				38 checkbox Advanced, Value: 0
+			39 container Learning Style
+				40 text Learning Style
+				41 checkbox ✓Guided, Value: 1
+				42 checkbox Concise, Value: 0
+				43 checkbox More Examples, Value: 0
+			44 button Save Preferences
+
+The focused UI element is 1 AXWebArea Burmese STEM AI, URL: scenario-b01.localhost:57927/

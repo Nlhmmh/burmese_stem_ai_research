@@ -1,9 +1,7 @@
 import { createSession, type NewSession } from "@/data/dao/session.dao";
 import type { Preferences } from "@/data/schemas/profile.schema";
 import { MAX_QUESTION_LENGTH, UI_LANGUAGES } from "@/lib/constants";
-
-const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
-const OPENAI_TIMEOUT_MS = 20_000;
+import { LlmProviderError, requestStructuredOutput } from "@/services/llm-provider";
 
 const bilingualTextSchema = {
   type: "object",
@@ -24,10 +22,11 @@ const generatedSessionSchema = {
     },
     message: { type: "string" },
     concept: {
+      description: "Stages 1 and 2: identified STEM term and interpreted technical context",
       type: "object",
       properties: {
-        name: { type: "string" },
-        domain: { type: "string" }
+        name: { type: "string", description: "Stage 1 primary STEM term" },
+        domain: { type: "string", description: "Stage 2 technical domain or context" }
       },
       required: ["name", "domain"],
       additionalProperties: false
@@ -35,15 +34,30 @@ const generatedSessionSchema = {
     explanations: {
       type: "object",
       properties: {
-        simple: bilingualTextSchema,
-        realWorldExample: bilingualTextSchema,
-        technical: bilingualTextSchema
+        simple: {
+          ...bilingualTextSchema,
+          description: "Stage 4 accessible explanation of the core meaning"
+        },
+        realWorldExample: {
+          ...bilingualTextSchema,
+          description: "Stage 5 concrete scaffold linked to the core meaning"
+        },
+        technical: {
+          ...bilingualTextSchema,
+          description: "Stage 4 precise explanation of the same core meaning"
+        }
       },
       required: ["simple", "realWorldExample", "technical"],
       additionalProperties: false
     },
-    reflectivePrompt: bilingualTextSchema,
-    hint: bilingualTextSchema
+    reflectivePrompt: {
+      ...bilingualTextSchema,
+      description: "Stage 5 single reflective scaffold"
+    },
+    hint: {
+      ...bilingualTextSchema,
+      description: "Stage 5 single concise optional hint"
+    }
   },
   required: ["outcome", "message", "concept", "explanations", "reflectivePrompt", "hint"],
   additionalProperties: false
@@ -68,16 +82,6 @@ type GeneratedSession = {
   };
   reflectivePrompt: BilingualText;
   hint: BilingualText;
-};
-
-type OpenAIResponse = {
-  output?: Array<{
-    type?: string;
-    content?: Array<{
-      type?: string;
-      text?: string;
-    }>;
-  }>;
 };
 
 export class SessionRequestValidationError extends Error {}
@@ -134,8 +138,6 @@ export async function createLearningSession(
     );
   }
 
-  validateGeneratedSession(generated);
-
   const session: NewSession = {
     sessionId: crypto.randomUUID(),
     learnerId,
@@ -154,78 +156,38 @@ async function generateSession(
   question: string,
   preferences: Preferences
 ): Promise<GeneratedSession> {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey || apiKey === "your-key-here") {
-    throw new SessionGenerationError("OpenAI API key is not configured");
-  }
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), OPENAI_TIMEOUT_MS);
-
   try {
-    const response = await fetch(OPENAI_RESPONSES_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-5-mini",
-        store: false,
-        instructions: buildInstructions(preferences),
-        input: question,
-        text: {
-          format: {
-            type: "json_schema",
-            name: "initial_learning_session",
-            strict: true,
-            schema: generatedSessionSchema
-          }
+    const generated = await requestStructuredOutput({
+      instructions: buildInstructions(preferences),
+      input: {
+        learnerQuestion: question,
+        preferences: {
+          supportLanguage: preferences.supportLanguage,
+          explanationLevel: preferences.explanationLevel,
+          learningStyle: preferences.learningStyle
         }
-      }),
-      signal: controller.signal
+      },
+      schemaName: "initial_learning_session",
+      schema: generatedSessionSchema
     });
-
-    if (!response.ok) {
-      throw new SessionGenerationError(`OpenAI request failed with status ${response.status}`);
-    }
-
-    const data = (await response.json()) as OpenAIResponse;
-    const outputText = data.output
-      ?.flatMap((item) => item.content ?? [])
-      .find((content) => content.type === "output_text")?.text;
-
-    if (!outputText) {
-      throw new SessionGenerationError("OpenAI returned no structured output");
-    }
-
-    try {
-      const generated: unknown = JSON.parse(outputText);
-      validateGeneratedOutput(generated);
-      return generated;
-    } catch {
-      throw new SessionGenerationError("OpenAI returned invalid JSON");
-    }
+    validateGeneratedOutput(generated);
+    return generated;
   } catch (error) {
-    console.log("Error generating learning session:", error);
     if (error instanceof SessionGenerationError) throw error;
+    if (error instanceof LlmProviderError) {
+      if (error.code === "NOT_CONFIGURED") {
+        throw new SessionGenerationError("OpenAI API key is not configured");
+      }
+      if (error.code === "MISSING_OUTPUT") {
+        throw new SessionGenerationError("OpenAI returned no structured output");
+      }
+      if (error.code === "INVALID_JSON") {
+        throw new SessionGenerationError("OpenAI returned invalid JSON");
+      }
+    }
     throw new SessionGenerationError("Unable to generate the learning session");
-  } finally {
-    clearTimeout(timeout);
   }
 }
-
-// function buildInstructions(preferences: Preferences): string {
-//   return `You support Burmese-speaking learners with STEM concepts only.
-// Classify the learner's question as ready, ambiguous, or out_of_scope. For ambiguous or out-of-scope questions, put a concise learner-facing explanation in message and return empty strings in all content fields. For ready questions, leave message empty and:
-// - identify one main STEM concept and its technical domain;
-// - explain the concept rather than merely translating it;
-// - provide useful, accurate English and natural Burmese text in every bilingual field;
-// - retain useful English STEM terminology in the Burmese explanations;
-// - provide exactly one reflective prompt and one short optional hint;
-// - do not create a quiz, score the learner, or control session state.
-// Learner preferences: support language=${preferences.supportLanguage}, explanation level=${preferences.explanationLevel}, learning style=${preferences.learningStyle}. Always fill both language fields because the session is stored bilingually.`;
-// }
 
 function buildInstructions(preferences: Preferences): string {
   return `
@@ -235,9 +197,54 @@ You are a bilingual STEM educator for Burmese-speaking university students.
 
 # Goal
 
-Classify the question as ready, ambiguous, or out_of_scope.
-For a ready question, produce an accurate English and Burmese STEM
-learning session.
+Use one generation call to classify the supplied learnerQuestion as ready,
+ambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and
+return the complete bounded learning-session structure.
+
+# Stages 1–5 contract
+
+## Stage 1 — Identify STEM Terminology
+
+- Identify exactly one primary STEM term or concept in concept.name.
+- Do not return a list of candidate terms.
+
+## Stage 2 — Interpret Technical Context
+
+- Put the specific technical domain or context in concept.domain.
+- If the term has multiple plausible STEM meanings and the supplied question
+  does not resolve them, return outcome="ambiguous" instead of guessing.
+- If the question is not about STEM, return outcome="out_of_scope".
+
+## Stage 3 — Select Language Support
+
+- Apply the supplied supportLanguage, explanationLevel and learningStyle only
+  as presentation constraints.
+- Always populate both stored language fields; supportLanguage does not permit
+  an empty language field and does not change the learner profile.
+- Retain established English STEM terminology when it is clearer or commonly
+  used, while explaining its meaning naturally in Burmese.
+
+## Stage 4 — Explain the Core STEM Meaning
+
+- explanations.simple and explanations.technical must explain the same core
+  concept at different depths.
+- Explain meaning rather than merely translating the term.
+- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.
+
+## Stage 5 — Provide Bounded Scaffolding
+
+- explanations.realWorldExample must contain one concrete example connected
+  explicitly to the Stage 4 meaning.
+- reflectivePrompt must contain exactly one reflective prompt.
+- hint must contain exactly one concise optional hint.
+- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.
+
+# Outcome contract
+
+For outcome="ready", leave message empty and populate every Stage 1–5 field.
+For outcome="ambiguous" or outcome="out_of_scope", provide one concise
+learner-facing message and return empty strings in concept and every learning
+content field. Do not produce partial learning content for these outcomes.
 
 # Strict language contract
 
@@ -272,24 +279,11 @@ The Burmese text must:
 - retain commonly used English STEM terms when appropriate;
 - avoid invented, overly literary or unnatural Burmese terminology.
 
-# Content requirements
+# Application-control boundary
 
-For a ready question:
-
-- identify one primary STEM concept and its domain;
-- provide a beginner-friendly simple explanation;
-- provide one concrete real-world example;
-- provide a more precise technical explanation;
-- provide exactly one reflective prompt;
-- provide one short optional hint;
-- leave "message" empty.
-
-For ambiguous or out-of-scope questions:
-
-- provide a concise explanation in "message";
-- return empty strings in all learning-content fields.
-
-Do not create quizzes, grades, scores or session-state decisions.
+Do not choose or output learner identity, persistence operations, lifecycle
+status, route permission, adaptation round, follow-up allowance or completion.
+Those decisions belong to the application.
 
 # Final internal check
 
@@ -307,44 +301,31 @@ Learner preferences:
 - Explanation level: ${preferences.explanationLevel}
 - Learning style: ${preferences.learningStyle}
 
-Always populate both language fields because sessions are stored
-bilingually.
+Always include both language fields because the structured contract is
+bilingual; populate them for ready outcomes and leave them empty for the two
+controlled non-ready outcomes.
 `;
 }
 
-function validateGeneratedSession(session: GeneratedSession): void {
-  const strings = [
-    session.concept?.name,
-    session.concept?.domain,
-    session.explanations?.simple?.en,
-    session.explanations?.simple?.my,
-    session.explanations?.realWorldExample?.en,
-    session.explanations?.realWorldExample?.my,
-    session.explanations?.technical?.en,
-    session.explanations?.technical?.my,
-    session.reflectivePrompt?.en,
-    session.reflectivePrompt?.my,
-    session.hint?.en,
-    session.hint?.my
-  ];
-
-  if (strings.some((value) => typeof value !== "string" || value.trim().length === 0)) {
-    throw new SessionGenerationError("Generated session did not match the required structure");
-  }
-}
-
 function validateGeneratedOutput(value: unknown): asserts value is GeneratedSession {
-  if (!isRecord(value)) {
+  if (!isExactRecord(value, [
+    "outcome",
+    "message",
+    "concept",
+    "explanations",
+    "reflectivePrompt",
+    "hint"
+  ])) {
     throw new SessionGenerationError("Generated session must be an object");
   }
 
   if (
     !["ready", "ambiguous", "out_of_scope"].includes(String(value.outcome)) ||
     typeof value.message !== "string" ||
-    !isRecord(value.concept) ||
+    !isExactRecord(value.concept, ["name", "domain"]) ||
     typeof value.concept.name !== "string" ||
     typeof value.concept.domain !== "string" ||
-    !isRecord(value.explanations) ||
+    !isExactRecord(value.explanations, ["simple", "realWorldExample", "technical"]) ||
     !isBilingualText(value.explanations.simple) ||
     !isBilingualText(value.explanations.realWorldExample) ||
     !isBilingualText(value.explanations.technical) ||
@@ -353,12 +334,51 @@ function validateGeneratedOutput(value: unknown): asserts value is GeneratedSess
   ) {
     throw new SessionGenerationError("Generated session did not match the required structure");
   }
+
+  const learningFields = [
+    value.concept.name,
+    value.concept.domain,
+    value.explanations.simple.en,
+    value.explanations.simple.my,
+    value.explanations.realWorldExample.en,
+    value.explanations.realWorldExample.my,
+    value.explanations.technical.en,
+    value.explanations.technical.my,
+    value.reflectivePrompt.en,
+    value.reflectivePrompt.my,
+    value.hint.en,
+    value.hint.my
+  ];
+  const isReady = value.outcome === "ready";
+  const hasValidOutcomeContent = isReady
+    ? value.message.trim().length === 0 &&
+      learningFields.every((field) => field.trim().length > 0)
+    : value.message.trim().length > 0 &&
+      learningFields.every((field) => field.trim().length === 0);
+
+  if (!hasValidOutcomeContent) {
+    throw new SessionGenerationError(
+      "Generated session content did not match the declared outcome"
+    );
+  }
 }
 
 function isBilingualText(value: unknown): value is BilingualText {
-  return isRecord(value) && typeof value.en === "string" && typeof value.my === "string";
+  return (
+    isExactRecord(value, ["en", "my"]) &&
+    typeof value.en === "string" &&
+    typeof value.my === "string"
+  );
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function isExactRecord(value: unknown, keys: readonly string[]): value is Record<string, unknown> {
+  return (
+    isRecord(value) &&
+    Object.keys(value).length === keys.length &&
+    keys.every((key) => key in value)
+  );
 }

@@ -1,0 +1,72 @@
+{
+  "runId": "RUN-B01-20261002-BLACKBOX-01",
+  "cases": 24,
+  "outcomes": {
+    "Pass": 22,
+    "Fail": 2
+  },
+  "assertions": 370,
+  "failedAssertions": [
+    {
+      "case": "BB08",
+      "name": "Remaining ambiguity recorded without adaptation or round",
+      "pass": false,
+      "observed": {
+        "understanding": "medium",
+        "status": "in_progress",
+        "adaptationRound": 1,
+        "route": "context_reinterpretation",
+        "responseEvent": {
+          "overallSupportNeed": "medium",
+          "difficultyType": "concept_mismatch",
+          "route": "context_reinterpretation",
+          "roundBefore": 0,
+          "roundAfter": 1,
+          "conceptReinterpretation": {
+            "clarification": "I mean some cell",
+            "outcome": "ambiguous",
+            "previous": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "current": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            }
+          },
+          "createdAt": "2026-10-02T05:58:49.689Z"
+        },
+        "adaptation": {
+          "learnerResponse": "medium",
+          "supportType": "concept_correction",
+          "content": {
+            "en": "Do you mean a battery cell or a biological cell?",
+            "my": "battery cell ကို ဆိုလိုပါသလား၊ သက်ရှိ cell ကို ဆိုလိုပါသလား။"
+          },
+          "round": 1,
+          "createdAt": "2026-10-02T05:58:49.689Z"
+        },
+        "concept": {
+          "name": "photosynthesis",
+          "domain": "biology, plant physiology"
+        },
+        "correctionOutcome": "ambiguous"
+      }
+    },
+    {
+      "case": "BB22",
+      "name": "Frozen oracle absent identity HTTP400",
+      "pass": false,
+      "observed": {
+        "status": 200,
+        "cookie": "learnerId=0b68acd5-69da-4df5-a90c-32195e64d2cb; Path=/; Expires=Sat, 02 Oct 2027 05:59:50 GMT; Max-Age=31536000; Secure; HttpOnly; SameSite=lax",
+        "body": {
+          "sessions": []
+        }
+      }
+    }
+  ],
+  "browserChecks": "not yet executed",
+  "url": "http://127.0.0.1:53196",
+  "browserUrl": "http://bb-b01.localhost:53196"
+}

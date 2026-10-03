@@ -1,0 +1,58 @@
+- banner:
+  - link "Logo":
+    - /url: /
+    - img "Logo"
+  - navigation "Primary navigation":
+    - link "New Inquiry":
+      - /url: /
+    - link "History":
+      - /url: /history
+    - button "မြန်မာဘာသာသို့ ပြောင်းရန်": မြန်မာ
+    - button "Toggle color theme": ◑
+- alert
+- main:
+  - generic: biology, plant physiology
+  - heading "photosynthesis" [level=1]
+  - paragraph: STEM Learning Session
+  - generic: 📖
+  - heading "Simple Explanation" [level=2]
+  - paragraph: Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.
+  - generic: ◉
+  - heading "Real-World Example" [level=2]
+  - paragraph: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.
+  - generic: ⚙
+  - heading "Technical Explanation" [level=2]
+  - paragraph: Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.
+  - generic: ◇
+  - heading "Think About This" [level=2]
+  - paragraph: What inputs does a plant need for photosynthesis, and what useful product does it make?
+  - button "Show Hint"
+  - heading "Still have a question about photosynthesis?" [level=2]
+  - textbox "Follow-up question":
+    - /placeholder: Ask a follow-up about this concept...
+  - button "Ask" [disabled]
+  - paragraph: 2 follow-ups remaining
+  - heading "Understanding Check" [level=2]
+  - paragraph: "Selected response: I need more explanation"
+  - heading "What would help you most?" [level=3]
+  - paragraph: Choose one option, or continue without choosing.
+  - radiogroup "What would help you most?":
+    - radio "A simpler explanation" [disabled]
+    - generic: ◒
+    - generic: A simpler explanation
+    - radio "Another example" [disabled]
+    - generic: ▣
+    - generic: Another example
+    - radio "Help with Burmese / English terms" [checked] [disabled]
+    - generic: Aa
+    - generic: Help with Burmese / English terms
+    - radio "I do not understand the concept" [disabled]
+    - generic: "?"
+    - generic: I do not understand the concept
+    - radio "The concept or term is not what I meant" [disabled]
+    - generic: ↺
+    - generic: The concept or term is not what I meant
+  - button "Preparing support..." [disabled]
+  - button "Continue without a choice" [disabled]
+  - button "Back to understanding choices" [disabled]
+  - paragraph: Preparing additional support...

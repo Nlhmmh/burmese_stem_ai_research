@@ -1,0 +1,42 @@
+$ npm test -- --reporter=default --reporter=json --outputFile=/Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261002-ROOTTESTS-02/01-unit.json
+
+> burmese_stem_ai@0.1.0 test
+> vitest run --reporter=default --reporter=json --outputFile=/Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261002-ROOTTESTS-02/01-unit.json
+
+
+ RUN  v4.1.11 /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai
+
+ ✓ tests/unit/services/session-generation-contract.test.ts (13 tests) 15ms
+ ✓ tests/unit/data/session-schema.test.ts (8 tests) 62ms
+ ✓ tests/unit/api/provider-route-boundary.test.ts (2 tests) 16ms
+ ✓ tests/unit/services/adaptation-full-matrix.test.ts (47 tests) 39ms
+ ✓ tests/unit/services/generation-error-extensions.test.ts (99 tests) 57ms
+ ✓ tests/unit/api/refined-route-contracts.test.ts (26 tests) 38ms
+ ✓ tests/unit/services/adaptation-routing-branches.test.ts (20 tests) 16ms
+ ✓ tests/unit/data/session-dao.test.ts (8 tests) 13ms
+ ✓ tests/unit/api/preference-error-boundary.test.ts (5 tests) 18ms
+ ✓ tests/unit/services/adaptation-routing.test.ts (14 tests) 5ms
+ ✓ tests/unit/services/adaptation-generation-contract.test.ts (9 tests) 11ms
+ ✓ tests/unit/api/session-detail-route.test.ts (2 tests) 18ms
+ ✓ tests/unit/api/preference-write-guards.test.ts (7 tests) 16ms
+ ✓ tests/unit/services/concept-reinterpretation.test.ts (8 tests) 15ms
+ ✓ tests/unit/services/llm-provider.test.ts (9 tests) 12ms
+ ✓ tests/unit/services/followup-context.test.ts (8 tests) 15ms
+ ✓ tests/unit/components/session-content.test.tsx (5 tests) 18ms
+ ✓ tests/unit/lib/session-view.test.ts (10 tests) 6ms
+ ✓ tests/unit/services/session-lifecycle-ownership.test.ts (6 tests) 17ms
+ ✓ tests/unit/services/adaptation-boundary.test.ts (4 tests) 15ms
+ ✓ tests/unit/api/session-action-error-boundary.test.ts (2 tests) 15ms
+ ✓ tests/unit/lib/session-domain.test.ts (5 tests) 7ms
+ ✓ tests/unit/i18n/request.test.ts (6 tests) 7ms
+ ✓ tests/unit/components/session-continuity.test.tsx (9 tests) 662ms
+     ✓ renders every stored response route and adaptation during completed review  450ms
+ ✓ tests/unit/services/request-validation.test.ts (13 tests) 5ms
+ ✓ tests/unit/components/stage6b-interface.test.tsx (16 tests) 1249ms
+
+ Test Files  26 passed (26)
+      Tests  361 passed (361)
+   Start at  21:58:53
+   Duration  2.39s (transform 1.27s, setup 357ms, import 4.32s, tests 2.36s, environment 1.34s)
+
+JSON report written to /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261002-ROOTTESTS-02/01-unit.json

@@ -1,0 +1,26 @@
+{
+  "runId": "INTERPRET-20261003-RESULTS-01",
+  "capturedAt": "2026-10-03T03:21:02.806Z",
+  "interpretationClaims": 17,
+  "categoryCounts": {
+    "strong": 6,
+    "partial": 4,
+    "conceptual": 3,
+    "unsupported": 4
+  },
+  "citedResults": 106,
+  "citedEvidence": 43,
+  "prior61RowsBytePreserved": true,
+  "registeredEvidence": 63,
+  "masterResults": 225,
+  "pirqoaRows": 24,
+  "immutableInputHashes": {
+    "evaluation/03_results/master_results.csv": "6145b5b9982cc2318f293e468d684e67e68baa05e266d9d121ba3b1b3ba851f1",
+    "evaluation/03_results/pirqoa_traceability.csv": "fa1b8b43c76585959ea017110917122ab1c183125aafff34d574c7580f342ae9"
+  },
+  "productionFiles": 66,
+  "documentHash": "ddcac30a2c198c911484cb0e2e2200d558cceaaa34a9f601f7df9235d644e7c5",
+  "registerHash": "3ab2257a1b03976030fbffa1aa9f21de0b759d0226bd510c38d1c230a6b61fe9",
+  "manifestHash": "b6eceb38e32a8c471e6fc7eb19aec7da9dea1d7800255946b911339f45edea38",
+  "failures": []
+}

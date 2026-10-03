@@ -1,0 +1,8 @@
+{
+  "capturedAt": "2026-10-02T23:53:24.106Z",
+  "registerHash": "560e1a6405b9c3092d26f3a12682297998c8ef876fa3800c2950a8cb5d121613",
+  "dataRows": 52,
+  "columns": 15,
+  "appendedRows": 9,
+  "inspection": "{\"kind\":\"table\",\"sheet\":\"Evidence\",\"address\":\"A45:D53\",\"rows\":9,\"cols\":4,\"values\":[[\"E049\",\"GENAI-01\",\"Original A3 seven-stage framework / retained conceptual evidence; not B01 production; embedded master prompt v1.0\",\"CA-GAI\"],[\"E050\",\"GENAI-01\",\"Original A3 seven-stage framework / retained conceptual evidence; not B01 production\",\"CA-GAI\"],[\"E051\",\"INDEX-20261003-CA-LIT\",\"Original A3 seven-stage framework / retained conceptual evidence; not B01 production / supplied Assignment 2\",\"CA-LIT\"],[\"E052\",\"INDEX-20261003-CA-LIT\",\"Original A3 seven-stage framework / retained conceptual evidence; not B01 production / supplied Assignment 2\",\"CA-LIT\"],[\"E053\",\"INDEX-20261003-CA-ARG\",\"Original A3 seven-stage framework / retained conceptual evidence; not B01 production\",\"CA-ARG\"],[\"E054\",\"INDEX-20261003-CA-SCN\",\"Original A3 seven-stage framework / retained conceptual evidence; not B01 production; historical session executable commit unrecorded\",\"CA-SCN\"],[\"E055\",\"INDEX-20261003-CA-SYN\",\"Original A3 seven-stage framework / retained conceptual evidence; not B01 production\",\"CA-SYN\"],[\"E056\",\"INDEX-20261003-CA-REF\",\"Refined conceptual framework: framework_refinements.md section 26; not original GENAI input or new B01 freeze\",\"CA-REF\"],[\"E057\",\"AUDIT-20261003-EVIDENCE-01\",\"Mixed conceptual identities / B01 production commit 37faefa236829aa3d79e023faa1fb72a086b5c2a / ROOTTESTS-02\",\"EV-REG\"]]}"
+}

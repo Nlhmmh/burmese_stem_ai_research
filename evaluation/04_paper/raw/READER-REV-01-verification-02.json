@@ -1,0 +1,105 @@
+{
+  "revisionId": "READER-REV-01",
+  "checkedAt": "2026-10-03T06:24:23.202Z",
+  "paperHash": "3352a828eb04a5d28cdb7f356e17a141545ebd61acf43fd7bd3d099abc292185",
+  "bodyHash": "95a285d6394d61a0b12cd85cceb7c81431de547c33251299ea2a53ebb9f0fe38",
+  "figureHash": "970c97887c2127fb81ed8406551837895837fc70440184742f08ac1dd660b20d",
+  "originalPaperHash": "47bbeb1fc0c6113d00dc30f5bf698410d0480ec3af4027b3fabe17b36ea66f3e",
+  "prescribedHeadings": 28,
+  "explicitHeadingChanges": [
+    "1. Evaluation Context → 1. Introduction",
+    "4.2 PIRQOA / RQ Traceability → 4.2 Research Question Traceability"
+  ],
+  "tables": 5,
+  "figures": 2,
+  "referenceEntries": 12,
+  "citations": [
+    {
+      "author": "Athukorala",
+      "count": 2
+    },
+    {
+      "author": "Dunlosky",
+      "count": 1
+    },
+    {
+      "author": "Goodhue",
+      "count": 4
+    },
+    {
+      "author": "Hevner",
+      "count": 3
+    },
+    {
+      "author": "Htet",
+      "count": 2
+    },
+    {
+      "author": "Ji",
+      "count": 1
+    },
+    {
+      "author": "Kleidermacher",
+      "count": 2
+    },
+    {
+      "author": "Kuzu",
+      "count": 1
+    },
+    {
+      "author": "Sweller",
+      "count": 1
+    },
+    {
+      "author": "Tran",
+      "count": 1
+    },
+    {
+      "author": "van de Pol",
+      "count": 4
+    },
+    {
+      "author": "Venable",
+      "count": 3
+    }
+  ],
+  "metrics": {
+    "counter": "Local Unicode tokens, internal apostrophes/hyphens retained; link labels counted, URLs/image alt text excluded. Body includes narrative, table cells and captions/notes but not headings.",
+    "bodyWords": 4548,
+    "sections": [
+      {
+        "section": 1,
+        "allVisibleBodyTokens": 215
+      },
+      {
+        "section": 2,
+        "allVisibleBodyTokens": 1407
+      },
+      {
+        "section": 3,
+        "allVisibleBodyTokens": 2054
+      },
+      {
+        "section": 4,
+        "allVisibleBodyTokens": 722
+      },
+      {
+        "section": 5,
+        "allVisibleBodyTokens": 150
+      }
+    ],
+    "tableCellWords": 961,
+    "bodyPlusAbstract": 4688,
+    "abstractWords": 140,
+    "referenceWords": 314,
+    "keywords": 6,
+    "officialComplianceVerified": false
+  },
+  "registeredEvidencePreserved": 69,
+  "productionFilesPreserved": 66,
+  "registerUnchanged": true,
+  "scope": "Editorial/document checks only; no formal application evaluation, new content endorsement, new full-text appraisal or rendered Word/PDF check",
+  "limitations": "String/identity checks complement manual editing; they do not prove every paraphrase semantically equivalent or official word-limit compliance",
+  "submissionReady": false,
+  "failures": []
+}

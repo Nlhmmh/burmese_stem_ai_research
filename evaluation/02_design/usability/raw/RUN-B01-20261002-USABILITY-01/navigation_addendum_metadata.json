@@ -1,0 +1,8 @@
+{
+  "purpose": "Explicit desktop/mobile Back activation after main inspection; no provider call expected",
+  "startedAt": "2026-10-02T10:36:11.808Z",
+  "browserUrl": "http://ui-b01.localhost:55530",
+  "dbUrl": "mongodb://127.0.0.1:55529/burmese_usability_inspection",
+  "sourceCopiesCreated": 0,
+  "finishedAt": "2026-10-02T10:38:26.159Z"
+}

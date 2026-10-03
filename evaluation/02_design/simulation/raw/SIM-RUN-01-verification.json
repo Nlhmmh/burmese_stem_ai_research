@@ -1,0 +1,12 @@
+{
+  "status": "Pass: evidence accounting/state consistency only",
+  "verifiedAt": "2026-10-01T10:51:20.222Z",
+  "cases": 55,
+  "providerCalls": 102,
+  "sessions": 47,
+  "profiles": 55,
+  "noGenerationSteps": 41,
+  "failedStepsWithUnchangedState": 3,
+  "humanJudgement": "Not assessed",
+  "referenceHash": "bcd2a676243c183634fa7deef59d79a048f4fd8fae8f84bd44d8f07137b44457"
+}

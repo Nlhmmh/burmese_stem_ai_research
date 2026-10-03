@@ -1,6 +1,15 @@
 import type { Preferences } from "@/data/schemas/profile.schema";
 import { MAX_ADAPTATION_ROUNDS, MAX_FOLLOW_UPS } from "@/lib/constants";
-import type { SessionStatus, SupportType, UnderstandingLevel } from "@/lib/constants";
+import type { SessionStatus } from "@/lib/constants";
+import type {
+  AdaptationPresentationOverride,
+  ConceptCorrection,
+  ConceptReference,
+  LegacyUnderstanding,
+  LearnerResponseEvent,
+  OverallSupportNeed,
+  SupportType
+} from "@/lib/session-domain";
 import { connectMongoDB } from "../mongodb";
 import { SessionModel } from "../schema";
 
@@ -31,7 +40,8 @@ export type NewSession = {
 };
 
 export type CreatedSession = NewSession & {
-  understanding: UnderstandingLevel;
+  /** Legacy field name; the value is a self-reported support need. */
+  understanding: LegacyUnderstanding;
   status: SessionStatus;
   adaptationRound: number;
   createdAt: Date;
@@ -57,12 +67,12 @@ export async function findSession(learnerId: string, sessionId: string) {
   }).lean() as unknown as Promise<SessionRecord | null>;
 }
 
-export type LearnerResponse = Exclude<UnderstandingLevel, null>;
-
 export type Adaptation = {
-  learnerResponse: LearnerResponse;
+  learnerResponse: OverallSupportNeed;
   supportType: SupportType;
   content: BilingualText;
+  presentationOverride?: AdaptationPresentationOverride;
+  conceptCorrection?: ConceptCorrection;
   round: number;
   createdAt: Date;
 };
@@ -75,6 +85,8 @@ export type FollowUp = {
 
 export type SessionRecord = CreatedSession & {
   adaptations: Adaptation[];
+  /** Absent on legacy documents; public projections normalise this to an empty array. */
+  responseEvents?: LearnerResponseEvent[];
   followUps: FollowUp[];
   preferencesSnapshot: Preferences;
 };
@@ -83,30 +95,37 @@ type RecordResponseInput = {
   learnerId: string;
   sessionId: string;
   expectedRound: number;
-  understanding: LearnerResponse;
+  expectedResponseEventCount: number;
+  /** Legacy storage field name for the overall self-reported support need. */
+  understanding: OverallSupportNeed;
   status: SessionStatus;
   adaptation: Adaptation | null;
+  responseEvent: LearnerResponseEvent;
+  activeConcept?: ConceptReference;
 };
 
 export async function recordSessionResponse(input: RecordResponseInput) {
   await connectMongoDB();
 
+  const responseState = {
+    understanding: input.understanding,
+    status: input.status,
+    updatedAt: new Date(),
+    ...(input.activeConcept ? { concept: input.activeConcept } : {})
+  };
+
   const update = input.adaptation
     ? {
-        $set: {
-          understanding: input.understanding,
-          status: input.status,
-          updatedAt: new Date()
-        },
+        $set: responseState,
         $inc: { adaptationRound: 1 },
-        $push: { adaptations: input.adaptation }
+        $push: {
+          adaptations: input.adaptation,
+          responseEvents: input.responseEvent
+        }
       }
     : {
-        $set: {
-          understanding: input.understanding,
-          status: input.status,
-          updatedAt: new Date()
-        }
+        $set: responseState,
+        $push: { responseEvents: input.responseEvent }
       };
 
   return SessionModel.findOneAndUpdate(
@@ -116,6 +135,12 @@ export async function recordSessionResponse(input: RecordResponseInput) {
       adaptationRound: input.adaptation
         ? { $eq: input.expectedRound, $lt: MAX_ADAPTATION_ROUNDS }
         : input.expectedRound,
+      $expr: {
+        $eq: [
+          { $size: { $ifNull: ["$responseEvents", []] } },
+          input.expectedResponseEventCount
+        ]
+      },
       status: { $ne: "completed" }
     },
     update,

@@ -1,0 +1,38 @@
+$ npm run test:all
+
+> burmese_stem_ai@0.1.0 test:all
+> npm test && npm run test:integration
+
+
+> burmese_stem_ai@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai
+
+
+ Test Files  26 passed (26)
+      Tests  361 passed (361)
+   Start at  21:59:35
+   Duration  2.85s (transform 1.40s, setup 463ms, import 5.65s, tests 2.63s, environment 1.77s)
+
+
+> burmese_stem_ai@0.1.0 test:integration
+> bash scripts/run-integration-tests.sh
+
+
+ RUN  v4.1.11 /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai
+
+(node:94768) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:94768) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:94768) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:94769) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:94769) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+
+ Test Files  2 passed (2)
+      Tests  12 passed (12)
+   Start at  21:59:39
+   Duration  891ms (transform 86ms, setup 241ms, import 110ms, tests 316ms, environment 0ms)
+

@@ -1,0 +1,18 @@
+{
+  "sessions": [],
+  "profiles": [
+    {
+      "_id": "6ac0337aad7123969b0f8533",
+      "learnerId": "SCENARIO-LEARNER-01",
+      "createdAt": "2026-10-02T22:43:06.179Z",
+      "preferences": {
+        "uiLanguage": "en",
+        "supportLanguage": "bilingual",
+        "explanationLevel": "beginner",
+        "learningStyle": "guided",
+        "theme": "light"
+      },
+      "updatedAt": "2026-10-02T22:43:06.184Z"
+    }
+  ]
+}
