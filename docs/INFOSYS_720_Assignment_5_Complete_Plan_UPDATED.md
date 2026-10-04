@@ -5,7 +5,7 @@
 | Implementation-oracle version | 2.1 |
 | Aligned | 30 September 2026 |
 | Protocol | `A5-PROTOCOL-01` version 2.1 |
-| Formal evaluation status | Steps 10–18 and §18.1 recorded; 225 immutable results, 24 PIRQOA rows and 17 scoped claims retained; Steps 24–29 presentation/scaffold/budget/front matter/reference strategy/risk review recorded; Phase E body drafted, front matter reconciled and current-paper citation/Markdown checks complete; 69 evidence entries unchanged (E001–E027/E033–E074); mixed findings/restricted originals retained; NEXT: researcher review, official brief and final submission formatting/sharing checks |
+| Formal evaluation status | Steps 10–18 and §18.1 recorded; 225 immutable results, 24 PIRQOA rows and 17 scoped claims retained; Steps 24–29 and Phase E captures preserved; reader-facing and supplied-rubric revisions recorded (4 October 2026); six keywords official per author clarification; word counts are guidance; 69 evidence entries unchanged (E001–E027/E033–E074); mixed findings/restricted originals retained; NEXT: author creates DOCX from Markdown, then final layout/approval/submission-sharing checks |
 
 ## Refined PoC Contract Used by the Design Evaluation
 
@@ -155,13 +155,13 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **Phase E's [working paper](../evaluation/04_paper/assignment_5_working_paper.md) is drafted and now has the author-requested [reader-facing revision](../evaluation/04_paper/draft_review_revision.md): Introduction, explicit application/RQ descriptions, and findings without unexplained archive codes. Tables/captions and the scenario figure are paper-only derivatives; captured evidence remains unchanged. The [original Phase E snapshot](../evaluation/04_paper/raw/PHASE-E-01-working-paper.md) preserves its 3,050 narrative tokens and 2,453 insertion tokens; those are historical counts, not the revision's totals. The [current verification](../evaluation/04_paper/raw/READER-REV-01-verification-02.json) recomputes counts and checks preservation. The 140-word abstract, eight-word title, six keywords and twelve references remain unchanged. Next review against the original brief and prepare the required submission format; official counting rules, final rendered layout and sharing review remain open. All 69 evidence entries, E073, earlier drafting captures, results and 66 B01 identities are unchanged; no new evaluation, endorsement or release clearance.**
+> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) has been revised against the supplied rubric and for direct researcher-role wording on 4 October 2026. The [rubric review and Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) records six official keywords per author clarification, suggested rather than strict counts, all required methods, explicit criterion/method-to-RQ mappings and copy/format instructions. The [latest wording record](../evaluation/04_paper/researcher_wording_revision.md) describes researcher direction/content assessment without administrative endorsement terminology in the paper. The paper has an eight-word title, 140 local abstract tokens, two figures, six tables and thirteen cited references. [Current verification](../evaluation/04_paper/raw/AUTHOR-WORDING-01-verification.json) records counts and unchanged evidence/source identities. Earlier revision counts remain historical. NEXT: the author creates the DOCX from the Markdown, then reviews its layout and submission/sharing scope. All 69 evidence entries, E073, earlier captures, results and 66 production identities remain unchanged; no new evaluation, endorsement or release clearance.**
 
 Step 29's [submission-risk review](../evaluation/04_paper/submission_risk_review.md)
 is complete. Recorded Functionality, Usability and design literature are no
 longer marked unexecuted. Results remain mixed: all F Partials and six U Pass/
-three U Partials are retained. Before submission, confirm the original brief/
-counting rules, finish rendered-format checks, and review
+three U Partials are retained. The supplied brief and counting guidance were
+reviewed on 4 October; before submission, finish Word-format checks and review
 the intended evidence package. No rerun, source fix or grade assurance follows
 from this risk review. Phase E subsequently completes body drafting and current
 Markdown/citation checks; original risk captures keep their dated pending wording.
@@ -3624,12 +3624,37 @@ Phase E counts and verification describe the first draft, not this revision.
 heading. These author-requested editorial changes are not official-brief
 confirmation, new results, typeset QA or release clearance.
 
-**NEXT:** researcher review of the complete paper; original brief/rubric
-confirmation (counts, keyword/method rules and submission format); required
-rendered Word/PDF checks and sharing-package review. These gates remain open.
-No submission-ready typesetting, overall compliance or release clearance is
-claimed. Any brief-driven shortening must use paper-only derivatives while
-preserving captured evidence and essential counterexamples.
+**Rubric-informed revision, 4 October 2026 (`RUBRIC-REV-01`).** The supplied
+instructions and complete specification/rubric PDFs were read and inspected.
+The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) now
+justifies method selection, gives recorded reproduction context and the exact
+simulation corpus, maps every F/U criterion outcome and summarised method
+finding to RQs, and restores the problem/requirement/objective chain. FURPS
+uses an honest secondary citation to the consulted handout, adding one
+reference without implying access to the original book. The paper has two
+figures, six tables, thirteen cited references and a 141-token abstract.
+[Review/handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) and
+[current verification](../evaluation/04_paper/raw/RUBRIC-REV-01-verification-02.json)
+record source discrepancies, current counts, boundaries and preservation.
+Six keywords follow the author's official clarification despite V3's older
+five-keyword line; counts are guidance, not strict caps. No new outcome or
+human endorsement occurs. The previous reader-facing paper is retained.
+
+**Researcher-role wording, 4 October 2026 (`AUTHOR-WORDING-01`).** The paper
+now states researcher direction, content assessment and results without
+endorsement/drafting-tool terminology. Required GenAI evaluation and the LLM
+artefact remain described. Automated checks, single-assessor limits and
+provisional fresh-scenario content are not recast as independently executed
+or newly reviewed. [Latest record](../evaluation/04_paper/researcher_wording_revision.md)
+and [verification](../evaluation/04_paper/raw/AUTHOR-WORDING-01-verification.json)
+preserve original operator/review provenance outside the paper. The current
+abstract has 140 local tokens; previous checks apply to their captured drafts.
+
+**NEXT:** the author creates the required DOCX by copying the Markdown and
+embedding both figures, then checks its actual layout, references, author
+approval and intended submission/sharing package. No assistant DOCX creation,
+submission-ready typesetting, grade prediction or release clearance is claimed.
+The original-brief/keyword/counting gate is resolved; final Word checks remain.
 
 ---
 
@@ -3643,23 +3668,24 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 ## 40.1 Immediate request
 
-Review [the complete working paper](../evaluation/04_paper/assignment_5_working_paper.md)
-and attach the official Assignment 5 brief/rubric. Then use:
+The supplied rubric review is complete with documented qualifications. The
+author will create the DOCX from [the working paper](../evaluation/04_paper/assignment_5_working_paper.md),
+following [the Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md).
+After preparing it, use:
 
-> Check the working paper against the supplied official brief, including all
-> counting, keyword, method and submission-format rules. Preserve evidence,
-> native outcomes and source-access limits. Identify any conflict before
-> changing scope. Prepare and inspect the required submission format, using
-> labelled paper-only derivatives if shortening is required; do not overwrite
-> E069/E073, alter B01, invent results or distribute restricted captures.
+> Review my final DOCX against evaluation/rubric. Check actual formatting,
+> figure/table legibility, APA 7 references and whether copying preserved all
+> outcomes and mappings. Keep six keywords; word counts are guidance. Report
+> any defect before making changes. Do not rerun evaluation, alter the frozen
+> implementation, invent results or distribute restricted captures.
 
 ## 40.2 Requests after each completed step
 
 Proceed one step at a time:
 
-1. `Review the Phase E working paper and confirm the original brief's counting, keyword, method and submission-format requirements.`
-2. `Resolve any confirmed compliance conflict with tracked paper-only edits; retain evidence originals, failures, scholarly warrants and qualifications.`
-3. `Prepare and visually inspect the required submission format, rerun citation/count checks on that version, and review the intended sharing package.`
+1. **Completed:** supplied-rubric review and Markdown revision, 4 October 2026; six keywords and non-strict count guidance applied.
+2. **Author next:** copy the working paper into Word, insert both figures and apply the required styles; review the resulting DOCX.
+3. **Optional assistant request:** `Inspect my final DOCX for copying/layout/reference defects and review the intended submission/sharing package; preserve all recorded findings.`
 
 At every stage, ask for execution—not a replacement plan—unless the frozen
 protocol contains a real ambiguity. The agent should inspect current files,
@@ -3670,7 +3696,7 @@ blank when execution is blocked.
 
 Only after Steps 20–23 are complete, Step 24's figures/tables and Step 25's
 structure are checked, and Step 26's word allocation is recorded (now fulfilled;
-official counting rules remain unconfirmed):
+official counting guidance was subsequently reviewed on 4 October 2026):
 
 > Write Section 2: Conceptual Artefact Evaluation at the 1,000-word narrative target using only
 > recorded conceptual evidence and verified references.
@@ -3689,15 +3715,15 @@ official counting rules remain unconfirmed):
 ## Assignment requirements — current Markdown checks versus official compliance
 
 - [x] Title ≤10 words (eight; nine with hyphen split)
-- [x] Abstract ≤150 words (140; 147 with hyphens split)
-- [x] Exactly six distinct keywords per current user instruction, body-reconciled
-- [x] Conceptual narrative within suggested 800–1200 (1,000 local tokens; insertions separate)
-- [x] Design narrative within suggested 800–1200 (1,100 local tokens; insertions separate)
-- [x] Results narrative within suggested 500–750 (600 local tokens; insertions separate)
-- [x] Working-paper author–year/reference correspondence and APA-style source/version records checked (twelve pairs)
-- [x] All two figures/five tables numbered, referenced and unchanged in Markdown
-- [ ] Original brief confirms official counting, six-keyword, method and overall requirements
-- [ ] Required rendered format, official editor counts and final APA 7 page layout inspected
+- [x] Abstract kept compact (140 local tokens after researcher-role wording revision; final Word count not measured)
+- [x] Exactly six distinct keywords, confirmed official by the author
+- [x] Conceptual count recorded; suggested 800–1200 is guidance, not a strict cap
+- [x] Design count recorded; suggested 800–1200 is guidance, not a strict cap
+- [x] Results count recorded; suggested 500–750 is guidance, not a strict cap
+- [x] Current-paper author–year/reference correspondence and source/version records checked (thirteen cited references; honest FURPS secondary attribution)
+- [x] Two figures/six tables consistently labelled; paper-only derivatives do not change captured evidence
+- [x] Supplied specifications/rubric reviewed; user-confirmed six keywords and suggested counts applied; source discrepancies documented outside the paper
+- [ ] Author-created DOCX, final APA 7 layout and copied figures/tables visually inspected
 - [ ] Intended evidence/submission package reviewed; restricted originals not distributed
 
 ## Conceptual evaluation — COMPLETE

@@ -1,0 +1,118 @@
+{
+  "revisionId": "RUBRIC-REV-01",
+  "userFacingReviewDate": "4 October 2026, Pacific/Auckland",
+  "checkedAt": "2026-10-03T23:27:38.501Z",
+  "paperHash": "488105ba8ae1e8323fa76cba7f4e7bb593a2a6d94ecd1d602f1e87d0d29d59b7",
+  "bodyHash": "adb2676e989ee0b8ae1bec0f11a7f562f5a1f7260434d7632f369f484a575bcb",
+  "previousPaperHash": "3352a828eb04a5d28cdb7f356e17a141545ebd61acf43fd7bd3d099abc292185",
+  "handOffHash": "b761dc31dae73c7a5406d010f0d0f350e5a88512d02bbdf6baeb3437bdc4dee9",
+  "headings": 28,
+  "tables": 6,
+  "figures": 2,
+  "referenceEntries": 13,
+  "citations": [
+    {
+      "author": "Athukorala",
+      "count": 2
+    },
+    {
+      "author": "Dunlosky",
+      "count": 1
+    },
+    {
+      "author": "Goodhue",
+      "count": 4
+    },
+    {
+      "author": "Hevner",
+      "count": 4
+    },
+    {
+      "author": "Htet",
+      "count": 4
+    },
+    {
+      "author": "Ji",
+      "count": 1
+    },
+    {
+      "author": "Kleidermacher",
+      "count": 2
+    },
+    {
+      "author": "Kuzu",
+      "count": 1
+    },
+    {
+      "author": "Sweller",
+      "count": 1
+    },
+    {
+      "author": "Tran",
+      "count": 1
+    },
+    {
+      "author": "University of Auckland",
+      "count": 1
+    },
+    {
+      "author": "van de Pol",
+      "count": 4
+    },
+    {
+      "author": "Venable",
+      "count": 3
+    }
+  ],
+  "metrics": {
+    "counter": "Local Unicode tokens, internal apostrophes/hyphens retained; link labels counted, URLs/image alt text excluded. Body includes tables/captions/notes but not headings or figure-internal text.",
+    "sections": [
+      {
+        "section": 1,
+        "bodyTokensIncludingTablesAndNotes": 250
+      },
+      {
+        "section": 2,
+        "bodyTokensIncludingTablesAndNotes": 1578
+      },
+      {
+        "section": 3,
+        "bodyTokensIncludingTablesAndNotes": 2808
+      },
+      {
+        "section": 4,
+        "bodyTokensIncludingTablesAndNotes": 828
+      },
+      {
+        "section": 5,
+        "bodyTokensIncludingTablesAndNotes": 150
+      }
+    ],
+    "mainBodyWords": 5614,
+    "appendixWords": 159,
+    "abstractWords": 141,
+    "titleWhitespaceWords": 8,
+    "keywords": 6,
+    "referenceWords": 331,
+    "mainBodyPlusAppendixPlusAbstract": 5914,
+    "bodyCountsAreGuidance": true,
+    "WordCountVerified": false
+  },
+  "rubricSourcesRead": [
+    "instructions.md",
+    "720_A5_Specifications_V3.pdf: all 4 pages",
+    "720_Assignment_5_Rubric.pdf: both pages"
+  ],
+  "pdfPagesRenderedAndInspected": 6,
+  "keywordInstruction": "Six per user-confirmed official clarification; older PDF says at most five",
+  "contentAlignmentReviewRecorded": true,
+  "gradeAssigned": false,
+  "registeredEvidencePreserved": 69,
+  "productionFilesPreserved": 66,
+  "registerUnchanged": true,
+  "scope": "Rubric-informed editorial/document checks; no formal evaluation rerun, new content endorsement, production change or Word/PDF authoring",
+  "limitations": "Known-token/mapping/citation/identity checks plus manual review; not exhaustive semantic verification, full-text source reappraisal or final Word layout/integrity/submission certification",
+  "finalDocxPrepared": false,
+  "submissionReady": false,
+  "failures": []
+}

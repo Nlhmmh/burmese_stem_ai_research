@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; 225 results, 24 PIRQOA chains and 17 scoped claims preserved; Steps 24–29 presentation/scaffold/budget/front matter/references/risk review retained; Phase E body drafted, front matter reconciled, current-paper citation/Markdown checks complete; 69 evidence entries unchanged; mixed findings/release limits retained; NEXT: researcher review, official brief and rendered submission/sharing checks |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; 225 results, 24 PIRQOA chains and 17 scoped claims preserved; Steps 24–29, Phase E and reader-revision captures retained; supplied-rubric Markdown revision recorded 4 October 2026; six keywords official per author clarification, counts are guidance; 69 evidence entries unchanged; mixed findings/release limits retained; NEXT: author-created DOCX review and submission/sharing checks |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -680,10 +680,32 @@ verification describe the original draft, not the current revision. All native
 outcomes, failures, source-access limits and unassessed checks remain; criteria
 and acceptance rules are unchanged. Official-brief, rendered submission and
 sharing review remain open.
-Acceptance criteria are still 2.1. **Next: researcher review, attach/check the
-official brief, prepare the required rendered submission format and review
-the intended sharing package.** No final Word/PDF, official overall compliance
-or public-release clearance is claimed.
+**Rubric-informed revision, 4 October 2026 (`RUBRIC-REV-01`).** Complete supplied
+instructions, specification and marking rubric have been reviewed. The current
+[paper](../04_paper/assignment_5_working_paper.md) adds method justification,
+recorded environment/model/corpus details and explicit F/U and method-to-RQ
+mappings. The [review and Word handoff](../04_paper/rubric_review_and_word_handoff.md)
+records the author-confirmed six keywords, non-strict word guidance, source
+discrepancies and required Word styles. The paper now has two figures, six
+tables and thirteen references; current counts and unchanged identities are in
+[verification](../04_paper/raw/RUBRIC-REV-01-verification-02.json). Historical
+drafts and their checks remain unchanged. No evaluation result, acceptance rule,
+production file or new human endorsement changes.
+
+**Researcher-role wording, 4 October 2026 (`AUTHOR-WORDING-01`).** The current
+paper states researcher direction, content assessment and results without
+administrative endorsement/drafting-tool wording. Required substantive methods,
+automated execution, single-assessor limits and provisional scenario status
+remain accurate. [Wording record](../04_paper/researcher_wording_revision.md)
+and [latest verification](../04_paper/raw/AUTHOR-WORDING-01-verification.json)
+preserve prior captures and original operator/review provenance outside the
+paper. Current abstract count is 140 local tokens; all evidence and production
+identities remain unchanged. This does not introduce a new review or outcome.
+
+Acceptance criteria are still 2.1. **Next: the author creates the DOCX from the
+Markdown, embeds the figures and checks final layout, approval and intended
+submission/sharing scope.** Missing-brief/keyword/count guidance is resolved;
+no final Word/PDF, grade guarantee or public-release clearance is claimed.
 
 Static command plan, run from `burmese_stem_ai/` only during execution:
 

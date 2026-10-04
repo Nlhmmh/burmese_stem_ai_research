@@ -1,18 +1,3 @@
-# Evaluating Adaptive LLM Scaffolding for Burmese-Speaking STEM Learners
-
-## Abstract
-
-Burmese-speaking STEM learners may need contextual explanations of English terminology and unfamiliar concepts. This study evaluates a Context-Aware Adaptive STEM Scaffolding Framework and a bilingual large language model proof of concept. Conceptual evaluation combines GenAI critique, literature analysis, informed argument and a historical scenario. Design evaluation uses functionality and usability criteria, static and dynamic analysis, bounds analysis, simulation, black-box and white-box testing, literature comparison and a live scenario. Recorded evidence supports bounded routing, response traceability and persistence under tested conditions. Content assessment recorded 18 Pass, 71 Partial and two Fail judgements across 91 delivered outputs. Technical usability inspection found six criteria Pass and three Partial. The framework has a literature-grounded rationale, but terminology interpretation and content adequacy remain partial. The contribution is an evaluated integration of bounded, learner-responsive support; improved learning, calibrated scaffolding and an optimal adaptation dose remain unestablished.
-
-## Keywords
-
-- Adaptive STEM Scaffolding
-- Burmese-Speaking Learners
-- Large Language Models
-- STEM Terminology Support
-- Task–Technology Fit
-- Design Science Evaluation
-
 ## 1. Introduction
 
 Burmese-speaking STEM learners may need contextual explanations of specialised English terminology and unfamiliar concepts, rather than literal translation alone. An earlier literature and system review identified fragmented support for language, terminology and scaffolding within its selected corpus (Htet, 2026). This study evaluates an approach that combines terminology support, conceptual explanation and learner-responsive assistance. These needs constitute the research motivation; their prevalence and magnitude were not measured in this evaluation. Three research questions guide the assessment:
@@ -257,34 +242,6 @@ The framework and application offer an evaluated integration of contextual termi
 RQ1–RQ3 remain partially supported: terminology fidelity, scientific adequacy and dependable meaning repair limit the broader requirements. Self-reported need guides assistance without diagnosing competence; High-to-fade, two stored adaptations and explicit completion are policies, not mastery or an optimal instructional dose. Mixed content and interface findings remain part of the contribution rather than exceptions hidden by coverage.
 
 Future work should address the Burmese/STEM errors, delivery failures and interaction defects under a newly identified baseline with affected reruns. Appropriate learner and independent content assessment would then be needed to examine benefit in practice. This evaluation establishes neither improved learning nor calibrated educational scaffolding.
-
-## References
-
-Athukorala, K. S. N., & De Silva, D. I. (2025). Bridging language barriers in programming education: Java programming assistance tool for Sinhala native speakers. *International Journal of Computer Theory and Engineering, 17*(3), 151–169. [https://doi.org/10.7763/IJCTE.2025.V17.1378](https://doi.org/10.7763/IJCTE.2025.V17.1378)
-
-Dunlosky, J., & Rawson, K. A. (2012). Overconfidence produces underachievement: Inaccurate self evaluations undermine students' learning and retention. *Learning and Instruction, 22*(4), 271–280. [https://doi.org/10.1016/j.learninstruc.2011.08.003](https://doi.org/10.1016/j.learninstruc.2011.08.003)
-
-Goodhue, D. L., & Thompson, R. L. (1995). Task-technology fit and individual performance. *MIS Quarterly, 19*(2), 213–236. [https://doi.org/10.2307/249689](https://doi.org/10.2307/249689)
-
-Hevner, A. R., March, S. T., Park, J., & Ram, S. (2004). Design science in information systems research. *MIS Quarterly, 28*(1), 75–105. [https://doi.org/10.2307/25148625](https://doi.org/10.2307/25148625)
-
-Htet, N. L. (2026). *Scaffolding low-resource STEM education with large language models* [Unpublished course assignment]. University of Auckland.
-
-Ji, Z., Lee, N., Frieske, R., Yu, T., Su, D., Xu, Y., Ishii, E., Bang, Y., Chen, D., Dai, W., Chan, H. S., Madotto, A., & Fung, P. (2024). *Survey of hallucination in natural language generation* (Version 7) [Preprint]. arXiv. [https://arxiv.org/abs/2202.03629v7](https://arxiv.org/abs/2202.03629v7)
-
-Kleidermacher, H. C., & Zou, J. (2026). Science across languages: Assessing LLM multilingual translation of scientific papers. In V. Demberg, K. Inui, & L. Marquez (Eds.), *Findings of the Association for Computational Linguistics: EACL 2026* (pp. 3932–3947). Association for Computational Linguistics. [https://doi.org/10.18653/v1/2026.findings-eacl.204](https://doi.org/10.18653/v1/2026.findings-eacl.204)
-
-Kuzu, T. E. (2026). AI-supported translanguaging processes in primary school: Empirical insights into ChatGPT's role in multilingual interactions. *Technology, Knowledge and Learning*. Advance online publication. [https://doi.org/10.1007/s10758-026-09974-7](https://doi.org/10.1007/s10758-026-09974-7)
-
-Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. *Cognitive Science, 12*(2), 257–285. [https://doi.org/10.1207/s15516709cog1202_4](https://doi.org/10.1207/s15516709cog1202_4)
-
-Tran, H. T. H., Martinc, M., Caporusso, J., Doucet, A., & Pollak, S. (2023). *The recent advances in automatic term extraction: A survey* (Version 1) [Preprint]. arXiv. [https://arxiv.org/abs/2301.06767v1](https://arxiv.org/abs/2301.06767v1)
-
-University of Auckland. (2026). *INFOSYS 720: Evaluate information systems artefacts* (Assignment 5 specifications, Version 3) [Course handout].
-
-van de Pol, J., Volman, M., & Beishuizen, J. (2010). Scaffolding in teacher–student interaction: A decade of research. *Educational Psychology Review, 22*(3), 271–296. [https://doi.org/10.1007/s10648-010-9127-6](https://doi.org/10.1007/s10648-010-9127-6)
-
-Venable, J., Pries-Heje, J., & Baskerville, R. (2016). FEDS: A framework for evaluation in design science research. *European Journal of Information Systems, 25*(1), 77–89. [https://doi.org/10.1057/ejis.2014.36](https://doi.org/10.1057/ejis.2014.36)
 
 ## Appendix A. Fixed Simulation Inquiries
 
