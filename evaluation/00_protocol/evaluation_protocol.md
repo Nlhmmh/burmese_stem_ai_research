@@ -5,7 +5,7 @@
 | Protocol ID | A5-PROTOCOL-01 |
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
-| Status | B01 frozen; Steps 10–18 and §18.1 recorded; 225 results, 24 PIRQOA chains and 17 scoped claims preserved; Steps 24–29, Phase E and reader-revision captures retained; supplied-rubric Markdown revision recorded 4 October 2026; six keywords official per author clarification, counts are guidance; 69 evidence entries unchanged; mixed findings/release limits retained; NEXT: author-created DOCX review and submission/sharing checks |
+| Status | B01 frozen; Steps 10–18 and §18.1 recorded; 225 results, 24 PIRQOA chains and 17 scoped claims preserved; Steps 24–29, Phase E and reader-revision captures retained; supplied-rubric and clear-language Markdown revisions recorded 4 October 2026; six exact Assignment 4 keywords, no author-assignment literature citations, counts are guidance; 69 evidence entries unchanged; mixed findings/release limits retained; NEXT: author-created DOCX review and submission/sharing checks |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -701,6 +701,27 @@ and [latest verification](../04_paper/raw/AUTHOR-WORDING-01-verification.json)
 preserve prior captures and original operator/review provenance outside the
 paper. Current abstract count is 140 local tokens; all evidence and production
 identities remain unchanged. This does not introduce a new review or outcome.
+
+**Plain-language revision, 4 October 2026 (`LANGUAGE-REV-01`).** The paper
+now uses clearer academic English, Design evaluation terminology and the six
+exact Assignment 4 keywords. Citations to the author's assignments are removed.
+Literature-grounded informed argument, recorded findings, source-access limits
+and researcher-role wording remain. The ion contradiction was rechecked in
+the original returned and stored content, without changing its rating.
+[Latest record](../04_paper/plain_language_revision.md) and
+[verification](../04_paper/raw/LANGUAGE-REV-01-verification.json) preserve
+all 69 evidence entries, 66 production identities and earlier captures.
+The current paper has 135 local abstract tokens and twelve cited references.
+Previous checks and counts describe their captured revisions, not this one.
+No new evaluation run, content assessment or release permission is implied.
+
+**Passive-voice revision, 4 October 2026 (`PASSIVE-REV-01`).** Evaluation and
+content assessment are now described without author-focused researcher wording.
+Quoted learner choices remain unchanged. The
+[latest record](../04_paper/passive_voice_revision.md) and
+[verification](../04_paper/raw/PASSIVE-REV-01-verification.json) confirm unchanged
+findings, references, six keywords, 69 evidence entries and 66 production identities.
+The current abstract contains 137 local tokens. No evaluation was rerun.
 
 Acceptance criteria are still 2.1. **Next: the author creates the DOCX from the
 Markdown, embeds the figures and checks final layout, approval and intended

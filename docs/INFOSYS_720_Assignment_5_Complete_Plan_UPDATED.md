@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) has been revised against the supplied rubric and for direct researcher-role wording on 4 October 2026. The [rubric review and Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) records six official keywords per author clarification, suggested rather than strict counts, all required methods, explicit criterion/method-to-RQ mappings and copy/format instructions. The [latest wording record](../evaluation/04_paper/researcher_wording_revision.md) describes researcher direction/content assessment without administrative endorsement terminology in the paper. The paper has an eight-word title, 140 local abstract tokens, two figures, six tables and thirteen cited references. [Current verification](../evaluation/04_paper/raw/AUTHOR-WORDING-01-verification.json) records counts and unchanged evidence/source identities. Earlier revision counts remain historical. NEXT: the author creates the DOCX from the Markdown, then reviews its layout and submission/sharing scope. All 69 evidence entries, E073, earlier captures, results and 66 production identities remain unchanged; no new evaluation, endorsement or release clearance.**
+> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) has been revised against the supplied rubric and the author's language and passive-voice feedback on 4 October 2026. The [language record](../evaluation/04_paper/plain_language_revision.md) documents clearer academic English, Design evaluation terminology, the six exact Assignment 4 keywords, removal of citations to the author's assignments and the ion evidence recheck. The [latest passive-voice record](../evaluation/04_paper/passive_voice_revision.md) documents removal of author-focused researcher wording. The paper retains an eight-word title, two figures and six tables, with 137 local abstract tokens and twelve cited references. [Current verification](../evaluation/04_paper/raw/PASSIVE-REV-01-verification.json) records counts and unchanged evidence/source identities. Earlier revision counts remain historical. The [Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) remains applicable. NEXT: the author creates the DOCX from the Markdown, then reviews its layout and submission/sharing scope. All 69 evidence entries, E073, earlier captures, results and 66 production identities remain unchanged. No new evaluation, endorsement or release clearance is introduced.**
 
 Step 29's [submission-risk review](../evaluation/04_paper/submission_risk_review.md)
 is complete. Recorded Functionality, Usability and design literature are no
@@ -3649,6 +3649,26 @@ or newly reviewed. [Latest record](../evaluation/04_paper/researcher_wording_rev
 and [verification](../evaluation/04_paper/raw/AUTHOR-WORDING-01-verification.json)
 preserve original operator/review provenance outside the paper. The current
 abstract has 140 local tokens; previous checks apply to their captured drafts.
+
+**Plain-language revision, 4 October 2026 (`LANGUAGE-REV-01`).** The paper
+uses clearer academic English and Design evaluation terminology. It retains
+the six exact keywords from Assignment 4 but does not cite the author's
+assignments as literature. Dense evaluation-limit statements and sentence-joining
+semicolons/colons were replaced. The ion finding was checked against the
+completed-run response and stored session and rewritten as a precise internal
+contradiction. [Latest record](../evaluation/04_paper/plain_language_revision.md)
+and [verification](../evaluation/04_paper/raw/LANGUAGE-REV-01-verification.json)
+retain prior captures, all findings and source identities. The current paper
+has 135 local abstract tokens and twelve references. Earlier counts describe
+their respective revisions. No evaluation or content ratings were rerun.
+
+**Passive-voice revision, 4 October 2026 (`PASSIVE-REV-01`).** Author-focused
+researcher wording was replaced with passive descriptions of evaluation and
+assessment. Quoted learner interface choices were retained. The
+[latest record](../evaluation/04_paper/passive_voice_revision.md) and
+[verification](../evaluation/04_paper/raw/PASSIVE-REV-01-verification.json)
+confirm unchanged findings, references, keywords and evidence/source identities.
+The current abstract has 137 local tokens. Earlier counts are historical.
 
 **NEXT:** the author creates the required DOCX by copying the Markdown and
 embedding both figures, then checks its actual layout, references, author
