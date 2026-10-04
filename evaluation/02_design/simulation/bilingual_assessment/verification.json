@@ -1,0 +1,1207 @@
+{
+  "assessmentId": "BIL-20261005-01",
+  "clientDate": "5 October 2026, Pacific/Auckland",
+  "summary": {
+    "sampleOutputs": 32,
+    "pairedPassages": 104,
+    "findings": 41,
+    "severityCounts": {
+      "Minor": 27,
+      "Major": 4,
+      "Advisory": 10
+    },
+    "categoryCounts": {
+      "Accessibility / retention": 7,
+      "Fluency / script": 8,
+      "Terminology": 6,
+      "Meaning / accuracy": 9,
+      "Shared content limitation": 10,
+      "Omission / addition": 1
+    },
+    "outputStatusCounts": {
+      "No specific issue identified": 6,
+      "Minor findings only": 18,
+      "Major findings": 3,
+      "Shared-content advisories only": 5
+    },
+    "majorAffectedOutputs": [
+      "SIM04-B/initial",
+      "SIM07-B/initial",
+      "SIM08-B/initial"
+    ],
+    "outputsWithMajorOrMinor": 21,
+    "passagesWithMajorOrMinor": 29,
+    "originalSampleRatings": {
+      "Pass": 4,
+      "Partial": 26,
+      "Fail": 2
+    },
+    "wholeCorpusRatings": {
+      "Partial": 71,
+      "Pass": 18,
+      "Fail": 2
+    }
+  },
+  "originalRegisteredEvidencePreserved": 69,
+  "productionFilesPreserved": 66,
+  "originalResultsPreserved": 225,
+  "originalTraceabilityChainsPreserved": 24,
+  "allSelectedSpansLocated": true,
+  "selectedTextMatchesPersistedState": true,
+  "selectedPassages": [
+    {
+      "output": "BIL-O01",
+      "caseId": "SIM01-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "d5fd115ade58812792552821408ed7cd3a9775ab67f0b993fcc88000f943ae3b",
+      "myHash": "2d12448b06647d87a9b8eedb5df6c2781e3c6bc5491d89218bc1b491d1bc4ffe"
+    },
+    {
+      "output": "BIL-O01",
+      "caseId": "SIM01-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "0e284a9cc63c7491f069a0c50ff8cf171af3993e8cd726967a474756855db26d",
+      "myHash": "fc17584de92a4e2bca005bd2501f828315b134c57854a14eb4ee702e2e07debc"
+    },
+    {
+      "output": "BIL-O01",
+      "caseId": "SIM01-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "2964332811126b515698d80bc1284b24775f36ac20aa7d565297c142a1831275",
+      "myHash": "fa80275a91b52c39686ea2696f70acaef53af9314b5670106b608568f78aa206"
+    },
+    {
+      "output": "BIL-O01",
+      "caseId": "SIM01-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "23339db7d866068b98e3a9bb14ab8a88c2f1fff2804a0a7c0ad4ad1a6c72dfe5",
+      "myHash": "ad702287f248a301587a7a98d43c3bc4a15a3456cfb76b1bce293f3a8b0df8ab"
+    },
+    {
+      "output": "BIL-O01",
+      "caseId": "SIM01-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "da42e2d2eda00af369e562ce03e140f70f0d55f810a21701dcfd8875f689d269",
+      "myHash": "5e3062502e02f36d5865eb6829140585e89ed05f88b175e92b6f54d10ef6d31a"
+    },
+    {
+      "output": "BIL-O02",
+      "caseId": "SIM02-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "f4b9fe6f4cd44581c0a49e9593f47401f0b778bc7346d42a284b8e56a3d5f497",
+      "myHash": "2f48f02607009b9764cb11710a88e08a48c14fa24b3b90e8ca7fdf5b5648e9bf"
+    },
+    {
+      "output": "BIL-O02",
+      "caseId": "SIM02-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "80ff585befe28bcfda97349366690d08b35af68a3ecc26d811507e0add770fce",
+      "myHash": "17b16cb982293d441424ca1bbc6f788aadd582fe389bc21a26e75a43854d5243"
+    },
+    {
+      "output": "BIL-O02",
+      "caseId": "SIM02-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F01"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "04b828acbfc0828a098638601fb077d30a5342b59cf45376c323019e51ee23d9",
+      "myHash": "8a84c05eba4ad04c05621aafb0fd8f6a86c7eee442b46742495645a0e4cd6840"
+    },
+    {
+      "output": "BIL-O02",
+      "caseId": "SIM02-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "9aeb859cf593ed8de78874f4fd15ae7245031b628cdd17844a0605e80de25313",
+      "myHash": "9d08a0f6c6a6570c8deb685ccc8b756ffbac31b60a988eb77d4272004ee471b2"
+    },
+    {
+      "output": "BIL-O02",
+      "caseId": "SIM02-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "53f1b149a731e496c529e4be99a0fbfa1891c89a75602cef963bcfd24f0c0e51",
+      "myHash": "457cf17b656164989e26cb561407654027cdf3ae53c8d8097045f053e0505345"
+    },
+    {
+      "output": "BIL-O03",
+      "caseId": "SIM03-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "1000581bdcedfd1b7c79d0c75de6d911a8f42548aee4d6834d11253ae2e0db07",
+      "myHash": "f6797010a5f56cdf99faff7e8e6d547124876c7bf5d5ab51bf8c5c6b3de21a51"
+    },
+    {
+      "output": "BIL-O03",
+      "caseId": "SIM03-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [
+        "BIL-F02"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "45b6b9809c5a34be139bb5a738cbd71d372995518f04ecc8e23c1a4c76b44215",
+      "myHash": "00d7e9a5dd1a98df0bcefa9c59aacf9d9c40edff9450162c7bae1877d566b34f"
+    },
+    {
+      "output": "BIL-O03",
+      "caseId": "SIM03-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F03"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "4d805a6f6716b9c36deebfa7484e04ac4dbb788458b462d2f38cc087b7f66009",
+      "myHash": "1e809ada3912b2a64cccb6aa927a22aee9d8ae40583c7db0165e415b4f4a6ed3"
+    },
+    {
+      "output": "BIL-O03",
+      "caseId": "SIM03-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "165f7372652ee31eb4ca355895e8568caab295e5a6dfd544d997330303d6bf40",
+      "myHash": "efcdd826e0de34dca9a0de8cebb6654181788bac664d138d465dceaf1979dead"
+    },
+    {
+      "output": "BIL-O03",
+      "caseId": "SIM03-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "55b77fe972252e2f4819e5f6b2dd7b007db8627aa7b1822ea463044ef9b8608b",
+      "myHash": "a50d25520edc857db820ae4ac4dd206add8887cbb0ded5f16b47db7d87740205"
+    },
+    {
+      "output": "BIL-O04",
+      "caseId": "SIM04-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [
+        "BIL-F04"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "bc0ad660c12d45cb4000169a9ac54c31bfb06a93ac7c2b986f12aefa8b1ffe5e",
+      "myHash": "8d488bd197b6e6b33ff7fc6536e102c6ec51bc3cfb584cfa0af3ceec6b149f3b"
+    },
+    {
+      "output": "BIL-O04",
+      "caseId": "SIM04-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "ec84eade8f8db8c2bf3f6f6c378472c469d4daaded07bff262ce3eb2c36b9aa6",
+      "myHash": "14b4071964f36805f1030745afbd8e9f5f7a7550c1ef51c95d7da954c35a2256"
+    },
+    {
+      "output": "BIL-O04",
+      "caseId": "SIM04-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F05"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "e90b9568702369f4e2236a130461eed8ef289589ca0e291bb07ec0dd9a75227e",
+      "myHash": "15f0a47b7f8d6f320041b60c77cb3abd480315ef171c2941eae4b248fd98001d"
+    },
+    {
+      "output": "BIL-O04",
+      "caseId": "SIM04-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "cfb6b7c3a0791fb8a5ff52c12788120b50cb82b9a307dd691cc4ee2f44fadcc9",
+      "myHash": "4f177cc0c9e8051ca3890ca22e0a48799ff3c846e413cddff25bad2d37f2afab"
+    },
+    {
+      "output": "BIL-O04",
+      "caseId": "SIM04-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "3e3f123ca525b9098158fb3c744c78765f5aaed1eec47bb8e35386582e6491f1",
+      "myHash": "b6bd064f04c4f782709a2f63c21dd3af521c751b1c1003fb3a5a9f693ffc056a"
+    },
+    {
+      "output": "BIL-O05",
+      "caseId": "SIM05-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "d6c9c9efdcbd13b1e500f050839bd852e08b283a4c7641635fa7346795a05b71",
+      "myHash": "4206f8db6b67816a373b8a07bb7214a7067df4c47b54358e9470497a39ad013e"
+    },
+    {
+      "output": "BIL-O05",
+      "caseId": "SIM05-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "9a2b6b31e2fcc19c6c30e8c46a46590bae41917c4a9bb3ddd4a35d6d0b48d117",
+      "myHash": "086aaa66df2c1e81f127939e70327e84bda182ff7de17bcb1961ba9b2634e19b"
+    },
+    {
+      "output": "BIL-O05",
+      "caseId": "SIM05-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "899db3ce7df4ad62e950aeca53683ddb32ea3c1b1ea8469d5455f61ba32463b3",
+      "myHash": "d6d41f80247c1a38dfc71d312ee355204c8b6221e710f9482bf836a98ae2109a"
+    },
+    {
+      "output": "BIL-O05",
+      "caseId": "SIM05-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "b32d9d0863165e38a0df82354cc7b4d8af475a1b4b77ccdcf9363437790ca8db",
+      "myHash": "09edbe32aab94b4389b6104b560b3d21a44b4a7ad91298195a48773aecc80ac4"
+    },
+    {
+      "output": "BIL-O05",
+      "caseId": "SIM05-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "60e0aa52ceacbc312ee884508102d877777f8e6ea8720b98f16760a33c277d1b",
+      "myHash": "82e6d5290c7979d775041e42373565f4652e7972268393283aef3ae3a1ece889"
+    },
+    {
+      "output": "BIL-O06",
+      "caseId": "SIM06-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [
+        "BIL-F06"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "55495b8ded66e81d5d05c8ef4bc86ed928ee361c55a67a9b259df93e5ef8dbe0",
+      "myHash": "fc8be9365595638ae10fced106dc5a3a65bed526e7d336ccf4b2ca9f8e5f3d2c"
+    },
+    {
+      "output": "BIL-O06",
+      "caseId": "SIM06-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "e09d44e07790935cfc5e88d021ef1ec03acb7159993bfb6cc638e7054dd69846",
+      "myHash": "64092d67b1409aac3bfd647fdc6df0db8a950f625bd6ad801254e06023007a4a"
+    },
+    {
+      "output": "BIL-O06",
+      "caseId": "SIM06-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "41f196444a638ef261df968d9d0968318feb776031bf2d9e689a0ba6e326ae8f",
+      "myHash": "a267e02831aa5ba383d92cda45e22140ab5d0fa3759490450f66a77ce37a61c3"
+    },
+    {
+      "output": "BIL-O06",
+      "caseId": "SIM06-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "9521fa70767e0c9533d53cd6e1adb1c17575dfcff8b2b3e38ae87878d6c35709",
+      "myHash": "9e213fc5105d466cc780b967a8b49dd0beab82d175f85e5c2b3d3aa8219af53e"
+    },
+    {
+      "output": "BIL-O06",
+      "caseId": "SIM06-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "5c8eec7d177d8a741dd671cce551dc4af1bdcfb594290abe5b8f8fc12988b335",
+      "myHash": "9532e990cda2dca878509021e454c84f8bd5224b89c1b1880e89c63f028bce77"
+    },
+    {
+      "output": "BIL-O07",
+      "caseId": "SIM07-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [
+        "BIL-F07",
+        "BIL-F08"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "fdc2b9b5ee3621568eef4619107552e7e34bfd427db891fe3046ec1326c2fde3",
+      "myHash": "095a15bb8e8431bd04a3e1695b59404553bda9b075950ffae09f80ad7f7acd1a"
+    },
+    {
+      "output": "BIL-O07",
+      "caseId": "SIM07-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "8fa434496ad367ec9c27c571a66a8da0ca4f1ec0bc84ef23f66097ee884b7468",
+      "myHash": "c2a73fc6c9cb67a5e6093e3fb376e349ecb30689e97740861b24c542c4a641bf"
+    },
+    {
+      "output": "BIL-O07",
+      "caseId": "SIM07-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F09"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "c3d882cb1f883ce3c65d312e6e21642997f99a8aac29c1ffbf62994bc760eb62",
+      "myHash": "b69a5319b507854fbfe19cba7b487fd18d857a482dbf344ae6084afa7c94ce36"
+    },
+    {
+      "output": "BIL-O07",
+      "caseId": "SIM07-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "d2213e7ff6fc3008661b651ecefe965b76fe29b45360b991a314e4adfc395e43",
+      "myHash": "6716f42f81e80a00feb6299738cadc1081a8c8da1806fb1d3a600542d29b1e10"
+    },
+    {
+      "output": "BIL-O07",
+      "caseId": "SIM07-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "847e880d89198186511f55f6dae784cf627f5ed5051688741ccca169bb9b36a7",
+      "myHash": "b6108496153ef73ddef10c5028cd4aa24ea04544ea3cf50d5372ef4ba6158826"
+    },
+    {
+      "output": "BIL-O08",
+      "caseId": "SIM08-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "995cf4fa591aa0ea8cd2d8b665ad534070357fb0b87967af1f28d6587fafc945",
+      "myHash": "5eacc906b29e831696a0bf81e2ab3b833944a52bf7c3d1a8affa8f0c5a27e008"
+    },
+    {
+      "output": "BIL-O08",
+      "caseId": "SIM08-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "59c33a3227de057a3a8a8590d2b8db0f11231bb1afa73f4755d40c50270880dd",
+      "myHash": "031e3c0565557852f92570384f5dad290dffa3213eda1e4cde8bfa0229707920"
+    },
+    {
+      "output": "BIL-O08",
+      "caseId": "SIM08-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F10"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "07686521f9993025cc222077d005a196402de46014390fcea9fd1eb5a1c26faa",
+      "myHash": "37e934466e7b538803bc360ab7ca9ba54cb2560a28ed1a63a9e346cae1daddef"
+    },
+    {
+      "output": "BIL-O08",
+      "caseId": "SIM08-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "cca80d21d8ae0b1e180094843878874bed9ccf93dee2db602f1f176010bc80b4",
+      "myHash": "ac20bc7efa432e9f82ca93fa133fffb13d6ea8ff289b70eb0cc27f3c1c9c62a5"
+    },
+    {
+      "output": "BIL-O08",
+      "caseId": "SIM08-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "00f697f4e4f8aad33eb152e9696fc8a7709760c8d975af5d6bcd5f16d57f6ce3",
+      "myHash": "aba3c5fda7394e9563f7d35fa0f9fc57808499283606b3ac8173993786c4e20c"
+    },
+    {
+      "output": "BIL-O09",
+      "caseId": "SIM09-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "0ad3df874b10431b8d60ecfa443458df3f567cfb6a4eaefefc667fc0bc58f24d",
+      "myHash": "ae7e2ae6990ebad72aa86ae8bc50ff04c98dea8c87cf026d8d8532069db83e5d"
+    },
+    {
+      "output": "BIL-O09",
+      "caseId": "SIM09-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [
+        "BIL-F11"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "a4b8bde336718c0be0da8f3b2722d2c02774fded5599d459dcffd1a31fef1ce8",
+      "myHash": "56d6c4aba85aa55b93f52a82a8d1bf76334f4e534746ecc560bc35e95b0cb25e"
+    },
+    {
+      "output": "BIL-O09",
+      "caseId": "SIM09-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F12"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "55b5c2e1fdd545aaf98e9e33165a2881ff1cc00ac8255fb2b502c00dec82eba1",
+      "myHash": "f039e203e63ba4d3b727b83853dc0231603ea973e208c71583586763e6bcdb06"
+    },
+    {
+      "output": "BIL-O09",
+      "caseId": "SIM09-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "d763cc882c8bd7719ab4116739df6b1a200d252db519b9e7461efb4cd9c9ff8e",
+      "myHash": "0b6602b3ce0d9c70fcc7c7a1fc7b4b1e6ae9ed5b4117aa103e4f79195991efb7"
+    },
+    {
+      "output": "BIL-O09",
+      "caseId": "SIM09-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "9da4e5bd9068849484a7b82d02542495230bf920ae4f081baab8d140d1e23b2f",
+      "myHash": "b205e24daf3bc0c5bb9aaa4b178f24d184623be6d09b2f63145ed26e152830f8"
+    },
+    {
+      "output": "BIL-O10",
+      "caseId": "SIM10-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "42a37102f2f3cb51da6d3e955f360da37e5c677cd6cc247576cecb5433d283e3",
+      "myHash": "d385c08e782f2f35e5d5d6147b0fbbd3bac1ba90b613947690db612c573e3df2"
+    },
+    {
+      "output": "BIL-O10",
+      "caseId": "SIM10-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "e3654ec7041cbd03b286a8ba8ac7b3466320cd3a83c32b0726c050b04ae43aef",
+      "myHash": "cec69a3e79d779809f80eadffaa5a50aa98e23ae029bc89b48dec209f8014828"
+    },
+    {
+      "output": "BIL-O10",
+      "caseId": "SIM10-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "a0a1135fd6e3cd24c8db3a5eea2a4335ac444f7147e13845e3627cec13c02ffe",
+      "myHash": "8e1af10996e688a1b265971e4e20f85517c7856f508ed1fd745caf1539cb8704"
+    },
+    {
+      "output": "BIL-O10",
+      "caseId": "SIM10-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [
+        "BIL-F13"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "c296a8a81cf6e57b85dd62dd790f18463665bb3859c4d1c2b86209d19359c08a",
+      "myHash": "173a13586b098c3e6f4f87de50a7fcb87b419243da6e5e6f5f948023280c9603"
+    },
+    {
+      "output": "BIL-O10",
+      "caseId": "SIM10-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "18aaa98a8219f7631256d40f7ba527293dab8554eeb23264ca2d29fee9bf67be",
+      "myHash": "b021f9b44dffc36dcc96dc30c931011ab94bbce733b21cf4a65a554e9afff8bc"
+    },
+    {
+      "output": "BIL-O11",
+      "caseId": "SIM11-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "09ec6f3b369bf52229a96c2e79d341d9b827f07f039c0e46e3fe68cff2b27d9c",
+      "myHash": "11f686b84ff4785e35433b364fdc3e2d5536503bf6b1b9950990b155ed29ddc1"
+    },
+    {
+      "output": "BIL-O11",
+      "caseId": "SIM11-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "e9bbbeacdc35944e354b537cf5a1008e037d9288dc111391696d3e1babc90534",
+      "myHash": "d23e60f957bdeeeb2c4d445bd66ff5b8f311d6bf76f71fbcad9955998f3bd513"
+    },
+    {
+      "output": "BIL-O11",
+      "caseId": "SIM11-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F14",
+        "BIL-F15"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "91d959a210b82069ea7a66f8f9be778dfd3beb4dac02e4b35b77ff1ff834f16e",
+      "myHash": "39ccd3a5b14282f9b5eb54ad696de83ff7d48baad83005c5523278e1de6f4284"
+    },
+    {
+      "output": "BIL-O11",
+      "caseId": "SIM11-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "ecf315eb782ea670793b18ffcdafe5684be5663b158e2efe40b9ed5b7c647ed6",
+      "myHash": "8cd302ff18614296bf4a8ebcb09078f8a8d7f107e39b97cb770c7a59f33f9b47"
+    },
+    {
+      "output": "BIL-O11",
+      "caseId": "SIM11-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "7bcb45c7a75865c0f6f6306883b3af8cd8a5d8b6418a97a95978852b60849519",
+      "myHash": "a68b934956fbda9dfb244477fe8f5f8380de4f11aaf81777ff7e4453571a8106"
+    },
+    {
+      "output": "BIL-O12",
+      "caseId": "SIM12-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [
+        "BIL-F16"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "81ef2f38f5b381d6ac895faeb7f239e6b0b3c0bbf02d65b4f62d0add02fcaa56",
+      "myHash": "55cad40ce92068f9bb49d63173abdaa66785f8b7b648901ef08b12908e0c47f7"
+    },
+    {
+      "output": "BIL-O12",
+      "caseId": "SIM12-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "ed48c8258d5973f57d2160d22f29750aafef2b019f03994f90039a13b111da12",
+      "myHash": "be38582bb8bf4d355ab94b9c46d06823e59e03d05d06633ada2198d2ce70832f"
+    },
+    {
+      "output": "BIL-O12",
+      "caseId": "SIM12-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F17",
+        "BIL-F18"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "a0960af6f18c7370ca6451a576b3f68225d1c97651a66a1adfac30c806e2552c",
+      "myHash": "273f6288d759c7a9c8529d538203fcacf0c48326af25acbd44a284da4d425913"
+    },
+    {
+      "output": "BIL-O12",
+      "caseId": "SIM12-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "76ad93f833d7334517e7d783510bf7f90bfd37dc57566a3fc5b22e09c9198012",
+      "myHash": "156464eaf4aac90908414bc5072a5de9b72862666a37c40558da66d1f89c0df3"
+    },
+    {
+      "output": "BIL-O12",
+      "caseId": "SIM12-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "20656402905557e83e009f4dccaebad4adeac29a32255e559ffa9a46834a1659",
+      "myHash": "b3ff2813c3f5399f719d8ba476e1b77b2dd184106827c2da334e53ac58175d50"
+    },
+    {
+      "output": "BIL-O13",
+      "caseId": "SIM13-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "f0b2dc3becb4a8d4d0ed13c65ebce129f3240660820bc3ac310b7f631d0e9933",
+      "myHash": "f10593cd16b6ff816b775a91a157cca800d473f066260765aa0570cfb07cb62c"
+    },
+    {
+      "output": "BIL-O13",
+      "caseId": "SIM13-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "04e0628d03430cb2cd62661a6ee0c5a8e86126b0b2ade5d6ecc6c82299d6726f",
+      "myHash": "d74a0b64a5d56b3322a177e90410ca282d124624adb1bc7dde2c8afd4a564c10"
+    },
+    {
+      "output": "BIL-O13",
+      "caseId": "SIM13-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F19"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "986de0eacff0b482663679b1bdc5270ebb751e23989dcf05d226f6012aa07db0",
+      "myHash": "394e2d44adc113942e98bace23a99fc1881d297dc6b15ac72798c997d9a4a801"
+    },
+    {
+      "output": "BIL-O13",
+      "caseId": "SIM13-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "74a6626562b827db7bcc09bf5d458872cf25d6737799899b44430e1b3aa6ad4d",
+      "myHash": "07f6e0e1dccb06475801dfb08eeb373c72a6b8eb173c9c91a8f8ef03e04b400b"
+    },
+    {
+      "output": "BIL-O13",
+      "caseId": "SIM13-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "860cec834faae2d26a16018146daddc243d6f76dd0108203122bb148214b45e3",
+      "myHash": "ad45fbe828d8641c9c35875ff131274697f116e2882688393310f1757e3b7887"
+    },
+    {
+      "output": "BIL-O14",
+      "caseId": "SIM16-B",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "f675111404273dd9e98af533e8be814a2e98dd6ac8b9f58edcf9f9c580d63371",
+      "myHash": "a446c1917bf1345d1d2b836a822f9640c1b3ece789aedaca7bebedfcee6b9f51"
+    },
+    {
+      "output": "BIL-O14",
+      "caseId": "SIM16-B",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "1eec801b13a5ae35b5830f0c22988aae91284603bc8e5ca78443796fc11935b9",
+      "myHash": "53605e7f0633671a83b12ad938cccf26ddf5d1a9f1522e99ba27caa25f69b705"
+    },
+    {
+      "output": "BIL-O14",
+      "caseId": "SIM16-B",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F20"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "f9f39ae2f7efc5afaa0ad04337f082064b19222a1daf9e24e6a0c4ae7899cbfb",
+      "myHash": "f08d8b639fd70675a1cdcfc85de585d1758db53f082d6a139576246f8fb5f413"
+    },
+    {
+      "output": "BIL-O14",
+      "caseId": "SIM16-B",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "c420d1d70b1e6e8b8a86ad437681556a5263231ff5db4dca8f3580ddeaf5c1fd",
+      "myHash": "31ddb330e8de4146c9ecb4cc1d6c6665275bc7b77153d4fb624eb17cfb6a2dac"
+    },
+    {
+      "output": "BIL-O14",
+      "caseId": "SIM16-B",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "d25486a5840fbfa0d19dec97088094ce956a5c9a714647a9fe6d4a0accc2a37a",
+      "myHash": "b93f55386120bf588ecea21c32ad885ed3204bbc2bf7b6c56e358a74d6b58dfd"
+    },
+    {
+      "output": "BIL-O15",
+      "caseId": "SIM-LANG-01",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [
+        "BIL-F21"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "d6c9c9efdcbd13b1e500f050839bd852e08b283a4c7641635fa7346795a05b71",
+      "myHash": "a6ba4a88bc2b0546a28d1b4c6a1bc25b3e822dadfe65ee8a324fae7660c77a46"
+    },
+    {
+      "output": "BIL-O15",
+      "caseId": "SIM-LANG-01",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "d5e1109432a2e83d31c4d5c7e08094e8ff0ffd1c1e135cc164df8b7e6bb14956",
+      "myHash": "d2535a6f33d405cf6fdd7d817cda6129115ac1441dcb5f7b34083a946485905e"
+    },
+    {
+      "output": "BIL-O15",
+      "caseId": "SIM-LANG-01",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "e42724af84389946d491a4178a87ab47879a6acf815d122b2c3e1a528913dcbc",
+      "myHash": "101dc1412468ea42a22dca5006abe9032c525bea415159dda26df0308f96b62a"
+    },
+    {
+      "output": "BIL-O15",
+      "caseId": "SIM-LANG-01",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "58ad9c3cddc5e6c9fabefd685e348142047bc8d9092928697fb8b22c5d321d51",
+      "myHash": "f3bc568d6a9fcfa337f332f5b0b7f0692840882590c2c4f3d19e6fdbcb92eb3c"
+    },
+    {
+      "output": "BIL-O15",
+      "caseId": "SIM-LANG-01",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [
+        "BIL-F22"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "1b74a9bfda9a862be44d1cd0771b45fc5cccf0269ea5831b5460ccb572bb551d",
+      "myHash": "23c02555e0fa5576c21d32d248a50dccf2916dc385c65c878ef1957230665960"
+    },
+    {
+      "output": "BIL-O16",
+      "caseId": "SIM-LANG-01",
+      "outputId": "language",
+      "field": "content",
+      "annotationIds": [
+        "BIL-F23"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "18bdb1f95edddc54f5b68efb761c702ed86374a471badb8f6f9d5ec8bb7518e4",
+      "myHash": "53865eaa7b630ea45187210d21e36958ca05ce03eaf218bd478ea15ac18e645c"
+    },
+    {
+      "output": "BIL-O17",
+      "caseId": "SIM-LANG-02",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [
+        "BIL-F24"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "d6c9c9efdcbd13b1e500f050839bd852e08b283a4c7641635fa7346795a05b71",
+      "myHash": "47a191c00331db60c22f56b8ae58ea1b7e66b942eb8a6864989abe4b59371220"
+    },
+    {
+      "output": "BIL-O17",
+      "caseId": "SIM-LANG-02",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "06da87d691c17f86a5f499890d08d9ccf1bb34a6c205fa979ddc88bb25d1e356",
+      "myHash": "0421af3bff00189a89a51c427b74c06ba50ddfb6f14c5fb52eaefd7fc6639fb4"
+    },
+    {
+      "output": "BIL-O17",
+      "caseId": "SIM-LANG-02",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F25"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "fe192456feb26a69f167798c08f7ba35ee09d2fc906da106ce696492843f284a",
+      "myHash": "e5555fc6378748453140d3efb878e8eb4755eec99a2e924cc4e3d66073cf9b18"
+    },
+    {
+      "output": "BIL-O17",
+      "caseId": "SIM-LANG-02",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "10c8ee134e0e087e1cd30f4d6fd9790f3bf3d90a04d8304a8386eee519ff8b2e",
+      "myHash": "868472f88d917e87af26ab657678097aa854910418d5d9e39b5c6a5128d9098b"
+    },
+    {
+      "output": "BIL-O17",
+      "caseId": "SIM-LANG-02",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "a1ab7ff1e801228b07515757682cadeb5f3915aefc6e3737844bd3f8a11371eb",
+      "myHash": "1213d97199232fb8330695008020b09ab638217442e0640200caacb3e11e7c68"
+    },
+    {
+      "output": "BIL-O18",
+      "caseId": "SIM-LANG-02",
+      "outputId": "language",
+      "field": "content",
+      "annotationIds": [
+        "BIL-F26"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "bdc82e74b4f04bc90ddea149232e860490ebb65b028b1113f2c7fbb186578701",
+      "myHash": "525db11d420e73f655121770984cead3d9d7b8a6472b3ddacbff26d631b8f551"
+    },
+    {
+      "output": "BIL-O19",
+      "caseId": "SIM-LANG-03",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [
+        "BIL-F27"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "d6c9c9efdcbd13b1e500f050839bd852e08b283a4c7641635fa7346795a05b71",
+      "myHash": "3767fdaf81d38cbd73a86033fb695bfb328550e5644b12340f085ca8437cc2ce"
+    },
+    {
+      "output": "BIL-O19",
+      "caseId": "SIM-LANG-03",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [
+        "BIL-F28"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "a94da8739f63205745b18ed27b69d3e14a2ae79928f3bff9b802e1d1f0acfa51",
+      "myHash": "c0e71d989ba80cbe893c5fa8ae33421204e8b6ea1fd0e4b6008b8c1c02cb6a6c"
+    },
+    {
+      "output": "BIL-O19",
+      "caseId": "SIM-LANG-03",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "db00a4b812fa6312e2effca8d92d750b75eb32ed290a485b9aa139d9496636f7",
+      "myHash": "27cebcdc9144304212c9f79734a7507367dcdf3f8f8df57b8bac5d89fa78fb0e"
+    },
+    {
+      "output": "BIL-O19",
+      "caseId": "SIM-LANG-03",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "f160664367a05a2f8c121cc113ce3a4e7a2fbbffd9852c54d331d5683d13288d",
+      "myHash": "b7bdbbf46fca335269a28c1a2b4388c40bddab016d717d71578a52733ca842c5"
+    },
+    {
+      "output": "BIL-O19",
+      "caseId": "SIM-LANG-03",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "a674be93905e6d656c32751bf5f3390f8a7b4358e39091a7fc92d303b95964b8",
+      "myHash": "a772540d323be8bde85bde5022e0e45542592cf9a776c4ae9f992a30edac38a5"
+    },
+    {
+      "output": "BIL-O20",
+      "caseId": "SIM-LANG-03",
+      "outputId": "language",
+      "field": "content",
+      "annotationIds": [
+        "BIL-F29",
+        "BIL-F30"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "fb481ad188c80a9a48b3db8e405c1dea3a1790cc873aa52284d125ba98c7e2e7",
+      "myHash": "07d3d79bf0dae3d6078c399113d260119e92087fcfdc999e9d410a7a29d030fd"
+    },
+    {
+      "output": "BIL-O21",
+      "caseId": "SIM01-C",
+      "outputId": "conceptual",
+      "field": "content",
+      "annotationIds": [
+        "BIL-F31",
+        "BIL-F32"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "2cb915a6a206dd12adaee89811982bfd08ea036bf4196c8b242927170963af9b",
+      "myHash": "8b7df0f03b77a1e6124b4eac4946ef87cb16e70d85e328b2fee11caf5b7e8eaf"
+    },
+    {
+      "output": "BIL-O22",
+      "caseId": "SIM04-C",
+      "outputId": "conceptual",
+      "field": "content",
+      "annotationIds": [
+        "BIL-F33"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "15cde94e999758f906fb249f1b46fc668fb08baeeeb0ad18633d4844342707ac",
+      "myHash": "7af413499781c48ec5bbc2d219ba852e05d2b6033badf527639e5f90fda6e85c"
+    },
+    {
+      "output": "BIL-O23",
+      "caseId": "SIM08-C",
+      "outputId": "conceptual",
+      "field": "content",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "e0f1007dfc18c065a0b1e16a7638e49e53f536c71bca27a267adfd4eb170a09e",
+      "myHash": "014d32aa2013a9802d2ed935a4a9515491de7ea23bd5dabe86280ba495555af4"
+    },
+    {
+      "output": "BIL-O24",
+      "caseId": "SIM13-C",
+      "outputId": "conceptual",
+      "field": "content",
+      "annotationIds": [
+        "BIL-F34"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "bb187a6cbce1f7f82b5ffc8792498cefb6e8b681e09869be9958820b51e82eed",
+      "myHash": "21c5194cbe04fd28e60cdf5fa04a05d2b7d6e8076f285286800c4179010909c6"
+    },
+    {
+      "output": "BIL-O25",
+      "caseId": "SIM16-C",
+      "outputId": "conceptual",
+      "field": "content",
+      "annotationIds": [
+        "BIL-F35"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "8c80a1f361793aa0220e9813292d4bfe9e9f92101d59e3dd4b42992912a0c6c5",
+      "myHash": "dadd1cf57dacc53b3112d2c4d2e8218895b1db8f50a6e3622be32d619839868f"
+    },
+    {
+      "output": "BIL-O26",
+      "caseId": "SIM04-C",
+      "outputId": "simpler",
+      "field": "content",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "7a44fadd43e8da954be9673e7d3e7d3faec2c9eeea5e7997baf197eb1e4d16f4",
+      "myHash": "ff635c789c710f885bdebe4032087a1e014fc747b0494aa64f599a276ff0f08b"
+    },
+    {
+      "output": "BIL-O27",
+      "caseId": "SIM08-C",
+      "outputId": "simpler",
+      "field": "content",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "3ec3e5fec9308970f4d58180b4a44f84a8efa9f6647248788ba372913a71df12",
+      "myHash": "c40d257379b1881b1995456b8b181ebe2d28294910cd9cc3eef4cc0f246599f2"
+    },
+    {
+      "output": "BIL-O28",
+      "caseId": "SIM12-C",
+      "outputId": "simpler",
+      "field": "content",
+      "annotationIds": [
+        "BIL-F36"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "fa17e11555b77fed54aa1d5f0c1a3dd71967ba94484088c089776ec33a7a48b7",
+      "myHash": "46fa262b920db8ad626215c6e6ef87ae28a1b85d1131042636b07fb2cb7c5b41"
+    },
+    {
+      "output": "BIL-O29",
+      "caseId": "SIM04-B",
+      "outputId": "medium_skip",
+      "field": "content",
+      "annotationIds": [
+        "BIL-F37"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "fbdb596be10a70a588430d30e5b14bd8f84236e143f6837628bc05d45ae0d075",
+      "myHash": "d89015c59a8330ddac2b91b4b78bc06fddbdcde6bbed0c47038de19c28934f04"
+    },
+    {
+      "output": "BIL-O30",
+      "caseId": "SIM08-B",
+      "outputId": "medium_skip",
+      "field": "content",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "f7d98c976b5d87ec6aa9bdac872495450d8d36486a484d079ce5088540778a28",
+      "myHash": "63a0687cdfd99c784293a3bfe12dd42347802bdb3fd7e2dae8705be40010499b"
+    },
+    {
+      "output": "BIL-O31",
+      "caseId": "SIM13-B",
+      "outputId": "medium_skip",
+      "field": "content",
+      "annotationIds": [
+        "BIL-F38"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "ecbcef477980f5c40d5e6f392ddd65cfd5606cd8b74cda6c63c81b036ecf4842",
+      "myHash": "96262761d44709d761ab82b602ed6e9ba6930b17baa5a45701d3f7374a2a6632"
+    },
+    {
+      "output": "BIL-O32",
+      "caseId": "SIM01-A",
+      "outputId": "initial",
+      "field": "explanations.simple",
+      "annotationIds": [
+        "BIL-F39"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "1ee2b20d37e7aea2aefcb1a510b130733ea55e821b5fdc1e4d21d07fb1e8724f",
+      "myHash": "ca4a7e39007e428d8c1a945a09337bde68bed70a1296bf145a8357b0528baef1"
+    },
+    {
+      "output": "BIL-O32",
+      "caseId": "SIM01-A",
+      "outputId": "initial",
+      "field": "explanations.realWorldExample",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "43566c77018f6339e6c5bfbde57e31f971989137e02f6c6cdee0932fe4b64445",
+      "myHash": "40d516f4edb101221da68a6629d3cc27860e992c48ee410f79a31e859f680af9"
+    },
+    {
+      "output": "BIL-O32",
+      "caseId": "SIM01-A",
+      "outputId": "initial",
+      "field": "explanations.technical",
+      "annotationIds": [
+        "BIL-F41"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "93b6c52dd513a102f155f61dc7b6d396be704d5de7d89a1a72d343c7ab846c4d",
+      "myHash": "f0c961e86fe11da5819c8cfcb298b2d07009c11a182facc3b9ff438b32bc355a"
+    },
+    {
+      "output": "BIL-O32",
+      "caseId": "SIM01-A",
+      "outputId": "initial",
+      "field": "reflectivePrompt",
+      "annotationIds": [
+        "BIL-F40"
+      ],
+      "reviewStatus": "Examined",
+      "enHash": "6b09b4e49f3766c141f8b147a8db0b4b1aff88299b1d904ea202a82e8bfe2563",
+      "myHash": "e93a6463ba1af7fe9501c5d1289002b2225ce2de32642984169e7aaa795f383c"
+    },
+    {
+      "output": "BIL-O32",
+      "caseId": "SIM01-A",
+      "outputId": "initial",
+      "field": "hint",
+      "annotationIds": [],
+      "reviewStatus": "Examined",
+      "enHash": "25ff60cbfd1c43226d24c43e063df985d6ddbe51889b8fd8d85fea3b2a026b6b",
+      "myHash": "92f2592b07012f634b225959f2cdd99ce97f855c5b645380acc886d6890dd905"
+    }
+  ],
+  "sourceIdentity": {
+    "evaluation/02_design/simulation/raw/SIM-RUN-01-results.jsonl": "3cd1db9135bd92e86a8b96bd1df5955d503e679ad84140be6a6a3763b8042afe",
+    "evaluation/02_design/simulation/raw/SIM-RUN-01-database-snapshot.json": "5312322d52de1baa1e33ae689c60eca626c668003080ea0d1d22b4c3c4969f83",
+    "evaluation/02_design/simulation/raw/SIM-RUN-01-provider.jsonl": "127ae59f140371b9652992351f86788f42efa4b275bcc232e987bd6a52d62c8b",
+    "evaluation/02_design/simulation/raw/SIM-RUN-01-manifest.sha256": "a8be7e07f58363a0e3c4e74b7b5ebca70b3bca1ad13df5d3247ea22140bbd730",
+    "evaluation/02_design/simulation/simulation_results.csv": "f4e56cea0120a593cab3e41e94c95bd37966b39358855f36698b4fd0e4aba85e",
+    "evaluation/02_design/simulation/human_content_scores.csv": "8700f201b41bcc86b0390692e4e33de96f2a269b41a577a010b17c0cf445eeae",
+    "evaluation/02_design/simulation/content_reference_notes.md": "bcd2a676243c183634fa7deef59d79a048f4fd8fae8f84bd44d8f07137b44457",
+    "evaluation/02_design/simulation/bilingual_assessment/method.md": "2e289d2f73d00f88ade6662e74a342ce965ef407bd12ded49dd7779c7fee648b"
+  },
+  "paperHash": "04490de1401a17e4b91d09999535c733730daf181958ccbcbc50b3d75ff38334",
+  "currentHashes": {
+    "evaluation/02_design/simulation/bilingual_assessment/method.md": "2e289d2f73d00f88ade6662e74a342ce965ef407bd12ded49dd7779c7fee648b",
+    "evaluation/02_design/simulation/bilingual_assessment/annotations.json": "093b0de531c5a932552d66550ff5ba45ecdcd99d43f54651a468e5485504ed37",
+    "evaluation/02_design/simulation/bilingual_assessment/results.md": "12bbc16eebea19e1ab99ac3846f522cecf1535dd1c1a3cdc51c68e9651c39125",
+    "evaluation/02_design/simulation/bilingual_assessment/references.md": "db7c9232362aeeaeb0f8bc65a0c3a2287ad0f6244604f59fe09be4962a8e9bc0",
+    "evaluation/02_design/simulation/bilingual_assessment/read_outputs.mjs": "a393d8dbded7d407ce5bcc5dcb6ec536f241a0ead1e79f79e3602e94dfff367b",
+    "evaluation/02_design/simulation/bilingual_assessment/build_assessment.mjs": "829eca9a6ce04f532d717d9145fe6312d5f11ad817e672636eb6a2b59fa7873d",
+    "evaluation/02_design/informed_argument/traceability_bilingual_addendum.md": "71c330f8cc8d8e49ae619c5bfa5efe8ede03f29cd9d6394189a262eda2d749c5",
+    "evaluation/03_results/bilingual_synthesis_addendum.md": "99e2d6c4845810bd683af90a543196977763eb21961924b9a697f21e3e57a17d",
+    "evaluation/03_results/pirqoa_bilingual_addendum.md": "5ec61573bc285670879c218de7a2ed1380dca62aa7e8e9986ee9ef87895205ac",
+    "evaluation/03_results/supplementary_evidence_register.md": "2e676fdd5dd6ff0df2f2fae67fff7e1e525c7cb41329d6fe24532213e96aca51",
+    "evaluation/04_paper/bilingual_assessment_revision.md": "3f2637c039409693bcb2a15b10c57b04e4bbed8637248b37f6bd96667342adc1",
+    "evaluation/00_protocol/evaluation_protocol.md": "e684ee251f4497e3575c864d613fc7962e6d3bf5663799236ad38670a5afbf9d",
+    "docs/INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md": "43dd8e9ccb0f22addb738d110f3b07e2d08d5b19bb4d112a78a805348a9b44aa",
+    "evaluation/04_paper/assignment_5_working_paper.md": "04490de1401a17e4b91d09999535c733730daf181958ccbcbc50b3d75ff38334"
+  },
+  "paperTables": 40,
+  "appendixTables": 35,
+  "mainTables": 5,
+  "keywords": 6,
+  "bibliographyEntries": 13,
+  "figures": 2,
+  "independentHumanReview": false,
+  "WordLayoutChecked": false,
+  "applicationTestsRerun": false,
+  "failures": []
+}

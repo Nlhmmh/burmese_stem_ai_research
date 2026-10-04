@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) includes recorded evaluation tables in Appendices A–I following APPENDIX-REV-01 on 4 October 2026. The [latest revision record](../evaluation/04_paper/appendix_revision.md) and [current verification](../evaluation/04_paper/raw/APPENDIX-REV-01-verification.json) document 32 appendix tables and five unchanged main tables. The full 373-test inventory, 91 delivered-output content ratings and other recorded cases are included. Technical results, content ratings and supporting judgements remain separate. The abstract, six exact Assignment 4 keywords, twelve references, two figures, 69 evidence entries and 66 production identities are unchanged. Earlier rubric, language and passive-voice records remain historical. The [Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) remains applicable. NEXT: the DOCX is created from the Markdown, then wide-table layout, repeated headers, embedded figures and submission/sharing scope are checked. No evaluation rerun or release clearance is introduced.**
+> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) includes recorded evaluation tables in Appendices A–I and the supplementary bilingual assessment BIL-20261005-01, dated 5 October 2026. The [latest revision record](../evaluation/04_paper/bilingual_assessment_revision.md) and [current verification](../evaluation/02_design/simulation/bilingual_assessment/verification.json) document 35 appendix tables and five main tables. The full 373-test inventory and original 91 delivered-output content ratings remain. A purposeful sample of 32 saved outputs adds 104 examined paired passages and 41 exploratory annotations, not independent runs or new output ratings. Six exact Assignment 4 keywords, two figures, 69 original evidence entries and 66 production identities are preserved. There are thirteen references. Five [supplementary evidence records](../evaluation/03_results/supplementary_evidence_register.md) are indexed separately. Earlier rubric, language and appendix records remain historical. The [Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) remains applicable. NEXT: qualified bilingual checking can verify the new annotations. The DOCX is created from the Markdown, then wide-table layout, repeated headers, embedded figures and submission/sharing scope are checked. No application rerun or release clearance is introduced.**
 
 Step 29's [submission-risk review](../evaluation/04_paper/submission_risk_review.md)
 is complete. Recorded Functionality, Usability and design literature are no
@@ -3680,7 +3680,37 @@ usability inspection and supporting evaluations. The
 retain failed/Partial outcomes and separate overlapping assessment scopes.
 No new evaluation was performed. Earlier paper/table counts are historical.
 
-**NEXT:** the author creates the required DOCX by copying the Markdown and
+**Supplementary bilingual assessment, 5 October 2026 (`BIL-20261005-01`).**
+A [declared purposeful sample](../evaluation/02_design/simulation/bilingual_assessment/method.md)
+of 32 saved simulation outputs was examined across 104 English/Burmese pairs.
+The [results](../evaluation/02_design/simulation/bilingual_assessment/results.md)
+contain four Major annotations in three outputs, 27 Minor annotations and ten
+shared-content advisories. The pH finding uses a new passage-level severity
+without replacing the original Partial output rating. The original corpus
+totals remain 18 Pass / 71 Partial / two Fail. The other 59 delivered outputs
+were outside this supplementary assessment, not newly passed.
+
+The [design-argument addendum](../evaluation/02_design/informed_argument/traceability_bilingual_addendum.md),
+[results synthesis](../evaluation/03_results/bilingual_synthesis_addendum.md) and
+[traceability addendum](../evaluation/03_results/pirqoa_bilingual_addendum.md)
+carry the findings forward. All three research questions and the original
+argument conclusions retain their qualifications. Existing conceptual
+triangulation, original case scores, 225 master-result rows and 24 traceability
+chains were not rewritten. This is dependent analysis of shared evidence,
+not independent replication. No simulation, provider call or application test
+was rerun. New annotations are model-assisted and exploratory, without new
+independent qualified human judgement.
+
+The [paper revision record](../evaluation/04_paper/bilingual_assessment_revision.md)
+and [verification](../evaluation/02_design/simulation/bilingual_assessment/verification.json)
+document 35 appendix tables plus five main tables, thirteen references and six
+unchanged keywords. The five separately named
+[supplementary records](../evaluation/03_results/supplementary_evidence_register.md)
+do not alter the original 69-entry evidence register. Prior revision captures
+remain historical.
+
+**NEXT:** qualified bilingual checking can verify the supplementary wording
+and proposed corrections. The author creates the required DOCX by copying the Markdown and
 embedding both figures, then checks its actual layout, references, author
 approval and intended submission/sharing package. No assistant DOCX creation,
 submission-ready typesetting, grade prediction or release clearance is claimed.

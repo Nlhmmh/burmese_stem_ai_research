@@ -6,7 +6,7 @@
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
 | Status | B01 frozen; Steps 10–18 and §18.1 recorded; 225 results, 24 PIRQOA chains and 17 scoped claims preserved; Steps 24–29, Phase E and reader-revision captures retained; supplied-rubric and clear-language Markdown revisions recorded 4 October 2026; six exact Assignment 4 keywords, no author-assignment literature citations, counts are guidance; 69 evidence entries unchanged; mixed findings/release limits retained; NEXT: author-created DOCX review and submission/sharing checks |
-| Latest paper revision | APPENDIX-REV-01, 4 October 2026. Recorded evidence is presented in Appendices A–I with 32 appendix tables and five main tables. Results and acceptance criteria are unchanged. |
+| Latest paper revision | BIL-20261005-01, 5 October 2026. Supplementary bilingual assessment of 32 saved outputs added separately from original results. Appendices A–I contain 35 appendix tables, with five main tables. Original ratings and acceptance criteria are unchanged. |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -733,7 +733,28 @@ full 373-test inventory, 91 content ratings and other recorded case results.
 Technical execution, content ratings, subchecks and derived judgements remain
 separate. No evaluation was rerun. Earlier paper counts are historical.
 
-Acceptance criteria are still 2.1. **Next: the author creates the DOCX from the
+**Supplementary bilingual assessment, 5 October 2026 (`BIL-20261005-01`).**
+The [method](../02_design/simulation/bilingual_assessment/method.md) defines a
+retrospective, purposeful sample of 32 saved outputs. All 104 paired passages
+were examined. The [results](../02_design/simulation/bilingual_assessment/results.md)
+record four Major and 27 Minor annotations and ten shared-content advisories.
+This exploratory model-assisted assessment has no independent qualified human
+verification. It is not a new simulation, a whole-corpus error rate or a change
+to the original 18 Pass / 71 Partial / two Fail content ratings.
+The [supplementary evidence register](../03_results/supplementary_evidence_register.md)
+provides five separately named records. Dated design-argument, synthesis and
+PIRQOA addenda update interpretation without altering the original 69 evidence
+entries, 225 master-result rows or 24 traceability chains.
+The [paper revision](../04_paper/bilingual_assessment_revision.md) and
+[verification](../02_design/simulation/bilingual_assessment/verification.json)
+record 35 appendix tables, five main tables, six keywords and thirteen references.
+The earlier 32-table paper capture remains historical. Production code and
+saved evaluation outputs were not changed. Proposed Burmese wording remains
+editorial guidance, not an independently validated glossary.
+
+Acceptance criteria are still 2.1. **Next: the supplementary annotations and
+proposed wording can be checked by a qualified bilingual assessor. The author
+creates the DOCX from the
 Markdown, embeds the figures and checks final layout, approval and intended
 submission/sharing scope.** Missing-brief/keyword/count guidance is resolved;
 no final Word/PDF, grade guarantee or public-release clearance is claimed.
