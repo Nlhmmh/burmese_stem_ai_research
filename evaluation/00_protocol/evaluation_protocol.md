@@ -6,6 +6,7 @@
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
 | Status | B01 frozen; Steps 10–18 and §18.1 recorded; 225 results, 24 PIRQOA chains and 17 scoped claims preserved; Steps 24–29, Phase E and reader-revision captures retained; supplied-rubric and clear-language Markdown revisions recorded 4 October 2026; six exact Assignment 4 keywords, no author-assignment literature citations, counts are guidance; 69 evidence entries unchanged; mixed findings/release limits retained; NEXT: author-created DOCX review and submission/sharing checks |
+| Latest paper revision | APPENDIX-REV-01, 4 October 2026. Recorded evidence is presented in Appendices A–I with 32 appendix tables and five main tables. Results and acceptance criteria are unchanged. |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -722,6 +723,15 @@ Quoted learner choices remain unchanged. The
 [verification](../04_paper/raw/PASSIVE-REV-01-verification.json) confirm unchanged
 findings, references, six keywords, 69 evidence entries and 66 production identities.
 The current abstract contains 137 local tokens. No evaluation was rerun.
+
+**Evaluation appendix revision, 4 October 2026 (`APPENDIX-REV-01`).** The
+[working paper](../04_paper/assignment_5_working_paper.md) now includes
+32 appendix tables across Appendices A–I, with five main tables retained.
+The [revision record](../04_paper/appendix_revision.md) and
+[verification](../04_paper/raw/APPENDIX-REV-01-verification.json) document the
+full 373-test inventory, 91 content ratings and other recorded case results.
+Technical execution, content ratings, subchecks and derived judgements remain
+separate. No evaluation was rerun. Earlier paper counts are historical.
 
 Acceptance criteria are still 2.1. **Next: the author creates the DOCX from the
 Markdown, embeds the figures and checks final layout, approval and intended

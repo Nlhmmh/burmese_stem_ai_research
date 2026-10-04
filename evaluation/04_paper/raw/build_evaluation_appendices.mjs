@@ -1,0 +1,158 @@
+// Derive paper appendices from existing records. No app, provider, database or test execution.
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
+import {execFileSync} from 'node:child_process';
+const root=execFileSync('git',['rev-parse','--show-toplevel'],{encoding:'utf8'}).trim();
+const base='evaluation/04_paper/',paper=base+'assignment_5_working_paper.md';
+const sources=new Set();
+const read=p=>{sources.add(p);return fs.readFileSync(path.join(root,p),'utf8');};
+const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
+const csv=p=>{sources.add(p);return JSON.parse(execFileSync('python3',['-c','import csv,json,sys; print(json.dumps(list(csv.DictReader(open(sys.argv[1],newline="",encoding="utf-8-sig"))),ensure_ascii=False))',path.join(root,p)],{encoding:'utf8',maxBuffer:8*1024*1024}));};
+const plain=v=>String(v??'').replace(/\[([^\]]+)\]\([^)]*\)/g,'$1').replace(/\*\*/g,'').replace(/`/g,'').replace(/\s+/g,' ').trim();
+const editorial=v=>String(v??'').replace('Human must assess explicit qualification of the initial ambiguous-term interpretation. 201 is not an F2 content pass.','Initial interpretation required separate content assessment. HTTP 201 alone was not a content Pass. Ratings are provided in Tables C2–C3.').replace(/\. The wording proposal is endorsed by Nathan[^|]*/g,'').replaceAll('endorsed as an editorial proposal','proposed as editorial wording').replaceAll('endorsed as introductory editorial wording','proposed as introductory wording').replaceAll('Nathan endorsed this terminology assessment. ','').replaceAll('existing endorsed assessment','existing content assessment').replaceAll('fixture previously endorsed','fixture previously assessed for content').replaceAll('Existing review endorsement applies only to earlier simulation outputs. No fresh scenario endorsement or learner outcomes','The completed content assessment covers earlier simulation outputs. The fresh scenario remains provisional and learner outcomes were not measured').replaceAll('No new qualified semantic endorsement was performed','No additional content assessment was performed').replaceAll('Endorsed mass/weight and ion net-charge errors persist','The recorded mass/weight and ion net-charge errors persist').replaceAll('No fixes or new human endorsement are inferred','No fixes or new content assessment are inferred');
+const cell=v=>editorial(plain(v).replace(/;/g,'.').replace(/\. ([a-z])/g,(_,c)=>'. '+c.toUpperCase())).replace(/: /g,' — ').replace(/\|/g,' / ');
+const table=(id,title,headers,rows)=>`**Table ${id}. ${title}**\n\n| ${headers.join(' | ')} |\n| ${headers.map(()=> '---').join(' | ')} |\n${rows.map(r=>'| '+r.map(cell).join(' | ')+' |').join('\n')}\n`;
+const mdRows=t=>t.split('\n').filter(l=>/^\|/.test(l)&&!/^\|[\s:|-]+\|$/.test(l)).map(l=>l.split(/(?<!\\)\|/).slice(1,-1).map(v=>v.trim()));
+const after=(t,h)=>t.slice(t.indexOf(h)+h.length);
+const tableAt=(t,h)=>{const rest=after(t,h);const m=rest.match(/(?:^|\n)(\|[^\n]+\n(?:\|[^\n]+\n?)+)/);assert.ok(m,h);return mdRows(m[1]).slice(1);};
+const blocks=(t,re)=>[...t.matchAll(re)].map((m,i,all)=>({id:m[1],title:m[2],text:t.slice(m.index,(all[i+1]?.index??t.length))}));
+const short=(v,max=240)=>{const t=plain(v);if(t.length<=max)return t;const cut=t.slice(0,max),at=Math.max(cut.lastIndexOf('. '),cut.lastIndexOf(', '));return cut.slice(0,at>max/2?at:max).trim()+'…';};
+const examples=csv('evaluation/02_design/simulation/simulation_cases.csv');
+const sim=csv('evaluation/02_design/simulation/simulation_results.csv');
+const scores=csv('evaluation/02_design/simulation/human_content_scores.csv');
+const bb=csv('evaluation/02_design/black_box/black_box_results.csv');
+const bbAssertions=csv('evaluation/02_design/black_box/black_box_assertions.csv');
+const wb=csv('evaluation/02_design/white_box/white_box_results.csv');
+const routes=csv('evaluation/02_design/white_box/white_box_route_matrix.csv');
+const issues=csv('evaluation/02_design/usability/issues.csv');
+const trace=csv('evaluation/03_results/pirqoa_traceability.csv');
+const dl=csv('evaluation/02_design/literature/literature_matrix.csv');
+const master=csv('evaluation/03_results/master_results.csv');
+const question=new Map(examples.map(r=>[r.case_id,r.exact_input]));
+const counts=rows=>rows.reduce((a,r)=>(a[r.content_outcome]=(a[r.content_outcome]||0)+1,a),{});
+assert.equal(sim.length,55);assert.equal(scores.length,91);assert.deepEqual(counts(scores),{Partial:71,Pass:18,Fail:2});assert.equal(wb.length,373);assert.equal(new Set(wb.map(r=>r.test_id)).size,373);assert.equal(routes.length,39);assert.equal(bb.length,24);assert.equal(trace.length,24);
+const outputNames={initial:'Initial support',medium_skip:'Another example after Medium, optional choice skipped',simpler:'Simpler explanation',conceptual:'Conceptual clarification',language:'Language support',language_help:'Language support',concept_mismatch:'Intended-concept correction',context_correction:'Intended-concept correction'};
+const name=k=>outputNames[k]||k.replaceAll('_',' ');
+const groups={A:'',B:'',C:'',D:'',E:'',F:'',G:'',H:'',I:''};
+const rowCounts={};
+const add=(group,id,title,headers,rows)=>{groups[group]+='\n'+table(id,title,headers,rows);rowCounts[id]=rows.length;};
+groups.A='\n### A.1 Supplementary inputs and response paths\n\nThe main inquiries are listed in Table A1. Case identifiers link inputs, technical outcomes and content ratings across the following tables. Each A, B or C suffix identifies a separate run, not a learner.\n';
+add('A','A2','Supplementary Language and Context Inputs',['Case','Exact inquiry','Clarification','Language'],examples.filter(r=>!/^SIM\d\d-[ABC]$/.test(r.case_id)).map(r=>[r.case_id,r.exact_input,r.clarification||'Not supplied',r.support_language]));
+add('A','A3','Planned Main Simulation Paths',['Path','Recorded sequence','Purpose'],[['A','Initial support, High, Finish','Fade without another generated output'],['B','Initial support, Medium with optional help skipped, High, Finish','Default another-example adaptation'],['C','Initial support, simpler explanation, conceptual clarification, cap check','Two adaptations and the stored-round limit']]);
+groups.B='\n## Appendix B. Analytical Evaluation Records\n\nThe recorded static, dynamic and bounds checks are listed separately. Earlier and later automated suites are not added together as independent tests. Technical case identifiers are row labels for the checks described here.\n';
+const staText=read('evaluation/02_design/static/static_analysis_test_cases.md'),staBlocks=blocks(staText,/^### (STA-\d+) — (.+)$/gm),staResults=tableAt(staText,'### Command results').concat(tableAt(staText,'### Architecture inspection results'));
+const staMap=new Map(staResults.map(r=>[r[0],r]));
+const staticFindings={'STA-08':'Interface components use application APIs. Provider requests are issued through services and a shared provider helper. No direct interface-to-provider call was found.','STA-09':'The two-round cap, routing and lifecycle are controlled by application logic. Completed sessions and invalid states are rejected before generation.','STA-10':'Services own validation and generation decisions. Scoped persistence is performed by DAOs. Provider and prompt code do not write directly to MongoDB.','STA-11':'Request and generated-output validation precede persistence for initial support, adaptations, follow-up and preferences.','STA-12':'Learner identity and session UUIDs are guarded. Retrieval and updates are scoped by learner and session. History is learner-scoped.','STA-13':'Correction, presentation overrides and response/adaptation/follow-up history are stored. Missing legacy arrays are normalised. A missing legacy preference snapshot remains possible.','STA-14':'Timeout and provider failures are mapped to stable safe API errors. There is no automatic retry. Raw provider/database detail remains server-side. Runtime interface recovery was not assessed in this check.'};
+add('B','B1','Static Analysis Checks',['Case','Check','Expected result','Recorded finding','Outcome'],staBlocks.map(b=>{const spec=mdRows(b.text),actual=staMap.get(b.id);let expected=spec.find(r=>r[0]==='Expected')?.[1];if(b.id==='STA-02')expected='Deterministic unit, component and API tests pass. Exact file/test counts are retained.';if(b.id==='STA-03')expected='The configured services and DAO coverage reports are generated.';return [b.id,b.title,expected,staticFindings[b.id]||short(actual[1],330),actual[2]];}));
+const dynText=read('evaluation/02_design/dynamic/dynamic_analysis_test_cases.md'),dynBlocks=blocks(dynText,/^### (DYN-\d+) — (.+)$/gm),dynMap=new Map(dynBlocks.map(b=>[b.id,b]));
+add('B','B2','Dynamic Workflow Cases',['Case','Check','Expected result','Observed result','Outcome'],tableAt(dynText,'## Workflow execution register').map(r=>{const b=dynMap.get(r[0]);const expected=b.text.match(/\*\*Expected:\*\* ([\s\S]*?)(?:\n\n|\n\*\*Mapping)/)?.[1];return [r[0],b.title,short(expected,260),r[5],r[3]];}));
+const timings=JSON.parse(read('evaluation/02_design/dynamic/raw/DYN-RUN-01-summary.json')).timings;
+add('B','B3','Recorded Initial-Generation Timings',['Timing case','Inquiry','Attempt','Elapsed milliseconds','Outcome'],timings.map(r=>[r.caseId,r.question,r.attempt,r.elapsedMs,r.outcome]));
+groups.B+='\n*Note.* These fifteen sequential local measurements have no predefined latency Pass threshold. They do not measure adaptation latency or performance under load.\n';
+const boundsText=read('evaluation/02_design/optimisation/bounds_analysis_test_cases.md'),boundsBlocks=blocks(boundsText,/^### (BND-\d+) — (.+)$/gm),boundsMap=new Map(boundsBlocks.map(b=>[b.id,b]));
+add('B','B4','Bounds Analysis Cases',['Case','Check','Observed state and calls','Outcome'],tableAt(boundsText,'## Execution register').map(r=>[r[0],boundsMap.get(r[0]).title,r[5],r[3]]));
+groups.B+='\n*Note.* BND-15 accepted one write after two provider calls. The stored-round limit is not a guarantee of maximum provider cost.\n';
+const browserText=read('evaluation/02_design/dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md');
+add('B','B5','Manual Dynamic Browser Observations',['Observation','Related cases','Expected display','Observed display','Outcome','Qualification'],tableAt(browserText,'## Observation results').map(r=>[r[0],r[1],r[2],r[3],r[5],r[7]]));
+groups.C='\n## Appendix C. Simulation Results and Content Assessment\n\nTechnical execution and content quality were assessed separately. Table C1 accounts for 55 attempts. Table C2 accounts for 91 delivered outputs, including initial support and adaptations. Fade, cap and unreached steps do not add generated outputs.\n';
+add('C','C1','Technical Simulation Results',['Case','Inquiry','Technical outcome','Final round / status','Adaptations / response events','Failure or qualification'],sim.map(r=>[r.case_id,question.get(r.case_id),r.technical_outcome==='Controlled ambiguity'?'Controlled initial ambiguity':r.technical_outcome,r.final_round===''?'No session':r.final_round+' / '+r.final_status,(r.adaptations||'0')+' / '+(r.response_events||'0'),r.failure||r.error_code||r.limitations||'No technical deviation recorded']));
+groups.C+='\n*Note.* Initial ambiguity without a session is a controlled outcome, not a delivered explanation or a content Pass. The delayed abort and two unchanged-correction rejections remain technical failures. Content status fields in the original technical register are not substituted for the completed content assessments below.\n';
+add('C','C2','All Delivered-Output Content Ratings',['Case','Output','Correctness','Context','Language','Explanation','Adaptation','Overall'],scores.map(r=>[r.case_id,name(r.output_id),r.technical_correctness,r.contextual_relevance,r.language_adequacy,r.explanation_beyond_translation,r.adaptation_appropriateness,r.content_outcome]));
+groups.C+='\n*Note.* Correctness means scientific/technical correctness. Context means relevance to the active concept. Language means English/Burmese adequacy. Explanation means support beyond term translation. Adaptation means an appropriate revision of earlier support. Scores are 2 for adequate, 1 for limited or minor issues, and 0 for material error or absence. NA means adaptation does not apply to an initial output. Pass requires 2 in every applicable dimension. Any 0 gives Fail. Otherwise, any 1 gives Partial. These are content judgements, not learner outcomes.\n';
+const labels=['Technical correctness','Contextual relevance','Language adequacy (English and Burmese)','Explanation beyond translation','Adaptation appropriateness'];
+const fields=['technical_correctness','contextual_relevance','language_adequacy','explanation_beyond_translation','adaptation_appropriateness'];
+const rationales=r=>{const re=/Technical correctness: |Contextual relevance: |Language adequacy \(English and Burmese\): |Explanation beyond translation: |Adaptation appropriateness[^:]*: /g;const hits=[...r.rationale.matchAll(re)];return hits.map((m,i)=>r.rationale.slice(m.index+m[0].length,hits[i+1]?.index??r.rationale.length));};
+add('C','C3','Reasons for Partial and Fail Content Ratings',['Case','Output','Rating','Dimensions below adequate','Recorded reason, shortened'],scores.filter(r=>r.content_outcome!=='Pass').map(r=>{const reason=rationales(r),idx=fields.flatMap((f,i)=>['0','1'].includes(r[f])?[i]:[]);return [r.case_id,name(r.output_id),r.content_outcome,idx.map(i=>labels[i]).join(', '),idx.map(i=>short(reason[i]||r.rationale,210)).join(' ')];}));
+add('C','C4','Content Rating Totals',['Rating','Delivered outputs','Meaning'],[['Pass',18,'All applicable dimensions were adequate'],['Partial',71,'At least one dimension had limitations or minor issues, with no material-error score'],['Fail',2,'At least one dimension contained a material error']]);
+groups.C+='\n*Note.* Rationales in Table C3 were shortened without changing scores. The ion adaptation Pass does not remove the Fail in its initial technical definition. The Burmese phrase net charge မရှိတော့ဘဲ denies net charge before the same sentence states that a positive or negative charge forms. Single-assessor and domain-competence limits described in Section 3.3 remain.\n';
+groups.D='\n## Appendix D. Black-Box Testing Records\n\nPublic HTTP and browser checks are listed against their expected behaviour. First API outcomes and final assessed outcomes are both retained.\n';
+const bbText=read('evaluation/02_design/black_box/raw/RUN-B01-20261002-BLACKBOX-01/frozen_test_cases.md'),bbBlocks=blocks(bbText,/^### (BB\d+) — (.+)$/gm),bbMap=new Map(bbBlocks.map(b=>[b.id,b]));
+const blackBoxExpected={
+ BB08:'Each of the five optional choices selects its specified route. Skip uses the default route. Concept mismatch requires clarification. Valid below-cap generated support is route-appropriate, non-repetitive and persisted.',
+ BB18:'Injected timeout/non-2xx failures return HTTP 502 for initial, adaptation and follow-up generation. No invalid content is saved. Existing valid state is unchanged. Safe errors contain no raw provider detail or automatic retry.',
+ BB20:'A 1,000-character inquiry returns HTTP 201. A 1,001-character inquiry returns HTTP 400, with no provider call or session write.',
+ BB21:'A 500-character follow-up returns HTTP 200 and is saved. A 501-character follow-up returns HTTP 400. A third question returns HTTP 409 without provider work or another save.',
+ BB23:'Invalid response combinations, invalid UUIDs and invalid completion bodies return HTTP 400. A valid missing UUID returns HTTP 404. Rejected requests make no provider call or state change.'
+};
+add('D','D1','Black-Box Case Results',['Case','Check','Expected behaviour','Observed result and qualification','First API outcome','Assessed outcome'],bb.map(r=>{const b=bbMap.get(r.case_id);assert.ok(b,r.case_id);const expected=[...b.text.matchAll(/\*\*Expected[^*]*\*\*:? ([\s\S]*?)(?=\n\n|\n- \*\*)/g)].map(m=>m[1]).join(' ');const wording=blackBoxExpected[r.case_id]||short(expected||b.text.replace(/^###.*\n/,''),280);return [r.case_id,b.title,wording.replace(/^[a-z]/,c=>c.toUpperCase()),r.qualification,r.first_api_outcome,r.assessed_case_outcome];}));
+add('D','D2','Retained Failed or Unassessed Black-Box Subchecks',['Case','Subcheck','Observation scope','Assertion','Recorded outcome'],bbAssertions.filter(r=>r.outcome!=='Pass').map(r=>[r.case_id,r.assertion_id,r.scope,r.assertion,r.outcome]));
+groups.D+='\n*Note.* Table D2 contains first-attempt browser predicates, a remaining-ambiguity round expectation and content checks that were not assessed. These are subchecks, not additional black-box cases. Driver corrections and rechecks did not erase the original observations. The missing-identity case expected HTTP 400 but returned HTTP 200 with a newly provisioned anonymous identity and empty History. No foreign-session leak was observed.\n';
+groups.E='\n## Appendix E. White-Box Testing and Coverage\n\nThe 373 unique tests are listed in Table E2. Deterministic tests and isolated MongoDB tests were run against the root application. Repeated unit, coverage and combined commands are not counted as additional tests.\n';
+const wbText=read('evaluation/02_design/white_box/white_box_evaluation.md');
+add('E','E1','Requirement-Critical Structural Groups',['Group','Exercised contracts','Outcome'],tableAt(wbText,'## Requirement-critical assertions'));
+add('E','E2','Complete Unique Automated-Test Inventory',['Test','Test file','Named assertion contract','Mode','Outcome','Research question'],wb.map(r=>[r.test_id,r.source_path.replace('burmese_stem_ai/tests/',''),r.named_assertion_contract,r.dependency_mode.includes('deterministic')?'Deterministic mocks':'Isolated real MongoDB',r.outcome,r.research_questions]));
+groups.E+='\n*Note.* Test filenames identify groups within this inventory and are not external evidence references. Named assertions are reproduced as test labels. There were 361 deterministic and twelve real-database tests. Individual database timings were not captured. Passed file summaries and recorded test titles support the integration inventory. The route combinations below are already represented in these tests, not 39 additional unique tests.\n';
+add('E','E3','Route and Round Combinations',['Case','Overall need','Optional difficulty','Round before / after','Selected route','Provider / save calls','Expected status','Outcome'],routes.map(r=>[r.case_id,r.overall_support_need,r.difficulty,r.round_before+' / '+r.round_after,r.route,r.expected_provider_calls+' / '+r.expected_save_calls,r.expected_status,r.outcome]));
+add('E','E4','Application-Wide V8 Coverage',['Metric','Covered / total','Percentage'],tableAt(wbText,'## Application-wide coverage'));
+groups.E+='\n*Note.* Coverage contains 42 executable files. Real MongoDB and browser observations are not added to V8 coverage. A structural Pass does not mean that all application code was exercised or that generated content was adequate.\n';
+groups.F='\n## Appendix F. Structured Usability Inspection\n\nTechnical interface inspection was performed across desktop/mobile-emulated widths, English/Burmese locales and light/dark themes. No participant usability study was conducted.\n';
+const uiText=read('evaluation/02_design/usability/usability_inspection.md');
+const configurationCoverage=['All eight for base Home. Other states in selected configurations','All eight for initial content. Hint and long-content checks in selected configurations','All eight for base Stage 6B. Route and keyboard checks in selected configurations','Selected desktop and mobile-emulated configurations','Selected desktop and mobile-emulated configurations','Selected desktop and mobile-emulated configurations','All eight for the modal. Focus and persistence checks in selected configurations','Selected desktop and mobile-emulated configurations','The remaining four combinations completed base Home, modal, initial content and Stage 6B coverage'];
+add('F','F1','Screen and State Inspection Matrix',['Flow / planned states','Configuration coverage','Result and qualification'],tableAt(uiText,'## Executed screen/state matrix').map((r,i)=>[r[0],configurationCoverage[i],r[3]]));
+add('F','F2','Usability Criterion Outcomes',['Criterion','Outcome','Highest severity','Recorded rationale'],tableAt(uiText,'## U1–U9 outcomes').map(r=>[r[0],r[1],r[2],r[3].replace(/(?:D\d\d|M\d\d|C-[A-Z]|F\d\d)[\w–/,.-]*/g,'').replace(/\. +\./g,'.')]));
+add('F','F3','Observed Usability Issues',['Issue','Criteria','Severity','Expected behaviour','Observed behaviour','Task effect'],issues.map(r=>[r.issue_id,r.criteria,r.severity,r.expected,r.actual,r.task_effect]));
+groups.F+='\n*Note.* Severity 1 denotes a cosmetic issue, severity 2 a task impediment with a workaround, and severity 3 task blockage or materially misleading behaviour. Preference-save infrastructure-fault presentation was not assessed. The recorded six Pass and three Partial are technical inspection outcomes, not participant satisfaction or a full accessibility audit.\n';
+groups.G='\n## Appendix G. Photosynthesis Scenario Records\n\nThe fresh design scenario is separate from the earlier conceptual illustration and the simulation corpus. Browser observations and API-only checks are distinguished. Content findings remain provisional.\n';
+const scenarioText=read('evaluation/02_design/scenario/photosynthesis_scenario.md');
+add('G','G1','Scenario Actions and Observed Results',['Action','Expected result','Observed result','Assessment'],tableAt(scenarioText,'## 3. Expected and actual scenario actions').map(r=>[r[0],r[1],r[2].replace(/SCN-[A-Z]\d\d(?:[\w/–.-]*)/g,'').replace(/HTTP \d+\s*\/\s*/g,'').replace(/;? §5/g,'Section 3.5'),r[3].replace(/SCN-[A-Z]\d\d(?:[\w/–.-]*)/g,'')]));
+const scenario=JSON.parse(read('evaluation/02_design/scenario/raw/RUN-B01-20261003-SCENARIO-02/verification.json'));
+add('G','G2','Scenario Technical Verification Checks',['Check','Recorded assertion','Outcome'],scenario.checks.map(r=>[r.id,r.detail,r.result]));
+add('G','G3','Provisional Scenario Content Observations',['Observation','Recorded content','Qualification'],tableAt(scenarioText,'## 5. Provisional content observations').map(r=>[r[0],r[1],r[2].replace(/\(R01\)|\(SCN-R02\)/g,'')]));
+groups.G+='\n*Note.* The 15 verification checks in Table G2 are technical checks of the same workflow, not 15 new scenarios. High was not offered in the round-two interface. High-at-cap and post-completion checks were performed through the API.\n';
+groups.H='\n## Appendix H. Supporting Conceptual and Design Evaluations\n\nThese records are literature comparisons, model critique and informed arguments. They are not additional software tests or independent learner studies. Scholarly foundations and source-access limits are discussed in Sections 2.3–2.4 and 3.5–3.6.\n';
+const interview=read('evaluation/01_conceptual/genai/GENAI-01_interview.md');
+const questions=[...interview.matchAll(/^# \d+\. Fixed Question (\d) — (.+)$/gm)];
+add('H','H1','GenAI Interview Question Topics',['Question','Evaluation topic'],questions.map(m=>['Q'+m[1],m[2]]));
+const gaiText=read('evaluation/01_conceptual/genai/GENAI-01_analysis.md');
+add('H','H2','Coded GenAI Findings',['Finding','Questions','Criterion','Type','Severity','Recorded finding'],tableAt(gaiText,'# 5. Full Coded Findings').map(r=>[r[0],r[1],r[2],r[4],r[5],r[6]]));
+add('H','H3','Conceptual Literature Comparison Findings',['Comparison','Evaluation focus','Recorded conclusion','RQ'],master.filter(r=>r.method_ids==='CA-LIT').map((r,i)=>['CL'+String(i+1).padStart(2,'0'),r.artefact.replace('CA-LIT / ',''),r.outcome.replace('Assignment 2','the existing review corpus'),r.research_questions]));
+groups.H+='\n*Note.* These nineteen consolidated comparison findings are not nineteen newly executed studies. The existing review corpus and secondary-source limits remain. General literature support does not validate Burmese wording, exact stage topology, route permissions or the adaptation limit.\n';
+const caArg=read('evaluation/01_conceptual/informed_argument/traceability_v2.md');
+add('H','H4','Conceptual Informed Arguments',['Argument / responsibility','RQ','Scholarly basis','Bounded conclusion'],tableAt(caArg,'## 4. Cross-stage traceability and alternative designs').map(r=>[r[0],r[1].split(' / ').slice(1).join(' / '),r[2],r[3]]));
+const daArg=read('evaluation/02_design/informed_argument/traceability.md');
+const argumentQuestions=['RQ1 / RQ2','RQ1','RQ2, enabling RQ3','RQ3','RQ3, with RQ1/RQ2 depending on route','RQ3','RQ3, enabling RQ1','RQ1–RQ3, enabling'];
+add('H','H5','Design Informed Arguments',['Argument','RQ','Feature / mechanism','Scholarly basis','Conclusion'],tableAt(daArg,'## 4. Cross-feature traceability and decision').map((r,i)=>[r[0],argumentQuestions[i],r[2],r[3].replace(/TTF/g,'Goodhue and Thompson (1995)').replace(/scaffolding benchmark/g,'van de Pol et al. (2010)'),r[5]]));
+add('H','H6','Design Literature Comparisons',['Comparison','Capability evaluated','Literature rationale','Observed design conclusion','Remaining limitation','RQ'],dl.map(r=>[r.case_id,r.capability,r.literature_support,r.implementation_outcome,r.remaining_limitation,r.research_questions]));
+add('H','H7','Historical Conceptual Scenario Evidence Boundaries',['Responsibility / transition','Recorded evidence','Unresolved point'],[['Terminology and context','Photosynthesis inquiry with plant-focused explanation','Execution date, model and code version were not recorded'],['Language support','English and Burmese content in the illustration','Learner-specific term retention was not independently validated'],['Core explanation and scaffold','Simple explanation, real-world example, technical explanation, reflection and hint','Illustration is not participant comprehension evidence'],['Response and adaptation','A check–example–check sequence was shown','Exact triggering response and strategy-selection reason were not recorded'],['Later transitions','No complete trace was recorded','Second adaptation, fade, cap, follow-up answer and lifecycle remain incomplete']]);
+read('evaluation/01_conceptual/scenario/photosynthesis_scenario.md');
+groups.I='\n## Appendix I. Research Question and Requirement Traceability\n\nThe recorded 24 relationships connect evaluation findings to the research questions stated in Section 1. Requirements concern terminology support (RQ1), conceptual explanation (RQ2) and structured responsive assistance (RQ3). These relationships are derived mappings, not additional evaluations.\n';
+add('I','I1','Requirement-to-Finding Relationships',['RQ','Issue / requirement focus','Relevant criteria','Supported claim','Unresolved claim or gap'],trace.map(r=>[r.rq,r.issue,r.criteria,r.supported_claim.replace(/E\d{3}/g,'the recorded evidence').replace(/B01|ROOTTESTS-02/g,'the evaluated application').replace(/CA-ARG/g,'conceptual argument'),r.unsupported_claim_or_gap.replace('provisional Codex analysis, not a new human endorsement','provisional content analysis, not an independently reviewed conclusion').replace('Nathan endorsed AI-assisted reviews, not an independent second assessment','No independent second assessment was recorded')]));
+const mode=process.argv[2];
+if(mode==='--patch'||mode==='--replace'){
+ const group=process.argv[3];assert.ok(groups[group],group);
+ const current=fs.readFileSync(path.join(root,paper),'utf8');const last=current.trimEnd().split('\n').at(-1);
+ if(mode==='--replace'){
+  const heading=groups[group].trim().split('\n')[0];const start=current.indexOf(heading);assert.ok(start>=0,heading);const next=current.indexOf('\n## Appendix ',start+heading.length);const end=next<0?current.length:next;
+  const previous=current.slice(start,end).trimEnd();
+  console.log('*** Begin Patch\n*** Update File: '+paper+'\n@@\n'+previous.split('\n').map(l=>'-'+l).join('\n')+'\n'+groups[group].trim().split('\n').map(l=>'+'+l).join('\n')+'\n*** End Patch');
+ }else console.log('*** Begin Patch\n*** Update File: '+paper+'\n@@\n '+last+'\n+'+('\n'+groups[group].trim()+'\n').trimEnd().split('\n').join('\n+')+'\n*** End Patch');
+}else if(mode==='--verify'){
+ const doc=fs.readFileSync(path.join(root,paper),'utf8');
+ for(const [id,n] of Object.entries(rowCounts))assert.equal(tableAt(doc,'**Table '+id+'.').length,n,'Row count '+id);
+ assert.equal(tableAt(doc,'**Table A1.').length,16);
+ assert.deepEqual(counts(tableAt(doc,'**Table C2.').map(r=>({content_outcome:r[7]}))),{Partial:71,Pass:18,Fail:2});
+ assert.equal(tableAt(doc,'**Table E2.').length,373);
+ const appendixCaptions=[...doc.matchAll(/^\*\*Table [A-I]\d+\./gm)];
+ const mainCaptions=[...doc.matchAll(/^\*\*Table \d+\./gm)];
+ assert.equal(appendixCaptions.length,32);assert.equal(mainCaptions.length,5);
+ let tableWidth=null;
+ for(const line of doc.split('\n')){
+  if(!line.startsWith('|')){tableWidth=null;continue;}
+  const width=line.split(/(?<!\\)\|/).length;
+  if(tableWidth===null)tableWidth=width;else assert.equal(width,tableWidth,'Inconsistent table columns '+line.slice(0,100));
+ }
+ for(const group of Object.keys(groups))assert.ok(doc.includes(groups[group].trim()),'Derived text differs '+group);
+ assert.ok(!/researcher|Codex|AI-assisted|Htet,|Unpublished course assignment|endorse|Human must/i.test(doc));
+ const old=read(base+'raw/PASSIVE-REV-01-working-paper.md');
+ for(const h of ['## Abstract','## Keywords','## References']){const sec=s=>s.split(h+'\n')[1].split(/^## /m)[0].trim();assert.equal(sec(doc),sec(old),h);}
+ for(let n=1;n<=5;n++)assert.deepEqual(tableAt(doc,'**Table '+n+'.'),tableAt(old,'**Table '+n+'.'),'Main table '+n);
+ const inventory=JSON.parse(read(base+'raw/LANGUAGE-REV-01-input.json'));
+ for(const r of inventory.records)assert.equal(hash(r.path),r.hash,'Evidence '+r.id);
+ assert.equal(hash('evaluation/03_results/evidence_register.csv'),inventory.registerHash);
+ for(const [p,h] of Object.entries({...inventory.productionHashes,...inventory.preservedDraftingAndAssets,...inventory.rubricHashes,...inventory.sourceHashes}))assert.equal(hash(p),h,p);
+ const report={revisionId:'APPENDIX-REV-01',preparedDate:'4 October 2026, Pacific/Auckland',checkedAt:new Date().toISOString(),paperHash:hash(paper),previousPaperHash:hash(base+'raw/PASSIVE-REV-01-working-paper.md'),tables:rowCounts,appendixTables:32,totalTables:37,mainTablesPreserved:5,existingInputRows:16,sourceHashes:Object.fromEntries([...sources].sort().map(p=>[p,hash(p)])),simulationAttempts:55,contentOutputs:91,contentOutcomes:counts(scores),uniqueAutomatedTests:373,registeredEvidencePreserved:inventory.records.length,productionFilesPreserved:Object.keys(inventory.productionHashes).length,scope:'Recorded-evidence table derivation only. No new evaluation or result changes.',WordLayoutChecked:false,failures:[]};
+ if(process.argv.includes('--save'))fs.writeFileSync(path.join(root,base+'raw/APPENDIX-REV-01-verification.json'),JSON.stringify(report,null,2)+'\n',{flag:'wx'});
+ console.log(JSON.stringify(report,null,2));
+}else console.log(JSON.stringify({tables:rowCounts,groupCharacters:Object.fromEntries(Object.entries(groups).map(([g,t])=>[g,t.length])),contentOutcomes:counts(scores),prohibited:[...Object.entries(groups)].flatMap(([g,t])=>[...t.matchAll(/researcher|Codex|AI-assisted|Htet,|Unpublished course assignment/gi)].map(m=>({group:g,match:m[0],context:t.slice(m.index-50,m.index+90)})))}));

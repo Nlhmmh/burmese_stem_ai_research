@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) has been revised against the supplied rubric and the author's language and passive-voice feedback on 4 October 2026. The [language record](../evaluation/04_paper/plain_language_revision.md) documents clearer academic English, Design evaluation terminology, the six exact Assignment 4 keywords, removal of citations to the author's assignments and the ion evidence recheck. The [latest passive-voice record](../evaluation/04_paper/passive_voice_revision.md) documents removal of author-focused researcher wording. The paper retains an eight-word title, two figures and six tables, with 137 local abstract tokens and twelve cited references. [Current verification](../evaluation/04_paper/raw/PASSIVE-REV-01-verification.json) records counts and unchanged evidence/source identities. Earlier revision counts remain historical. The [Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) remains applicable. NEXT: the author creates the DOCX from the Markdown, then reviews its layout and submission/sharing scope. All 69 evidence entries, E073, earlier captures, results and 66 production identities remain unchanged. No new evaluation, endorsement or release clearance is introduced.**
+> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) includes recorded evaluation tables in Appendices A–I following APPENDIX-REV-01 on 4 October 2026. The [latest revision record](../evaluation/04_paper/appendix_revision.md) and [current verification](../evaluation/04_paper/raw/APPENDIX-REV-01-verification.json) document 32 appendix tables and five unchanged main tables. The full 373-test inventory, 91 delivered-output content ratings and other recorded cases are included. Technical results, content ratings and supporting judgements remain separate. The abstract, six exact Assignment 4 keywords, twelve references, two figures, 69 evidence entries and 66 production identities are unchanged. Earlier rubric, language and passive-voice records remain historical. The [Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) remains applicable. NEXT: the DOCX is created from the Markdown, then wide-table layout, repeated headers, embedded figures and submission/sharing scope are checked. No evaluation rerun or release clearance is introduced.**
 
 Step 29's [submission-risk review](../evaluation/04_paper/submission_risk_review.md)
 is complete. Recorded Functionality, Usability and design literature are no
@@ -3669,6 +3669,16 @@ assessment. Quoted learner interface choices were retained. The
 [verification](../evaluation/04_paper/raw/PASSIVE-REV-01-verification.json)
 confirm unchanged findings, references, keywords and evidence/source identities.
 The current abstract has 137 local tokens. Earlier counts are historical.
+
+**Evaluation appendix revision, 4 October 2026 (`APPENDIX-REV-01`).** Recorded
+evaluation tables were added to Appendices A–I of the working paper. There are
+32 appendix tables and five main tables. All 373 unique automated tests and
+91 delivered-output content ratings are included alongside technical cases,
+usability inspection and supporting evaluations. The
+[revision record](../evaluation/04_paper/appendix_revision.md) and
+[verification](../evaluation/04_paper/raw/APPENDIX-REV-01-verification.json)
+retain failed/Partial outcomes and separate overlapping assessment scopes.
+No new evaluation was performed. Earlier paper/table counts are historical.
 
 **NEXT:** the author creates the required DOCX by copying the Markdown and
 embedding both figures, then checks its actual layout, references, author
