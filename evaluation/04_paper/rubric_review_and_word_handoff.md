@@ -12,6 +12,30 @@ appendix inventory described below. The current paper has Appendices A–H,
 with 20 appendix tables and five main tables. Earlier rubric-review counts
 and verification are historical. Copy through Appendix H, not Appendix A.
 
+**Current citation and figure revision, 5 October 2026.** The paper now has
+17 cited references. MQM Council is cited for the core error typology, with
+local additions distinguished. Three previously consulted OpenStax books
+are cited at Table C5 with section locations for the illustrated scientific
+judgements. Author and publication-year metadata were checked against the
+publishers' citation information. The Table H2 boundary-control argument now
+distinguishes a design inference from generated-content risks from test
+evidence of state protection. Hevner and Venable remain methodological sources.
+Figure 1 is unchanged and explicitly historical. Figure 2 is a simplified,
+larger-text, single-column SVG with no testing date. Browser/API distinctions
+are retained, while detailed checks remain in Appendix G. Insert the revised
+asset when creating Word. Earlier exact-assembly verifiers describe earlier
+versions and should not be run as current-paper validators. Recorded outcomes,
+paired excerpts and underlying evaluation evidence are unchanged. This is an
+editorial revision, not a new evaluation or independent content assessment.
+
+Read-only document checks confirmed all 17 references are cited, six keywords
+remain, the abstract is unchanged at 150 words, and the Results/Interpretation
+prose remains approximately 776 words. Design Evaluation prose is approximately
+1,179 words, excluding tables, captions and appendices. All table rows except
+the H2 header and boundary-control argument are unchanged, including paired
+language excerpts and result totals. Figure 2 was rendered and visually checked
+for clipping and readability. No final DOCX layout or application test was run.
+
 ## 1. Sources and controlling instructions
 
 Read the complete [instructions](../rubric/instructions.md), all four pages of
@@ -98,9 +122,10 @@ The first verification remains a draft-stage capture; verification 02 covers
 the final explicit observational-method wording and APA-order placement of
 Appendix A after References.
 
-Use `node evaluation/04_paper/raw/check_rubric_revision.mjs` for the current
-paper. Prior verifiers describe earlier assemblies and must not be cited as
-current-paper validation. The new paper body has its own
+`node evaluation/04_paper/raw/check_rubric_revision.mjs` checks the historical
+rubric-revision assembly, not the latest edited paper. Prior verifiers describe
+earlier assemblies and must not be cited as current-paper validation. That
+earlier paper body has its own
 [assembly input](raw/RUBRIC-REV-01-body.md).
 
 **Content review against the supplied rubric is recorded, with limits.** The

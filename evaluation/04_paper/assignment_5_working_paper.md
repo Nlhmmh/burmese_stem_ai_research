@@ -33,11 +33,11 @@ Conceptual evaluation examines the framework's responsibilities and rationale. A
 
 The framework coordinates seven responsibilities. These are identifying STEM terminology, interpreting technical context, selecting language support, explaining core meaning, providing scaffolding, collecting learner responses and adapting support. Together they address the three research questions. Figure 1 shows the original framework before its feedback decisions were clarified in response to evaluation findings. The refined interpretation allows language, core meaning or intended context to be reconsidered without adding an eighth stage. These are responsibilities of the design, not seven separate model calls.
 
-Table 1 defines five conceptual criteria. Requirement coverage means that a responsibility is present, not that exactly seven stages are uniquely necessary. The original GenAI interview assessed boundary completeness under its fourth criterion. The final evaluation separately assesses literature consistency. Those two judgements are not interchangeable. The original interview also did not evaluate the subsequently refined framework.
-
 ![Original seven-stage Context-Aware Adaptive STEM Scaffolding Framework](../03_results/paper_assets/figure_1_framework.png)
 
 **Figure 1. Context-Aware Adaptive STEM Scaffolding Framework before refinement.** The original diagram is reproduced unchanged. Its adaptation arrow returns to scaffolding. The refined interpretation additionally permits bounded reconsideration of language, core meaning or intended context. The two-level response interface, no-generation fade and two-adaptation maximum are design decisions, not labels in this diagram. Task–Technology Fit motivates task alignment, not measured learner fit (Goodhue & Thompson, 1995). Scaffolding theory supplies a critical benchmark, not demonstrated learning (van de Pol et al., 2010).
+
+Table 1 defines five conceptual criteria. Requirement coverage means that a responsibility is present, not that exactly seven stages are uniquely necessary. The original GenAI interview assessed boundary completeness under its fourth criterion. The final evaluation separately assesses literature consistency. Those two judgements are not interchangeable. The original interview also did not evaluate the subsequently refined framework.
 
 **Table 1. Conceptual Evaluation Criteria and Methods**
 
@@ -168,7 +168,7 @@ Separately, 91 delivered outputs received 18 Pass, 71 Partial and two Fail ratin
 
 #### 3.3.1 Supplementary Bilingual Error Assessment
 
-Following [Freitag et al. (2021)](https://doi.org/10.1162/tacl_a_00437), local error categories were adapted from Multidimensional Quality Metrics. All 104 paired passages from 32 purposefully selected outputs were examined, including every delivered main concept and all three language-help cases. English/Burmese meaning, terminology and fluency were compared against scientific references and stored text. Exploratory model-assisted annotations received no independent qualified bilingual verification. No standard MQM score or validated Burmese glossary was claimed.
+Local categories drew on explicit error analysis ([Freitag et al., 2021](https://doi.org/10.1162/tacl_a_00437)) and the Multidimensional Quality Metrics core typology ([MQM Council, n.d.](https://www.themqm.org/mqm-pillars/the-mqm-core-typology/)). Accessibility and shared-content categories were local additions. All 104 paired passages from 32 purposefully selected outputs were examined, including every delivered main concept and all three language-help cases. English/Burmese meaning, terminology and fluency were compared against scientific references and stored text. Table C5 identifies scientific source locations. Exploratory model-assisted annotations received no independent qualified bilingual verification. No standard MQM score or validated Burmese glossary was claimed.
 
 Four Major annotations affected three outputs, alongside 27 Minor annotations and ten shared-content advisories (Tables C4–C5). Gravity and ion findings explain existing failures. Unclear pH wording received a passage-level Major label without replacing its original Partial output rating. Shared scientific limitations were not translation errors. Original content totals remain unchanged. Neither corpus-wide prevalence nor independent confirmation follows from re-examining these selected texts.
 
@@ -180,13 +180,13 @@ White-box assessment exercised routing, ownership, errors, legacy sessions and c
 
 ### 3.5 Informed Argument and Scenario
 
-Eight literature-grounded arguments retained two Supported and six Partially supported conclusions (Table H2). Following [Hevner et al. (2004)](https://doi.org/10.2307/25148625), mechanisms were examined against observations and counterarguments. Task–Technology Fit supports task alignment, not demonstrated learner fit ([Goodhue & Thompson, 1995](https://doi.org/10.2307/249689)). Scaffolding requires support responsive to competence, which self-report and stored history do not establish ([van de Pol et al., 2010](https://doi.org/10.1007/s10648-010-9127-6)). Bilingual errors further qualify these arguments.
+Eight literature-grounded arguments retained two Supported and six Partially supported conclusions (Table H2). Following [Hevner et al. (2004)](https://doi.org/10.2307/25148625), mechanisms were examined against observations and counterarguments. Task–Technology Fit supports task alignment, not demonstrated learner fit ([Goodhue & Thompson, 1995](https://doi.org/10.2307/249689)). Scaffolding requires support responsive to competence, which self-report and stored history do not establish ([van de Pol et al., 2010](https://doi.org/10.1007/s10648-010-9127-6)). Application-controlled boundaries were a design inference from generated-content risks ([Ji et al., 2024](https://arxiv.org/abs/2202.03629v7)). Their state protection was assessed through tests, not established by evaluation-method literature. Bilingual errors further qualify these arguments.
 
 A Photosynthesis walkthrough recorded two adaptations, four events, one follow-up and completion, with fifteen technical checks Pass (Figure 2, Tables G1–G2). Cap and post-completion checks used application programming interface (API) requests rather than learner clicks. Resume/Review restored state. Content remains provisionally Partial because of organism-scope wording, nontechnical English retention and limited example novelty.
 
 ![Photosynthesis walkthrough with browser actions and separately labelled API-only checks](assets/figure_2_photosynthesis_reader.svg)
 
-**Figure 2. Recorded Photosynthesis walkthrough.** Solid boxes show the scripted browser workflow and support. Dashed boxes identify separately executed API-only boundary checks. At round two the interface offers no further response choices. Separate API requests add capped and fade events without generation. High does not complete the session. An unrelated gravity follow-up is rejected without an extra save or concept change. History, Resume, explicit Finish and Review preserve the session. This is a technical observation, not a learner study. Content remains provisional.
+**Figure 2. Recorded Photosynthesis walkthrough.** Solid boxes show browser actions and support. Dashed boxes show API-only checks. High records fade without generation or completion. Finish completes the session. This is one technical scenario, not a learner study. Detailed checks and provisional content findings are reported in Appendix G.
 
 ### 3.6 Academic Literature Evaluation
 
@@ -275,7 +275,11 @@ Future work should address the Burmese/STEM errors, delivery failures and intera
 
 Athukorala, K. S. N., & De Silva, D. I. (2025). Bridging language barriers in programming education: Java programming assistance tool for Sinhala native speakers. *International Journal of Computer Theory and Engineering, 17*(3), 151–169. [https://doi.org/10.7763/IJCTE.2025.V17.1378](https://doi.org/10.7763/IJCTE.2025.V17.1378)
 
+Clark, M. A., Douglas, M., & Choi, J. (2018). *Biology* (2nd ed.). OpenStax. [https://openstax.org/books/biology-2e/pages/1-introduction](https://openstax.org/books/biology-2e/pages/1-introduction)
+
 Dunlosky, J., & Rawson, K. A. (2012). Overconfidence produces underachievement: Inaccurate self evaluations undermine students' learning and retention. *Learning and Instruction, 22*(4), 271–280. [https://doi.org/10.1016/j.learninstruc.2011.08.003](https://doi.org/10.1016/j.learninstruc.2011.08.003)
+
+Flowers, P., Theopold, K., Langley, R., & Robinson, W. R. (2019). *Chemistry* (2nd ed.). OpenStax. [https://openstax.org/books/chemistry-2e/pages/1-introduction](https://openstax.org/books/chemistry-2e/pages/1-introduction)
 
 Freitag, M., Foster, G., Grangier, D., Ratnakar, V., Tan, Q., & Macherey, W. (2021). Experts, errors, and context: A large-scale study of human evaluation for machine translation. *Transactions of the Association for Computational Linguistics, 9*, 1460–1474. [https://doi.org/10.1162/tacl_a_00437](https://doi.org/10.1162/tacl_a_00437)
 
@@ -289,11 +293,15 @@ Kleidermacher, H. C., & Zou, J. (2026). Science across languages: Assessing LLM 
 
 Kuzu, T. E. (2026). AI-supported translanguaging processes in primary school: Empirical insights into ChatGPT's role in multilingual interactions. *Technology, Knowledge and Learning*. Advance online publication. [https://doi.org/10.1007/s10758-026-09974-7](https://doi.org/10.1007/s10758-026-09974-7)
 
+MQM Council. (n.d.). *The MQM core typology*. [https://www.themqm.org/mqm-pillars/the-mqm-core-typology/](https://www.themqm.org/mqm-pillars/the-mqm-core-typology/)
+
 Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. *Cognitive Science, 12*(2), 257–285. [https://doi.org/10.1207/s15516709cog1202_4](https://doi.org/10.1207/s15516709cog1202_4)
 
 Tran, H. T. H., Martinc, M., Caporusso, J., Doucet, A., & Pollak, S. (2023). *The recent advances in automatic term extraction: A survey* (Version 1) [Preprint]. arXiv. [https://arxiv.org/abs/2301.06767v1](https://arxiv.org/abs/2301.06767v1)
 
 University of Auckland. (2026). *INFOSYS 720: Evaluate information systems artefacts* (Assignment 5 specifications, Version 3) [Course handout].
+
+Urone, P. P., & Hinrichs, R. (2022). *College physics* (2nd ed.). OpenStax. [https://openstax.org/books/college-physics-2e/pages/1-introduction-to-science-and-the-realm-of-physics-physical-quantities-and-units](https://openstax.org/books/college-physics-2e/pages/1-introduction-to-science-and-the-realm-of-physics-physical-quantities-and-units)
 
 van de Pol, J., Volman, M., & Beishuizen, J. (2010). Scaffolding in teacher–student interaction: A decade of research. *Educational Psychology Review, 22*(3), 271–296. [https://doi.org/10.1007/s10648-010-9127-6](https://doi.org/10.1007/s10648-010-9127-6)
 
@@ -409,7 +417,7 @@ Only delivered support was content-rated. Fade, cap and unreached steps did not 
 
 ### C.1 Focused Bilingual Error Assessment
 
-A retrospective, risk-informed sample of 32 saved outputs covered all delivered main concepts, all three language-help cases and selected adaptations. All 104 paired passages were examined using local categories informed by Freitag et al. (2021). The sample was not random or blind. English was a comparison text, not a scientific gold standard. Scientific expectations and persisted text were checked separately. There was no approved Burmese glossary or independent qualified verification of the model-assisted annotations.
+A retrospective, risk-informed sample of 32 saved outputs covered all delivered main concepts, all three language-help cases and selected adaptations. All 104 paired passages were examined using local categories informed by Freitag et al. (2021) and MQM Council (n.d.), with local accessibility and shared-content additions. The sample was not random or blind. English was a comparison text, not a scientific gold standard. Scientific expectations and persisted text were checked separately. There was no approved Burmese glossary or independent qualified verification of the model-assisted annotations.
 
 **Table C4. Supplementary Annotation Summary**
 
@@ -440,7 +448,7 @@ The 41 findings comprise four Major annotations in three outputs, 27 Minor annot
 | Current, Burmese-preference initial example | bulb lights up | မီးလုံး روشن ဖြစ်လာတာပါ။ | Minor. An Arabic-script fragment interrupts Burmese | Replace the fragment with မီးလုံး လင်းလာသည်။ |
 | Current, Burmese-preference language revision | how fast charge is passing a point | charge ဘယ်လောက်မြန်မြန် ဖြတ်သန်းနေသလဲ | Shared-content advisory. Both languages use speed-like wording | Revise both versions to charge quantity per unit time |
 
-*Note.* Excerpts are exact saved spans. Revision directions are editorial, not certified terminology or changes to stored outputs. The two gravity annotations belong to one failed output. The pH output remains Partial in the original rubric despite its new local Major annotation. The original 18 Pass, 71 Partial and two Fail totals are unchanged. Shared-source analysis, single-assessor/domain limits and purposeful selection prevent claims of corpus-wide translation accuracy or learner benefit.
+*Note.* Scientific checks used Urone and Hinrichs (2022, Sections 6.5 and 20.1) for mass, weight and current, Flowers et al. (2019, Sections 2.6 and 14.2) for ions and pH, and Clark et al. (2018, Section 8.1) for photosynthesis. These sources support scientific interpretation, not certified Burmese wording. Excerpts are exact saved spans. Revision directions are editorial, not changes to stored outputs. The two gravity annotations belong to one failed output. The pH output remains Partial in the original rubric despite its new local Major annotation. The original 18 Pass, 71 Partial and two Fail totals are unchanged. Shared-source analysis, single-assessor/domain limits and purposeful selection prevent claims of corpus-wide translation accuracy or learner benefit.
 
 ## Appendix D. Black-Box Testing Records
 
@@ -554,7 +562,7 @@ These summaries show how critique, literature, informed argument and scenarios e
 
 **Table H2. Design Informed-Argument Conclusions**
 
-| Mechanism examined | Scholarly warrant and counterargument | Conclusion |
+| Mechanism examined | Scholarly basis, design inference and limitation | Conclusion |
 | --- | --- | --- |
 | Terminology/context and intended-meaning repair | Tran et al. (2023) and Goodhue and Thompson (1995). Intended interpretation can remain wrong or uncorrected | Partially supported |
 | Selective bilingual language support | Kleidermacher and Zou (2026) and Goodhue and Thompson (1995). Term retention does not guarantee clear Burmese support | Partially supported |
@@ -563,7 +571,7 @@ These summaries show how critique, literature, informed argument and scenarios e
 | Bounded adaptation and fade | van de Pol et al. (2010). Route/state controls work, but calibrated support and optimal dose are unestablished | Partially supported |
 | Concept-scoped follow-up | Goodhue and Thompson (1995), applied to the supporting task. Tested scope is not universal classification accuracy | Supported for the tested scoped mechanism |
 | History and preference continuity | Goodhue and Thompson (1995), applied to task continuity. Persistence works, but interface/task-fit limits remain | Partially supported |
-| Application-controlled boundaries | Hevner et al. (2004) and Venable et al. (2016). Safe failure does not guarantee successful delivery or content | Partially supported |
+| Application-controlled boundaries | Given generated-content risks described by Ji et al. (2024), application control was a design inference. Recorded tests support state protection, not literature validation of these controls. Duplicate calls and delivery failures remain | Partially supported |
 
 **Table H3. Design Literature Comparison Summary**
 
