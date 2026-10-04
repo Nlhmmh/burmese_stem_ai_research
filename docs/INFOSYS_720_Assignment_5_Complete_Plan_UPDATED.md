@@ -155,7 +155,7 @@ versioned test/configuration tree. Full application coverage is available at
 branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) includes recorded evaluation tables in Appendices A–I and the supplementary bilingual assessment BIL-20261005-01, dated 5 October 2026. The [latest revision record](../evaluation/04_paper/bilingual_assessment_revision.md) and [current verification](../evaluation/02_design/simulation/bilingual_assessment/verification.json) document 35 appendix tables and five main tables. The full 373-test inventory and original 91 delivered-output content ratings remain. A purposeful sample of 32 saved outputs adds 104 examined paired passages and 41 exploratory annotations, not independent runs or new output ratings. Six exact Assignment 4 keywords, two figures, 69 original evidence entries and 66 production identities are preserved. There are thirteen references. Five [supplementary evidence records](../evaluation/03_results/supplementary_evidence_register.md) are indexed separately. Earlier rubric, language and appendix records remain historical. The [Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) remains applicable. NEXT: qualified bilingual checking can verify the new annotations. The DOCX is created from the Markdown, then wide-table layout, repeated headers, embedded figures and submission/sharing scope are checked. No application rerun or release clearance is introduced.**
+> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) now uses reader-facing summaries and examples in Appendices A–H. Appendix A is unchanged. The [latest revision record](../evaluation/04_paper/appendix_summary_revision.md) and [current verification](../evaluation/04_paper/raw/APPENDIX-SUMMARY-01-verification.json) document 20 appendix tables and five main tables. Full case/test inventories remain in the evaluation archive, not in the shortened paper. Simulation totals and the original 91-output ratings are unchanged. Bilingual assessment retains its 32-output/104-passage scope, 41 exploratory annotations and noticeable English/Burmese examples. Appendix I was removed because the main paper already maps results to requirements and research questions. Six keywords, thirteen references, two figures, 69 original evidence entries and 66 production identities are preserved. Earlier revision captures remain historical. Follow the [Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) through Appendix H. NEXT: qualified bilingual checking can verify the new annotations. The DOCX is created from the Markdown, then table layout, embedded figures and submission/sharing scope are checked. No evaluation rerun or release clearance is introduced.**
 
 Step 29's [submission-risk review](../evaluation/04_paper/submission_risk_review.md)
 is complete. Recorded Functionality, Usability and design literature are no
@@ -3708,6 +3708,25 @@ unchanged keywords. The five separately named
 [supplementary records](../evaluation/03_results/supplementary_evidence_register.md)
 do not alter the original 69-entry evidence register. Prior revision captures
 remain historical.
+
+**Reader-facing appendix reduction, 5 October 2026 (`APPENDIX-SUMMARY-01`).**
+Appendices B–H now summarise evaluation scope, findings and illustrative
+observations instead of reproducing every case. Appendix A is unchanged.
+Appendix C gives technical/content totals, support-path examples and exact
+English/Burmese language findings. White-box coverage is explained by behaviour
+rather than test filenames. Usability and scenario summaries retain material
+issues and browser/API boundaries. Appendix I was removed from the paper
+because Tables 2–5 already provide the essential requirement/RQ mapping.
+Its original detailed analysis remains archived.
+
+The [revision record](../evaluation/04_paper/appendix_summary_revision.md) and
+[verification](../evaluation/04_paper/raw/APPENDIX-SUMMARY-01-verification.json)
+document 20 appendix tables and five main tables. The approximate appendix
+count decreased from 29,478 to 3,361 words. Appendices are supplementary,
+not part of the Design Evaluation prose count. Abstract is 150 words, Design
+Evaluation about 1,133 prose words and Results/Interpretation about 776.
+Original evidence, scores, test totals and production identities are unchanged.
+No application test, simulation or new human assessment was performed.
 
 **NEXT:** qualified bilingual checking can verify the supplementary wording
 and proposed corrections. The author creates the required DOCX by copying the Markdown and

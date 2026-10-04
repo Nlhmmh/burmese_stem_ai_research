@@ -6,6 +6,12 @@ The revised deliverable is [assignment_5_working_paper.md](assignment_5_working_
 This review and its administrative records are **not paper content**.
 No Word document or new evaluation run was requested or created.
 
+**Current appendix handoff.** The reader-facing revision
+[APPENDIX-SUMMARY-01](appendix_summary_revision.md) supersedes the earlier
+appendix inventory described below. The current paper has Appendices A–H,
+with 20 appendix tables and five main tables. Earlier rubric-review counts
+and verification are historical. Copy through Appendix H, not Appendix A.
+
 ## 1. Sources and controlling instructions
 
 Read the complete [instructions](../rubric/instructions.md), all four pages of
@@ -50,7 +56,7 @@ scope and primary scholarly warrants for informed argument.
 ## 3. Word-copy instructions
 
 1. Copy only the content of [the working paper](assignment_5_working_paper.md),
-   from its title through the end of Appendix A, which follows References.
+   from its title through the end of Appendix H. Appendices follow References.
    Do not copy
    this handoff record, revision identifiers, evidence registers or verification
    output into the paper.

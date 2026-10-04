@@ -6,7 +6,7 @@
 | Version | 2.1 |
 | Prepared | 30 September 2026 |
 | Status | B01 frozen; Steps 10–18 and §18.1 recorded; 225 results, 24 PIRQOA chains and 17 scoped claims preserved; Steps 24–29, Phase E and reader-revision captures retained; supplied-rubric and clear-language Markdown revisions recorded 4 October 2026; six exact Assignment 4 keywords, no author-assignment literature citations, counts are guidance; 69 evidence entries unchanged; mixed findings/release limits retained; NEXT: author-created DOCX review and submission/sharing checks |
-| Latest paper revision | BIL-20261005-01, 5 October 2026. Supplementary bilingual assessment of 32 saved outputs added separately from original results. Appendices A–I contain 35 appendix tables, with five main tables. Original ratings and acceptance criteria are unchanged. |
+| Latest paper revision | APPENDIX-SUMMARY-01, 5 October 2026. Reader-facing Appendices A–H contain 20 summary/example tables, with five main tables. Appendix A is unchanged. Bilingual examples and mixed findings remain. Original evidence, ratings and acceptance criteria are unchanged. |
 | Evaluator | To be recorded before execution |
 | Primary conceptual artefact | Context-Aware Adaptive STEM Scaffolding Framework (Assignment 3, Artefact 3) |
 | Primary design artefact | Burmese STEM AI proof-of-concept system (Assignment 4, Artefact 3) |
@@ -751,6 +751,19 @@ record 35 appendix tables, five main tables, six keywords and thirteen reference
 The earlier 32-table paper capture remains historical. Production code and
 saved evaluation outputs were not changed. Proposed Burmese wording remains
 editorial guidance, not an independently validated glossary.
+
+**Reader-facing appendix reduction, 5 October 2026 (`APPENDIX-SUMMARY-01`).**
+The [revision record](../04_paper/appendix_summary_revision.md) and
+[current verification](../04_paper/raw/APPENDIX-SUMMARY-01-verification.json)
+document condensed Appendices B–H and unchanged Appendix A. Appendix I was
+removed from the paper because Tables 2–5 already map results to requirements
+and research questions. The original 24-chain analysis remains in the archive.
+The paper has 20 appendix tables and five main tables. Simulation and bilingual
+assessment retain examples, original scores, local severity distinctions and
+assessor limits. Complete test inventories and detailed findings remain in
+their original records rather than the reader-facing paper. Original evidence
+and production identities are unchanged. Prior paper verification captures
+are historical. No evaluation was rerun.
 
 Acceptance criteria are still 2.1. **Next: the supplementary annotations and
 proposed wording can be checked by a qualified bilingual assessor. The author
