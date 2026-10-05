@@ -6,6 +6,28 @@ The revised deliverable is [assignment_5_working_paper.md](assignment_5_working_
 This review and its administrative records are **not paper content**.
 No Word document or new evaluation run was requested or created.
 
+**Latest conceptual-scope correction, 5 October 2026.** The paper's informed
+argument now examines the original seven-stage framework in Figure 1, before
+refinement. Its stage responsibilities and arrows are considered using the
+existing scholarly sources. The later High-to-fade rule is no longer used as
+an original-framework example. Tables 2 and H1 identify the same original
+scope. Refinements remain subsequent responses to conceptual findings, while
+the refined application is assessed separately in Section 3.
+
+The conceptual photosynthesis scenario is also presented as a stage-by-stage
+evaluation, not a software execution test. Execution metadata and complete
+application-lifecycle coverage are no longer required of that scenario.
+Language-selection and response-to-adaptation gaps remain relevant.
+
+The paper's revised argument is a current analytical assessment of the original
+diagram, not a claim that the archived literature-grounded version had always
+assessed that scope. The detailed version-two argument and its revision record,
+which assess the refined framework, remain unchanged as historical evidence.
+Earlier handoff statements that Section 2.4 assesses the refined framework are
+superseded. Conceptual Evaluation prose is now approximately 1,200 words under
+the counting convention below. The abstract remains 150 words. No new empirical
+results or literature search were introduced.
+
 **Latest whole-paper readability review, 5 October 2026.** The main paper and
 Appendices A–H were reviewed section by section. Unclear technical phrases were
 replaced with clearer academic English, passive sentences were preferred where
