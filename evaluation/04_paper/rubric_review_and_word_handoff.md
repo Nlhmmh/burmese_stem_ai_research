@@ -6,6 +6,44 @@ The revised deliverable is [assignment_5_working_paper.md](assignment_5_working_
 This review and its administrative records are **not paper content**.
 No Word document or new evaluation run was requested or created.
 
+**Latest whole-paper readability review, 5 October 2026.** The main paper and
+Appendices A–H were reviewed section by section. Unclear technical phrases were
+replaced with clearer academic English, passive sentences were preferred where
+natural, and already-clear wording was retained. No division of work between
+an assistant and the author is described. The required GenAI interview method,
+its recorded persona and its evidence limits remain explicit. Existing findings
+and the absence of independent qualified bilingual verification were retained.
+
+Readability was improved before counts were checked against the supplied V3
+specifications and marking rubric. Repetition in Design Evaluation was then
+trimmed. Counts below use visible whitespace-separated words containing a
+letter or number. URLs, image alternative text and headings are excluded.
+These approximate counts may differ from Microsoft Word.
+
+| Section | Prose words | Including tables, captions and notes | Suggested guidance |
+| --- | --- | --- | --- |
+| Abstract | 150 | 150 | Up to 150 |
+| Conceptual Artefact Evaluation | 1,135 | 1,620 | 800–1,200 |
+| Design Artefact Evaluation | 1,215 | 2,209 | 800–1,200 |
+| Results and Interpretation | 747 | 978 | 500–750 |
+| Conclusion | 175 | 175 | No separate allocation |
+
+Appendices and references are counted separately, not added to Design
+Evaluation. The specifications do not state whether table text is excluded
+from section allocations, so both count types are reported. Suggested counts
+are guidance, not strict limits, following the author's instruction. The
+Design Evaluation prose is 15 words above the suggested upper value. The six
+original keywords are retained, following the confirmed instruction.
+
+Read-only checks against the pre-revision tracked paper confirmed all 25
+tables retain their numerical values, all 17 reference entries and six keywords
+are unchanged, and exact English/Burmese excerpts and fixed simulation inputs
+are preserved. Headings, figure targets and local links were also checked.
+Only the paper and this handoff record were edited. No evaluation evidence,
+production code, test results or figure assets were changed. No new test run,
+provider call, content rating or final Word-layout verification was performed.
+Earlier counts and exact-assembly checks below are historical.
+
 **Current appendix handoff.** The reader-facing revision
 [APPENDIX-SUMMARY-01](appendix_summary_revision.md) supersedes the earlier
 appendix inventory described below. The current paper has Appendices A–H,
