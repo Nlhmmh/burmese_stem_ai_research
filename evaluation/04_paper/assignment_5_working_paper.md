@@ -176,7 +176,7 @@ Scopes, timings and observations are summarised in Tables B1–B2.
 
 Sixteen fixed STEM inquiries followed three response paths, with seven additional language/context cases (Appendix A). Scientific expectations were defined beforehand. Handlers, services and storage were tested with a live provider and isolated database, excluding browser/public-proxy requests. Of 55 attempts, 44 were technical pass, eight returned controlled ambiguity without sessions, and three were fail. Cancellation was delayed to 52.825 seconds. Two corrections were rejected because interpretations were unchanged. Unreached steps produced no delivered output.
 
-Of 91 delivered outputs, 18 were rated pass, 71 partial and two fail (Tables C1–C3). Assessment used postgraduate STEM knowledge, native Burmese fluency and advanced English proficiency, without an independent second assessor or verified expertise in every domain. Mass was mistranslated as `အစုလိုက်အပြုံလိုက်` rather than `ဒြပ်ထု`. The ion wording `net charge မရှိတော့ဘဲ` denied net charge, contradicting the English definition and later charge statement. Later adaptations did not repair these stored errors.
+Of 91 delivered outputs, 18 were rated pass, 71 partial and two fail (Tables C1–C3). Assessment used postgraduate STEM knowledge, native Burmese fluency and advanced English proficiency, without an independent second assessor or verified expertise in every domain. In the physics explanation of gravity, mass was confused with weight and translated using a phrase meaning “in a large group”. In chemistry, an ion was incorrectly described as having no net electric charge, contradicting the English definition and a later statement about charge. In the physics explanation of electric current, charge flow was described as movement speed rather than the amount of charge passing a point each second. The stored gravity and ion errors remained after later adaptations.
 
 #### 3.3.1 Supplementary Bilingual Error Assessment
 
@@ -198,7 +198,7 @@ Of eight literature-based arguments, two were supported and six partially suppor
 
 Two adaptations, four response events, one follow-up and completion were recorded in a photosynthesis walkthrough. Fifteen technical checks passed (Figure 2, Tables G1–G2). The adaptation limit and post-completion behaviour were checked through application programming interface (API) requests rather than learner clicks. Stored state was restored through Resume/Review. Content remains provisionally partial because of overly broad scientific wording, unexplained nontechnical English and similar examples.
 
-![Photosynthesis walkthrough with browser actions and separately labelled API-only checks](assets/figure_2_photosynthesis_reader.svg)
+![Photosynthesis walkthrough with browser actions and separately labelled API-only checks](assets/figure_2_photosynthesis_reader.png)
 
 **Figure 2. Recorded Photosynthesis walkthrough.**
 
