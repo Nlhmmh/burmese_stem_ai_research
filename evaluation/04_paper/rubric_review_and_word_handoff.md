@@ -12,7 +12,63 @@ appendix inventory described below. The current paper has Appendices A–H,
 with 20 appendix tables and five main tables. Earlier rubric-review counts
 and verification are historical. Copy through Appendix H, not Appendix A.
 
-**Current citation and figure revision, 5 October 2026.** The paper now has
+**Latest FURPS reference revision, 5 October 2026.** The course-handout
+secondary citation and unused handout reference were removed from the paper.
+FURPS now cites the directly inspected OpenUP system-wide-requirements page
+published through the Eclipse Process Framework. It describes the five core
+categories within FURPS+, with constraints as the additional category.
+This supports the category definitions only, not original authorship or the
+evaluation results. No direct reading of Grady and Caswell's book is implied.
+The paper retains 17 references. Earlier secondary-citation instructions below
+describe historical revisions and do not apply to this updated FURPS reference.
+
+**Preceding capitalisation review, 5 October 2026.** Ordinary judgement labels
+are lowercase throughout prose and tables, including conceptually justified,
+justified with qualification, fully/partially supported, pass/partial/fail,
+and severity and literature-support labels. FURPS dimensions and photosynthesis
+use lowercase in ordinary prose. Acronyms, proper names, formal interface labels,
+headings, captions, keywords and reference entries retain their intended casing.
+Read-only checks confirmed the 150-word abstract, six keywords, 17 references,
+all numeric results, paired English/Burmese excerpts and figure links are preserved.
+No underlying assessment, evidence file or production code was changed.
+
+**Preceding clarity revision, 5 October 2026.** The introduction to Table 1 now
+explains the five criteria and their purpose in a complete paragraph. Section 2.2
+states the recorded context-prompt persona, a critical evaluator of a conceptual
+artefact in Information Systems research, and its instructions to distinguish
+evidence, judgements and assumptions. One explicit sentence there identifies
+the interview's original-framework scope. Repeated scope warnings in the
+synthesis and Appendix H were removed. Section 2.4 still identifies the refined
+framework assessed by the informed argument. The historical scenario's missing
+evidence remains stated, without repeated warnings about later assessments.
+Recorded ratings and scientific/language excerpts are unchanged. The original
+interview file was not edited. Prose counts from the preceding organisation
+review below are historical; the abstract, keywords, Design Evaluation and
+Results/Interpretation are unchanged by this clarity revision.
+
+**Preceding organisation review, 5 October 2026.** The complete paper, including
+Appendices A–H, was checked for statement placement. Table 1's note now explains
+criterion scope. Rating definitions and the interview/final-criterion distinction
+are under Table 2. Repeated theory in that result note was removed because the
+scholarly reasoning remains in Section 2.4. Shared-source and refinement limits
+are grouped with conceptual synthesis. Usability procedure and findings are in
+Section 3.1, while Section 3.7 introduces the cross-method result summary.
+Technical rating definitions accompany Table 4. Browser-capture handling is in
+Appendix F, rather than the interpretation of scientific/educational limitations.
+Appendix notes now explain their own tables, and an internal comment about a
+removed traceability appendix was omitted. Table A1 points to the actual path
+descriptions in Table A3.
+
+Read-only reconciliation checked all 25 tables and every table cell against the
+pre-edit paper. Ratings, result totals, paired excerpts, figures and all 17
+reference entries are unchanged. Abstract remains 150 words, with six keywords.
+Approximate prose counts are 1,146 for Conceptual Evaluation, 1,155 for Design
+Evaluation and 751 for Results/Interpretation, excluding tables, captions and
+notes. Word counting may differ. Hash checks confirmed 143 evidence, source,
+production, register and figure files were unchanged. No application test,
+provider call, new content assessment or final Word-layout check was performed.
+
+**Preceding citation and figure revision, 5 October 2026.** The paper has
 17 cited references. MQM Council is cited for the core error typology, with
 local additions distinguished. Three previously consulted OpenStax books
 are cited at Table C5 with section locations for the illustrated scientific
@@ -28,7 +84,7 @@ versions and should not be run as current-paper validators. Recorded outcomes,
 paired excerpts and underlying evaluation evidence are unchanged. This is an
 editorial revision, not a new evaluation or independent content assessment.
 
-Read-only document checks confirmed all 17 references are cited, six keywords
+Checks for that preceding revision confirmed all 17 references are cited, six keywords
 remain, the abstract is unchanged at 150 words, and the Results/Interpretation
 prose remains approximately 776 words. Design Evaluation prose is approximately
 1,179 words, excluding tables, captions and appendices. All table rows except
