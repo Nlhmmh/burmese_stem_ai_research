@@ -1,5 +1,7 @@
 # Supplementary bilingual evidence synthesis
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 BIL-20261005-01, 5 October 2026, Pacific/Auckland.
 
 This is a dated extension of [results interpretation](results_interpretation.md),
@@ -42,8 +44,9 @@ No new usability, black-box or white-box case was executed.
 The simulation run is the source of the text. Original content assessment,
 new annotations, informed argument and this synthesis reuse those texts and
 sometimes the same reasoning. They are not independent replications or
-votes. No independent qualified bilingual verification was performed for
-the supplementary annotations.
+votes. The author has confirmed personal scientific and bilingual verification
+of the supplementary annotations. This is not an independent second assessment.
+See the [confirmation](../00_protocol/human_verification_confirmation.md).
 
 The original pH Partial and supplementary Major label are both retained.
 The first is a whole-output decision using the old rubric. The second is a

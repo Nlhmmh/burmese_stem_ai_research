@@ -1,5 +1,7 @@
 # Step 18 — Design artefact literature evaluation
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 | Document control | Value |
 | --- | --- |
 | Method / analysis ID | DA-LIT / `ANALYSIS-B01-20261003-DESIGN-LITERATURE-01` |
@@ -123,9 +125,9 @@ Structured explanations move the design beyond lexical translation, but
 structural completeness cannot guarantee scientific or pedagogical adequacy.
 The earlier endorsed simulation contains **91 delivered-output ratings: 18
 Pass, 71 Partial, two Fail** (E022–E023). The fresh Photosynthesis content
-remains provisionally Partial: limited first-example novelty, extensive English
+remains Partial after author verification: limited first-example novelty, extensive English
 retention and possible chloroplast scope confusion (E042, SCN-CQ02–04).
-Neither literature nor the previous endorsement upgrades those new outputs.
+Neither literature nor author verification upgrades those outputs to Pass.
 
 Kuzu's primary abstract and introduction locate productive interaction within
 guided, teacher-mediated activities. That condition is a transfer limitation

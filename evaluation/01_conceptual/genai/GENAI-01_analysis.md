@@ -1,5 +1,7 @@
 # GENAI-01 Analysis — Context-Aware Adaptive STEM Scaffolding Framework
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 ## 1. Purpose
 
 This file contains the **post-interview analysis** for the structured GenAI interview conducted for INFOSYS 720 Assignment 5.

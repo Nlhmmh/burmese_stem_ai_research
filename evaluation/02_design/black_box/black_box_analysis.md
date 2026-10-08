@@ -1,5 +1,7 @@
 # Step 14 — Black-box execution and findings
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Run: **RUN-B01-20261002-BLACKBOX-01**, 2 October 2026 (Pacific/Auckland). Baseline: **B01-A5-EVALUATION**, application commit `37faefa236829aa3d79e023faa1fb72a086b5c2a`. Protocol acceptance criteria remain version 2.1; observed oracle discrepancies are recorded below, not silently removed from the pre-run specification.
 
 Status: **Completed with qualifications. All BB01–BB24 and their listed API subcases are executed/accounted for.** This is not an all-assertion or all-content pass. Step 15 white-box testing is next; the wider structured-usability matrix remains separate.

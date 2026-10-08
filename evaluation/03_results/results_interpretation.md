@@ -1,8 +1,10 @@
 # Step 23 — Interpretation of the recorded evaluation
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Run: `INTERPRET-20261003-RESULTS-01`, 3 October 2026, Pacific/Auckland.
 Status: **Complete with qualified conclusions and unresolved failures.**
-Evaluator: Codex recorded-evidence synthesis under user direction; no new human endorsement.
+Preparation: Codex recorded-evidence synthesis under user direction. Current scientific and bilingual verification and final acceptance are confirmed by the author; see the human-verification update below.
 
 The strongest conclusion is that **B01 implements tested, bounded response and
 persistence mechanics**. Content quality and intended-meaning repair remain
@@ -60,7 +62,7 @@ boundaries or use the separately recorded isolated database.
 | Label / scope | Permitted conclusion | Existing results and evidence | Limiting or conflicting evidence |
 | --- | --- | --- | --- |
 | INT-07 / REQ-01, RQ1; F2/F6 | Context interpretation and bounded repair function in recorded ready/corrected cases and preserve previous/current interpretations. Dependable identification of intended meaning is only partly supported. | R081, R155, R160, R177, R200, R201, R202, R214, R216; E019, E021, E024, E026, E037, E039 | SIM-CM-13/16 reject purported corrections that leave concept/domain unchanged. Eight controlled initial ambiguities create no session. A generated still-ambiguous clarification uses a round; it is not successful concept correction. |
-| INT-08 / REQ-01–02, RQ1–2; F3/F4/F6 | The system delivers bilingual, structured explanations and route-specific support, but consistent scientific accuracy, Burmese terminology and pedagogical novelty are not established. | R082, R083, R159, R160, R203, R204, R205, R207, R208, R209, R210, R217; E022, E023, E024, E026, E042 | Endorsed review: 18 Pass, 71 Partial, two Fail among 91 delivered outputs. Gravity mass/weight and ion net-charge errors remain. BB fixture novelty was not assessed. Fresh Photosynthesis content is provisional, including scope, retention and novelty concerns. |
+| INT-08 / REQ-01–02, RQ1–2; F3/F4/F6 | The system delivers bilingual, structured explanations and route-specific support, but consistent scientific accuracy, Burmese terminology and pedagogical novelty are not established. | R082, R083, R159, R160, R203, R204, R205, R207, R208, R209, R210, R217; E022, E023, E024, E026, E042 | Author-verified review: 18 Pass, 71 Partial, two Fail among 91 delivered outputs. Gravity mass/weight and ion net-charge errors remain. BB fixture novelty was not assessed. Fresh Photosynthesis content remains Partial after author verification, including scope, retention and novelty concerns. |
 | INT-09 / enabling REQ-01–03, RQ1–3; U1–U9 | The technical inspection supports basic task visibility, two-level choices, feedback and readable bilingual rendering in the inspected configurations, with six U Pass/three U Partial. | R093, R094, R095, R096, R097, R098, R099, R100, R101, R212, R213, R214, R218, R219, R221; E036, E037, E038 | Modal focus and English-only errors have severity 2; the generic correction badge has severity 1. Viewport emulation is not physical-device testing. No participant usability or full accessibility audit; preference-save infrastructure-fault UI not assessed. |
 | INT-10 / REQ-01–03, RQ1–3; F6/F13 | Live simulation and one fresh scenario instantiate much of the intended workflow, but live delivery reliability remains partial. | R198, R199, R200, R201, R202, R206, R225; E018, E019, E021, E042, E004, E007 | Simulation has three technical delivery Fail and eight initial no-session ambiguities. SIM05-C's nominal 20-second abort is observed at 52.825 seconds. One successful scenario cannot cancel those failures. Fifteen initial-request timings are descriptive only. |
 
@@ -112,10 +114,13 @@ inside this step. Existing Fail cases remain separate from unassessed claims.
 
 E061 consolidation, E064 PIRQOA and E067 interpretation are **derived analyses**,
 not three additional evaluation methods. E053 and E058 are argument versions,
-not independent assessments. Nathan's 2 October endorsement covers the recorded
-AI-assisted simulation worksheets only: it is not a second independent review
-or an endorsement of the new Photosynthesis output. No unrecorded review time,
-competence or signature is invented.
+not independent assessments. Nathan's original 2 October endorsement covered
+the simulation worksheets. The subsequent
+[human-verification confirmation](../00_protocol/human_verification_confirmation.md)
+also covers the supplementary bilingual findings and separate Photosynthesis
+content observations. This is personal fact-checking and bilingual verification,
+not a second independent assessment. No review clock time, additional competence
+or signature is invented.
 
 ## 7. Conflicts and failures retained
 
@@ -130,7 +135,7 @@ competence or signature is invented.
 | Earlier indirect counts versus later direct checks (R120, R121, R137–R139, R146) | DYN-05/06 remain Partial Pass because their zero-call count was indirect. Later direct instrumentation corroborates the scoped control without rewriting the historical judgement. |
 | Driver/environment failures versus app outcomes (R125, R215; E009, E024–E027) | Retain DYN-10's wrong response-property assertion and adjudication, STA-04's blocked first attempt and unchanged permitted retry, and BB false-predicate/addendum records. Do not count corrected drivers as extra independent cases or silently erase first-attempt evidence. |
 | Visual usability versus semantic/accessibility quality (R098, R100, R101, R212–R219) | U6 visual Pass can coexist with Burmese semantic defects. U5/U8/U9 remain Partial; severity-2 focus/localisation and severity-1 badge defects remain open. UI-unreachable invalid options are Not applicable; preference-save fault recovery is Not assessed. |
-| Historical applicability versus current observed workflow (R005, R206) | Historical Photosynthesis omits exact response and lifecycle evidence. The fresh B01 walkthrough cannot retrospectively fill those gaps; its cap/High/completed checks are separately API-only. Fresh content appraisal remains provisional with disclosed source addition SCN-R02. |
+| Historical applicability versus current observed workflow (R005, R206) | Historical Photosynthesis omits exact response and lifecycle evidence. The fresh B01 walkthrough cannot retrospectively fill those gaps; its cap/High/completed checks are separately API-only. Fresh content appraisal remains Partial after author verification, with disclosed source addition SCN-R02. |
 
 The technical cause of the 52.825-second abort is not established. The fresh
 Photosynthesis scope concern is that bacteria are mentioned immediately before

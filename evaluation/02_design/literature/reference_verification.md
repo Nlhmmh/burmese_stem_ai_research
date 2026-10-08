@@ -1,5 +1,7 @@
 # Step 18 — Literature source verification
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Analysis: `ANALYSIS-B01-20261003-DESIGN-LITERATURE-01`, DA-LIT, 3 October
 2026 (Pacific/Auckland). Evaluator: Codex literature/evidence analysis under
 user direction. This records source access, not a new PoC experiment or human

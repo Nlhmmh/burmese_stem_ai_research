@@ -121,6 +121,8 @@ High, Medium and Needs Support are offered in Stage 6A. After Medium or Needs Su
 
 Production code was kept unchanged. Local evaluation used macOS 26.6.2, Node.js 26.4.0, npm 11.17.0, Next.js 16.3.4, MongoDB 8.2.6 and Vitest/V8 4.1.11. Live generation used the OpenAI Responses API, configured as `gpt-5.4-mini` and reporting `gpt-5.4-mini-2026-03-17`. Strict structured output and a 20-second timeout were configured, without custom sampling or automatic retry. Live-provider, simulated-provider, database and browser results were kept separate.
 
+Codex was used to assist with evaluation preparation, automated execution, preliminary analysis and drafting. All scientific and English–Burmese assessments were subsequently checked by the author against the original outputs and relevant references. Final findings and decisions were confirmed by the author. This was not an independent second assessment.
+
 ### 3.1 FURPS Criteria and Usability Inspection
 
 FURPS covers functionality, usability, reliability, performance and supportability. Thirteen functionality and nine usability criteria were assessed (Table 3), without separate grades for other dimensions. Expectations were defined before testing. Technical behavior and content quality were rated separately. Scientific correctness, context, language, explanation and adaptation were examined, not output structure alone.
@@ -188,7 +190,7 @@ Burmese meaning and clarity were checked in 104 matching English–Burmese passa
 
 Four issues across three outputs were labelled major and 27 minor issues. Major issues changed or seriously obscured scientific meaning. Minor issues reduced clarity but left meaning recoverable. Ten concerns shared by both languages were not counted as translation errors (Tables C4–C5). Gravity and ion errors explain existing fail ratings. Unclear pH wording was labelled major in one passage, but the output remained partial. Original totals of 18 pass, 71 partial and two fail were unchanged.
 
-No independent qualified bilingual review, standard MQM score or validated Burmese glossary was available. Outputs were deliberately selected, not randomly sampled. The findings therefore do not show how common these errors were across all simulation outputs.
+Scientific meaning and bilingual judgements were checked by the author. No independent second assessor, standard MQM score or validated Burmese glossary was available. Outputs were deliberately selected, not randomly sampled. The findings therefore do not show how common these errors were across all simulation outputs.
 
 ### 3.4 Black-Box and White-Box Testing
 
@@ -204,9 +206,9 @@ Of eight literature-based arguments, two were supported and six partially suppor
 
 ![Photosynthesis walkthrough with browser actions and separately labelled API-only checks](assets/figure_2_photosynthesis_reader.png)
 
-*Note.* Solid boxes show browser actions and support. Dashed boxes show API-only checks. High records fade without generation or completion. Finish completes the session. This is one technical scenario, not a learner study. Detailed checks and provisional content findings are reported in Appendix G.
+*Note.* Solid boxes show browser actions and support. Dashed boxes show API-only checks. High records fade without generation or completion. Finish completes the session. This is one technical scenario, not a learner study. Detailed checks and content findings are reported in Appendix G.
 
-Two adaptations, four response events, one follow-up and completion were recorded in a photosynthesis walkthrough. Fifteen technical checks passed (Figure 2, Tables G1–G2). The adaptation limit and post-completion behavior were checked through application programming interface (API) requests rather than learner clicks. Stored state was restored through Resume/Review. Content remains provisionally partial because of overly broad scientific wording, unexplained nontechnical English and similar examples.
+Two adaptations, four response events, one follow-up and completion were recorded in a photosynthesis walkthrough. Fifteen technical checks passed (Figure 2, Tables G1–G2). The adaptation limit and post-completion behavior were checked through application programming interface (API) requests rather than learner clicks. Stored state was restored through Resume/Review. Content remains partial after author verification because of overly broad scientific wording, unexplained nontechnical English and similar examples.
 
 ### 3.6 Academic Literature Evaluation
 
@@ -225,12 +227,12 @@ Methods, results, limitations and research-question links are summarised in Tabl
 | Bounds analysis | Seventeen cases passed with fixed responses and a real database | Concurrent requests made two provider calls but saved one adaptation. The round limit does not guarantee a spending limit | RQ3 — adaptation limit and stored fade/limit responses |
 | Simulation | 55 attempts — 44 technical pass, eight controlled initial ambiguities, three technical fail | One cancellation was delayed. Two corrections returned unchanged interpretations and were rejected. Later steps were not reached | RQ1 — ambiguity/repair, RQ2 — generated support, RQ3 — live response paths |
 | Delivered-content assessment | 91 outputs — 18 pass, 71 partial, two fail | One assessor. Mass/weight and ion-charge errors remain in stored text | RQ1 — terminology/language, RQ2 — scientific explanation, RQ3 — adaptation appropriateness |
-| Supplementary bilingual assessment | 32 saved outputs, 104 paired passages, four major and 27 minor issues, ten concerns shared by both languages | Exploratory assessment of deliberately selected outputs, no independent qualified review. Original content ratings unchanged | RQ1 — terms/translation meaning, RQ2 — scientific meaning, RQ3 — language-help limits |
+| Supplementary bilingual assessment | 32 saved outputs, 104 paired passages, four major and 27 minor issues, ten concerns shared by both languages | Author-verified assessment of deliberately selected outputs, no independent second assessor. Original content ratings unchanged | RQ1 — terms/translation meaning, RQ2 — scientific meaning, RQ3 — language-help limits |
 | Black-box testing | 24 assessed cases — 21 pass, two partial, one fail | New versus repeated support unassessed in two cases. Missing identity behaved unexpectedly. Remaining ambiguity consumed a round in another check | RQ1–RQ3 — observable contracts, including failed identity/ambiguity expectations |
 | White-box testing | Six groups of internal checks passed, 373 unique tests, coverage across 42 files | Mock outputs cannot establish live-content quality. Some code remains untested. Browser/database checks are outside coverage totals | RQ1–RQ3 — internal rules/routes, RQ3 — storage/session recovery |
 | usability inspection | Nine criteria — six pass, three partial, 133 captures | Modal focus/translation issues rated severity 2, ambiguity label severity 1. Preference-save failure untested. No participants | RQ1/RQ2 — readable support, RQ3 — understandable response/state interaction |
 | Design informed argument | Eight arguments — two supported, six partially supported | Literature supports the rationale, not measured learning or independent confirmation | RQ1–RQ3 — reasons for design choices and remaining objections |
-| Fresh photosynthesis scenario | Fifteen technical checks pass, two adaptations, four events, one stored follow-up | High, cap and post-completion checked through API only. Content provisional due to broad claims, unexplained English and similar examples | RQ1–RQ3 — one integrated workflow, with terminology/explanation qualifications |
+| Fresh photosynthesis scenario | Fifteen technical checks pass, two adaptations, four events, one stored follow-up | High, cap and post-completion checked through API only. Author-verified content remains partial due to broad claims, unexplained English and similar examples | RQ1–RQ3 — one integrated workflow, with terminology/explanation qualifications |
 | Design literature comparison | Thirteen comparisons — one strong, nine moderate, two limited, one contradictory/uncertain | Some studies had limited access or relevance here. Better content and an ideal adaptation limit were not demonstrated | RQ1–RQ3 — relevant prior systems and unvalidated support rules |
 
 *Note.* For technical checks, pass means expected behavior was confirmed, fail means a required check failed, and partial means evidence or coverage was incomplete. Content ratings follow Table C2. These assessments measure different things and are not combined into one success rate. Later successful checks do not erase earlier failures.
@@ -245,7 +247,7 @@ The original combined analysis contains 225 findings, including criteria ratings
 
 The supplementary bilingual assessment was recorded separately. Existing gravity and ion errors, unclear pH wording and further language problems were identified. Ten concerns involved scientific meaning in both languages, not translation errors. Content limitations were clarified but learning outcomes were not established. The 41 recorded issues and 104 examined passages are not additional independent simulation runs.
 
-Outputs can have the required structure yet contain scientific or Burmese-language errors or repeat earlier support. The two content fail ratings remain despite better later outputs. Sessions were not created for eight ambiguous initial responses, and three live attempts failed. These results limit confidence in interpretation and adaptation. The combined workflow was demonstrated in the fresh scenario, but content ratings remain provisional and some checks used only the API. Stored state can be protected through error handling without guaranteeing useful help.
+Outputs can have the required structure yet contain scientific or Burmese-language errors or repeat earlier support. The two content fail ratings remain despite better later outputs. Sessions were not created for eight ambiguous initial responses, and three live attempts failed. These results limit confidence in interpretation and adaptation. The combined workflow was demonstrated in the fresh scenario, but author-verified content remains partial and some checks used only the API. Stored state can be protected through error handling without guaranteeing useful help.
 
 All thirteen functionality criteria remain partial. Six usability criteria were pass and three partial. Technical checks alone do not show that educational requirements were met. A design rationale can be supported by literature without demonstrating learner benefit. Bounds tests, coverage, screenshots and content ratings were not averaged because different qualities were measured. Earlier attempts, differences between expected and observed behavior, and later analyses were kept separate. Content, delivery and interface problems remain unresolved despite support for tested controls.
 
@@ -277,7 +279,7 @@ The application's routing, storage and session recovery were supported under tes
 
 No learner study, independent expert review, assessment of suitable support levels or full accessibility audit was conducted. Recovery from preference-save failures and whether support differed from earlier explanations in two cases remain untested. Some literature comparisons used abstracts or summaries, which do not validate Burmese terms. Concurrent requests can make extra provider calls despite the two-adaptation limit. Cancellation can also exceed the configured twenty seconds. Better content than other systems and improved learning were not demonstrated.
 
-The bilingual sample deliberately included outputs with known concerns. Its error counts cannot represent all outputs. Identified issues and proposed Burmese wording require independent qualified review. A major issue in one passage does not replace the original whole-output rating or technical test result.
+The bilingual sample deliberately included outputs with known concerns. Its error counts cannot represent all outputs. Identified issues and proposed Burmese wording were checked by the author, but not by an independent second assessor. A major issue in one passage does not replace the original whole-output rating or technical test result.
 
 ## 5. Conclusion
 
@@ -425,7 +427,7 @@ Only delivered support received content ratings. Fade, limit responses and unrea
 
 ### C.1 Focused Bilingual Error Assessment
 
-Thirty-two saved outputs were selected using known content concerns. Every delivered main concept, all three language-help cases and selected adaptations were included. All 104 matching passages were examined using categories informed by Freitag et al. (2021) and MQM Council (n.d.). Accessibility and problems shared by both languages were added as local categories. Selection was not random, and earlier findings were known. English was used for comparison, not assumed to be scientifically correct. No approved Burmese glossary or independent qualified verification was available.
+Thirty-two saved outputs were selected using known content concerns. Every delivered main concept, all three language-help cases and selected adaptations were included. All 104 matching passages were examined using categories informed by Freitag et al. (2021) and MQM Council (n.d.). Accessibility and problems shared by both languages were added as local categories. Selection was not random, and earlier findings were known. English was used for comparison, not assumed to be scientifically correct. Author verification was completed, but no approved Burmese glossary or independent second assessment was available.
 
 **Table C4. Supplementary Annotation Summary**
 
@@ -456,7 +458,7 @@ Of 41 recorded issues, four were major across three outputs, 27 were minor and t
 | Current, Burmese-preference initial example | bulb lights up | မီးလုံး روشن ဖြစ်လာတာပါ။ | minor — an Arabic-script fragment interrupts Burmese | Replace the fragment with မီးလုံး လင်းလာသည်။ |
 | Current, Burmese-preference language revision | how fast charge is passing a point | charge ဘယ်လောက်မြန်မြန် ဖြတ်သန်းနေသလဲ | shared-content concern — speed-like wording is used in both languages | Revise both versions to charge quantity per unit time |
 
-*Note.* Scientific meaning and English–Burmese consistency were assessed using postgraduate-level STEM knowledge and bilingual proficiency. These judgements were not independently verified by a second qualified assessor. Excerpts are copied exactly from saved outputs. Suggested revisions were not applied to stored text. Both gravity issues belong to one failed output. The original pH rating remains partial despite a major passage-level issue. Totals remain 18 pass, 71 partial and two fail. Reused evidence, assessor limitations and deliberate selection prevent claims about overall translation accuracy or learner benefit.
+*Note.* Scientific meaning and English–Burmese consistency were personally checked by the author against saved outputs and relevant references, using postgraduate-level STEM knowledge and bilingual proficiency. No independent second assessor was involved. Excerpts are copied exactly from saved outputs. Suggested revisions were not applied to stored text. Both gravity issues belong to one failed output. The original pH rating remains partial despite a major passage-level issue. Totals remain 18 pass, 71 partial and two fail. Reused evidence, assessor limitations and deliberate selection prevent claims about overall translation accuracy or learner benefit.
 
 ## Appendix D. Black-Box Testing Records
 
@@ -546,7 +548,7 @@ A separate walkthrough was conducted with beginner, guided and Burmese-with-Engl
 | Relevant/unrelated follow-up | Sunlight question answered and stored. Gravity question rejected without changing the session | Concept-scoped support, not general chat |
 | History, Resume, Finish and Review | Stored interaction restored. Session completed through Finish. Further response rejected | Browser recovery plus a separate post-completion API check |
 
-**Table G2. Provisional Scenario Content Assessment**
+**Table G2. Scenario Content Assessment**
 
 | Observation | Qualification |
 | --- | --- |
@@ -555,7 +557,7 @@ A separate walkthrough was conducted with beginner, guided and Burmese-with-Engl
 | Burmese support retained useful STEM terms | Nontechnical English such as root, leaf and raw materials also remained. Chemical energy needed an explicit Burmese explanation |
 | Sunlight follow-up explained energy for sugar production | One relevant answer does not show that every related or unrelated question would be correctly classified |
 
-Content remains provisionally partial. This walkthrough is separate from the original 91-output simulation assessment and does not erase its failures.
+Content remains partial after author verification. This walkthrough is separate from the original 91-output simulation assessment and does not erase its failures.
 
 ## Appendix H. Supporting Conceptual and Design Evaluations
 

@@ -1,5 +1,7 @@
 # Step 21 — Consolidated results
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Run: `RESULTS-20261003-MASTER-01`, 3 October 2026, Pacific/Auckland.
 Status: **Complete with mixed findings and explicit gaps.**
 
@@ -170,8 +172,8 @@ atomic persistence and ownership. It does not erase:
   definition failures. Better later adaptations do not repair earlier text.
 - R159–R160/R217: BB07/BB08 fixture novelty unassessed and assessed Partial.
   Prefix changes are not meaningful novelty.
-- R207–R211: fresh scenario content is provisional Codex analysis, not a new
-  qualified endorsement. Chloroplast-scope wording, extensive nontechnical
+- R207–R211: fresh scenario content was initially analysed with Codex assistance
+  and has since been personally checked by the author. Chloroplast-scope wording, extensive nontechnical
   English retention and limited first-example novelty remain qualified.
 - R212–R214: modal focus, English errors in Burmese UI and generic ambiguity
   badge remain open at severities 2, 2 and 1 respectively.
@@ -196,8 +198,10 @@ they are not asserted as application defects. STA-04's first Blocked attempt
 The supplied historical Photosynthesis scenario did not capture cap/fade or a
 full lifecycle. The fresh B01 scenario does not retroactively supply those
 historical observations. Historical simulation files may still say review was
-pending at capture: E022/E023 provide the later dated endorsement, without
-rewriting E018–E021 or extending that endorsement to new scenario outputs.
+pending at capture: E022/E023 provide the later dated endorsement. The
+[current confirmation](../00_protocol/human_verification_confirmation.md)
+additionally records personal scientific and bilingual checking, including
+separate scenario observations, without rewriting the original execution evidence.
 
 ### Privacy and not-assessed work
 

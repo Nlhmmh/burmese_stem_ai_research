@@ -1,5 +1,7 @@
 # Step 22 — Final PIRQOA evaluation matrix
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Run: `TRACE-20261003-PIRQOA-01`, 3 October 2026, Pacific/Auckland.
 Status: **Complete with qualified answers and explicit gaps.**
 
@@ -148,14 +150,14 @@ not a claim of synchronised proficiency/profile diagnosis.
   or successful corrected-session workflows.
 - The endorsed simulation has 91 delivered-output ratings: 18 Pass, 71 Partial
   and two Fail. Gravity mass/weight and ion net-charge errors remain; later
-  better adaptations do not repair initial text. Nathan's endorsement applies
-  to those AI-assisted worksheets, not an independent second assessment or
-  new scenario endorsement.
+  better adaptations do not repair initial text. The author has confirmed
+  personally checking every scientific and bilingual assessment, including
+  the separate scenario observations. This is not an independent second assessment.
 - BB07/08 remain Partial because fixture semantic novelty was not assessed.
   BB22's missing-identity oracle remains Fail despite observed foreign-access
   isolation. The supplemental zero-round ambiguity assertion is not rewritten.
 - The fresh Photosynthesis scenario's High/cap and post-completion observations
-  include labelled API-only checks. Its content remains provisional; limited
+  include labelled API-only checks. Its content remains Partial after author verification; limited
   example novelty, English retention and bacterial/chloroplast scope concerns
   are not given an unconditional Pass.
 - BND-15 protects one atomic write but allows two provider calls. Two rounds is

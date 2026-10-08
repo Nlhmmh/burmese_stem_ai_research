@@ -1,5 +1,7 @@
 # Design informed argument — bilingual assessment addendum
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 BIL-20261005-01, 5 October 2026, Pacific/Auckland.
 
 This dated addendum supplements the completed
@@ -28,7 +30,9 @@ provide the existing scaffolding benchmark. A permitted adaptation route is
 not evidence that the revised wording addresses the reported difficulty.
 [Freitag et al. (2021)](https://doi.org/10.1162/tacl_a_00437) supply an additional
 methodological warrant for examining explicit contextual errors. Their
-professional evaluation is not reproduced by these model-assisted annotations.
+professional evaluation is not reproduced by these AI-assisted annotations
+with author verification. See the
+[confirmation](../../00_protocol/human_verification_confirmation.md).
 
 The predeclared purposeful sample includes 32 of 91 delivered outputs and
 104 paired passages. It contains all three language-help adaptations, all
@@ -42,7 +46,7 @@ weighted MQM scores, representative prevalence or new output Pass/Fail totals.
 | Argument | New observation | Current bounded conclusion | Remaining limitation |
 | --- | --- | --- | --- |
 | IA-D01, terminology/context/correction | Biological-cell and OOP target texts broadly correspond across languages, but agreement does not establish the intended meaning of ambiguous inquiries. No delivered concept-correction adaptation is in the sample | Partially supported, unchanged | The original correction failures and initial ambiguity boundaries remain. Bilingual agreement does not prove context recovery |
-| IA-D02, selective language support | Mass terminology, ion net-charge negation and pH neutrality wording have local Major annotations. Four outputs contain third-language fragments. All language-help outputs show wording or explicit term-support limitations | Partially supported, unchanged | Successful display and preference overrides do not establish reliable terminology remediation. No validated Burmese glossary or independent qualified verification |
+| IA-D02, selective language support | Mass terminology, ion net-charge negation and pH neutrality wording have local Major annotations. Four outputs contain third-language fragments. All language-help outputs show wording or explicit term-support limitations | Partially supported, unchanged | Successful display and preference overrides do not establish reliable terminology remediation. Author verification confirmed, but no validated Burmese glossary or independent second assessor |
 | IA-D03, core explanation and scaffolds | Meaning is preserved in several selected passages, while some English/Burmese pairs share scientific imprecision and some target passages lose qualifiers | Partially supported, unchanged | Correct bilingual correspondence can reproduce an imprecise explanation. Scientific correctness and learner suitability need separate evidence |
 | IA-D04, overall self-report | No new learner-response behaviour was executed | Partially supported, unchanged | No competence diagnosis, learning gain or self-report calibration evidence was added |
 | IA-D05, deterministic bounded adaptation | Stored routes and rounds are unchanged. Language-help text can retain speed-like current wording or unexplained vocabulary | Partially supported, unchanged | Route correctness does not demonstrate successful content repair. Better ion support does not amend the old stored definition |

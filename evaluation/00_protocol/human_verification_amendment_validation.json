@@ -1,0 +1,225 @@
+{
+  "record": "HUM-VERIFY-20261008-01",
+  "confirmationRecorded": "2026-10-08",
+  "timezone": "Pacific/Auckland",
+  "priorCommit": "f8e9bd28bf8ab88814f739abc2e7e54ff9d556e9",
+  "kind": "Documentation amendment based on author confirmation; not new evaluation execution or independent certification",
+  "checks": {
+    "outcome": "Pass",
+    "modifiedMarkdownFiles": 36,
+    "newOverviewAndConfirmationFiles": 3,
+    "methodStatusUpdates": 35,
+    "confirmationLinksChecked": 46,
+    "applicationAndPdfNotModified": true,
+    "rawAndOriginalReviewFilesNotModified": true,
+    "originalReviewVerification": "Pass",
+    "originalSimulationManifestEntriesVerified": 32,
+    "originalReviewWorksheetsVerified": 55,
+    "originalTextFieldsVerified": 558,
+    "originalScoreCsvVerified": true,
+    "paperTables": 25,
+    "paperFigures": 2,
+    "paperAbstractAndKeywordsUnchanged": true,
+    "paperReferencesUnchanged": true,
+    "paperBurmeseExcerptsUnchanged": true,
+    "diffCheck": "Pass"
+  },
+  "unchangedFindings": {
+    "deliveredOutputs": 91,
+    "contentOutcomes": {
+      "Pass": 18,
+      "Partial": 71,
+      "Fail": 2
+    },
+    "bilingualSelectedOutputs": 32,
+    "pairedPassages": 104,
+    "bilingualFindings": {
+      "major": 4,
+      "minor": 27,
+      "sharedContent": 10
+    }
+  },
+  "preservedArtifacts": [
+    {
+      "path": "docs/INFOSYS_720_Assignment_5.pdf",
+      "sha256": "4138a89e4c189d6da2781053081f9d4cd7665288c4c589c3c1b704151576ddcf",
+      "unchanged": true
+    },
+    {
+      "path": "evaluation/02_design/simulation/human_content_scores.csv",
+      "sha256": "8700f201b41bcc86b0390692e4e33de96f2a269b41a577a010b17c0cf445eeae",
+      "unchanged": true
+    },
+    {
+      "path": "evaluation/02_design/simulation/bilingual_assessment/annotations.json",
+      "sha256": "093b0de531c5a932552d66550ff5ba45ecdcd99d43f54651a468e5485504ed37",
+      "unchanged": true
+    }
+  ],
+  "currentDocumentHashes": [
+    {
+      "path": "docs/INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md",
+      "sha256": "7a4dbd14f84f37754ac584a87e5a1bc66f42a844082880aeb89e46e1eafc770b"
+    },
+    {
+      "path": "evaluation/00_protocol/evaluation_protocol.md",
+      "sha256": "d9ceccdb37fd1578ab728d6b7c50bdc6c88d4dd5339249c85ce1bddaa964667e"
+    },
+    {
+      "path": "evaluation/00_protocol/human_verification_confirmation.md",
+      "sha256": "9a124489a21a585f7206c3bb1263171206fa433415cace37a61a6aebc182e119"
+    },
+    {
+      "path": "evaluation/01_conceptual/conceptual_triangulation.md",
+      "sha256": "7b427c6e27c923211b1aff549c975790cdba33f94d9f6d74e73067701316abe3"
+    },
+    {
+      "path": "evaluation/01_conceptual/framework_refinements.md",
+      "sha256": "13263289d069ab1e05a90d1c39ec83e6f2327a49d6e9b979634d61aea24b1ca4"
+    },
+    {
+      "path": "evaluation/01_conceptual/genai/GENAI-01_analysis.md",
+      "sha256": "ee0e89288d3ee0d82f679fdc0b028501dfabacb1d5fb3b75717a2760eb20854c"
+    },
+    {
+      "path": "evaluation/01_conceptual/informed_argument/reference_verification_v2.md",
+      "sha256": "5b01086b408cde10ed95aca639d356909f7d80ab918bc25109eaa4a798127d58"
+    },
+    {
+      "path": "evaluation/01_conceptual/informed_argument/traceability_v2.md",
+      "sha256": "f5161d9843fe22a37d9285b4dffc6ab9fc33403bd40ca8ddaad634af4c69dbff"
+    },
+    {
+      "path": "evaluation/01_conceptual/literature/literature_synthesis.md",
+      "sha256": "84ff4f1bf55f7e398f4358ad348a7ff12675377a67a4160593007fbd62b10839"
+    },
+    {
+      "path": "evaluation/01_conceptual/scenario/photosynthesis_scenario.md",
+      "sha256": "8a01bba013d59b866d1b4b528874f1ff68f6b31e8fff2f01e02f6bcd0963c02c"
+    },
+    {
+      "path": "evaluation/02_design/black_box/black_box_analysis.md",
+      "sha256": "5bc149aef4ce66811e493364d025204493ad8aa37ac8b066e9c824f2a6fec6e8"
+    },
+    {
+      "path": "evaluation/02_design/black_box/black_box_test_cases.md",
+      "sha256": "4b2c27c85f66a52524ac7c4e71ad6b675c2f0279a9174855d9b4cb687fa2054e"
+    },
+    {
+      "path": "evaluation/02_design/dynamic/dynamic_analysis.md",
+      "sha256": "93dbdfd3e3889cc562257afd89103fddf1a4112ab120eb7324fdb464da296079"
+    },
+    {
+      "path": "evaluation/02_design/dynamic/dynamic_analysis_test_cases.md",
+      "sha256": "fbb0670bd8ab5a2ec8d190ad89703b6edcc574c1d554432447309a5f983ad292"
+    },
+    {
+      "path": "evaluation/02_design/informed_argument/reference_verification.md",
+      "sha256": "c7230d4c7f301ae321a1059bef787a1c9d22c39dcf0210218c568934c99f71fe"
+    },
+    {
+      "path": "evaluation/02_design/informed_argument/traceability.md",
+      "sha256": "d4ff7724dd09545543f082f487e067d5ed7908f0f6e60c5dc87b36ad0bf29e9c"
+    },
+    {
+      "path": "evaluation/02_design/informed_argument/traceability_bilingual_addendum.md",
+      "sha256": "03f87885eb7de1d917bd471b005e3572120798b00f6d4f61acfd4f13dade2441"
+    },
+    {
+      "path": "evaluation/02_design/literature/literature_synthesis.md",
+      "sha256": "36695a2debef17341886a642af71ae4bc79c2fc495fcfe2d3a67b15958dd6ae4"
+    },
+    {
+      "path": "evaluation/02_design/literature/reference_verification.md",
+      "sha256": "00b28771870d0ecc56d377b0062519950382ac056308f371794fdfc02cd0dea7"
+    },
+    {
+      "path": "evaluation/02_design/optimisation/bounds_analysis.md",
+      "sha256": "09038add526ee47150e942c9200575b9157e589a5408b400291cdabcb0a76ebc"
+    },
+    {
+      "path": "evaluation/02_design/optimisation/bounds_analysis_test_cases.md",
+      "sha256": "1cb36913fefa6c0749db58f82269c914cc5fe072e33d1b8f8b95f90a051988e2"
+    },
+    {
+      "path": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+      "sha256": "d997d745aa1fcb02db5c4ec964f6208f8a0dd559e2d6efdc18030f3cbd20ee6e"
+    },
+    {
+      "path": "evaluation/02_design/simulation/README.md",
+      "sha256": "70473844b8d8a5b0c272a842780e8f6ea9cbf4c38d3cbda75be7e67f3caf8a44"
+    },
+    {
+      "path": "evaluation/02_design/simulation/bilingual_assessment/method.md",
+      "sha256": "cb725cbbefedfe265d403b3a4d0114e34198a5b85afa1cd25779da2977df23d1"
+    },
+    {
+      "path": "evaluation/02_design/simulation/bilingual_assessment/results.md",
+      "sha256": "33b45f15ab04e86e69b61de4ed33bf776c57a317f4a8f3f9403934ec7290121a"
+    },
+    {
+      "path": "evaluation/02_design/static/static_analysis_test_cases.md",
+      "sha256": "bb031c4f72ff7739d0be3959d829833b34656e94536baef60573b8cf9535a1e1"
+    },
+    {
+      "path": "evaluation/02_design/usability/usability_inspection.md",
+      "sha256": "cd4b48e5324cbf25166f6ef976f88d9241b118915da7b9daa4b56d10539dc92f"
+    },
+    {
+      "path": "evaluation/02_design/white_box/white_box_evaluation.md",
+      "sha256": "f7b3b7cb9dac89453de511ab80b9756c0b934298b197e33bfedf2430c3258c3f"
+    },
+    {
+      "path": "evaluation/02_design/white_box/white_box_test_cases.md",
+      "sha256": "27319f66fd1feadba246437711ce37259be18029b80e30823b001d6347db1888"
+    },
+    {
+      "path": "evaluation/03_results/bilingual_synthesis_addendum.md",
+      "sha256": "e6c003f8868b6e5ac37990f069d5730b003bd8db044b25ed67e0c93697cb1771"
+    },
+    {
+      "path": "evaluation/03_results/consolidation_notes.md",
+      "sha256": "2c9d103356a914b612981f3f115c526b924f345aed74789e93f24cfc30b66458"
+    },
+    {
+      "path": "evaluation/03_results/evidence_register_audit.md",
+      "sha256": "00157bb05a6a508f25a5c2b0dc44d16c4e155a4ec5a0a6d9f71b49890373e18c"
+    },
+    {
+      "path": "evaluation/03_results/paper_figures_and_tables.md",
+      "sha256": "c0e87ec680c9da290114c217e34f4443a4c9da1c5102ec6f0a1894df52681b16"
+    },
+    {
+      "path": "evaluation/03_results/pirqoa_bilingual_addendum.md",
+      "sha256": "e015f14cf57f3048f4ad5f81273107b3a7c19f495246446075b6205379227903"
+    },
+    {
+      "path": "evaluation/03_results/pirqoa_traceability_notes.md",
+      "sha256": "c9dc98494f2bad815c168695a06c80c92ae977eca36114870da57e8c4d9a521f"
+    },
+    {
+      "path": "evaluation/03_results/results_interpretation.md",
+      "sha256": "3e4f81df3bef21d4c95324a363d0ef1076223928bfc4b291ee74923338787c08"
+    },
+    {
+      "path": "evaluation/03_results/supplementary_evidence_register.md",
+      "sha256": "0f4f59ce55bd0038a007e23d1b46971d77d4e21b157aa3b2ea5cdfb7d9f6040c"
+    },
+    {
+      "path": "evaluation/04_paper/assignment_5_working_paper.md",
+      "sha256": "82ef36dedf7eeb9a655060e83309d141df11ac3de679f048e87d6db62d079329"
+    },
+    {
+      "path": "evaluation/README.md",
+      "sha256": "fe3dc8b9eccfeb63d2be6a7490e8629197455d3ac98397ea792a88d5c78d2168"
+    }
+  ],
+  "exclusions": [
+    "independent second assessment",
+    "new signature",
+    "backdated human verification",
+    "manual execution of every test",
+    "learner outcomes",
+    "certified Burmese glossary"
+  ]
+}

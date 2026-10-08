@@ -1,8 +1,10 @@
 # Step 24 — Paper figures and tables
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Run: `PRESENT-20261003-PAPER-01`, 3 October 2026, Pacific/Auckland.
 Status: **Complete with evidence qualifications.**
-Evaluator: Codex recorded-evidence presentation under user direction; no new human endorsement.
+Preparation: Codex recorded-evidence presentation under user direction. The author's current scientific and bilingual verification is recorded in the human-verification update below.
 
 This pack supplies the five tables and two figures specified in master-plan
 §33. It condenses [master results (E061)](master_results.csv),
@@ -150,7 +152,7 @@ is not a participant study or full WCAG conformance audit.
 | White-box | WB01–06 structural Pass; 361 deterministic + 12 real-MongoDB tests. 42-file V8: statements 72.54%, branches 76.37%, functions 64%, lines 73.75% | 373 unique tests, not extra tests per repeated command. ROOTTESTS-02 production remains B01. Coverage excludes unexercised paths; browser/database observations not merged into V8; mocks do not certify live quality | R146–R152; E033–E035 |
 | Structured usability inspection | Nine criteria: six Pass, three Partial; 133 retained captures across distributed configurations | U5/U8/U9 Partial. USI-01 modal focus and USI-02 English errors in Burmese UI severity 2; USI-03 ambiguity badge severity 1. Preference-save fault UI Not assessed; no participants/physical-phone/full WCAG study | R093–R101, R212–R214, R218–R221; E036–E038 |
 | Design informed argument | Eight feature arguments: two Supported, six Partially supported | Literature-grounded mechanism rationale, not learner outcomes. Shared technical/literature inputs are not independent replications; self-report responsiveness is not calibrated scaffolding | R177–R184; E039–E041 |
-| Fresh Photosynthesis scenario | One live walkthrough: 15 technical checks Pass; two adaptations, four response events, one stored follow-up, completed round 2 | Cap/High-at-cap/post-completion checks are API-only. Content provisional with scope, English-retention and novelty qualifications; no new human endorsement | R206–R211; E042–E044 |
+| Fresh Photosynthesis scenario | One live walkthrough: 15 technical checks Pass; two adaptations, four response events, one stored follow-up, completed round 2 | Cap/High-at-cap/post-completion checks are API-only. Author-verified content remains Partial with scope, English-retention and novelty qualifications; no independent second assessor | R206–R211; E042–E044 |
 | Design literature comparison | 13 comparisons: one Strong, nine Moderate, two Limited, one Contradictory/uncertain | Five SSR systems and selected corpus; source-access/transfer limits. DL12 Strong warrants critical evaluation, not strong PoC content; DL13 does not validate dose/fade. No superiority claim | R185–R197, R223; E045–E048 |
 
 *Table 4 note.* The first six rows fulfil the required method summary; the
@@ -178,7 +180,7 @@ third capped and fourth fade events before reload and follow-up. High does
 not complete the session. The unrelated gravity question is rejected without
 saving a second follow-up or changing the active concept. Resume, explicit
 Finish and Review reconstruct the same session. Its content remains
-provisional and the timing observations do not establish performance targets.
+Partial after author verification and the timing observations do not establish performance targets.
 History, follow-up and lifecycle are enabling interactions, not an eighth stage.
 
 Figure source: [recorded scenario, actions/state trail](../02_design/scenario/photosynthesis_scenario.md#3-expected-and-actual-scenario-actions).

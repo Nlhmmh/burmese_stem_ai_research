@@ -1,8 +1,10 @@
 # Step 17 — Photosynthesis design artefact scenario
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Status: **Completed with qualifications**, 3 October 2026 (Pacific/Auckland).
 Technical workflow and recorded boundary checks passed. Content adequacy is
-only partially supported by provisional AI-assisted inspection. This is not
+only partially supported after AI-assisted inspection and author verification. This is not
 a participant study, independent expert assessment, or learning-gain result.
 
 ## 1. Identity and execution boundary
@@ -81,7 +83,7 @@ Content qualifications are separate in §5.
 | B / SCN-B | Submit unchanged inquiry; identify concept/context with one generation | Exact input: `What is photosynthesis, and how do plants make food?`; HTTP 3 POST 201; `photosynthesis` / `plant biology`; one live call; fresh round 0 | Technical Pass; SCN-B01/B02/C01 |
 | C / SCN-C | Four initial sections plus revealable Hint, bilingual content | Simple, real-world, technical and reflection sections present; Show Hint revealed bilingual text in SCN-C02. All five fields retained in HTTP 3 and storage | Structure Pass; content Partial (§5) |
 | D / SCN-D | Medium → optional Stage 6B skip → default another example; persist 0 → 1 | SCN-D01 shows five choices and skip; HTTP 5 body has `overallSupportNeed=medium`, no difficulty; route `stage_5_scaffold`, support `another_example`, one call/event/adaptation, `in_progress`; SCN-D03 | Technical Pass; example novelty limited |
-| E / SCN-E | Needs Support + concept_unclear → revised core meaning and scaffold, 1 → 2 | HTTP 6; `concept_clarification`; one call, second event/adaptation, `review_recommended`. Solar-powered-factory analogy and explicit making-versus-taking-food contrast; SCN-E01–E04 | Technical Pass; provisional content qualifications retained |
+| E / SCN-E | Needs Support + concept_unclear → revised core meaning and scaffold, 1 → 2 | HTTP 6; `concept_clarification`; one call, second event/adaptation, `review_recommended`. Solar-powered-factory analogy and explicit making-versus-taking-food contrast; SCN-E01–E04 | Technical Pass; author-verified content qualifications retained |
 | Cap UI observation | Show limit feedback and prevent another generated round | SCN-E04 shows `Maximum support provided` and `Finish for Now`; no Stage 6A response choices at round 2 | Pass for bounded UI; extra response unavailable in UI |
 | SCN-CAP-API-01 | Separately test further support request at cap: event only, no round 3 | HTTP 7 / separate API file: Needs Support, `stage_5_scaffold`, null adaptation, 2 → 2, third event, `review_recommended`, zero provider calls; original two adaptations unchanged | API-only Pass; not a UI action |
 | F / SCN-F | Choose High at cap only if offered; otherwise record limitation | High **not offered** by round-2 UI. No High learner click invented. API-only branch below was then performed; reload SCN-F01 reconstructs it | UI action Not applicable / unavailable |
@@ -150,12 +152,15 @@ interaction. They do not constitute an eighth stage or unrestricted chat.
 The stage-responsibility and theory rationale remains in
 [Step 16's literature-grounded argument](../informed_argument/traceability.md).
 
-## 5. Provisional content observations
+## 5. Content observations and human verification
 
-These observations are **Codex analysis**, not Nathan's review, signature,
-native-speaker certification, or a fresh independent expert judgement. The
-earlier simulation endorsement concerns earlier simulation outputs, not this
-newly generated session. No human scores or approvals are invented here.
+Codex prepared the preliminary content analysis. The author has since confirmed
+personally checking every scientific and English–Burmese assessment against
+the original outputs and relevant references, including these observations.
+See the [verification confirmation](../../00_protocol/human_verification_confirmation.md).
+The scope, English-retention and novelty concerns remain after that verification.
+This is not an independent expert judgement, terminology certification or new
+signature. The separate 91-output simulation scores are unchanged.
 
 The [frozen content reference notes](../simulation/content_reference_notes.md),
 SIM-REFERENCES-01 / SIM01 / R01, were hashed before generation. Their expected
@@ -169,7 +174,7 @@ recorded below; it is not silently added to the frozen reference set.
 | SCN-CQ01 initial meaning | Both languages describe plants making food and converting light to stored chemical energy; oxygen appears in the technical section. Root water uptake is separate from taking food from soil | Introductory glucose shorthand is acceptable only at this stated scope; the biochemical pathway is more complex (R01) |
 | SCN-CQ02 technical scope | Initial English and Burmese technical paragraphs mention plants, algae and bacteria immediately before chloroplast-based reactions without restricting the latter to plants/algae | This wording can imply that photosynthetic bacteria also have chloroplasts. Bacteria are prokaryotes without membrane-bound organelles (SCN-R02). This is a **scope-clarity concern**, not an assertion that the text explicitly states bacteria have chloroplasts. Content receives no unconditional Pass |
 | SCN-CQ03 adaptation difference | Round 1 changes a green-leaf example to a houseplant at a sunny window, but largely repeats the same inputs/glucose/energy account. Round 2 adds the making-versus-taking-food contrast and a solar-powered-factory analogy | First-example novelty is limited despite different strings. The analogy distinguishes power source and raw materials, but is not a detailed explanation of biological mechanisms or proof of improved comprehension |
-| SCN-CQ04 Burmese/English balance | Burmese sentence structure carries the main explanation; useful technical terms include photosynthesis, carbon dioxide, glucose and chloroplast(s). Visible Unicode rendering is readable at this desktop size | Nontechnical English also remains: root, leaf, air, water, input, raw materials and power source. Chemical energy is central but not explicitly paired with a Burmese definition. Selectivity and beginner readability are only partially supported; exact naturalness/fidelity requires qualified judgement |
+| SCN-CQ04 Burmese/English balance | Burmese sentence structure carries the main explanation; useful technical terms include photosynthesis, carbon dioxide, glucose and chloroplast(s). Visible Unicode rendering is readable at this desktop size | Nontechnical English also remains: root, leaf, air, water, input, raw materials and power source. Chemical energy is central but not explicitly paired with a Burmese definition. Selectivity and beginner readability remain partially supported after author verification; no independent second assessor |
 | SCN-CQ05 relevant follow-up | Both languages answer sunlight's role as an energy source and connect it to sugar production; saved answer remains concept-scoped | Natural sunlight is used in this scenario, not a claim that artificial light can never support photosynthesis. One answer cannot establish general scope-classification accuracy |
 
 Examples were inspected in the saved bilingual payloads and screenshots.
@@ -182,15 +187,11 @@ behaviour, or participant usability.
 - **R01, frozen benchmark rechecked**: Clark, M. A., Douglas, M., & Choi, J. (2018). *Biology 2e*, §8.1, Main Structures and Summary of Photosynthesis / Basic Photosynthetic Structures / The Two Parts of Photosynthesis. [OpenStax original section](https://openstax.org/books/biology-2e/pages/8-1-overview-of-photosynthesis). Reaccessed 3 October 2026. Supports plant inputs/products, energy conversion and the qualified introductory summary.
 - **SCN-R02, supplemental after-generation check**: Clark, M. A., Douglas, M., & Choi, J. (2018). *Biology 2e*, §4.2, Components of Prokaryotic Cells. [OpenStax original section](https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells). Accessed 3 October 2026. Supports the bacteria/organelles distinction used to flag SCN-CQ02; not a new frozen marking rule or Burmese glossary.
 
-If human content review is subsequently added, record it as a separate dated
-addendum/evidence ID rather than replacing this captured report:
-
-- Reviewer name/date: ____________________
-- Relevant STEM / English / Burmese competence: ____________________
-- Initial support judgement and rationale: ____________________
-- Round-1 / round-2 judgement and rationale: ____________________
-- Burmese terminology, English retention and follow-up judgement: ____________________
-- Sources consulted and amendments: ____________________
+The separate dated record `HUM-VERIFY-20261008-01` confirms the author's
+scientific and bilingual checking. The rationale remains SCN-CQ01–05 above
+and the preserved source locators. No new numerical score, source consultation
+date or review clock time is supplied. The original captured report remains
+identifiable through E042–E044 and its historical manifest.
 
 ## 6. U1–U9 and deviations
 

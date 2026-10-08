@@ -1,5 +1,7 @@
 # Step 16 — Reference verification and source continuity
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Analysis: ANALYSIS-B01-20261003-INFORMED-ARGUMENT-01; method DA-ARG.
 Checked: 3 October 2026, Pacific/Auckland, by Codex under user direction.
 This is a focused source check for [the informed argument](traceability.md),
@@ -71,8 +73,9 @@ project-specific necessity/removal tests are explicitly analytical inferences.
 
 ## Accountability
 
-The analysis is AI-assisted and literature-grounded, not signed or approved as
-a fresh human review. It preserves qualified/failed recorded outcomes and
+The analysis is AI-assisted and literature-grounded. The author's subsequent
+confirmation records personal scientific and bilingual verification and final
+acceptance, not an independent second assessment or new signature. It preserves qualified/failed recorded outcomes and
 states access limits rather than claiming all papers were read end to end.
 Reference checking did not change prompts, code, test oracles, frozen simulation
 references, scores or earlier conceptual arguments. No participant recruitment,

@@ -1,5 +1,7 @@
 # Step 15 — White-box evaluation
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Run: **RUN-B01-20261002-ROOTTESTS-02**, 2 October 2026, Pacific/Auckland.
 WB01–WB06: **structural Pass**, with application-wide coverage gaps recorded.
 Tests execute against the root `burmese_stem_ai` project, not a copied checkout.

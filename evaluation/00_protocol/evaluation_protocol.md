@@ -1,5 +1,7 @@
 # INFOSYS 720 Assignment 5 — Evaluation Protocol
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 | Document control | Value |
 | --- | --- |
 | Protocol ID | A5-PROTOCOL-01 |
@@ -304,8 +306,10 @@ his saved SIM04-A amendment is preserved. The eight ambiguity assessments and
 three technical failures retain their limitations. E022–E023 identify the
 [dated approval](../02_design/simulation/review_completion/approval_record.md)
 and endorsed review manifest. Step 13 is complete with findings, not an
-all-content pass. Review clock times are not recorded; AI source consultation
-is not attributed to Nathan. No learner-benefit or independent-review claim
+all-content pass. Review clock times are not recorded. The author has since
+confirmed personal scientific and bilingual checking against original outputs
+and relevant references in [HUM-VERIFY-20261008-01](human_verification_confirmation.md).
+No learner-benefit or independent-second-review claim
 is made. E018–E021 retain their historical capture state unchanged.
 
 Black-box run `RUN-B01-20261002-BLACKBOX-01` executed all BB01–BB24 using real
@@ -738,8 +742,10 @@ The [method](../02_design/simulation/bilingual_assessment/method.md) defines a
 retrospective, purposeful sample of 32 saved outputs. All 104 paired passages
 were examined. The [results](../02_design/simulation/bilingual_assessment/results.md)
 record four Major and 27 Minor annotations and ten shared-content advisories.
-This exploratory model-assisted assessment has no independent qualified human
-verification. It is not a new simulation, a whole-corpus error rate or a change
+This exploratory assessment was prepared with AI assistance. Personal scientific
+and bilingual checking has since been confirmed by the author in
+[HUM-VERIFY-20261008-01](human_verification_confirmation.md), without an independent
+second assessor. It is not a new simulation, a whole-corpus error rate or a change
 to the original 18 Pass / 71 Partial / two Fail content ratings.
 The [supplementary evidence register](../03_results/supplementary_evidence_register.md)
 provides five separately named records. Dated design-argument, synthesis and

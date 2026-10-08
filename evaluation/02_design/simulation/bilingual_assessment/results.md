@@ -1,5 +1,7 @@
 # Supplementary bilingual assessment results
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 BIL-20261005-01, 5 October 2026, Pacific/Auckland.
 
 ## Recorded outcome
@@ -20,7 +22,7 @@ Accurate later ion explanation does not repair the earlier stored ion definition
 
 ## Method, evidence and limits
 
-See [method](method.md), [reference consultations](references.md), [complete annotation ledger](annotations.json), [verification](verification.json) and the declared sample extractor. This is model-assisted exploratory annotation, not an independent human assessor study, professional MQM evaluation or certified Burmese glossary. No automatic translation score was calculated. Prior author review applies to the earlier ratings, not this supplementary assessment.
+See [method](method.md), [reference consultations](references.md), [complete annotation ledger](annotations.json), [verification](verification.json) and the declared sample extractor. Preliminary annotations were AI-assisted. The author has confirmed personally checking all scientific and English–Burmese assessments against the original outputs and relevant references, including these findings. See the [confirmation](../../../00_protocol/human_verification_confirmation.md). This is not an independent second-assessor study, professional MQM evaluation or certified Burmese glossary. No automatic translation score was calculated.
 
 The original simulation, all earlier content scores, registered evidence and production identities remain preserved. Original technical reports and historical conceptual triangulation are not rewritten. Results feed the dated design-argument and synthesis addenda rather than altering immutable earlier result IDs.
 

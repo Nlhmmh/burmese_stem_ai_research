@@ -1,5 +1,7 @@
 # Step 8 — Framework Refinement Decisions
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 ## 1. Purpose
 
 This document records the **framework refinement decisions** made after completing the four required conceptual artefact evaluation methods for INFOSYS 720 Assignment 5:

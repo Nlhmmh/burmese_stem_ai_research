@@ -1,10 +1,12 @@
 # Literature-grounded informed argument — conceptual framework
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 | Document control | Record |
 |---|---|
 | Version / date | 2.0; 3 October 2026, Pacific/Auckland |
 | Method / analysis | CA-ARG / ANALYSIS-20261003-CONCEPTUAL-ARGUMENT-02 |
-| Evaluator | Codex literature and conceptual synthesis under user direction; no new human endorsement |
+| Preparation / final decisions | Codex-assisted literature and conceptual synthesis under user direction; final interpretations accepted by the author. See the current human-verification confirmation |
 | Artefact | Context-Aware Adaptive STEM Scaffolding Framework; final conceptual interpretation in framework_refinements.md §26 |
 | Evidence | E058 revised argument; E059 source-verification record; E060 revision manifest |
 | Earlier version | [traceability.md](traceability.md), E053, retained unchanged as the original argument |

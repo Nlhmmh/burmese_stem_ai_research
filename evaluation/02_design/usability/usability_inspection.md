@@ -1,5 +1,7 @@
 # §18.1 — Structured usability inspection
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Specification: `A5-USABILITY-01`; protocol `A5-PROTOCOL-01` §5.4, version 2.1.
 Run: `RUN-B01-20261002-USABILITY-01`, 2 October 2026, Pacific/Auckland.
 Status: **Completed with findings — 6 Pass, 3 Partial, 0 Fail.**

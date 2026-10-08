@@ -1,5 +1,7 @@
 # Supplementary bilingual requirement traceability
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 BIL-20261005-01, 5 October 2026, Pacific/Auckland.
 
 The original [24 PIRQOA relationships](pirqoa_traceability.csv) remain intact.

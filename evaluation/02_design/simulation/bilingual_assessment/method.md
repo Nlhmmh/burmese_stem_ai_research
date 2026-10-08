@@ -1,5 +1,7 @@
 # Supplementary focused bilingual error assessment
 
+> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+
 Assessment ID `BIL-20261005-01`. Prepared 5 October 2026, Pacific/Auckland.
 
 ## Scope and method
@@ -87,13 +89,15 @@ that no issue was identified under these rules. It does not certify correctness.
 
 ## Assessment provenance and limits
 
-This supplementary assessment is performed by the AI assistant from saved
-English/Burmese text and consulted sources. It is not a new human judgement,
-an independent second reviewer or a review signed by Nathan. Prior author
-acceptance of earlier content ratings does not apply automatically to this
-new analysis. No new professional Burmese linguistic competence or specialist
-competence in every STEM domain is claimed. Interpretation and proposed
-wording remain limited by the absence of an independent qualified assessor.
+Codex assisted with preliminary annotation and source checks from saved
+English/Burmese text. The author subsequently confirmed personally checking
+every scientific and English–Burmese assessment against the original outputs
+and relevant references, including this supplementary analysis. Final
+interpretations and acceptance were not left to AI alone. See the
+[human-verification confirmation](../../../00_protocol/human_verification_confirmation.md).
+This is author verification, not an independent second assessor or a new
+signature. No professional translation certification or specialist competence
+in every STEM domain is claimed. Proposed wording is not a certified glossary.
 
 Saved simulation outputs, earlier content ratings and new annotations share
 the same underlying texts. Agreement between them is deeper inspection of
