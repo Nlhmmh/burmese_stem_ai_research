@@ -1,0 +1,186 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "dynamic",
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "caseId": "TIM-GRAV-03",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "API and manual browser records can use different sessions/actions. They are kept separate.",
+    "Provider requests were not directly counted. Missing counts are not zero."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "dynamic/dynamic_analysis.md",
+      "line": 61
+    },
+    "record": {
+      "caseId": "TIM-GRAV-03",
+      "action": "Submit one initial-generation request and measure end-to-end elapsed time.",
+      "conditions": "What is gravity?\nB01 local Next.js dev; isolated MongoDB; live configured provider\nSequential attempt 3",
+      "expectedResult": "Record HTTP outcome and elapsed time for the frozen input; no SLA or load threshold.",
+      "actualResult": "HTTP 201; 3763.794 ms; recorded outcome success.",
+      "outcome": "Pass",
+      "limitation": "Descriptive local timing, not a latency guarantee or stress test."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "dynamic/raw/readable/TIM-GRAV-03.json",
+      "derived": true
+    },
+    {
+      "label": "Timing row",
+      "file": "dynamic/timings.csv",
+      "fragment": "L7",
+      "derived": false
+    },
+    {
+      "label": "HTTP record",
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "fragment": "L45",
+      "derived": false
+    }
+  ],
+  "records": {
+    "apiAndDatabase": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 45
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "TIM-GRAV-03",
+          "operation": "fresh initial generation timing",
+          "startedAt": "2026-10-01T04:43:48.601Z",
+          "elapsedMs": 3763.794,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "question": "What is gravity?"
+            }
+          },
+          "response": {
+            "status": 201,
+            "body": {
+              "session": {
+                "sessionId": "f412ccff-dd6c-4fa4-ba6a-a9b3b5606505",
+                "originalQuestion": "What is gravity?",
+                "concept": {
+                  "name": "gravity",
+                  "domain": "physics, classical mechanics"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "Gravity is the force that makes objects with mass attract each other. On Earth, it is the reason things fall toward the ground and why we stay on the surface instead of floating away.",
+                    "my": "Gravity ဆိုတာ အလေးချိန်ရှိတဲ့ အရာဝတ္ထုတွေ အချင်းချင်း ဆွဲငင်တဲ့ အားပါ။ ကမ္ဘာပေါ်မှာတော့ အရာတွေ မြေပြင်ဘက်ကို ကျရောက်လာတာ၊ လူတွေက မြေပေါ်မှာပဲ ရှိနေတာတို့ရဲ့ အကြောင်းရင်းပါ။"
+                  },
+                  "realWorldExample": {
+                    "en": "When you drop a book, gravity pulls it down to the floor. The same force also keeps the Moon in orbit around Earth.",
+                    "my": "စာအုပ်တစ်အုပ်ကို လွှတ်ချလိုက်ရင် gravity က အဲဒါကို အောက်ဘက် floor ဆီ ဆွဲချပါတယ်။ ဒီတူညီတဲ့ အားကပဲ Moon ကို Earth ပတ်လမ်းထဲမှာ ထိန်းထားတာပါ။"
+                  },
+                  "technical": {
+                    "en": "In physics, gravity is the attractive interaction between masses. Near Earth, it produces an acceleration of about 9.8 m/s2 downward, which gives objects weight and causes free-fall motion.",
+                    "my": "Physics မှာ gravity ဆိုတာ mass ရှိတဲ့ အရာတွေကြားက ဆွဲဆောင်မှု အပြန်အလှန် အားပါ။ Earth အနီးမှာတော့ အောက်ဘက်ကို ခန့်မှန်းအားဖြင့် 9.8 m/s2 လောက် acceleration ပေးပြီး၊ အဲဒီကြောင့် အရာဝတ္ထုတွေမှာ weight ရှိလာတာနဲ့ free-fall motion ဖြစ်လာတာပါ။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "Can you think of one everyday situation where gravity changes how something moves?",
+                  "my": "နေ့စဉ်ဘဝထဲက gravity ကြောင့် အရာဝတ္ထု တစ်ခုရဲ့ လှုပ်ရှားပုံ ပြောင်းသွားတဲ့ အခြေအနေ တစ်ခုကို စဉ်းစားနိုင်မလား။"
+                },
+                "hint": {
+                  "en": "Look for any situation where something falls, stays grounded, or goes into orbit.",
+                  "my": "တစ်ခုခု ကျရောက်တာ၊ မြေပေါ်မှာ တင်နေတတ်တာ၊ ဒါမှမဟုတ် ပတ်လမ်းထဲ ဝင်သွားတာမျိုးကို စဉ်းစားပါ။"
+                },
+                "understanding": null,
+                "status": "in_progress",
+                "adaptationRound": 0,
+                "createdAt": "2026-10-01T04:43:52.358Z",
+                "updatedAt": "2026-10-01T04:43:52.358Z"
+              }
+            },
+            "error": null
+          }
+        }
+      }
+    ],
+    "timing": [
+      {
+        "source": {
+          "file": "dynamic/timings.csv",
+          "line": 7
+        },
+        "record": {
+          "case_id": "TIM-GRAV-03",
+          "question": "What is gravity?",
+          "attempt": "3",
+          "started_at": "2026-10-01T04:43:48.601Z",
+          "elapsed_ms": "3763.794",
+          "http_status": "201",
+          "outcome": "success",
+          "retry_of": "",
+          "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "dynamic/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "measurements": {
+    "providerCalls": {
+      "status": "not_instrumented",
+      "value": null
+    }
+  },
+  "sources": [
+    {
+      "file": "dynamic/dynamic_analysis.md",
+      "sha256": "3bd81fe0568294d1c5f3d0bc02ca883ac9d54b3a4f74e5ecbd8faf7e20cd3699",
+      "bytes": 51923
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "sha256": "4f2960b4cfa44c3da887ff8c4a068eb5ed253c614afd031b4c06978e79ce64b7",
+      "bytes": 229874
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "sha256": "08a5fdc71d663c38c1b691aa8a712b3fc3fb91a21cf859c74024776325f79f04",
+      "bytes": 13396
+    },
+    {
+      "file": "dynamic/timings.csv",
+      "sha256": "0978ec9dfe0ddd14ac26a99204103fe7ebde7bba4d60dacf7237c6b292bb3d93",
+      "bytes": 2775
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-command-log.md",
+      "sha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "bytes": 5301
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-adjudication.md",
+      "sha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "bytes": 654
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "sha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "bytes": 9208
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "sha256": "74388f6df21d6155f2b50191ade47ed52726bf95db6dd956edf0eb0f41e6811f",
+      "bytes": 27639551
+    }
+  ]
+}

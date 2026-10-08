@@ -1,0 +1,410 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "dynamic",
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "caseId": "DYN-05",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "API and manual browser records can use different sessions/actions. They are kept separate.",
+    "Provider requests were not directly counted. Missing counts are not zero."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "dynamic/dynamic_analysis.md",
+      "line": 47
+    },
+    "record": {
+      "caseId": "DYN-05",
+      "action": "Capped response\nSend Needs Support with no Stage 6B choice on DYN-04.\nCriteria: F5–F7, F9; U4, U7; RQ3",
+      "conditions": "Owned DYN-04 session at round 2; Needs Support without a Stage 6B choice.\nB01, isolated MongoDB and live provider, except labelled fault.",
+      "expectedResult": "Response event is appended with 2→2; no provider request, third adaptation, or round increment; status remains `review_recommended`; controlled limit feedback is visible.",
+      "actualResult": "Capped event 2→2, no third adaptation/round, visible limit and Finish",
+      "outcome": "Partial Pass",
+      "limitation": "Zero provider calls remain indirectly supported rather than instrumented"
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "dynamic/raw/readable/DYN-05.json",
+      "derived": true
+    },
+    {
+      "label": "API / saved state",
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "fragment": "L9",
+      "derived": false
+    },
+    {
+      "label": "Test checks",
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "fragment": "L121",
+      "derived": false
+    },
+    {
+      "label": "UI-05 screen",
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/screenshots/05_limit_round2.png",
+      "derived": false
+    }
+  ],
+  "records": {
+    "apiAndDatabase": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 9
+        },
+        "record": {
+          "recordType": "database_snapshot",
+          "caseId": "DYN-05",
+          "label": "before",
+          "capturedAt": "2026-10-01T04:43:12.989Z",
+          "document": {
+            "sessionId": "9e5969ec-d6d8-4413-a4e7-d56b65698953",
+            "learnerId": "00000000-0000-4000-8000-0000000000a1",
+            "originalQuestion": "What is photosynthesis, and how do plants make food?",
+            "concept": {
+              "name": "photosynthesis",
+              "domain": "plant biology and energy conversion"
+            },
+            "explanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make sugar from sunlight, water, and carbon dioxide. In other words, plants turn light energy into chemical energy stored in food.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေ၊ ကာဗွန်ဒိုင်အောက်ဆိုဒ် ကိုသုံးပြီး သကြားဖန်တီးတဲ့ လုပ်ငန်းစဉ်ပါ။ အခြေခံအားဖြင့် အလင်းစွမ်းအင်ကို အစားအစာထဲမှာ သိမ်းထားနိုင်တဲ့ ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတာပါ။"
+              },
+              "realWorldExample": {
+                "en": "For example, a green leaf takes in sunlight, absorbs water through the roots, and uses carbon dioxide from the air to produce glucose. That glucose helps the plant grow and can be stored for later use.",
+                "my": "ဥပမာ၊ စိမ်းလန်းတဲ့ အရွက်တစ်ရွက်က နေရောင်ခြည်ကိုယူတယ်။ အမြစ်ကနေ ရေကိုစုပ်ယူတယ်။ လေထဲက ကာဗွန်ဒိုင်အောက်ဆိုဒ် ကိုလည်း အသုံးပြုပြီး glucose ကို ထုတ်လုပ်တယ်။ အဲဒီ glucose က အပင်ကြီးထွားဖို့ ကူညီပြီး နောက်ပိုင်းသုံးဖို့လည်း သိမ်းထားနိုင်တယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical pathway in plants, algae, and some bacteria that converts light energy into chemical energy. Using chlorophyll in chloroplasts, the organism combines water and carbon dioxide to form glucose and releases oxygen as a byproduct.",
+                "my": "Photosynthesis ဟာ အပင်တွေ၊ algae တွေ၊ တချို့ bacteria တွေမှာ ဖြစ်ပေါ်တဲ့ biochemical pathway ပါ။ Chloroplast ထဲက chlorophyll က အလင်းစွမ်းအင်ကို ဖမ်းယူပြီး ရေနဲ့ ကာဗွန်ဒိုင်အောက်ဆိုဒ် ကိုပေါင်းစပ်ကာ glucose ကိုဖန်တီးတယ်။ အဲဒီအခါ oxygen က ဘေးထွက်ပစ္စည်းအဖြစ် ထွက်လာတယ်။"
+              }
+            },
+            "reflectivePrompt": {
+              "en": "Why do you think a plant needs both sunlight and carbon dioxide to make food?",
+              "my": "အပင်တစ်ပင်က အစားအစာဖန်တီးဖို့ နေရောင်ခြည်နဲ့ ကာဗွန်ဒိုင်အောက်ဆိုဒ် နှစ်ခုလုံး ဘာကြောင့်လိုအပ်တယ်လို့ ထင်ပါသလဲ။"
+            },
+            "hint": {
+              "en": "Think about which ingredients provide energy and which provide building material.",
+              "my": "စွမ်းအင်ပေးတဲ့ အရာနဲ့ တည်ဆောက်ပစ္စည်းပေးတဲ့ အရာ ဘာတွေဖြစ်နိုင်လဲ စဉ်းစားကြည့်ပါ။"
+            },
+            "understanding": "needs_support",
+            "status": "review_recommended",
+            "adaptationRound": 2,
+            "preferencesSnapshot": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "adaptations": [
+              {
+                "learnerResponse": "medium",
+                "supportType": "another_example",
+                "content": {
+                  "en": "Another example: when a tomato plant sits in a sunny garden, its leaves use sunlight, water from the soil, and carbon dioxide from the air to make glucose. That glucose is the plant’s stored energy, so photosynthesis is the process that lets the plant turn light energy into chemical energy.",
+                  "my": "နောက်ထပ် ဥပမာကတော့ နေသာတဲ့ စိုက်ခင်းထဲမှာ ရှိတဲ့ ခရမ်းချဉ်ပင်ပါ။ အရွက်တွေက နေရောင်ခြည်၊ မြေထဲက ရေ၊ လေထဲက ကာဗွန်ဒိုင်အောက်ဆိုဒ် ကိုသုံးပြီး glucose ကိုဖန်တီးတယ်။ အဲဒီ glucose က အပင်အတွက် စုထားတဲ့ စွမ်းအင်ဖြစ်လို့ photosynthesis ဆိုတာ အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းပေးတဲ့ လုပ်ငန်းစဉ်ပါ။"
+                },
+                "round": 1,
+                "createdAt": "2026-10-01T04:43:10.323Z"
+              },
+              {
+                "learnerResponse": "needs_support",
+                "supportType": "concept_clarification",
+                "content": {
+                  "en": "Photosynthesis is the process where a plant uses light energy to build glucose from water and carbon dioxide. The key idea is that the plant is not just ‘getting food’ from sunlight; it is converting sunlight into stored chemical energy in the sugar it makes, and oxygen is released during the process. A helpful way to think about it is as an energy-conversion system: leaves capture light, and that energy is used to assemble sugar molecules.",
+                  "my": "Photosynthesis ဆိုတာ အပင်က အလင်းစွမ်းအင်ကို အသုံးပြုပြီး ရေနဲ့ ကာဗွန်ဒိုင်အောက်ဆိုဒ် ကနေ glucose ကို တည်ဆောက်တဲ့ လုပ်ငန်းစဉ်ပါ။ အဓိကအချက်က အပင်ဟာ နေရောင်ခြည်ကနေ အစားအစာကို တိုက်ရိုက်ရယူတာမဟုတ်ဘဲ ကိုယ်တိုင်ပြုလုပ်ထားတဲ့ သကြားထဲမှာ အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် သိမ်းဆည်းတာပါ၊ အဲဒီအချိန်မှာ oxygen လည်း ထွက်လာပါတယ်။ နားလည်လွယ်အောင် ဆိုရင် energy-conversion system တစ်ခုလို တွေးနိုင်ပါတယ်—အရွက်တွေက အလင်းကိုဖမ်းယူပြီး အဲဒီစွမ်းအင်နဲ့ sugar molecules ကို ဆောက်လုပ်တာပါ။"
+                },
+                "round": 2,
+                "createdAt": "2026-10-01T04:43:12.985Z"
+              }
+            ],
+            "responseEvents": [
+              {
+                "overallSupportNeed": "medium",
+                "difficultyType": null,
+                "route": "stage_5_scaffold",
+                "roundBefore": 0,
+                "roundAfter": 1,
+                "createdAt": "2026-10-01T04:43:10.323Z"
+              },
+              {
+                "overallSupportNeed": "needs_support",
+                "difficultyType": "concept_unclear",
+                "route": "concept_clarification",
+                "roundBefore": 1,
+                "roundAfter": 2,
+                "createdAt": "2026-10-01T04:43:12.985Z"
+              }
+            ],
+            "followUps": [],
+            "createdAt": "2026-10-01T04:40:10.666Z",
+            "updatedAt": "2026-10-01T04:43:12.985Z"
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 10
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "DYN-05",
+          "operation": "capped response",
+          "startedAt": "2026-10-01T04:43:12.990Z",
+          "elapsedMs": 14.563,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions/9e5969ec-d6d8-4413-a4e7-d56b65698953/respond",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "overallSupportNeed": "needs_support",
+              "difficultyType": null
+            }
+          },
+          "response": {
+            "status": 200,
+            "body": {
+              "understanding": "needs_support",
+              "status": "review_recommended",
+              "adaptationRound": 2,
+              "route": "stage_5_scaffold",
+              "responseEvent": {
+                "overallSupportNeed": "needs_support",
+                "difficultyType": null,
+                "route": "stage_5_scaffold",
+                "roundBefore": 2,
+                "roundAfter": 2,
+                "createdAt": "2026-10-01T04:43:13.000Z"
+              },
+              "adaptation": null
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 11
+        },
+        "record": {
+          "recordType": "database_snapshot",
+          "caseId": "DYN-05",
+          "label": "after",
+          "capturedAt": "2026-10-01T04:43:13.006Z",
+          "document": {
+            "sessionId": "9e5969ec-d6d8-4413-a4e7-d56b65698953",
+            "learnerId": "00000000-0000-4000-8000-0000000000a1",
+            "originalQuestion": "What is photosynthesis, and how do plants make food?",
+            "concept": {
+              "name": "photosynthesis",
+              "domain": "plant biology and energy conversion"
+            },
+            "explanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make sugar from sunlight, water, and carbon dioxide. In other words, plants turn light energy into chemical energy stored in food.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေ၊ ကာဗွန်ဒိုင်အောက်ဆိုဒ် ကိုသုံးပြီး သကြားဖန်တီးတဲ့ လုပ်ငန်းစဉ်ပါ။ အခြေခံအားဖြင့် အလင်းစွမ်းအင်ကို အစားအစာထဲမှာ သိမ်းထားနိုင်တဲ့ ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတာပါ။"
+              },
+              "realWorldExample": {
+                "en": "For example, a green leaf takes in sunlight, absorbs water through the roots, and uses carbon dioxide from the air to produce glucose. That glucose helps the plant grow and can be stored for later use.",
+                "my": "ဥပမာ၊ စိမ်းလန်းတဲ့ အရွက်တစ်ရွက်က နေရောင်ခြည်ကိုယူတယ်။ အမြစ်ကနေ ရေကိုစုပ်ယူတယ်။ လေထဲက ကာဗွန်ဒိုင်အောက်ဆိုဒ် ကိုလည်း အသုံးပြုပြီး glucose ကို ထုတ်လုပ်တယ်။ အဲဒီ glucose က အပင်ကြီးထွားဖို့ ကူညီပြီး နောက်ပိုင်းသုံးဖို့လည်း သိမ်းထားနိုင်တယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical pathway in plants, algae, and some bacteria that converts light energy into chemical energy. Using chlorophyll in chloroplasts, the organism combines water and carbon dioxide to form glucose and releases oxygen as a byproduct.",
+                "my": "Photosynthesis ဟာ အပင်တွေ၊ algae တွေ၊ တချို့ bacteria တွေမှာ ဖြစ်ပေါ်တဲ့ biochemical pathway ပါ။ Chloroplast ထဲက chlorophyll က အလင်းစွမ်းအင်ကို ဖမ်းယူပြီး ရေနဲ့ ကာဗွန်ဒိုင်အောက်ဆိုဒ် ကိုပေါင်းစပ်ကာ glucose ကိုဖန်တီးတယ်။ အဲဒီအခါ oxygen က ဘေးထွက်ပစ္စည်းအဖြစ် ထွက်လာတယ်။"
+              }
+            },
+            "reflectivePrompt": {
+              "en": "Why do you think a plant needs both sunlight and carbon dioxide to make food?",
+              "my": "အပင်တစ်ပင်က အစားအစာဖန်တီးဖို့ နေရောင်ခြည်နဲ့ ကာဗွန်ဒိုင်အောက်ဆိုဒ် နှစ်ခုလုံး ဘာကြောင့်လိုအပ်တယ်လို့ ထင်ပါသလဲ။"
+            },
+            "hint": {
+              "en": "Think about which ingredients provide energy and which provide building material.",
+              "my": "စွမ်းအင်ပေးတဲ့ အရာနဲ့ တည်ဆောက်ပစ္စည်းပေးတဲ့ အရာ ဘာတွေဖြစ်နိုင်လဲ စဉ်းစားကြည့်ပါ။"
+            },
+            "understanding": "needs_support",
+            "status": "review_recommended",
+            "adaptationRound": 2,
+            "preferencesSnapshot": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "adaptations": [
+              {
+                "learnerResponse": "medium",
+                "supportType": "another_example",
+                "content": {
+                  "en": "Another example: when a tomato plant sits in a sunny garden, its leaves use sunlight, water from the soil, and carbon dioxide from the air to make glucose. That glucose is the plant’s stored energy, so photosynthesis is the process that lets the plant turn light energy into chemical energy.",
+                  "my": "နောက်ထပ် ဥပမာကတော့ နေသာတဲ့ စိုက်ခင်းထဲမှာ ရှိတဲ့ ခရမ်းချဉ်ပင်ပါ။ အရွက်တွေက နေရောင်ခြည်၊ မြေထဲက ရေ၊ လေထဲက ကာဗွန်ဒိုင်အောက်ဆိုဒ် ကိုသုံးပြီး glucose ကိုဖန်တီးတယ်။ အဲဒီ glucose က အပင်အတွက် စုထားတဲ့ စွမ်းအင်ဖြစ်လို့ photosynthesis ဆိုတာ အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းပေးတဲ့ လုပ်ငန်းစဉ်ပါ။"
+                },
+                "round": 1,
+                "createdAt": "2026-10-01T04:43:10.323Z"
+              },
+              {
+                "learnerResponse": "needs_support",
+                "supportType": "concept_clarification",
+                "content": {
+                  "en": "Photosynthesis is the process where a plant uses light energy to build glucose from water and carbon dioxide. The key idea is that the plant is not just ‘getting food’ from sunlight; it is converting sunlight into stored chemical energy in the sugar it makes, and oxygen is released during the process. A helpful way to think about it is as an energy-conversion system: leaves capture light, and that energy is used to assemble sugar molecules.",
+                  "my": "Photosynthesis ဆိုတာ အပင်က အလင်းစွမ်းအင်ကို အသုံးပြုပြီး ရေနဲ့ ကာဗွန်ဒိုင်အောက်ဆိုဒ် ကနေ glucose ကို တည်ဆောက်တဲ့ လုပ်ငန်းစဉ်ပါ။ အဓိကအချက်က အပင်ဟာ နေရောင်ခြည်ကနေ အစားအစာကို တိုက်ရိုက်ရယူတာမဟုတ်ဘဲ ကိုယ်တိုင်ပြုလုပ်ထားတဲ့ သကြားထဲမှာ အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် သိမ်းဆည်းတာပါ၊ အဲဒီအချိန်မှာ oxygen လည်း ထွက်လာပါတယ်။ နားလည်လွယ်အောင် ဆိုရင် energy-conversion system တစ်ခုလို တွေးနိုင်ပါတယ်—အရွက်တွေက အလင်းကိုဖမ်းယူပြီး အဲဒီစွမ်းအင်နဲ့ sugar molecules ကို ဆောက်လုပ်တာပါ။"
+                },
+                "round": 2,
+                "createdAt": "2026-10-01T04:43:12.985Z"
+              }
+            ],
+            "responseEvents": [
+              {
+                "overallSupportNeed": "medium",
+                "difficultyType": null,
+                "route": "stage_5_scaffold",
+                "roundBefore": 0,
+                "roundAfter": 1,
+                "createdAt": "2026-10-01T04:43:10.323Z"
+              },
+              {
+                "overallSupportNeed": "needs_support",
+                "difficultyType": "concept_unclear",
+                "route": "concept_clarification",
+                "roundBefore": 1,
+                "roundAfter": 2,
+                "createdAt": "2026-10-01T04:43:12.985Z"
+              },
+              {
+                "overallSupportNeed": "needs_support",
+                "difficultyType": null,
+                "route": "stage_5_scaffold",
+                "roundBefore": 2,
+                "roundAfter": 2,
+                "createdAt": "2026-10-01T04:43:13.000Z"
+              }
+            ],
+            "followUps": [],
+            "createdAt": "2026-10-01T04:40:10.666Z",
+            "updatedAt": "2026-10-01T04:43:13.000Z"
+          }
+        }
+      }
+    ],
+    "originalAssertions": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-summary.json",
+          "pointer": "/cases/3"
+        },
+        "record": {
+          "caseId": "DYN-05",
+          "outcome": "Pass",
+          "checks": [
+            {
+              "name": "status_200",
+              "pass": true
+            },
+            {
+              "name": "round_remains_two",
+              "pass": true
+            },
+            {
+              "name": "no_third_adaptation",
+              "pass": true
+            },
+            {
+              "name": "response_event_appended",
+              "pass": true
+            },
+            {
+              "name": "event_two_to_two",
+              "pass": true
+            },
+            {
+              "name": "adaptation_null",
+              "pass": true
+            }
+          ],
+          "notes": [
+            "No-provider-call assertion is not directly instrumented; null adaptation, unchanged round/adaptation count, and elapsed time are runtime observations."
+          ]
+        }
+      }
+    ],
+    "separateManualBrowserObservations": [
+      {
+        "source": {
+          "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+          "line": 29
+        },
+        "record": {
+          "Observation": "UI-05 Limit",
+          "Related cases": "DYN-04/DYN-05",
+          "Expected visible result": "Round-2 history, limit message and separate Finish render",
+          "Actual result": "Concept clarification produced response event 1→2 and a second adaptation. Both stored adaptations were visible with “Maximum support provided” and a separate Finish for Now action; no third adaptation choice was offered.",
+          "Execution status": "Executed",
+          "Outcome": "Pass",
+          "Screenshot/HAR locator": "`screenshots/05_limit_round2.png`",
+          "Deviation or issue": "Direct provider-call absence is not established by the screenshot; API/database evidence provides only indirect support for that assertion."
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "dynamic/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "measurements": {
+    "providerCalls": {
+      "status": "not_instrumented",
+      "value": null
+    }
+  },
+  "sources": [
+    {
+      "file": "dynamic/dynamic_analysis.md",
+      "sha256": "3bd81fe0568294d1c5f3d0bc02ca883ac9d54b3a4f74e5ecbd8faf7e20cd3699",
+      "bytes": 51923
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "sha256": "4f2960b4cfa44c3da887ff8c4a068eb5ed253c614afd031b4c06978e79ce64b7",
+      "bytes": 229874
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "sha256": "08a5fdc71d663c38c1b691aa8a712b3fc3fb91a21cf859c74024776325f79f04",
+      "bytes": 13396
+    },
+    {
+      "file": "dynamic/timings.csv",
+      "sha256": "0978ec9dfe0ddd14ac26a99204103fe7ebde7bba4d60dacf7237c6b292bb3d93",
+      "bytes": 2775
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-command-log.md",
+      "sha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "bytes": 5301
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-adjudication.md",
+      "sha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "bytes": 654
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "sha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "bytes": 9208
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "sha256": "74388f6df21d6155f2b50191ade47ed52726bf95db6dd956edf0eb0f41e6811f",
+      "bytes": 27639551
+    }
+  ]
+}

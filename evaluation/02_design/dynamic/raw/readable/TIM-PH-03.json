@@ -1,0 +1,186 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "dynamic",
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "caseId": "TIM-PH-03",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "API and manual browser records can use different sessions/actions. They are kept separate.",
+    "Provider requests were not directly counted. Missing counts are not zero."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "dynamic/dynamic_analysis.md",
+      "line": 70
+    },
+    "record": {
+      "caseId": "TIM-PH-03",
+      "action": "Submit one initial-generation request and measure end-to-end elapsed time.",
+      "conditions": "What is pH?\nB01 local Next.js dev; isolated MongoDB; live configured provider\nSequential attempt 3",
+      "expectedResult": "Record HTTP outcome and elapsed time for the frozen input; no SLA or load threshold.",
+      "actualResult": "HTTP 201; 3480.36 ms; recorded outcome success.",
+      "outcome": "Pass",
+      "limitation": "Descriptive local timing, not a latency guarantee or stress test."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "dynamic/raw/readable/TIM-PH-03.json",
+      "derived": true
+    },
+    {
+      "label": "Timing row",
+      "file": "dynamic/timings.csv",
+      "fragment": "L16",
+      "derived": false
+    },
+    {
+      "label": "HTTP record",
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "fragment": "L54",
+      "derived": false
+    }
+  ],
+  "records": {
+    "apiAndDatabase": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 54
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "TIM-PH-03",
+          "operation": "fresh initial generation timing",
+          "startedAt": "2026-10-01T04:44:18.385Z",
+          "elapsedMs": 3480.36,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "question": "What is pH?"
+            }
+          },
+          "response": {
+            "status": 201,
+            "body": {
+              "session": {
+                "sessionId": "00e2a948-29d1-45c5-ba3c-ce17cfd491c6",
+                "originalQuestion": "What is pH?",
+                "concept": {
+                  "name": "pH",
+                  "domain": "Chemistry: acidity and alkalinity of solutions"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "pH tells us how acidic or how basic a solution is. A low pH means the solution is more acidic, while a high pH means it is more basic.",
+                    "my": "pH ဆိုတာ solution တစ်ခုက acidic လား basic လား ကိုပြတဲ့ တိုင်းတာမှုပါ။ pH နည်းရင် acidic ပိုများပြီး၊ pH မြင့်ရင် basic ပိုများတယ်လို့ ဆိုလိုပါတယ်။"
+                  },
+                  "realWorldExample": {
+                    "en": "Lemon juice has a low pH, so it is acidic. Soaps usually have a higher pH, so they are basic. This is why pH helps us compare everyday liquids.",
+                    "my": "Lemon juice ရဲ့ pH က နိမ့်လို့ အဲဒါ acidic ဖြစ်ပါတယ်။ Soap တွေကတော့ pH မြင့်တတ်လို့ basic ဖြစ်ပါတယ်။ ဒီလိုကြောင့် pH က နေ့စဉ်သုံးအရည်တွေကို နှိုင်းယှဉ်ဖို့ ကူညီပေးတယ်။"
+                  },
+                  "technical": {
+                    "en": "pH is a numerical scale used to describe the hydrogen ion concentration in a solution. It is commonly used to indicate acidity or alkalinity: values below 7 are acidic, 7 is neutral, and values above 7 are basic.",
+                    "my": "pH ဆိုတာ solution ထဲက hydrogen ion concentration ကို နံပါတ်နဲ့ ဖော်ပြတဲ့ scale တစ်ခုပါ။ ဒါကို acidity သို့မဟုတ် alkalinity ကိုပြဖို့ သုံးပါတယ်။ 7 အောက်ဆို acidic, 7 ဆို neutral, 7 အပေါ်ဆို basic လို့ ယူဆပါတယ်။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "If two liquids have different pH values, what does that tell you about their acidity or basicity?",
+                  "my": "အရည်နှစ်မျိုးရဲ့ pH မတူရင် သူတို့ရဲ့ acidity သို့မဟုတ် basicity အကြောင်း ဘာကို သိနိုင်မလဲ။"
+                },
+                "hint": {
+                  "en": "Remember: lower pH means more acidic, and higher pH means more basic.",
+                  "my": "မှတ်ထားပါ။ pH နိမ့်လေလေ acidic ပိုများလေ၊ pH မြင့်လေလေ basic ပိုများလေပါ။"
+                },
+                "understanding": null,
+                "status": "in_progress",
+                "adaptationRound": 0,
+                "createdAt": "2026-10-01T04:44:21.856Z",
+                "updatedAt": "2026-10-01T04:44:21.856Z"
+              }
+            },
+            "error": null
+          }
+        }
+      }
+    ],
+    "timing": [
+      {
+        "source": {
+          "file": "dynamic/timings.csv",
+          "line": 16
+        },
+        "record": {
+          "case_id": "TIM-PH-03",
+          "question": "What is pH?",
+          "attempt": "3",
+          "started_at": "2026-10-01T04:44:18.385Z",
+          "elapsed_ms": "3480.36",
+          "http_status": "201",
+          "outcome": "success",
+          "retry_of": "",
+          "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "dynamic/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "measurements": {
+    "providerCalls": {
+      "status": "not_instrumented",
+      "value": null
+    }
+  },
+  "sources": [
+    {
+      "file": "dynamic/dynamic_analysis.md",
+      "sha256": "3bd81fe0568294d1c5f3d0bc02ca883ac9d54b3a4f74e5ecbd8faf7e20cd3699",
+      "bytes": 51923
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "sha256": "4f2960b4cfa44c3da887ff8c4a068eb5ed253c614afd031b4c06978e79ce64b7",
+      "bytes": 229874
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "sha256": "08a5fdc71d663c38c1b691aa8a712b3fc3fb91a21cf859c74024776325f79f04",
+      "bytes": 13396
+    },
+    {
+      "file": "dynamic/timings.csv",
+      "sha256": "0978ec9dfe0ddd14ac26a99204103fe7ebde7bba4d60dacf7237c6b292bb3d93",
+      "bytes": 2775
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-command-log.md",
+      "sha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "bytes": 5301
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-adjudication.md",
+      "sha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "bytes": 654
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "sha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "bytes": 9208
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "sha256": "74388f6df21d6155f2b50191ade47ed52726bf95db6dd956edf0eb0f41e6811f",
+      "bytes": 27639551
+    }
+  ]
+}

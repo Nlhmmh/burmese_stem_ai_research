@@ -1,0 +1,75 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "static",
+  "runId": "RUN-B01-20260930-STATIC-01",
+  "caseId": "STA-11",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "No separate machine log exists for this source-inspection finding. Use the case register and linked B01 source files.",
+    "Command output is a saved transcription, not a raw terminal stream. Historical counts are not current coverage."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "static/static_analysis_test_cases.md",
+      "line": 72
+    },
+    "record": {
+      "caseId": "STA-11",
+      "action": "Structured-output validation before persistence\nTrace valid, malformed, missing-output, and repeated-support paths\nCriteria: F2–F4, F6, F8, F13; REQ-01–03",
+      "conditions": "B01 source and locked dependencies.\nInspect: Initial, adaptation, reinterpretation, and follow-up schemas/validators plus save calls",
+      "expectedResult": "Strict provider schema and domain validation precede persistence; malformed content reaches no save call",
+      "actualResult": "Request/domain validation precedes saves: initial request/output at `session.service.ts:100,173,310`; response and generated-output validation at `adaptation.service.ts:116,381,417,621,630,688`; follow-up request/output at `followup.service.ts:44,119,241`; preferences at `profile.service.ts:8`. Corresponding saves occur only later at `session.service.ts:152`, `adaptation.service.ts:263`, and `followup.service.ts:87`.",
+      "outcome": "Pass",
+      "limitation": "Scoped to the stated structural assertion."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "static/raw/readable/STA-11.json",
+      "derived": true
+    },
+    {
+      "label": "Initial validator",
+      "file": "../../burmese_stem_ai/services/session.service.ts",
+      "derived": false
+    },
+    {
+      "label": "Adaptation validator",
+      "file": "../../burmese_stem_ai/services/adaptation.service.ts",
+      "derived": false
+    },
+    {
+      "label": "Follow-up validator",
+      "file": "../../burmese_stem_ai/services/followup.service.ts",
+      "derived": false
+    }
+  ],
+  "records": {},
+  "sharedEvidence": {
+    "file": "static/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "evidenceType": "recorded_source_inspection",
+  "sources": [
+    {
+      "file": "static/static_analysis_test_cases.md",
+      "sha256": "50d5d3f6589477327925602a8b15cce5ddafa02b50ece33534905cc526e32c16",
+      "bytes": 20499
+    },
+    {
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "sha256": "34d9b205b98bcd4da30e4a89f861af101b23234738f7a814bae4a225567ffa9c",
+      "bytes": 7250
+    },
+    {
+      "file": "static/raw/STA-03-coverage-summary.json",
+      "sha256": "ab5508ede4966baae8c5402c822d00b7c9522c6849a897addb7c0100952cb3df",
+      "bytes": 3776
+    }
+  ]
+}

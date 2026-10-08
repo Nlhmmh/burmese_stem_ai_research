@@ -1,0 +1,118 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "static",
+  "runId": "RUN-B01-20260930-STATIC-01",
+  "caseId": "STA-06",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "Command output is a saved transcription, not a raw terminal stream. Historical counts are not current coverage."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "static/static_analysis_test_cases.md",
+      "line": 67
+    },
+    "record": {
+      "caseId": "STA-06",
+      "action": "Production build\n`npm run build -- --webpack`\nCriteria: F13; technical feasibility",
+      "conditions": "B01 source and locked dependencies.\nWorking directory: `burmese_stem_ai/`",
+      "expectedResult": "Exit code 0; compilation, TypeScript build phase, static-page generation, and route manifest complete",
+      "actualResult": "Exit 0; webpack compiled, TypeScript build phase completed, 8 static pages generated, expected application/API routes listed",
+      "outcome": "Pass",
+      "limitation": "Scoped to the stated structural assertion."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "static/raw/readable/STA-06.json",
+      "derived": true
+    },
+    {
+      "label": "Command result",
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "fragment": "L180",
+      "derived": false
+    }
+  ],
+  "records": {
+    "commandOutput": [
+      {
+        "source": {
+          "file": "static/raw/STA-RUN-01-command-log.md",
+          "lineStart": 180,
+          "lineEnd": 218
+        },
+        "record": {
+          "lines": [
+            "## STA-06 — `npm run build -- --webpack`",
+            "",
+            "Exit code: 0. Wall time: 13.56 seconds.",
+            "",
+            "```text",
+            "pyenv: cannot rehash: /Users/nlh/.pyenv/shims isn't writable",
+            "",
+            "> burmese_stem_ai@0.1.0 build",
+            "> next build --webpack",
+            "",
+            "▲ Next.js 16.3.4 (webpack)",
+            "- Environments: .env.production, .env",
+            "✓ Running next.config.ts took 38ms",
+            "",
+            "  Creating an optimized production build ...",
+            "✓ Compiled successfully in 1514ms",
+            "  Running TypeScript ...",
+            "  Finished TypeScript in 2.6s ...",
+            "  Collecting page data using 7 workers ...",
+            "✓ Generating static pages using 7 workers (8/8) in 197ms",
+            "  Finalizing page optimization ...",
+            "  Collecting build traces ...",
+            "",
+            "Route (app)",
+            "┌ ƒ /",
+            "├ ƒ /_not-found",
+            "├ ƒ /api",
+            "├ ƒ /api/preferences",
+            "├ ƒ /api/sessions",
+            "├ ƒ /api/sessions/[sessionId]",
+            "├ ƒ /api/sessions/[sessionId]/followup",
+            "├ ƒ /api/sessions/[sessionId]/respond",
+            "├ ƒ /history",
+            "└ ƒ /learn/[sessionId]",
+            "",
+            "ƒ Proxy (Middleware)",
+            "ƒ (Dynamic) server-rendered on demand",
+            "```",
+            ""
+          ]
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "static/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "evidenceType": "recorded_command_output",
+  "sources": [
+    {
+      "file": "static/static_analysis_test_cases.md",
+      "sha256": "50d5d3f6589477327925602a8b15cce5ddafa02b50ece33534905cc526e32c16",
+      "bytes": 20499
+    },
+    {
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "sha256": "34d9b205b98bcd4da30e4a89f861af101b23234738f7a814bae4a225567ffa9c",
+      "bytes": 7250
+    },
+    {
+      "file": "static/raw/STA-03-coverage-summary.json",
+      "sha256": "ab5508ede4966baae8c5402c822d00b7c9522c6849a897addb7c0100952cb3df",
+      "bytes": 3776
+    }
+  ]
+}

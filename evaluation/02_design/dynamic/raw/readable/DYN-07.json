@@ -1,0 +1,411 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "dynamic",
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "caseId": "DYN-07",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "API and manual browser records can use different sessions/actions. They are kept separate.",
+    "Provider requests were not directly counted. Missing counts are not zero."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "dynamic/dynamic_analysis.md",
+      "line": 49
+    },
+    "record": {
+      "caseId": "DYN-07",
+      "action": "Language-support route\nOn a fresh session, send Medium + `language_terms`.\nCriteria: F3, F5, F6, F9, F12; U6; RQ1",
+      "conditions": "Fresh owned session at round 0; Medium with language_terms; preserve saved profile.\nB01, isolated MongoDB and live provider, except labelled fault.",
+      "expectedResult": "Route `language_support`, support type `clarification`, bilingual presentation override, one provider request, event 0→1, visible English and Burmese support without changing the stored learner profile.",
+      "actualResult": "Language route, unchanged profile and English+Burmese rendering",
+      "outcome": "Pass",
+      "limitation": "Rendering verified; linguistic correctness not assessed"
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "dynamic/raw/readable/DYN-07.json",
+      "derived": true
+    },
+    {
+      "label": "API / saved state",
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "fragment": "L31",
+      "derived": false
+    },
+    {
+      "label": "Test checks",
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "fragment": "L305",
+      "derived": false
+    },
+    {
+      "label": "UI-07 screen",
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/screenshots/07_language_support.png",
+      "derived": false
+    }
+  ],
+  "records": {
+    "apiAndDatabase": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 31
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "DYN-07",
+          "operation": "create language-support session",
+          "startedAt": "2026-10-01T04:43:20.699Z",
+          "elapsedMs": 3257.269,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "question": "What is electric current?"
+            }
+          },
+          "response": {
+            "status": 201,
+            "body": {
+              "session": {
+                "sessionId": "6b1c1947-7682-4203-ab89-f16b3c80fbfd",
+                "originalQuestion": "What is electric current?",
+                "concept": {
+                  "name": "electric current",
+                  "domain": "physics, electricity"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "Electric current is the flow of electric charge through a material or circuit. In simple terms, it tells us how much charge is moving each second.",
+                    "my": "Electric current ဆိုတာ လျှပ်စစ် charge တွေ material တစ်ခု သို့မဟုတ် circuit တစ်ခုအတွင်း စီးဆင်းနေမှုပါ။ ရိုးရိုးပြောရ면 တစ်စက္ကန့်အတွင်း charge ဘယ်လောက် ရွေ့လျားနေလဲ ကို ဖော်ပြတာပါ။"
+                  },
+                  "realWorldExample": {
+                    "en": "When a phone charger powers your phone, electric current flows through the cable into the phone. That flowing charge is what delivers energy to the device.",
+                    "my": "ဖုန်း charger က ဖုန်းကို အားသွင်းနေတဲ့အချိန် cable ထဲကနေ electric current စီးဆင်းပြီး ဖုန်းဆီကို ရောက်သွားပါတယ်။ အဲဒီ charge စီးဆင်းမှုကပဲ device ကို energy ပေးတာပါ။"
+                  },
+                  "technical": {
+                    "en": "Electric current is the rate of flow of electric charge past a point, usually written as I = Q/t. Its unit is the ampere, where 1 ampere means 1 coulomb of charge passing a point each second.",
+                    "my": "Electric current ဆိုတာ တစ်နေရာကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ စီးဆင်းနှုန်းပါ။ ပုံမှန်အားဖြင့် I = Q/t လို့ရေးပါတယ်။ Unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ 1 coulomb charge က တစ်စက္ကန့်အတွင်း အဲဒီနေရာကို ဖြတ်သန်းတာကို ဆိုလိုပါတယ်။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "Where have you seen electric current in everyday life, and what was moving through the circuit?",
+                  "my": "နေ့စဉ်ဘဝမှာ electric current ကို ဘယ်နေရာတွေမှာ တွေ့ဖူးလဲ။ အဲဒီ circuit ထဲမှာ ဘာက ရွေ့လျားနေတာလဲ"
+                },
+                "hint": {
+                  "en": "Think of current as charge in motion through a path.",
+                  "my": "Current ကို လမ်းကြောင်းတစ်ခုထဲက charge ရွေ့လျားမှုလို့ စဉ်းစားပါ။"
+                },
+                "understanding": null,
+                "status": "in_progress",
+                "adaptationRound": 0,
+                "createdAt": "2026-10-01T04:43:23.947Z",
+                "updatedAt": "2026-10-01T04:43:23.947Z"
+              }
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 32
+        },
+        "record": {
+          "recordType": "database_snapshot",
+          "caseId": "DYN-07",
+          "label": "profile_before",
+          "capturedAt": "2026-10-01T04:43:23.959Z",
+          "document": {
+            "learnerId": "00000000-0000-4000-8000-0000000000a1",
+            "createdAt": "2026-10-01T04:40:05.574Z",
+            "preferences": {
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "supportLanguage": "bilingual"
+            },
+            "updatedAt": "2026-10-01T04:40:05.574Z"
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 33
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "DYN-07",
+          "operation": "language support response",
+          "startedAt": "2026-10-01T04:43:23.959Z",
+          "elapsedMs": 1436.896,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions/6b1c1947-7682-4203-ab89-f16b3c80fbfd/respond",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "overallSupportNeed": "medium",
+              "difficultyType": "language_terms"
+            }
+          },
+          "response": {
+            "status": 200,
+            "body": {
+              "understanding": "medium",
+              "status": "in_progress",
+              "adaptationRound": 1,
+              "route": "language_support",
+              "responseEvent": {
+                "overallSupportNeed": "medium",
+                "difficultyType": "language_terms",
+                "route": "language_support",
+                "roundBefore": 0,
+                "roundAfter": 1,
+                "createdAt": "2026-10-01T04:43:25.392Z"
+              },
+              "adaptation": {
+                "learnerResponse": "medium",
+                "supportType": "clarification",
+                "content": {
+                  "en": "A useful way to think about electric current is that it does not mean “electricity stored in a wire”; it means charge moving through a point in a circuit. The current can be larger or smaller depending on how much charge passes each second, which is why the unit is ampere.",
+                  "my": "Electric current ကို နားလည်ရာမှာ wire ထဲမှာ electricity ကို သိမ်းထားတာမဟုတ်ဘဲ circuit ထဲက point တစ်ခုကို ဖြတ်ပြီး charge တွေ ရွေ့လျားနေခြင်းလို့ တွေးနိုင်ပါတယ်။ တစ်စက္ကန့်အတွင်း charge ပိုများစွာ ဖြတ်သန်းရင် current ပိုကြီးပြီး အဲဒါကြောင့် unit ကို ampere လို့ ခေါ်တာပါ။"
+                },
+                "presentationOverride": "bilingual",
+                "round": 1,
+                "createdAt": "2026-10-01T04:43:25.392Z"
+              }
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 34
+        },
+        "record": {
+          "recordType": "database_snapshot",
+          "caseId": "DYN-07",
+          "label": "session_after",
+          "capturedAt": "2026-10-01T04:43:25.400Z",
+          "document": {
+            "sessionId": "6b1c1947-7682-4203-ab89-f16b3c80fbfd",
+            "learnerId": "00000000-0000-4000-8000-0000000000a1",
+            "originalQuestion": "What is electric current?",
+            "concept": {
+              "name": "electric current",
+              "domain": "physics, electricity"
+            },
+            "explanations": {
+              "simple": {
+                "en": "Electric current is the flow of electric charge through a material or circuit. In simple terms, it tells us how much charge is moving each second.",
+                "my": "Electric current ဆိုတာ လျှပ်စစ် charge တွေ material တစ်ခု သို့မဟုတ် circuit တစ်ခုအတွင်း စီးဆင်းနေမှုပါ။ ရိုးရိုးပြောရ면 တစ်စက္ကန့်အတွင်း charge ဘယ်လောက် ရွေ့လျားနေလဲ ကို ဖော်ပြတာပါ။"
+              },
+              "realWorldExample": {
+                "en": "When a phone charger powers your phone, electric current flows through the cable into the phone. That flowing charge is what delivers energy to the device.",
+                "my": "ဖုန်း charger က ဖုန်းကို အားသွင်းနေတဲ့အချိန် cable ထဲကနေ electric current စီးဆင်းပြီး ဖုန်းဆီကို ရောက်သွားပါတယ်။ အဲဒီ charge စီးဆင်းမှုကပဲ device ကို energy ပေးတာပါ။"
+              },
+              "technical": {
+                "en": "Electric current is the rate of flow of electric charge past a point, usually written as I = Q/t. Its unit is the ampere, where 1 ampere means 1 coulomb of charge passing a point each second.",
+                "my": "Electric current ဆိုတာ တစ်နေရာကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ စီးဆင်းနှုန်းပါ။ ပုံမှန်အားဖြင့် I = Q/t လို့ရေးပါတယ်။ Unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ 1 coulomb charge က တစ်စက္ကန့်အတွင်း အဲဒီနေရာကို ဖြတ်သန်းတာကို ဆိုလိုပါတယ်။"
+              }
+            },
+            "reflectivePrompt": {
+              "en": "Where have you seen electric current in everyday life, and what was moving through the circuit?",
+              "my": "နေ့စဉ်ဘဝမှာ electric current ကို ဘယ်နေရာတွေမှာ တွေ့ဖူးလဲ။ အဲဒီ circuit ထဲမှာ ဘာက ရွေ့လျားနေတာလဲ"
+            },
+            "hint": {
+              "en": "Think of current as charge in motion through a path.",
+              "my": "Current ကို လမ်းကြောင်းတစ်ခုထဲက charge ရွေ့လျားမှုလို့ စဉ်းစားပါ။"
+            },
+            "understanding": "medium",
+            "status": "in_progress",
+            "adaptationRound": 1,
+            "preferencesSnapshot": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "adaptations": [
+              {
+                "learnerResponse": "medium",
+                "supportType": "clarification",
+                "content": {
+                  "en": "A useful way to think about electric current is that it does not mean “electricity stored in a wire”; it means charge moving through a point in a circuit. The current can be larger or smaller depending on how much charge passes each second, which is why the unit is ampere.",
+                  "my": "Electric current ကို နားလည်ရာမှာ wire ထဲမှာ electricity ကို သိမ်းထားတာမဟုတ်ဘဲ circuit ထဲက point တစ်ခုကို ဖြတ်ပြီး charge တွေ ရွေ့လျားနေခြင်းလို့ တွေးနိုင်ပါတယ်။ တစ်စက္ကန့်အတွင်း charge ပိုများစွာ ဖြတ်သန်းရင် current ပိုကြီးပြီး အဲဒါကြောင့် unit ကို ampere လို့ ခေါ်တာပါ။"
+                },
+                "presentationOverride": "bilingual",
+                "round": 1,
+                "createdAt": "2026-10-01T04:43:25.392Z"
+              }
+            ],
+            "responseEvents": [
+              {
+                "overallSupportNeed": "medium",
+                "difficultyType": "language_terms",
+                "route": "language_support",
+                "roundBefore": 0,
+                "roundAfter": 1,
+                "createdAt": "2026-10-01T04:43:25.392Z"
+              }
+            ],
+            "followUps": [],
+            "createdAt": "2026-10-01T04:43:23.947Z",
+            "updatedAt": "2026-10-01T04:43:25.392Z"
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 35
+        },
+        "record": {
+          "recordType": "database_snapshot",
+          "caseId": "DYN-07",
+          "label": "profile_after",
+          "capturedAt": "2026-10-01T04:43:25.402Z",
+          "document": {
+            "learnerId": "00000000-0000-4000-8000-0000000000a1",
+            "createdAt": "2026-10-01T04:40:05.574Z",
+            "preferences": {
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "supportLanguage": "bilingual"
+            },
+            "updatedAt": "2026-10-01T04:40:05.574Z"
+          }
+        }
+      }
+    ],
+    "originalAssertions": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-summary.json",
+          "pointer": "/cases/9"
+        },
+        "record": {
+          "caseId": "DYN-07",
+          "outcome": "Pass",
+          "checks": [
+            {
+              "name": "initial_creation_201",
+              "pass": true
+            },
+            {
+              "name": "response_200",
+              "pass": true
+            },
+            {
+              "name": "route_language_support",
+              "pass": true
+            },
+            {
+              "name": "support_clarification",
+              "pass": true
+            },
+            {
+              "name": "bilingual_override",
+              "pass": true
+            },
+            {
+              "name": "bilingual_content",
+              "pass": true
+            },
+            {
+              "name": "event_zero_to_one",
+              "pass": true
+            },
+            {
+              "name": "profile_unchanged",
+              "pass": true
+            }
+          ],
+          "notes": []
+        }
+      }
+    ],
+    "separateManualBrowserObservations": [
+      {
+        "source": {
+          "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+          "line": 31
+        },
+        "record": {
+          "Observation": "UI-07 Language route",
+          "Related cases": "DYN-07",
+          "Expected visible result": "Route and English+Burmese adaptation render together",
+          "Actual result": "The Electric current session identified the language-support response and displayed English and Burmese adapted support together.",
+          "Execution status": "Executed",
+          "Outcome": "Pass",
+          "Screenshot/HAR locator": "`screenshots/07_language_support.png`",
+          "Deviation or issue": "Rendering only; linguistic correctness was not assessed."
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "dynamic/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "measurements": {
+    "providerCalls": {
+      "status": "not_instrumented",
+      "value": null
+    }
+  },
+  "sources": [
+    {
+      "file": "dynamic/dynamic_analysis.md",
+      "sha256": "3bd81fe0568294d1c5f3d0bc02ca883ac9d54b3a4f74e5ecbd8faf7e20cd3699",
+      "bytes": 51923
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "sha256": "4f2960b4cfa44c3da887ff8c4a068eb5ed253c614afd031b4c06978e79ce64b7",
+      "bytes": 229874
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "sha256": "08a5fdc71d663c38c1b691aa8a712b3fc3fb91a21cf859c74024776325f79f04",
+      "bytes": 13396
+    },
+    {
+      "file": "dynamic/timings.csv",
+      "sha256": "0978ec9dfe0ddd14ac26a99204103fe7ebde7bba4d60dacf7237c6b292bb3d93",
+      "bytes": 2775
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-command-log.md",
+      "sha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "bytes": 5301
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-adjudication.md",
+      "sha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "bytes": 654
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "sha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "bytes": 9208
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "sha256": "74388f6df21d6155f2b50191ade47ed52726bf95db6dd956edf0eb0f41e6811f",
+      "bytes": 27639551
+    }
+  ]
+}

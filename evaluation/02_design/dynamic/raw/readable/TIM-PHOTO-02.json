@@ -1,0 +1,186 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "dynamic",
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "caseId": "TIM-PHOTO-02",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "API and manual browser records can use different sessions/actions. They are kept separate.",
+    "Provider requests were not directly counted. Missing counts are not zero."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "dynamic/dynamic_analysis.md",
+      "line": 57
+    },
+    "record": {
+      "caseId": "TIM-PHOTO-02",
+      "action": "Submit one initial-generation request and measure end-to-end elapsed time.",
+      "conditions": "What is photosynthesis, and how do plants make food?\nB01 local Next.js dev; isolated MongoDB; live configured provider\nSequential attempt 2",
+      "expectedResult": "Record HTTP outcome and elapsed time for the frozen input; no SLA or load threshold.",
+      "actualResult": "HTTP 201; 3970.571 ms; recorded outcome success.",
+      "outcome": "Pass",
+      "limitation": "Descriptive local timing, not a latency guarantee or stress test."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "dynamic/raw/readable/TIM-PHOTO-02.json",
+      "derived": true
+    },
+    {
+      "label": "Timing row",
+      "file": "dynamic/timings.csv",
+      "fragment": "L3",
+      "derived": false
+    },
+    {
+      "label": "HTTP record",
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "fragment": "L41",
+      "derived": false
+    }
+  ],
+  "records": {
+    "apiAndDatabase": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 41
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "TIM-PHOTO-02",
+          "operation": "fresh initial generation timing",
+          "startedAt": "2026-10-01T04:43:34.437Z",
+          "elapsedMs": 3970.571,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "question": "What is photosynthesis, and how do plants make food?"
+            }
+          },
+          "response": {
+            "status": 201,
+            "body": {
+              "session": {
+                "sessionId": "e7c38209-3fdb-43ee-b492-cd6b0dee4bbe",
+                "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                "concept": {
+                  "name": "photosynthesis",
+                  "domain": "biology: plant metabolism and energy conversion"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. In this process, light energy is turned into chemical energy stored in sugar, which the plant can use for growth and life processes.",
+                    "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနှင့် carbon dioxide ကိုသုံးပြီး ကိုယ်ပိုင်အစာကို ဖန်တီးတဲ့ လုပ်ငန်းစဉ်ပါ။ ဒီလုပ်ငန်းစဉ်မှာ အလင်းစွမ်းအင်ကို သကြားထဲမှာ သိမ်းထားတဲ့ ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲပါတယ်။ အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ အသက်ရှင်လုပ်ငန်းတွေ လုပ်ဖို့ သုံးနိုင်ပါတယ်။"
+                  },
+                  "realWorldExample": {
+                    "en": "A potted plant near a window uses sunlight through its leaves, takes in carbon dioxide from the air, and absorbs water from its roots. It then makes sugar in its leaves, which helps it grow new stems and leaves.",
+                    "my": "ပြတင်းပေါက်နားက ပန်းအိုးထဲက အပင်တစ်ပင်ကို စဉ်းစားပါ။ အဲဒီအပင်က အရွက်ကနေ နေရောင်ခြည်ကိုယူတယ်၊ လေထဲက carbon dioxide ကို စုပ်ယူတယ်၊ အမြစ်ကနေ ရေကို စုပ်ယူတယ်။ ပြီးတော့ အရွက်ထဲမှာ သကြားကို ဖန်တီးတယ်။ အဲဒီသကြားက အပင်ကို ပင်စည်အသစ်တွေ၊ အရွက်အသစ်တွေ ထုတ်ဖို့ အားပေးပါတယ်။"
+                  },
+                  "technical": {
+                    "en": "Photosynthesis is the biochemical pathway by which green plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll in the chloroplast absorbs light, driving reactions that use water and carbon dioxide to produce glucose and release oxygen. The glucose provides stored energy and carbon skeletons for growth and metabolism.",
+                    "my": "Photosynthesis သည် အစိမ်းရောင် အပင်များ၊ algae များ၊ နှင့် အချို့ bacteria များက အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲသည့် biochemical pathway ဖြစ်ပါတယ်။ အပင်တွေမှာ chlorophyll က chloroplast အတွင်းမှာ အလင်းကို စုပ်ယူပြီး၊ ရေနှင့် carbon dioxide ကို အသုံးပြုကာ glucose ကို ထုတ်လုပ်ပြီး oxygen ကို လွှတ်ပေးတဲ့ reactions တွေကို မောင်းနှင်ပေးပါတယ်။ ထုတ်လုပ်된 glucose က စွမ်းအင်သိုလှောင်မှုနဲ့ ကြီးထွားမှုအတွက် လိုအပ်တဲ့ carbon skeletons ကို ပေးပါတယ်။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "Why do you think a plant needs both sunlight and carbon dioxide to make food?",
+                  "my": "အပင်က အစာဖန်တီးဖို့ နေရောင်ခြည်နဲ့ carbon dioxide နှစ်ခုလုံး ဘာကြောင့် လိုအပ်မယ်လို့ ထင်ပါသလဲ။"
+                },
+                "hint": {
+                  "en": "Remember that photosynthesis changes light energy into stored sugar.",
+                  "my": "Photosynthesis က အလင်းစွမ်းအင်ကို သကြားအဖြစ် သိမ်းထားတဲ့ စွမ်းအင်으로 ပြောင်းလဲတယ်ဆိုတာကို မှတ်ထားပါ။"
+                },
+                "understanding": null,
+                "status": "in_progress",
+                "adaptationRound": 0,
+                "createdAt": "2026-10-01T04:43:38.402Z",
+                "updatedAt": "2026-10-01T04:43:38.402Z"
+              }
+            },
+            "error": null
+          }
+        }
+      }
+    ],
+    "timing": [
+      {
+        "source": {
+          "file": "dynamic/timings.csv",
+          "line": 3
+        },
+        "record": {
+          "case_id": "TIM-PHOTO-02",
+          "question": "What is photosynthesis, and how do plants make food?",
+          "attempt": "2",
+          "started_at": "2026-10-01T04:43:34.437Z",
+          "elapsed_ms": "3970.571",
+          "http_status": "201",
+          "outcome": "success",
+          "retry_of": "",
+          "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "dynamic/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "measurements": {
+    "providerCalls": {
+      "status": "not_instrumented",
+      "value": null
+    }
+  },
+  "sources": [
+    {
+      "file": "dynamic/dynamic_analysis.md",
+      "sha256": "3bd81fe0568294d1c5f3d0bc02ca883ac9d54b3a4f74e5ecbd8faf7e20cd3699",
+      "bytes": 51923
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "sha256": "4f2960b4cfa44c3da887ff8c4a068eb5ed253c614afd031b4c06978e79ce64b7",
+      "bytes": 229874
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "sha256": "08a5fdc71d663c38c1b691aa8a712b3fc3fb91a21cf859c74024776325f79f04",
+      "bytes": 13396
+    },
+    {
+      "file": "dynamic/timings.csv",
+      "sha256": "0978ec9dfe0ddd14ac26a99204103fe7ebde7bba4d60dacf7237c6b292bb3d93",
+      "bytes": 2775
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-command-log.md",
+      "sha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "bytes": 5301
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-adjudication.md",
+      "sha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "bytes": 654
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "sha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "bytes": 9208
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "sha256": "74388f6df21d6155f2b50191ade47ed52726bf95db6dd956edf0eb0f41e6811f",
+      "bytes": 27639551
+    }
+  ]
+}

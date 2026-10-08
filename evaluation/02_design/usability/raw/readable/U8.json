@@ -1,0 +1,2059 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "usability",
+  "runId": "RUN-B01-20261002-USABILITY-01",
+  "caseId": "U8",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "Observations use their explicit criteria arrays. One capture may support several U criteria.",
+    "Original observations, corrections and the derived review sheet are separate; no correction is applied silently.",
+    "Provider records are linked only when their label exactly matches a recorded capture ID; general labels stay shared.",
+    "Screenshots and DOM files remain at the paths in browserObservations, relative to the historical run folder.",
+    "Ratings describe a technical inspection, not participant feedback or translation-quality assessment."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "usability/usability_inspection.md",
+      "line": 48
+    },
+    "record": {
+      "caseId": "U8",
+      "action": "Error recovery — Failure, retry and ownership inspection",
+      "conditions": "Root B01 production build with isolated MongoDB and controlled model responses. Desktop/mobile, English/Burmese, light/dark; see the capture matrix for actual coverage.",
+      "expectedResult": "Safe errors use the selected UI language and offer a clear retry or return action. Failed requests preserve valid input and session state.",
+      "actualResult": "Safe errors allowed retry and foreign-session recovery worked. Initial, adaptation and follow-up errors remained in English in Burmese UI (USI-02). Workaround: use English UI; proposed fix: localise errors, not implemented. Preference-save infrastructure failure was not injected.",
+      "outcome": "Partial",
+      "limitation": "Highest severity 2. Preference-save infrastructure failure was not injected."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "usability/raw/readable/U8.json",
+      "derived": true
+    },
+    {
+      "label": "US-M26 screen",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/screenshots/US-M26.jpg",
+      "derived": false
+    },
+    {
+      "label": "DOM",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/US-M26.dom.txt",
+      "derived": false
+    },
+    {
+      "label": "US-M26 record",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "fragment": "L83",
+      "derived": false
+    },
+    {
+      "label": "US-M30 screen",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/screenshots/US-M30.jpg",
+      "derived": false
+    },
+    {
+      "label": "DOM",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/US-M30.dom.txt",
+      "derived": false
+    },
+    {
+      "label": "US-M30 record",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "fragment": "L91",
+      "derived": false
+    },
+    {
+      "label": "US-F05 screen",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/screenshots/US-F05.jpg",
+      "derived": false
+    },
+    {
+      "label": "DOM",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/US-F05.dom.txt",
+      "derived": false
+    },
+    {
+      "label": "US-F05 record",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "fragment": "L127",
+      "derived": false
+    },
+    {
+      "label": "US-F06 screen",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/screenshots/US-F06.jpg",
+      "derived": false
+    },
+    {
+      "label": "DOM",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/US-F06.dom.txt",
+      "derived": false
+    },
+    {
+      "label": "US-F06 record",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "fragment": "L128",
+      "derived": false
+    },
+    {
+      "label": "Issue / proposed fix",
+      "file": "usability/issues.csv",
+      "derived": false
+    }
+  ],
+  "records": {
+    "browserObservations": [
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 7
+        },
+        "record": {
+          "id": "US-D07",
+          "criteria": [
+            "U1",
+            "U8"
+          ],
+          "state": "home-invalid-whitespace",
+          "note": "Whitespace leaves Ask disabled; no generation is submitted.",
+          "severity": 0,
+          "at": "2026-10-02T10:01:09.297Z",
+          "url": "http://ui-b01.localhost:55530/",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(0, 95, 204) none 1px",
+            "tag": "TEXTAREA",
+            "text": "   "
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D07.jpg",
+          "dom": "US-D07.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 19
+        },
+        "record": {
+          "id": "US-D19",
+          "criteria": [
+            "U3",
+            "U8"
+          ],
+          "state": "correction-clarification-empty",
+          "note": "Concept-mismatch choice exposes intended-term/context field; submission disabled until clarification supplied.",
+          "severity": 0,
+          "at": "2026-10-02T10:05:01.082Z",
+          "url": "http://ui-b01.localhost:55530/learn/6bedefa1-e474-4a15-a914-01782ac64848",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "oklch(0.424 0.199 265.638) none 3px",
+            "tag": "INPUT",
+            "text": ""
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D19.jpg",
+          "dom": "US-D19.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 32
+        },
+        "record": {
+          "id": "US-D27",
+          "criteria": [
+            "U4",
+            "U8"
+          ],
+          "state": "adaptation-error",
+          "note": "Controlled provider failure is presented without raw provider detail; inspect actual recovery controls below.",
+          "severity": 0,
+          "at": "2026-10-02T10:06:43.385Z",
+          "url": "http://ui-b01.localhost:55530/learn/1418deb0-59f7-4520-a9dd-30da90e5b0e9",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D27.jpg",
+          "dom": "US-D27.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 33
+        },
+        "record": {
+          "id": "US-D28",
+          "criteria": [
+            "U4",
+            "U8"
+          ],
+          "state": "adaptation-recovered",
+          "note": "Try again succeeds after controlled fault removed; one resulting adaptation is visible.",
+          "severity": 0,
+          "at": "2026-10-02T10:07:03.650Z",
+          "url": "http://ui-b01.localhost:55530/learn/1418deb0-59f7-4520-a9dd-30da90e5b0e9",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D28.jpg",
+          "dom": "US-D28.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 34
+        },
+        "record": {
+          "id": "US-D29",
+          "criteria": [
+            "U1",
+            "U4",
+            "U8"
+          ],
+          "state": "home-provider-error",
+          "note": "Creation fault leaves inquiry available for resubmission and displays learner-safe error.",
+          "severity": 0,
+          "at": "2026-10-02T10:07:05.646Z",
+          "url": "http://ui-b01.localhost:55530/",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D29.jpg",
+          "dom": "US-D29.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 35
+        },
+        "record": {
+          "id": "US-D30",
+          "criteria": [
+            "U4",
+            "U8"
+          ],
+          "state": "home-recovered",
+          "note": "Resubmitting retained inquiry after fault removal reaches learning session.",
+          "severity": 0,
+          "at": "2026-10-02T10:07:08.042Z",
+          "url": "http://ui-b01.localhost:55530/learn/9d24235b-1fa6-4722-a637-5aff6edce10f",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D30.jpg",
+          "dom": "US-D30.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 45
+        },
+        "record": {
+          "id": "US-D40",
+          "criteria": [
+            "U4",
+            "U8",
+            "U9"
+          ],
+          "state": "burmese-home-error",
+          "note": "Burmese UI provider error inspected for localisation and recovery.",
+          "severity": 0,
+          "at": "2026-10-02T10:08:39.866Z",
+          "url": "http://ui-b01.localhost:55530/",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AIမေးခွန်းသစ်မှတ်တမ်းEN◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fragm"
+          },
+          "height": 900,
+          "locale": "my",
+          "theme": "dark",
+          "width": 1440,
+          "screenshot": "screenshots/US-D40.jpg",
+          "dom": "US-D40.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 81
+        },
+        "record": {
+          "id": "US-M25",
+          "criteria": [
+            "U1",
+            "U8"
+          ],
+          "state": "home-mobile-invalid",
+          "note": "Whitespace keeps submission disabled on mobile.",
+          "severity": 0,
+          "at": "2026-10-02T10:11:44.425Z",
+          "url": "http://ui-b01.localhost:55530/",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(0, 95, 204) none 1px",
+            "tag": "TEXTAREA",
+            "text": "   "
+          },
+          "height": 844,
+          "locale": "my",
+          "theme": "light",
+          "width": 390,
+          "screenshot": "screenshots/US-M25.jpg",
+          "dom": "US-M25.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 83
+        },
+        "record": {
+          "id": "US-M26",
+          "criteria": [
+            "U4",
+            "U8",
+            "U9"
+          ],
+          "state": "home-mobile-burmese-error",
+          "note": "English-only safe error in Burmese UI; resubmission available.",
+          "severity": 2,
+          "at": "2026-10-02T10:11:46.286Z",
+          "url": "http://ui-b01.localhost:55530/",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AIမေးခွန်းသစ်မှတ်တမ်းEN◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fragm"
+          },
+          "height": 844,
+          "locale": "my",
+          "theme": "light",
+          "width": 390,
+          "screenshot": "screenshots/US-M26.jpg",
+          "dom": "US-M26.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 84
+        },
+        "record": {
+          "id": "US-M27",
+          "criteria": [
+            "U4",
+            "U8"
+          ],
+          "state": "home-mobile-recovered",
+          "note": "Burmese-labelled Ask successfully resubmits retained inquiry after fault removal.",
+          "severity": 0,
+          "at": "2026-10-02T10:11:49.782Z",
+          "url": "http://ui-b01.localhost:55530/learn/7f7d45e7-ef2c-4a6b-bc27-170c33838f9b",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AIမေးခွန်းသစ်မှတ်တမ်းEN◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fragm"
+          },
+          "height": 844,
+          "locale": "my",
+          "theme": "light",
+          "width": 390,
+          "screenshot": "screenshots/US-M27.jpg",
+          "dom": "US-M27.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 91
+        },
+        "record": {
+          "id": "US-M30",
+          "criteria": [
+            "U4",
+            "U8",
+            "U9"
+          ],
+          "state": "adaptation-mobile-burmese-error",
+          "note": "Adaptation error in Burmese UI retains retry; message localisation inspected.",
+          "severity": 2,
+          "at": "2026-10-02T10:12:29.120Z",
+          "url": "http://ui-b01.localhost:55530/learn/e3b74f4e-8e86-474c-be7a-26bbf5c91356",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AIမေးခွန်းသစ်မှတ်တမ်းEN◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fragm"
+          },
+          "height": 844,
+          "locale": "my",
+          "theme": "light",
+          "width": 390,
+          "screenshot": "screenshots/US-M30.jpg",
+          "dom": "US-M30.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 92
+        },
+        "record": {
+          "id": "US-M31",
+          "criteria": [
+            "U4",
+            "U8"
+          ],
+          "state": "adaptation-mobile-recovered",
+          "note": "Burmese retry control recovers after fixture failure removed.",
+          "severity": 0,
+          "at": "2026-10-02T10:12:52.260Z",
+          "url": "http://ui-b01.localhost:55530/learn/e3b74f4e-8e86-474c-be7a-26bbf5c91356",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AIမေးခွန်းသစ်မှတ်တမ်းEN◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fragm"
+          },
+          "height": 844,
+          "locale": "my",
+          "theme": "light",
+          "width": 390,
+          "screenshot": "screenshots/US-M31.jpg",
+          "dom": "US-M31.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 115
+        },
+        "record": {
+          "id": "US-D45",
+          "criteria": [
+            "U5",
+            "U8"
+          ],
+          "state": "foreign-session-error",
+          "note": "Owned browser rejects foreign synthetic session with safe error and Back to History/Try again.",
+          "severity": 0,
+          "at": "2026-10-02T10:15:58.930Z",
+          "url": "http://ui-b01.localhost:55530/learn/27d9094a-0216-4420-a93e-2a6cdaaf578b",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AI\nNew Inquiry\nHistory\nမြန်မာ\n◑\n!\nSession could not be loaded\n\nLearning session was not found\n\nTry again\nBa"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D45.jpg",
+          "dom": "US-D45.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 116
+        },
+        "record": {
+          "id": "US-M36",
+          "criteria": [
+            "U5",
+            "U8"
+          ],
+          "state": "foreign-session-error-mobile",
+          "note": "Foreign session unavailable on mobile with recovery navigation.",
+          "severity": 0,
+          "at": "2026-10-02T10:15:59.124Z",
+          "url": "http://ui-b01.localhost:55530/learn/27d9094a-0216-4420-a93e-2a6cdaaf578b",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "New Inquiry\nHistory\nမြန်မာ\n◑\n!\nSession could not be loaded\n\nLearning session was not found\n\nTry again\nBack to History"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "light",
+          "width": 390,
+          "screenshot": "screenshots/US-M36.jpg",
+          "dom": "US-M36.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 122
+        },
+        "record": {
+          "id": "US-F01",
+          "criteria": [
+            "U4",
+            "U8"
+          ],
+          "state": "followup-unrelated-desktop",
+          "note": "Unrelated-topic response recommends a new session without consuming a follow-up slot.",
+          "severity": 0,
+          "at": "2026-10-02T10:18:33.039Z",
+          "url": "http://ui-b01.localhost:55530/learn/7d2f6424-c13f-4b2f-adff-faf4b4512d40",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AI\nNew Inquiry\nHistory\nမြန်မာ\n◑\nBIOLOGY, PLANT PHYSIOLOGY\nphotosynthesis\n\nSTEM Learning Session\n\n📖\nSIMPLE "
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-F01.jpg",
+          "dom": "US-F01.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 127
+        },
+        "record": {
+          "id": "US-F05",
+          "criteria": [
+            "U4",
+            "U8",
+            "U9"
+          ],
+          "state": "followup-error-mobile-burmese",
+          "note": "Controlled follow-up failure retains question for resubmission; error localisation inspected.",
+          "severity": 2,
+          "at": "2026-10-02T10:19:18.153Z",
+          "url": "http://ui-b01.localhost:55530/learn/3af49fb6-2e65-4dc0-a335-7790c254e8d1",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "မေးခွန်းသစ်\nမှတ်တမ်း\nEN\n◑\nBIOLOGY, PLANT PHYSIOLOGY\nphotosynthesis\n\nSTEM သင်ယူမှု အစည်းအဝေး\n\n📖\nရိုးရှင်းသော ရှင်းလင်းချ"
+          },
+          "height": 844,
+          "locale": "my",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-F05.jpg",
+          "dom": "US-F05.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 128
+        },
+        "record": {
+          "id": "US-F06",
+          "criteria": [
+            "U4",
+            "U8"
+          ],
+          "state": "followup-recovered-mobile",
+          "note": "Retained follow-up can be resubmitted after controlled provider fault removal.",
+          "severity": 0,
+          "at": "2026-10-02T10:19:19.940Z",
+          "url": "http://ui-b01.localhost:55530/learn/3af49fb6-2e65-4dc0-a335-7790c254e8d1",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "မေးခွန်းသစ်\nမှတ်တမ်း\nEN\n◑\nBIOLOGY, PLANT PHYSIOLOGY\nphotosynthesis\n\nSTEM သင်ယူမှု အစည်းအဝေး\n\n📖\nရိုးရှင်းသော ရှင်းလင်းချ"
+          },
+          "height": 844,
+          "locale": "my",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-F06.jpg",
+          "dom": "US-F06.dom.txt"
+        }
+      }
+    ],
+    "reviewSheet": [
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 8
+        },
+        "record": {
+          "evidence_id": "US-D07",
+          "criterion": "U1|U8",
+          "screen": "Home",
+          "state": "home-invalid-whitespace",
+          "locale": "en",
+          "support_language": "Not applicable to Home/History; preferences modal displays selectable support languages",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Whitespace leaves Ask disabled; no generation is submitted.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D07.jpg",
+          "dom": "US-D07.dom.txt",
+          "observed_at_utc": "2026-10-02T10:01:09.297Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 20
+        },
+        "record": {
+          "evidence_id": "US-D19",
+          "criterion": "U3|U8",
+          "screen": "Learning Session / Review or Resume",
+          "state": "correction-clarification-empty",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Concept-mismatch choice exposes intended-term/context field; submission disabled until clarification supplied.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D19.jpg",
+          "dom": "US-D19.dom.txt",
+          "observed_at_utc": "2026-10-02T10:05:01.082Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 33
+        },
+        "record": {
+          "evidence_id": "US-D27",
+          "criterion": "U4|U8",
+          "screen": "Learning Session / Review or Resume",
+          "state": "adaptation-error",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Controlled provider failure is presented without raw provider detail; inspect actual recovery controls below.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D27.jpg",
+          "dom": "US-D27.dom.txt",
+          "observed_at_utc": "2026-10-02T10:06:43.385Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 34
+        },
+        "record": {
+          "evidence_id": "US-D28",
+          "criterion": "U4|U8",
+          "screen": "Learning Session / Review or Resume",
+          "state": "adaptation-recovered",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Try again succeeds after controlled fault removed; one resulting adaptation is visible.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D28.jpg",
+          "dom": "US-D28.dom.txt",
+          "observed_at_utc": "2026-10-02T10:07:03.650Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 35
+        },
+        "record": {
+          "evidence_id": "US-D29",
+          "criterion": "U1|U4|U8",
+          "screen": "Home",
+          "state": "home-provider-error",
+          "locale": "en",
+          "support_language": "Not applicable to Home/History; preferences modal displays selectable support languages",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Creation fault leaves inquiry available for resubmission and displays learner-safe error.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D29.jpg",
+          "dom": "US-D29.dom.txt",
+          "observed_at_utc": "2026-10-02T10:07:05.646Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 36
+        },
+        "record": {
+          "evidence_id": "US-D30",
+          "criterion": "U4|U8",
+          "screen": "Learning Session / Review or Resume",
+          "state": "home-recovered",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Resubmitting retained inquiry after fault removal reaches learning session.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D30.jpg",
+          "dom": "US-D30.dom.txt",
+          "observed_at_utc": "2026-10-02T10:07:08.042Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 46
+        },
+        "record": {
+          "evidence_id": "US-D40",
+          "criterion": "U4|U8|U9",
+          "screen": "Home",
+          "state": "burmese-home-error",
+          "locale": "my",
+          "support_language": "Not applicable to Home/History; preferences modal displays selectable support languages",
+          "theme": "dark",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Burmese UI displays English-only API error: Unable to prepare the explanation right now. Inquiry remains resubmittable; localisation impedes Burmese-only recovery.",
+          "severity": "2",
+          "task_effect": "USI-02; see issues.csv for task effect",
+          "recovery_recommendation": "USI-02; see issues.csv for recovery and recommendation",
+          "screenshot": "screenshots/US-D40.jpg",
+          "dom": "US-D40.dom.txt",
+          "observed_at_utc": "2026-10-02T10:08:39.866Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 82
+        },
+        "record": {
+          "evidence_id": "US-M25",
+          "criterion": "U1|U8",
+          "screen": "Home",
+          "state": "home-mobile-invalid",
+          "locale": "my",
+          "support_language": "Not applicable to Home/History; preferences modal displays selectable support languages",
+          "theme": "light",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Whitespace keeps submission disabled on mobile.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M25.jpg",
+          "dom": "US-M25.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:44.425Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 84
+        },
+        "record": {
+          "evidence_id": "US-M26",
+          "criterion": "U4|U8|U9",
+          "screen": "Home",
+          "state": "home-mobile-burmese-error",
+          "locale": "my",
+          "support_language": "Not applicable to Home/History; preferences modal displays selectable support languages",
+          "theme": "light",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "English-only safe error in Burmese UI; resubmission available.",
+          "severity": "2",
+          "task_effect": "USI-02; see issues.csv for task effect",
+          "recovery_recommendation": "USI-02; see issues.csv for recovery and recommendation",
+          "screenshot": "screenshots/US-M26.jpg",
+          "dom": "US-M26.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:46.286Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 85
+        },
+        "record": {
+          "evidence_id": "US-M27",
+          "criterion": "U4|U8",
+          "screen": "Learning Session / Review or Resume",
+          "state": "home-mobile-recovered",
+          "locale": "my",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Burmese-labelled Ask successfully resubmits retained inquiry after fault removal.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M27.jpg",
+          "dom": "US-M27.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:49.782Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 92
+        },
+        "record": {
+          "evidence_id": "US-M30",
+          "criterion": "U4|U8|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "adaptation-mobile-burmese-error",
+          "locale": "my",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Adaptation error in Burmese UI retains retry; message localisation inspected.",
+          "severity": "2",
+          "task_effect": "USI-02; see issues.csv for task effect",
+          "recovery_recommendation": "USI-02; see issues.csv for recovery and recommendation",
+          "screenshot": "screenshots/US-M30.jpg",
+          "dom": "US-M30.dom.txt",
+          "observed_at_utc": "2026-10-02T10:12:29.120Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 93
+        },
+        "record": {
+          "evidence_id": "US-M31",
+          "criterion": "U4|U8",
+          "screen": "Learning Session / Review or Resume",
+          "state": "adaptation-mobile-recovered",
+          "locale": "my",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Burmese retry control recovers after fixture failure removed.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M31.jpg",
+          "dom": "US-M31.dom.txt",
+          "observed_at_utc": "2026-10-02T10:12:52.260Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 116
+        },
+        "record": {
+          "evidence_id": "US-D45",
+          "criterion": "U5|U8",
+          "screen": "Learning Session / Review or Resume",
+          "state": "foreign-session-error",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Owned browser rejects foreign synthetic session with safe error and Back to History/Try again.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D45.jpg",
+          "dom": "US-D45.dom.txt",
+          "observed_at_utc": "2026-10-02T10:15:58.930Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 117
+        },
+        "record": {
+          "evidence_id": "US-M36",
+          "criterion": "U5|U8",
+          "screen": "Learning Session / Review or Resume",
+          "state": "foreign-session-error-mobile",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Foreign session unavailable on mobile with recovery navigation.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M36.jpg",
+          "dom": "US-M36.dom.txt",
+          "observed_at_utc": "2026-10-02T10:15:59.124Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 123
+        },
+        "record": {
+          "evidence_id": "US-F01",
+          "criterion": "U4|U8",
+          "screen": "Learning Session / Review or Resume",
+          "state": "followup-unrelated-desktop",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Unrelated-topic response recommends a new session without consuming a follow-up slot.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-F01.jpg",
+          "dom": "US-F01.dom.txt",
+          "observed_at_utc": "2026-10-02T10:18:33.039Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 128
+        },
+        "record": {
+          "evidence_id": "US-F05",
+          "criterion": "U4|U8|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "followup-error-mobile-burmese",
+          "locale": "my",
+          "support_language": "bilingual",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Burmese follow-up UI displays English-only safe API error; retained question supports resubmission, but localisation is incomplete.",
+          "severity": "2",
+          "task_effect": "USI-02; see issues.csv for task effect",
+          "recovery_recommendation": "USI-02; see issues.csv for recovery and recommendation",
+          "screenshot": "screenshots/US-F05.jpg",
+          "dom": "US-F05.dom.txt",
+          "observed_at_utc": "2026-10-02T10:19:18.153Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 129
+        },
+        "record": {
+          "evidence_id": "US-F06",
+          "criterion": "U4|U8",
+          "screen": "Learning Session / Review or Resume",
+          "state": "followup-recovered-mobile",
+          "locale": "my",
+          "support_language": "bilingual",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Retained follow-up can be resubmitted after controlled provider fault removal.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-F06.jpg",
+          "dom": "US-F06.dom.txt",
+          "observed_at_utc": "2026-10-02T10:19:19.940Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      }
+    ],
+    "observationCorrections": [
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observation_corrections.jsonl",
+          "line": 5
+        },
+        "record": {
+          "id": "US-D40",
+          "field": "note",
+          "corrected": "Burmese UI displays English-only API error: Unable to prepare the explanation right now. Inquiry remains resubmittable; localisation impedes Burmese-only recovery.",
+          "severity": 2,
+          "reason": "Clarified from captured DOM/screenshot"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observation_corrections.jsonl",
+          "line": 9
+        },
+        "record": {
+          "id": "US-F05",
+          "field": "note",
+          "corrected": "Burmese follow-up UI displays English-only safe API error; retained question supports resubmission, but localisation is incomplete.",
+          "severity": 2,
+          "reason": "Clarified from captured DOM/screenshot"
+        }
+      }
+    ],
+    "fixtureControls": [
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+          "line": 7
+        },
+        "record": {
+          "at": "2026-10-02T10:06:31.804Z",
+          "mode": "non2xx",
+          "label": "US-D27",
+          "delayMs": 1500
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+          "line": 8
+        },
+        "record": {
+          "at": "2026-10-02T10:06:43.390Z",
+          "mode": "ready",
+          "label": "US-D28",
+          "delayMs": 1500
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+          "line": 9
+        },
+        "record": {
+          "at": "2026-10-02T10:07:03.766Z",
+          "mode": "non2xx",
+          "label": "US-D29",
+          "delayMs": 1500
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+          "line": 10
+        },
+        "record": {
+          "at": "2026-10-02T10:07:05.660Z",
+          "mode": "ready",
+          "label": "US-D30",
+          "delayMs": 1500
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+          "line": 11
+        },
+        "record": {
+          "at": "2026-10-02T10:08:37.729Z",
+          "mode": "non2xx",
+          "label": "US-D40",
+          "delayMs": 1500
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+          "line": 20
+        },
+        "record": {
+          "at": "2026-10-02T10:11:44.430Z",
+          "mode": "non2xx",
+          "label": "US-M26",
+          "delayMs": 1500
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+          "line": 21
+        },
+        "record": {
+          "at": "2026-10-02T10:11:46.543Z",
+          "mode": "ready",
+          "label": "US-M27",
+          "delayMs": 1500
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+          "line": 22
+        },
+        "record": {
+          "at": "2026-10-02T10:12:22.503Z",
+          "mode": "non2xx",
+          "label": "US-M30",
+          "delayMs": 1500
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+          "line": 23
+        },
+        "record": {
+          "at": "2026-10-02T10:12:29.123Z",
+          "mode": "ready",
+          "label": "US-M31",
+          "delayMs": 1500
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+          "line": 24
+        },
+        "record": {
+          "at": "2026-10-02T10:19:16.245Z",
+          "mode": "non2xx",
+          "label": "US-F05",
+          "delayMs": 1500
+        }
+      }
+    ],
+    "providerRequests": [
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 9
+        },
+        "record": {
+          "at": "2026-10-02T10:06:34.028Z",
+          "mode": "non2xx",
+          "label": "US-D27",
+          "schema": "learning_adaptation",
+          "model": "controlled-inspection",
+          "input": {
+            "learnerResponse": "medium",
+            "adaptationRoute": "stage_5_scaffold",
+            "supportType": "another_example",
+            "presentationOverride": null,
+            "concept": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "initialExplanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+              }
+            },
+            "previousAdaptations": [],
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided",
+              "theme": "light"
+            }
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator supporting a Burmese-speaking\nuniversity student.\n\n# Goal\n\nThe learner reported \"medium\".\nThe application selected the \"stage_5_scaffold\" route.\nGenerate exactly one \"another_example\" support item that helps the\nlearner understand the existing STEM concept.\n\nThe application, not the model, selected both route and support type. Return\nonly the bilingual content required by the strict schema.\n\n# Stages 3–5 contract\n\n- Stage 3 language strategy is a presentation constraint. Use the stored\n  preferences and retain useful English STEM terminology where appropriate;\n  do not alter the learner profile.\n- Stage 4 core meaning must remain technically consistent with the active\n  concept supplied by the application.\n- Stage 5 scaffold form is fixed by \"another_example\". Do not choose a\n  different scaffold or return route, state or persistence fields.\n\n# Adaptation strategy\n\nFollow the selected support type exactly:\n\n- another_example:\n  Provide one new, concrete example that was not used in the initial\n  explanation or previous adaptations.\n  Explain how the example connects to the concept.\n\n# Context constraints\n\n- Stay focused on the supplied concept.\n- Do not introduce an unrelated concept.\n- Do not contradict the initial explanation.\n- Examine previousAdaptations and avoid repeating their explanation,\n  wording, example or analogy.\n- Respect the supplied explanation level and learning style.\n- Do not repeat the complete initial explanation.\n- Do not create a quiz, question sequence, grade or score.\n- Do not make decisions about understanding, status or adaptation round.\n- Do not choose learner identity, persistence, route permission, lifecycle or\n  follow-up allowance.\n- Do not claim that the learner now understands the concept.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- Write the Burmese content directly from the underlying meaning.\n- The English and Burmese fields must communicate the same information.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari or\n  characters from any other unrelated writing system.\n- Burmese fields may contain only Myanmar script, Latin characters for\n  English STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Success criteria\n\nBefore returning the result, verify that:\n\n1. The content follows \"another_example\" and the \"stage_5_scaffold\" route.\n2. It materially differs from previous support.\n3. It is concise and appropriate for the learner’s reported support need.\n4. English and Burmese communicate the same technical meaning.\n5. Burmese sounds natural rather than machine-translated.\n6. No unsupported writing system appears.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 10
+        },
+        "record": {
+          "at": "2026-10-02T10:07:03.126Z",
+          "mode": "ready",
+          "label": "US-D28",
+          "schema": "learning_adaptation",
+          "model": "controlled-inspection",
+          "input": {
+            "learnerResponse": "medium",
+            "adaptationRoute": "stage_5_scaffold",
+            "supportType": "another_example",
+            "presentationOverride": null,
+            "concept": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "initialExplanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+              }
+            },
+            "previousAdaptations": [],
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided",
+              "theme": "light"
+            }
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator supporting a Burmese-speaking\nuniversity student.\n\n# Goal\n\nThe learner reported \"medium\".\nThe application selected the \"stage_5_scaffold\" route.\nGenerate exactly one \"another_example\" support item that helps the\nlearner understand the existing STEM concept.\n\nThe application, not the model, selected both route and support type. Return\nonly the bilingual content required by the strict schema.\n\n# Stages 3–5 contract\n\n- Stage 3 language strategy is a presentation constraint. Use the stored\n  preferences and retain useful English STEM terminology where appropriate;\n  do not alter the learner profile.\n- Stage 4 core meaning must remain technically consistent with the active\n  concept supplied by the application.\n- Stage 5 scaffold form is fixed by \"another_example\". Do not choose a\n  different scaffold or return route, state or persistence fields.\n\n# Adaptation strategy\n\nFollow the selected support type exactly:\n\n- another_example:\n  Provide one new, concrete example that was not used in the initial\n  explanation or previous adaptations.\n  Explain how the example connects to the concept.\n\n# Context constraints\n\n- Stay focused on the supplied concept.\n- Do not introduce an unrelated concept.\n- Do not contradict the initial explanation.\n- Examine previousAdaptations and avoid repeating their explanation,\n  wording, example or analogy.\n- Respect the supplied explanation level and learning style.\n- Do not repeat the complete initial explanation.\n- Do not create a quiz, question sequence, grade or score.\n- Do not make decisions about understanding, status or adaptation round.\n- Do not choose learner identity, persistence, route permission, lifecycle or\n  follow-up allowance.\n- Do not claim that the learner now understands the concept.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- Write the Burmese content directly from the underlying meaning.\n- The English and Burmese fields must communicate the same information.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari or\n  characters from any other unrelated writing system.\n- Burmese fields may contain only Myanmar script, Latin characters for\n  English STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Success criteria\n\nBefore returning the result, verify that:\n\n1. The content follows \"another_example\" and the \"stage_5_scaffold\" route.\n2. It materially differs from previous support.\n3. It is concise and appropriate for the learner’s reported support need.\n4. English and Burmese communicate the same technical meaning.\n5. Burmese sounds natural rather than machine-translated.\n6. No unsupported writing system appears.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 11
+        },
+        "record": {
+          "at": "2026-10-02T10:07:05.322Z",
+          "mode": "non2xx",
+          "label": "US-D29",
+          "schema": "initial_learning_session",
+          "model": "controlled-inspection",
+          "input": {
+            "learnerQuestion": "What is photosynthesis?",
+            "preferences": {
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided"
+            }
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: advanced\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 12
+        },
+        "record": {
+          "at": "2026-10-02T10:07:07.183Z",
+          "mode": "ready",
+          "label": "US-D30",
+          "schema": "initial_learning_session",
+          "model": "controlled-inspection",
+          "input": {
+            "learnerQuestion": "What is photosynthesis?",
+            "preferences": {
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided"
+            }
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: advanced\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 13
+        },
+        "record": {
+          "at": "2026-10-02T10:08:39.284Z",
+          "mode": "non2xx",
+          "label": "US-D40",
+          "schema": "initial_learning_session",
+          "model": "controlled-inspection",
+          "input": {
+            "learnerQuestion": "What is photosynthesis?",
+            "preferences": {
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided"
+            }
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: advanced\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 21
+        },
+        "record": {
+          "at": "2026-10-02T10:11:45.972Z",
+          "mode": "non2xx",
+          "label": "US-M26",
+          "schema": "initial_learning_session",
+          "model": "controlled-inspection",
+          "input": {
+            "learnerQuestion": "What is photosynthesis?",
+            "preferences": {
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided"
+            }
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: advanced\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 22
+        },
+        "record": {
+          "at": "2026-10-02T10:11:48.333Z",
+          "mode": "ready",
+          "label": "US-M27",
+          "schema": "initial_learning_session",
+          "model": "controlled-inspection",
+          "input": {
+            "learnerQuestion": "What is photosynthesis?",
+            "preferences": {
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided"
+            }
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: advanced\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 23
+        },
+        "record": {
+          "at": "2026-10-02T10:12:24.029Z",
+          "mode": "non2xx",
+          "label": "US-M30",
+          "schema": "learning_adaptation",
+          "model": "controlled-inspection",
+          "input": {
+            "learnerResponse": "medium",
+            "adaptationRoute": "stage_5_scaffold",
+            "supportType": "another_example",
+            "presentationOverride": null,
+            "concept": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "initialExplanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+              }
+            },
+            "previousAdaptations": [],
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided",
+              "theme": "light"
+            }
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator supporting a Burmese-speaking\nuniversity student.\n\n# Goal\n\nThe learner reported \"medium\".\nThe application selected the \"stage_5_scaffold\" route.\nGenerate exactly one \"another_example\" support item that helps the\nlearner understand the existing STEM concept.\n\nThe application, not the model, selected both route and support type. Return\nonly the bilingual content required by the strict schema.\n\n# Stages 3–5 contract\n\n- Stage 3 language strategy is a presentation constraint. Use the stored\n  preferences and retain useful English STEM terminology where appropriate;\n  do not alter the learner profile.\n- Stage 4 core meaning must remain technically consistent with the active\n  concept supplied by the application.\n- Stage 5 scaffold form is fixed by \"another_example\". Do not choose a\n  different scaffold or return route, state or persistence fields.\n\n# Adaptation strategy\n\nFollow the selected support type exactly:\n\n- another_example:\n  Provide one new, concrete example that was not used in the initial\n  explanation or previous adaptations.\n  Explain how the example connects to the concept.\n\n# Context constraints\n\n- Stay focused on the supplied concept.\n- Do not introduce an unrelated concept.\n- Do not contradict the initial explanation.\n- Examine previousAdaptations and avoid repeating their explanation,\n  wording, example or analogy.\n- Respect the supplied explanation level and learning style.\n- Do not repeat the complete initial explanation.\n- Do not create a quiz, question sequence, grade or score.\n- Do not make decisions about understanding, status or adaptation round.\n- Do not choose learner identity, persistence, route permission, lifecycle or\n  follow-up allowance.\n- Do not claim that the learner now understands the concept.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- Write the Burmese content directly from the underlying meaning.\n- The English and Burmese fields must communicate the same information.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari or\n  characters from any other unrelated writing system.\n- Burmese fields may contain only Myanmar script, Latin characters for\n  English STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Success criteria\n\nBefore returning the result, verify that:\n\n1. The content follows \"another_example\" and the \"stage_5_scaffold\" route.\n2. It materially differs from previous support.\n3. It is concise and appropriate for the learner’s reported support need.\n4. English and Burmese communicate the same technical meaning.\n5. Burmese sounds natural rather than machine-translated.\n6. No unsupported writing system appears.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 24
+        },
+        "record": {
+          "at": "2026-10-02T10:12:52.014Z",
+          "mode": "ready",
+          "label": "US-M31",
+          "schema": "learning_adaptation",
+          "model": "controlled-inspection",
+          "input": {
+            "learnerResponse": "medium",
+            "adaptationRoute": "stage_5_scaffold",
+            "supportType": "another_example",
+            "presentationOverride": null,
+            "concept": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "initialExplanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+              }
+            },
+            "previousAdaptations": [],
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided",
+              "theme": "light"
+            }
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator supporting a Burmese-speaking\nuniversity student.\n\n# Goal\n\nThe learner reported \"medium\".\nThe application selected the \"stage_5_scaffold\" route.\nGenerate exactly one \"another_example\" support item that helps the\nlearner understand the existing STEM concept.\n\nThe application, not the model, selected both route and support type. Return\nonly the bilingual content required by the strict schema.\n\n# Stages 3–5 contract\n\n- Stage 3 language strategy is a presentation constraint. Use the stored\n  preferences and retain useful English STEM terminology where appropriate;\n  do not alter the learner profile.\n- Stage 4 core meaning must remain technically consistent with the active\n  concept supplied by the application.\n- Stage 5 scaffold form is fixed by \"another_example\". Do not choose a\n  different scaffold or return route, state or persistence fields.\n\n# Adaptation strategy\n\nFollow the selected support type exactly:\n\n- another_example:\n  Provide one new, concrete example that was not used in the initial\n  explanation or previous adaptations.\n  Explain how the example connects to the concept.\n\n# Context constraints\n\n- Stay focused on the supplied concept.\n- Do not introduce an unrelated concept.\n- Do not contradict the initial explanation.\n- Examine previousAdaptations and avoid repeating their explanation,\n  wording, example or analogy.\n- Respect the supplied explanation level and learning style.\n- Do not repeat the complete initial explanation.\n- Do not create a quiz, question sequence, grade or score.\n- Do not make decisions about understanding, status or adaptation round.\n- Do not choose learner identity, persistence, route permission, lifecycle or\n  follow-up allowance.\n- Do not claim that the learner now understands the concept.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- Write the Burmese content directly from the underlying meaning.\n- The English and Burmese fields must communicate the same information.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari or\n  characters from any other unrelated writing system.\n- Burmese fields may contain only Myanmar script, Latin characters for\n  English STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Success criteria\n\nBefore returning the result, verify that:\n\n1. The content follows \"another_example\" and the \"stage_5_scaffold\" route.\n2. It materially differs from previous support.\n3. It is concise and appropriate for the learner’s reported support need.\n4. English and Burmese communicate the same technical meaning.\n5. Burmese sounds natural rather than machine-translated.\n6. No unsupported writing system appears.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 25
+        },
+        "record": {
+          "at": "2026-10-02T10:17:34.529Z",
+          "mode": "ready",
+          "label": "US-M31",
+          "schema": "scoped_learning_follow_up",
+          "model": "controlled-inspection",
+          "input": {
+            "activeConcept": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "initialExplanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+              }
+            },
+            "latestRelevantScaffold": null,
+            "latestResponseRoute": null,
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "previousFollowUps": [],
+            "question": "How does gravity work?"
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator answering one follow-up question\nabout an existing learning session.\n\n# Goal\n\nDecide whether the learner’s question helps them understand the supplied\nactiveConcept. If related, provide one short, focused bilingual answer.\n\nThe activeConcept is authoritative. It may be a corrected interpretation of\nthe learner's original question. When initialExplanations and\nlatestRelevantScaffold reflect different interpretations, use the\nactiveConcept and latestRelevantScaffold. Do not revive the previous concept.\n\nlatestResponseRoute is context describing the most recent application-owned\nStage 7 decision. It is not an instruction to select or alter a route.\n\n# Scope decision\n\nA question is related when it asks about:\n\n- the current concept itself;\n- a component, term or mechanism needed to understand it;\n- an example, application or consequence of the concept;\n- clarification of the initial explanation or latest adaptation.\n\nDo not reject a question merely because it names a supporting\nsub-concept.\n\nFor example, \"Why is the learning rate important?\" is related to\nGradient Descent.\n\nA question is unrelated when it introduces a different primary topic\nthat is not needed to understand the current concept.\n\n# Related question\n\nWhen related:\n\n- set relatedToCurrentConcept to true;\n- leave message empty;\n- answer only the specific follow-up;\n- provide approximately 2–4 short sentences in each language;\n- use the initial explanations and latest relevant scaffold as context;\n- respect the learner’s explanation level and learning style;\n- use previousFollowUps to avoid unnecessarily repeating an earlier answer;\n- gently correct an incorrect assumption when necessary.\n\n# Unrelated question\n\nWhen unrelated:\n\n- set relatedToCurrentConcept to false;\n- provide a concise learner-facing explanation in message;\n- return empty strings for both answer fields;\n- encourage the learner to start a new learning session.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Myanmar Unicode Burmese.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- English and Burmese must communicate the same technical meaning.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari\n  or characters from any other unrelated writing system.\n- Burmese may contain only Myanmar script, Latin characters for English\n  STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Content boundaries\n\nA follow-up is separate from the Stage 6 learner response and Stage 7\nadaptation workflow. Wording such as \"I am confused\" may be answered as a\nfollow-up, but must not be converted into an overall support need or difficulty\ntype. Do not create or alter an adaptation, response event or round.\n\nNever generate:\n\n- another complete simple or technical explanation;\n- a reflective prompt or hint;\n- an understanding check;\n- a quiz, score or grade;\n- a new learning session;\n- a session status or adaptation-round decision;\n- a difficulty type, support route or support type.\n\n# Final check\n\nBefore returning the result, verify that:\n\n1. The scope classification is correct.\n2. The answer directly addresses the follow-up.\n3. Each language contains only 2–4 short sentences.\n4. English and Burmese have equivalent meaning.\n5. Burmese sounds natural and contains no unsupported script.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 26
+        },
+        "record": {
+          "at": "2026-10-02T10:18:34.613Z",
+          "mode": "ready",
+          "label": "US-M31",
+          "schema": "scoped_learning_follow_up",
+          "model": "controlled-inspection",
+          "input": {
+            "activeConcept": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "initialExplanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+              }
+            },
+            "latestRelevantScaffold": null,
+            "latestResponseRoute": null,
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "previousFollowUps": [],
+            "question": "Why do plants need sunlight?"
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator answering one follow-up question\nabout an existing learning session.\n\n# Goal\n\nDecide whether the learner’s question helps them understand the supplied\nactiveConcept. If related, provide one short, focused bilingual answer.\n\nThe activeConcept is authoritative. It may be a corrected interpretation of\nthe learner's original question. When initialExplanations and\nlatestRelevantScaffold reflect different interpretations, use the\nactiveConcept and latestRelevantScaffold. Do not revive the previous concept.\n\nlatestResponseRoute is context describing the most recent application-owned\nStage 7 decision. It is not an instruction to select or alter a route.\n\n# Scope decision\n\nA question is related when it asks about:\n\n- the current concept itself;\n- a component, term or mechanism needed to understand it;\n- an example, application or consequence of the concept;\n- clarification of the initial explanation or latest adaptation.\n\nDo not reject a question merely because it names a supporting\nsub-concept.\n\nFor example, \"Why is the learning rate important?\" is related to\nGradient Descent.\n\nA question is unrelated when it introduces a different primary topic\nthat is not needed to understand the current concept.\n\n# Related question\n\nWhen related:\n\n- set relatedToCurrentConcept to true;\n- leave message empty;\n- answer only the specific follow-up;\n- provide approximately 2–4 short sentences in each language;\n- use the initial explanations and latest relevant scaffold as context;\n- respect the learner’s explanation level and learning style;\n- use previousFollowUps to avoid unnecessarily repeating an earlier answer;\n- gently correct an incorrect assumption when necessary.\n\n# Unrelated question\n\nWhen unrelated:\n\n- set relatedToCurrentConcept to false;\n- provide a concise learner-facing explanation in message;\n- return empty strings for both answer fields;\n- encourage the learner to start a new learning session.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Myanmar Unicode Burmese.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- English and Burmese must communicate the same technical meaning.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari\n  or characters from any other unrelated writing system.\n- Burmese may contain only Myanmar script, Latin characters for English\n  STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Content boundaries\n\nA follow-up is separate from the Stage 6 learner response and Stage 7\nadaptation workflow. Wording such as \"I am confused\" may be answered as a\nfollow-up, but must not be converted into an overall support need or difficulty\ntype. Do not create or alter an adaptation, response event or round.\n\nNever generate:\n\n- another complete simple or technical explanation;\n- a reflective prompt or hint;\n- an understanding check;\n- a quiz, score or grade;\n- a new learning session;\n- a session status or adaptation-round decision;\n- a difficulty type, support route or support type.\n\n# Final check\n\nBefore returning the result, verify that:\n\n1. The scope classification is correct.\n2. The answer directly addresses the follow-up.\n3. Each language contains only 2–4 short sentences.\n4. English and Burmese have equivalent meaning.\n5. Burmese sounds natural and contains no unsupported script.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 27
+        },
+        "record": {
+          "at": "2026-10-02T10:19:14.356Z",
+          "mode": "ready",
+          "label": "US-M31",
+          "schema": "scoped_learning_follow_up",
+          "model": "controlled-inspection",
+          "input": {
+            "activeConcept": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "initialExplanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+              }
+            },
+            "latestRelevantScaffold": null,
+            "latestResponseRoute": null,
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "previousFollowUps": [
+              {
+                "question": "Why do plants need sunlight?",
+                "answer": {
+                  "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                  "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                },
+                "createdAt": "2026-10-02T10:18:34.615Z"
+              }
+            ],
+            "question": "Why water?"
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator answering one follow-up question\nabout an existing learning session.\n\n# Goal\n\nDecide whether the learner’s question helps them understand the supplied\nactiveConcept. If related, provide one short, focused bilingual answer.\n\nThe activeConcept is authoritative. It may be a corrected interpretation of\nthe learner's original question. When initialExplanations and\nlatestRelevantScaffold reflect different interpretations, use the\nactiveConcept and latestRelevantScaffold. Do not revive the previous concept.\n\nlatestResponseRoute is context describing the most recent application-owned\nStage 7 decision. It is not an instruction to select or alter a route.\n\n# Scope decision\n\nA question is related when it asks about:\n\n- the current concept itself;\n- a component, term or mechanism needed to understand it;\n- an example, application or consequence of the concept;\n- clarification of the initial explanation or latest adaptation.\n\nDo not reject a question merely because it names a supporting\nsub-concept.\n\nFor example, \"Why is the learning rate important?\" is related to\nGradient Descent.\n\nA question is unrelated when it introduces a different primary topic\nthat is not needed to understand the current concept.\n\n# Related question\n\nWhen related:\n\n- set relatedToCurrentConcept to true;\n- leave message empty;\n- answer only the specific follow-up;\n- provide approximately 2–4 short sentences in each language;\n- use the initial explanations and latest relevant scaffold as context;\n- respect the learner’s explanation level and learning style;\n- use previousFollowUps to avoid unnecessarily repeating an earlier answer;\n- gently correct an incorrect assumption when necessary.\n\n# Unrelated question\n\nWhen unrelated:\n\n- set relatedToCurrentConcept to false;\n- provide a concise learner-facing explanation in message;\n- return empty strings for both answer fields;\n- encourage the learner to start a new learning session.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Myanmar Unicode Burmese.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- English and Burmese must communicate the same technical meaning.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari\n  or characters from any other unrelated writing system.\n- Burmese may contain only Myanmar script, Latin characters for English\n  STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Content boundaries\n\nA follow-up is separate from the Stage 6 learner response and Stage 7\nadaptation workflow. Wording such as \"I am confused\" may be answered as a\nfollow-up, but must not be converted into an overall support need or difficulty\ntype. Do not create or alter an adaptation, response event or round.\n\nNever generate:\n\n- another complete simple or technical explanation;\n- a reflective prompt or hint;\n- an understanding check;\n- a quiz, score or grade;\n- a new learning session;\n- a session status or adaptation-round decision;\n- a difficulty type, support route or support type.\n\n# Final check\n\nBefore returning the result, verify that:\n\n1. The scope classification is correct.\n2. The answer directly addresses the follow-up.\n3. Each language contains only 2–4 short sentences.\n4. English and Burmese have equivalent meaning.\n5. Burmese sounds natural and contains no unsupported script.\n"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+          "line": 28
+        },
+        "record": {
+          "at": "2026-10-02T10:19:17.881Z",
+          "mode": "non2xx",
+          "label": "US-F05",
+          "schema": "scoped_learning_follow_up",
+          "model": "controlled-inspection",
+          "input": {
+            "activeConcept": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "initialExplanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+              }
+            },
+            "latestRelevantScaffold": null,
+            "latestResponseRoute": null,
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "advanced",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "previousFollowUps": [],
+            "question": "Why sunlight?"
+          },
+          "instructions": "\n# Role\n\nYou are a bilingual STEM educator answering one follow-up question\nabout an existing learning session.\n\n# Goal\n\nDecide whether the learner’s question helps them understand the supplied\nactiveConcept. If related, provide one short, focused bilingual answer.\n\nThe activeConcept is authoritative. It may be a corrected interpretation of\nthe learner's original question. When initialExplanations and\nlatestRelevantScaffold reflect different interpretations, use the\nactiveConcept and latestRelevantScaffold. Do not revive the previous concept.\n\nlatestResponseRoute is context describing the most recent application-owned\nStage 7 decision. It is not an instruction to select or alter a route.\n\n# Scope decision\n\nA question is related when it asks about:\n\n- the current concept itself;\n- a component, term or mechanism needed to understand it;\n- an example, application or consequence of the concept;\n- clarification of the initial explanation or latest adaptation.\n\nDo not reject a question merely because it names a supporting\nsub-concept.\n\nFor example, \"Why is the learning rate important?\" is related to\nGradient Descent.\n\nA question is unrelated when it introduces a different primary topic\nthat is not needed to understand the current concept.\n\n# Related question\n\nWhen related:\n\n- set relatedToCurrentConcept to true;\n- leave message empty;\n- answer only the specific follow-up;\n- provide approximately 2–4 short sentences in each language;\n- use the initial explanations and latest relevant scaffold as context;\n- respect the learner’s explanation level and learning style;\n- use previousFollowUps to avoid unnecessarily repeating an earlier answer;\n- gently correct an incorrect assumption when necessary.\n\n# Unrelated question\n\nWhen unrelated:\n\n- set relatedToCurrentConcept to false;\n- provide a concise learner-facing explanation in message;\n- return empty strings for both answer fields;\n- encourage the learner to start a new learning session.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Myanmar Unicode Burmese.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- English and Burmese must communicate the same technical meaning.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari\n  or characters from any other unrelated writing system.\n- Burmese may contain only Myanmar script, Latin characters for English\n  STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Content boundaries\n\nA follow-up is separate from the Stage 6 learner response and Stage 7\nadaptation workflow. Wording such as \"I am confused\" may be answered as a\nfollow-up, but must not be converted into an overall support need or difficulty\ntype. Do not create or alter an adaptation, response event or round.\n\nNever generate:\n\n- another complete simple or technical explanation;\n- a reflective prompt or hint;\n- an understanding check;\n- a quiz, score or grade;\n- a new learning session;\n- a session status or adaptation-round decision;\n- a difficulty type, support route or support type.\n\n# Final check\n\nBefore returning the result, verify that:\n\n1. The scope classification is correct.\n2. The answer directly addresses the follow-up.\n3. Each language contains only 2–4 short sentences.\n4. English and Burmese have equivalent meaning.\n5. Burmese sounds natural and contains no unsupported script.\n"
+        }
+      }
+    ],
+    "fixtureOutputs": [
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_outputs.jsonl",
+          "line": 9
+        },
+        "record": {
+          "at": "2026-10-02T10:07:03.127Z",
+          "label": "US-D28",
+          "mode": "ready",
+          "schema": "learning_adaptation",
+          "output": {
+            "content": {
+              "en": "another_example fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+              "my": "another_example fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+            }
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_outputs.jsonl",
+          "line": 10
+        },
+        "record": {
+          "at": "2026-10-02T10:07:07.183Z",
+          "label": "US-D30",
+          "mode": "ready",
+          "schema": "initial_learning_session",
+          "output": {
+            "outcome": "ready",
+            "message": "",
+            "concept": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "explanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+              }
+            },
+            "reflectivePrompt": {
+              "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+              "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+            },
+            "hint": {
+              "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+              "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+            }
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_outputs.jsonl",
+          "line": 18
+        },
+        "record": {
+          "at": "2026-10-02T10:11:48.334Z",
+          "label": "US-M27",
+          "mode": "ready",
+          "schema": "initial_learning_session",
+          "output": {
+            "outcome": "ready",
+            "message": "",
+            "concept": {
+              "name": "photosynthesis",
+              "domain": "biology, plant physiology"
+            },
+            "explanations": {
+              "simple": {
+                "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+              },
+              "technical": {
+                "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+              }
+            },
+            "reflectivePrompt": {
+              "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+              "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+            },
+            "hint": {
+              "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+              "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+            }
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_outputs.jsonl",
+          "line": 19
+        },
+        "record": {
+          "at": "2026-10-02T10:12:52.014Z",
+          "label": "US-M31",
+          "mode": "ready",
+          "schema": "learning_adaptation",
+          "output": {
+            "content": {
+              "en": "another_example fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+              "my": "another_example fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+            }
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_outputs.jsonl",
+          "line": 20
+        },
+        "record": {
+          "at": "2026-10-02T10:17:34.530Z",
+          "label": "US-M31",
+          "mode": "ready",
+          "schema": "scoped_learning_follow_up",
+          "output": {
+            "relatedToCurrentConcept": false,
+            "message": "This is a different STEM concept. Start a new session.",
+            "answer": {
+              "en": "",
+              "my": ""
+            }
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_outputs.jsonl",
+          "line": 21
+        },
+        "record": {
+          "at": "2026-10-02T10:18:34.614Z",
+          "label": "US-M31",
+          "mode": "ready",
+          "schema": "scoped_learning_follow_up",
+          "output": {
+            "relatedToCurrentConcept": true,
+            "message": "",
+            "answer": {
+              "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+              "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+            }
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_outputs.jsonl",
+          "line": 22
+        },
+        "record": {
+          "at": "2026-10-02T10:19:14.356Z",
+          "label": "US-M31",
+          "mode": "ready",
+          "schema": "scoped_learning_follow_up",
+          "output": {
+            "relatedToCurrentConcept": true,
+            "message": "",
+            "answer": {
+              "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+              "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+            }
+          }
+        }
+      }
+    ],
+    "recordedIssues": [
+      {
+        "source": {
+          "file": "usability/issues.csv",
+          "line": 3
+        },
+        "record": {
+          "issue_id": "USI-02",
+          "criteria": "U8|U9",
+          "severity": "2",
+          "status": "Open; retained; not fixed",
+          "screen": "Home; adaptation; follow-up",
+          "configurations": "Desktop Burmese/dark; mobile Burmese/light and Burmese/dark",
+          "reproduction_steps": "Select Burmese UI; configure controlled provider non-2xx; submit inquiry/support response/follow-up; inspect message; remove fault and resubmit/retry",
+          "expected": "Safe error and recovery explanation are localised in Burmese",
+          "actual": "English-only explanation/additional-support/follow-up error text appears inside Burmese UI; Burmese retry controls and preserved query still work",
+          "task_effect": "Recovery meaning not available in selected locale; impedes a Burmese-only learner by evaluator judgement",
+          "workaround": "English proficiency or switch locale; retry after failure is resolved",
+          "recommendation": "Translate stable error codes in learner UI; keep safe messages; rerun all three Burmese failure/recovery flows",
+          "evidence_ids": "US-D40|US-M26|US-M27|US-M30|US-M31|US-F05|US-F06",
+          "evidence_paths": "raw/RUN-B01-20261002-USABILITY-01/screenshots/US-M26.jpg; raw/RUN-B01-20261002-USABILITY-01/US-M30.dom.txt; raw/RUN-B01-20261002-USABILITY-01/US-F05.dom.txt",
+          "evaluator": "Codex technical evaluator under user direction; not measured participant difficulty"
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "usability/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "sources": [
+    {
+      "file": "usability/usability_inspection.md",
+      "sha256": "48880372a1db16c2d92f1414029b5afb8b0d5236db27e6c50699544b09400a18",
+      "bytes": 34913
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "sha256": "f5297556f506a143043deca9be658788500b1e6a6188fb592998c2570094042a",
+      "bytes": 85125
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/navigation_addendum.jsonl",
+      "sha256": "bece2268baf35a6dcb40b41b15507ad51603ab3a4f90e2aaaf83ce0c2643d00a",
+      "bytes": 916
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+      "sha256": "7f8f53537d4082d13c6f229b0fb73a1ec67a336a0afb07850af5b5e9a9122fdd",
+      "bytes": 84977
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/navigation_addendum.csv",
+      "sha256": "0013acb3f91d7b5be5fde6402c5724576b186b9ce73dde385c0af2b8bdafee3e",
+      "bytes": 1403
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observation_corrections.jsonl",
+      "sha256": "c45a06e240405b4307122df981263e74614867b943d682f074ddae61b6ea670c",
+      "bytes": 2194
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+      "sha256": "c7b6d1e7b732cd82e1407a2417b4546a77fec6b4384a21c6c57181b73939dddd",
+      "bytes": 3297
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+      "sha256": "45332c669385e6e8d377fcd8fdedb27b91bb465090fb6757f8ee532e6bdcf7de",
+      "bytes": 2077
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+      "sha256": "f3d878e70c4d16f43176c8b52b42eeaec47bce446fc36ffdc1889f0dbad6c420",
+      "bytes": 168233
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_outputs.jsonl",
+      "sha256": "6e136bba5969dddabae3a24589e6b8359285f7b8619b433fdfb4e3c29e358a3a",
+      "bytes": 25416
+    },
+    {
+      "file": "usability/issues.csv",
+      "sha256": "3f0f17f734001e8b17f30740fd3643c01e5a1206e9f67fecdb9103f9a16693cf",
+      "bytes": 3163
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/metadata.json",
+      "sha256": "147985908b6c5b9dc92f345426450e491194c742f58eec18d26863d008ee2923",
+      "bytes": 8736
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/ui_seeds.json",
+      "sha256": "9a8c4c12e2fa8d87c5405a6f208a874b3428a014b5c40172cac478749bcaebed",
+      "bytes": 536
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/route_seeds.json",
+      "sha256": "5d35d7d2f166810bf52064e417baf5da1cee45dea9121a36a13ea025d93d99ef",
+      "bytes": 1088
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/seeded_documents.json",
+      "sha256": "6021baa4c053b6aea9a43bb008a8fc14b34d3a455ed8e42f36cc49607acf7728",
+      "bytes": 53002
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/route_seed_documents.json",
+      "sha256": "449deceb3573605acc5666e14f62e027861cd7a8ded44e315f0fa5feb2fbe727",
+      "bytes": 72251
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/database_snapshot.json",
+      "sha256": "e1ab40b8126b5b746e0e05d82f5f9e078beaf3e64ba3dbc9844af2910d6800f4",
+      "bytes": 160582
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/verification.json",
+      "sha256": "0c824f05abdb91abe630a2579f30258a6f375a3082386151ad72accf8e745a7b",
+      "bytes": 705
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/manifest_verification.json",
+      "sha256": "5dde12af10ea4841f7f9711b9e38c56cfc79e2cd982ebf73177ddafd5ac3730c",
+      "bytes": 658
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/keyboard_modal_trace.json",
+      "sha256": "514c40bad0bbf209848375aeed3f43c42675419a121079e8f69a00a84cfaabe2",
+      "bytes": 3181
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/navigation_addendum_verification.json",
+      "sha256": "c535720a8b155ff5fecb45c3bdcb031e1bd21960f22f545d1acfc989b459454d",
+      "bytes": 240
+    }
+  ]
+}

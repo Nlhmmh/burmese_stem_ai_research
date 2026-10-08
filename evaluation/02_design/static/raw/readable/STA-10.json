@@ -1,0 +1,75 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "static",
+  "runId": "RUN-B01-20260930-STATIC-01",
+  "caseId": "STA-10",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "No separate machine log exists for this source-inspection finding. Use the case register and linked B01 source files.",
+    "Command output is a saved transcription, not a raw terminal stream. Historical counts are not current coverage."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "static/static_analysis_test_cases.md",
+      "line": 71
+    },
+    "record": {
+      "caseId": "STA-10",
+      "action": "Service/DAO responsibility separation\nTrace validation/business decisions separately from database operations\nCriteria: F7, F9–F13",
+      "conditions": "B01 source and locked dependencies.\nInspect: `services/*.ts`, `data/dao/*.ts`, `data/schemas/*.ts`",
+      "expectedResult": "Services own business validation/generation decisions; DAOs own scoped atomic persistence; LLM code does not write directly to MongoDB",
+      "actualResult": "Services call explicit DAO operations (`session.service.ts:152`, `adaptation.service.ts:204,263`, `followup.service.ts:65,87`, `session-lifecycle.service.ts:39,47,58`). Persistence is implemented in `session.dao.ts:16–184`; no prompt/provider module writes directly to MongoDB.",
+      "outcome": "Pass",
+      "limitation": "Scoped to the stated structural assertion."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "static/raw/readable/STA-10.json",
+      "derived": true
+    },
+    {
+      "label": "Session service",
+      "file": "../../burmese_stem_ai/services/session.service.ts",
+      "derived": false
+    },
+    {
+      "label": "Adaptation service",
+      "file": "../../burmese_stem_ai/services/adaptation.service.ts",
+      "derived": false
+    },
+    {
+      "label": "DAO operations",
+      "file": "../../burmese_stem_ai/data/dao/session.dao.ts",
+      "derived": false
+    }
+  ],
+  "records": {},
+  "sharedEvidence": {
+    "file": "static/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "evidenceType": "recorded_source_inspection",
+  "sources": [
+    {
+      "file": "static/static_analysis_test_cases.md",
+      "sha256": "50d5d3f6589477327925602a8b15cce5ddafa02b50ece33534905cc526e32c16",
+      "bytes": 20499
+    },
+    {
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "sha256": "34d9b205b98bcd4da30e4a89f861af101b23234738f7a814bae4a225567ffa9c",
+      "bytes": 7250
+    },
+    {
+      "file": "static/raw/STA-03-coverage-summary.json",
+      "sha256": "ab5508ede4966baae8c5402c822d00b7c9522c6849a897addb7c0100952cb3df",
+      "bytes": 3776
+    }
+  ]
+}

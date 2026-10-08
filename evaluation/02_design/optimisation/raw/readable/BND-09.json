@@ -1,0 +1,116 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "optimisation",
+  "runId": "RUN-B01-20261001-BOUNDS-01",
+  "caseId": "BND-09",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "Counts describe the deterministic provider seam, not calls to an external model.",
+    "Setup calls are excluded from action deltas. A write attempt is not necessarily an accepted save.",
+    "Test assertions are in the linked test source; the JSONL record is a compact result, not an assertion transcript."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "optimisation/bounds_analysis.md",
+      "line": 49
+    },
+    "record": {
+      "caseId": "BND-09",
+      "action": "High/fade at round 0\nSend High on a fresh session.",
+      "conditions": "Fresh owned session at round 0.\nReal isolated MongoDB; deterministic provider/call instrumentation.",
+      "expectedResult": "route `fade`; event 0→0; no provider call/adaptation/increment; status `in_progress`.",
+      "actualResult": "round 0→0; adaptations remain 0; events 0→1; `in_progress`\nProvider calls during action: 0; persistence: 1 event write, succeeded.",
+      "outcome": "Pass",
+      "limitation": "Engineering/state boundary only, not educational optimality."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "optimisation/raw/readable/BND-09.json",
+      "derived": true
+    },
+    {
+      "label": "Case record",
+      "file": "optimisation/raw/BND-RUN-01-results.jsonl",
+      "fragment": "L10",
+      "derived": false
+    },
+    {
+      "label": "Test setup / checks",
+      "file": "optimisation/raw/BND-RUN-01-bounds.test.ts",
+      "fragment": "L273",
+      "derived": false
+    }
+  ],
+  "records": {
+    "boundsResults": [
+      {
+        "source": {
+          "file": "optimisation/raw/BND-RUN-01-results.jsonl",
+          "line": 10
+        },
+        "record": {
+          "caseId": "BND-09",
+          "executionStatus": "Executed",
+          "outcome": "Pass",
+          "before": {
+            "round": 0,
+            "status": "in_progress",
+            "understanding": null,
+            "adaptations": 0,
+            "responseEvents": 0,
+            "latestRoute": null,
+            "latestTransition": null,
+            "concept": {
+              "name": "Bounded concept BND-09",
+              "domain": "Evaluation"
+            }
+          },
+          "after": {
+            "round": 0,
+            "status": "in_progress",
+            "understanding": "high",
+            "adaptations": 0,
+            "responseEvents": 1,
+            "latestRoute": "fade",
+            "latestTransition": "0→0",
+            "concept": {
+              "name": "Bounded concept BND-09",
+              "domain": "Evaluation"
+            }
+          },
+          "providerCallDelta": 0,
+          "responsePersistenceAttemptDelta": 1,
+          "completionAttemptDelta": 0,
+          "note": ""
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "optimisation/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "sources": [
+    {
+      "file": "optimisation/bounds_analysis.md",
+      "sha256": "b0fb68208c941b5f03e85d3ebf23d2c9727a4b172890ab4e889d182f35e3460a",
+      "bytes": 20478
+    },
+    {
+      "file": "optimisation/raw/BND-RUN-01-results.jsonl",
+      "sha256": "ce574c4d1db87fb57adf77bfbb2239189f2ba5120b4766a33e90a4c6ac6a0609",
+      "bytes": 10937
+    },
+    {
+      "file": "optimisation/raw/BND-RUN-01-command-log.md",
+      "sha256": "81ff2a9fca5fa738881f592b92e9a3d237d5501c304324b179b96af7045c9884",
+      "bytes": 5058
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "static",
+  "runId": "RUN-B01-20260930-STATIC-01",
+  "caseId": "STA-14",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "No separate machine log exists for this source-inspection finding. Use the case register and linked B01 source files.",
+    "Command output is a saved transcription, not a raw terminal stream. Historical counts are not current coverage."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "static/static_analysis_test_cases.md",
+      "line": 75
+    },
+    "record": {
+      "caseId": "STA-14",
+      "action": "Provider and API error boundaries\nMap timeout, non-2xx, missing output, invalid JSON/schema, database failure, invalid UUID, and validation failure\nCriteria: F13; U8",
+      "conditions": "B01 source and locked dependencies.\nInspect: Shared provider, API error helper, five API route families, UI error extraction",
+      "expectedResult": "Stable codes/statuses and learner-safe messages; raw provider/database detail is not returned to the UI; no implicit retry",
+      "actualResult": "Shared provider explicitly has no retry (`llm-provider.ts:34`), central timeout (`:48`), and stable non-2xx/invalid/missing/timeout/network errors (`:75–104`). `api-error.ts:10` supplies the common envelope. Session/preference/detail/respond/follow-up routes map validation, not-found, conflict, scope, generation, and database failures to stable 400/404/409/422/502/500 responses. Raw provider/database detail is logged server-side but safe messages are returned. Runtime recovery presentation remains for later dynamic/usability evidence.",
+      "outcome": "Pass for static contract; runtime UI recovery not assessed here",
+      "limitation": "Static error contract only; runtime UI recovery is not assessed by this case."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "static/raw/readable/STA-14.json",
+      "derived": true
+    },
+    {
+      "label": "Provider errors",
+      "file": "../../burmese_stem_ai/services/llm-provider.ts",
+      "derived": false
+    },
+    {
+      "label": "API envelope",
+      "file": "../../burmese_stem_ai/lib/api-error.ts",
+      "derived": false
+    },
+    {
+      "label": "Response route",
+      "file": "../../burmese_stem_ai/app/api/sessions/[sessionId]/respond/route.ts",
+      "derived": false
+    }
+  ],
+  "records": {},
+  "sharedEvidence": {
+    "file": "static/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "evidenceType": "recorded_source_inspection",
+  "sources": [
+    {
+      "file": "static/static_analysis_test_cases.md",
+      "sha256": "50d5d3f6589477327925602a8b15cce5ddafa02b50ece33534905cc526e32c16",
+      "bytes": 20499
+    },
+    {
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "sha256": "34d9b205b98bcd4da30e4a89f861af101b23234738f7a814bae4a225567ffa9c",
+      "bytes": 7250
+    },
+    {
+      "file": "static/raw/STA-03-coverage-summary.json",
+      "sha256": "ab5508ede4966baae8c5402c822d00b7c9522c6849a897addb7c0100952cb3df",
+      "bytes": 3776
+    }
+  ]
+}

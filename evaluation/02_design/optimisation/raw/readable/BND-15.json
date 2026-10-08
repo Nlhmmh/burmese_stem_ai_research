@@ -1,0 +1,116 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "optimisation",
+  "runId": "RUN-B01-20261001-BOUNDS-01",
+  "caseId": "BND-15",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "Counts describe the deterministic provider seam, not calls to an external model.",
+    "Setup calls are excluded from action deltas. A write attempt is not necessarily an accepted save.",
+    "Test assertions are in the linked test source; the JSONL record is a compact result, not an assertion transcript."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "optimisation/bounds_analysis.md",
+      "line": 55
+    },
+    "record": {
+      "caseId": "BND-15",
+      "action": "Concurrent generated adaptation near cap\nAgainst the same real-database round-1 snapshot, issue two generation-capable responses concurrently.",
+      "conditions": "Two generation-capable responses read the same owned round-1 snapshot, released by a barrier.\nReal isolated MongoDB; deterministic provider/call instrumentation.",
+      "expectedResult": "at most one atomic write succeeds; final round is 2; exactly two total adaptations and one new response event exist; the losing operation is a controlled conflict, not a duplicate round-2 save.",
+      "actualResult": "exactly one success and one controlled conflict; final round 2; adaptations/events both total 2\nProvider calls during action: 2; persistence: 2 attempts; 1 atomic write.",
+      "outcome": "Pass",
+      "limitation": "Two provider calls occur before the atomic single-winner write. The cap bounds stored adaptations, not duplicate generation cost."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "optimisation/raw/readable/BND-15.json",
+      "derived": true
+    },
+    {
+      "label": "Case record",
+      "file": "optimisation/raw/BND-RUN-01-results.jsonl",
+      "fragment": "L16",
+      "derived": false
+    },
+    {
+      "label": "Test setup / checks",
+      "file": "optimisation/raw/BND-RUN-01-bounds.test.ts",
+      "fragment": "L402",
+      "derived": false
+    }
+  ],
+  "records": {
+    "boundsResults": [
+      {
+        "source": {
+          "file": "optimisation/raw/BND-RUN-01-results.jsonl",
+          "line": 16
+        },
+        "record": {
+          "caseId": "BND-15",
+          "executionStatus": "Executed",
+          "outcome": "Pass",
+          "before": {
+            "round": 1,
+            "status": "in_progress",
+            "understanding": "medium",
+            "adaptations": 1,
+            "responseEvents": 1,
+            "latestRoute": "stage_5_scaffold",
+            "latestTransition": "0→1",
+            "concept": {
+              "name": "Bounded concept BND-15",
+              "domain": "Evaluation"
+            }
+          },
+          "after": {
+            "round": 2,
+            "status": "review_recommended",
+            "understanding": "needs_support",
+            "adaptations": 2,
+            "responseEvents": 2,
+            "latestRoute": "stage_5_scaffold",
+            "latestTransition": "1→2",
+            "concept": {
+              "name": "Bounded concept BND-15",
+              "domain": "Evaluation"
+            }
+          },
+          "providerCallDelta": 2,
+          "responsePersistenceAttemptDelta": 2,
+          "completionAttemptDelta": 0,
+          "note": "one success; one controlled conflict; both permitted requests reached deterministic generation"
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "optimisation/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "sources": [
+    {
+      "file": "optimisation/bounds_analysis.md",
+      "sha256": "b0fb68208c941b5f03e85d3ebf23d2c9727a4b172890ab4e889d182f35e3460a",
+      "bytes": 20478
+    },
+    {
+      "file": "optimisation/raw/BND-RUN-01-results.jsonl",
+      "sha256": "ce574c4d1db87fb57adf77bfbb2239189f2ba5120b4766a33e90a4c6ac6a0609",
+      "bytes": 10937
+    },
+    {
+      "file": "optimisation/raw/BND-RUN-01-command-log.md",
+      "sha256": "81ff2a9fca5fa738881f592b92e9a3d237d5501c304324b179b96af7045c9884",
+      "bytes": 5058
+    }
+  ]
+}

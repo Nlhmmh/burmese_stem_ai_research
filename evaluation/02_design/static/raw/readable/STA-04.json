@@ -1,0 +1,139 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "static",
+  "runId": "RUN-B01-20260930-STATIC-01",
+  "caseId": "STA-04",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "Command output is a saved transcription, not a raw terminal stream. Historical counts are not current coverage."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "static/static_analysis_test_cases.md",
+      "line": 65
+    },
+    "record": {
+      "caseId": "STA-04",
+      "action": "Isolated MongoDB integration suite\n`npm run test:integration`\nCriteria: F7, F9–F12",
+      "conditions": "B01 source and locked dependencies.\nWorking directory: `burmese_stem_ai/`",
+      "expectedResult": "Exit code 0; temporary isolated MongoDB suite passes; database version and warnings retained",
+      "actualResult": "Attempt 1 exit 1 because sandbox denied localhost bind (`EPERM 127.0.0.1`); unchanged retry with bind permission exit 0, 1 file/5 tests passed; Mongoose deprecation warning retained",
+      "outcome": "Pass with recorded environment qualification",
+      "limitation": "First attempt was environment-blocked (localhost bind denied); unchanged permitted retry passed. Mongoose warning retained."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "static/raw/readable/STA-04.json",
+      "derived": true
+    },
+    {
+      "label": "Command result",
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "fragment": "L99",
+      "derived": false
+    },
+    {
+      "label": "First blocked attempt",
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "fragment": "L101",
+      "derived": false
+    },
+    {
+      "label": "Unchanged retry",
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "fragment": "L126",
+      "derived": false
+    }
+  ],
+  "records": {
+    "commandOutput": [
+      {
+        "source": {
+          "file": "static/raw/STA-RUN-01-command-log.md",
+          "lineStart": 99,
+          "lineEnd": 146
+        },
+        "record": {
+          "lines": [
+            "## STA-04 — `npm run test:integration`",
+            "",
+            "### Attempt 1 — restricted sandbox",
+            "",
+            "Exit code: 1. This was an environment blockage, retained before retry.",
+            "",
+            "```text",
+            "pyenv: cannot rehash: /Users/nlh/.pyenv/shims isn't writable",
+            "",
+            "> burmese_stem_ai@0.1.0 test:integration",
+            "> bash scripts/run-integration-tests.sh",
+            "",
+            "Error: listen EPERM: operation not permitted 127.0.0.1",
+            "    at Server.setupListenHandle [as _listen2] (node:net:2145:21)",
+            "    at listenInCluster (node:net:2224:12)",
+            "    at node:net:2448:7",
+            "    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)",
+            "{",
+            "  code: 'EPERM',",
+            "  errno: -1,",
+            "  syscall: 'listen',",
+            "  address: '127.0.0.1'",
+            "}",
+            "",
+            "Node.js v26.4.0",
+            "```",
+            "",
+            "### Attempt 2 — localhost bind permitted",
+            "",
+            "No source or configuration change occurred. Exit code: 0. Wall time: 2.07",
+            "seconds.",
+            "",
+            "```text",
+            "> burmese_stem_ai@0.1.0 test:integration",
+            "> bash scripts/run-integration-tests.sh",
+            "",
+            " RUN  v4.1.11 /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai",
+            "",
+            "(node:47243) [MONGOOSE] Warning: mongoose: the `new` option for",
+            "`findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use",
+            "`returnDocument: 'after'` instead.",
+            "",
+            " Test Files  1 passed (1)",
+            "      Tests  5 passed (5)",
+            "   Start at  12:27:07",
+            "   Duration  571ms (transform 55ms, setup 135ms, import 55ms, tests 219ms, environment 0ms)",
+            "```",
+            ""
+          ]
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "static/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "evidenceType": "recorded_command_output",
+  "sources": [
+    {
+      "file": "static/static_analysis_test_cases.md",
+      "sha256": "50d5d3f6589477327925602a8b15cce5ddafa02b50ece33534905cc526e32c16",
+      "bytes": 20499
+    },
+    {
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "sha256": "34d9b205b98bcd4da30e4a89f861af101b23234738f7a814bae4a225567ffa9c",
+      "bytes": 7250
+    },
+    {
+      "file": "static/raw/STA-03-coverage-summary.json",
+      "sha256": "ab5508ede4966baae8c5402c822d00b7c9522c6849a897addb7c0100952cb3df",
+      "bytes": 3776
+    }
+  ]
+}

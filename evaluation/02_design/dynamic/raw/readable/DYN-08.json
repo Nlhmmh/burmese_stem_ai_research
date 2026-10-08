@@ -1,0 +1,446 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "dynamic",
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "caseId": "DYN-08",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "API and manual browser records can use different sessions/actions. They are kept separate.",
+    "Provider requests were not directly counted. Missing counts are not zero."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "dynamic/dynamic_analysis.md",
+      "line": 50
+    },
+    "record": {
+      "caseId": "DYN-08",
+      "action": "Bounded concept reinterpretation\nIf a session exists with the wrong/qualified interpretation, send Needs Support + `concept_mismatch` with `I mean a biological cell`.\nCriteria: F2, F5, F6, F9, F11; RQ1–RQ3",
+      "conditions": "Owned below-cap session requiring intended-context correction; bounded clarification supplied.\nB01, isolated MongoDB and live provider, except labelled fault.",
+      "expectedResult": "Route `context_reinterpretation`; one bounded provider request below cap; outcome is explicitly `corrected` or `ambiguous`; previous/current interpretation and clarification persist. A corrected outcome updates active concept and downstream support; an ambiguous outcome does not guess.",
+      "actualResult": "Bounded reinterpretation corrected `cell` to biology and persisted trace",
+      "outcome": "Pass",
+      "limitation": "One corrected cell interpretation observed, not universal intended-meaning recovery."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "dynamic/raw/readable/DYN-08.json",
+      "derived": true
+    },
+    {
+      "label": "API / saved state",
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "fragment": "L36",
+      "derived": false
+    },
+    {
+      "label": "Test checks",
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "fragment": "L344",
+      "derived": false
+    }
+  ],
+  "records": {
+    "apiAndDatabase": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 36
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "DYN-08",
+          "operation": "create ambiguous term session",
+          "startedAt": "2026-10-01T04:43:25.403Z",
+          "elapsedMs": 4076.524,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "question": "What is a cell?"
+            }
+          },
+          "response": {
+            "status": 201,
+            "body": {
+              "session": {
+                "sessionId": "4cde4e29-7d05-454e-82b6-3f54af4eab8f",
+                "originalQuestion": "What is a cell?",
+                "concept": {
+                  "name": "cell",
+                  "domain": "biology, basic cell structure and function"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "A cell is the smallest unit that makes up a living thing. It can do the basic jobs needed for life, such as taking in food, using energy, and making more cells.",
+                    "my": "Cell ဆိုတာ သက်ရှိအရာတွေကို ဖွဲ့စည်းထားတဲ့ အငယ်ဆုံး အခြေခံယူနစ် ဖြစ်ပါတယ်။ ၎င်းက အစားအစာယူခြင်း၊ စွမ်းအင်သုံးခြင်း၊ နဲ့ ဆဲလ်အသစ်တွေ ဖွဲ့စည်းခြင်းလို ဘဝအတွက် လိုအပ်တဲ့ အခြေခံ အလုပ်တွေကို လုပ်နိုင်ပါတယ်။"
+                  },
+                  "realWorldExample": {
+                    "en": "For example, your skin is made of many cells working together. Each cell helps protect your body and stay alive.",
+                    "my": "ဥပမာ၊ သင့်အရေပြားဟာ cell အများကြီး ပေါင်းစည်းထားတာပါ။ Cell တစ်ခုချင်းစီက ကိုယ်ခန္ဓာကို ကာကွယ်ပေးပြီး အသက်ရှင်နေဖို့ ကူညီပေးပါတယ်။"
+                  },
+                  "technical": {
+                    "en": "In biology, a cell is the basic structural and functional unit of life. All living organisms are made of one or more cells, and each cell carries out essential processes such as metabolism, growth, and reproduction.",
+                    "my": "Biology မှာ cell ကို life ရဲ့ အခြေခံ structural နဲ့ functional unit လို့ ခေါ်ပါတယ်။ သက်ရှိအားလုံးဟာ cell တစ်ခု သို့မဟုတ် အများကြီးနဲ့ ဖွဲ့စည်းထားပြီး cell တစ်ခုစီက metabolism, growth, reproduction လို အရေးကြီးတဲ့ လုပ်ငန်းစဉ်တွေကို လုပ်ဆောင်ပါတယ်။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "Can you think of one job that a cell does to keep a living thing alive?",
+                  "my": "သက်ရှိအရာတစ်ခု အသက်ရှင်နေဖို့ cell တစ်ခုက လုပ်ပေးတဲ့ အလုပ်တစ်ခုကို စဉ်းစားနိုင်မလား။"
+                },
+                "hint": {
+                  "en": "Think of a cell as a tiny building block of life.",
+                  "my": "Cell ကို life ရဲ့ သေးငယ်တဲ့ building block တစ်ခုလို စဉ်းစားပါ။"
+                },
+                "understanding": null,
+                "status": "in_progress",
+                "adaptationRound": 0,
+                "createdAt": "2026-10-01T04:43:29.471Z",
+                "updatedAt": "2026-10-01T04:43:29.471Z"
+              }
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 37
+        },
+        "record": {
+          "recordType": "database_snapshot",
+          "caseId": "DYN-08",
+          "label": "before",
+          "capturedAt": "2026-10-01T04:43:29.483Z",
+          "document": {
+            "sessionId": "4cde4e29-7d05-454e-82b6-3f54af4eab8f",
+            "learnerId": "00000000-0000-4000-8000-0000000000a1",
+            "originalQuestion": "What is a cell?",
+            "concept": {
+              "name": "cell",
+              "domain": "biology, basic cell structure and function"
+            },
+            "explanations": {
+              "simple": {
+                "en": "A cell is the smallest unit that makes up a living thing. It can do the basic jobs needed for life, such as taking in food, using energy, and making more cells.",
+                "my": "Cell ဆိုတာ သက်ရှိအရာတွေကို ဖွဲ့စည်းထားတဲ့ အငယ်ဆုံး အခြေခံယူနစ် ဖြစ်ပါတယ်။ ၎င်းက အစားအစာယူခြင်း၊ စွမ်းအင်သုံးခြင်း၊ နဲ့ ဆဲလ်အသစ်တွေ ဖွဲ့စည်းခြင်းလို ဘဝအတွက် လိုအပ်တဲ့ အခြေခံ အလုပ်တွေကို လုပ်နိုင်ပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, your skin is made of many cells working together. Each cell helps protect your body and stay alive.",
+                "my": "ဥပမာ၊ သင့်အရေပြားဟာ cell အများကြီး ပေါင်းစည်းထားတာပါ။ Cell တစ်ခုချင်းစီက ကိုယ်ခန္ဓာကို ကာကွယ်ပေးပြီး အသက်ရှင်နေဖို့ ကူညီပေးပါတယ်။"
+              },
+              "technical": {
+                "en": "In biology, a cell is the basic structural and functional unit of life. All living organisms are made of one or more cells, and each cell carries out essential processes such as metabolism, growth, and reproduction.",
+                "my": "Biology မှာ cell ကို life ရဲ့ အခြေခံ structural နဲ့ functional unit လို့ ခေါ်ပါတယ်။ သက်ရှိအားလုံးဟာ cell တစ်ခု သို့မဟုတ် အများကြီးနဲ့ ဖွဲ့စည်းထားပြီး cell တစ်ခုစီက metabolism, growth, reproduction လို အရေးကြီးတဲ့ လုပ်ငန်းစဉ်တွေကို လုပ်ဆောင်ပါတယ်။"
+              }
+            },
+            "reflectivePrompt": {
+              "en": "Can you think of one job that a cell does to keep a living thing alive?",
+              "my": "သက်ရှိအရာတစ်ခု အသက်ရှင်နေဖို့ cell တစ်ခုက လုပ်ပေးတဲ့ အလုပ်တစ်ခုကို စဉ်းစားနိုင်မလား။"
+            },
+            "hint": {
+              "en": "Think of a cell as a tiny building block of life.",
+              "my": "Cell ကို life ရဲ့ သေးငယ်တဲ့ building block တစ်ခုလို စဉ်းစားပါ။"
+            },
+            "understanding": null,
+            "status": "in_progress",
+            "adaptationRound": 0,
+            "preferencesSnapshot": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "adaptations": [],
+            "responseEvents": [],
+            "followUps": [],
+            "createdAt": "2026-10-01T04:43:29.471Z",
+            "updatedAt": "2026-10-01T04:43:29.471Z"
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 38
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "DYN-08",
+          "operation": "bounded reinterpretation",
+          "startedAt": "2026-10-01T04:43:29.484Z",
+          "elapsedMs": 1329.425,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions/4cde4e29-7d05-454e-82b6-3f54af4eab8f/respond",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "overallSupportNeed": "needs_support",
+              "difficultyType": "concept_mismatch",
+              "conceptClarification": "I mean a biological cell"
+            }
+          },
+          "response": {
+            "status": 200,
+            "body": {
+              "understanding": "needs_support",
+              "status": "in_progress",
+              "adaptationRound": 1,
+              "route": "context_reinterpretation",
+              "responseEvent": {
+                "overallSupportNeed": "needs_support",
+                "difficultyType": "concept_mismatch",
+                "route": "context_reinterpretation",
+                "roundBefore": 0,
+                "roundAfter": 1,
+                "conceptReinterpretation": {
+                  "clarification": "I mean a biological cell",
+                  "outcome": "corrected",
+                  "previous": {
+                    "name": "cell",
+                    "domain": "biology, basic cell structure and function"
+                  },
+                  "current": {
+                    "name": "cell",
+                    "domain": "biology"
+                  }
+                },
+                "createdAt": "2026-10-01T04:43:30.805Z"
+              },
+              "adaptation": {
+                "learnerResponse": "needs_support",
+                "supportType": "concept_correction",
+                "content": {
+                  "en": "A biological cell is the smallest structural and functional unit of a living thing. It performs life processes such as obtaining energy, growing, and reproducing.",
+                  "my": "Biological cell ဆိုတာ သက်ရှိအရာတစ်ခုရဲ့ အငယ်ဆုံး structural နဲ့ functional unit ဖြစ်ပါတယ်။ ၎င်းက စွမ်းအင်ယူခြင်း၊ ကြီးထွားခြင်း၊ နဲ့ မျိုးပွားခြင်းလို အသက်ရှင်ရေး လုပ်ငန်းစဉ်တွေကို လုပ်ဆောင်ပါတယ်.\n\nScaffold: Look at a plant cell or animal cell diagram and identify the cell membrane, cytoplasm, and nucleus."
+                },
+                "conceptCorrection": {
+                  "previous": {
+                    "name": "cell",
+                    "domain": "biology, basic cell structure and function"
+                  },
+                  "corrected": {
+                    "name": "cell",
+                    "domain": "biology"
+                  }
+                },
+                "round": 1,
+                "createdAt": "2026-10-01T04:43:30.805Z"
+              },
+              "concept": {
+                "name": "cell",
+                "domain": "biology"
+              },
+              "correctionOutcome": "corrected"
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 39
+        },
+        "record": {
+          "recordType": "database_snapshot",
+          "caseId": "DYN-08",
+          "label": "after",
+          "capturedAt": "2026-10-01T04:43:30.815Z",
+          "document": {
+            "sessionId": "4cde4e29-7d05-454e-82b6-3f54af4eab8f",
+            "learnerId": "00000000-0000-4000-8000-0000000000a1",
+            "originalQuestion": "What is a cell?",
+            "concept": {
+              "name": "cell",
+              "domain": "biology"
+            },
+            "explanations": {
+              "simple": {
+                "en": "A cell is the smallest unit that makes up a living thing. It can do the basic jobs needed for life, such as taking in food, using energy, and making more cells.",
+                "my": "Cell ဆိုတာ သက်ရှိအရာတွေကို ဖွဲ့စည်းထားတဲ့ အငယ်ဆုံး အခြေခံယူနစ် ဖြစ်ပါတယ်။ ၎င်းက အစားအစာယူခြင်း၊ စွမ်းအင်သုံးခြင်း၊ နဲ့ ဆဲလ်အသစ်တွေ ဖွဲ့စည်းခြင်းလို ဘဝအတွက် လိုအပ်တဲ့ အခြေခံ အလုပ်တွေကို လုပ်နိုင်ပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "For example, your skin is made of many cells working together. Each cell helps protect your body and stay alive.",
+                "my": "ဥပမာ၊ သင့်အရေပြားဟာ cell အများကြီး ပေါင်းစည်းထားတာပါ။ Cell တစ်ခုချင်းစီက ကိုယ်ခန္ဓာကို ကာကွယ်ပေးပြီး အသက်ရှင်နေဖို့ ကူညီပေးပါတယ်။"
+              },
+              "technical": {
+                "en": "In biology, a cell is the basic structural and functional unit of life. All living organisms are made of one or more cells, and each cell carries out essential processes such as metabolism, growth, and reproduction.",
+                "my": "Biology မှာ cell ကို life ရဲ့ အခြေခံ structural နဲ့ functional unit လို့ ခေါ်ပါတယ်။ သက်ရှိအားလုံးဟာ cell တစ်ခု သို့မဟုတ် အများကြီးနဲ့ ဖွဲ့စည်းထားပြီး cell တစ်ခုစီက metabolism, growth, reproduction လို အရေးကြီးတဲ့ လုပ်ငန်းစဉ်တွေကို လုပ်ဆောင်ပါတယ်။"
+              }
+            },
+            "reflectivePrompt": {
+              "en": "Can you think of one job that a cell does to keep a living thing alive?",
+              "my": "သက်ရှိအရာတစ်ခု အသက်ရှင်နေဖို့ cell တစ်ခုက လုပ်ပေးတဲ့ အလုပ်တစ်ခုကို စဉ်းစားနိုင်မလား။"
+            },
+            "hint": {
+              "en": "Think of a cell as a tiny building block of life.",
+              "my": "Cell ကို life ရဲ့ သေးငယ်တဲ့ building block တစ်ခုလို စဉ်းစားပါ။"
+            },
+            "understanding": "needs_support",
+            "status": "in_progress",
+            "adaptationRound": 1,
+            "preferencesSnapshot": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "adaptations": [
+              {
+                "learnerResponse": "needs_support",
+                "supportType": "concept_correction",
+                "content": {
+                  "en": "A biological cell is the smallest structural and functional unit of a living thing. It performs life processes such as obtaining energy, growing, and reproducing.",
+                  "my": "Biological cell ဆိုတာ သက်ရှိအရာတစ်ခုရဲ့ အငယ်ဆုံး structural နဲ့ functional unit ဖြစ်ပါတယ်။ ၎င်းက စွမ်းအင်ယူခြင်း၊ ကြီးထွားခြင်း၊ နဲ့ မျိုးပွားခြင်းလို အသက်ရှင်ရေး လုပ်ငန်းစဉ်တွေကို လုပ်ဆောင်ပါတယ်.\n\nScaffold: Look at a plant cell or animal cell diagram and identify the cell membrane, cytoplasm, and nucleus."
+                },
+                "conceptCorrection": {
+                  "previous": {
+                    "name": "cell",
+                    "domain": "biology, basic cell structure and function"
+                  },
+                  "corrected": {
+                    "name": "cell",
+                    "domain": "biology"
+                  }
+                },
+                "round": 1,
+                "createdAt": "2026-10-01T04:43:30.805Z"
+              }
+            ],
+            "responseEvents": [
+              {
+                "overallSupportNeed": "needs_support",
+                "difficultyType": "concept_mismatch",
+                "route": "context_reinterpretation",
+                "roundBefore": 0,
+                "roundAfter": 1,
+                "conceptReinterpretation": {
+                  "clarification": "I mean a biological cell",
+                  "outcome": "corrected",
+                  "previous": {
+                    "name": "cell",
+                    "domain": "biology, basic cell structure and function"
+                  },
+                  "current": {
+                    "name": "cell",
+                    "domain": "biology"
+                  }
+                },
+                "createdAt": "2026-10-01T04:43:30.805Z"
+              }
+            ],
+            "followUps": [],
+            "createdAt": "2026-10-01T04:43:29.471Z",
+            "updatedAt": "2026-10-01T04:43:30.805Z"
+          }
+        }
+      }
+    ],
+    "originalAssertions": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-summary.json",
+          "pointer": "/cases/10"
+        },
+        "record": {
+          "caseId": "DYN-08",
+          "outcome": "Pass",
+          "checks": [
+            {
+              "name": "initial_creation_201",
+              "pass": true
+            },
+            {
+              "name": "response_200",
+              "pass": true
+            },
+            {
+              "name": "route_context_reinterpretation",
+              "pass": true
+            },
+            {
+              "name": "controlled_outcome",
+              "pass": true
+            },
+            {
+              "name": "trace_persisted",
+              "pass": true
+            },
+            {
+              "name": "clarification_persisted",
+              "pass": true
+            },
+            {
+              "name": "event_zero_to_one",
+              "pass": true
+            }
+          ],
+          "notes": []
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "dynamic/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "measurements": {
+    "providerCalls": {
+      "status": "not_instrumented",
+      "value": null
+    }
+  },
+  "sources": [
+    {
+      "file": "dynamic/dynamic_analysis.md",
+      "sha256": "3bd81fe0568294d1c5f3d0bc02ca883ac9d54b3a4f74e5ecbd8faf7e20cd3699",
+      "bytes": 51923
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "sha256": "4f2960b4cfa44c3da887ff8c4a068eb5ed253c614afd031b4c06978e79ce64b7",
+      "bytes": 229874
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "sha256": "08a5fdc71d663c38c1b691aa8a712b3fc3fb91a21cf859c74024776325f79f04",
+      "bytes": 13396
+    },
+    {
+      "file": "dynamic/timings.csv",
+      "sha256": "0978ec9dfe0ddd14ac26a99204103fe7ebde7bba4d60dacf7237c6b292bb3d93",
+      "bytes": 2775
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-command-log.md",
+      "sha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "bytes": 5301
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-adjudication.md",
+      "sha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "bytes": 654
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "sha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "bytes": 9208
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "sha256": "74388f6df21d6155f2b50191ade47ed52726bf95db6dd956edf0eb0f41e6811f",
+      "bytes": 27639551
+    }
+  ]
+}

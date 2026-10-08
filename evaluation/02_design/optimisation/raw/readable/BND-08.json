@@ -1,0 +1,116 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "optimisation",
+  "runId": "RUN-B01-20261001-BOUNDS-01",
+  "caseId": "BND-08",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "Counts describe the deterministic provider seam, not calls to an external model.",
+    "Setup calls are excluded from action deltas. A write attempt is not necessarily an accepted save.",
+    "Test assertions are in the linked test source; the JSONL record is a compact result, not an assertion transcript."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "optimisation/bounds_analysis.md",
+      "line": 48
+    },
+    "record": {
+      "caseId": "BND-08",
+      "action": "Concept mismatch at cap\nAt round 2, send Needs Support + `concept_mismatch` with a valid clarification.",
+      "conditions": "Owned session at round 2, review_recommended; valid intended-context clarification.\nReal isolated MongoDB; deterministic provider/call instrumentation.",
+      "expectedResult": "route `context_reinterpretation`; outcome `limit_reached`; trace preserves previous/current concept unchanged; event 2→2; no provider call, concept update, adaptation, or round 3.",
+      "actualResult": "round 2→2; adaptations remain 2; events 2→3; unchanged concept; `limit_reached` trace\nProvider calls during action: 0; persistence: 1 event write, succeeded.",
+      "outcome": "Pass",
+      "limitation": "Engineering/state boundary only, not educational optimality."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "optimisation/raw/readable/BND-08.json",
+      "derived": true
+    },
+    {
+      "label": "Case record",
+      "file": "optimisation/raw/BND-RUN-01-results.jsonl",
+      "fragment": "L9",
+      "derived": false
+    },
+    {
+      "label": "Test setup / checks",
+      "file": "optimisation/raw/BND-RUN-01-bounds.test.ts",
+      "fragment": "L230",
+      "derived": false
+    }
+  ],
+  "records": {
+    "boundsResults": [
+      {
+        "source": {
+          "file": "optimisation/raw/BND-RUN-01-results.jsonl",
+          "line": 9
+        },
+        "record": {
+          "caseId": "BND-08",
+          "executionStatus": "Executed",
+          "outcome": "Pass",
+          "before": {
+            "round": 2,
+            "status": "review_recommended",
+            "understanding": "needs_support",
+            "adaptations": 2,
+            "responseEvents": 2,
+            "latestRoute": "concept_clarification",
+            "latestTransition": "1→2",
+            "concept": {
+              "name": "Bounded concept BND-08",
+              "domain": "Evaluation"
+            }
+          },
+          "after": {
+            "round": 2,
+            "status": "review_recommended",
+            "understanding": "needs_support",
+            "adaptations": 2,
+            "responseEvents": 3,
+            "latestRoute": "context_reinterpretation",
+            "latestTransition": "2→2",
+            "concept": {
+              "name": "Bounded concept BND-08",
+              "domain": "Evaluation"
+            }
+          },
+          "providerCallDelta": 0,
+          "responsePersistenceAttemptDelta": 1,
+          "completionAttemptDelta": 0,
+          "note": "limit_reached trace retained the original concept"
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "optimisation/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "sources": [
+    {
+      "file": "optimisation/bounds_analysis.md",
+      "sha256": "b0fb68208c941b5f03e85d3ebf23d2c9727a4b172890ab4e889d182f35e3460a",
+      "bytes": 20478
+    },
+    {
+      "file": "optimisation/raw/BND-RUN-01-results.jsonl",
+      "sha256": "ce574c4d1db87fb57adf77bfbb2239189f2ba5120b4766a33e90a4c6ac6a0609",
+      "bytes": 10937
+    },
+    {
+      "file": "optimisation/raw/BND-RUN-01-command-log.md",
+      "sha256": "81ff2a9fca5fa738881f592b92e9a3d237d5501c304324b179b96af7045c9884",
+      "bytes": 5058
+    }
+  ]
+}

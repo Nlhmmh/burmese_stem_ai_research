@@ -1,0 +1,75 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "static",
+  "runId": "RUN-B01-20260930-STATIC-01",
+  "caseId": "STA-13",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "No separate machine log exists for this source-inspection finding. Use the case register and linked B01 source files.",
+    "Command output is a saved transcription, not a raw terminal stream. Historical counts are not current coverage."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "static/static_analysis_test_cases.md",
+      "line": 74
+    },
+    "record": {
+      "caseId": "STA-13",
+      "action": "Reconstructable persistence model\nAccount for initial content, response events, adaptations, interpretation trace, follow-ups, preferences snapshot, round, status, and timestamps\nCriteria: F7, F9–F12",
+      "conditions": "B01 source and locked dependencies.\nInspect: Session schema, DAO projections, public session projection, legacy normalisation",
+      "expectedResult": "Refined sessions can be reconstructed; absent refined arrays/snapshot on legacy documents are controlled",
+      "actualResult": "Schema persists route-specific correction/override/history fields at `session.schema.ts:38–81,121–131`. DAO types and atomic writes cover adaptations/events/follow-ups/snapshots at `session.dao.ts:39,74–91,107–145,151–170`. Public reconstruction normalises missing legacy collections at `session-lifecycle.service.ts:71–86`; a legacy preference snapshot may remain undefined and must be handled by consumers.",
+      "outcome": "Pass with legacy-snapshot qualification",
+      "limitation": "Legacy preference snapshot may remain undefined and must be handled by consumers."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "static/raw/readable/STA-13.json",
+      "derived": true
+    },
+    {
+      "label": "Stored schema",
+      "file": "../../burmese_stem_ai/data/schemas/session.schema.ts",
+      "derived": false
+    },
+    {
+      "label": "DAO fields / writes",
+      "file": "../../burmese_stem_ai/data/dao/session.dao.ts",
+      "derived": false
+    },
+    {
+      "label": "Legacy projection",
+      "file": "../../burmese_stem_ai/services/session-lifecycle.service.ts",
+      "derived": false
+    }
+  ],
+  "records": {},
+  "sharedEvidence": {
+    "file": "static/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "evidenceType": "recorded_source_inspection",
+  "sources": [
+    {
+      "file": "static/static_analysis_test_cases.md",
+      "sha256": "50d5d3f6589477327925602a8b15cce5ddafa02b50ece33534905cc526e32c16",
+      "bytes": 20499
+    },
+    {
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "sha256": "34d9b205b98bcd4da30e4a89f861af101b23234738f7a814bae4a225567ffa9c",
+      "bytes": 7250
+    },
+    {
+      "file": "static/raw/STA-03-coverage-summary.json",
+      "sha256": "ab5508ede4966baae8c5402c822d00b7c9522c6849a897addb7c0100952cb3df",
+      "bytes": 3776
+    }
+  ]
+}

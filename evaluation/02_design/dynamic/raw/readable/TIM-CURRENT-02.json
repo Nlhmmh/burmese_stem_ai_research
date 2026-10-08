@@ -1,0 +1,186 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "dynamic",
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "caseId": "TIM-CURRENT-02",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "API and manual browser records can use different sessions/actions. They are kept separate.",
+    "Provider requests were not directly counted. Missing counts are not zero."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "dynamic/dynamic_analysis.md",
+      "line": 63
+    },
+    "record": {
+      "caseId": "TIM-CURRENT-02",
+      "action": "Submit one initial-generation request and measure end-to-end elapsed time.",
+      "conditions": "What is electric current?\nB01 local Next.js dev; isolated MongoDB; live configured provider\nSequential attempt 2",
+      "expectedResult": "Record HTTP outcome and elapsed time for the frozen input; no SLA or load threshold.",
+      "actualResult": "HTTP 201; 2592.835 ms; recorded outcome success.",
+      "outcome": "Pass",
+      "limitation": "Descriptive local timing, not a latency guarantee or stress test."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "dynamic/raw/readable/TIM-CURRENT-02.json",
+      "derived": true
+    },
+    {
+      "label": "Timing row",
+      "file": "dynamic/timings.csv",
+      "fragment": "L9",
+      "derived": false
+    },
+    {
+      "label": "HTTP record",
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "fragment": "L47",
+      "derived": false
+    }
+  ],
+  "records": {
+    "apiAndDatabase": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 47
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "TIM-CURRENT-02",
+          "operation": "fresh initial generation timing",
+          "startedAt": "2026-10-01T04:43:55.275Z",
+          "elapsedMs": 2592.835,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "question": "What is electric current?"
+            }
+          },
+          "response": {
+            "status": 201,
+            "body": {
+              "session": {
+                "sessionId": "d00d409e-46c1-4424-b112-5479c56695f8",
+                "originalQuestion": "What is electric current?",
+                "concept": {
+                  "name": "electric current",
+                  "domain": "basic electricity and circuits"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.",
+                    "my": "Electric current ဆိုတာ လျှပ်စစ် charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေမှုပါ။ အများအားဖြင့် wire ထဲမှာ charge ဘယ်လောက်ကို တစ်စက္ကန့်လျှင် ရွေ့နေသလဲဆိုတာကို ပြောတာပါ။"
+                  },
+                  "realWorldExample": {
+                    "en": "When you turn on a lamp, electric current flows through the wire and the bulb lights up because the moving charge carries energy to the bulb.",
+                    "my": "မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ wire ထဲကနေ electric current စီးဆင်းပါတယ်။ အဲဒီ charge တွေက energy ကို မီးလုံးဆီ သယ်သွားလို့ မီးလင်းလာတာပါ။"
+                  },
+                  "technical": {
+                    "en": "Electric current is the rate at which electric charge passes a point in a circuit. Its unit is the ampere, or amp, and it is represented by the symbol I.",
+                    "my": "Electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သွားတဲ့ electric charge ရဲ့ အချိန်တစ်ခုအလိုက်နှုန်းပါ။ သူ့ရဲ့ unit က ampere သို့မဟုတ် amp ဖြစ်ပြီး symbol က I ပါ။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "If a circuit has a larger current, what does that tell you about the amount of charge moving each second?",
+                  "my": "Circuit တစ်ခုမှာ current ပိုကြီးလာရင် တစ်စက္ကန့်လျှင် charge ဘယ်လောက်ပိုများစွာ ရွေ့နေတယ်ဆိုတာ ဘာကိုပြောပြသလဲ?"
+                },
+                "hint": {
+                  "en": "Think of current as the flow rate of charge.",
+                  "my": "Current ကို charge ရဲ့ flow rate လို စဉ်းစားပါ။"
+                },
+                "understanding": null,
+                "status": "in_progress",
+                "adaptationRound": 0,
+                "createdAt": "2026-10-01T04:43:57.864Z",
+                "updatedAt": "2026-10-01T04:43:57.864Z"
+              }
+            },
+            "error": null
+          }
+        }
+      }
+    ],
+    "timing": [
+      {
+        "source": {
+          "file": "dynamic/timings.csv",
+          "line": 9
+        },
+        "record": {
+          "case_id": "TIM-CURRENT-02",
+          "question": "What is electric current?",
+          "attempt": "2",
+          "started_at": "2026-10-01T04:43:55.275Z",
+          "elapsed_ms": "2592.835",
+          "http_status": "201",
+          "outcome": "success",
+          "retry_of": "",
+          "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "dynamic/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "measurements": {
+    "providerCalls": {
+      "status": "not_instrumented",
+      "value": null
+    }
+  },
+  "sources": [
+    {
+      "file": "dynamic/dynamic_analysis.md",
+      "sha256": "3bd81fe0568294d1c5f3d0bc02ca883ac9d54b3a4f74e5ecbd8faf7e20cd3699",
+      "bytes": 51923
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "sha256": "4f2960b4cfa44c3da887ff8c4a068eb5ed253c614afd031b4c06978e79ce64b7",
+      "bytes": 229874
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "sha256": "08a5fdc71d663c38c1b691aa8a712b3fc3fb91a21cf859c74024776325f79f04",
+      "bytes": 13396
+    },
+    {
+      "file": "dynamic/timings.csv",
+      "sha256": "0978ec9dfe0ddd14ac26a99204103fe7ebde7bba4d60dacf7237c6b292bb3d93",
+      "bytes": 2775
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-command-log.md",
+      "sha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "bytes": 5301
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-adjudication.md",
+      "sha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "bytes": 654
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "sha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "bytes": 9208
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "sha256": "74388f6df21d6155f2b50191ade47ed52726bf95db6dd956edf0eb0f41e6811f",
+      "bytes": 27639551
+    }
+  ]
+}

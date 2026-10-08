@@ -1,0 +1,401 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "dynamic",
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "caseId": "DYN-06",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "API and manual browser records can use different sessions/actions. They are kept separate.",
+    "Provider requests were not directly counted. Missing counts are not zero."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "dynamic/dynamic_analysis.md",
+      "line": 48
+    },
+    "record": {
+      "caseId": "DYN-06",
+      "action": "High/fade on a fresh session\nCreate a fresh session and send High.\nCriteria: F5–F7, F9; RQ3",
+      "conditions": "Fresh owned session at round 0; High response.\nB01, isolated MongoDB and live provider, except labelled fault.",
+      "expectedResult": "Route `fade`; event 0→0; no provider request or adaptation; status remains `in_progress`; completion remains a separate action.",
+      "actualResult": "High/fade event 0→0, no adaptation card and separate Finish",
+      "outcome": "Partial Pass",
+      "limitation": "Zero provider calls remain indirectly supported rather than instrumented"
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "dynamic/raw/readable/DYN-06.json",
+      "derived": true
+    },
+    {
+      "label": "API / saved state",
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "fragment": "L27",
+      "derived": false
+    },
+    {
+      "label": "Test checks",
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "fragment": "L268",
+      "derived": false
+    },
+    {
+      "label": "UI-06 screen",
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/screenshots/06_fade.png",
+      "derived": false
+    }
+  ],
+  "records": {
+    "apiAndDatabase": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 27
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "DYN-06",
+          "operation": "create fresh fade session",
+          "startedAt": "2026-10-01T04:43:16.332Z",
+          "elapsedMs": 4342.256,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "question": "What is gravity?"
+            }
+          },
+          "response": {
+            "status": 201,
+            "body": {
+              "session": {
+                "sessionId": "2471dfd3-87af-433c-8f40-aee0121a15b6",
+                "originalQuestion": "What is gravity?",
+                "concept": {
+                  "name": "gravity",
+                  "domain": "physics, especially classical mechanics and astronomy"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "Gravity is the force that makes objects with mass attract each other. On Earth, it is what pulls things toward the ground and gives objects weight.",
+                    "my": "Gravity ဆိုတာ အရာဝတ္ထုတွေမှာ mass ရှိရင် တစ်ခုနဲ့တစ်ခု ဆွဲငင်စေတဲ့ force ပါ။ Earth ပေါ်မှာတော့ အရာဝတ္ထုတွေကို မြေပြင်ဘက် ဆွဲချတာနဲ့ အရာဝတ္ထုတွေမှာ weight ရှိလာတာကို ဖြစ်စေပါတယ်။"
+                  },
+                  "realWorldExample": {
+                    "en": "If you drop a pen, gravity pulls it downward until it hits the floor. That is the same force that keeps us on the ground and helps the Moon orbit Earth.",
+                    "my": "ဥပမာ၊ pen တစ်ချောင်းကို လွှတ်ချလိုက်ရင် gravity ကြောင့် အဲဒါက အောက်ဘက်ကို ကျသွားပြီး ကြမ်းပြင်နဲ့ ထိမိပါတယ်။ အဲဒီ force တူညီတဲ့အရာကပဲ လူတွေကို မြေပြင်ပေါ်မှာ ထိန်းထားတာနဲ့ Moon ကို Earth ပတ်လည် လည်ပတ်စေတာပါ။"
+                  },
+                  "technical": {
+                    "en": "In physics, gravity is the attractive interaction between masses. Near Earth, we often approximate it as a constant acceleration downward, about 9.8 m/s^2, which gives objects weight and explains falling motion and orbital motion.",
+                    "my": "Physics မှာ gravity ဆိုတာ mass ရှိတဲ့ အရာတွေကြားက ဆွဲအား ဖြစ်ပါတယ်။ Earth အနီးမှာတော့ အဲဒါကို အောက်ဘက်သို့ ရှိသော constant acceleration အဖြစ် ခန့်မှန်းလေ့ရှိပြီး တန်ဖိုးက ခန့်မှန်းအားဖြင့် 9.8 m/s^2 လောက်ပါ။ အဲဒါကြောင့် အရာဝတ္ထုတွေမှာ weight ဖြစ်လာတာ၊ ပြုတ်ကျတာ၊ နဲ့ orbit လှည့်ပတ်တာတွေကို ရှင်းပြနိုင်ပါတယ်။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "What everyday change would you notice if gravity were much weaker than it is on Earth?",
+                  "my": "Earth ပေါ်က gravity က အခုထက် အများကြီးနည်းသွားရင် နေ့စဉ်ဘဝမှာ ဘာပြောင်းလဲမှုကို သင်အရင်ဆုံး သတိထားမိမလဲ။"
+                },
+                "hint": {
+                  "en": "Think about falling objects, your weight, and how planets stay in orbit.",
+                  "my": "ပြုတ်ကျတဲ့ အရာတွေ၊ သင့်ရဲ့ weight၊ နဲ့ ဂြိုဟ်တွေ orbit ထဲမှာ ဘယ်လို တည်ရှိနေသလဲဆိုတာကို စဉ်းစားကြည့်ပါ။"
+                },
+                "understanding": null,
+                "status": "in_progress",
+                "adaptationRound": 0,
+                "createdAt": "2026-10-01T04:43:20.659Z",
+                "updatedAt": "2026-10-01T04:43:20.659Z"
+              }
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 28
+        },
+        "record": {
+          "recordType": "database_snapshot",
+          "caseId": "DYN-06",
+          "label": "before",
+          "capturedAt": "2026-10-01T04:43:20.677Z",
+          "document": {
+            "sessionId": "2471dfd3-87af-433c-8f40-aee0121a15b6",
+            "learnerId": "00000000-0000-4000-8000-0000000000a1",
+            "originalQuestion": "What is gravity?",
+            "concept": {
+              "name": "gravity",
+              "domain": "physics, especially classical mechanics and astronomy"
+            },
+            "explanations": {
+              "simple": {
+                "en": "Gravity is the force that makes objects with mass attract each other. On Earth, it is what pulls things toward the ground and gives objects weight.",
+                "my": "Gravity ဆိုတာ အရာဝတ္ထုတွေမှာ mass ရှိရင် တစ်ခုနဲ့တစ်ခု ဆွဲငင်စေတဲ့ force ပါ။ Earth ပေါ်မှာတော့ အရာဝတ္ထုတွေကို မြေပြင်ဘက် ဆွဲချတာနဲ့ အရာဝတ္ထုတွေမှာ weight ရှိလာတာကို ဖြစ်စေပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "If you drop a pen, gravity pulls it downward until it hits the floor. That is the same force that keeps us on the ground and helps the Moon orbit Earth.",
+                "my": "ဥပမာ၊ pen တစ်ချောင်းကို လွှတ်ချလိုက်ရင် gravity ကြောင့် အဲဒါက အောက်ဘက်ကို ကျသွားပြီး ကြမ်းပြင်နဲ့ ထိမိပါတယ်။ အဲဒီ force တူညီတဲ့အရာကပဲ လူတွေကို မြေပြင်ပေါ်မှာ ထိန်းထားတာနဲ့ Moon ကို Earth ပတ်လည် လည်ပတ်စေတာပါ။"
+              },
+              "technical": {
+                "en": "In physics, gravity is the attractive interaction between masses. Near Earth, we often approximate it as a constant acceleration downward, about 9.8 m/s^2, which gives objects weight and explains falling motion and orbital motion.",
+                "my": "Physics မှာ gravity ဆိုတာ mass ရှိတဲ့ အရာတွေကြားက ဆွဲအား ဖြစ်ပါတယ်။ Earth အနီးမှာတော့ အဲဒါကို အောက်ဘက်သို့ ရှိသော constant acceleration အဖြစ် ခန့်မှန်းလေ့ရှိပြီး တန်ဖိုးက ခန့်မှန်းအားဖြင့် 9.8 m/s^2 လောက်ပါ။ အဲဒါကြောင့် အရာဝတ္ထုတွေမှာ weight ဖြစ်လာတာ၊ ပြုတ်ကျတာ၊ နဲ့ orbit လှည့်ပတ်တာတွေကို ရှင်းပြနိုင်ပါတယ်။"
+              }
+            },
+            "reflectivePrompt": {
+              "en": "What everyday change would you notice if gravity were much weaker than it is on Earth?",
+              "my": "Earth ပေါ်က gravity က အခုထက် အများကြီးနည်းသွားရင် နေ့စဉ်ဘဝမှာ ဘာပြောင်းလဲမှုကို သင်အရင်ဆုံး သတိထားမိမလဲ။"
+            },
+            "hint": {
+              "en": "Think about falling objects, your weight, and how planets stay in orbit.",
+              "my": "ပြုတ်ကျတဲ့ အရာတွေ၊ သင့်ရဲ့ weight၊ နဲ့ ဂြိုဟ်တွေ orbit ထဲမှာ ဘယ်လို တည်ရှိနေသလဲဆိုတာကို စဉ်းစားကြည့်ပါ။"
+            },
+            "understanding": null,
+            "status": "in_progress",
+            "adaptationRound": 0,
+            "preferencesSnapshot": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "adaptations": [],
+            "responseEvents": [],
+            "followUps": [],
+            "createdAt": "2026-10-01T04:43:20.659Z",
+            "updatedAt": "2026-10-01T04:43:20.659Z"
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 29
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "DYN-06",
+          "operation": "high fade response",
+          "startedAt": "2026-10-01T04:43:20.677Z",
+          "elapsedMs": 20.487,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions/2471dfd3-87af-433c-8f40-aee0121a15b6/respond",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "overallSupportNeed": "high",
+              "difficultyType": null
+            }
+          },
+          "response": {
+            "status": 200,
+            "body": {
+              "understanding": "high",
+              "status": "in_progress",
+              "adaptationRound": 0,
+              "route": "fade",
+              "responseEvent": {
+                "overallSupportNeed": "high",
+                "difficultyType": null,
+                "route": "fade",
+                "roundBefore": 0,
+                "roundAfter": 0,
+                "createdAt": "2026-10-01T04:43:20.695Z"
+              },
+              "adaptation": null
+            },
+            "error": null
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 30
+        },
+        "record": {
+          "recordType": "database_snapshot",
+          "caseId": "DYN-06",
+          "label": "after",
+          "capturedAt": "2026-10-01T04:43:20.699Z",
+          "document": {
+            "sessionId": "2471dfd3-87af-433c-8f40-aee0121a15b6",
+            "learnerId": "00000000-0000-4000-8000-0000000000a1",
+            "originalQuestion": "What is gravity?",
+            "concept": {
+              "name": "gravity",
+              "domain": "physics, especially classical mechanics and astronomy"
+            },
+            "explanations": {
+              "simple": {
+                "en": "Gravity is the force that makes objects with mass attract each other. On Earth, it is what pulls things toward the ground and gives objects weight.",
+                "my": "Gravity ဆိုတာ အရာဝတ္ထုတွေမှာ mass ရှိရင် တစ်ခုနဲ့တစ်ခု ဆွဲငင်စေတဲ့ force ပါ။ Earth ပေါ်မှာတော့ အရာဝတ္ထုတွေကို မြေပြင်ဘက် ဆွဲချတာနဲ့ အရာဝတ္ထုတွေမှာ weight ရှိလာတာကို ဖြစ်စေပါတယ်။"
+              },
+              "realWorldExample": {
+                "en": "If you drop a pen, gravity pulls it downward until it hits the floor. That is the same force that keeps us on the ground and helps the Moon orbit Earth.",
+                "my": "ဥပမာ၊ pen တစ်ချောင်းကို လွှတ်ချလိုက်ရင် gravity ကြောင့် အဲဒါက အောက်ဘက်ကို ကျသွားပြီး ကြမ်းပြင်နဲ့ ထိမိပါတယ်။ အဲဒီ force တူညီတဲ့အရာကပဲ လူတွေကို မြေပြင်ပေါ်မှာ ထိန်းထားတာနဲ့ Moon ကို Earth ပတ်လည် လည်ပတ်စေတာပါ။"
+              },
+              "technical": {
+                "en": "In physics, gravity is the attractive interaction between masses. Near Earth, we often approximate it as a constant acceleration downward, about 9.8 m/s^2, which gives objects weight and explains falling motion and orbital motion.",
+                "my": "Physics မှာ gravity ဆိုတာ mass ရှိတဲ့ အရာတွေကြားက ဆွဲအား ဖြစ်ပါတယ်။ Earth အနီးမှာတော့ အဲဒါကို အောက်ဘက်သို့ ရှိသော constant acceleration အဖြစ် ခန့်မှန်းလေ့ရှိပြီး တန်ဖိုးက ခန့်မှန်းအားဖြင့် 9.8 m/s^2 လောက်ပါ။ အဲဒါကြောင့် အရာဝတ္ထုတွေမှာ weight ဖြစ်လာတာ၊ ပြုတ်ကျတာ၊ နဲ့ orbit လှည့်ပတ်တာတွေကို ရှင်းပြနိုင်ပါတယ်။"
+              }
+            },
+            "reflectivePrompt": {
+              "en": "What everyday change would you notice if gravity were much weaker than it is on Earth?",
+              "my": "Earth ပေါ်က gravity က အခုထက် အများကြီးနည်းသွားရင် နေ့စဉ်ဘဝမှာ ဘာပြောင်းလဲမှုကို သင်အရင်ဆုံး သတိထားမိမလဲ။"
+            },
+            "hint": {
+              "en": "Think about falling objects, your weight, and how planets stay in orbit.",
+              "my": "ပြုတ်ကျတဲ့ အရာတွေ၊ သင့်ရဲ့ weight၊ နဲ့ ဂြိုဟ်တွေ orbit ထဲမှာ ဘယ်လို တည်ရှိနေသလဲဆိုတာကို စဉ်းစားကြည့်ပါ။"
+            },
+            "understanding": "high",
+            "status": "in_progress",
+            "adaptationRound": 0,
+            "preferencesSnapshot": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "adaptations": [],
+            "responseEvents": [
+              {
+                "overallSupportNeed": "high",
+                "difficultyType": null,
+                "route": "fade",
+                "roundBefore": 0,
+                "roundAfter": 0,
+                "createdAt": "2026-10-01T04:43:20.695Z"
+              }
+            ],
+            "followUps": [],
+            "createdAt": "2026-10-01T04:43:20.659Z",
+            "updatedAt": "2026-10-01T04:43:20.695Z"
+          }
+        }
+      }
+    ],
+    "originalAssertions": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-summary.json",
+          "pointer": "/cases/8"
+        },
+        "record": {
+          "caseId": "DYN-06",
+          "outcome": "Pass",
+          "checks": [
+            {
+              "name": "initial_creation_201",
+              "pass": true
+            },
+            {
+              "name": "response_200",
+              "pass": true
+            },
+            {
+              "name": "route_fade",
+              "pass": true
+            },
+            {
+              "name": "event_zero_to_zero",
+              "pass": true
+            },
+            {
+              "name": "round_unchanged",
+              "pass": true
+            },
+            {
+              "name": "no_adaptation",
+              "pass": true
+            },
+            {
+              "name": "in_progress",
+              "pass": true
+            }
+          ],
+          "notes": [
+            "No-provider-call assertion is not directly instrumented; null adaptation, unchanged state, and elapsed time are runtime observations."
+          ]
+        }
+      }
+    ],
+    "separateManualBrowserObservations": [
+      {
+        "source": {
+          "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+          "line": 30
+        },
+        "record": {
+          "Observation": "UI-06 Fade",
+          "Related cases": "DYN-06",
+          "Expected visible result": "Fade history with no adaptation and separate Finish",
+          "Actual result": "The Gravity session showed High/no additional support with route `fade`, event 0→0, no generated adaptation card, and Finish Learning as a separate action.",
+          "Execution status": "Executed",
+          "Outcome": "Pass",
+          "Screenshot/HAR locator": "`screenshots/06_fade.png`",
+          "Deviation or issue": "Direct provider-call absence is not established by the screenshot; API/database evidence provides only indirect support for that assertion."
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "dynamic/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "measurements": {
+    "providerCalls": {
+      "status": "not_instrumented",
+      "value": null
+    }
+  },
+  "sources": [
+    {
+      "file": "dynamic/dynamic_analysis.md",
+      "sha256": "3bd81fe0568294d1c5f3d0bc02ca883ac9d54b3a4f74e5ecbd8faf7e20cd3699",
+      "bytes": 51923
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "sha256": "4f2960b4cfa44c3da887ff8c4a068eb5ed253c614afd031b4c06978e79ce64b7",
+      "bytes": 229874
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "sha256": "08a5fdc71d663c38c1b691aa8a712b3fc3fb91a21cf859c74024776325f79f04",
+      "bytes": 13396
+    },
+    {
+      "file": "dynamic/timings.csv",
+      "sha256": "0978ec9dfe0ddd14ac26a99204103fe7ebde7bba4d60dacf7237c6b292bb3d93",
+      "bytes": 2775
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-command-log.md",
+      "sha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "bytes": 5301
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-adjudication.md",
+      "sha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "bytes": 654
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "sha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "bytes": 9208
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "sha256": "74388f6df21d6155f2b50191ade47ed52726bf95db6dd956edf0eb0f41e6811f",
+      "bytes": 27639551
+    }
+  ]
+}

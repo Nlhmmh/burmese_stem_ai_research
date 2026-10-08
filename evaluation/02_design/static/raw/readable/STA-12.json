@@ -1,0 +1,75 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "static",
+  "runId": "RUN-B01-20260930-STATIC-01",
+  "caseId": "STA-12",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "No separate machine log exists for this source-inspection finding. Use the case register and linked B01 source files.",
+    "Command output is a saved transcription, not a raw terminal stream. Historical counts are not current coverage."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "static/static_analysis_test_cases.md",
+      "line": 73
+    },
+    "record": {
+      "caseId": "STA-12",
+      "action": "Learner ownership and identifier validation\nTrace learner identity and UUID validation through retrieval/update queries\nCriteria: F9–F11, F13",
+      "conditions": "B01 source and locked dependencies.\nInspect: Session collection/detail/respond/follow-up routes, learner service, lifecycle service, DAOs",
+      "expectedResult": "Routes require learner identity; UUIDs are validated; DAO queries include both learner and session identifiers",
+      "actualResult": "Learner identity is required in `learner.service.ts:24–27`; UUID validation is in `session-lifecycle.service.ts:15–20`; session routes apply both before services. DAO retrieval/update filters include learner and session identifiers at `session.dao.ts:62–67,131–134,158–161,177–180`; History uses learner scope at `session.dao.ts:16–21`.",
+      "outcome": "Pass",
+      "limitation": "Scoped to the stated structural assertion."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "static/raw/readable/STA-12.json",
+      "derived": true
+    },
+    {
+      "label": "Identity guard",
+      "file": "../../burmese_stem_ai/services/learner.service.ts",
+      "derived": false
+    },
+    {
+      "label": "UUID guard",
+      "file": "../../burmese_stem_ai/services/session-lifecycle.service.ts",
+      "derived": false
+    },
+    {
+      "label": "Scoped DAO queries",
+      "file": "../../burmese_stem_ai/data/dao/session.dao.ts",
+      "derived": false
+    }
+  ],
+  "records": {},
+  "sharedEvidence": {
+    "file": "static/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "evidenceType": "recorded_source_inspection",
+  "sources": [
+    {
+      "file": "static/static_analysis_test_cases.md",
+      "sha256": "50d5d3f6589477327925602a8b15cce5ddafa02b50ece33534905cc526e32c16",
+      "bytes": 20499
+    },
+    {
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "sha256": "34d9b205b98bcd4da30e4a89f861af101b23234738f7a814bae4a225567ffa9c",
+      "bytes": 7250
+    },
+    {
+      "file": "static/raw/STA-03-coverage-summary.json",
+      "sha256": "ab5508ede4966baae8c5402c822d00b7c9522c6849a897addb7c0100952cb3df",
+      "bytes": 3776
+    }
+  ]
+}

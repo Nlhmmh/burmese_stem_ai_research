@@ -1,0 +1,186 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "dynamic",
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "caseId": "TIM-INHERIT-03",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "API and manual browser records can use different sessions/actions. They are kept separate.",
+    "Provider requests were not directly counted. Missing counts are not zero."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "dynamic/dynamic_analysis.md",
+      "line": 67
+    },
+    "record": {
+      "caseId": "TIM-INHERIT-03",
+      "action": "Submit one initial-generation request and measure end-to-end elapsed time.",
+      "conditions": "What is inheritance in object-oriented programming?\nB01 local Next.js dev; isolated MongoDB; live configured provider\nSequential attempt 3",
+      "expectedResult": "Record HTTP outcome and elapsed time for the frozen input; no SLA or load threshold.",
+      "actualResult": "HTTP 201; 3757.689 ms; recorded outcome success.",
+      "outcome": "Pass",
+      "limitation": "Descriptive local timing, not a latency guarantee or stress test."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "dynamic/raw/readable/TIM-INHERIT-03.json",
+      "derived": true
+    },
+    {
+      "label": "Timing row",
+      "file": "dynamic/timings.csv",
+      "fragment": "L13",
+      "derived": false
+    },
+    {
+      "label": "HTTP record",
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "fragment": "L51",
+      "derived": false
+    }
+  ],
+  "records": {
+    "apiAndDatabase": [
+      {
+        "source": {
+          "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+          "line": 51
+        },
+        "record": {
+          "recordType": "api",
+          "caseId": "TIM-INHERIT-03",
+          "operation": "fresh initial generation timing",
+          "startedAt": "2026-10-01T04:44:08.438Z",
+          "elapsedMs": 3757.689,
+          "request": {
+            "method": "POST",
+            "route": "/api/sessions",
+            "ownerAlias": "DYN-OWNER-A",
+            "body": {
+              "question": "What is inheritance in object-oriented programming?"
+            }
+          },
+          "response": {
+            "status": 201,
+            "body": {
+              "session": {
+                "sessionId": "2bd6639e-aade-4a96-b49f-159fcac4ff92",
+                "originalQuestion": "What is inheritance in object-oriented programming?",
+                "concept": {
+                  "name": "inheritance",
+                  "domain": "object-oriented programming"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "Inheritance in object-oriented programming is a way for one class to reuse and extend the features of another class. A child class gets the properties and methods of a parent class, then can add new ones or change existing ones.",
+                    "my": "Object-oriented programming ထဲမှာ inheritance ဆိုတာ class တစ်ခုက တခြား class တစ်ခုရဲ့ property နဲ့ method တွေကို ဆက်ခံပြီး ပြန်သုံးနိုင်တဲ့ နည်းလမ်းပါ။ Child class က parent class ရဲ့ အချက်အလက်တွေကို လက်ခံရယူပြီး၊ လိုအပ်ရင် အသစ်တွေထပ်ထည့်နိုင်သလို ရှိပြီးသား behavior ကိုလည်း ပြင်နိုင်ပါတယ်။"
+                  },
+                  "realWorldExample": {
+                    "en": "For example, a Vehicle class may have methods like move() and stop(). A Car class can inherit from Vehicle, so Car automatically gets those methods and can also have its own method like openTrunk(). This shows how inheritance helps share common behavior.",
+                    "my": "ဥပမာ Vehicle class ထဲမှာ move() နဲ့ stop() လို method တွေရှိတယ်ဆိုပါစို့။ Car class က Vehicle ကို inherit လုပ်ရင် Car က အဲဒီ method တွေကို အလိုအလျောက် ရရှိမယ်။ အပေါ်မှာတင်မက openTrunk() လို ကိုယ်ပိုင် method တွေလည်း ထပ်ထည့်နိုင်တယ်။ ဒါက common behavior ကို မျှဝေသုံးတာကို ပြပါတယ်။"
+                  },
+                  "technical": {
+                    "en": "Inheritance is an OOP mechanism where a subclass is derived from a superclass and acquires its attributes and methods. It supports code reuse and polymorphic design by allowing the subclass to specialize or override inherited behavior.",
+                    "my": "Inheritance က OOP mechanism တစ်ခုပါ။ subclass တစ်ခုကို superclass တစ်ခုကနေ derive လုပ်ပြီး သူ့ရဲ့ attributes နဲ့ methods တွေကို ဆက်ခံရယူတာပါ။ ဒီနည်းလမ်းက code reuse ကိုကူညီပြီး subclass က inherit လုပ်ထားတဲ့ behavior ကို လိုအပ်သလို specialize လုပ်တာ၊ override လုပ်တာတွေကိုလည်း ခွင့်ပြုပါတယ်။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "If you design a Bird class and a Penguin class, what features would Penguin inherit, and what might it override?",
+                  "my": "Bird class နဲ့ Penguin class ကို design လုပ်မယ်ဆိုရင် Penguin က ဘာတွေကို inherit လုပ်မလဲ၊ ဘာတွေကို override လုပ်နိုင်မလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                },
+                "hint": {
+                  "en": "Think of a child class as a more specific version of a parent class.",
+                  "my": "Child class ကို parent class ရဲ့ ပိုတိကျတဲ့ version လို့ စဉ်းစားကြည့်ပါ။"
+                },
+                "understanding": null,
+                "status": "in_progress",
+                "adaptationRound": 0,
+                "createdAt": "2026-10-01T04:44:12.186Z",
+                "updatedAt": "2026-10-01T04:44:12.186Z"
+              }
+            },
+            "error": null
+          }
+        }
+      }
+    ],
+    "timing": [
+      {
+        "source": {
+          "file": "dynamic/timings.csv",
+          "line": 13
+        },
+        "record": {
+          "case_id": "TIM-INHERIT-03",
+          "question": "What is inheritance in object-oriented programming?",
+          "attempt": "3",
+          "started_at": "2026-10-01T04:44:08.438Z",
+          "elapsed_ms": "3757.689",
+          "http_status": "201",
+          "outcome": "success",
+          "retry_of": "",
+          "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "dynamic/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "measurements": {
+    "providerCalls": {
+      "status": "not_instrumented",
+      "value": null
+    }
+  },
+  "sources": [
+    {
+      "file": "dynamic/dynamic_analysis.md",
+      "sha256": "3bd81fe0568294d1c5f3d0bc02ca883ac9d54b3a4f74e5ecbd8faf7e20cd3699",
+      "bytes": 51923
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "sha256": "4f2960b4cfa44c3da887ff8c4a068eb5ed253c614afd031b4c06978e79ce64b7",
+      "bytes": 229874
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "sha256": "08a5fdc71d663c38c1b691aa8a712b3fc3fb91a21cf859c74024776325f79f04",
+      "bytes": 13396
+    },
+    {
+      "file": "dynamic/timings.csv",
+      "sha256": "0978ec9dfe0ddd14ac26a99204103fe7ebde7bba4d60dacf7237c6b292bb3d93",
+      "bytes": 2775
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-command-log.md",
+      "sha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "bytes": 5301
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-adjudication.md",
+      "sha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "bytes": 654
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "sha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "bytes": 9208
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "sha256": "74388f6df21d6155f2b50191ade47ed52726bf95db6dd956edf0eb0f41e6811f",
+      "bytes": 27639551
+    }
+  ]
+}

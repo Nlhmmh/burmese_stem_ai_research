@@ -1,0 +1,2023 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "usability",
+  "runId": "RUN-B01-20261002-USABILITY-01",
+  "caseId": "U2",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "Observations use their explicit criteria arrays. One capture may support several U criteria.",
+    "Original observations, corrections and the derived review sheet are separate; no correction is applied silently.",
+    "Provider records are linked only when their label exactly matches a recorded capture ID; general labels stay shared.",
+    "Screenshots and DOM files remain at the paths in browserObservations, relative to the historical run folder.",
+    "Ratings describe a technical inspection, not participant feedback or translation-quality assessment."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "usability/usability_inspection.md",
+      "line": 42
+    },
+    "record": {
+      "caseId": "U2",
+      "action": "Visual structure — Organisation of initial, revised and follow-up support",
+      "conditions": "Root B01 production build with isolated MongoDB and controlled model responses. Desktop/mobile, English/Burmese, light/dark; see the capture matrix for actual coverage.",
+      "expectedResult": "Explanation sections, examples, reflection, hint, adaptations and follow-up answers remain separate and readable on both widths.",
+      "actualResult": "Explanation sections, hint, adaptation history and follow-up answers remain visually distinct on both widths.",
+      "outcome": "Pass",
+      "limitation": "Highest severity 0. Structured evaluator inspection, not participant feedback."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "usability/raw/readable/U2.json",
+      "derived": true
+    },
+    {
+      "label": "US-D10 screen",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/screenshots/US-D10.jpg",
+      "derived": false
+    },
+    {
+      "label": "DOM",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/US-D10.dom.txt",
+      "derived": false
+    },
+    {
+      "label": "US-D10 record",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "fragment": "L10",
+      "derived": false
+    },
+    {
+      "label": "US-D11 screen",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/screenshots/US-D11.jpg",
+      "derived": false
+    },
+    {
+      "label": "DOM",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/US-D11.dom.txt",
+      "derived": false
+    },
+    {
+      "label": "US-D11 record",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "fragment": "L11",
+      "derived": false
+    },
+    {
+      "label": "US-D18 screen",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/screenshots/US-D18.jpg",
+      "derived": false
+    },
+    {
+      "label": "DOM",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/US-D18.dom.txt",
+      "derived": false
+    },
+    {
+      "label": "US-D18 record",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "fragment": "L18",
+      "derived": false
+    },
+    {
+      "label": "US-M03 screen",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/screenshots/US-M03.jpg",
+      "derived": false
+    },
+    {
+      "label": "DOM",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/US-M03.dom.txt",
+      "derived": false
+    },
+    {
+      "label": "US-M03 record",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "fragment": "L52",
+      "derived": false
+    },
+    {
+      "label": "US-F02 screen",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/screenshots/US-F02.jpg",
+      "derived": false
+    },
+    {
+      "label": "DOM",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/US-F02.dom.txt",
+      "derived": false
+    },
+    {
+      "label": "US-F02 record",
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "fragment": "L123",
+      "derived": false
+    }
+  ],
+  "records": {
+    "browserObservations": [
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 10
+        },
+        "record": {
+          "id": "US-D10",
+          "criteria": [
+            "U2",
+            "U6",
+            "U7"
+          ],
+          "state": "initial-content",
+          "note": "Initial bilingual support sections and round/status visible; hint collapsed.",
+          "severity": 0,
+          "at": "2026-10-02T10:01:20.823Z",
+          "url": "http://ui-b01.localhost:55530/learn/fe43ec92-8a32-45c3-a5d9-a728e0facaca",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D10.jpg",
+          "dom": "US-D10.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 11
+        },
+        "record": {
+          "id": "US-D11",
+          "criteria": [
+            "U2",
+            "U9"
+          ],
+          "state": "hint-revealed",
+          "note": "Hint can be revealed by keyboard; section includes both languages.",
+          "severity": 0,
+          "at": "2026-10-02T10:02:36.477Z",
+          "url": "http://ui-b01.localhost:55530/learn/fe43ec92-8a32-45c3-a5d9-a728e0facaca",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D11.jpg",
+          "dom": "US-D11.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 36
+        },
+        "record": {
+          "id": "US-D31",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-initial",
+          "note": "Seeded initial state inspected; synthetic fixture setup is explicit.",
+          "severity": 0,
+          "at": "2026-10-02T10:07:53.607Z",
+          "url": "http://ui-b01.localhost:55530/learn/3af49fb6-2e65-4dc0-a335-7790c254e8d1",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D31.jpg",
+          "dom": "US-D31.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 37
+        },
+        "record": {
+          "id": "US-D32",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-round1",
+          "note": "Seeded round1 state inspected; synthetic fixture setup is explicit.",
+          "severity": 0,
+          "at": "2026-10-02T10:07:54.383Z",
+          "url": "http://ui-b01.localhost:55530/learn/d5246d93-9ed8-4f3f-886f-0d9359c47819",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D32.jpg",
+          "dom": "US-D32.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 38
+        },
+        "record": {
+          "id": "US-D33",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-completed",
+          "note": "Seeded completed state inspected; synthetic fixture setup is explicit.",
+          "severity": 0,
+          "at": "2026-10-02T10:07:55.201Z",
+          "url": "http://ui-b01.localhost:55530/learn/e20dc419-e29f-4650-99ee-ffe913745773",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D33.jpg",
+          "dom": "US-D33.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 39
+        },
+        "record": {
+          "id": "US-D34",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-legacy",
+          "note": "Seeded legacy state inspected; synthetic fixture setup is explicit.",
+          "severity": 0,
+          "at": "2026-10-02T10:07:56.644Z",
+          "url": "http://ui-b01.localhost:55530/learn/9e40f2a0-b76a-4086-88f8-a2373544e841",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D34.jpg",
+          "dom": "US-D34.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 40
+        },
+        "record": {
+          "id": "US-D35",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-long",
+          "note": "Seeded long state inspected; synthetic fixture setup is explicit.",
+          "severity": 0,
+          "at": "2026-10-02T10:07:59.746Z",
+          "url": "http://ui-b01.localhost:55530/learn/e8e6d92f-3e9f-4bca-a25c-9b8a181f471c",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D35.jpg",
+          "dom": "US-D35.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 41
+        },
+        "record": {
+          "id": "US-D36",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-english",
+          "note": "Seeded english state inspected; synthetic fixture setup is explicit.",
+          "severity": 0,
+          "at": "2026-10-02T10:08:00.536Z",
+          "url": "http://ui-b01.localhost:55530/learn/0c1d0d8b-868a-4e10-8700-cb8af751a33e",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D36.jpg",
+          "dom": "US-D36.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 42
+        },
+        "record": {
+          "id": "US-D37",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-burmese",
+          "note": "Seeded burmese state inspected; synthetic fixture setup is explicit.",
+          "severity": 0,
+          "at": "2026-10-02T10:08:01.465Z",
+          "url": "http://ui-b01.localhost:55530/learn/cef8ee9d-d23b-4fe1-a55e-6ed33c4e84d2",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-D37.jpg",
+          "dom": "US-D37.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 43
+        },
+        "record": {
+          "id": "US-D38",
+          "criteria": [
+            "U2",
+            "U6",
+            "U9"
+          ],
+          "state": "burmese-dark-content",
+          "note": "Burmese UI and dark theme render stored Burmese support.",
+          "severity": 0,
+          "at": "2026-10-02T10:08:04.520Z",
+          "url": "http://ui-b01.localhost:55530/learn/cef8ee9d-d23b-4fe1-a55e-6ed33c4e84d2",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AIမေးခွန်းသစ်မှတ်တမ်းEN◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fragm"
+          },
+          "height": 900,
+          "locale": "my",
+          "theme": "dark",
+          "width": 1440,
+          "screenshot": "screenshots/US-D38.jpg",
+          "dom": "US-D38.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 52
+        },
+        "record": {
+          "id": "US-M03",
+          "criteria": [
+            "U2",
+            "U6",
+            "U9"
+          ],
+          "state": "initial-mobile-en-dark",
+          "note": "Mobile bilingual initial sections inspected in dark theme.",
+          "severity": 0,
+          "at": "2026-10-02T10:09:38.958Z",
+          "url": "http://ui-b01.localhost:55530/learn/3af49fb6-2e65-4dc0-a335-7790c254e8d1",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-M03.jpg",
+          "dom": "US-M03.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 53
+        },
+        "record": {
+          "id": "US-M04",
+          "criteria": [
+            "U2",
+            "U6"
+          ],
+          "state": "hint-mobile-revealed",
+          "note": "Keyboard hint reveal displays both languages without horizontal overflow.",
+          "severity": 0,
+          "at": "2026-10-02T10:09:58.223Z",
+          "url": "http://ui-b01.localhost:55530/learn/3af49fb6-2e65-4dc0-a335-7790c254e8d1",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-M04.jpg",
+          "dom": "US-M04.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 72
+        },
+        "record": {
+          "id": "US-M16",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-mobile-round1",
+          "note": "Seeded round1 reconstruction inspected at mobile viewport.",
+          "severity": 0,
+          "at": "2026-10-02T10:11:09.265Z",
+          "url": "http://ui-b01.localhost:55530/learn/d5246d93-9ed8-4f3f-886f-0d9359c47819",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-M16.jpg",
+          "dom": "US-M16.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 73
+        },
+        "record": {
+          "id": "US-M17",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-mobile-round2",
+          "note": "Seeded round2 reconstruction inspected at mobile viewport.",
+          "severity": 0,
+          "at": "2026-10-02T10:11:10.888Z",
+          "url": "http://ui-b01.localhost:55530/learn/a2a63bdf-5c82-43fb-a249-2342dff594c3",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-M17.jpg",
+          "dom": "US-M17.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 74
+        },
+        "record": {
+          "id": "US-M18",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-mobile-completed",
+          "note": "Seeded completed reconstruction inspected at mobile viewport.",
+          "severity": 0,
+          "at": "2026-10-02T10:11:12.088Z",
+          "url": "http://ui-b01.localhost:55530/learn/e20dc419-e29f-4650-99ee-ffe913745773",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-M18.jpg",
+          "dom": "US-M18.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 75
+        },
+        "record": {
+          "id": "US-M19",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-mobile-legacy",
+          "note": "Seeded legacy reconstruction inspected at mobile viewport.",
+          "severity": 0,
+          "at": "2026-10-02T10:11:12.908Z",
+          "url": "http://ui-b01.localhost:55530/learn/9e40f2a0-b76a-4086-88f8-a2373544e841",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-M19.jpg",
+          "dom": "US-M19.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 76
+        },
+        "record": {
+          "id": "US-M20",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-mobile-long",
+          "note": "Seeded long reconstruction inspected at mobile viewport.",
+          "severity": 0,
+          "at": "2026-10-02T10:11:13.809Z",
+          "url": "http://ui-b01.localhost:55530/learn/e8e6d92f-3e9f-4bca-a25c-9b8a181f471c",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-M20.jpg",
+          "dom": "US-M20.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 77
+        },
+        "record": {
+          "id": "US-M21",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-mobile-english",
+          "note": "Seeded english reconstruction inspected at mobile viewport.",
+          "severity": 0,
+          "at": "2026-10-02T10:11:15.474Z",
+          "url": "http://ui-b01.localhost:55530/learn/0c1d0d8b-868a-4e10-8700-cb8af751a33e",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-M21.jpg",
+          "dom": "US-M21.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 78
+        },
+        "record": {
+          "id": "US-M22",
+          "criteria": [
+            "U2",
+            "U4",
+            "U5",
+            "U6",
+            "U7",
+            "U9"
+          ],
+          "state": "resume-mobile-burmese",
+          "note": "Seeded burmese reconstruction inspected at mobile viewport.",
+          "severity": 0,
+          "at": "2026-10-02T10:11:16.883Z",
+          "url": "http://ui-b01.localhost:55530/learn/cef8ee9d-d23b-4fe1-a55e-6ed33c4e84d2",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AINew InquiryHistoryမြန်မာ◑(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fr"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-M22.jpg",
+          "dom": "US-M22.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 79
+        },
+        "record": {
+          "id": "US-M23",
+          "criteria": [
+            "U2",
+            "U6",
+            "U9"
+          ],
+          "state": "burmese-mobile-light",
+          "note": "Burmese UI and support inspected on mobile in light theme.",
+          "severity": 0,
+          "at": "2026-10-02T10:11:43.913Z",
+          "url": "http://ui-b01.localhost:55530/learn/cef8ee9d-d23b-4fe1-a55e-6ed33c4e84d2",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": "အရောင်ပုံစံ ပြောင်းရန်",
+            "outline": "oklch(0.554 0.046 257.417) none 3px",
+            "tag": "BUTTON",
+            "text": "◑"
+          },
+          "height": 844,
+          "locale": "my",
+          "theme": "light",
+          "width": 390,
+          "screenshot": "screenshots/US-M23.jpg",
+          "dom": "US-M23.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 99
+        },
+        "record": {
+          "id": "US-C01-I",
+          "criteria": [
+            "U2",
+            "U6",
+            "U9"
+          ],
+          "state": "context-initial",
+          "note": "Additional configuration initial bilingual support and hierarchy.",
+          "severity": 0,
+          "at": "2026-10-02T10:14:35.479Z",
+          "url": "http://ui-b01.localhost:55530/learn/3af49fb6-2e65-4dc0-a335-7790c254e8d1",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AI\nNew Inquiry\nHistory\nမြန်မာ\n◑\nBIOLOGY, PLANT PHYSIOLOGY\nphotosynthesis\n\nSTEM Learning Session\n\n📖\nSIMPLE "
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "dark",
+          "width": 1440,
+          "screenshot": "screenshots/US-C01-I.jpg",
+          "dom": "US-C01-I.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 103
+        },
+        "record": {
+          "id": "US-C02-I",
+          "criteria": [
+            "U2",
+            "U6",
+            "U9"
+          ],
+          "state": "context-initial",
+          "note": "Additional configuration initial bilingual support and hierarchy.",
+          "severity": 0,
+          "at": "2026-10-02T10:14:45.632Z",
+          "url": "http://ui-b01.localhost:55530/learn/3af49fb6-2e65-4dc0-a335-7790c254e8d1",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AI\nမေးခွန်းသစ်\nမှတ်တမ်း\nEN\n◑\nBIOLOGY, PLANT PHYSIOLOGY\nphotosynthesis\n\nSTEM သင်ယူမှု အစည်းအဝေး\n\n📖\nရိုးရှင်"
+          },
+          "height": 900,
+          "locale": "my",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-C02-I.jpg",
+          "dom": "US-C02-I.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 107
+        },
+        "record": {
+          "id": "US-C03-I",
+          "criteria": [
+            "U2",
+            "U6",
+            "U9"
+          ],
+          "state": "context-initial",
+          "note": "Additional configuration initial bilingual support and hierarchy.",
+          "severity": 0,
+          "at": "2026-10-02T10:14:52.363Z",
+          "url": "http://ui-b01.localhost:55530/learn/3af49fb6-2e65-4dc0-a335-7790c254e8d1",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "New Inquiry\nHistory\nမြန်မာ\n◑\nBIOLOGY, PLANT PHYSIOLOGY\nphotosynthesis\n\nSTEM Learning Session\n\n📖\nSIMPLE EXPLANATION\n\nPho"
+          },
+          "height": 844,
+          "locale": "en",
+          "theme": "light",
+          "width": 390,
+          "screenshot": "screenshots/US-C03-I.jpg",
+          "dom": "US-C03-I.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 111
+        },
+        "record": {
+          "id": "US-C04-I",
+          "criteria": [
+            "U2",
+            "U6",
+            "U9"
+          ],
+          "state": "context-initial",
+          "note": "Additional configuration initial bilingual support and hierarchy.",
+          "severity": 0,
+          "at": "2026-10-02T10:14:58.875Z",
+          "url": "http://ui-b01.localhost:55530/learn/3af49fb6-2e65-4dc0-a335-7790c254e8d1",
+          "documentWidth": 390,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(241, 245, 249) none 3px",
+            "tag": "BODY",
+            "text": "မေးခွန်းသစ်\nမှတ်တမ်း\nEN\n◑\nBIOLOGY, PLANT PHYSIOLOGY\nphotosynthesis\n\nSTEM သင်ယူမှု အစည်းအဝေး\n\n📖\nရိုးရှင်းသော ရှင်းလင်းချ"
+          },
+          "height": 844,
+          "locale": "my",
+          "theme": "dark",
+          "width": 390,
+          "screenshot": "screenshots/US-C04-I.jpg",
+          "dom": "US-C04-I.dom.txt"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+          "line": 123
+        },
+        "record": {
+          "id": "US-F02",
+          "criteria": [
+            "U2",
+            "U4"
+          ],
+          "state": "followup-answer-desktop",
+          "note": "Relevant answer appears with remaining-question count.",
+          "severity": 0,
+          "at": "2026-10-02T10:18:35.210Z",
+          "url": "http://ui-b01.localhost:55530/learn/7d2f6424-c13f-4b2f-adff-faf4b4512d40",
+          "documentWidth": 1440,
+          "focus": {
+            "boxShadow": "none",
+            "label": null,
+            "outline": "rgb(15, 23, 42) none 3px",
+            "tag": "BODY",
+            "text": "Burmese STEM AI\nNew Inquiry\nHistory\nမြန်မာ\n◑\nBIOLOGY, PLANT PHYSIOLOGY\nphotosynthesis\n\nSTEM Learning Session\n\n📖\nSIMPLE "
+          },
+          "height": 900,
+          "locale": "en",
+          "theme": "light",
+          "width": 1440,
+          "screenshot": "screenshots/US-F02.jpg",
+          "dom": "US-F02.dom.txt"
+        }
+      }
+    ],
+    "reviewSheet": [
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 11
+        },
+        "record": {
+          "evidence_id": "US-D10",
+          "criterion": "U2|U6|U7",
+          "screen": "Learning Session / Review or Resume",
+          "state": "initial-content",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Initial bilingual sections are distinguishable; hint collapsed. No explicit round-0/status badge is displayed.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D10.jpg",
+          "dom": "US-D10.dom.txt",
+          "observed_at_utc": "2026-10-02T10:01:20.823Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 12
+        },
+        "record": {
+          "evidence_id": "US-D11",
+          "criterion": "U2|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "hint-revealed",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Enter reveals hint",
+          "actual_observation": "Hint can be revealed by keyboard; section includes both languages.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D11.jpg",
+          "dom": "US-D11.dom.txt",
+          "observed_at_utc": "2026-10-02T10:02:36.477Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 37
+        },
+        "record": {
+          "evidence_id": "US-D31",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-initial",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded initial state inspected; synthetic fixture setup is explicit.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D31.jpg",
+          "dom": "US-D31.dom.txt",
+          "observed_at_utc": "2026-10-02T10:07:53.607Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 38
+        },
+        "record": {
+          "evidence_id": "US-D32",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-round1",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded round1 state inspected; synthetic fixture setup is explicit.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D32.jpg",
+          "dom": "US-D32.dom.txt",
+          "observed_at_utc": "2026-10-02T10:07:54.383Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 39
+        },
+        "record": {
+          "evidence_id": "US-D33",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-completed",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded completed state inspected; synthetic fixture setup is explicit.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D33.jpg",
+          "dom": "US-D33.dom.txt",
+          "observed_at_utc": "2026-10-02T10:07:55.201Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 40
+        },
+        "record": {
+          "evidence_id": "US-D34",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-legacy",
+          "locale": "en",
+          "support_language": "Legacy: missing preference snapshot; renderer fallback",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded legacy state inspected; synthetic fixture setup is explicit.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D34.jpg",
+          "dom": "US-D34.dom.txt",
+          "observed_at_utc": "2026-10-02T10:07:56.644Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 41
+        },
+        "record": {
+          "evidence_id": "US-D35",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-long",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded long state inspected; synthetic fixture setup is explicit.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D35.jpg",
+          "dom": "US-D35.dom.txt",
+          "observed_at_utc": "2026-10-02T10:07:59.746Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 42
+        },
+        "record": {
+          "evidence_id": "US-D36",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-english",
+          "locale": "en",
+          "support_language": "english",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded english state inspected; synthetic fixture setup is explicit.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D36.jpg",
+          "dom": "US-D36.dom.txt",
+          "observed_at_utc": "2026-10-02T10:08:00.536Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 43
+        },
+        "record": {
+          "evidence_id": "US-D37",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-burmese",
+          "locale": "en",
+          "support_language": "burmese",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded burmese state inspected; synthetic fixture setup is explicit.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D37.jpg",
+          "dom": "US-D37.dom.txt",
+          "observed_at_utc": "2026-10-02T10:08:01.465Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 44
+        },
+        "record": {
+          "evidence_id": "US-D38",
+          "criterion": "U2|U6|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "burmese-dark-content",
+          "locale": "my",
+          "support_language": "burmese",
+          "theme": "dark",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Burmese UI and dark theme render stored Burmese support.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-D38.jpg",
+          "dom": "US-D38.dom.txt",
+          "observed_at_utc": "2026-10-02T10:08:04.520Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 53
+        },
+        "record": {
+          "evidence_id": "US-M03",
+          "criterion": "U2|U6|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "initial-mobile-en-dark",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Mobile bilingual initial sections inspected in dark theme.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M03.jpg",
+          "dom": "US-M03.dom.txt",
+          "observed_at_utc": "2026-10-02T10:09:38.958Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 54
+        },
+        "record": {
+          "evidence_id": "US-M04",
+          "criterion": "U2|U6",
+          "screen": "Learning Session / Review or Resume",
+          "state": "hint-mobile-revealed",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Keyboard activates hint reveal",
+          "actual_observation": "Keyboard hint reveal displays both languages without horizontal overflow.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M04.jpg",
+          "dom": "US-M04.dom.txt",
+          "observed_at_utc": "2026-10-02T10:09:58.223Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 73
+        },
+        "record": {
+          "evidence_id": "US-M16",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-mobile-round1",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded round1 reconstruction inspected at mobile viewport.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M16.jpg",
+          "dom": "US-M16.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:09.265Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 74
+        },
+        "record": {
+          "evidence_id": "US-M17",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-mobile-round2",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded round2 reconstruction inspected at mobile viewport.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M17.jpg",
+          "dom": "US-M17.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:10.888Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 75
+        },
+        "record": {
+          "evidence_id": "US-M18",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-mobile-completed",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded completed reconstruction inspected at mobile viewport.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M18.jpg",
+          "dom": "US-M18.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:12.088Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 76
+        },
+        "record": {
+          "evidence_id": "US-M19",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-mobile-legacy",
+          "locale": "en",
+          "support_language": "Legacy: missing preference snapshot; renderer fallback",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded legacy reconstruction inspected at mobile viewport.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M19.jpg",
+          "dom": "US-M19.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:12.908Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 77
+        },
+        "record": {
+          "evidence_id": "US-M20",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-mobile-long",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded long reconstruction inspected at mobile viewport.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M20.jpg",
+          "dom": "US-M20.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:13.809Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 78
+        },
+        "record": {
+          "evidence_id": "US-M21",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-mobile-english",
+          "locale": "en",
+          "support_language": "english",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded english reconstruction inspected at mobile viewport.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M21.jpg",
+          "dom": "US-M21.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:15.474Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 79
+        },
+        "record": {
+          "evidence_id": "US-M22",
+          "criterion": "U2|U4|U5|U6|U7|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "resume-mobile-burmese",
+          "locale": "en",
+          "support_language": "burmese",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Seeded burmese reconstruction inspected at mobile viewport.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M22.jpg",
+          "dom": "US-M22.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:16.883Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 80
+        },
+        "record": {
+          "evidence_id": "US-M23",
+          "criterion": "U2|U6|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "burmese-mobile-light",
+          "locale": "my",
+          "support_language": "burmese",
+          "theme": "light",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Burmese UI and support inspected on mobile in light theme.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-M23.jpg",
+          "dom": "US-M23.dom.txt",
+          "observed_at_utc": "2026-10-02T10:11:43.913Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 100
+        },
+        "record": {
+          "evidence_id": "US-C01-I",
+          "criterion": "U2|U6|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "context-initial",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "dark",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Additional configuration initial bilingual support and hierarchy.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-C01-I.jpg",
+          "dom": "US-C01-I.dom.txt",
+          "observed_at_utc": "2026-10-02T10:14:35.479Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 104
+        },
+        "record": {
+          "evidence_id": "US-C02-I",
+          "criterion": "U2|U6|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "context-initial",
+          "locale": "my",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Additional configuration initial bilingual support and hierarchy.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-C02-I.jpg",
+          "dom": "US-C02-I.dom.txt",
+          "observed_at_utc": "2026-10-02T10:14:45.632Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 108
+        },
+        "record": {
+          "evidence_id": "US-C03-I",
+          "criterion": "U2|U6|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "context-initial",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Additional configuration initial bilingual support and hierarchy.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-C03-I.jpg",
+          "dom": "US-C03-I.dom.txt",
+          "observed_at_utc": "2026-10-02T10:14:52.363Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 112
+        },
+        "record": {
+          "evidence_id": "US-C04-I",
+          "criterion": "U2|U6|U9",
+          "screen": "Learning Session / Review or Resume",
+          "state": "context-initial",
+          "locale": "my",
+          "support_language": "bilingual",
+          "theme": "dark",
+          "viewport": "390x844",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Additional configuration initial bilingual support and hierarchy.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-C04-I.jpg",
+          "dom": "US-C04-I.dom.txt",
+          "observed_at_utc": "2026-10-02T10:14:58.875Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+          "line": 124
+        },
+        "record": {
+          "evidence_id": "US-F02",
+          "criterion": "U2|U4",
+          "screen": "Learning Session / Review or Resume",
+          "state": "followup-answer-desktop",
+          "locale": "en",
+          "support_language": "bilingual",
+          "theme": "light",
+          "viewport": "1440x900",
+          "keyboard_steps": "Not individually keyboard-tested in this capture; see named keyboard cases in report",
+          "actual_observation": "Relevant answer appears with remaining-question count.",
+          "severity": "0",
+          "task_effect": "No task obstruction observed in this capture",
+          "recovery_recommendation": "No corrective action identified in this capture",
+          "screenshot": "screenshots/US-F02.jpg",
+          "dom": "US-F02.dom.txt",
+          "observed_at_utc": "2026-10-02T10:18:35.210Z",
+          "evaluator": "Codex technical evaluator under user direction",
+          "language_competence": "AI-assisted visual/interaction inspection; no human native-language credential or independent Burmese quality judgement claimed"
+        }
+      }
+    ],
+    "observationCorrections": [
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observation_corrections.jsonl",
+          "line": 3
+        },
+        "record": {
+          "id": "US-D10",
+          "field": "note",
+          "corrected": "Initial bilingual sections are distinguishable; hint collapsed. No explicit round-0/status badge is displayed.",
+          "reason": "Clarified from captured DOM/screenshot"
+        }
+      }
+    ],
+    "layoutChecks": [
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 1
+        },
+        "record": {
+          "id": "US-D31",
+          "at": "2026-10-02T10:07:53.633Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 900,
+            "width": 1440
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 2
+        },
+        "record": {
+          "id": "US-D32",
+          "at": "2026-10-02T10:07:54.403Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 900,
+            "width": 1440
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 3
+        },
+        "record": {
+          "id": "US-D33",
+          "at": "2026-10-02T10:07:55.224Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 900,
+            "width": 1440
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 4
+        },
+        "record": {
+          "id": "US-D34",
+          "at": "2026-10-02T10:07:56.689Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 900,
+            "width": 1440
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 5
+        },
+        "record": {
+          "id": "US-D35",
+          "at": "2026-10-02T10:07:59.772Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 900,
+            "width": 1440
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 6
+        },
+        "record": {
+          "id": "US-D36",
+          "at": "2026-10-02T10:08:00.564Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 900,
+            "width": 1440
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 7
+        },
+        "record": {
+          "id": "US-D37",
+          "at": "2026-10-02T10:08:01.879Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 900,
+            "width": 1440
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 11
+        },
+        "record": {
+          "id": "US-M03",
+          "at": "2026-10-02T10:09:38.984Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 844,
+            "width": 390
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 12
+        },
+        "record": {
+          "id": "US-M16",
+          "at": "2026-10-02T10:11:09.289Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 844,
+            "width": 390
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 13
+        },
+        "record": {
+          "id": "US-M17",
+          "at": "2026-10-02T10:11:10.927Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 844,
+            "width": 390
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 14
+        },
+        "record": {
+          "id": "US-M18",
+          "at": "2026-10-02T10:11:12.137Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 844,
+            "width": 390
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 15
+        },
+        "record": {
+          "id": "US-M19",
+          "at": "2026-10-02T10:11:12.942Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 844,
+            "width": 390
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 16
+        },
+        "record": {
+          "id": "US-M20",
+          "at": "2026-10-02T10:11:13.834Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 844,
+            "width": 390
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 17
+        },
+        "record": {
+          "id": "US-M21",
+          "at": "2026-10-02T10:11:15.497Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 844,
+            "width": 390
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 18
+        },
+        "record": {
+          "id": "US-M22",
+          "at": "2026-10-02T10:11:16.908Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 844,
+            "width": 390
+          }
+        }
+      },
+      {
+        "source": {
+          "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+          "line": 19
+        },
+        "record": {
+          "id": "US-M23",
+          "at": "2026-10-02T10:11:43.933Z",
+          "horizontalOverflow": false,
+          "overflowingText": [],
+          "viewport": {
+            "height": 844,
+            "width": 390
+          }
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "usability/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "sources": [
+    {
+      "file": "usability/usability_inspection.md",
+      "sha256": "48880372a1db16c2d92f1414029b5afb8b0d5236db27e6c50699544b09400a18",
+      "bytes": 34913
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.jsonl",
+      "sha256": "f5297556f506a143043deca9be658788500b1e6a6188fb592998c2570094042a",
+      "bytes": 85125
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/navigation_addendum.jsonl",
+      "sha256": "bece2268baf35a6dcb40b41b15507ad51603ab3a4f90e2aaaf83ce0c2643d00a",
+      "bytes": 916
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observations.csv",
+      "sha256": "7f8f53537d4082d13c6f229b0fb73a1ec67a336a0afb07850af5b5e9a9122fdd",
+      "bytes": 84977
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/navigation_addendum.csv",
+      "sha256": "0013acb3f91d7b5be5fde6402c5724576b186b9ce73dde385c0af2b8bdafee3e",
+      "bytes": 1403
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/observation_corrections.jsonl",
+      "sha256": "c45a06e240405b4307122df981263e74614867b943d682f074ddae61b6ea670c",
+      "bytes": 2194
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/layout_checks.jsonl",
+      "sha256": "c7b6d1e7b732cd82e1407a2417b4546a77fec6b4384a21c6c57181b73939dddd",
+      "bytes": 3297
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_controls.jsonl",
+      "sha256": "45332c669385e6e8d377fcd8fdedb27b91bb465090fb6757f8ee532e6bdcf7de",
+      "bytes": 2077
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/provider.jsonl",
+      "sha256": "f3d878e70c4d16f43176c8b52b42eeaec47bce446fc36ffdc1889f0dbad6c420",
+      "bytes": 168233
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/fixture_outputs.jsonl",
+      "sha256": "6e136bba5969dddabae3a24589e6b8359285f7b8619b433fdfb4e3c29e358a3a",
+      "bytes": 25416
+    },
+    {
+      "file": "usability/issues.csv",
+      "sha256": "3f0f17f734001e8b17f30740fd3643c01e5a1206e9f67fecdb9103f9a16693cf",
+      "bytes": 3163
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/metadata.json",
+      "sha256": "147985908b6c5b9dc92f345426450e491194c742f58eec18d26863d008ee2923",
+      "bytes": 8736
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/ui_seeds.json",
+      "sha256": "9a8c4c12e2fa8d87c5405a6f208a874b3428a014b5c40172cac478749bcaebed",
+      "bytes": 536
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/route_seeds.json",
+      "sha256": "5d35d7d2f166810bf52064e417baf5da1cee45dea9121a36a13ea025d93d99ef",
+      "bytes": 1088
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/seeded_documents.json",
+      "sha256": "6021baa4c053b6aea9a43bb008a8fc14b34d3a455ed8e42f36cc49607acf7728",
+      "bytes": 53002
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/route_seed_documents.json",
+      "sha256": "449deceb3573605acc5666e14f62e027861cd7a8ded44e315f0fa5feb2fbe727",
+      "bytes": 72251
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/database_snapshot.json",
+      "sha256": "e1ab40b8126b5b746e0e05d82f5f9e078beaf3e64ba3dbc9844af2910d6800f4",
+      "bytes": 160582
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/verification.json",
+      "sha256": "0c824f05abdb91abe630a2579f30258a6f375a3082386151ad72accf8e745a7b",
+      "bytes": 705
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/manifest_verification.json",
+      "sha256": "5dde12af10ea4841f7f9711b9e38c56cfc79e2cd982ebf73177ddafd5ac3730c",
+      "bytes": 658
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/keyboard_modal_trace.json",
+      "sha256": "514c40bad0bbf209848375aeed3f43c42675419a121079e8f69a00a84cfaabe2",
+      "bytes": 3181
+    },
+    {
+      "file": "usability/raw/RUN-B01-20261002-USABILITY-01/navigation_addendum_verification.json",
+      "sha256": "c535720a8b155ff5fecb45c3bdcb031e1bd21960f22f545d1acfc989b459454d",
+      "bytes": 240
+    }
+  ]
+}

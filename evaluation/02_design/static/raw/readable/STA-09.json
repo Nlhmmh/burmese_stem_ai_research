@@ -1,0 +1,80 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "static",
+  "runId": "RUN-B01-20260930-STATIC-01",
+  "caseId": "STA-09",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "No separate machine log exists for this source-inspection finding. Use the case register and linked B01 source files.",
+    "Command output is a saved transcription, not a raw terminal stream. Historical counts are not current coverage."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "static/static_analysis_test_cases.md",
+      "line": 70
+    },
+    "record": {
+      "caseId": "STA-09",
+      "action": "Application-owned routing and lifecycle\nLocate response validation, route selection, status selection, completion, and maximum-round enforcement\nCriteria: F5–F7, F11, F13; RQ3",
+      "conditions": "B01 source and locked dependencies.\nInspect: `adaptation-routing.service.ts`, `adaptation.service.ts`, `session-lifecycle.service.ts`, constants",
+      "expectedResult": "Application—not the LLM—controls allowed responses, routes, status, identity, persistence permission, and round count; maximum generated round is 2",
+      "actualResult": "`MAX_ADAPTATION_ROUNDS = 2` is fixed in `lib/constants.ts:3`; the pure selector is `adaptation-routing.service.ts:31`; `adaptation.service.ts:208–225` rejects completed/invalid state, selects the route, and gates generation; `adaptation.service.ts:297–302` selects status. Completion is controlled in `session-lifecycle.service.ts:46–68`. Model output does not select route, lifecycle, identity, or round.",
+      "outcome": "Pass",
+      "limitation": "Scoped to the stated structural assertion."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "static/raw/readable/STA-09.json",
+      "derived": true
+    },
+    {
+      "label": "Route selector",
+      "file": "../../burmese_stem_ai/services/adaptation-routing.service.ts",
+      "derived": false
+    },
+    {
+      "label": "State guards",
+      "file": "../../burmese_stem_ai/services/adaptation.service.ts",
+      "derived": false
+    },
+    {
+      "label": "Lifecycle",
+      "file": "../../burmese_stem_ai/services/session-lifecycle.service.ts",
+      "derived": false
+    },
+    {
+      "label": "Round constant",
+      "file": "../../burmese_stem_ai/lib/constants.ts",
+      "derived": false
+    }
+  ],
+  "records": {},
+  "sharedEvidence": {
+    "file": "static/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "evidenceType": "recorded_source_inspection",
+  "sources": [
+    {
+      "file": "static/static_analysis_test_cases.md",
+      "sha256": "50d5d3f6589477327925602a8b15cce5ddafa02b50ece33534905cc526e32c16",
+      "bytes": 20499
+    },
+    {
+      "file": "static/raw/STA-RUN-01-command-log.md",
+      "sha256": "34d9b205b98bcd4da30e4a89f861af101b23234738f7a814bae4a225567ffa9c",
+      "bytes": 7250
+    },
+    {
+      "file": "static/raw/STA-03-coverage-summary.json",
+      "sha256": "ab5508ede4966baae8c5402c822d00b7c9522c6849a897addb7c0100952cb3df",
+      "bytes": 3776
+    }
+  ]
+}

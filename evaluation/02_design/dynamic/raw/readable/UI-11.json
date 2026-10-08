@@ -1,0 +1,1487 @@
+{
+  "format": "readable-evaluation-case-v1",
+  "evaluation": "dynamic",
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "caseId": "UI-11",
+  "notes": [
+    "Formatted saved evidence, not a new evaluation or a new Pass/Fail decision.",
+    "Records retain their original fields and source line numbers or JSON pointers.",
+    "Source/reference paths are relative to evaluation/02_design; line numbers are one-based and JSON pointers are zero-based.",
+    "The case register is a report, not an additional machine assertion.",
+    "Shared or unlabelled records stay in index.json; no case association is guessed.",
+    "API and manual browser records can use different sessions/actions. They are kept separate.",
+    "Provider requests were not directly counted. Missing counts are not zero."
+  ],
+  "caseRegister": {
+    "source": {
+      "file": "dynamic/dynamic_analysis.md",
+      "line": 81
+    },
+    "record": {
+      "caseId": "UI-11",
+      "action": "Provider error — manual browser capture.",
+      "conditions": "Retained synthetic DYN-OWNER-A sessions; Chrome 154.0.8037.59, 1440×900, English/light. Related workflow: DYN-13",
+      "expectedResult": "Safe error appears with HTTP 502 and retained question",
+      "actualResult": "With the controlled invalid provider key, the Home page retained “What is photosynthesis?” and displayed “Unable to prepare the explanation right now”. The corresponding HAR entry returned HTTP 502 with code `SESSION_GENERATION_FAILED` and no raw provider detail.",
+      "outcome": "Pass",
+      "limitation": "Technical desktop observation only; not participant usability or linguistic validation."
+    }
+  },
+  "evidenceReferences": [
+    {
+      "label": "Readable logs",
+      "file": "dynamic/raw/readable/UI-11.json",
+      "derived": true
+    },
+    {
+      "label": "UI-11 screen",
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/screenshots/11_provider_error.png",
+      "derived": false
+    },
+    {
+      "label": "Manual observation",
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "derived": false
+    },
+    {
+      "label": "Network response",
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "derived": false
+    }
+  ],
+  "records": {
+    "manualBrowserObservations": [
+      {
+        "source": {
+          "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+          "line": 35
+        },
+        "record": {
+          "Observation": "UI-11 Provider error",
+          "Related cases": "DYN-13",
+          "Expected visible result": "Safe error appears with HTTP 502 and retained question",
+          "Actual result": "With the controlled invalid provider key, the Home page retained “What is photosynthesis?” and displayed “Unable to prepare the explanation right now”. The corresponding HAR entry returned HTTP 502 with code `SESSION_GENERATION_FAILED` and no raw provider detail.",
+          "Execution status": "Executed",
+          "Outcome": "Pass",
+          "Screenshot/HAR locator": "`screenshots/11_provider_error.png`; `network.har` request at `2026-10-01T05:31:09.698Z`",
+          "Deviation or issue": "Controlled fault; expected result"
+        }
+      }
+    ],
+    "browserNetwork": [
+      {
+        "source": {
+          "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+          "pointer": "/log/entries/131"
+        },
+        "record": {
+          "_initiator": {
+            "type": "script",
+            "stack": {
+              "callFrames": [
+                {
+                  "functionName": "submitQuestion",
+                  "scriptId": "683",
+                  "url": "http://127.0.0.1:3100/_next/static/chunks/components_home_17s5q_m._.js",
+                  "lineNumber": 40,
+                  "columnNumber": 35
+                },
+                {
+                  "functionName": "onClick",
+                  "scriptId": "683",
+                  "url": "http://127.0.0.1:3100/_next/static/chunks/components_home_17s5q_m._.js",
+                  "lineNumber": 216,
+                  "columnNumber": 66
+                },
+                {
+                  "functionName": "executeDispatch",
+                  "scriptId": "638",
+                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                  "lineNumber": 10158,
+                  "columnNumber": 12
+                },
+                {
+                  "functionName": "runWithFiberInDEV",
+                  "scriptId": "638",
+                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                  "lineNumber": 760,
+                  "columnNumber": 73
+                },
+                {
+                  "functionName": "processDispatchQueue",
+                  "scriptId": "638",
+                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                  "lineNumber": 10184,
+                  "columnNumber": 40
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "638",
+                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                  "lineNumber": 10461,
+                  "columnNumber": 12
+                },
+                {
+                  "functionName": "batchedUpdates$1",
+                  "scriptId": "638",
+                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                  "lineNumber": 2043,
+                  "columnNumber": 43
+                },
+                {
+                  "functionName": "dispatchEventForPluginEventSystem",
+                  "scriptId": "638",
+                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                  "lineNumber": 10260,
+                  "columnNumber": 8
+                },
+                {
+                  "functionName": "dispatchEvent",
+                  "scriptId": "638",
+                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                  "lineNumber": 12857,
+                  "columnNumber": 36
+                },
+                {
+                  "functionName": "dispatchDiscreteEvent",
+                  "scriptId": "638",
+                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                  "lineNumber": 12839,
+                  "columnNumber": 63
+                }
+              ],
+              "parent": {
+                "description": "<button>",
+                "callFrames": [
+                  {
+                    "functionName": "",
+                    "scriptId": "648",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_09qp5pe._.js",
+                    "lineNumber": 7310,
+                    "columnNumber": 102
+                  },
+                  {
+                    "functionName": "HomeInquiry",
+                    "scriptId": "683",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/components_home_17s5q_m._.js",
+                    "lineNumber": 214,
+                    "columnNumber": 246
+                  },
+                  {
+                    "functionName": "react_stack_bottom_frame",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 14893,
+                    "columnNumber": 23
+                  },
+                  {
+                    "functionName": "renderWithHooksAgain",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 4479,
+                    "columnNumber": 23
+                  },
+                  {
+                    "functionName": "renderWithHooks",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 4430,
+                    "columnNumber": 27
+                  },
+                  {
+                    "functionName": "updateFunctionComponent",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 5891,
+                    "columnNumber": 20
+                  },
+                  {
+                    "functionName": "beginWork",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 6492,
+                    "columnNumber": 539
+                  },
+                  {
+                    "functionName": "replayBeginWork",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 9409,
+                    "columnNumber": 155
+                  },
+                  {
+                    "functionName": "runWithFiberInDEV",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 760,
+                    "columnNumber": 73
+                  },
+                  {
+                    "functionName": "replaySuspendedUnitOfWork",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 9389,
+                    "columnNumber": 19
+                  },
+                  {
+                    "functionName": "renderRootConcurrent",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 9322,
+                    "columnNumber": 140
+                  },
+                  {
+                    "functionName": "performWorkOnRoot",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 8890,
+                    "columnNumber": 149
+                  },
+                  {
+                    "functionName": "performWorkOnRootViaSchedulerTask",
+                    "scriptId": "638",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                    "lineNumber": 10084,
+                    "columnNumber": 8
+                  },
+                  {
+                    "functionName": "performWorkUntilDeadline",
+                    "scriptId": "641",
+                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js",
+                    "lineNumber": 2646,
+                    "columnNumber": 63
+                  }
+                ],
+                "parent": {
+                  "description": "\"use client\"",
+                  "callFrames": [
+                    {
+                      "functionName": "Home",
+                      "scriptId": "681",
+                      "url": "about://React/Server/file:///Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__0bsp950._.js?9",
+                      "lineNumber": 37,
+                      "columnNumber": 262
+                    },
+                    {
+                      "functionName": "initializeElement",
+                      "scriptId": "640",
+                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                      "lineNumber": 1168,
+                      "columnNumber": 415
+                    },
+                    {
+                      "functionName": "reviveModel",
+                      "scriptId": "640",
+                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                      "lineNumber": 2617,
+                      "columnNumber": 20
+                    },
+                    {
+                      "functionName": "parseModel",
+                      "scriptId": "640",
+                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                      "lineNumber": 2538,
+                      "columnNumber": 15
+                    },
+                    {
+                      "functionName": "initializeModelChunk",
+                      "scriptId": "640",
+                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                      "lineNumber": 1099,
+                      "columnNumber": 24
+                    },
+                    {
+                      "functionName": "resolveModelChunk",
+                      "scriptId": "640",
+                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                      "lineNumber": 999,
+                      "columnNumber": 42
+                    },
+                    {
+                      "functionName": "processFullStringRow",
+                      "scriptId": "640",
+                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                      "lineNumber": 2494,
+                      "columnNumber": 125
+                    },
+                    {
+                      "functionName": "processFullBinaryRow",
+                      "scriptId": "640",
+                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                      "lineNumber": 2414,
+                      "columnNumber": 8
+                    },
+                    {
+                      "functionName": "processBinaryChunk",
+                      "scriptId": "640",
+                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                      "lineNumber": 2523,
+                      "columnNumber": 220
+                    },
+                    {
+                      "functionName": "progress",
+                      "scriptId": "640",
+                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                      "lineNumber": 2710,
+                      "columnNumber": 12
+                    }
+                  ],
+                  "parent": {
+                    "description": "<Home>",
+                    "callFrames": [
+                      {
+                        "functionName": "initializeFakeTask",
+                        "scriptId": "640",
+                        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                        "lineNumber": 1994,
+                        "columnNumber": 116
+                      },
+                      {
+                        "functionName": "initializeDebugInfo",
+                        "scriptId": "640",
+                        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                        "lineNumber": 2012,
+                        "columnNumber": 38
+                      },
+                      {
+                        "functionName": "initializeDebugChunk",
+                        "scriptId": "640",
+                        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                        "lineNumber": 1059,
+                        "columnNumber": 45
+                      },
+                      {
+                        "functionName": "processFullStringRow",
+                        "scriptId": "640",
+                        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                        "lineNumber": 2468,
+                        "columnNumber": 292
+                      },
+                      {
+                        "functionName": "processFullBinaryRow",
+                        "scriptId": "640",
+                        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                        "lineNumber": 2414,
+                        "columnNumber": 8
+                      },
+                      {
+                        "functionName": "processBinaryChunk",
+                        "scriptId": "640",
+                        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                        "lineNumber": 2523,
+                        "columnNumber": 220
+                      },
+                      {
+                        "functionName": "progress",
+                        "scriptId": "640",
+                        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                        "lineNumber": 2710,
+                        "columnNumber": 12
+                      }
+                    ],
+                    "parent": {
+                      "description": "\"use server\"",
+                      "callFrames": [
+                        {
+                          "functionName": "ResponseInstance",
+                          "scriptId": "640",
+                          "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                          "lineNumber": 1691,
+                          "columnNumber": 61
+                        },
+                        {
+                          "functionName": "createResponseFromOptions",
+                          "scriptId": "640",
+                          "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                          "lineNumber": 2649,
+                          "columnNumber": 15
+                        },
+                        {
+                          "functionName": "",
+                          "scriptId": "640",
+                          "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                          "lineNumber": 2833,
+                          "columnNumber": 23
+                        },
+                        {
+                          "functionName": "createFromNextFetch",
+                          "scriptId": "642",
+                          "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                          "lineNumber": 5006,
+                          "columnNumber": 11
+                        },
+                        {
+                          "functionName": "decodeFlightResponse",
+                          "scriptId": "642",
+                          "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                          "lineNumber": 4875,
+                          "columnNumber": 11
+                        },
+                        {
+                          "functionName": "createFetch",
+                          "scriptId": "642",
+                          "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                          "lineNumber": 4918,
+                          "columnNumber": 58
+                        }
+                      ],
+                      "parent": {
+                        "description": "await",
+                        "callFrames": [
+                          {
+                            "functionName": "fetchServerResponse",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 4600,
+                            "columnNumber": 26
+                          },
+                          {
+                            "functionName": "navigateToUnknownRoute",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 11641,
+                            "columnNumber": 89
+                          },
+                          {
+                            "functionName": "navigateImpl",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 11522,
+                            "columnNumber": 11
+                          },
+                          {
+                            "functionName": "navigate",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 11492,
+                            "columnNumber": 11
+                          },
+                          {
+                            "functionName": "navigateReducer",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 6792,
+                            "columnNumber": 36
+                          },
+                          {
+                            "functionName": "clientReducer",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 7463,
+                            "columnNumber": 60
+                          },
+                          {
+                            "functionName": "action",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 1098,
+                            "columnNumber": 54
+                          },
+                          {
+                            "functionName": "runAction",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 1000,
+                            "columnNumber": 37
+                          },
+                          {
+                            "functionName": "dispatchAction",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 1063,
+                            "columnNumber": 8
+                          },
+                          {
+                            "functionName": "dispatch",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 1096,
+                            "columnNumber": 39
+                          },
+                          {
+                            "functionName": "",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 15288,
+                            "columnNumber": 28
+                          },
+                          {
+                            "functionName": "startTransition",
+                            "scriptId": "638",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                            "lineNumber": 5275,
+                            "columnNumber": 30
+                          },
+                          {
+                            "functionName": "nextDispatch",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 15287,
+                            "columnNumber": 12
+                          },
+                          {
+                            "functionName": "dispatchAppRouterAction",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 15247,
+                            "columnNumber": 4
+                          },
+                          {
+                            "functionName": "dispatchNavigateAction",
+                            "scriptId": "642",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                            "lineNumber": 1145,
+                            "columnNumber": 48
+                          },
+                          {
+                            "functionName": "",
+                            "scriptId": "648",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_09qp5pe._.js",
+                            "lineNumber": 3482,
+                            "columnNumber": 12
+                          },
+                          {
+                            "functionName": "startTransition",
+                            "scriptId": "641",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js",
+                            "lineNumber": 1504,
+                            "columnNumber": 30
+                          },
+                          {
+                            "functionName": "linkClicked",
+                            "scriptId": "648",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_09qp5pe._.js",
+                            "lineNumber": 3481,
+                            "columnNumber": 23
+                          },
+                          {
+                            "functionName": "onClick",
+                            "scriptId": "648",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_09qp5pe._.js",
+                            "lineNumber": 3728,
+                            "columnNumber": 12
+                          },
+                          {
+                            "functionName": "executeDispatch",
+                            "scriptId": "638",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                            "lineNumber": 10158,
+                            "columnNumber": 12
+                          },
+                          {
+                            "functionName": "runWithFiberInDEV",
+                            "scriptId": "638",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                            "lineNumber": 760,
+                            "columnNumber": 73
+                          },
+                          {
+                            "functionName": "processDispatchQueue",
+                            "scriptId": "638",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                            "lineNumber": 10184,
+                            "columnNumber": 40
+                          },
+                          {
+                            "functionName": "",
+                            "scriptId": "638",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                            "lineNumber": 10461,
+                            "columnNumber": 12
+                          },
+                          {
+                            "functionName": "batchedUpdates$1",
+                            "scriptId": "638",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                            "lineNumber": 2043,
+                            "columnNumber": 43
+                          },
+                          {
+                            "functionName": "dispatchEventForPluginEventSystem",
+                            "scriptId": "638",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                            "lineNumber": 10260,
+                            "columnNumber": 8
+                          },
+                          {
+                            "functionName": "dispatchEvent",
+                            "scriptId": "638",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                            "lineNumber": 12857,
+                            "columnNumber": 36
+                          },
+                          {
+                            "functionName": "dispatchDiscreteEvent",
+                            "scriptId": "638",
+                            "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                            "lineNumber": 12839,
+                            "columnNumber": 63
+                          }
+                        ],
+                        "parent": {
+                          "description": "<a>",
+                          "callFrames": [
+                            {
+                              "functionName": "",
+                              "scriptId": "641",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js",
+                              "lineNumber": 1152,
+                              "columnNumber": 88
+                            },
+                            {
+                              "functionName": "LinkComponent",
+                              "scriptId": "648",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_09qp5pe._.js",
+                              "lineNumber": 3778,
+                              "columnNumber": 49
+                            },
+                            {
+                              "functionName": "react_stack_bottom_frame",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 14893,
+                              "columnNumber": 23
+                            },
+                            {
+                              "functionName": "renderWithHooksAgain",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 4479,
+                              "columnNumber": 23
+                            },
+                            {
+                              "functionName": "renderWithHooks",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 4430,
+                              "columnNumber": 27
+                            },
+                            {
+                              "functionName": "updateFunctionComponent",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 5891,
+                              "columnNumber": 20
+                            },
+                            {
+                              "functionName": "beginWork",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 6517,
+                              "columnNumber": 23
+                            },
+                            {
+                              "functionName": "runWithFiberInDEV",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 760,
+                              "columnNumber": 73
+                            },
+                            {
+                              "functionName": "performUnitOfWork",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 9384,
+                              "columnNumber": 96
+                            },
+                            {
+                              "functionName": "workLoopConcurrentByScheduler",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 9380,
+                              "columnNumber": 57
+                            },
+                            {
+                              "functionName": "renderRootConcurrent",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 9363,
+                              "columnNumber": 70
+                            },
+                            {
+                              "functionName": "performWorkOnRoot",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 8890,
+                              "columnNumber": 149
+                            },
+                            {
+                              "functionName": "performWorkOnRootViaSchedulerTask",
+                              "scriptId": "638",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                              "lineNumber": 10084,
+                              "columnNumber": 8
+                            },
+                            {
+                              "functionName": "performWorkUntilDeadline",
+                              "scriptId": "641",
+                              "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js",
+                              "lineNumber": 2646,
+                              "columnNumber": 63
+                            }
+                          ],
+                          "parent": {
+                            "description": "<LinkComponent>",
+                            "callFrames": [
+                              {
+                                "functionName": "",
+                                "scriptId": "648",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_09qp5pe._.js",
+                                "lineNumber": 7310,
+                                "columnNumber": 102
+                              },
+                              {
+                                "functionName": "AppHeader",
+                                "scriptId": "650",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/_0tp5oxx._.js",
+                                "lineNumber": 95,
+                                "columnNumber": 218
+                              },
+                              {
+                                "functionName": "react_stack_bottom_frame",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 14893,
+                                "columnNumber": 23
+                              },
+                              {
+                                "functionName": "renderWithHooksAgain",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 4479,
+                                "columnNumber": 23
+                              },
+                              {
+                                "functionName": "renderWithHooks",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 4430,
+                                "columnNumber": 27
+                              },
+                              {
+                                "functionName": "updateFunctionComponent",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 5891,
+                                "columnNumber": 20
+                              },
+                              {
+                                "functionName": "beginWork",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 6492,
+                                "columnNumber": 539
+                              },
+                              {
+                                "functionName": "runWithFiberInDEV",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 760,
+                                "columnNumber": 73
+                              },
+                              {
+                                "functionName": "performUnitOfWork",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 9384,
+                                "columnNumber": 96
+                              },
+                              {
+                                "functionName": "workLoopConcurrentByScheduler",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 9380,
+                                "columnNumber": 57
+                              },
+                              {
+                                "functionName": "renderRootConcurrent",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 9363,
+                                "columnNumber": 70
+                              },
+                              {
+                                "functionName": "performWorkOnRoot",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 8890,
+                                "columnNumber": 149
+                              },
+                              {
+                                "functionName": "performWorkOnRootViaSchedulerTask",
+                                "scriptId": "638",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                "lineNumber": 10084,
+                                "columnNumber": 8
+                              },
+                              {
+                                "functionName": "performWorkUntilDeadline",
+                                "scriptId": "641",
+                                "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js",
+                                "lineNumber": 2646,
+                                "columnNumber": 63
+                              }
+                            ],
+                            "parent": {
+                              "description": "\"use client\"",
+                              "callFrames": [
+                                {
+                                  "functionName": "RootLayout",
+                                  "scriptId": "663",
+                                  "url": "about://React/Server/file:///Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__14l36sz._.js?4",
+                                  "lineNumber": 129,
+                                  "columnNumber": 271
+                                },
+                                {
+                                  "functionName": "initializeElement",
+                                  "scriptId": "640",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                  "lineNumber": 1168,
+                                  "columnNumber": 415
+                                },
+                                {
+                                  "functionName": "reviveModel",
+                                  "scriptId": "640",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                  "lineNumber": 2617,
+                                  "columnNumber": 20
+                                },
+                                {
+                                  "functionName": "parseModel",
+                                  "scriptId": "640",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                  "lineNumber": 2538,
+                                  "columnNumber": 15
+                                },
+                                {
+                                  "functionName": "initializeModelChunk",
+                                  "scriptId": "640",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                  "lineNumber": 1099,
+                                  "columnNumber": 24
+                                },
+                                {
+                                  "functionName": "readChunk",
+                                  "scriptId": "640",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                  "lineNumber": 849,
+                                  "columnNumber": 16
+                                },
+                                {
+                                  "functionName": "react_stack_bottom_frame",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 14957,
+                                  "columnNumber": 19
+                                },
+                                {
+                                  "functionName": "resolveLazy",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 3670,
+                                  "columnNumber": 19
+                                },
+                                {
+                                  "functionName": "createChild",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 3825,
+                                  "columnNumber": 35
+                                },
+                                {
+                                  "functionName": "reconcileChildrenArray",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 3933,
+                                  "columnNumber": 71
+                                },
+                                {
+                                  "functionName": "reconcileChildFibersImpl",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 4040,
+                                  "columnNumber": 50
+                                },
+                                {
+                                  "functionName": "",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 4065,
+                                  "columnNumber": 38
+                                },
+                                {
+                                  "functionName": "reconcileChildren",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 5704,
+                                  "columnNumber": 50
+                                },
+                                {
+                                  "functionName": "updateContextProvider",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 6365,
+                                  "columnNumber": 8
+                                },
+                                {
+                                  "functionName": "beginWork",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 6600,
+                                  "columnNumber": 23
+                                },
+                                {
+                                  "functionName": "runWithFiberInDEV",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 760,
+                                  "columnNumber": 73
+                                },
+                                {
+                                  "functionName": "performUnitOfWork",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 9384,
+                                  "columnNumber": 96
+                                },
+                                {
+                                  "functionName": "workLoopConcurrentByScheduler",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 9380,
+                                  "columnNumber": 57
+                                },
+                                {
+                                  "functionName": "renderRootConcurrent",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 9363,
+                                  "columnNumber": 70
+                                },
+                                {
+                                  "functionName": "performWorkOnRoot",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 8890,
+                                  "columnNumber": 149
+                                },
+                                {
+                                  "functionName": "performWorkOnRootViaSchedulerTask",
+                                  "scriptId": "638",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+                                  "lineNumber": 10084,
+                                  "columnNumber": 8
+                                },
+                                {
+                                  "functionName": "performWorkUntilDeadline",
+                                  "scriptId": "641",
+                                  "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js",
+                                  "lineNumber": 2646,
+                                  "columnNumber": 63
+                                }
+                              ],
+                              "parent": {
+                                "description": "<RootLayout>",
+                                "callFrames": [
+                                  {
+                                    "functionName": "initializeFakeTask",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 1994,
+                                    "columnNumber": 116
+                                  },
+                                  {
+                                    "functionName": "initializeDebugInfo",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 2012,
+                                    "columnNumber": 38
+                                  },
+                                  {
+                                    "functionName": "fulfillReference",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 1261,
+                                    "columnNumber": 30
+                                  },
+                                  {
+                                    "functionName": "wakeChunk",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 899,
+                                    "columnNumber": 63
+                                  },
+                                  {
+                                    "functionName": "fulfillReference",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 1286,
+                                    "columnNumber": 257
+                                  },
+                                  {
+                                    "functionName": "wakeChunk",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 899,
+                                    "columnNumber": 63
+                                  },
+                                  {
+                                    "functionName": "fulfillReference",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 1286,
+                                    "columnNumber": 257
+                                  },
+                                  {
+                                    "functionName": "wakeChunk",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 899,
+                                    "columnNumber": 63
+                                  },
+                                  {
+                                    "functionName": "wakeChunkIfInitialized",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 924,
+                                    "columnNumber": 16
+                                  },
+                                  {
+                                    "functionName": "resolveModelChunk",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 999,
+                                    "columnNumber": 71
+                                  },
+                                  {
+                                    "functionName": "processFullStringRow",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 2494,
+                                    "columnNumber": 125
+                                  },
+                                  {
+                                    "functionName": "processFullBinaryRow",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 2414,
+                                    "columnNumber": 8
+                                  },
+                                  {
+                                    "functionName": "processBinaryChunk",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 2523,
+                                    "columnNumber": 220
+                                  },
+                                  {
+                                    "functionName": "progress",
+                                    "scriptId": "640",
+                                    "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                    "lineNumber": 2697,
+                                    "columnNumber": 19
+                                  }
+                                ],
+                                "parent": {
+                                  "description": "\"use server\"",
+                                  "callFrames": [
+                                    {
+                                      "functionName": "ResponseInstance",
+                                      "scriptId": "640",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                      "lineNumber": 1691,
+                                      "columnNumber": 61
+                                    },
+                                    {
+                                      "functionName": "createResponseFromOptions",
+                                      "scriptId": "640",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                      "lineNumber": 2649,
+                                      "columnNumber": 15
+                                    },
+                                    {
+                                      "functionName": "",
+                                      "scriptId": "640",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+                                      "lineNumber": 2848,
+                                      "columnNumber": 23
+                                    },
+                                    {
+                                      "functionName": "module evaluation",
+                                      "scriptId": "642",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                                      "lineNumber": 403,
+                                      "columnNumber": 28
+                                    },
+                                    {
+                                      "functionName": "",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 1498,
+                                      "columnNumber": 26
+                                    },
+                                    {
+                                      "functionName": "runModuleExecutionHooks",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 1827,
+                                      "columnNumber": 12
+                                    },
+                                    {
+                                      "functionName": "instantiateModuleShared",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 1496,
+                                      "columnNumber": 8
+                                    },
+                                    {
+                                      "functionName": "instantiateModule",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 1812,
+                                      "columnNumber": 11
+                                    },
+                                    {
+                                      "functionName": "getOrInstantiateModuleFromParent",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 1795,
+                                      "columnNumber": 11
+                                    },
+                                    {
+                                      "functionName": "commonJsRequire",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 374,
+                                      "columnNumber": 11
+                                    },
+                                    {
+                                      "functionName": "",
+                                      "scriptId": "642",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                                      "lineNumber": 617,
+                                      "columnNumber": 46
+                                    },
+                                    {
+                                      "functionName": "",
+                                      "scriptId": "642",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                                      "lineNumber": 93,
+                                      "columnNumber": 8
+                                    },
+                                    {
+                                      "functionName": "loadScriptsInSequence",
+                                      "scriptId": "642",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                                      "lineNumber": 57,
+                                      "columnNumber": 15
+                                    },
+                                    {
+                                      "functionName": "appBootstrap",
+                                      "scriptId": "642",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                                      "lineNumber": 86,
+                                      "columnNumber": 4
+                                    },
+                                    {
+                                      "functionName": "module evaluation",
+                                      "scriptId": "642",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+                                      "lineNumber": 616,
+                                      "columnNumber": 31
+                                    },
+                                    {
+                                      "functionName": "",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 1498,
+                                      "columnNumber": 26
+                                    },
+                                    {
+                                      "functionName": "runModuleExecutionHooks",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 1827,
+                                      "columnNumber": 12
+                                    },
+                                    {
+                                      "functionName": "instantiateModuleShared",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 1496,
+                                      "columnNumber": 8
+                                    },
+                                    {
+                                      "functionName": "instantiateModule",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 1812,
+                                      "columnNumber": 11
+                                    },
+                                    {
+                                      "functionName": "getOrInstantiateRuntimeModule",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 1773,
+                                      "columnNumber": 11
+                                    },
+                                    {
+                                      "functionName": "registerChunk",
+                                      "scriptId": "647",
+                                      "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                      "lineNumber": 2189,
+                                      "columnNumber": 20
+                                    }
+                                  ],
+                                  "parent": {
+                                    "description": "await",
+                                    "callFrames": [
+                                      {
+                                        "functionName": "registerChunk",
+                                        "scriptId": "647",
+                                        "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                        "lineNumber": 2117,
+                                        "columnNumber": 19
+                                      },
+                                      {
+                                        "functionName": "",
+                                        "scriptId": "647",
+                                        "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                        "lineNumber": 2476,
+                                        "columnNumber": 17
+                                      },
+                                      {
+                                        "functionName": "",
+                                        "scriptId": "647",
+                                        "url": "http://127.0.0.1:3100/_next/static/chunks/turbopack-_08bm286._.js",
+                                        "lineNumber": 2480,
+                                        "columnNumber": 2
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "_priority": "High",
+          "_resourceType": "fetch",
+          "cache": {},
+          "connection": "3100",
+          "request": {
+            "method": "POST",
+            "url": "http://127.0.0.1:3100/api/sessions",
+            "httpVersion": "HTTP/1.1",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "*/*"
+              },
+              {
+                "name": "Accept-Encoding",
+                "value": "gzip, deflate, br, zstd"
+              },
+              {
+                "name": "Accept-Language",
+                "value": "en-US,en;q=0.9,my;q=0.8"
+              },
+              {
+                "name": "Connection",
+                "value": "keep-alive"
+              },
+              {
+                "name": "Content-Length",
+                "value": "38"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Host",
+                "value": "127.0.0.1:3100"
+              },
+              {
+                "name": "Origin",
+                "value": "http://127.0.0.1:3100"
+              },
+              {
+                "name": "Referer",
+                "value": "http://127.0.0.1:3100/"
+              },
+              {
+                "name": "Sec-Fetch-Dest",
+                "value": "empty"
+              },
+              {
+                "name": "Sec-Fetch-Mode",
+                "value": "cors"
+              },
+              {
+                "name": "Sec-Fetch-Site",
+                "value": "same-origin"
+              },
+              {
+                "name": "User-Agent",
+                "value": "Mozilla/5.0 (Linux; Android 16; Pixel 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Mobile Safari/537.36"
+              },
+              {
+                "name": "sec-ch-ua",
+                "value": "\"Google Chrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+              },
+              {
+                "name": "sec-ch-ua-mobile",
+                "value": "?1"
+              },
+              {
+                "name": "sec-ch-ua-platform",
+                "value": "\"Android\""
+              }
+            ],
+            "queryString": [],
+            "cookies": [],
+            "headersSize": 691,
+            "bodySize": 38,
+            "postData": {
+              "mimeType": "application/json",
+              "text": "{\"question\":\"What is photosynthesis?\"}"
+            }
+          },
+          "response": {
+            "status": 502,
+            "statusText": "Bad Gateway",
+            "httpVersion": "HTTP/1.1",
+            "headers": [
+              {
+                "name": "Connection",
+                "value": "keep-alive"
+              },
+              {
+                "name": "Date",
+                "value": "Thu, 01 Oct 2026 05:31:10 GMT"
+              },
+              {
+                "name": "Keep-Alive",
+                "value": "timeout=5"
+              },
+              {
+                "name": "Transfer-Encoding",
+                "value": "chunked"
+              },
+              {
+                "name": "content-type",
+                "value": "application/json"
+              },
+              {
+                "name": "vary",
+                "value": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+              }
+            ],
+            "cookies": [],
+            "content": {
+              "size": 102,
+              "mimeType": "application/json",
+              "compression": -11,
+              "text": "{\"error\":{\"code\":\"SESSION_GENERATION_FAILED\",\"message\":\"Unable to prepare the explanation right now\"}}"
+            },
+            "redirectURL": "",
+            "headersSize": 259,
+            "bodySize": 113,
+            "_transferSize": 372,
+            "_error": null,
+            "_fetchedViaServiceWorker": false
+          },
+          "serverIPAddress": "127.0.0.1",
+          "startedDateTime": "2026-10-01T05:31:09.698Z",
+          "time": 619.8049999853336,
+          "timings": {
+            "blocked": 2.174000012882054,
+            "dns": 0.028000000000000025,
+            "ssl": -1,
+            "connect": 0.524,
+            "send": 0.679,
+            "wait": 615.4709999999218,
+            "receive": 0.9289999725297093,
+            "_blocked_queueing": 1.6070000128820539,
+            "_workerStart": -1,
+            "_workerReady": -1,
+            "_workerFetchStart": -1,
+            "_workerRespondWithSettled": -1
+          },
+          "_connectionId": "760546",
+          "pageref": "page_4"
+        },
+        "decodedJson": {
+          "requestBody": {
+            "question": "What is photosynthesis?"
+          },
+          "responseBody": {
+            "error": {
+              "code": "SESSION_GENERATION_FAILED",
+              "message": "Unable to prepare the explanation right now"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "sharedEvidence": {
+    "file": "dynamic/raw/readable/index.json",
+    "pointer": "/sharedRecords"
+  },
+  "measurements": {
+    "providerCalls": {
+      "status": "not_instrumented",
+      "value": null
+    }
+  },
+  "sources": [
+    {
+      "file": "dynamic/dynamic_analysis.md",
+      "sha256": "3bd81fe0568294d1c5f3d0bc02ca883ac9d54b3a4f74e5ecbd8faf7e20cd3699",
+      "bytes": 51923
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-api-database.jsonl",
+      "sha256": "4f2960b4cfa44c3da887ff8c4a068eb5ed253c614afd031b4c06978e79ce64b7",
+      "bytes": 229874
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-summary.json",
+      "sha256": "08a5fdc71d663c38c1b691aa8a712b3fc3fb91a21cf859c74024776325f79f04",
+      "bytes": 13396
+    },
+    {
+      "file": "dynamic/timings.csv",
+      "sha256": "0978ec9dfe0ddd14ac26a99204103fe7ebde7bba4d60dacf7237c6b292bb3d93",
+      "bytes": 2775
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-command-log.md",
+      "sha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "bytes": 5301
+    },
+    {
+      "file": "dynamic/raw/DYN-RUN-01-adjudication.md",
+      "sha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "bytes": 654
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "sha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "bytes": 9208
+    },
+    {
+      "file": "dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/network.har",
+      "sha256": "74388f6df21d6155f2b50191ade47ed52726bf95db6dd956edf0eb0f41e6811f",
+      "bytes": 27639551
+    }
+  ]
+}
