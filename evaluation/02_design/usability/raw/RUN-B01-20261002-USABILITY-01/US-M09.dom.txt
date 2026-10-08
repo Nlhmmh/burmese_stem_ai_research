@@ -1,0 +1,63 @@
+- banner:
+  - link "Logo":
+    - /url: /
+    - img "Logo"
+  - navigation "Primary navigation":
+    - link "New Inquiry":
+      - /url: /
+    - link "History":
+      - /url: /history
+    - button "မြန်မာဘာသာသို့ ပြောင်းရန်": မြန်မာ
+    - button "Toggle color theme": ◑
+- alert
+- main:
+  - generic: biology, plant physiology
+  - heading "photosynthesis" [level=1]
+  - paragraph: STEM Learning Session
+  - generic: 📖
+  - heading "Simple Explanation" [level=2]
+  - paragraph: Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.
+  - generic: ◉
+  - heading "Real-World Example" [level=2]
+  - paragraph: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.
+  - generic: ⚙
+  - heading "Technical Explanation" [level=2]
+  - paragraph: Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.
+  - generic: ◇
+  - heading "Think About This" [level=2]
+  - paragraph: What inputs does a plant need for photosynthesis, and what useful product does it make?
+  - button "Show Hint"
+  - heading "Still have a question about photosynthesis?" [level=2]
+  - textbox "Follow-up question":
+    - /placeholder: Ask a follow-up about this concept...
+  - button "Ask" [disabled]
+  - paragraph: 2 follow-ups remaining
+  - heading "Understanding Check" [level=2]
+  - generic "Support and response history":
+    - heading "Support and response history" [level=3]
+    - heading "Self-reported responses" [level=4]
+    - article:
+      - paragraph: Response 1
+      - term: Self-reported support
+      - definition: More support requested
+      - term: Requested help
+      - definition: Help with Burmese / English terms
+      - term: Support route
+      - definition: Bilingual language support
+      - term: Adaptation round
+      - definition: 0 → 1
+    - heading "Stored adaptations" [level=4]
+    - paragraph: Adaptation round 1
+    - paragraph: Adapted — Clarification
+    - paragraph: "clarification fixture 1: For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow."
+    - paragraph: "clarification fixture 1: ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+  - paragraph: How do you feel after the additional explanation?
+  - button "I understand":
+    - generic: 😊
+    - generic: I understand
+  - button "I partially understand":
+    - generic: 😐
+    - generic: I partially understand
+  - button "I need more explanation":
+    - generic: 😕
+    - generic: I need more explanation

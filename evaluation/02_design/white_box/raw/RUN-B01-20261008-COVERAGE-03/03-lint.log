@@ -1,0 +1,5 @@
+$ npm run lint -- --max-warnings 0
+
+> burmese_stem_ai@0.1.0 lint
+> eslint --max-warnings 0
+

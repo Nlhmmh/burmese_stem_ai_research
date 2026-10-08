@@ -1,0 +1,118 @@
+{
+  "revisionId": "AUTHOR-WORDING-01",
+  "userFacingReviewDate": "4 October 2026, Pacific/Auckland",
+  "checkedAt": "2026-10-04T00:08:44.292Z",
+  "paperHash": "fd8b72d407c56383c3c6c7ddef015faee65b322929a522c508715c4c8a201dc8",
+  "bodyHash": "a3fae0672c7df28ad0808e61e97493e586a8226000fbc9ba2d775753ef229388",
+  "previousPaperHash": "3352a828eb04a5d28cdb7f356e17a141545ebd61acf43fd7bd3d099abc292185",
+  "handOffHash": "7b2cab6a0640533bd57113144e115b2bf179b47b549c60bd6c945038f59a0c3f",
+  "headings": 28,
+  "tables": 6,
+  "figures": 2,
+  "referenceEntries": 13,
+  "citations": [
+    {
+      "author": "Athukorala",
+      "count": 2
+    },
+    {
+      "author": "Dunlosky",
+      "count": 1
+    },
+    {
+      "author": "Goodhue",
+      "count": 4
+    },
+    {
+      "author": "Hevner",
+      "count": 4
+    },
+    {
+      "author": "Htet",
+      "count": 4
+    },
+    {
+      "author": "Ji",
+      "count": 1
+    },
+    {
+      "author": "Kleidermacher",
+      "count": 2
+    },
+    {
+      "author": "Kuzu",
+      "count": 1
+    },
+    {
+      "author": "Sweller",
+      "count": 1
+    },
+    {
+      "author": "Tran",
+      "count": 1
+    },
+    {
+      "author": "University of Auckland",
+      "count": 1
+    },
+    {
+      "author": "van de Pol",
+      "count": 4
+    },
+    {
+      "author": "Venable",
+      "count": 3
+    }
+  ],
+  "metrics": {
+    "counter": "Local Unicode tokens, internal apostrophes/hyphens retained; link labels counted, URLs/image alt text excluded. Body includes tables/captions/notes but not headings or figure-internal text.",
+    "sections": [
+      {
+        "section": 1,
+        "bodyTokensIncludingTablesAndNotes": 250
+      },
+      {
+        "section": 2,
+        "bodyTokensIncludingTablesAndNotes": 1578
+      },
+      {
+        "section": 3,
+        "bodyTokensIncludingTablesAndNotes": 2837
+      },
+      {
+        "section": 4,
+        "bodyTokensIncludingTablesAndNotes": 827
+      },
+      {
+        "section": 5,
+        "bodyTokensIncludingTablesAndNotes": 150
+      }
+    ],
+    "mainBodyWords": 5642,
+    "appendixWords": 159,
+    "abstractWords": 140,
+    "titleWhitespaceWords": 8,
+    "keywords": 6,
+    "referenceWords": 331,
+    "mainBodyPlusAppendixPlusAbstract": 5941,
+    "bodyCountsAreGuidance": true,
+    "WordCountVerified": false
+  },
+  "rubricSourcesRead": [
+    "instructions.md",
+    "720_A5_Specifications_V3.pdf: all 4 pages",
+    "720_Assignment_5_Rubric.pdf: both pages"
+  ],
+  "pdfPagesRenderedAndInspected": 6,
+  "keywordInstruction": "Six per user-confirmed official clarification; older PDF says at most five",
+  "contentAlignmentReviewRecorded": true,
+  "gradeAssigned": false,
+  "registeredEvidencePreserved": 69,
+  "productionFilesPreserved": 66,
+  "registerUnchanged": true,
+  "scope": "Researcher-role wording and inherited document checks; no formal rerun, new review or production change",
+  "limitations": "Known-token/mapping/citation/identity checks plus manual review; not exhaustive semantic verification, full-text source reappraisal or final Word layout/integrity/submission certification",
+  "finalDocxPrepared": false,
+  "submissionReady": false,
+  "failures": []
+}

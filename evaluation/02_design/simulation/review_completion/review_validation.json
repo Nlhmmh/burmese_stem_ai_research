@@ -1,0 +1,39 @@
+{
+  "endorsementDate": "2026-10-02",
+  "timezone": "Pacific/Auckland",
+  "reviewer": "Nathan",
+  "authorisation": "User confirmed review/acceptance of all drafts and explicitly requested Codex to sign on his behalf.",
+  "signatureType": "authorised typed sign-off; AI-assisted drafting disclosed",
+  "reviewClockTimes": "not recorded",
+  "worksheets": 55,
+  "deliveredOutputAssessments": 91,
+  "contentOutcomes": {
+    "Pass": 18,
+    "Partial": 71,
+    "Fail": 2
+  },
+  "technicalFailuresPreserved": [
+    "SIM-CM-13",
+    "SIM-CM-16",
+    "SIM05-C"
+  ],
+  "controlledAmbiguityCases": 8,
+  "exactOriginalTextFieldsPreserved": 558,
+  "userAmendmentsPreserved": [
+    "SIM01-A original comments/signature and Partial conclusion",
+    "SIM04-A language score 1, wording rationale and Partial conclusion"
+  ],
+  "originalSimulationManifest": {
+    "sha256": "a8be7e07f58363a0e3c4e74b7b5ebca70b3bca1ad13df5d3247ea22140bbd730",
+    "entriesVerified": 32,
+    "outcome": "Pass"
+  },
+  "checks": "Pass: provenance, sign-offs, delivery/assessment mapping, scoring rule, CSV synchronisation, original text and immutable evidence integrity",
+  "claimsExcluded": [
+    "independent external review",
+    "certified terminology",
+    "participant comprehension",
+    "learning benefit",
+    "all routes or content passed"
+  ]
+}

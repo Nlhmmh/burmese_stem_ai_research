@@ -80,6 +80,7 @@ function toPublicSession(session: SessionRecord) {
     status: session.status,
     adaptationRound: session.adaptationRound,
     adaptations: session.adaptations ?? [],
+    responseEvents: session.responseEvents ?? [],
     followUps: session.followUps ?? [],
     preferencesSnapshot: session.preferencesSnapshot,
     createdAt: session.createdAt,

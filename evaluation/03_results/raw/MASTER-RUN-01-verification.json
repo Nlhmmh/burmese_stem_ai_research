@@ -1,0 +1,136 @@
+{
+  "resultCount": 225,
+  "columns": 14,
+  "criterionAggregates": 27,
+  "canonicalMethods": 14,
+  "prior55RowsBytePreserved": true,
+  "registeredEvidence": 58,
+  "productionFiles": 66,
+  "groups": [
+    {
+      "name": "Current protocol C1–C5 synthesis (bounded analyst judgement)",
+      "first": "R001",
+      "last": "R005",
+      "count": 5
+    },
+    {
+      "name": "Current literature-grounded conceptual argument: IA-C01–IA-C07",
+      "first": "R006",
+      "last": "R012",
+      "count": 7
+    },
+    {
+      "name": "Historical GenAI criterion judgements and C4 crosswalk",
+      "first": "R013",
+      "last": "R017",
+      "count": 5
+    },
+    {
+      "name": "Historical conceptual literature findings",
+      "first": "R018",
+      "last": "R036",
+      "count": 19
+    },
+    {
+      "name": "Historical conceptual triangulation findings (derived, not extra methods)",
+      "first": "R037",
+      "last": "R061",
+      "count": 25
+    },
+    {
+      "name": "Framework refinement decisions (source R01–R18, not master R IDs)",
+      "first": "R062",
+      "last": "R079",
+      "count": 18
+    },
+    {
+      "name": "FURPS Functionality aggregate F1–F13: original Partial outcomes retained",
+      "first": "R080",
+      "last": "R092",
+      "count": 13
+    },
+    {
+      "name": "FURPS Usability aggregate U1–U9",
+      "first": "R093",
+      "last": "R101",
+      "count": 9
+    },
+    {
+      "name": "Formal static cases STA-01–STA-14",
+      "first": "R102",
+      "last": "R115",
+      "count": 14
+    },
+    {
+      "name": "Dynamic cases DYN-01–DYN-13",
+      "first": "R116",
+      "last": "R128",
+      "count": 13
+    },
+    {
+      "name": "Bounds cases BND-01–BND-17",
+      "first": "R129",
+      "last": "R145",
+      "count": 17
+    },
+    {
+      "name": "White-box groups WB01–WB06 and structural coverage",
+      "first": "R146",
+      "last": "R152",
+      "count": 7
+    },
+    {
+      "name": "Black-box BB01–BB24 assessed case outcomes",
+      "first": "R153",
+      "last": "R176",
+      "count": 24
+    },
+    {
+      "name": "Design informed arguments IA-D01–IA-D08",
+      "first": "R177",
+      "last": "R184",
+      "count": 8
+    },
+    {
+      "name": "Design literature comparisons DL01–DL13 (native support scale)",
+      "first": "R185",
+      "last": "R197",
+      "count": 13
+    },
+    {
+      "name": "Simulation technical outcomes, delivered content and failed content",
+      "first": "R198",
+      "last": "R205",
+      "count": 8
+    },
+    {
+      "name": "Fresh B01 Photosynthesis scenario and provisional content",
+      "first": "R206",
+      "last": "R211",
+      "count": 6
+    },
+    {
+      "name": "Retained usability issues USI-01–USI-03",
+      "first": "R212",
+      "last": "R214",
+      "count": 3
+    },
+    {
+      "name": "Explicit blocked, unassessed, skipped, NA and provenance limits",
+      "first": "R215",
+      "last": "R224",
+      "count": 10
+    },
+    {
+      "name": "Descriptive timing evidence (not a performance success oracle)",
+      "first": "R225",
+      "last": "R225",
+      "count": 1
+    }
+  ],
+  "failures": [],
+  "capturedAt": "2026-10-03T00:36:54.105Z",
+  "masterHash": "6145b5b9982cc2318f293e468d684e67e68baa05e266d9d121ba3b1b3ba851f1",
+  "registerHash": "f4b88cc9af496d64beb94abcf6da9854f6a051a5e05fcc5dad6d328f7ce061df",
+  "manifestHash": "bc27554824ee12fc9809c411a57fb505fccd6d5aec3bc499f41a04db5eb018ff"
+}

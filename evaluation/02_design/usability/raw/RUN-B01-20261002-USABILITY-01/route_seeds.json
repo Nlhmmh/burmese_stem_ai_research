@@ -1,0 +1,20 @@
+{
+  "desktop_simpler": "d673f77c-6988-4402-aaa8-9349127456e4",
+  "desktop_example": "c2bdde1c-37b9-46f4-bc3a-2f26ea65a6af",
+  "desktop_language": "7fb62ea7-9daa-407d-aff7-3e6d1045180c",
+  "desktop_concept": "853c3abf-6076-4235-8156-119c0fbae8d3",
+  "desktop_correction": "6bedefa1-e474-4a15-a914-01782ac64848",
+  "desktop_ambiguous": "e66fd92a-725e-4711-8010-1c06be50a57c",
+  "desktop_skip": "7d2f6424-c13f-4b2f-adff-faf4b4512d40",
+  "desktop_fade": "9ea0c86e-f682-4433-bf90-f68956fb9842",
+  "desktop_error": "1418deb0-59f7-4520-a9dd-30da90e5b0e9",
+  "mobile_simpler": "1eac9415-0ce1-4b4e-aeda-84b024e98701",
+  "mobile_example": "6eabaca6-2226-402d-b317-37b8d78d072e",
+  "mobile_language": "d047dc02-fa55-45ab-bb07-06e95b0699ce",
+  "mobile_concept": "3f2ba447-ecb3-4436-8ab6-fcb7c49a44ff",
+  "mobile_correction": "543bf5b5-9d67-4227-9511-d67e21a984f8",
+  "mobile_ambiguous": "ede2687b-5ba2-485d-8e2f-91052f11ea5e",
+  "mobile_skip": "50b7d4fa-4f1a-4ea4-a2a9-4bdab7f4385b",
+  "mobile_fade": "c62f99a8-11de-4aab-975b-39f9c8d57f19",
+  "mobile_error": "e3b74f4e-8e86-474c-be7a-26bbf5c91356"
+}

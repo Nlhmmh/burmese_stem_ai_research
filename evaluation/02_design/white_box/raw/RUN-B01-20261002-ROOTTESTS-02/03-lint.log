@@ -1,0 +1,5 @@
+$ npm run lint
+
+> burmese_stem_ai@0.1.0 lint
+> eslint
+

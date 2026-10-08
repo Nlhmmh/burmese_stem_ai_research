@@ -1,0 +1,9 @@
+▲ Next.js 16.3.4
+- Local:         http://127.0.0.1:57927
+- Network:       http://127.0.0.1:57927
+✓ Ready in 97ms
+✓ Running next.config.ts took 39ms
+(node:15455) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15455) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:15455) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.

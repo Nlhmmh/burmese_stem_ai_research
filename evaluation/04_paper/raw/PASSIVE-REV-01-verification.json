@@ -1,0 +1,18 @@
+{
+  "revisionId": "PASSIVE-REV-01",
+  "preparedDate": "4 October 2026, Pacific/Auckland",
+  "checkedAt": "2026-10-04T02:18:23.514Z",
+  "paperHash": "f11243030371fecbb2ba3c37598a1553151470ef4586085ee3888706bbf92e3f",
+  "previousPaperHash": "62bf5663e505331c39a3e5e3a598b4d06143787d6cce6303706d46f03ccb6cd7",
+  "previousVerification": "evaluation/04_paper/raw/LANGUAGE-REV-01-verification.json",
+  "abstractWords": 137,
+  "keywords": 6,
+  "referenceEntries": 12,
+  "tableFindingsUnchanged": true,
+  "headingsUnchanged": true,
+  "registeredEvidencePreserved": 69,
+  "productionFilesPreserved": 66,
+  "quotedFirstPersonLearnerLabelsRetained": true,
+  "scope": "Passive-voice editorial change only. No evaluation, content rating, provider or production changes.",
+  "failures": []
+}

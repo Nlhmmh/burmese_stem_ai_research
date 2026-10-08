@@ -1,0 +1,26 @@
+{
+  "runId": "STRUCTURE-20261003-PAPER-01",
+  "capturedAt": "2026-10-03T03:54:39.139Z",
+  "status": "Scaffold only; prose/frontmatter/word allocation/typesetting pending",
+  "prescribedHeadings": 28,
+  "unchangedPlacementBlocks": 7,
+  "mainFigures": 2,
+  "tables": 5,
+  "prior67RegisterRowsBytePreserved": true,
+  "registeredEvidence": 69,
+  "masterResults": 225,
+  "pirqoaRows": 24,
+  "citedResultIds": 225,
+  "citedEvidenceIds": 64,
+  "productionFiles": 66,
+  "immutableInputHashes": {
+    "evaluation/03_results/master_results.csv": "6145b5b9982cc2318f293e468d684e67e68baa05e266d9d121ba3b1b3ba851f1",
+    "evaluation/03_results/pirqoa_traceability.csv": "fa1b8b43c76585959ea017110917122ab1c183125aafff34d574c7580f342ae9",
+    "evaluation/03_results/results_interpretation.md": "ddcac30a2c198c911484cb0e2e2200d558cceaaa34a9f601f7df9235d644e7c5",
+    "evaluation/03_results/paper_figures_and_tables.md": "7405d423cefc7c6f3c7b65ce5ada2467eb2621d76a86278b507af62064d04dd5"
+  },
+  "scaffoldHash": "103717a3a1bc6cfbc25f82a452fd304f21c3a54222b7b51f26ccf9541ae3f6b5",
+  "manifestHash": "b2a0ca54843120133be602ae5c0e20d416bf0e662654e559708706206e980328",
+  "registerHash": "3f4f745225070f85b7657b3d5bb7f55282d900c2b4159c9655375e0ee9a83648",
+  "failures": []
+}

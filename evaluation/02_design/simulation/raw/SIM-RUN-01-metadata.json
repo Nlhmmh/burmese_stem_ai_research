@@ -1,0 +1,28 @@
+{
+  "runId": "RUN-B01-20261001-SIMULATION-02",
+  "startedAt": "2026-10-01T10:38:45.239Z",
+  "baseline": "B01-A5-EVALUATION",
+  "baselineCommit": "37faefa236829aa3d79e023faa1fb72a086b5c2a",
+  "referenceHash": "bcd2a676243c183634fa7deef59d79a048f4fd8fae8f84bd44d8f07137b44457",
+  "configuredModel": "gpt-5.4-mini",
+  "node": "v26.4.0",
+  "mongoVersion": "8.2.6",
+  "database": "burmese_stem_simulation_test",
+  "mode": "real Next route handlers and DAOs; isolated MongoDB; live provider; injected synthetic learner identity; no browser/middleware/network HTTP server",
+  "uiLocale": "en (profile snapshot only; no browser)",
+  "timeoutMs": 20000,
+  "automaticRetries": false,
+  "providerSettings": "store=false; strict json_schema; application default temperature/reasoning; no custom sampling settings",
+  "plannedCore": 48,
+  "plannedAdditional": 7,
+  "humanAssessor": "",
+  "competence": "",
+  "humanReviewDate": "",
+  "finishedAt": "2026-10-01T10:43:52.701Z",
+  "providerCalls": 102,
+  "summary": {
+    "Pass": 44,
+    "Fail": 3,
+    "Controlled ambiguity": 8
+  }
+}

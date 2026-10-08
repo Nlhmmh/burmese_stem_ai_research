@@ -1,0 +1,252 @@
+{
+  "runId": "DRAFT-20261003-PHASE-E-01",
+  "checkedAt": "2026-10-03T05:06:01.933Z",
+  "draftingStatus": "Body/front matter assembled and reconciled; citation correspondence and Markdown structural checks complete; official rules/rendered submission pending",
+  "metrics": {
+    "counter": "Unicode letter/number tokens, internal apostrophes/hyphens kept; Markdown link labels included, URLs/image alt text excluded; headings and insertions excluded from narrative",
+    "sections": [
+      {
+        "section": 1,
+        "target": 200,
+        "actual": 200
+      },
+      {
+        "section": 2,
+        "target": 1000,
+        "actual": 1000
+      },
+      {
+        "section": 3,
+        "target": 1100,
+        "actual": 1100
+      },
+      {
+        "section": 4,
+        "target": 600,
+        "actual": 600
+      },
+      {
+        "section": 5,
+        "target": 150,
+        "actual": 150
+      }
+    ],
+    "subsections": [
+      {
+        "heading": "1. Evaluation Context",
+        "words": 200
+      },
+      {
+        "heading": "2. Conceptual Artefact Evaluation",
+        "words": 30
+      },
+      {
+        "heading": "2.1 Artefact Selection and Evaluation Criteria",
+        "words": 110
+      },
+      {
+        "heading": "2.2 GenAI Interview",
+        "words": 160
+      },
+      {
+        "heading": "2.3 Academic Literature Evaluation",
+        "words": 230
+      },
+      {
+        "heading": "2.4 Informed Argument",
+        "words": 240
+      },
+      {
+        "heading": "2.5 Scenario Evaluation",
+        "words": 110
+      },
+      {
+        "heading": "2.6 Triangulation, Refinement, and Conceptual Evaluation Summary",
+        "words": 120
+      },
+      {
+        "heading": "3. Design Artefact Evaluation",
+        "words": 20
+      },
+      {
+        "heading": "3.1 FURPS Functionality and Usability Criteria",
+        "words": 70
+      },
+      {
+        "heading": "3.2 Analytical Evaluation",
+        "words": 15
+      },
+      {
+        "heading": "3.2.1 Static Analysis",
+        "words": 60
+      },
+      {
+        "heading": "3.2.2 Dynamic Analysis",
+        "words": 75
+      },
+      {
+        "heading": "3.2.3 Optimisation / Bounds Analysis",
+        "words": 90
+      },
+      {
+        "heading": "3.3 Simulation",
+        "words": 150
+      },
+      {
+        "heading": "3.4 Black-Box and White-Box Testing",
+        "words": 200
+      },
+      {
+        "heading": "3.5 Informed Argument and Scenario",
+        "words": 180
+      },
+      {
+        "heading": "3.6 Academic Literature Evaluation",
+        "words": 130
+      },
+      {
+        "heading": "3.7 Design Evaluation Summary",
+        "words": 110
+      },
+      {
+        "heading": "4. Results and Interpretation",
+        "words": 20
+      },
+      {
+        "heading": "4.1 Consolidated Results",
+        "words": 220
+      },
+      {
+        "heading": "4.2 PIRQOA / RQ Traceability",
+        "words": 180
+      },
+      {
+        "heading": "4.3 What the Evaluation Does and Does Not Show",
+        "words": 180
+      },
+      {
+        "heading": "5. Conclusion",
+        "words": 150
+      }
+    ],
+    "bodyWords": 3050,
+    "abstractWords": 140,
+    "titleWords": 8,
+    "keywords": 6,
+    "narrativeWhitespaceWords": 2943,
+    "headingWords": 124,
+    "keywordWords": 17,
+    "insertionWords": 2453,
+    "tableCellWords": 1571,
+    "captionNoteSourceWords": 882,
+    "referenceWords": 314,
+    "insertion": [
+      {
+        "key": "FIGURE1",
+        "words": 186,
+        "tableCells": 0,
+        "captionNoteSource": 186
+      },
+      {
+        "key": "TABLE1",
+        "words": 208,
+        "tableCells": 111,
+        "captionNoteSource": 97
+      },
+      {
+        "key": "TABLE2",
+        "words": 326,
+        "tableCells": 236,
+        "captionNoteSource": 90
+      },
+      {
+        "key": "TABLE3",
+        "words": 484,
+        "tableCells": 394,
+        "captionNoteSource": 90
+      },
+      {
+        "key": "TABLE4",
+        "words": 585,
+        "tableCells": 490,
+        "captionNoteSource": 95
+      },
+      {
+        "key": "FIGURE2",
+        "words": 178,
+        "tableCells": 0,
+        "captionNoteSource": 178
+      },
+      {
+        "key": "TABLE5",
+        "words": 486,
+        "tableCells": 340,
+        "captionNoteSource": 146
+      }
+    ]
+  },
+  "prescribedHeadings": 28,
+  "unchangedInsertionBlocks": 7,
+  "referenceEntries": 12,
+  "citationCounts": [
+    {
+      "author": "Athukorala",
+      "count": 2
+    },
+    {
+      "author": "Dunlosky",
+      "count": 1
+    },
+    {
+      "author": "Goodhue",
+      "count": 4
+    },
+    {
+      "author": "Hevner",
+      "count": 3
+    },
+    {
+      "author": "Htet",
+      "count": 2
+    },
+    {
+      "author": "Ji",
+      "count": 1
+    },
+    {
+      "author": "Kleidermacher",
+      "count": 2
+    },
+    {
+      "author": "Kuzu",
+      "count": 1
+    },
+    {
+      "author": "Sweller",
+      "count": 1
+    },
+    {
+      "author": "Tran",
+      "count": 1
+    },
+    {
+      "author": "van de Pol",
+      "count": 3
+    },
+    {
+      "author": "Venable",
+      "count": 3
+    }
+  ],
+  "citationAuditLimit": "Known author-year forms plus manual claim/version/access review; not a generic citation parser or new full-text appraisal",
+  "frontMatterCopiedUnchanged": true,
+  "priorRegisteredArtefactsPreserved": 69,
+  "priorDraftingCapturesPreserved": 12,
+  "productionFilesPreserved": 66,
+  "registerUnchanged": true,
+  "submissionReady": false,
+  "paperHash": "47bbeb1fc0c6113d00dc30f5bf698410d0480ec3af4027b3fabe17b36ea66f3e",
+  "narrativeHash": "11416fc136ec000b90509dc64934083e6bdddbdd9e2b98494c2dcd6154cc1825",
+  "draftingRecordHash": "c0cc94fa76ff924c1ae9a93ca48d5cb24a2459944067e41c080d8774c6173f34",
+  "failures": []
+}

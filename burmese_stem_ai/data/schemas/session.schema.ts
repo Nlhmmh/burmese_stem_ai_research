@@ -1,11 +1,19 @@
 import {
   MAX_ADAPTATION_ROUNDS,
+  MAX_CONCEPT_CLARIFICATION_LENGTH,
   MAX_FOLLOW_UP_QUESTION_LENGTH,
   MAX_FOLLOW_UPS,
+  OVERALL_SUPPORT_NEEDS,
   SESSION_STATUSES,
   SUPPORT_TYPES,
   UNDERSTANDING_LEVELS
 } from "@/lib/constants";
+import {
+  ADAPTATION_ROUTES,
+  CONCEPT_REINTERPRETATION_OUTCOMES,
+  DIFFICULTY_TYPES,
+  PRESENTATION_OVERRIDES
+} from "@/lib/session-domain";
 import mongoose from "mongoose";
 import { preferencesSchema } from "./profile.schema";
 
@@ -19,12 +27,58 @@ const bilingualTextSchema = new Schema(
   { _id: false }
 );
 
+const conceptReferenceSchema = new Schema(
+  {
+    name: { type: String, required: true, trim: true },
+    domain: { type: String, required: true, trim: true }
+  },
+  { _id: false }
+);
+
+const conceptCorrectionSchema = new Schema(
+  {
+    previous: { type: conceptReferenceSchema, required: true },
+    corrected: { type: conceptReferenceSchema, required: true }
+  },
+  { _id: false }
+);
+
+const conceptReinterpretationSchema = new Schema(
+  {
+    clarification: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: MAX_CONCEPT_CLARIFICATION_LENGTH
+    },
+    outcome: { type: String, enum: CONCEPT_REINTERPRETATION_OUTCOMES, required: true },
+    previous: { type: conceptReferenceSchema, required: true },
+    current: { type: conceptReferenceSchema, required: true }
+  },
+  { _id: false }
+);
+
 const adaptationSchema = new Schema(
   {
-    learnerResponse: { type: String, enum: UNDERSTANDING_LEVELS, required: true },
+    learnerResponse: { type: String, enum: OVERALL_SUPPORT_NEEDS, required: true },
     supportType: { type: String, enum: SUPPORT_TYPES, required: true },
     content: { type: bilingualTextSchema, required: true },
+    presentationOverride: { type: String, enum: PRESENTATION_OVERRIDES },
+    conceptCorrection: { type: conceptCorrectionSchema },
     round: { type: Number, min: 1, max: MAX_ADAPTATION_ROUNDS, required: true },
+    createdAt: { type: Date, default: Date.now, required: true }
+  },
+  { _id: false }
+);
+
+const learnerResponseEventSchema = new Schema(
+  {
+    overallSupportNeed: { type: String, enum: OVERALL_SUPPORT_NEEDS, required: true },
+    difficultyType: { type: String, enum: DIFFICULTY_TYPES, default: null },
+    route: { type: String, enum: ADAPTATION_ROUTES, required: true },
+    roundBefore: { type: Number, min: 0, max: MAX_ADAPTATION_ROUNDS, required: true },
+    roundAfter: { type: Number, min: 0, max: MAX_ADAPTATION_ROUNDS, required: true },
+    conceptReinterpretation: { type: conceptReinterpretationSchema },
     createdAt: { type: Date, default: Date.now, required: true }
   },
   { _id: false }
@@ -60,10 +114,12 @@ const sessionSchema = new Schema(
     },
     reflectivePrompt: { type: bilingualTextSchema, required: true, trim: true },
     hint: { type: bilingualTextSchema, required: true, trim: true },
+    // Legacy field name: values represent learner-reported support need, not measured mastery.
     understanding: { type: String, enum: UNDERSTANDING_LEVELS, default: null },
     status: { type: String, enum: SESSION_STATUSES, default: SESSION_STATUSES[1] }, // Default to "in_progress"
     adaptationRound: { type: Number, default: 0, min: 0, max: MAX_ADAPTATION_ROUNDS },
     adaptations: { type: [adaptationSchema], default: [] },
+    responseEvents: { type: [learnerResponseEventSchema], default: [] },
     followUps: {
       type: [followUpSchema],
       default: [],

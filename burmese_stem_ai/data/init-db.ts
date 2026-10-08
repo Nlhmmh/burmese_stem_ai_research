@@ -3,10 +3,11 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import { ProfileModel, SessionModel } from "./schema.js";
 
-async function clearDatabase() {
-  await Promise.all([ProfileModel.deleteMany({}), SessionModel.deleteMany({})]);
-  console.log("Cleared Profiles and Sessions collections");
-}
+// Only use this function if you want to clear the database before synchronizing indexes. Be cautious, as this will delete all data in the Profiles and Sessions collections.
+// async function clearDatabase() {
+//   await Promise.all([ProfileModel.deleteMany({}), SessionModel.deleteMany({})]);
+//   console.log("Cleared Profiles and Sessions collections");
+// }
 
 async function synchronizeIndexes() {
   const removedProfileIndexes = await ProfileModel.syncIndexes();

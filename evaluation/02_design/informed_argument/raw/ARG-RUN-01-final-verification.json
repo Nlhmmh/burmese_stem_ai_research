@@ -1,0 +1,19 @@
+{
+  "checkedAtUtc": "2026-10-02T22:23:28.224Z",
+  "analysisDate": "2026-10-03",
+  "result": "Pass: documentation integrity only",
+  "manifestEntries": 116,
+  "manifestSha256": "2216df04a1fd64bd415e8642335fca0e9dc11a9fde602ec2ad43f43467ea6f55",
+  "priorEvidenceRowsUnchanged": true,
+  "newEvidenceHashesVerified": [
+    "E039",
+    "E040",
+    "E041"
+  ],
+  "sourceFilesUnchanged": 66,
+  "localLinksResolve": true,
+  "referenceEntries": 7,
+  "sourceAccessLimitationsRecorded": true,
+  "nextMasterPlanStep": "Step 17",
+  "applicationExecutionsAdded": 0
+}

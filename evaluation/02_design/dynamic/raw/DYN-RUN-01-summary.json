@@ -1,0 +1,546 @@
+{
+  "runId": "RUN-B01-20261001-DYNAMIC-01",
+  "baseline": "B01-A5-EVALUATION",
+  "executableCommit": "37faefa236829aa3d79e023faa1fb72a086b5c2a",
+  "protocolVersion": "2.1",
+  "dependencyMode": "local Next.js dev, isolated real MongoDB, live configured provider",
+  "generatedAt": "2026-10-01T04:44:21.869Z",
+  "ownerAliases": {
+    "DYN-OWNER-A": "00000000-0000-4000-8000-0000000000a1",
+    "DYN-OWNER-B": "00000000-0000-4000-8000-0000000000b2"
+  },
+  "cases": [
+    {
+      "caseId": "DYN-02",
+      "outcome": "Pass",
+      "checks": [
+        {
+          "name": "detail_status_200",
+          "pass": true
+        },
+        {
+          "name": "stored_round_zero",
+          "pass": true
+        },
+        {
+          "name": "stored_in_progress",
+          "pass": true
+        },
+        {
+          "name": "stored_understanding_null",
+          "pass": true
+        },
+        {
+          "name": "stored_adaptations_empty",
+          "pass": true
+        },
+        {
+          "name": "stored_response_events_empty",
+          "pass": true
+        },
+        {
+          "name": "stored_follow_ups_empty",
+          "pass": true
+        }
+      ],
+      "notes": [
+        "Initial POST HTTP 201 and 5088.923 ms were captured in the command log before this driver."
+      ]
+    },
+    {
+      "caseId": "DYN-03",
+      "outcome": "Pass",
+      "checks": [
+        {
+          "name": "status_200",
+          "pass": true
+        },
+        {
+          "name": "route_stage_5",
+          "pass": true
+        },
+        {
+          "name": "support_another_example",
+          "pass": true
+        },
+        {
+          "name": "round_zero_to_one",
+          "pass": true
+        },
+        {
+          "name": "one_adaptation",
+          "pass": true
+        },
+        {
+          "name": "one_response_event",
+          "pass": true
+        },
+        {
+          "name": "event_zero_to_one",
+          "pass": true
+        }
+      ],
+      "notes": []
+    },
+    {
+      "caseId": "DYN-04",
+      "outcome": "Pass",
+      "checks": [
+        {
+          "name": "status_200",
+          "pass": true
+        },
+        {
+          "name": "route_concept_clarification",
+          "pass": true
+        },
+        {
+          "name": "support_concept_clarification",
+          "pass": true
+        },
+        {
+          "name": "round_one_to_two",
+          "pass": true
+        },
+        {
+          "name": "two_adaptations",
+          "pass": true
+        },
+        {
+          "name": "two_response_events",
+          "pass": true
+        },
+        {
+          "name": "review_recommended",
+          "pass": true
+        }
+      ],
+      "notes": []
+    },
+    {
+      "caseId": "DYN-05",
+      "outcome": "Pass",
+      "checks": [
+        {
+          "name": "status_200",
+          "pass": true
+        },
+        {
+          "name": "round_remains_two",
+          "pass": true
+        },
+        {
+          "name": "no_third_adaptation",
+          "pass": true
+        },
+        {
+          "name": "response_event_appended",
+          "pass": true
+        },
+        {
+          "name": "event_two_to_two",
+          "pass": true
+        },
+        {
+          "name": "adaptation_null",
+          "pass": true
+        }
+      ],
+      "notes": [
+        "No-provider-call assertion is not directly instrumented; null adaptation, unchanged round/adaptation count, and elapsed time are runtime observations."
+      ]
+    },
+    {
+      "caseId": "DYN-09",
+      "outcome": "Pass",
+      "checks": [
+        {
+          "name": "status_200",
+          "pass": true
+        },
+        {
+          "name": "follow_up_persisted_once",
+          "pass": true
+        },
+        {
+          "name": "round_unchanged",
+          "pass": true
+        },
+        {
+          "name": "response_events_unchanged",
+          "pass": true
+        },
+        {
+          "name": "adaptations_unchanged",
+          "pass": true
+        }
+      ],
+      "notes": []
+    },
+    {
+      "caseId": "DYN-10",
+      "outcome": "Fail",
+      "checks": [
+        {
+          "name": "status_422",
+          "pass": true
+        },
+        {
+          "name": "out_of_scope_code",
+          "pass": true
+        },
+        {
+          "name": "new_session_recommended",
+          "pass": false
+        },
+        {
+          "name": "follow_up_not_persisted",
+          "pass": true
+        },
+        {
+          "name": "stage_state_unchanged",
+          "pass": true
+        }
+      ],
+      "notes": []
+    },
+    {
+      "caseId": "DYN-11",
+      "outcome": "Pass",
+      "checks": [
+        {
+          "name": "history_status_200",
+          "pass": true
+        },
+        {
+          "name": "history_contains_session",
+          "pass": true
+        },
+        {
+          "name": "history_newest_first",
+          "pass": true
+        },
+        {
+          "name": "owner_detail_status_200",
+          "pass": true
+        },
+        {
+          "name": "owner_B_cannot_retrieve",
+          "pass": true
+        }
+      ],
+      "notes": [
+        "Browser reconstruction is recorded separately from this API/database driver."
+      ]
+    },
+    {
+      "caseId": "DYN-12",
+      "outcome": "Pass",
+      "checks": [
+        {
+          "name": "first_completion_200",
+          "pass": true
+        },
+        {
+          "name": "second_completion_200",
+          "pass": true
+        },
+        {
+          "name": "post_completion_409",
+          "pass": true
+        },
+        {
+          "name": "conflict_code",
+          "pass": true
+        },
+        {
+          "name": "no_conflict_mutation",
+          "pass": true
+        },
+        {
+          "name": "completed_persisted",
+          "pass": true
+        }
+      ],
+      "notes": []
+    },
+    {
+      "caseId": "DYN-06",
+      "outcome": "Pass",
+      "checks": [
+        {
+          "name": "initial_creation_201",
+          "pass": true
+        },
+        {
+          "name": "response_200",
+          "pass": true
+        },
+        {
+          "name": "route_fade",
+          "pass": true
+        },
+        {
+          "name": "event_zero_to_zero",
+          "pass": true
+        },
+        {
+          "name": "round_unchanged",
+          "pass": true
+        },
+        {
+          "name": "no_adaptation",
+          "pass": true
+        },
+        {
+          "name": "in_progress",
+          "pass": true
+        }
+      ],
+      "notes": [
+        "No-provider-call assertion is not directly instrumented; null adaptation, unchanged state, and elapsed time are runtime observations."
+      ]
+    },
+    {
+      "caseId": "DYN-07",
+      "outcome": "Pass",
+      "checks": [
+        {
+          "name": "initial_creation_201",
+          "pass": true
+        },
+        {
+          "name": "response_200",
+          "pass": true
+        },
+        {
+          "name": "route_language_support",
+          "pass": true
+        },
+        {
+          "name": "support_clarification",
+          "pass": true
+        },
+        {
+          "name": "bilingual_override",
+          "pass": true
+        },
+        {
+          "name": "bilingual_content",
+          "pass": true
+        },
+        {
+          "name": "event_zero_to_one",
+          "pass": true
+        },
+        {
+          "name": "profile_unchanged",
+          "pass": true
+        }
+      ],
+      "notes": []
+    },
+    {
+      "caseId": "DYN-08",
+      "outcome": "Pass",
+      "checks": [
+        {
+          "name": "initial_creation_201",
+          "pass": true
+        },
+        {
+          "name": "response_200",
+          "pass": true
+        },
+        {
+          "name": "route_context_reinterpretation",
+          "pass": true
+        },
+        {
+          "name": "controlled_outcome",
+          "pass": true
+        },
+        {
+          "name": "trace_persisted",
+          "pass": true
+        },
+        {
+          "name": "clarification_persisted",
+          "pass": true
+        },
+        {
+          "name": "event_zero_to_one",
+          "pass": true
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "timings": [
+    {
+      "caseId": "TIM-PHOTO-01",
+      "question": "What is photosynthesis, and how do plants make food?",
+      "attempt": 1,
+      "startedAt": "2026-10-01T04:43:30.816Z",
+      "elapsedMs": 3620.888,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-PHOTO-02",
+      "question": "What is photosynthesis, and how do plants make food?",
+      "attempt": 2,
+      "startedAt": "2026-10-01T04:43:34.437Z",
+      "elapsedMs": 3970.571,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-PHOTO-03",
+      "question": "What is photosynthesis, and how do plants make food?",
+      "attempt": 3,
+      "startedAt": "2026-10-01T04:43:38.409Z",
+      "elapsedMs": 3130.118,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-GRAV-01",
+      "question": "What is gravity?",
+      "attempt": 1,
+      "startedAt": "2026-10-01T04:43:41.540Z",
+      "elapsedMs": 3935.289,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-GRAV-02",
+      "question": "What is gravity?",
+      "attempt": 2,
+      "startedAt": "2026-10-01T04:43:45.476Z",
+      "elapsedMs": 3123.938,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-GRAV-03",
+      "question": "What is gravity?",
+      "attempt": 3,
+      "startedAt": "2026-10-01T04:43:48.601Z",
+      "elapsedMs": 3763.794,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-CURRENT-01",
+      "question": "What is electric current?",
+      "attempt": 1,
+      "startedAt": "2026-10-01T04:43:52.365Z",
+      "elapsedMs": 2907.745,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-CURRENT-02",
+      "question": "What is electric current?",
+      "attempt": 2,
+      "startedAt": "2026-10-01T04:43:55.275Z",
+      "elapsedMs": 2592.835,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-CURRENT-03",
+      "question": "What is electric current?",
+      "attempt": 3,
+      "startedAt": "2026-10-01T04:43:57.868Z",
+      "elapsedMs": 2615.113,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-INHERIT-01",
+      "question": "What is inheritance in object-oriented programming?",
+      "attempt": 1,
+      "startedAt": "2026-10-01T04:44:00.484Z",
+      "elapsedMs": 3311.446,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-INHERIT-02",
+      "question": "What is inheritance in object-oriented programming?",
+      "attempt": 2,
+      "startedAt": "2026-10-01T04:44:03.796Z",
+      "elapsedMs": 4640.164,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-INHERIT-03",
+      "question": "What is inheritance in object-oriented programming?",
+      "attempt": 3,
+      "startedAt": "2026-10-01T04:44:08.438Z",
+      "elapsedMs": 3757.689,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-PH-01",
+      "question": "What is pH?",
+      "attempt": 1,
+      "startedAt": "2026-10-01T04:44:12.197Z",
+      "elapsedMs": 2841.662,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-PH-02",
+      "question": "What is pH?",
+      "attempt": 2,
+      "startedAt": "2026-10-01T04:44:15.053Z",
+      "elapsedMs": 3330.576,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    },
+    {
+      "caseId": "TIM-PH-03",
+      "question": "What is pH?",
+      "attempt": 3,
+      "startedAt": "2026-10-01T04:44:18.385Z",
+      "elapsedMs": 3480.36,
+      "status": 201,
+      "outcome": "success",
+      "retryOf": "",
+      "environment": "B01 local Next.js dev; isolated MongoDB; live configured provider"
+    }
+  ]
+}

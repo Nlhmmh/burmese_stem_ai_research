@@ -1,0 +1,27 @@
+- banner:
+  - link "Logo":
+    - /url: /
+    - img "Logo"
+  - navigation "ပင်မ လမ်းညွှန်":
+    - link "မေးခွန်းသစ်":
+      - /url: /
+    - link "မှတ်တမ်း":
+      - /url: /history
+    - button "Switch to English": EN
+    - button "အရောင်ပုံစံ ပြောင်းရန်": ◑
+- alert
+- main:
+  - generic: ဘာသာနှစ်မျိုးဖြင့် STEM သင်ယူခြင်း
+  - heading "မြန်မာ STEM AI" [level=1]
+  - paragraph: STEM သဘောတရားများကို မြန်မာနှင့် အင်္ဂလိပ်ဘာသာဖြင့် နားလည်ပါ
+  - region "STEM မေးခွန်း မေးရန်":
+    - heading "STEM မေးခွန်း မေးရန်" [level=2]
+    - textbox "STEM မေးခွန်းတစ်ခု မေးပါ..." [disabled]: What is photosynthesis?
+    - button "သင်ယူမှု ဦးစားပေးချက်" [disabled]:
+      - generic: ⚙
+      - text: သင်ယူမှု ဦးစားပေးချက်
+    - button "ရှင်းလင်းချက် ပြင်ဆင်နေသည်..." [disabled]
+    - paragraph: ဥပမာ မေးခွန်းများ
+    - button "What is Gradient Descent?" [disabled]
+    - button "Explain Neural Networks." [disabled]
+    - button "What does Polymorphism mean?" [disabled]

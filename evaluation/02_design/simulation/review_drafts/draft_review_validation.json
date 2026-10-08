@@ -1,0 +1,16 @@
+{
+  "draftDate": "2026-10-02",
+  "timezone": "Pacific/Auckland",
+  "worksheets": 55,
+  "provisionalOutputAssessments": 91,
+  "totals": {
+    "Pass": 19,
+    "Partial": 70,
+    "Fail": 2
+  },
+  "exactOriginalTextFieldsPreserved": 558,
+  "existingNathanSIM01AEntries": "preserved with separate draft recheck",
+  "humanEndorsement": "pending",
+  "officialHumanCSV": "91 rows still blank",
+  "checks": "Pass: draft completeness, score rule, provenance and original text preservation"
+}

@@ -1,0 +1,27 @@
+{
+  "runId": "RUN-B01-20261002-BLACKBOX-01",
+  "startedAt": "2026-10-02T05:58:48.132Z",
+  "baseline": "B01-A5-EVALUATION",
+  "commit": "37faefa236829aa3d79e023faa1fb72a086b5c2a",
+  "workspaceHead": "6eeed1f0afe0402b927410399bea656ed2599cb9",
+  "versions": {
+    "node": "v26.4.0",
+    "npm": "11.17.0",
+    "mongodb": "db version v8.2.6"
+  },
+  "buildId": "IcyjNSC9EIpEI8VngSibk",
+  "lockHash": "d27ebe08630989019ad6254e4de77c9c2e5d21419acf2347d8d0adadc6557702",
+  "specificationHash": "61f2e58ee8024efa0dab3c7bd35c2b48ffb2267216b1950d01e769573803da13",
+  "url": "http://127.0.0.1:53196",
+  "browserUrl": "http://bb-b01.localhost:53196",
+  "dbUrl": "mongodb://127.0.0.1:53195/burmese_stem_blackbox_test",
+  "dbDir": "/tmp/burmese-stem-blackbox.C4Vra2",
+  "owners": {
+    "A": "6bf9083b-1c73-453c-9a88-afb307a21810",
+    "B": "71efdb5b-cbab-4de3-a7f6-9e30aa337010"
+  },
+  "providerMode": "evaluation-only global-fetch fixture seam; real Next production HTTP/proxy/services/DAO and MongoDB; dummy API key, zero external provider calls; no application-source changes",
+  "contentScope": "Controlled fixtures test application acceptance/display, not new live-model scientific or Burmese quality. SIM01-B and SIM05-B exact initial content reused from endorsed simulation.",
+  "finishedAt": "2026-10-02T06:16:10.350Z",
+  "providerFixtureAttempts": 112
+}

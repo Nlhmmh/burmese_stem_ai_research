@@ -1,0 +1,91 @@
+SIM_RUN_META uri=mongodb://127.0.0.1:59813/burmese_stem_simulation_test db_dir=/tmp/burmese-stem-simulation.SjTkND
+SIM_RUN_META node=v26.4.0 npm=11.17.0 mongo=db version v8.2.6 head=b2cdf27a13ecaa0800e9e6056f1907544b46bd46
+
+ RUN  v4.1.11 /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 1/55 SIM01-A Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 2/55 SIM01-B Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 3/55 SIM01-C Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 4/55 SIM02-A Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 5/55 SIM02-B Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 6/55 SIM02-C Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 7/55 SIM03-A Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 8/55 SIM03-B Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 9/55 SIM03-C Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 10/55 SIM04-A Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+stdout | ../evaluation/02_design/simulation/raw/SIM-RUN-01-simulation.test.ts > accounts for every fixed live simulation attempt; human content judgement remains pending
+SIM_PROGRESS 11/55 SIM04-B Fail calls=1
+
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:70080) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯
+Error: [vitest-pool]: Worker forks emitted error.
+ ❯ EventEmitter.onTaskError node_modules/vitest/dist/chunks/cli-api.CnMVyzaz.js:3526:21
+ ❯ EventEmitter.emit node:events:509:20
+ ❯ ChildProcess.emitUnexpectedExit node_modules/vitest/dist/chunks/cli-api.CnMVyzaz.js:3092:22
+ ❯ ChildProcess.emit node:events:509:20
+ ❯ Process.ChildProcess._handle.onexit node:internal/child_process:294:12
+
+Caused by: Error: Worker exited unexpectedly
+ ❯ ChildProcess.emitUnexpectedExit node_modules/vitest/dist/chunks/cli-api.CnMVyzaz.js:3090:33
+ ❯ ChildProcess.emit node:events:509:20
+ ❯ Process.ChildProcess._handle.onexit node:internal/child_process:294:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files   (1)
+      Tests   (1)
+     Errors  1 error
+   Start at  23:36:33
+   Duration  41.41s (transform 97ms, setup 241ms, import 145ms, tests 0ms, environment 0ms)
+
+SIM_CLEANUP isolated server stopped; temporary data retained at /tmp/burmese-stem-simulation.SjTkND

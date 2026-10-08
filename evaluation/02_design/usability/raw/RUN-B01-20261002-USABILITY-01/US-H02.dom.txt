@@ -1,0 +1,306 @@
+- banner:
+  - link "Logo Burmese STEM AI":
+    - /url: /
+    - img "Logo"
+    - generic: Burmese STEM AI
+  - navigation "Primary navigation":
+    - link "New Inquiry":
+      - /url: /
+    - link "History":
+      - /url: /history
+    - button "မြန်မာဘာသာသို့ ပြောင်းရန်": မြန်မာ
+    - button "Toggle color theme" [active]: ◑
+- alert
+- main:
+  - heading "Learning History" [level=1]
+  - paragraph: Your STEM concepts and self-reported support history
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: No response yet
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/3af49fb6-2e65-4dc0-a335-7790c254e8d1
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: No response yet
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/7d2f6424-c13f-4b2f-adff-faf4b4512d40
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: Some support
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/e3b74f4e-8e86-474c-be7a-26bbf5c91356
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: No response yet
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/7f7d45e7-ef2c-4a6b-bc27-170c33838f9b
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: Some support
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/50b7d4fa-4f1a-4ea4-a2a9-4bdab7f4385b
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: No support needed
+    - generic: Status
+    - generic: Completed
+    - link "Review":
+      - /url: /learn/c62f99a8-11de-4aab-975b-39f9c8d57f19
+  - article:
+    - heading "cell" [level=2]
+    - generic: biology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/ede2687b-5ba2-485d-8e2f-91052f11ea5e
+  - article:
+    - heading "electrochemical cell" [level=2]
+    - generic: electrochemistry
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/543bf5b5-9d67-4227-9511-d67e21a984f8
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/3f2ba447-ecb3-4436-8ab6-fcb7c49a44ff
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/d047dc02-fa55-45ab-bb07-06e95b0699ce
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/6eabaca6-2226-402d-b317-37b8d78d072e
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/1eac9415-0ce1-4b4e-aeda-84b024e98701
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: No response yet
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/9d24235b-1fa6-4722-a637-5aff6edce10f
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: Some support
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/1418deb0-59f7-4520-a9dd-30da90e5b0e9
+  - article:
+    - heading "cell" [level=2]
+    - generic: biology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/e66fd92a-725e-4711-8010-1c06be50a57c
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/853c3abf-6076-4235-8156-119c0fbae8d3
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/7fb62ea7-9daa-407d-aff7-3e6d1045180c
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/c2bdde1c-37b9-46f4-bc3a-2f26ea65a6af
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/d673f77c-6988-4402-aaa8-9349127456e4
+  - article:
+    - heading "electrochemical cell" [level=2]
+    - generic: electrochemistry
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/6bedefa1-e474-4a15-a914-01782ac64848
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: No support needed
+    - generic: Status
+    - generic: Completed
+    - link "Review":
+      - /url: /learn/9ea0c86e-f682-4433-bf90-f68956fb9842
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: More support needed
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/fe43ec92-8a32-45c3-a5d9-a728e0facaca
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: No response yet
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/cef8ee9d-d23b-4fe1-a55e-6ed33c4e84d2
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: No response yet
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/0c1d0d8b-868a-4e10-8700-cb8af751a33e
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: No response yet
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/e8e6d92f-3e9f-4bca-a25c-9b8a181f471c
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: No response yet
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/9e40f2a0-b76a-4086-88f8-a2373544e841
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: Some support
+    - generic: Status
+    - generic: Completed
+    - link "Review":
+      - /url: /learn/e20dc419-e29f-4650-99ee-ffe913745773
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: Some support
+    - generic: Status
+    - generic: Review Recommended
+    - link "Continue Learning":
+      - /url: /learn/a2a63bdf-5c82-43fb-a249-2342dff594c3
+  - article:
+    - heading "photosynthesis" [level=2]
+    - generic: biology, plant physiology
+    - time: 2 Oct 2026
+    - generic: Self-reported support
+    - generic: Some support
+    - generic: Status
+    - generic: In Progress
+    - link "Resume":
+      - /url: /learn/d5246d93-9ed8-4f3f-886f-0d9359c47819

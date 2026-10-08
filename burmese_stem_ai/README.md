@@ -4,7 +4,9 @@ Technical documentation and implementation plan for the **Burmese STEM AI** proo
 
 This README focuses only on the software implementation: architecture, stack, project structure, database design, APIs, screens, LLM integration, development workflow, deployment, testing, and feature status.
 
-> **Important:** The repository is still under development. This document describes both the **current implementation** and the **complete target plan**. Items marked **Planned** are design targets and should not be interpreted as already implemented.
+> **Document status (30 September 2026):** This README describes the current
+> refined implementation. Planned work is labelled explicitly and must not be
+> interpreted as implemented or as evaluation evidence.
 
 ---
 
@@ -36,14 +38,17 @@ Learning Session
    +--> Optional Hint
    |
    v
-Learner Understanding Response
+Stage 6A Overall Support Response
    |
    +--> high
    +--> medium
    +--> needs_support
    |
    v
-Adapt Support (maximum 2 rounds)
+Optional Stage 6B Help Choice (Medium / Needs Support)
+   |
+   v
+Fade or Adapt Support (maximum 2 generated adaptations)
    |
    v
 Finish / Review / Resume
@@ -58,7 +63,7 @@ The prototype intentionally does **not** include authentication, quizzes, scorin
 
 ## 2. Current Implementation Status
 
-The current repository contains an end-to-end proof-of-concept learning flow. Automated tests and some production hardening remain outstanding.
+The current repository contains an end-to-end refined proof-of-concept learning flow and an automated structural test harness. Formal content, usability, and learner evaluation remain separate work.
 
 | Area | Status | Current State |
 |---|---|---|
@@ -67,15 +72,15 @@ The current repository contains an end-to-end proof-of-concept learning flow. Au
 | Anonymous learner identity | Implemented | HTTP-only UUID cookie mapped to server-side learner ID |
 | Learner preferences | Implemented | MongoDB persistence, `GET` and `PATCH` API |
 | MongoDB profile schema | Implemented | Anonymous profile + preferences |
-| MongoDB learning-session schema | Implemented | UUID session ID, bilingual content, adaptations, follow-ups, lifecycle state, and preference snapshot |
+| MongoDB learning-session schema | Implemented | UUID session ID, bilingual content, adaptations, response events, follow-ups, lifecycle state, and preference snapshot |
 | Home screen | Implemented | Question input, example prompts, preferences dialog, loading/error states, and session navigation |
-| Learning Session screen | Implemented | Bilingual explanations, hint, understanding responses, adapted support, follow-ups, and completion |
-| Learning History screen | Implemented | Latest-first session list with status, understanding, and review/resume actions |
+| Learning Session screen | Implemented | Bilingual explanations, hint, Stage 6A/6B response flow, route history, adapted support, follow-ups, and completion |
+| Learning History screen | Implemented | Latest-first learner-scoped list with status, self-reported support need, and review/resume actions |
 | Session API routes | Implemented | Create/list/get/complete/respond/follow-up handlers with controlled errors |
 | LLM integration | Implemented | Server-side OpenAI Responses API calls with strict JSON Schema output and a 20-second timeout |
-| Adaptation logic | Implemented | Deterministic support strategy and a server-enforced maximum of two rounds |
+| Adaptation logic | Implemented | Deterministic fade/scaffold/language/clarification/reinterpretation routes and a server-enforced maximum of two generated adaptations |
 | Follow-up logic | Implemented | Concept-scoped bilingual answers with a maximum of two follow-ups per session |
-| Automated tests | Not implemented | Current checks are lint + production build |
+| Automated tests | Implemented | Vitest unit/component/API tests with V8 coverage, isolated MongoDB integration tests, plus lint, TypeScript, and production-build checks |
 
 ---
 
@@ -272,6 +277,7 @@ The proof of concept is a small monolithic Next.js application.
 │   ├── adaptation.service.ts
 │   ├── followup.service.ts
 │   ├── learner.service.ts
+│   ├── llm-provider.ts
 │   ├── profile.service.ts
 │   ├── session-lifecycle.service.ts
 │   └── session.service.ts
@@ -318,6 +324,10 @@ Responsibilities:
 ```text
 learner.service.ts
   -> resolve anonymous learner/profile
+
+llm-provider.ts
+  -> shared Responses API URL, model, timeout, request, and output extraction
+  -> stable provider failure categories with no automatic retry
 
 profile.service.ts
   -> validate preference updates
@@ -646,6 +656,8 @@ LearningSession {
 
   adaptations: Adaptation[]
 
+  responseEvents: LearnerResponseEvent[]
+
   followUps: FollowUp[]
 
   preferencesSnapshot: {
@@ -694,11 +706,20 @@ Adaptation {
     "key_takeaway" |
     "another_example" |
     "clarification" |
+    "concept_clarification" |
+    "concept_correction" |
     "simpler_explanation" |
     "analogy" |
     "hint"
 
   content: BilingualText
+
+  presentationOverride?: "bilingual"
+
+  conceptCorrection?: {
+    previous: { name: string; domain: string }
+    corrected: { name: string; domain: string }
+  }
 
   round: 1 | 2
 
@@ -707,6 +728,43 @@ Adaptation {
 ```
 
 `learnerResponse` uses the same values as `understanding`.
+
+`key_takeaway` remains in the schema only so legacy sessions can be read. The
+refined High/fade route does not create a `key_takeaway` adaptation.
+
+### LearnerResponseEvent
+
+```ts
+LearnerResponseEvent {
+  overallSupportNeed: "high" | "medium" | "needs_support"
+  difficultyType:
+    "simpler_explanation" |
+    "another_example" |
+    "language_terms" |
+    "concept_unclear" |
+    "concept_mismatch" |
+    null
+  route:
+    "fade" |
+    "stage_5_scaffold" |
+    "language_support" |
+    "concept_clarification" |
+    "context_reinterpretation"
+  roundBefore: 0 | 1 | 2
+  roundAfter: 0 | 1 | 2
+  conceptReinterpretation?: {
+    clarification: string
+    outcome: "corrected" | "ambiguous" | "limit_reached"
+    previous: { name: string; domain: string }
+    current: { name: string; domain: string }
+  }
+  createdAt: Date
+}
+```
+
+Every accepted Stage 6 response appends one event, including fade and capped
+responses that do not create an adaptation. Legacy documents without this
+array are normalised to an empty array by the public session projection.
 
 UI mapping:
 
@@ -735,7 +793,7 @@ FollowUp {
 
 ### Status Semantics
 
-Understanding and status are different concepts.
+The legacy `understanding` field and session status are different concepts.
 
 ```text
 Understanding
@@ -745,7 +803,10 @@ medium
 needs_support
 ```
 
-describes the learner's latest **self-reported understanding**.
+The stored values describe the learner's latest **self-reported overall support
+need**. They do not measure understanding, competence, or mastery. The
+`understanding` property name is retained temporarily for storage and API
+compatibility.
 
 ```text
 Status
@@ -1084,7 +1145,7 @@ Arbitrary database field patching is rejected. The route accepts transitions fro
 
 ---
 
-## 11.8 Submit Learner Understanding
+## 11.8 Submit Learner Response
 
 ```http
 POST /api/sessions/:sessionId/respond
@@ -1095,7 +1156,8 @@ Content-Type: application/json
 
 ```json
 {
-  "understanding": "medium"
+  "overallSupportNeed": "medium",
+  "difficultyType": "language_terms"
 }
 ```
 
@@ -1106,6 +1168,21 @@ high
 medium
 needs_support
 ```
+
+`understanding` remains accepted as a compatibility alias for
+`overallSupportNeed`. `difficultyType` is optional for `medium` and
+`needs_support`, prohibited for `high`, and limited to:
+
+```text
+simpler_explanation
+another_example
+language_terms
+concept_unclear
+concept_mismatch
+```
+
+`concept_mismatch` also requires `conceptClarification`, a short description of
+the intended term or context.
 
 ### Current Logic
 
@@ -1119,22 +1196,27 @@ Validate session ownership
 Validate current adaptation round
    |
    v
-Record understanding
+Select deterministic route
    |
    +--> high
-   |      -> key takeaway
+   |      -> fade; persist event only
    |
-   +--> medium
-   |      -> another example
+   +--> medium / needs_support with no difficulty
+   |      -> default Stage 5 scaffold
    |
-   +--> needs_support
-          -> simpler explanation
+   +--> explicit Stage 6B choice
+          -> selected scaffold, language support,
+             conceptual clarification, or context reinterpretation
    |
    v
-While fewer than two adaptations exist:
+When the route generates support and fewer than two adaptations exist:
   adaptationRound += 1
    |
    v
+At round 2:
+  persist the response event
+  do not call the provider or create round 3
+
 If the learner reports medium or needs_support at round 2:
   status = review_recommended
    |
@@ -1149,6 +1231,7 @@ Persist session
   "understanding": "medium",
   "status": "in_progress",
   "adaptationRound": 1,
+  "route": "stage_5_scaffold",
   "adaptation": {
     "learnerResponse": "medium",
     "supportType": "another_example",
@@ -1163,7 +1246,9 @@ Persist session
 
 ### Important Rule
 
-The API must **never create adaptation round 3**.
+The API must **never create adaptation round 3**. `adaptationRound` counts only
+generated and persisted adaptations; it does not count response events, fade,
+or capped responses.
 
 This limit must be enforced server-side, not only in the UI.
 
@@ -1310,7 +1395,16 @@ Learning Style
   more_examples
 ```
 
-The preferences dialog currently saves these three learning-content preferences. UI language is changed in the header and stored in the `locale` cookie. The light/dark theme toggle is also in the header and is stored in browser `localStorage`.
+The preferences dialog saves these three learning-content preferences to the
+learner profile. UI locale and theme are intentionally browser-scoped display
+preferences rather than synchronised profile fields:
+
+- UI locale is selected in the header and stored in the `locale` cookie;
+- theme is selected in the header and stored in browser `localStorage`;
+- `supportLanguage`, `explanationLevel`, and `learningStyle` are synchronised to
+  MongoDB and copied into each new session's preference snapshot;
+- the existing profile `uiLanguage` and `theme` fields are retained only for
+  legacy document compatibility and are not read or updated by the current UI.
 
 Learning-style semantics:
 
@@ -1405,7 +1499,7 @@ Do not implement:
 - right/wrong feedback;
 - question sequences.
 
-### Understanding Buttons
+### Stage 6A Overall-Support Buttons
 
 ```text
 I understand
@@ -1418,13 +1512,18 @@ I need more explanation
   -> needs_support
 ```
 
+For `medium` and `needs_support`, Stage 6B asks “What would help you most?” and
+offers five bounded choices: simpler explanation, another example, help with
+Burmese/English terms, concept clarification, and concept/term correction. The
+learner may continue without making a Stage 6B choice.
+
 ### Adaptation Rules
 
 #### high
 
 - store `high`;
-- show concise key takeaway;
-- optionally provide one deeper insight;
+- persist a `fade` response event;
+- do not call the LLM, create an adaptation, or increment the round;
 - allow Finish;
 - mark `completed` when the learner finishes.
 
@@ -1752,7 +1851,7 @@ concept
 domain
 initial explanation
 previous adaptations
-latest learner response
+latest learner response and optional difficulty type
 adaptation round
 support language
 explanation level
@@ -1761,17 +1860,26 @@ learning style
 
 The application first selects the adaptation goal.
 
-Example:
+Current route table:
 
 ```ts
 high
-  -> key_takeaway
+  -> fade (no generation and no round increment)
 
-medium
-  -> another_example
+medium / needs_support + no difficulty
+  -> default stage_5_scaffold
 
-needs_support
-  -> simpler_explanation
+simpler_explanation / another_example
+  -> selected stage_5_scaffold
+
+language_terms
+  -> language_support with bilingual presentation override
+
+concept_unclear
+  -> concept_clarification
+
+concept_mismatch + clarification text
+  -> context_reinterpretation
 ```
 
 Then the LLM generates content for that goal.
@@ -1911,8 +2019,9 @@ in_progress
 understanding = high
        |
        v
-key_takeaway adaptation (while round < 2)
-adaptationRound + 1
+persist fade response event
+no provider call or adaptation
+adaptationRound unchanged
        |
        | learner finishes
        v
@@ -1926,7 +2035,8 @@ in_progress
 understanding = medium
        |
        v
-adaptationRound + 1
+optional Stage 6B choice or skip
+generated adaptation when round < 2
        |
        +--> round < 2 -> in_progress
        |
@@ -1940,7 +2050,8 @@ in_progress
 understanding = needs_support
        |
        v
-adaptationRound + 1
+optional Stage 6B choice or skip
+generated adaptation when round < 2
        |
        +--> round < 2 -> in_progress
        |
@@ -1949,6 +2060,11 @@ adaptationRound + 1
 ```
 
 These transitions are enforced in service/API logic as well as reflected in the UI.
+
+At `adaptationRound = 2`, any valid response is recorded as a response event,
+but no route calls the provider and no third adaptation is created. A High
+response remains `in_progress` so the learner can explicitly Finish; a Medium
+or Needs Support response becomes `review_recommended`.
 
 ---
 
@@ -2016,88 +2132,44 @@ light
 dark
 ```
 
-Theme is toggled in the application header and persisted in browser `localStorage`. Although the profile schema also contains a `theme` preference, the current toggle does not synchronize it to MongoDB.
+Theme is toggled in the application header and persisted in browser
+`localStorage`. This is the defined browser-preference contract; it is not
+synchronised to MongoDB. The legacy profile `theme` field is retained for
+document compatibility only.
 
 ---
 
-# 18. Testing Plan
+# 18. Automated Testing
 
-There is currently no automated test suite.
+The repository uses Vitest with deterministic DAO and provider mocks, jsdom
+component tests, and V8 structural coverage. Current tests cover domain and
+schema constraints, learner ownership, atomic persistence, route selection,
+the two-generated-adaptation and two-follow-up caps, strict model-output contracts, Stage 6B,
+follow-up scope, Review/Resume state reconstruction, provider failure modes,
+API error envelopes, UUID validation, and locale-cookie validation.
 
-The target implementation should add tests in stages.
-
-## Priority 1 — Schema / Domain Tests
-
-Test:
-
-- valid/invalid preference enums;
-- understanding enum;
-- status enum;
-- adaptation round `0..2`;
-- learner can have multiple sessions;
-- session identifier uniqueness.
-
-## Priority 2 — API Tests
-
-Test:
-
-```text
-GET/PATCH preferences
-POST sessions
-GET sessions
-GET session
-PATCH session
-POST respond
-POST followup
-```
-
-Important cases:
-
-- missing learner;
-- invalid body;
-- invalid session ID;
-- session not owned by learner;
-- unknown understanding;
-- adaptation round 2 limit;
-- missing session;
-- provider failure.
-
-## Priority 3 — Service Tests
-
-Test adaptation mapping:
-
-```text
-high -> takeaway/progress
-medium -> clarification/example
-needs_support -> simplify/support
-```
-
-Test:
-
-- no round 3;
-- review recommendation transition;
-- new-concept follow-up detection contract.
-
-## Priority 4 — UI Tests
-
-Test:
-
-- home submission;
-- locale switching;
-- understanding buttons;
-- adapted support rendering;
-- history list;
-- resume navigation;
-- loading/error states.
-
-### Minimum Current Checks
-
-Until automated tests are added:
+Run the current verification commands with:
 
 ```bash
+npm test
+npm run test:coverage
+npm run test:integration
+npm run test:all
 npm run lint
-npm run build
+npx tsc --noEmit
+npm run build -- --webpack
 ```
+
+`npm test` and `npm run test:coverage` use deterministic mocks for provider and
+DAO boundaries. `npm run test:integration` launches an isolated temporary local
+MongoDB instance when `mongod` is available, or uses an explicitly supplied
+`TEST_MONGODB_URI` whose database name ends in `_test`. `npm run test:all` runs
+the deterministic unit/component/API suite and isolated database suite. The
+integration runner removes its temporary database directory after the run.
+
+These tests verify software behaviour and structural coverage. They do not by
+themselves establish Burmese linguistic quality, STEM-content correctness, or
+learner effectiveness; those require separate expert and learner evaluation.
 
 ---
 
@@ -2209,14 +2281,14 @@ Legend:
 
 - [x] `GET /api/preferences`
 - [x] `PATCH /api/preferences`
-- [x] UI language preference model
+- [x] Browser-scoped UI locale cookie
 - [x] Support-language preference model
 - [x] Explanation-level preference model
 - [x] Learning-style preference model
-- [x] Theme preference model
+- [x] Browser-scoped theme preference
 - [x] Learning-content preferences modal UI
 - [x] Apply support language, explanation level, and learning style
-- [~] Synchronize UI language and theme controls with profile preferences
+- [x] Define UI locale and theme as browser-scoped, not profile-synchronised
 
 ## Screen 1 — Home
 
@@ -2335,12 +2407,12 @@ Legend:
 
 - [x] ESLint command
 - [x] Production build command
-- [ ] Schema tests
-- [ ] DAO tests
-- [ ] API tests
-- [ ] Adaptation state tests
-- [ ] LLM structured-output tests
-- [ ] UI tests
+- [x] Schema tests
+- [x] DAO tests
+- [x] API route success, validation, ownership, lifecycle, scope, provider, persistence, and controlled-error mappings
+- [x] Adaptation state tests
+- [x] LLM structured-output tests
+- [x] UI tests
 
 ---
 
@@ -2348,21 +2420,31 @@ Legend:
 
 The core learning flow is implemented. The remaining priorities are hardening, consistency, and verification.
 
-### Priority 1 — Automated Tests
+### API Route Coverage — Resolved
 
-Add schema, DAO, route-handler, lifecycle/adaptation, LLM-contract, and UI tests. The project currently relies only on ESLint and a production build.
+The schema, DAO, lifecycle/adaptation, model-contract, core session UI, and
+public route-handler layers have automated structural coverage. The route tests
+assert successful projections and controlled 400/404/409/422/500/502 mappings.
 
-### Priority 2 — Shared OpenAI Boundary
+### Shared Provider Boundary — Resolved
 
-Extract the duplicated Responses API request/parsing logic from the session, adaptation, and follow-up services. Centralize the model default, timeout, error mapping, and any future retry policy.
+All generation services use `services/llm-provider.ts` for the Responses API
+URL, model selection, 20-second timeout, request execution, and output-text
+extraction. Domain prompts, schemas, and validators remain in their services.
+There is deliberately no automatic retry policy.
 
-### Priority 3 — Preference Consistency
+### Preference Ownership — Resolved
 
-Synchronize the locale and theme controls with the stored `uiLanguage` and `theme` profile fields, or remove those database fields if cookie/localStorage-only behavior is intentional.
+Locale and theme are browser-scoped display preferences. The modal remains the
+single profile-preference UI and synchronises only learning-content preferences.
+Legacy `uiLanguage` and `theme` database fields remain readable to avoid a
+destructive migration, but the current UI does not use them.
 
-### Priority 4 — Locale and Error Hardening
+### Priority 4 — Error Localisation
 
-Validate the locale cookie before dynamically loading a message file, and localize server-returned validation and scope errors rather than displaying English service messages in the Burmese UI.
+The locale cookie is validated before loading a message file, and API failures
+use stable `{ error: { code, message } }` envelopes. Localising server-returned
+validation and scope messages for the Burmese UI remains future work.
 
 ### Priority 5 — Follow-Up New-Session UX
 
@@ -2382,26 +2464,20 @@ Remove `EC2KeyPair.pem` from the project directory and verify whether it has eve
 
 ```text
 Phase 1
-Add automated coverage for current schemas,
-services, APIs, and session state transitions
+Preserve the route, state-transition,
+and isolated-database regression suites
         |
         v
 Phase 2
-Extract a shared OpenAI client and
-standardize model/timeout/error behavior
+Localize server validation and scope errors
         |
         v
 Phase 3
-Synchronize or simplify locale/theme preferences
-+ localize server errors
-        |
-        v
-Phase 4
 Add the new-session follow-up action
 + complete accessibility/Burmese QA
         |
         v
-Phase 5
+Phase 4
 Deployment verification and production hardening
 ```
 
@@ -2421,10 +2497,12 @@ The technical prototype is complete when:
 - structured bilingual English/Burmese STEM content is generated;
 - the Learning Session displays simple, example, and technical explanations;
 - a reflective prompt and optional hint are shown;
-- exactly three understanding responses are supported;
+- exactly three Stage 6A support responses are supported;
+- Medium/Needs Support expose five optional Stage 6B choices and a skip action;
 - `high`, `medium`, and `needs_support` update the session correctly;
-- adapted support is generated and stored;
-- adaptation is limited to two rounds server-side;
+- High records fade without generation or a round increment;
+- generated route-specific support and every response event are stored;
+- generated adaptations are limited to two server-side;
 - unresolved difficulty can become `review_recommended`;
 - a learner can ask a concept-scoped follow-up;
 - a clearly different concept can start a new session instead of replacing the existing one;
@@ -2436,7 +2514,7 @@ The technical prototype is complete when:
 - invalid API requests return controlled errors;
 - LLM failures return controlled errors;
 - secrets remain server-side;
-- lint and production build pass;
+- test, coverage, lint, TypeScript, and webpack production-build commands are documented;
 - critical session/adaptation behavior has automated tests.
 
 ---
@@ -2463,8 +2541,9 @@ The main implementation priority is the complete learning loop:
 Ask
  -> Interpret
  -> Generate Structured Support
- -> Report Understanding
- -> Adapt
+ -> Report Overall Support Need
+ -> Optionally Select Needed Help
+ -> Fade or Adapt
  -> Persist
  -> Review / Resume
 ```

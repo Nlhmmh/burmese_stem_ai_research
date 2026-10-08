@@ -1,0 +1,51 @@
+{
+  "verification": "Pass",
+  "checkedAt": "2026-10-02T09:24:05.552Z",
+  "deterministicTests": 361,
+  "integrationTests": 12,
+  "testsSkipped": 0,
+  "productionFilesVerified": 66,
+  "productionChanges": 0,
+  "sourceCopiesCreated": 0,
+  "applicationCoverageFiles": 42,
+  "coverage": {
+    "lines": {
+      "total": 922,
+      "covered": 680,
+      "skipped": 0,
+      "pct": 73.75
+    },
+    "statements": {
+      "total": 976,
+      "covered": 708,
+      "skipped": 0,
+      "pct": 72.54
+    },
+    "functions": {
+      "total": 200,
+      "covered": 128,
+      "skipped": 0,
+      "pct": 64
+    },
+    "branches": {
+      "total": 821,
+      "covered": 627,
+      "skipped": 0,
+      "pct": 76.37
+    },
+    "branchesTrue": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "documentationChanges": [
+    {
+      "file": "burmese_stem_ai/tests/README.md",
+      "recordedHash": "83000d64b3e67aa9738533eb87abf15e851e82e92976ffaa85c9c109dbac668c",
+      "currentHash": "5bcd128188392454e2c9f054168e7694b531ee2e90f105a708042fbb6e9a57d5"
+    }
+  ],
+  "note": "Checks retained execution evidence; does not rerun tests or rewrite original metadata."
+}

@@ -1,6 +1,7 @@
 "use client";
 
-import type { SessionStatus, UnderstandingLevel } from "@/lib/constants";
+import type { SessionStatus } from "@/lib/constants";
+import type { LegacyUnderstanding, OverallSupportNeed } from "@/lib/session-domain";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -11,7 +12,8 @@ type SessionSummary = {
     name: string;
     domain: string;
   };
-  understanding: UnderstandingLevel;
+  /** Legacy API field name; the value is a self-reported support need. */
+  understanding: LegacyUnderstanding;
   status: SessionStatus;
   updatedAt: string;
 };
@@ -21,14 +23,14 @@ type SessionsResponse = {
   error?: string | { message?: string };
 };
 
-const understandingStyles: Record<Exclude<UnderstandingLevel, null> | "unrated", string> = {
+const understandingStyles: Record<OverallSupportNeed | "unrated", string> = {
   high: "bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300",
   medium: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
   needs_support: "bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300",
   unrated: "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400"
 };
 
-const understandingDots: Record<Exclude<UnderstandingLevel, null> | "unrated", string> = {
+const understandingDots: Record<OverallSupportNeed | "unrated", string> = {
   high: "bg-teal-500",
   medium: "bg-amber-500",
   needs_support: "bg-rose-500",

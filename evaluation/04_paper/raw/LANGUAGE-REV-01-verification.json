@@ -1,0 +1,107 @@
+{
+  "revisionId": "LANGUAGE-REV-01",
+  "userFacingReviewDate": "4 October 2026, Pacific/Auckland",
+  "checkedAt": "2026-10-04T00:44:23.327Z",
+  "paperHash": "62bf5663e505331c39a3e5e3a598b4d06143787d6cce6303706d46f03ccb6cd7",
+  "previousPaperHash": "fd8b72d407c56383c3c6c7ddef015faee65b322929a522c508715c4c8a201dc8",
+  "metrics": {
+    "counter": "Local Unicode tokens. Link labels counted, URLs and image alt text excluded. Tables, captions and notes included, headings excluded.",
+    "sections": [
+      {
+        "section": 1,
+        "bodyTokensIncludingTablesAndNotes": 265
+      },
+      {
+        "section": 2,
+        "bodyTokensIncludingTablesAndNotes": 1675
+      },
+      {
+        "section": 3,
+        "bodyTokensIncludingTablesAndNotes": 3076
+      },
+      {
+        "section": 4,
+        "bodyTokensIncludingTablesAndNotes": 940
+      },
+      {
+        "section": 5,
+        "bodyTokensIncludingTablesAndNotes": 163
+      }
+    ],
+    "mainBodyWords": 6119,
+    "appendixWords": 165,
+    "abstractWords": 135,
+    "keywords": 6,
+    "referenceEntries": 12,
+    "bodyCountsAreGuidance": true,
+    "WordCountVerified": false
+  },
+  "citations": [
+    {
+      "author": "Athukorala",
+      "count": 2
+    },
+    {
+      "author": "Dunlosky",
+      "count": 1
+    },
+    {
+      "author": "Goodhue",
+      "count": 4
+    },
+    {
+      "author": "Hevner",
+      "count": 4
+    },
+    {
+      "author": "Ji",
+      "count": 1
+    },
+    {
+      "author": "Kleidermacher",
+      "count": 2
+    },
+    {
+      "author": "Kuzu",
+      "count": 1
+    },
+    {
+      "author": "Sweller",
+      "count": 1
+    },
+    {
+      "author": "Tran",
+      "count": 1
+    },
+    {
+      "author": "University of Auckland",
+      "count": 1
+    },
+    {
+      "author": "van de Pol",
+      "count": 4
+    },
+    {
+      "author": "Venable",
+      "count": 3
+    }
+  ],
+  "keywordSource": "Assignment 4 PDF, page 1, extracted and visually checked",
+  "ionEvidenceRecheck": {
+    "caseId": "SIM08-B",
+    "step": "initial",
+    "returnedAndStoredMatch": true,
+    "originalBurmeseTechnical": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။",
+    "originalEnglishTechnical": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+    "interpretation": "The Burmese sentence denies net charge, then states that a positive or negative charge forms. It contradicts itself and the corresponding English definition. No score or evidence was changed."
+  },
+  "tables": 6,
+  "figures": 2,
+  "registeredEvidencePreserved": 69,
+  "productionFilesPreserved": 66,
+  "registerUnchanged": true,
+  "scope": "Editorial revision and recorded-evidence recheck only. No production change, new evaluation execution, new content ratings or release clearance.",
+  "limitations": "Editorial checks and targeted recorded-output inspection. Not a full source reappraisal, evaluation rerun, new human assessment or Word layout check.",
+  "submissionReady": false,
+  "failures": []
+}

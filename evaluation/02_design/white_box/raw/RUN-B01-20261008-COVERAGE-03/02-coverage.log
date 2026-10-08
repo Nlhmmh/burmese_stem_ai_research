@@ -1,0 +1,38 @@
+$ npm run test:coverage
+
+> burmese_stem_ai@0.1.0 test:coverage
+> vitest run --coverage
+
+
+ RUN  v4.1.11 /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai
+      Coverage enabled with v8
+
+
+ Test Files  38 passed (38)
+      Tests  511 passed (511)
+   Start at  15:40:25
+   Duration  2.41s (transform 1.21s, setup 363ms, import 3.48s, tests 4.66s, environment 2.51s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   99.07 |    97.07 |     100 |   99.67 |                   
+ ..._ai/components |     100 |    83.33 |     100 |     100 |                   
+  ...lSwitcher.tsx |     100 |    83.33 |     100 |     100 | 14                
+ ...mponents/learn |    97.1 |    93.71 |     100 |     100 |                   
+  ...ngSession.tsx |   96.32 |    90.44 |     100 |     100 | ...99,217,246,435 
+ ...e_stem_ai/data |   97.22 |    94.11 |     100 |   97.22 |                   
+  init-db.ts       |   93.33 |       50 |     100 |   93.33 | 22                
+ ...em_ai/services |   99.14 |    97.73 |     100 |   99.39 |                   
+  ...on.service.ts |   97.81 |    97.72 |     100 |   98.44 | 393,432           
+  ...up.service.ts |     100 |    97.05 |     100 |     100 | 77,125            
+  ...on.service.ts |     100 |    95.08 |     100 |     100 | 130,137,177       
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 99.07% ( 967/976 )
+Branches     : 97.07% ( 797/821 )
+Functions    : 100% ( 200/200 )
+Lines        : 99.67% ( 919/922 )
+================================================================================

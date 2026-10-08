@@ -1,0 +1,46 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+const raw = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(raw, '../../../..');
+const run = path.join(raw, 'RUN-B01-20261002-BLACKBOX-01');
+const read = file => fs.readFileSync(path.join(run,file),'utf8');
+const rows = file => read(file).trim().split('\n').map(JSON.parse);
+const api=rows('results.jsonl'), http=rows('http.jsonl'), extra=rows('public_boundary_addendum.jsonl');
+const browser=JSON.parse(read('browser_observations.json')), database=JSON.parse(read('database_snapshot.json')),meta=JSON.parse(read('metadata.json'));
+assert.equal(api.length,24);assert.deepEqual(api.map(r=>r.id),Array.from({length:24},(_,i)=>'BB'+String(i+1).padStart(2,'0')));
+assert.equal(api.reduce((n,r)=>n+r.assertions.length,0),370);
+assert.deepEqual(api.filter(r=>r.outcome==='Fail').map(r=>r.id),['BB08','BB22']);
+assert.equal(api.flatMap(r=>r.assertions.filter(a=>!a.pass)).length,2);
+assert.equal(extra.length,9);assert.equal(extra.flatMap(r=>r.checks).length,11);assert.ok(extra.every(r=>r.checks.every(c=>c.pass)));
+assert.equal(browser.length,44);assert.equal(browser.flatMap(r=>r.checks).length,46);
+const failures=browser.filter(r=>r.checks.some(c=>!c.pass));
+assert.deepEqual(failures.map(r=>r.id),['UI03-hint','UI19-language-override-english','UI25-concept-corrected','UI26-correction-resume']);
+for(const id of ['UI03b-hint-verified','UI19b-language-override-english-verified','UI25b-correction-verified','UI26b-correction-trace-verified'])assert.ok(browser.find(r=>r.id===id).checks.every(c=>c.pass));
+for(const r of browser)assert.ok(fs.statSync(path.join(run,r.screenshot)).size>1000,r.id+' screenshot absent');
+const provider=rows('provider.jsonl');assert.equal(provider.length,112);assert.equal(meta.providerFixtureAttempts,112);
+const timeouts=api.find(r=>r.id==='BB18').steps.filter(r=>r.elapsedMs>10000).map(r=>r.elapsedMs);
+assert.equal(timeouts.length,3);assert.ok(timeouts.every(ms=>ms>=19500&&ms<30000));
+assert.equal(meta.lockHash,'d27ebe08630989019ad6254e4de77c9c2e5d21419acf2347d8d0adadc6557702');
+execFileSync('git',['diff','--exit-code',meta.commit,'--','burmese_stem_ai'],{cwd:root});
+assert.ok(database.sessions.every(s=>s.adaptationRound<=2&&s.adaptations.length<=2&&s.followUps.length<=2));
+let detailProjections=0;
+for(const item of http.filter(r=>r.method==='GET'&&r.data.session&&r.status===200)){
+ const stored=item.after.sessions.find(s=>s.sessionId===item.data.session.sessionId);
+ assert.ok(stored);for(const [key,value] of Object.entries(item.data.session))assert.deepEqual(value,stored[key],item.endpoint+' field '+key);
+ assert.deepEqual(item.before,item.after,item.endpoint+' GET mutation');detailProjections++;
+}
+const history=browser.find(r=>r.id==='UI40-history-mixed-states');
+const visible=[...history.snapshot.matchAll(/\/url: \/learn\/([a-f0-9-]+)/g)].map(m=>m[1]);
+const owner=database.sessions.find(s=>s.sessionId===visible[0]).learnerId;
+assert.ok(owner!==meta.owners.A&&owner!==meta.owners.B);
+assert.deepEqual(visible,database.sessions.filter(s=>s.learnerId===owner).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt)).map(s=>s.sessionId));
+const review=browser.find(r=>r.id==='UI16-review-all-history');const reviewId=review.url.split('/').at(-1);const storedReview=database.sessions.find(s=>s.sessionId===reviewId);
+for(const item of [...Object.values(storedReview.explanations),...storedReview.adaptations.map(a=>a.content),...storedReview.followUps.map(f=>f.answer)])for(const text of Object.values(item))assert.ok(review.snapshot.includes(text),'Review missing exact stored support');
+for(const event of storedReview.responseEvents)assert.ok(review.snapshot.includes(event.roundBefore+' → '+event.roundAfter));
+const results={runId:meta.runId,verification:'Pass',mainApiCases:24,firstApiCaseOutcomes:{Pass:22,Fail:2},firstApiAssertions:370,firstApiFailedAssertions:2,publicAddendumAttempts:9,publicAddendumAssertions:11,publicAddendumFailedAssertions:0,browserObservations:44,browserAssertions:46,browserFailedAssertions:4,browserRechecks:'Four retained failed predicates have explicit corrected observations; original records not overwritten',screenshots:fs.readdirSync(path.join(run,'screenshots')).length,httpRequests:164,providerFixtureAttempts:112,externalProviderRequests:0,verifiedSuccessfulDetailProjections:detailProjections,visibleHistorySessions:visible.length,historyOwnershipAndOrdering:'Pass',completeStoredReviewContent:'Pass',timeoutElapsedMs:timeouts,persisted:{sessions:database.sessions.length,profiles:database.profiles.length,adaptations:database.sessions.reduce((n,s)=>n+s.adaptations.length,0),responseEvents:database.sessions.reduce((n,s)=>n+s.responseEvents.length,0),followUps:database.sessions.reduce((n,s)=>n+s.followUps.length,0)},applicationDiffAgainstB01:'empty',qualification:'Evidence integrity/accounting Pass, not all frozen assertions or content quality Pass. Controlled fixtures are not live LLM or educational-effectiveness evidence.'};
+if(process.argv.includes('--patch'))process.stdout.write('*** Begin Patch\n*** Add File: '+path.join(run,'verification.json')+'\n'+JSON.stringify(results,null,2).split('\n').map(l=>'+'+l).join('\n')+'\n*** End Patch');
+else{assert.deepEqual(JSON.parse(read('verification.json')),results);console.log(JSON.stringify(results));}

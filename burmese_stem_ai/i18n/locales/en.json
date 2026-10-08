@@ -52,14 +52,14 @@
   },
   "history": {
     "title": "Learning History",
-    "subtitle": "Your STEM concepts and understanding progress",
+    "subtitle": "Your STEM concepts and self-reported support history",
     "newInquiry": "New Inquiry",
     "understanding": {
-      "label": "Understanding",
-      "high": "High",
-      "medium": "Medium",
-      "needs_support": "Needs Support",
-      "unrated": "Not Rated"
+      "label": "Self-reported support",
+      "high": "No support needed",
+      "medium": "Some support",
+      "needs_support": "More support needed",
+      "unrated": "No response yet"
     },
     "status": {
       "label": "Status",
@@ -101,13 +101,72 @@
       "needs_support": "I need more explanation",
       "askAgain": "How do you feel after the additional explanation?",
       "adapting": "Preparing additional support...",
-      "maximumSupport": "Maximum support provided. You can revisit this concept in your history."
+      "maximumSupport": "Maximum support provided. You can revisit this concept in your history.",
+      "routeApplied": "Support route: {route}",
+      "routes": {
+        "fade": "No additional support",
+        "stage_5_scaffold": "Additional scaffold",
+        "language_support": "Bilingual language support",
+        "concept_clarification": "Concept clarification",
+        "context_reinterpretation": "Concept or context correction"
+      },
+      "stage6b": {
+        "selectedNeed": "Selected response: {need}",
+        "needs": {
+          "medium": "I partially understand",
+          "needs_support": "I need more explanation"
+        },
+        "question": "What would help you most?",
+        "optional": "Choose one option, or continue without choosing.",
+        "choices": {
+          "simpler_explanation": "A simpler explanation",
+          "another_example": "Another example",
+          "language_terms": "Help with Burmese / English terms",
+          "concept_unclear": "I do not understand the concept",
+          "concept_mismatch": "The concept or term is not what I meant"
+        },
+        "clarificationLabel": "What term or context did you mean?",
+        "clarificationPlaceholder": "For example: I meant a cell in a spreadsheet.",
+        "characterCount": "{count}/{maximum} characters",
+        "continue": "Continue with this choice",
+        "skip": "Continue without a choice",
+        "cancel": "Back to understanding choices",
+        "submitting": "Preparing support..."
+      }
+    },
+    "review": {
+      "title": "Support and response history",
+      "noRecordedSupport": "No refined support response was recorded for this session.",
+      "responses": "Self-reported responses",
+      "responseNumber": "Response {number}",
+      "selfReportedSupport": "Self-reported support",
+      "requestedHelp": "Requested help",
+      "noSpecificHelp": "No specific help selected",
+      "route": "Support route",
+      "round": "Adaptation round",
+      "conceptTrace": "{outcome}: {previous} → {current}",
+      "legacyHistory": "This legacy session has stored adaptations but predates detailed response-route history.",
+      "adaptations": "Stored adaptations",
+      "adaptationRound": "Adaptation round {round}",
+      "needs": {
+        "high": "No additional support needed",
+        "medium": "Some support requested",
+        "needs_support": "More support requested"
+      },
+      "correctionOutcomes": {
+        "corrected": "Concept corrected",
+        "ambiguous": "Meaning remained ambiguous",
+        "limit_reached": "Correction limit reached"
+      }
     },
     "support": {
       "key_takeaway": "Key Takeaway",
       "another_example": "Adapted — Additional Example",
       "simpler_explanation": "Adapted — Simpler Explanation",
       "clarification": "Adapted — Clarification",
+      "concept_clarification": "Adapted — Concept Clarification",
+      "concept_correction": "Adapted — Concept Correction",
+      "correctionTrace": "Corrected from {previous} to {current}",
       "analogy": "Adapted — Analogy",
       "hint": "Adapted — Hint"
     },
@@ -132,6 +191,7 @@
       "title": "Session could not be loaded",
       "load": "Unable to load this learning session.",
       "respond": "Unable to prepare additional support right now.",
+      "retry": "Try again",
       "complete": "Unable to complete this session right now.",
       "followUp": "Unable to prepare a follow-up answer right now."
     }

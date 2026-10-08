@@ -1,0 +1,67 @@
+{
+  "revisionId": "APPENDIX-SUMMARY-01",
+  "reviewDate": "5 October 2026, Pacific/Auckland",
+  "previousPaperCommit": "aaf8eca0129e1191eb43b2a8b0478baf43ad7183",
+  "previousPaperHash": "3bf3f109ea7166c4d593c163483ca10f637535c02272f05c0b8f9ac97bea09a9",
+  "paperHash": "fdff349868fb1378ef0d5950ce8c160c7dfa8befe7bd57d6abd1e796ad9d77a7",
+  "previousAppendixWords": 29478,
+  "currentAppendixWords": 3361,
+  "abstractWords": 150,
+  "designProseWords": 1133,
+  "resultsProseWords": 776,
+  "appendixTables": 20,
+  "totalTables": 25,
+  "appendixAUnchanged": true,
+  "mainTablesUnchanged": true,
+  "bilingualExamplesExact": true,
+  "exactSpanFindings": [
+    "BIL-F04",
+    "BIL-F05",
+    "BIL-F10",
+    "BIL-F07",
+    "BIL-F21",
+    "BIL-F26",
+    "BIL-F31",
+    "BIL-F39",
+    "BIL-F28",
+    "BIL-F29"
+  ],
+  "originalEvidencePreserved": 69,
+  "productionFilesPreserved": 66,
+  "originalResultRows": 225,
+  "originalTraceabilityRows": 24,
+  "simulationAttempts": 55,
+  "originalContentRatings": {
+    "Pass": 18,
+    "Partial": 71,
+    "Fail": 2
+  },
+  "supplementaryAnnotations": {
+    "Major": 4,
+    "Minor": 27,
+    "Advisory": 10
+  },
+  "whiteBoxUniqueTests": 373,
+  "blackBoxOutcomes": {
+    "Pass": 21,
+    "Partial": 2,
+    "Fail": 1
+  },
+  "usabilityOutcomes": {
+    "Pass": 6,
+    "Partial": 3
+  },
+  "currentHashes": {
+    "evaluation/04_paper/assignment_5_working_paper.md": "fdff349868fb1378ef0d5950ce8c160c7dfa8befe7bd57d6abd1e796ad9d77a7",
+    "evaluation/04_paper/appendix_summary_revision.md": "5e41413fe57533dcb2602507d7201ba3556824edce60c13ed53e081973c3b69a",
+    "evaluation/04_paper/rubric_review_and_word_handoff.md": "63d868a86c81ba21540cd191394fba1e2cfccecaadc8febd96ec0eff45b8d456",
+    "evaluation/04_paper/raw/build_appendix_summaries.mjs": "4c1fec069af4be2a56ae488faa66364ae3c358e28b47f84bdd6c23bc3df9bf9a",
+    "evaluation/00_protocol/evaluation_protocol.md": "6623c8fb4090d21b6966732a35157c7254e2f8d27c6f64b7e5ef84134feb61ba",
+    "docs/INFOSYS_720_Assignment_5_Complete_Plan_UPDATED.md": "c4ceb0712f3893366b7ef947fd132afd4f08694e98ae1f5626d312feddf936d7",
+    "evaluation/02_design/simulation/bilingual_assessment/annotations.json": "093b0de531c5a932552d66550ff5ba45ecdcd99d43f54651a468e5485504ed37"
+  },
+  "applicationTestsRerun": false,
+  "WordLayoutChecked": false,
+  "independentHumanAssessment": false,
+  "failures": []
+}

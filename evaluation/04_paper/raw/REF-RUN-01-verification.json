@@ -1,0 +1,22 @@
+{
+  "runId": "REFERENCES-20261003-PAPER-01",
+  "checkedAt": "2026-10-03T04:27:25.933Z",
+  "candidateReferences": 15,
+  "sourceInventoryRows": 15,
+  "distinctExternalReferenceLocators": 13,
+  "currentCaptionCitationKeys": [
+    "Goodhue 1995",
+    "Hevner 2004",
+    "van de Pol 2010",
+    "Venable 2016"
+  ],
+  "currentCaptionCorrespondence": "Four keys resolve in E069 and E073 and the candidate pool",
+  "fullPaperCitationAudit": "Pending: body not drafted; candidate-only entries are not final-paper orphans",
+  "sourceAccess": "Inherited E040/E047/E059 limits; selected fresh metadata checks disclosed, not all original texts read",
+  "priorRegisteredArtefactsPreserved": 69,
+  "priorDraftingFilesPreserved": 6,
+  "productionFilesPreserved": 66,
+  "registerUnchanged": true,
+  "strategyHash": "fd9ba3ddb0291234e4307cfe82c94dd002ac40554253feced98f4fa4730391cc",
+  "failures": []
+}
