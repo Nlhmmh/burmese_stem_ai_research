@@ -1,41 +1,10 @@
-# Step 11 — Dynamic Analysis Results
+# Dynamic analysis
 
-> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+## Run and scope
 
-| Document control | Value |
-| --- | --- |
-| Specification ID | `A5-STEP11-DYNAMIC-RESULT-01` |
-| Run IDs | `RUN-B01-20261001-DYNAMIC-01`; manual-browser addendum `RUN-B01-20261001-DYNAMIC-UI-01` |
-| Baseline | `B01-A5-EVALUATION` |
-| Protocol | `A5-PROTOCOL-01`, version 2.1 |
-| Execution status | Completed with qualification — runtime and planned browser observations complete; direct provider-call absence remains indirect for DYN-05/DYN-06 |
-| Evaluator | Codex technical execution under user direction; manual browser pass by Nathan |
-| Data | Artificial learner aliases and artificial STEM questions only |
+RUN-B01-20261001-DYNAMIC-01 used the real local B01 application, live provider and isolated MongoDB. Nathan completed manual browser pass RUN-B01-20261001-DYNAMIC-UI-01 in Chrome 154.0.8037.59 at 1440 × 900, English/light. Evidence E004–E013.
 
-## Outcome
-
-The executable B01 application passed the completed runtime API, persistence,
-ownership, routing, bound, follow-up, lifecycle, and controlled-provider-error
-checks. All 15 live-provider initial-generation timing attempts succeeded. The
-subsequent manual-browser addendum executed UI-01–UI-12 and all twelve passed
-within the recorded desktop Chrome, English, Light scope.
-
-Step 11 is closed with a narrow qualification: DYN-05 and DYN-06 visually and
-persistently showed no extra adaptation or round increment, but zero provider
-calls were not directly instrumented. The browser pass is evaluator technical
-inspection, not participant usability evidence.
-
-## Dependency modes
-
-- Application: local B01 Next.js development server.
-- Persistence: fresh isolated MongoDB 8.2.6 database.
-- Generation: live configured OpenAI provider using `gpt-5.4-mini`.
-- Fault injection: same application with an intentionally invalid provider
-  key; the invalid value is not preserved.
-- Browser addendum: Chrome 154.0.8037.59 at 1440 × 900, English UI, Light
-  theme, using the retained isolated database and artificial learner UUID.
-
-## Workflow results
+## Cases and results
 
 | Case | Completed observation | Outcome | Qualification |
 | --- | --- | --- | --- |
@@ -53,90 +22,22 @@ inspection, not participant usability evidence.
 | DYN-12 | Completion, idempotent repeat, post-completion HTTP 409/no mutation | Pass | Runtime API/database evidence complete |
 | DYN-13 | Controlled HTTP 502/safe UI, no partial session, and same-question recovery | Pass | HTTP 502 and later HTTP 201 retained separately |
 
-No application failure was found in the completed runtime or planned browser
-assertions. Partial Pass for DYN-05/DYN-06 means all observed state/UI
-assertions passed while the required provider-call count was not directly
-instrumented; it is not a full case Pass.
+## Timing
 
-## Timing results
+Fifteen sequential initial-generation requests across photosynthesis, gravity, current, OOP inheritance and pH succeeded. Median was 3,330.576 ms, with range 2,592.835–4,640.164 ms. [All timing rows](timings.csv) are retained. These are local descriptive observations, not load testing, an SLA or a latency guarantee.
 
-The boundary was a monotonic client timer around `POST /api/sessions`. Every
-row used a fresh session, the same owner preferences, the isolated database,
-and the live provider. No retries replaced a timing row.
+## Manual browser observations
 
-| Question | Successful n | Minimum ms | Median ms | Maximum ms |
-| --- | ---: | ---: | ---: | ---: |
-| Photosynthesis | 3 | 3130.118 | 3620.888 | 3970.571 |
-| Gravity | 3 | 3123.938 | 3763.794 | 3935.289 |
-| Electric current | 3 | 2592.835 | 2615.113 | 2907.745 |
-| OOP inheritance | 3 | 3311.446 | 3757.689 | 4640.164 |
-| pH | 3 | 2841.662 | 3330.576 | 3480.360 |
-| **Pooled** | **15** | **2592.835** | **3330.576** | **4640.164** |
+All twelve planned captures passed within the stated desktop scope. Home, initial content, Stage 6B, both adaptations, limit/Finish, fade, bilingual override, History, completed Review, reload/Resume and error/recovery were observed. The planned provider fault returned safe HTTP 502, and the unchanged question later succeeded with HTTP 201 after provider restoration. The HAR had 168 localhost entries without exported authorization/cookie values. Original screenshots are retained in [the browser run](raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/).
 
-There were zero HTTP failures and zero timeouts among the 15 fixed timing
-attempts. These are descriptive measurements only: the protocol defines no
-latency threshold, and this run does not establish acceptable performance or
-an SLA.
+## Qualifications
 
-## Important runtime findings
+DYN-05/06 remain Partial Pass because zero provider calls were inferred, not directly counted in this run. Later bounds checks do not upgrade these historical cases. DYN-10's initial assertion checked the wrong response nesting; the first attempt and adjudication are preserved. Mobile/Burmese/dark/keyboard coverage belongs to the separate usability inspection. This technical browser pass is not a participant study or general linguistic validation.
 
-1. The real middleware rejected a supplied learner header and derived identity
-   from a valid UUID cookie. The run therefore mapped artificial aliases to
-   fixed test cookies and exercised the intended ownership boundary.
-2. DYN-05 and DYN-06 returned in milliseconds while generated adaptations took
-   seconds, and neither route added an adaptation or incremented its round.
-   This supports the bounded routing contract, but provider-call counts were
-   not directly instrumented.
-3. DYN-08 returned `correctionOutcome: corrected`, retained the learner's
-   clarification, and stored the active concept as `cell` in `biology`.
-4. DYN-10 exposed `newSessionRecommended` at the response root. The first
-   driver assertion checked the wrong nesting; the raw pass evidence and the
-   original failed assertion are both retained.
-5. DYN-13 created the normal default learner profile before generation failed,
-   but created no learning session. The stable learner-facing error contained
-   no raw provider detail.
-6. The existing Mongoose `new`-option deprecation warning remains observable.
+## Evidence and repeat procedure
 
-## Manual browser addendum
+[Raw API/state records](raw/) and timing CSV remain unchanged. Archived manual metadata, observation notes and the original test-case document contain the complete setup and 15-step screenshot procedure. For a new pass, verify B01, use an isolated synthetic learner/database, record viewport and preferences, repeat the twelve states above, and save screenshots plus start/end times in a new run folder rather than overwrite this evidence.
 
-Nathan executed `RUN-B01-20261001-DYNAMIC-UI-01` on 1 October 2026 using
-Chrome 154.0.8037.59, a 1440 × 900 viewport, English UI and Light theme. All
-twelve planned observations passed:
+## Record detail
 
-- Home and structured initial content rendered without error.
-- Medium opened all five optional Stage 6B choices plus skip/back actions.
-- The first and second adaptations, response history, two-round limit and
-  separate finish action rendered as expected.
-- High/fade rendered event 0→0 with no adaptation card and separate finish.
-- Language support displayed English and Burmese together.
-- History, completed Review and reload/Resume reconstructed persisted state.
-- The controlled invalid-key request produced HTTP 502 with a safe message;
-  the unchanged question succeeded with HTTP 201 after provider restoration.
-
-The HAR contains 168 localhost-only entries, no exported authorization/cookie
-values, and no status at or above 400 other than the planned HTTP 502. The
-recovery screenshot was moved from the run root into its planned screenshots
-directory without altering the image. The draft end time was corrected from
-6:32 PM to 6:38 PM using the recovery screenshot and HAR timestamps.
-
-Remaining limits are mobile layout, Burmese UI, Dark theme, systematic
-keyboard-only use, the full preferences matrix, participant usability, content
-accuracy, linguistic quality, and direct provider-call instrumentation for
-DYN-05/DYN-06.
-
-## Evidence
-
-- `E004`: command/environment/failure/browser-attempt log.
-- `E005`: raw API responses and database before/after snapshots.
-- `E006`: machine-readable case summary with the original DYN-10 assertion.
-- `E007`: all 15 timing rows.
-- `E008`: this analysed result.
-- `E009`: retained DYN-10 assertion-path adjudication.
-- `E010`: completed manual-browser observation record.
-- `E011`: manual-browser run metadata and sign-off.
-- `E012`: SHA-256 manifest for the 12 screenshots.
-- `E013`: localhost browser HAR containing the controlled failure and recovery.
-
-The run establishes technical runtime behaviour only. It does not establish
-educational effectiveness, content accuracy across the evaluation corpus,
-learner satisfaction, or usability outcomes.
+[Shared protocol and human verification](../../00_protocol/evaluation_protocol.md) · [Complete original documents](../../archive/pre_consolidation_markdown_20261008.zip) · [Archive guide](../../README.md#archive-and-recovery).

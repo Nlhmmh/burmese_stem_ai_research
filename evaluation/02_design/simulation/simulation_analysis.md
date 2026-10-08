@@ -1,10 +1,12 @@
-# Simulation analysis — technical execution
+# Simulation and content assessment
 
-Run: **RUN-B01-20261001-SIMULATION-02**. Baseline: **B01-A5-EVALUATION**; application commit `37faefa236829aa3d79e023faa1fb72a086b5c2a`. Protocol: 2.1. Start: 2026-10-01T10:38:45.239Z; end: 2026-10-01T10:43:52.701Z (UTC).
+## Run and scope
 
-Status: **All 55 planned attempts accounted for; qualified human content judgement pending.** This does not complete the content-rating requirement of Step 13.
+RUN-B01-20261001-SIMULATION-02 evaluated B01 route handlers, services, live provider and isolated MongoDB on 1 October 2026. UTC execution was 10:38:45.239–10:43:52.701. It was not public HTTP/proxy/browser testing. Sixteen fixed inquiries followed A/B/C response paths, plus seven language/context cases. Start/end, model configuration, exact inputs and provider captures remain in [run metadata](raw/SIM-RUN-01-metadata.json) and [case definitions](simulation_cases.csv).
 
-## Actual results
+Path A was initial support, High and Finish. B was initial support, Medium with optional help skipped, High and Finish. C was initial support, simpler explanation, conceptual clarification and a cap check. Three language-help cases used bilingual/English/Burmese preferences. Four context cases clarified cell, current, network and inheritance.
+
+## Technical results
 
 | Scope | Attempts | Technical Pass | Controlled ambiguity | Technical Fail |
 | --- | --- | --- | --- | --- |
@@ -12,92 +14,40 @@ Status: **All 55 planned attempts accounted for; qualified human content judgeme
 | Separate routes | 7 | 3 | 2 | 2 |
 | Total | 55 | 44 | 8 | 3 |
 
-A controlled ambiguity is an executed initial HTTP 422 outcome with no session. Its fade/adaptation/correction path is Not applicable, not a path Pass. For any 201 interpretation of an ambiguous term, qualification/context accuracy still needs human judgement.
+There were 102 provider attempts, 47 sessions, 44 stored adaptations and 85 response events. Eight initial ambiguities created no session, so downstream steps were not applicable and not successful corrections. [All case outcomes](simulation_results.csv) retain their original denominators.
 
-Actual created sessions: 47; adaptations stored: 44; response events stored: 85. Live provider attempts: 102. Successful provider response model identifiers: gpt-5.4-mini-2026-03-17. Observed usage: {"input_tokens":119700,"output_tokens":36676,"total_tokens":156376}; not a billed-cost estimate.
+| Failed case | Observation | Boundary |
+| --- | --- | --- |
+| SIM05-C | Generation returned HTTP 502 after cancellation measured at 52.825 s despite a 20-second timer | Later steps unreached; earlier stored content retained |
+| SIM-CM-13 | Biological-cell correction returned unchanged interpretation labelled corrected and was rejected | No corrected adaptation persisted |
+| SIM-CM-16 | Programming-inheritance correction returned unchanged interpretation labelled corrected and was rejected | No corrected adaptation persisted |
 
-The observation wrapper retained safe request bodies (prompts, inputs and JSON schemas), successful raw provider responses, statuses/timing and redacted failure metadata. No credential headers were captured. There are no model retries in this full execution.
+An earlier runner comparison defect and interrupted attempt remain in raw/aborted_attempt_01 and do not enter the 55-attempt total. Safe rejection/unchanged state does not make failed delivery a Pass.
 
-## Per-case outcomes
+## Content assessment
 
-| Case | Initial HTTP | Technical outcome | Path outcome | Calls | Final round/status | Failure/limitation |
-| --- | --- | --- | --- | --- | --- | --- |
-| SIM01-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM01-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM01-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM02-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM02-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM02-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM03-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM03-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM03-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM04-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM04-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM04-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM05-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM05-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM05-C | 201 | Fail | Incomplete | 3 | 1 / in_progress | Assertion failed: response HTTP 200 |
-| SIM06-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM06-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM06-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM07-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM07-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM07-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM08-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM08-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM08-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM09-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM09-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM09-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM10-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM10-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM10-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM11-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM11-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM11-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM12-A | 201 | Pass | Pass | 1 | 0 / completed |  |
-| SIM12-B | 201 | Pass | Pass | 2 | 1 / completed |  |
-| SIM12-C | 201 | Pass | Pass | 3 | 2 / review_recommended |  |
-| SIM13-A | 201 | Pass | Pass | 1 | 0 / completed | Human must assess explicit qualification of the initial ambiguous-term interpretation; 201 is not an F2 content pass. |
-| SIM13-B | 201 | Pass | Pass | 2 | 1 / completed | Human must assess explicit qualification of the initial ambiguous-term interpretation; 201 is not an F2 content pass. |
-| SIM13-C | 201 | Pass | Pass | 3 | 2 / review_recommended | Human must assess explicit qualification of the initial ambiguous-term interpretation; 201 is not an F2 content pass. |
-| SIM14-A | 422 | Controlled ambiguity | Not applicable: no session | 1 | No session | Initial clarification is returned without creating a session; no response/correction endpoint can operate on this attempt. |
-| SIM14-B | 422 | Controlled ambiguity | Not applicable: no session | 1 | No session | Initial clarification is returned without creating a session; no response/correction endpoint can operate on this attempt. |
-| SIM14-C | 422 | Controlled ambiguity | Not applicable: no session | 1 | No session | Initial clarification is returned without creating a session; no response/correction endpoint can operate on this attempt. |
-| SIM15-A | 422 | Controlled ambiguity | Not applicable: no session | 1 | No session | Initial clarification is returned without creating a session; no response/correction endpoint can operate on this attempt. |
-| SIM15-B | 422 | Controlled ambiguity | Not applicable: no session | 1 | No session | Initial clarification is returned without creating a session; no response/correction endpoint can operate on this attempt. |
-| SIM15-C | 422 | Controlled ambiguity | Not applicable: no session | 1 | No session | Initial clarification is returned without creating a session; no response/correction endpoint can operate on this attempt. |
-| SIM16-A | 201 | Pass | Pass | 1 | 0 / completed | Human must assess explicit qualification of the initial ambiguous-term interpretation; 201 is not an F2 content pass. |
-| SIM16-B | 201 | Pass | Pass | 2 | 1 / completed | Human must assess explicit qualification of the initial ambiguous-term interpretation; 201 is not an F2 content pass. |
-| SIM16-C | 201 | Pass | Pass | 3 | 2 / review_recommended | Human must assess explicit qualification of the initial ambiguous-term interpretation; 201 is not an F2 content pass. |
-| SIM-LANG-01 | 201 | Pass | Pass | 2 | 1 / in_progress | Payload and override checked; browser display and language quality require separate assessment. |
-| SIM-LANG-02 | 201 | Pass | Pass | 2 | 1 / in_progress | Payload and override checked; browser display and language quality require separate assessment. |
-| SIM-LANG-03 | 201 | Pass | Pass | 2 | 1 / in_progress | Payload and override checked; browser display and language quality require separate assessment. |
-| SIM-CM-13 | 201 | Fail | Incomplete | 2 | 0 / in_progress | Assertion failed: concept response HTTP 200 |
-| SIM-CM-14 | 422 | Controlled ambiguity | Not applicable: no session | 1 | No session | Initial clarification is returned without creating a session; no response/correction endpoint can operate on this attempt. |
-| SIM-CM-15 | 422 | Controlled ambiguity | Not applicable: no session | 1 | No session | Initial clarification is returned without creating a session; no response/correction endpoint can operate on this attempt. |
-| SIM-CM-16 | 201 | Fail | Incomplete | 2 | 0 / in_progress | Assertion failed: concept response HTTP 200 |
+All 91 delivered support outputs were assessed for scientific correctness, contextual relevance, English/Burmese language adequacy, explanation beyond translation and adaptation appropriateness. Dimension scores and the unchanged rule are in the shared protocol. Outcomes were **18 Pass, 71 Partial and two Fail**. These are outputs, not learners or independent observations.
 
-## Failures and accounting
+[human_content_scores.csv](human_content_scores.csv) retains all scores and rationales. Original 55 worksheets and 2 October authorised sign-offs are archived, not deleted irrecoverably. The author's confirmed personal scientific and bilingual checking is recorded in the protocol. No independent second assessor or certified terminology glossary is claimed. SIM04-A's saved language-score amendment and SIM01-A comments remain in the original evidence.
 
-- SIM05-C: Assertion failed: response HTTP 200. Last observed HTTP: 502. Dependent later steps were not executed or claimed passed.
-- SIM-CM-13: Assertion failed: concept response HTTP 200. Last observed HTTP: 502. Dependent later steps were not executed or claimed passed.
-- SIM-CM-16: Assertion failed: concept response HTTP 200. Last observed HTTP: 502. Dependent later steps were not executed or claimed passed.
+| Noticeable finding | Meaning and consequence |
+| --- | --- |
+| Gravity, SIM04-B initial | Mass was confused with weight and translated using wording meaning “in a large group”. One initial output remains Fail |
+| Ion, SIM08-B initial | Burmese net-charge negation contradicts the English definition and later charge statement. Initial output remains Fail |
+| Electric current, language support | Some support describes speed rather than charge quantity per second. Valid bilingual payload does not establish successful remediation |
+| Foreign-script fragments | Eight reviewed outputs contained unrelated script. Display/schema acceptance did not establish language correctness |
+| Repeated support | Some simpler/conceptual revisions restated earlier wording. Different strings alone did not establish useful adaptation |
 
-Before this full run, one sandbox preflight failed before generation. A first runner execution was stopped after 11 recorded initial attempts because an order-sensitive JSON comparison misreported matching preferences. That run and its console/provider captures remain under `raw/aborted_attempt_01/`; a following in-flight call was interrupted. Its records are not included in the 55 full-run denominator. The replacement used semantic equality and fresh isolated state; no application behaviour, prompt, schema or reference oracle was modified. See [command log](raw/SIM-RUN-01-command-log.md).
+Better later ion/gravity support did not repair the earlier stored text. Missing/rejected outputs were not scored as delivered content. The eight clarification messages were assessed separately, with Burmese marked NA where absent.
 
-## Technical evidence boundaries
+## Reference basis
 
-Real B01 Next route handlers, service validators, provider helper, DAOs and isolated MongoDB were executed. Requests used synthetic `x-learner-id` identities rather than the browser/middleware; HTTP statuses are handler response statuses, not measurements of transport through a deployed server. This run is not black-box authentication or browser rendering evidence. Profiles remained unchanged for successful checks. Bilingual payload and presentation overrides do not prove Burmese quality or visible rendering.
+SIM-REFERENCES-01 expectations were fixed before generation. Biology sources covered photosynthesis, DNA, osmosis and cells; physics covered gravity, current and momentum; chemistry covered pH, ions and catalysts. Computing and engineering sources covered inheritance, algorithms and carbon fibre. Exact concepts, misconceptions, locators and additions remain in the archived content_reference_notes.md and additional_reference_notes.md. No frozen expectation or source-access date was changed during consolidation.
 
-Exact initial text, adapted text and before/after documents are retained in [raw case JSONL](raw/SIM-RUN-01-results.jsonl); all final documents are in [database snapshot](raw/SIM-RUN-01-database-snapshot.json). Outputs from failed initial/response generation, where received, are retained in [provider JSONL](raw/SIM-RUN-01-provider.jsonl). The temporary server was stopped after capture; only synthetic temporary databases were created. No production/application database was altered.
+## Evidence
 
-## Qualified human review — intentionally unfinished
+E018–E023 identify execution, provider text, database state, original analysis/reference manifest and reviewed output scores. [Case JSONL](raw/SIM-RUN-01-results.jsonl), [provider JSONL](raw/SIM-RUN-01-provider.jsonl) and [database snapshot](raw/SIM-RUN-01-database-snapshot.json) remain unchanged. The [supplementary bilingual assessment](bilingual_assessment/results.md) is deeper inspection of selected saved outputs, not another simulation run or a regrade of the corpus.
 
-Open [qualified_human_judgement.md](qualified_human_judgement.md). There are 55 case worksheets and 91 blank generated-output score rows. Assessor, competence, dates, scores, rationale and content conclusions remain blank. Technical passes are not content-quality passes; meaningful adaptation and qualified initial ambiguity interpretations are unresolved. No learning gain, mastery, participant usability or pedagogical optimality claim is supported.
+## Record detail
 
-## Evidence and next action
-
-E018: console/metadata/command record. E019: full generated text and state/provider captures. E020: this technical analysis/results and blank human review pack. E021: frozen reference/corpus/runner manifest. Complete qualified review before declaring Step 13 fully complete; Step 14 black-box technical preparation can proceed with the content review explicitly outstanding.
-
-Detailed evidence-backed causes and unchanged-state checks: [failure_analysis.md](failure_analysis.md).
+[Shared protocol and human verification](../../00_protocol/evaluation_protocol.md) · [Complete original documents](../../archive/pre_consolidation_markdown_20261008.zip) · [Archive guide](../../README.md#archive-and-recovery).

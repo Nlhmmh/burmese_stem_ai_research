@@ -1,46 +1,10 @@
-# Step 12 — Bounds Analysis Results
+# Optimization and bounds analysis
 
-> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../../00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+## Run and scope
 
-| Document control | Value |
-| --- | --- |
-| Specification ID | `A5-STEP12-BOUNDS-RESULT-01` |
-| Run ID | `RUN-B01-20261001-BOUNDS-01` |
-| Baseline | `B01-A5-EVALUATION` |
-| Protocol | `A5-PROTOCOL-01`, version 2.1 |
-| Evaluator | Codex technical execution under user direction |
-| Execution status | Completed |
-| Overall outcome | Pass: BND-01–BND-17 passed |
+RUN-B01-20261001-BOUNDS-01 used B01, a real isolated MongoDB 8.2.6 database and a deterministic provider seam. Same-snapshot barriers exposed two concurrent responses. All BND-01–BND-17 passed. Evidence E014–E017. This evaluates constraints, not educationally optimal support.
 
-## Outcome
-
-All 17 planned bounds cases passed against the frozen B01 application using a
-real temporary MongoDB and deterministic provider instrumentation. The tested
-state never exceeded adaptation round 2, no capped or fade response created an
-adaptation, completion remained explicit, completed sessions rejected further
-responses, and both same-snapshot concurrency races preserved stored
-invariants.
-
-This supports bounded interaction and application-controlled state under the
-evaluated conditions. It does not establish that two adaptations are
-educationally optimal, globally optimal, or suitable for every learner.
-
-## Execution design
-
-- Every case used the real session DAO and isolated MongoDB 8.2.6 database
-  `burmese_stem_bounds_test`.
-- Generated routes used a deterministic provider mock so provider-call counts
-  were directly observed without a live API request.
-- An evaluation-only barrier released the two BND-15/BND-16 service calls only
-  after both had read the same stored snapshot.
-- BND-14 exercised the public response route and verified HTTP 409
-  `SESSION_RESPONSE_CONFLICT`.
-- BND-17 inserted invalid round values only into the ephemeral test database;
-  the service rejected them before provider or response-persistence calls.
-- The runner and configuration live under `evaluation/`; application source
-  was not modified and still matches executable B01.
-
-## Case results
+## Cases and results
 
 | Case | Action boundary | Before → after | Provider calls during action | Persistence attempts during action | Outcome |
 | --- | --- | --- | ---: | --- | --- |
@@ -62,67 +26,16 @@ educationally optimal, globally optimal, or suitable for every learner.
 | BND-16 | Two capped responses from same round-2 snapshot | exactly one success and one controlled conflict; round/adaptations stay 2; events total 3 | 0 | 2 attempts; 1 atomic event write | Pass |
 | BND-17 | Stored rounds -1, 0.5 and 3 | three controlled conflicts; invalid fixtures unchanged until test cleanup | 0 | 0 response writes | Pass |
 
-## Invariant assessment
+## Interpretation
 
-| Invariant | Result | Evidence |
-| --- | --- | --- |
-| Round remains an integer from 0 to 2 during valid workflows | Pass | BND-01–BND-16 |
-| Generated adaptations alone increment the round | Pass | BND-02–BND-11 |
-| Generated adaptations have matching events and round numbers | Pass | BND-02–BND-03, BND-15 |
-| Capped responses append an event without generation or round increment | Pass | BND-04–BND-08, BND-16 |
-| Fade appends an event without generation or round increment | Pass | BND-09–BND-11 |
-| No response creates adaptation round 3 | Pass | BND-04–BND-08, BND-11, BND-15–BND-17 |
-| High does not complete the session automatically | Pass | BND-09–BND-11 |
-| Explicit completion works and is idempotent | Pass | BND-12–BND-13 |
-| Completed sessions reject further responses without mutation | Pass | BND-14 |
-| Concurrent stale writes do not duplicate events or adaptations | Pass | BND-15–BND-16 |
-| Invalid stored rounds fail before generation/persistence | Pass | BND-17 |
+Stored adaptations stayed within rounds 0–2. Fade and cap appended events without generation or round increments. Finish remained explicit and idempotent; completed sessions rejected responses. Invalid stored-round fixtures failed before provider or write calls.
 
-## Findings and qualifications
+BND-15 made two provider calls but admitted one atomic write. The stored-round bound therefore protects persistence, not total provider spending or duplicate generation. BND-16 made no provider call at the cap and admitted one event write. These are tested concurrency conditions, not a guarantee for every deployment workload.
 
-1. The two-round bound held for every tested route, including language support,
-   conceptual clarification and context reinterpretation at the cap.
-2. BND-15 shows an important cost/concurrency distinction. Both generation-
-   capable requests were valid against the same round-1 snapshot and therefore
-   made a deterministic provider call, but MongoDB admitted only one atomic
-   state write. The stored bound is protected; duplicate provider work is still
-   possible during this race.
-3. BND-16 made zero provider calls because both requests began at the cap. Two
-   persistence attempts raced, but exactly one event append succeeded.
-4. BND-11 confirms that High at round 2 restores `in_progress` rather than
-   completing automatically. This matches the frozen contract that Finish is
-   a separate lifecycle action.
-5. BND-17 used raw invalid database fixtures only in a temporary isolated
-   database. Normal schema validation prevents those values from being created
-   through supported writes.
-6. The existing Mongoose `new`-option deprecation warning appeared in the
-   separate regression integration suite, not in a failed bounds assertion.
+## Evidence and reproduction
 
-## Attempts and regression checks
+[Raw runner, configuration and results](raw/) retain before/after counts and instrumentation. Run the archived command procedure with the evaluation-only Vitest config, root application and fresh synthetic MongoDB. Preserve new execution evidence separately. Sandbox port binding and initial config-resolution failures occurred before case assertions and remain recorded. Subsequent structural checks passed 208 deterministic and five integration tests, lint and TypeScript; these are historical counts, not the later expanded suite.
 
-Two pre-execution failures were retained: the sandbox initially blocked local
-port binding, and the first external Vitest config could not resolve its
-package. Neither reached a BND assertion. The first case-executing run and both
-evidence-completeness repeats passed 17/17.
+## Record detail
 
-After the final bounds run:
-
-- deterministic suite: 23 files and 208 tests passed;
-- existing MongoDB integration suite: 1 file and 5 tests passed;
-- lint: passed; and
-- TypeScript `--noEmit`: passed.
-
-## Evidence
-
-- `E014`: command/environment/attempt/regression log.
-- `E015`: machine-readable BND-01–BND-17 before/after results and counters.
-- `E016`: this analysed bounds result.
-- `E017`: SHA-256 manifest for the retained evaluation runner, configuration
-  and raw evidence files.
-
-## Conclusion
-
-B01 enforces the implemented interaction bound under the tested sequential,
-capped, lifecycle, invalid-state and same-snapshot concurrency conditions. The
-result is technical evidence about deterministic state control and persistence;
-it is not evidence that the chosen maximum improves learning or is optimal.
+[Shared protocol and human verification](../../00_protocol/evaluation_protocol.md) · [Complete original documents](../../archive/pre_consolidation_markdown_20261008.zip) · [Archive guide](../../README.md#archive-and-recovery).

@@ -1,0 +1,1260 @@
+{
+  "id": "EVAL-CONSOLIDATION-20261008-01",
+  "date": "2026-10-08",
+  "priorCommit": "3884b83bd08fad5e4fd4bc0ff3c205469955f037",
+  "archive": "evaluation/archive/pre_consolidation_markdown_20261008.zip",
+  "archiveSha256": "7e60601722fae8a98dbc9d272e12b15d1f697b07a47dcf70538d4d15d3d1cc5f",
+  "originalMarkdownFiles": 162,
+  "currentMarkdownFiles": 21,
+  "removedStandaloneMarkdownFiles": 141,
+  "scope": "Consolidation only; no changed scores, application source, tests, raw non-Markdown evidence or submission PDF",
+  "protectedNonMarkdown": {
+    "files": 622,
+    "sha256": "55d635b5c0cb5c73f7f257f58a5c7e038d4f156f26dfc8ab68e12d4a7cfe9e64"
+  },
+  "paperSha256": "82ef36dedf7eeb9a655060e83309d141df11ac3de679f048e87d6db62d079329",
+  "submissionPdfSha256": "4138a89e4c189d6da2781053081f9d4cd7665288c4c589c3c1b704151576ddcf",
+  "entries": [
+    {
+      "originalPath": "evaluation/00_protocol/artefact_versions.md",
+      "originalSha256": "1bbcf4eb033df8e9d820ae23785a2816cd8b5e67fd34be93d38e989ca2c7a658",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/00_protocol/automated_refinement_coverage.md",
+      "originalSha256": "f0da583fa853d659d2f20f23210075eac62b22475ba773ccffe902c105aa218c",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/00_protocol/b01_artefact_versions.md",
+      "originalSha256": "5dbe1d86d4a99f2f021b9eced937b421256e3fcd720d788fca962f9c8d06586a",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/00_protocol/b01_environment.md",
+      "originalSha256": "c4052a3d39e4c91e1ace79538836972c80123a420b47cc5a0f1fb898b90d1fd6",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/00_protocol/b01_evidence_index.md",
+      "originalSha256": "362142dbc8623da936dd1ac4f251173db3093003fb2134aeaa61690c97826160",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/00_protocol/environment.md",
+      "originalSha256": "66b2ac2b0c23ca9aea8722921d2e8dc6efef2a55f91947e54e22dfd3c154f58c",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/00_protocol/evaluation_protocol.md",
+      "originalSha256": "d9ceccdb37fd1578ab728d6b7c50bdc6c88d4dd5339249c85ce1bddaa964667e",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": true,
+      "currentSha256": "1964c40619827b1b76d3fde059861e6c77110cd972699d62aeff5b2212844240"
+    },
+    {
+      "originalPath": "evaluation/00_protocol/human_verification_confirmation.md",
+      "originalSha256": "9a124489a21a585f7206c3bb1263171206fa433415cace37a61a6aebc182e119",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/00_protocol/pre_refinement_discrepancies.md",
+      "originalSha256": "d7a6d6cf44a42258d4cbacccb94b596a1257f3230c950e480ee947cece065a99",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/00_protocol/refined_contract_cross_reference.md",
+      "originalSha256": "3e3f1b543adc38a69cb69babf8b4cc4503b73b981d184a374fc929c4f83d9bc9",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/conceptual_triangulation.md",
+      "originalSha256": "7b427c6e27c923211b1aff549c975790cdba33f94d9f6d74e73067701316abe3",
+      "currentReport": "evaluation/01_conceptual/conceptual_triangulation.md",
+      "standaloneRetained": true,
+      "currentSha256": "62f4ce106c2ec268949e279ada0009f9c69c1a40726bc0324a432a46e03a6d4e"
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/framework_refinements.md",
+      "originalSha256": "13263289d069ab1e05a90d1c39ec83e6f2327a49d6e9b979634d61aea24b1ca4",
+      "currentReport": "evaluation/01_conceptual/conceptual_triangulation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/genai/GENAI-01_analysis.md",
+      "originalSha256": "ee0e89288d3ee0d82f679fdc0b028501dfabacb1d5fb3b75717a2760eb20854c",
+      "currentReport": "evaluation/01_conceptual/genai/GENAI-01_analysis.md",
+      "standaloneRetained": true,
+      "currentSha256": "51fcf98d74ebb692994b6049fad96d0a827993e6e2d7b8c87b5c374b4821cfa6"
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/genai/GENAI-01_interview.md",
+      "originalSha256": "f376811aca5f10923b80c88fade1aabafeace92aebbb8e29910a80df286ddabe",
+      "currentReport": "evaluation/01_conceptual/genai/GENAI-01_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/informed_argument/README.md",
+      "originalSha256": "5d65363a1b1052b4e6b9f08f30d31f0a0a829a92a3b11758ed7e5499ba062a70",
+      "currentReport": "evaluation/01_conceptual/informed_argument/traceability.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/informed_argument/reference_verification_v2.md",
+      "originalSha256": "5b01086b408cde10ed95aca639d356909f7d80ab918bc25109eaa4a798127d58",
+      "currentReport": "evaluation/01_conceptual/informed_argument/traceability.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/informed_argument/revision_notes_v2.md",
+      "originalSha256": "16b3c316552d2b54321b9fca159e1e2ca1408947c251977b49a0890a35788c6d",
+      "currentReport": "evaluation/01_conceptual/informed_argument/traceability.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/informed_argument/traceability.md",
+      "originalSha256": "87a1bf04427a73efc72a7dcf0864ad1167c8076522f803597f1ec739824d1a98",
+      "currentReport": "evaluation/01_conceptual/informed_argument/traceability.md",
+      "standaloneRetained": true,
+      "currentSha256": "8559ef4a3194afd40abbab92a3e2aa17a86f7e470268d18fdc5b3d6b13bd606a"
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/informed_argument/traceability_v2.md",
+      "originalSha256": "f5161d9843fe22a37d9285b4dffc6ab9fc33403bd40ca8ddaad634af4c69dbff",
+      "currentReport": "evaluation/01_conceptual/informed_argument/traceability.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/literature/literature_synthesis.md",
+      "originalSha256": "84ff4f1bf55f7e398f4358ad348a7ff12675377a67a4160593007fbd62b10839",
+      "currentReport": "evaluation/01_conceptual/literature/literature_synthesis.md",
+      "standaloneRetained": true,
+      "currentSha256": "78eadf50763357468249c6ec1f5d6c35bbd4aa2974e27889a07b3e98af174d75"
+    },
+    {
+      "originalPath": "evaluation/01_conceptual/scenario/photosynthesis_scenario.md",
+      "originalSha256": "8a01bba013d59b866d1b4b528874f1ff68f6b31e8fff2f01e02f6bcd0963c02c",
+      "currentReport": "evaluation/01_conceptual/scenario/photosynthesis_scenario.md",
+      "standaloneRetained": true,
+      "currentSha256": "c6b8440c7a893deeb7cb2fa6abd0750062055dba8c4c881ce5cd9df1abc697e9"
+    },
+    {
+      "originalPath": "evaluation/02_design/black_box/00_run_metadata.md",
+      "originalSha256": "0d57da659cdf6641940f0f43689f193e37d6407e6c5d9de65b4ff958f973f76e",
+      "currentReport": "evaluation/02_design/black_box/black_box_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/black_box/black_box_analysis.md",
+      "originalSha256": "5bc149aef4ce66811e493364d025204493ad8aa37ac8b066e9c824f2a6fec6e8",
+      "currentReport": "evaluation/02_design/black_box/black_box_analysis.md",
+      "standaloneRetained": true,
+      "currentSha256": "868ff73680f48844eacc1e2044d545d97d4bc4d03089e0cf18d157a02bf8204c"
+    },
+    {
+      "originalPath": "evaluation/02_design/black_box/black_box_test_cases.md",
+      "originalSha256": "4b2c27c85f66a52524ac7c4e71ad6b675c2f0279a9174855d9b4cb687fa2054e",
+      "currentReport": "evaluation/02_design/black_box/black_box_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/black_box/raw/RUN-B01-20261002-BLACKBOX-01/frozen_test_cases.md",
+      "originalSha256": "61f2e58ee8024efa0dab3c7bd35c2b48ffb2267216b1950d01e769573803da13",
+      "currentReport": "evaluation/02_design/black_box/black_box_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/black_box/raw/preflight.md",
+      "originalSha256": "e9c000fb2794c7eaf733ab2ff30afb0002dc7001daacb9f801fae7202eb60cb7",
+      "currentReport": "evaluation/02_design/black_box/black_box_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/dynamic/dynamic_analysis.md",
+      "originalSha256": "93dbdfd3e3889cc562257afd89103fddf1a4112ab120eb7324fdb464da296079",
+      "currentReport": "evaluation/02_design/dynamic/dynamic_analysis.md",
+      "standaloneRetained": true,
+      "currentSha256": "3e992e0ed37fd197bedcc48c74e056ab6feecf106509f33377078de0ddc51027"
+    },
+    {
+      "originalPath": "evaluation/02_design/dynamic/dynamic_analysis_test_cases.md",
+      "originalSha256": "fbb0670bd8ab5a2ec8d190ad89703b6edcc574c1d554432447309a5f983ad292",
+      "currentReport": "evaluation/02_design/dynamic/dynamic_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/dynamic/raw/DYN-RUN-01-adjudication.md",
+      "originalSha256": "24ba505714cb6aa397b92c9df914b51fe785feda0ed94a1c7c74a07fb3d6b982",
+      "currentReport": "evaluation/02_design/dynamic/dynamic_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/dynamic/raw/DYN-RUN-01-command-log.md",
+      "originalSha256": "8ed098bce4e9fefa647a4796d0a113f0f4e6c8cd05f303137760d35e4d10caf8",
+      "currentReport": "evaluation/02_design/dynamic/dynamic_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/00_run_metadata.md",
+      "originalSha256": "ff879a802e96947f334cf5cc553d3d2d4d1f1764cd4d67d897fd73c75a539ee7",
+      "currentReport": "evaluation/02_design/dynamic/dynamic_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/dynamic/raw/manual_browser/RUN-B01-20261001-DYNAMIC-UI-01/observations.md",
+      "originalSha256": "11add602dc38e20d26b7eb5b3aa173531a588fe1fc844881241fa51d6198778b",
+      "currentReport": "evaluation/02_design/dynamic/dynamic_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/informed_argument/reference_verification.md",
+      "originalSha256": "c7230d4c7f301ae321a1059bef787a1c9d22c39dcf0210218c568934c99f71fe",
+      "currentReport": "evaluation/02_design/informed_argument/traceability.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/informed_argument/traceability.md",
+      "originalSha256": "d4ff7724dd09545543f082f487e067d5ed7908f0f6e60c5dc87b36ad0bf29e9c",
+      "currentReport": "evaluation/02_design/informed_argument/traceability.md",
+      "standaloneRetained": true,
+      "currentSha256": "4b3f5eee04b88ce7e57ded5b0e4e2b04631ec871d2b6667c46e0be9b7fcfeffb"
+    },
+    {
+      "originalPath": "evaluation/02_design/informed_argument/traceability_bilingual_addendum.md",
+      "originalSha256": "03f87885eb7de1d917bd471b005e3572120798b00f6d4f61acfd4f13dade2441",
+      "currentReport": "evaluation/02_design/informed_argument/traceability.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/literature/literature_synthesis.md",
+      "originalSha256": "36695a2debef17341886a642af71ae4bc79c2fc495fcfe2d3a67b15958dd6ae4",
+      "currentReport": "evaluation/02_design/literature/literature_synthesis.md",
+      "standaloneRetained": true,
+      "currentSha256": "0c6eeeada635ff6a96c07247a429f8646f08fe7ef732ba9e7a4dc43535d711d7"
+    },
+    {
+      "originalPath": "evaluation/02_design/literature/reference_verification.md",
+      "originalSha256": "00b28771870d0ecc56d377b0062519950382ac056308f371794fdfc02cd0dea7",
+      "currentReport": "evaluation/02_design/literature/literature_synthesis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/optimisation/bounds_analysis.md",
+      "originalSha256": "09038add526ee47150e942c9200575b9157e589a5408b400291cdabcb0a76ebc",
+      "currentReport": "evaluation/02_design/optimisation/bounds_analysis.md",
+      "standaloneRetained": true,
+      "currentSha256": "f0e16f7e7a38317826b19b81f638e00e1d230867e4343d6c995d88fe220ad650"
+    },
+    {
+      "originalPath": "evaluation/02_design/optimisation/bounds_analysis_test_cases.md",
+      "originalSha256": "1cb36913fefa6c0749db58f82269c914cc5fe072e33d1b8f8b95f90a051988e2",
+      "currentReport": "evaluation/02_design/optimisation/bounds_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/optimisation/raw/BND-RUN-01-command-log.md",
+      "originalSha256": "81ff2a9fca5fa738881f592b92e9a3d237d5501c304324b179b96af7045c9884",
+      "currentReport": "evaluation/02_design/optimisation/bounds_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+      "originalSha256": "d997d745aa1fcb02db5c4ec964f6208f8a0dd559e2d6efdc18030f3cbd20ee6e",
+      "currentReport": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+      "standaloneRetained": true,
+      "currentSha256": "ef93db89aa68830e05812cc44cea596a9244345462638ae89e133b54992c2d4a"
+    },
+    {
+      "originalPath": "evaluation/02_design/scenario/raw/RUN-B01-20261003-SCENARIO-01/README.md",
+      "originalSha256": "1c7183e0b0ccd11c84df5182cbbed6001dfbb2c549094f4173c33fa165956bca",
+      "currentReport": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/scenario/raw/RUN-B01-20261003-SCENARIO-01/protocol_at_execution.md",
+      "originalSha256": "b30f2f19a5a97c12722e823cf573e984d6485dc96de830a31b7f1376c63ac3ad",
+      "currentReport": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/scenario/raw/RUN-B01-20261003-SCENARIO-02/00_run_metadata.md",
+      "originalSha256": "d73a6fc03821b68ef85d0bc163a1880c328358abee1092bdd8966aa00028fc62",
+      "currentReport": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/scenario/raw/RUN-B01-20261003-SCENARIO-02/protocol_at_execution.md",
+      "originalSha256": "b30f2f19a5a97c12722e823cf573e984d6485dc96de830a31b7f1376c63ac3ad",
+      "currentReport": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/scenario/raw/RUN-B01-20261003-SCENARIO-02/verification_correction.md",
+      "originalSha256": "7e746a8961275aef9f95366cac1ed15cc057261582cdee3e79f9e809c0edcfe5",
+      "currentReport": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/scenario/raw/aborted_startup_01/README.md",
+      "originalSha256": "10be0b16cddc0c3fa4c29c1e792264a94eca466151f992ab9bb472116fa72f6e",
+      "currentReport": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/00_run_metadata.md",
+      "originalSha256": "acf68cccbcfc4df3e489efdb01b996683cb41ab5f7c8d5b3691c05adece88529",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/README.md",
+      "originalSha256": "70473844b8d8a5b0c272a842780e8f6ea9cbf4c38d3cbda75be7e67f3caf8a44",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/bilingual_assessment/method.md",
+      "originalSha256": "cb725cbbefedfe265d403b3a4d0114e34198a5b85afa1cd25779da2977df23d1",
+      "currentReport": "evaluation/02_design/simulation/bilingual_assessment/results.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/bilingual_assessment/references.md",
+      "originalSha256": "db7c9232362aeeaeb0f8bc65a0c3a2287ad0f6244604f59fe09be4962a8e9bc0",
+      "currentReport": "evaluation/02_design/simulation/bilingual_assessment/results.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/bilingual_assessment/results.md",
+      "originalSha256": "33b45f15ab04e86e69b61de4ed33bf776c57a317f4a8f3f9403934ec7290121a",
+      "currentReport": "evaluation/02_design/simulation/bilingual_assessment/results.md",
+      "standaloneRetained": true,
+      "currentSha256": "437670b7a154ea59900eac231351e144ec7e7c345a2b4f660a9fa374dfbd033a"
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/content_reference_notes.md",
+      "originalSha256": "bcd2a676243c183634fa7deef59d79a048f4fd8fae8f84bd44d8f07137b44457",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/failure_analysis.md",
+      "originalSha256": "0b0f485ff4d98c2748ede41a2341c2a254c11be5c6d0657c9ca9c1ee52b7412f",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM-CM-13.md",
+      "originalSha256": "b9fb2b996c07d36560d582c1d1b1ed925b76107b353358f4a9d9c9eead18a76f",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM-CM-14.md",
+      "originalSha256": "23278e448ad1dc0ab1af960fda34bc34a4cde5808ceed741f569da81249952a2",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM-CM-15.md",
+      "originalSha256": "6831bb93b928019dbfcd7e5b4a4e95f83968162998d2a0a18f28b59379550b30",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM-CM-16.md",
+      "originalSha256": "c1f2ba2e8710650a0328202efe0c72d5c261440c0255f6f0bd048dfdd3340451",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM-LANG-01.md",
+      "originalSha256": "5dbbebdde621f2707f25b66d58ba3b18898029eba1eff4a652d75339271e796d",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM-LANG-02.md",
+      "originalSha256": "8cdae2d1aacb50033f7d747924782c98631c7a84d4e530b51872298ad3fcc5de",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM-LANG-03.md",
+      "originalSha256": "5076ff6df3b854f17782371dc7792a20f0f97bd0c05a69a2ac2140f13037a27e",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM01-A.md",
+      "originalSha256": "5537baf22cf64ab91cdfc2c1518689bf09cf2a853d0046eb2f209f93673f92a7",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM01-B.md",
+      "originalSha256": "27f07d97724d3cdce248326ac02585b200597c5b54648112f4059df553554b51",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM01-C.md",
+      "originalSha256": "47317c9e77747cd5b8a2862aa43160c846a7db3b9ee463dfd510eb3e5d12db67",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM02-A.md",
+      "originalSha256": "3e93d6a24933eafc05100e9bb77e14d99ba0f26c2acfe3e8e3d8ebef8baf0abb",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM02-B.md",
+      "originalSha256": "7d3de0904cb7bbb46ed7a82db224a8f67435fd00c5c25fd29740386b6c474905",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM02-C.md",
+      "originalSha256": "3988808732922cd04f0502f93b089ec8c64ec6cdb8abfa29941b869627106d9b",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM03-A.md",
+      "originalSha256": "57982095928a197d9542b8101dab260e7f5a0dfbd41733b0adb438c1a5026b41",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM03-B.md",
+      "originalSha256": "fc6d50e4a32e745720f91e09758c7abdedc688f2c9ae29dd27384b62e3578e18",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM03-C.md",
+      "originalSha256": "690995137d180aea12b6093f93cd93eb33390e8b23488bec3c5d2025eb68c93a",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM04-A.md",
+      "originalSha256": "da6a855055c0240c9468a310c8342f9fb6a1acb7e500e41cf9a682a264667d01",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM04-B.md",
+      "originalSha256": "9318cbadc1286c0d3f6acc82d0e187adddfc860562320a925ef7c893bc5007a0",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM04-C.md",
+      "originalSha256": "ea4a3da7c9cebdd9da24a34c687c096ba54c531b4933c31b82d739354afd39b8",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM05-A.md",
+      "originalSha256": "841984e3a74ba1ab4e162320328a2f7d1d0d849bf7c88fdb7febe319a12a535f",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM05-B.md",
+      "originalSha256": "0dc1a9adef854be323a931507bfa14af5e79e79890fbb477fbc60ffc491fdde8",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM05-C.md",
+      "originalSha256": "9c243fdd92477910a268076ec9d17036ae1dfab6cbde88b53666acb76542611e",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM06-A.md",
+      "originalSha256": "ac2c06b86062b61027702d3c6a8430fc01b9f4221f8833d9d1ae8721440d0ad7",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM06-B.md",
+      "originalSha256": "a419442cef8f65771c7b7bedf2ff0d6b5f000100a9777cbf916d489484a4173f",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM06-C.md",
+      "originalSha256": "804da8858d114b46e35715a07debc1c761dfaba3a2dca32434c018ce0dfac87e",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM07-A.md",
+      "originalSha256": "cad16c55652433b72e245b74a633f7c36d74ee7ba32db1af2a5d091eb6acc2b2",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM07-B.md",
+      "originalSha256": "da6d7c2a4c5c8c613814df2252a0cdc3f843222941dbe1406d91931019376076",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM07-C.md",
+      "originalSha256": "789191fbc011c4128952cb956a2c5ff6862fe938779ee5e83041d6180aeccd2f",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM08-A.md",
+      "originalSha256": "77ff76606c76df89bcf84b8c21b2dfd411f61ba42d5300080fce497419b28d6e",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM08-B.md",
+      "originalSha256": "bbe3bc1acbfe389814d51e6ec8d5a1ac8a73a904b4a93d55ac6a76bb67298444",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM08-C.md",
+      "originalSha256": "f07e6741eab0ad832d84d8161825187c297a97c25e50712a602fa2faa199ccf3",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM09-A.md",
+      "originalSha256": "4291af69a94ebe28ddd0f95f0b520ffb27e007e758f8d02fb4a47338d1cb1574",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM09-B.md",
+      "originalSha256": "00894c1cd7da5cba3d9c03787e2bc673ffad06f34f81a8a1eefa77caea30f5a5",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM09-C.md",
+      "originalSha256": "d78a30b751c925a297dc8d23bd767469ce687e4877a2c6f167df7ad82552f689",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM10-A.md",
+      "originalSha256": "53e78d8ffbd9ae3c66efcba760e58bd1d6b182be32c7b3a8ec5d74861b3c56f5",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM10-B.md",
+      "originalSha256": "d8b54fae90123edd0929cfd4265aa5010dd550fb145f5e607c86d86e7afeef9a",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM10-C.md",
+      "originalSha256": "5d80fa44b660afef137ab012b82b2a4139f965b030c5df41ef1d1aa089d3ad75",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM11-A.md",
+      "originalSha256": "3d65c16ae273c9d55c65e7e78c07da975ab2f58696430ece574f84d5a79274bc",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM11-B.md",
+      "originalSha256": "f97eee206ca1dee3e49b066086457817ceadfc5bbc64e4bae98c59724e3c06f8",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM11-C.md",
+      "originalSha256": "c704f1655a5f99d77fd140766fed77277f8684d217fa3d964c4be35e9db715c9",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM12-A.md",
+      "originalSha256": "cac36ad8b747e23ef4e048980c456de082b0b87bbc74d9aaf5d01e76c0644c1d",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM12-B.md",
+      "originalSha256": "ffa9f4dcc2bc670d1442a51f0b7ea10103e9798b07facf95fa131239ff748435",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM12-C.md",
+      "originalSha256": "a6034f6a16b0b8ebc7d856df5b4cf8c82320c3e1c5716ac0637f37ba0acd7dd1",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM13-A.md",
+      "originalSha256": "90744d4f76a20ee416b4f589976c77f6c25a522a704247e9e9525b0b1a8e894f",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM13-B.md",
+      "originalSha256": "2b294979396caefdc3e99967e2d04ba06135643a7853b7711bc89735df9bb102",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM13-C.md",
+      "originalSha256": "e4ece2d596e7f5bd1183a9c784c7df1176ee39674e5ee724c75f87f22ac33823",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM14-A.md",
+      "originalSha256": "0cda148980078b1c8b3364a6cf2eaaa43c290d84e8d3732895c1ba91fdc3f640",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM14-B.md",
+      "originalSha256": "a53b0bd67ca992c6ec2f5d1c7dedf4431a6f8ae5262d54af76d9db4c41a3e4b1",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM14-C.md",
+      "originalSha256": "4ec1ea6bbb69e3b8658f585226351238e625d2f5f6662484071c5ca020ead076",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM15-A.md",
+      "originalSha256": "363b424eb89ac90cdf0ef431bd7ea2a8d704cb0b5b9d16aa3513d8251fa3b7e5",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM15-B.md",
+      "originalSha256": "96b470fd67e7286a2cd6788f9c2035b66483a17913256895f739da9f1d709075",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM15-C.md",
+      "originalSha256": "adb706f7543cd19e3f863bd359bded8deaafe7d88a7537c095e763d9c86eef43",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM16-A.md",
+      "originalSha256": "3af534072da7ad010176b4e7701f2a009cc7dee6f737044b2f9d90bc3d714637",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM16-B.md",
+      "originalSha256": "ae15fb8a2e14daf32bcb2d8f36dfc2e4c3d39b775dc67a0a595fc399b1383c02",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/human_review/SIM16-C.md",
+      "originalSha256": "b59796bcf9bd11a7cc741bc160af4dadede64031f13f3d7b3c33018e75435a7d",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/qualified_human_judgement.md",
+      "originalSha256": "573831ef7e4d991c9c50f025306ebc20c9117b73a926991a81a2b8172a64a560",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/raw/SIM-RUN-01-command-log.md",
+      "originalSha256": "5fefc83489ae665d93c28dab1c4a055a5ea614e7f73d14fed96cb67c45343719",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/review_completion/approval_record.md",
+      "originalSha256": "794c79188736a7afe8b7acacf91c9b7483b15bee21539d06543033c4af9c8bcc",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/review_drafts/additional_reference_notes.md",
+      "originalSha256": "d561816cbdadc471d2280cf8c817326ae79af702ab4ac797e4ad6f03d16f591d",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/simulation_analysis.md",
+      "originalSha256": "120a026eddc4e1d6a9f68f16ef9fbd3a8bdbedc21500be601292318207cda57c",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": true,
+      "currentSha256": "1c3eb813ec2fb1e7d477fe4790a87d344ff18f18e4e6ebe1d7d94b8beb9f3807"
+    },
+    {
+      "originalPath": "evaluation/02_design/simulation/simulation_test_cases.md",
+      "originalSha256": "22287912b933dcd95e7e4a97652775cbb309e9d244581e24f50385bbb0d41fcb",
+      "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/static/raw/STA-RUN-01-command-log.md",
+      "originalSha256": "34d9b205b98bcd4da30e4a89f861af101b23234738f7a814bae4a225567ffa9c",
+      "currentReport": "evaluation/02_design/static/static_analysis_test_cases.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/static/static_analysis_test_cases.md",
+      "originalSha256": "bb031c4f72ff7739d0be3959d829833b34656e94536baef60573b8cf9535a1e1",
+      "currentReport": "evaluation/02_design/static/static_analysis_test_cases.md",
+      "standaloneRetained": true,
+      "currentSha256": "d9d7e3fc27abdb39a8170812a136e2cb7666815f907b6923642f347d180d2b44"
+    },
+    {
+      "originalPath": "evaluation/02_design/usability/raw/RUN-B01-20261002-USABILITY-01/00_run_metadata.md",
+      "originalSha256": "df068450dba2aa7d40a4b83ec0beedd4cbc53518cdc75e4cebd30262fa06c6b8",
+      "currentReport": "evaluation/02_design/usability/usability_inspection.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/usability/raw/RUN-B01-20261002-USABILITY-01/protocol_at_execution.md",
+      "originalSha256": "d24cc825e05d303bf38903ecf1764b090890675c3b615189e4c27a5f5686bf1a",
+      "currentReport": "evaluation/02_design/usability/usability_inspection.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/usability/usability_inspection.md",
+      "originalSha256": "cd4b48e5324cbf25166f6ef976f88d9241b118915da7b9daa4b56d10539dc92f",
+      "currentReport": "evaluation/02_design/usability/usability_inspection.md",
+      "standaloneRetained": true,
+      "currentSha256": "e3e850024ba9fadb24055009fc6918b8476f53d6cdc7b692f6c6499f698306f2"
+    },
+    {
+      "originalPath": "evaluation/02_design/white_box/00_run_metadata.md",
+      "originalSha256": "8bc7f95b0dd5dbb4715e7233032e9651437e5258675e4532a2604ce7500f9568",
+      "currentReport": "evaluation/02_design/white_box/white_box_evaluation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/white_box/root_project_test_run.md",
+      "originalSha256": "844d4ded13d0a3312969a569d7f52383232ebb926501b69e65cf90b9d0bbb1f1",
+      "currentReport": "evaluation/02_design/white_box/white_box_evaluation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/02_design/white_box/white_box_evaluation.md",
+      "originalSha256": "f7b3b7cb9dac89453de511ab80b9756c0b934298b197e33bfedf2430c3258c3f",
+      "currentReport": "evaluation/02_design/white_box/white_box_evaluation.md",
+      "standaloneRetained": true,
+      "currentSha256": "0c6cf2bae97be045a931baee33440ec318e836e9c4dd0c236f7d70e756ae18b5"
+    },
+    {
+      "originalPath": "evaluation/02_design/white_box/white_box_test_cases.md",
+      "originalSha256": "27319f66fd1feadba246437711ce37259be18029b80e30823b001d6347db1888",
+      "currentReport": "evaluation/02_design/white_box/white_box_evaluation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/03_results/bilingual_synthesis_addendum.md",
+      "originalSha256": "e6c003f8868b6e5ac37990f069d5730b003bd8db044b25ed67e0c93697cb1771",
+      "currentReport": "evaluation/03_results/results_interpretation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/03_results/consolidation_notes.md",
+      "originalSha256": "2c9d103356a914b612981f3f115c526b924f345aed74789e93f24cfc30b66458",
+      "currentReport": "evaluation/03_results/results_interpretation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/03_results/evidence_register_audit.md",
+      "originalSha256": "00157bb05a6a508f25a5c2b0dc44d16c4e155a4ec5a0a6d9f71b49890373e18c",
+      "currentReport": "evaluation/03_results/results_interpretation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/03_results/paper_figures_and_tables.md",
+      "originalSha256": "c0e87ec680c9da290114c217e34f4443a4c9da1c5102ec6f0a1894df52681b16",
+      "currentReport": "evaluation/03_results/results_interpretation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/03_results/pirqoa_bilingual_addendum.md",
+      "originalSha256": "e015f14cf57f3048f4ad5f81273107b3a7c19f495246446075b6205379227903",
+      "currentReport": "evaluation/03_results/results_interpretation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/03_results/pirqoa_traceability_notes.md",
+      "originalSha256": "c9dc98494f2bad815c168695a06c80c92ae977eca36114870da57e8c4d9a521f",
+      "currentReport": "evaluation/03_results/results_interpretation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/03_results/results_interpretation.md",
+      "originalSha256": "3e4f81df3bef21d4c95324a363d0ef1076223928bfc4b291ee74923338787c08",
+      "currentReport": "evaluation/03_results/results_interpretation.md",
+      "standaloneRetained": true,
+      "currentSha256": "981cd468889921dd51433975f0a769941af1b1a533a2fc3a13d507c1ab3ea936"
+    },
+    {
+      "originalPath": "evaluation/03_results/supplementary_evidence_register.md",
+      "originalSha256": "0f4f59ce55bd0038a007e23d1b46971d77d4e21b157aa3b2ea5cdfb7d9f6040c",
+      "currentReport": "evaluation/03_results/results_interpretation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/appendix_revision.md",
+      "originalSha256": "51b6cee3e79bebd9e6cd397f7c6d4daf5b2d806d7d31482dd8a62dc4d9ca8f62",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/appendix_summary_revision.md",
+      "originalSha256": "5e41413fe57533dcb2602507d7201ba3556824edce60c13ed53e081973c3b69a",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/assignment_5_front_matter.md",
+      "originalSha256": "4de566c34545cfe15865a67450427b059d890487092513d1a5ec15208913af4c",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/assignment_5_paper_scaffold.md",
+      "originalSha256": "103717a3a1bc6cfbc25f82a452fd304f21c3a54222b7b51f26ccf9541ae3f6b5",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/assignment_5_working_paper.md",
+      "originalSha256": "82ef36dedf7eeb9a655060e83309d141df11ac3de679f048e87d6db62d079329",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": true,
+      "currentSha256": "82ef36dedf7eeb9a655060e83309d141df11ac3de679f048e87d6db62d079329"
+    },
+    {
+      "originalPath": "evaluation/04_paper/bilingual_assessment_revision.md",
+      "originalSha256": "3f2637c039409693bcb2a15b10c57b04e4bbed8637248b37f6bd96667342adc1",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/draft_review_revision.md",
+      "originalSha256": "fd5ba0a8568d6572b90a2fd4f0e41936d84da6a179de79c43bfdb4b2cf6b96d1",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/passive_voice_revision.md",
+      "originalSha256": "fa1aebe9c3dd24d022a488ad8c2b3b08289bc7ad89bbdb2de583f6eba38befc9",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/phase_e_drafting_record.md",
+      "originalSha256": "c0cc94fa76ff924c1ae9a93ca48d5cb24a2459944067e41c080d8774c6173f34",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/plain_language_revision.md",
+      "originalSha256": "ec80499704c807defecd7a00e90d52173d046090168811ac8b5a4b256e2d6c9c",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/raw/AUTHOR-WORDING-01-body.md",
+      "originalSha256": "a3fae0672c7df28ad0808e61e97493e586a8226000fbc9ba2d775753ef229388",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/raw/AUTHOR-WORDING-01-working-paper.md",
+      "originalSha256": "fd8b72d407c56383c3c6c7ddef015faee65b322929a522c508715c4c8a201dc8",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/raw/LANGUAGE-REV-01-working-paper.md",
+      "originalSha256": "62bf5663e505331c39a3e5e3a598b4d06143787d6cce6303706d46f03ccb6cd7",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/raw/PASSIVE-REV-01-working-paper.md",
+      "originalSha256": "f11243030371fecbb2ba3c37598a1553151470ef4586085ee3888706bbf92e3f",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/raw/PHASE-E-01-narrative.md",
+      "originalSha256": "11416fc136ec000b90509dc64934083e6bdddbdd9e2b98494c2dcd6154cc1825",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/raw/PHASE-E-01-working-paper.md",
+      "originalSha256": "47bbeb1fc0c6113d00dc30f5bf698410d0480ec3af4027b3fabe17b36ea66f3e",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/raw/READER-REV-01-body.md",
+      "originalSha256": "95a285d6394d61a0b12cd85cceb7c81431de547c33251299ea2a53ebb9f0fe38",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/raw/READER-REV-01-working-paper.md",
+      "originalSha256": "3352a828eb04a5d28cdb7f356e17a141545ebd61acf43fd7bd3d099abc292185",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/raw/RUBRIC-REV-01-body.md",
+      "originalSha256": "adb2676e989ee0b8ae1bec0f11a7f562f5a1f7260434d7632f369f484a575bcb",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/raw/RUBRIC-REV-01-working-paper.md",
+      "originalSha256": "488105ba8ae1e8323fa76cba7f4e7bb593a2a6d94ecd1d602f1e87d0d29d59b7",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/reference_strategy.md",
+      "originalSha256": "fd9ba3ddb0291234e4307cfe82c94dd002ac40554253feced98f4fa4730391cc",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/researcher_wording_revision.md",
+      "originalSha256": "7b2cab6a0640533bd57113144e115b2bf179b47b549c60bd6c945038f59a0c3f",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/rubric_review_and_word_handoff.md",
+      "originalSha256": "83f0aacda94eecdbc9fed454bcb287fbb32e4c3019870905142bf6adbe83c979",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/submission_risk_review.md",
+      "originalSha256": "4e5423c8ae082b38edebfd56a95320759940611a8edfe3531cedef4287f3cd02",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/04_paper/word_allocation.md",
+      "originalSha256": "501c3a1a3f640a42fbc7dd171d5e7049d1c5a48ad3b9a07cd40262d0a7b5ec32",
+      "currentReport": "evaluation/04_paper/assignment_5_working_paper.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/README.md",
+      "originalSha256": "fe3dc8b9eccfeb63d2be6a7490e8629197455d3ac98397ea792a88d5c78d2168",
+      "currentReport": "evaluation/README.md",
+      "standaloneRetained": true,
+      "currentSha256": "d5981106e1f3db9337b36b8f4a80696d0ef2a03473d0d934eaa6e07c1c9a5cb6"
+    },
+    {
+      "originalPath": "evaluation/burmese_stem_ai_refinement_review.md",
+      "originalSha256": "3690e6a2a65dbb201ccd2c62db9cdd6ed53f94bb328916c104483eac68a775ed",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/complete_conceptual_artefacts_refined.md",
+      "originalSha256": "351aa50848d8c92eb23996d4714567a9c13589161d6fdbeada9663f6a8ec6d76",
+      "currentReport": "evaluation/01_conceptual/conceptual_triangulation.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/complete_system_artefacts_refined.md",
+      "originalSha256": "4c8392dc3e409ec4980027b12107abffd7b65f468fbb428571a938ff64d7f7c7",
+      "currentReport": "evaluation/00_protocol/evaluation_protocol.md",
+      "standaloneRetained": false,
+      "currentSha256": null
+    },
+    {
+      "originalPath": "evaluation/rubric/instructions.md",
+      "originalSha256": "70d9a79dc7100029b4d381c4c31fc131e67f48f4d20e3bc10aaec17ac400afe6",
+      "currentReport": "evaluation/rubric/instructions.md",
+      "standaloneRetained": true,
+      "currentSha256": "70d9a79dc7100029b4d381c4c31fc131e67f48f4d20e3bc10aaec17ac400afe6"
+    }
+  ],
+  "currentReports": [
+    {
+      "path": "evaluation/00_protocol/evaluation_protocol.md",
+      "sha256": "1964c40619827b1b76d3fde059861e6c77110cd972699d62aeff5b2212844240"
+    },
+    {
+      "path": "evaluation/01_conceptual/conceptual_triangulation.md",
+      "sha256": "62f4ce106c2ec268949e279ada0009f9c69c1a40726bc0324a432a46e03a6d4e"
+    },
+    {
+      "path": "evaluation/01_conceptual/genai/GENAI-01_analysis.md",
+      "sha256": "51fcf98d74ebb692994b6049fad96d0a827993e6e2d7b8c87b5c374b4821cfa6"
+    },
+    {
+      "path": "evaluation/01_conceptual/informed_argument/traceability.md",
+      "sha256": "8559ef4a3194afd40abbab92a3e2aa17a86f7e470268d18fdc5b3d6b13bd606a"
+    },
+    {
+      "path": "evaluation/01_conceptual/literature/literature_synthesis.md",
+      "sha256": "78eadf50763357468249c6ec1f5d6c35bbd4aa2974e27889a07b3e98af174d75"
+    },
+    {
+      "path": "evaluation/01_conceptual/scenario/photosynthesis_scenario.md",
+      "sha256": "c6b8440c7a893deeb7cb2fa6abd0750062055dba8c4c881ce5cd9df1abc697e9"
+    },
+    {
+      "path": "evaluation/02_design/black_box/black_box_analysis.md",
+      "sha256": "868ff73680f48844eacc1e2044d545d97d4bc4d03089e0cf18d157a02bf8204c"
+    },
+    {
+      "path": "evaluation/02_design/dynamic/dynamic_analysis.md",
+      "sha256": "3e992e0ed37fd197bedcc48c74e056ab6feecf106509f33377078de0ddc51027"
+    },
+    {
+      "path": "evaluation/02_design/informed_argument/traceability.md",
+      "sha256": "4b3f5eee04b88ce7e57ded5b0e4e2b04631ec871d2b6667c46e0be9b7fcfeffb"
+    },
+    {
+      "path": "evaluation/02_design/literature/literature_synthesis.md",
+      "sha256": "0c6eeeada635ff6a96c07247a429f8646f08fe7ef732ba9e7a4dc43535d711d7"
+    },
+    {
+      "path": "evaluation/02_design/optimisation/bounds_analysis.md",
+      "sha256": "f0e16f7e7a38317826b19b81f638e00e1d230867e4343d6c995d88fe220ad650"
+    },
+    {
+      "path": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+      "sha256": "ef93db89aa68830e05812cc44cea596a9244345462638ae89e133b54992c2d4a"
+    },
+    {
+      "path": "evaluation/02_design/simulation/bilingual_assessment/results.md",
+      "sha256": "437670b7a154ea59900eac231351e144ec7e7c345a2b4f660a9fa374dfbd033a"
+    },
+    {
+      "path": "evaluation/02_design/simulation/simulation_analysis.md",
+      "sha256": "1c3eb813ec2fb1e7d477fe4790a87d344ff18f18e4e6ebe1d7d94b8beb9f3807"
+    },
+    {
+      "path": "evaluation/02_design/static/static_analysis_test_cases.md",
+      "sha256": "d9d7e3fc27abdb39a8170812a136e2cb7666815f907b6923642f347d180d2b44"
+    },
+    {
+      "path": "evaluation/02_design/usability/usability_inspection.md",
+      "sha256": "e3e850024ba9fadb24055009fc6918b8476f53d6cdc7b692f6c6499f698306f2"
+    },
+    {
+      "path": "evaluation/02_design/white_box/white_box_evaluation.md",
+      "sha256": "0c6cf2bae97be045a931baee33440ec318e836e9c4dd0c236f7d70e756ae18b5"
+    },
+    {
+      "path": "evaluation/03_results/results_interpretation.md",
+      "sha256": "981cd468889921dd51433975f0a769941af1b1a533a2fc3a13d507c1ab3ea936"
+    },
+    {
+      "path": "evaluation/04_paper/assignment_5_working_paper.md",
+      "sha256": "82ef36dedf7eeb9a655060e83309d141df11ac3de679f048e87d6db62d079329"
+    },
+    {
+      "path": "evaluation/README.md",
+      "sha256": "d5981106e1f3db9337b36b8f4a80696d0ef2a03473d0d934eaa6e07c1c9a5cb6"
+    },
+    {
+      "path": "evaluation/rubric/instructions.md",
+      "sha256": "70d9a79dc7100029b4d381c4c31fc131e67f48f4d20e3bc10aaec17ac400afe6"
+    }
+  ],
+  "validation": {
+    "id": "EVAL-CONSOLIDATION-20261008-01",
+    "outcome": "Pass",
+    "archivedOriginalsVerified": 162,
+    "activeMarkdownFiles": 21,
+    "removedStandaloneMarkdownFiles": 141,
+    "unchangedNonMarkdownEvidenceFiles": 622,
+    "localLinksChecked": 209,
+    "headingLinksChecked": 19,
+    "contentScoresVerified": 91,
+    "contentOutcomes": {
+      "Pass": 18,
+      "Partial": 71,
+      "Fail": 2
+    },
+    "bilingualAnnotationsVerified": 41,
+    "applicationUnchanged": true,
+    "workingPaperUnchanged": true,
+    "submissionPdfUnchanged": true,
+    "evaluationRerun": false
+  }
+}

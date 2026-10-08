@@ -1,6 +1,6 @@
 # INFOSYS 720 Assignment 5 — Complete Evaluation Plan
 
-> **Human-verification update, 8 October 2026.** The author has confirmed personally checking every scientific and English–Burmese assessment against the original outputs and relevant references. AI assistance with preparation, execution and drafting remains acknowledged. Final interpretations and decisions are accepted by the author. This is not an independent second assessment or a claim of manual execution throughout. See the [confirmation and scope](../evaluation/00_protocol/human_verification_confirmation.md). Earlier capture-time statements retain their historical meaning.
+> **Evaluation navigation.** Each method now has one consolidated report. Start at [evaluation/README.md](../evaluation/README.md). Human verification, criteria and baseline are combined in the protocol. Historical planning and evidence versions remain in the recoverable archive. This cleanup changes no evaluation outcome.
 
 | Document control | Value |
 | --- | --- |
@@ -154,12 +154,12 @@ root `burmese_stem_ai/tests/`; normal npm commands run 361 deterministic and
 12 isolated MongoDB tests. Production code remains B01, with a separately
 versioned test/configuration tree. Full application coverage is available at
 `burmese_stem_ai/coverage/index.html` (42 files; 72.54% statements / 76.37%
-branches). See [root-project test run](../evaluation/02_design/white_box/root_project_test_run.md)
+branches). See [root-project test run](../evaluation/02_design/white_box/white_box_evaluation.md)
 (E033–E035). No source-copy tree is required; root evidence is retained. The superseded white-box run and duplicate helpers were removed under user direction on 2 October 2026.
 
-> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) now uses reader-facing summaries and examples in Appendices A–H. Appendix A is unchanged. The [latest revision record](../evaluation/04_paper/appendix_summary_revision.md) and [current verification](../evaluation/04_paper/raw/APPENDIX-SUMMARY-01-verification.json) document 20 appendix tables and five main tables. Full case/test inventories remain in the evaluation archive, not in the shortened paper. Simulation totals and the original 91-output ratings are unchanged. Bilingual assessment retains its 32-output/104-passage scope, 41 exploratory annotations and noticeable English/Burmese examples. Appendix I was removed because the main paper already maps results to requirements and research questions. Six keywords, thirteen references, two figures, 69 original evidence entries and 66 production identities are preserved. Earlier revision captures remain historical. Follow the [Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) through Appendix H. NEXT: qualified bilingual checking can verify the new annotations. The DOCX is created from the Markdown, then table layout, embedded figures and submission/sharing scope are checked. No evaluation rerun or release clearance is introduced.**
+> **The [working paper](../evaluation/04_paper/assignment_5_working_paper.md) now uses reader-facing summaries and examples in Appendices A–H. Appendix A is unchanged. The [latest revision record](../evaluation/04_paper/assignment_5_working_paper.md) and [current verification](../evaluation/04_paper/raw/APPENDIX-SUMMARY-01-verification.json) document 20 appendix tables and five main tables. Full case/test inventories remain in the evaluation archive, not in the shortened paper. Simulation totals and the original 91-output ratings are unchanged. Bilingual assessment retains its 32-output/104-passage scope, 41 exploratory annotations and noticeable English/Burmese examples. Appendix I was removed because the main paper already maps results to requirements and research questions. Six keywords, thirteen references, two figures, 69 original evidence entries and 66 production identities are preserved. Earlier revision captures remain historical. Follow the [Word handoff](../evaluation/04_paper/assignment_5_working_paper.md) through Appendix H. NEXT: qualified bilingual checking can verify the new annotations. The DOCX is created from the Markdown, then table layout, embedded figures and submission/sharing scope are checked. No evaluation rerun or release clearance is introduced.**
 
-Step 29's [submission-risk review](../evaluation/04_paper/submission_risk_review.md)
+Step 29's [submission-risk review](../evaluation/04_paper/assignment_5_working_paper.md)
 is complete. Recorded Functionality, Usability and design literature are no
 longer marked unexecuted. Results remain mixed: all F Partials and six U Pass/
 three U Partials are retained. The supplied brief and counting guidance were
@@ -170,7 +170,7 @@ Markdown/citation checks; original risk captures keep their dated pending wordin
 
 ### Step 13 recorded execution and endorsed review
 
-The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and failure analysis are under `evaluation/02_design/simulation/`. E018–E021 retain the historical execution evidence; E022–E023 identify the completed review and its manifest. Nathan's user-provided competence, 91 endorsed ratings, conclusions and authorised typed sign-offs are recorded in [qualified_human_judgement.md](../evaluation/02_design/simulation/qualified_human_judgement.md) and the [approval record](../evaluation/02_design/simulation/review_completion/approval_record.md). Review clock times were not supplied and are recorded as not recorded. Source checks/AI assistance are disclosed. Application source remains identical to B01. Do not include secrets or API keys.
+The run is `RUN-B01-20261001-SIMULATION-02`; metadata, exact text/state and failure analysis are under `evaluation/02_design/simulation/`. E018–E021 retain the historical execution evidence; E022–E023 identify the completed review and its manifest. Nathan's user-provided competence, 91 endorsed ratings, conclusions and authorised typed sign-offs are recorded in [qualified_human_judgement.md](../evaluation/02_design/simulation/simulation_analysis.md) and the [approval record](../evaluation/02_design/simulation/simulation_analysis.md). Review clock times were not supplied and are recorded as not recorded. Source checks/AI assistance are disclosed. Application source remains identical to B01. Do not include secrets or API keys.
 
 ## How to execute this plan
 
@@ -1121,8 +1121,8 @@ The goal is evaluation, not another literature review.
 # 12. Step 5 — Conceptual Evaluation Method 3: Informed Argument — COMPLETED
 
 **Literature-grounded revision, 3 October 2026:** use
-[traceability_v2.md](../evaluation/01_conceptual/informed_argument/traceability_v2.md),
-E058, with [source verification](../evaluation/01_conceptual/informed_argument/reference_verification_v2.md),
+[traceability_v2.md](../evaluation/01_conceptual/informed_argument/traceability.md),
+E058, with [source verification](../evaluation/01_conceptual/informed_argument/traceability.md),
 E059, and E060's revision manifest. Nine scholarly references now supply explicit
 warrants and counterarguments for all seven responsibilities. The revision
 evaluates the final conceptual interpretation in E056 §26, qualifies the
@@ -1544,7 +1544,7 @@ times as independent evidence.
 STA-01–STA-14 on 30 September 2026. Its command results and architecture
 inspections are recorded in
 [static_analysis_test_cases.md](../evaluation/02_design/static/static_analysis_test_cases.md),
-with the separate [formal command log](../evaluation/02_design/static/raw/STA-RUN-01-command-log.md)
+with the separate [formal command log](../evaluation/02_design/static/static_analysis_test_cases.md)
 and coverage summary indexed as E001–E003. These are not the baseline-freeze
 verification results.
 
@@ -1931,8 +1931,8 @@ out/aborted; SIM-CM-13/16 rejected unchanged concepts labelled corrected.
 Failed response steps did not change stored state. No frozen source was fixed
 or failed model call retried. The aborted runner-comparison attempt is retained
 separately. See [technical analysis](../evaluation/02_design/simulation/simulation_analysis.md),
-[failure analysis](../evaluation/02_design/simulation/failure_analysis.md), and
-[qualified human worksheets](../evaluation/02_design/simulation/qualified_human_judgement.md).
+[failure analysis](../evaluation/02_design/simulation/simulation_analysis.md), and
+[qualified human worksheets](../evaluation/02_design/simulation/simulation_analysis.md).
 
 **Review completed:** Nathan confirmed reviewing and accepting all 55
 AI-assisted worksheets on 2 October 2026 and authorised Codex to record typed
@@ -1942,7 +1942,7 @@ messages and three technical failures retain their separate assessments and
 NA limitations. F2–F4/F6 are updated in the protocol (E022–E023). This is
 completed evaluation with mixed findings, not universal adequacy or learning
 effectiveness. Review times were not supplied. See the dated
-[approval record](../evaluation/02_design/simulation/review_completion/approval_record.md).
+[approval record](../evaluation/02_design/simulation/simulation_analysis.md).
 
 ## 22.1 Goal
 
@@ -2072,7 +2072,7 @@ rechecks remain recorded. Final export retained 42 synthetic sessions,
 B01 is empty; isolated servers are stopped. No external provider call or new
 human content approval was made. E024–E027 index the evidence. See
 [black-box analysis](../evaluation/02_design/black_box/black_box_analysis.md),
-[metadata](../evaluation/02_design/black_box/00_run_metadata.md), and
+[metadata](../evaluation/02_design/black_box/black_box_analysis.md), and
 [case register](../evaluation/02_design/black_box/black_box_results.csv).
 
 ## 23.1 Goal and outputs
@@ -2405,7 +2405,7 @@ eight major feature groups with proper author–date citations, a reference list
 recorded case/evidence IDs, counterarguments and bounded conclusions: two
 Supported (optional stated-need collection; scoped follow-up mechanism) and
 six Partially supported. Learning benefit and calibrated learner fit remain
-Not assessed. [Source verification](../evaluation/02_design/informed_argument/reference_verification.md)
+Not assessed. [Source verification](../evaluation/02_design/informed_argument/traceability.md)
 records seven primary references, access limits and additional-source/version
 differences; the 2023 Tran preprint is not misrepresented as the 2026 text.
 E039–E041 preserve the argument, source record and 116-entry integrity manifest.
@@ -2631,7 +2631,7 @@ Recorded on 3 October 2026 as
 
 - E045: [13-row capability matrix](../evaluation/02_design/literature/literature_matrix.csv), including all five SSR systems.
 - E046: [design synthesis](../evaluation/02_design/literature/literature_synthesis.md), with qualified integration/REQ/RQ conclusions.
-- E047: [source verification and references](../evaluation/02_design/literature/reference_verification.md), including A2 locators and original-access/transfer/version limits.
+- E047: [source verification and references](../evaluation/02_design/literature/literature_synthesis.md), including A2 locators and original-access/transfer/version limits.
 - E048: 121-entry integrity manifest; 39 previous registered artefacts and 66 production identities unchanged. CSV/source/evidence/local-link checks Pass.
 
 Literature-rationale ratings: one Strong, nine Moderate, two Limited, one
@@ -2725,7 +2725,7 @@ The Design Artefact Evaluation should instead focus on completing the required m
 
 # 29. Step 20 — Master Evidence Register — COMPLETE WITH QUALIFICATIONS
 
-Recorded on 3 October 2026 as [E057 register audit](../evaluation/03_results/evidence_register_audit.md).
+Recorded on 3 October 2026 as [E057 register audit](../evaluation/03_results/results_interpretation.md).
 At Step 20 capture the [register](../evaluation/03_results/evidence_register.csv) had 52 entries:
 43 design records unchanged, eight retrospective conceptual records (E049–E056)
 and one administrative audit. All file hashes, ten manifests / 1,174 entries
@@ -2787,7 +2787,7 @@ remain.
 
 Recorded 3 October 2026: [master_results.csv](../evaluation/03_results/master_results.csv),
 E061, contains 225 immutable IDs R001–R225 with the exact schema below.
-[Consolidation notes](../evaluation/03_results/consolidation_notes.md), E062,
+[Consolidation notes](../evaluation/03_results/results_interpretation.md), E062,
 index all substantive method findings, all C/F/U aggregates, conflicts and
 unassessed/blocked/NA/skipped work. E063 hashes the retained inputs and derived
 outputs; all 55 prior evidence rows and 66 B01 production identities are unchanged.
@@ -2830,7 +2830,7 @@ Recorded 3 October 2026: [pirqoa_traceability.csv](../evaluation/03_results/pirq
 E064, has 24 rows using the exact schema below: seven REQ-01/RQ1, six
 REQ-02/RQ2 and eleven REQ-03/RQ3. All three questions have bounded overall
 answers and explicit unsupported claims/gaps, linked to 140 immutable master
-results and 53 original evidence IDs. [Mapping notes](../evaluation/03_results/pirqoa_traceability_notes.md),
+results and 53 original evidence IDs. [Mapping notes](../evaluation/03_results/results_interpretation.md),
 E065, distinguish conceptual, behavioural, content and enabling evidence;
 E066 records input/output integrity. All 58 intake register rows/hashes, all
 225 master results and 66 B01 production files remain unchanged. The register
@@ -2976,7 +2976,7 @@ Unless real learner-outcome evidence exists.
 
 # 33. Step 24 — Recommended Figures and Tables — COMPLETE WITH QUALIFICATIONS
 
-Recorded 3 October 2026: [paper_figures_and_tables.md](../evaluation/03_results/paper_figures_and_tables.md),
+Recorded 3 October 2026: [paper_figures_and_tables.md](../evaluation/03_results/results_interpretation.md),
 E069, contains five numbered tables and two captioned figures, with source/RQ
 mapping and placement guidance. Table 1 covers five conceptual criteria; Table 2
 combines all four conceptual methods and the current qualified synthesis;
@@ -3085,7 +3085,7 @@ This should be one of the strongest tables in the paper.
 # 34. Step 25 — Recommended Final Assignment Structure — COMPLETE
 
 Completed 3 October 2026 as `STRUCTURE-20261003-PAPER-01`.
-The [paper scaffold](../evaluation/04_paper/assignment_5_paper_scaffold.md), E073,
+The [paper scaffold](../evaluation/04_paper/assignment_5_working_paper.md), E073,
 contains all 28 prescribed headings in order, evidence-linked drafting notes
 and prose placeholders. Figure 1/Table 1 appear in §2.1, Table 2 in §2.6,
 Table 3 in §3.1, Figure 2 in §3.5, Table 4 in §3.7 and Table 5 in §4.2.
@@ -3156,7 +3156,7 @@ References
 # 35. Step 26 — Word Allocation — DRAFTING BUDGET COMPLETE; OFFICIAL RULES UNCONFIRMED
 
 Completed 3 October 2026 as `ALLOCATE-20261003-PAPER-01`.
-The authoritative [operational word allocation](../evaluation/04_paper/word_allocation.md)
+The authoritative [operational word allocation](../evaluation/04_paper/assignment_5_working_paper.md)
 contains all subsection targets, introduction allowances, analytical/testing/
 argument sub-budgets, context/conclusion/abstract splits, counting ledger,
 insertion estimates and adjustment rules. Use it rather than combining the
@@ -3198,7 +3198,7 @@ declaring final compliance.
 # 36. Step 27 — Title, Abstract, and Keywords — PREPARED; BODY RECONCILED IN PHASE E
 
 Prepared 3 October 2026 as `FRONT-20261003-PAPER-01` in
-[assignment_5_front_matter.md](../evaluation/04_paper/assignment_5_front_matter.md).
+[assignment_5_front_matter.md](../evaluation/04_paper/assignment_5_working_paper.md).
 The user's direct request executes this step before body drafting, overriding
 the recommended order. This supplies usable front matter, not a completed
 paper. Reconcile it with the eventual body before final submission.
@@ -3236,7 +3236,7 @@ is created by front-matter writing.
 
 At the Step 27 capture the body was pending. Phase E subsequently copied this
 front matter unchanged into the completed working paper and checked its
-consistency. See [drafting record](../evaluation/04_paper/phase_e_drafting_record.md).
+consistency. See [drafting record](../evaluation/04_paper/assignment_5_working_paper.md).
 Original-brief confirmation and rendered submission checks remain open.
 
 ---
@@ -3244,7 +3244,7 @@ Original-brief confirmation and rendered submission checks remain open.
 # 37. Step 28 — Reference Strategy — PREPARED; WORKING-PAPER AUDIT RECORDED IN PHASE E
 
 **Prepared 3 October 2026.** The working strategy and candidate bibliography
-are in [reference_strategy.md](../evaluation/04_paper/reference_strategy.md).
+are in [reference_strategy.md](../evaluation/04_paper/assignment_5_working_paper.md).
 It was captured before the body; the candidate pool is not itself the final
 paper bibliography. Phase E's working paper subsequently retains twelve cited
 entries with source/version limits and citation correspondence checked.
@@ -3281,7 +3281,7 @@ evaluation result, endorsement or release clearance is created.
 
 ## Subsequent audit and remaining execution
 
-Phase E's [drafting record](../evaluation/04_paper/phase_e_drafting_record.md)
+Phase E's [drafting record](../evaluation/04_paper/assignment_5_working_paper.md)
 records twelve citation–reference pairs, manuscript claim/access/version review,
 unused-candidate removal and current Markdown structure checks. Front matter
 matches the drafted body; captured Step 28 records retain their historical
@@ -3294,7 +3294,7 @@ promotes original outcomes or clears restricted evidence.
 # 38. Step 29 — Risks to an Excellent Mark — REVIEW COMPLETE; SUBMISSION GATES OPEN
 
 **Reviewed 3 October 2026.** See
-[submission_risk_review.md](../evaluation/04_paper/submission_risk_review.md)
+[submission_risk_review.md](../evaluation/04_paper/assignment_5_working_paper.md)
 for the 14-risk register, method/evidence mapping, counterevidence and closure
 actions. This is a recorded-evidence administrative review, not a grade
 prediction, new evaluation, fix, endorsement or release clearance.
@@ -3584,10 +3584,10 @@ Write explicit limitations and claim boundaries.
 ## Phase E — Drafting — BODY COMPLETE; NEXT: FINAL SUBMISSION CHECKS
 
 **First drafted 3 October 2026**, as `DRAFT-20261003-PHASE-E-01`.
-The [original paper snapshot](../evaluation/04_paper/raw/PHASE-E-01-working-paper.md) contains
+The [original paper snapshot](../evaluation/04_paper/assignment_5_working_paper.md) contains
 all 28 prescribed headings, two figures, five tables, the prepared front matter
 and twelve actually cited reference entries. E073 remains the unchanged
-captured scaffold. [Drafting record](../evaluation/04_paper/phase_e_drafting_record.md)
+captured scaffold. [Drafting record](../evaluation/04_paper/assignment_5_working_paper.md)
 and [verification](../evaluation/04_paper/raw/PHASE-E-01-verification.json)
 record source/claim checks, assembly, actual counts and preservation.
 
@@ -3618,7 +3618,7 @@ No new E/R ID, formal test, production fix or human endorsement occurs.
 three RQs and explains observations without archive/run identifiers. Five
 tables and the scenario figure are paper-only presentation derivatives;
 original evidence, scaffold and presentation assets are not changed.
-[Revision record](../evaluation/04_paper/draft_review_revision.md) retains the
+[Revision record](../evaluation/04_paper/assignment_5_working_paper.md) retains the
 section/evidence map outside the paper; [current verification](../evaluation/04_paper/raw/READER-REV-01-verification-02.json)
 checks revised counts, citations, labels and unchanged identities. Earlier
 Phase E counts and verification describe the first draft, not this revision.
@@ -3635,7 +3635,7 @@ finding to RQs, and restores the problem/requirement/objective chain. FURPS
 uses an honest secondary citation to the consulted handout, adding one
 reference without implying access to the original book. The paper has two
 figures, six tables, thirteen cited references and a 141-token abstract.
-[Review/handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md) and
+[Review/handoff](../evaluation/04_paper/assignment_5_working_paper.md) and
 [current verification](../evaluation/04_paper/raw/RUBRIC-REV-01-verification-02.json)
 record source discrepancies, current counts, boundaries and preservation.
 Six keywords follow the author's official clarification despite V3's older
@@ -3647,7 +3647,7 @@ now states researcher direction, content assessment and results without
 endorsement/drafting-tool terminology. Required GenAI evaluation and the LLM
 artefact remain described. Automated checks, single-assessor limits and
 provisional fresh-scenario content are not recast as independently executed
-or newly reviewed. [Latest record](../evaluation/04_paper/researcher_wording_revision.md)
+or newly reviewed. [Latest record](../evaluation/04_paper/assignment_5_working_paper.md)
 and [verification](../evaluation/04_paper/raw/AUTHOR-WORDING-01-verification.json)
 preserve original operator/review provenance outside the paper. The current
 abstract has 140 local tokens; previous checks apply to their captured drafts.
@@ -3658,7 +3658,7 @@ the six exact keywords from Assignment 4 but does not cite the author's
 assignments as literature. Dense evaluation-limit statements and sentence-joining
 semicolons/colons were replaced. The ion finding was checked against the
 completed-run response and stored session and rewritten as a precise internal
-contradiction. [Latest record](../evaluation/04_paper/plain_language_revision.md)
+contradiction. [Latest record](../evaluation/04_paper/assignment_5_working_paper.md)
 and [verification](../evaluation/04_paper/raw/LANGUAGE-REV-01-verification.json)
 retain prior captures, all findings and source identities. The current paper
 has 135 local abstract tokens and twelve references. Earlier counts describe
@@ -3667,7 +3667,7 @@ their respective revisions. No evaluation or content ratings were rerun.
 **Passive-voice revision, 4 October 2026 (`PASSIVE-REV-01`).** Author-focused
 researcher wording was replaced with passive descriptions of evaluation and
 assessment. Quoted learner interface choices were retained. The
-[latest record](../evaluation/04_paper/passive_voice_revision.md) and
+[latest record](../evaluation/04_paper/assignment_5_working_paper.md) and
 [verification](../evaluation/04_paper/raw/PASSIVE-REV-01-verification.json)
 confirm unchanged findings, references, keywords and evidence/source identities.
 The current abstract has 137 local tokens. Earlier counts are historical.
@@ -3677,13 +3677,13 @@ evaluation tables were added to Appendices A–I of the working paper. There are
 32 appendix tables and five main tables. All 373 unique automated tests and
 91 delivered-output content ratings are included alongside technical cases,
 usability inspection and supporting evaluations. The
-[revision record](../evaluation/04_paper/appendix_revision.md) and
+[revision record](../evaluation/04_paper/assignment_5_working_paper.md) and
 [verification](../evaluation/04_paper/raw/APPENDIX-REV-01-verification.json)
 retain failed/Partial outcomes and separate overlapping assessment scopes.
 No new evaluation was performed. Earlier paper/table counts are historical.
 
 **Supplementary bilingual assessment, 5 October 2026 (`BIL-20261005-01`).**
-A [declared purposeful sample](../evaluation/02_design/simulation/bilingual_assessment/method.md)
+A [declared purposeful sample](../evaluation/02_design/simulation/bilingual_assessment/results.md)
 of 32 saved simulation outputs was examined across 104 English/Burmese pairs.
 The [results](../evaluation/02_design/simulation/bilingual_assessment/results.md)
 contain four Major annotations in three outputs, 27 Minor annotations and ten
@@ -3692,9 +3692,9 @@ without replacing the original Partial output rating. The original corpus
 totals remain 18 Pass / 71 Partial / two Fail. The other 59 delivered outputs
 were outside this supplementary assessment, not newly passed.
 
-The [design-argument addendum](../evaluation/02_design/informed_argument/traceability_bilingual_addendum.md),
-[results synthesis](../evaluation/03_results/bilingual_synthesis_addendum.md) and
-[traceability addendum](../evaluation/03_results/pirqoa_bilingual_addendum.md)
+The [design-argument addendum](../evaluation/02_design/informed_argument/traceability.md),
+[results synthesis](../evaluation/03_results/results_interpretation.md) and
+[traceability addendum](../evaluation/03_results/results_interpretation.md)
 carry the findings forward. All three research questions and the original
 argument conclusions retain their qualifications. Existing conceptual
 triangulation, original case scores, 225 master-result rows and 24 traceability
@@ -3703,11 +3703,11 @@ not independent replication. No simulation, provider call or application test
 was rerun. New annotations are model-assisted and exploratory, without new
 independent qualified human judgement.
 
-The [paper revision record](../evaluation/04_paper/bilingual_assessment_revision.md)
+The [paper revision record](../evaluation/04_paper/assignment_5_working_paper.md)
 and [verification](../evaluation/02_design/simulation/bilingual_assessment/verification.json)
 document 35 appendix tables plus five main tables, thirteen references and six
 unchanged keywords. The five separately named
-[supplementary records](../evaluation/03_results/supplementary_evidence_register.md)
+[supplementary records](../evaluation/03_results/results_interpretation.md)
 do not alter the original 69-entry evidence register. Prior revision captures
 remain historical.
 
@@ -3721,7 +3721,7 @@ issues and browser/API boundaries. Appendix I was removed from the paper
 because Tables 2–5 already provide the essential requirement/RQ mapping.
 Its original detailed analysis remains archived.
 
-The [revision record](../evaluation/04_paper/appendix_summary_revision.md) and
+The [revision record](../evaluation/04_paper/assignment_5_working_paper.md) and
 [verification](../evaluation/04_paper/raw/APPENDIX-SUMMARY-01-verification.json)
 document 20 appendix tables and five main tables. The approximate appendix
 count decreased from 29,478 to 3,361 words. Appendices are supplementary,
@@ -3751,7 +3751,7 @@ retain its issue severity, fixture limitations and unexecuted checks.
 
 The supplied rubric review is complete with documented qualifications. The
 author will create the DOCX from [the working paper](../evaluation/04_paper/assignment_5_working_paper.md),
-following [the Word handoff](../evaluation/04_paper/rubric_review_and_word_handoff.md).
+following [the Word handoff](../evaluation/04_paper/assignment_5_working_paper.md).
 After preparing it, use:
 
 > Review my final DOCX against evaluation/rubric. Check actual formatting,
