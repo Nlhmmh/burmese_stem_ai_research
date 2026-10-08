@@ -446,7 +446,3 @@ baseline are not retrospectively rewritten.
 The [current synthesis](../../03_results/results_interpretation.md) and
 [traceability addendum](../../03_results/results_interpretation.md) carry
 these bounded interpretations into the working paper.
-
-## Preservation and review scope
-
-Detailed records above were recovered from the pre-consolidation archive, not newly executed or re-scored. Repeated planning, sign-off and summary text is omitted. The [shared protocol](../../00_protocol/evaluation_protocol.md) records preparation, execution and subsequent human verification. Original capture-time statements and complete documents remain in the [archive](../../archive/pre_consolidation_markdown_20261008.zip).

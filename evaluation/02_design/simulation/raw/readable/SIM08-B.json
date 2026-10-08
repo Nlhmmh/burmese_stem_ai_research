@@ -1,0 +1,1884 @@
+{
+  "format": "simulation-evidence-by-case-v2",
+  "scope": "Only SIM08-B.",
+  "notes": [
+    "This is a formatted evidence copy, not a new simulation or human review.",
+    "All original execution-log fields and source line numbers are retained.",
+    "simulationRecords contain capture-time contentOutcome and reviewer fields, which were blank or Not assessed.",
+    "Human judgements and scores are separate in the case register and human_content_scores.csv; they are not imported here.",
+    "Provider records include rejected or undelivered outputs. These are not additional delivered content assessments.",
+    "Sources describe complete input files; includedCounts describe this export."
+  ],
+  "sources": [
+    {
+      "file": "SIM-RUN-01-results.jsonl",
+      "records": 55,
+      "sha256": "3cd1db9135bd92e86a8b96bd1df5955d503e679ad84140be6a6a3763b8042afe"
+    },
+    {
+      "file": "SIM-RUN-01-provider.jsonl",
+      "records": 102,
+      "sha256": "127ae59f140371b9652992351f86788f42efa4b275bcc232e987bd6a52d62c8b"
+    }
+  ],
+  "includedCounts": {
+    "cases": 1,
+    "simulationRecords": 1,
+    "providerRecords": 2
+  },
+  "cases": {
+    "SIM08-B": {
+      "simulationRecords": [
+        {
+          "source": {
+            "file": "SIM-RUN-01-results.jsonl",
+            "line": 23
+          },
+          "record": {
+            "id": "SIM08-B",
+            "base": "SIM08",
+            "path": "B",
+            "question": "What is an ion?",
+            "language": "bilingual",
+            "clarification": null,
+            "runId": "RUN-B01-20261001-SIMULATION-02",
+            "attempt": 1,
+            "owner": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+            "startedAt": "2026-10-01T10:41:30.895Z",
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "steps": [
+              {
+                "step": "initial",
+                "request": {
+                  "question": "What is an ion?"
+                },
+                "httpStatus": 201,
+                "response": {
+                  "session": {
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": null,
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:34.172Z"
+                  }
+                },
+                "before": [],
+                "after": [
+                  {
+                    "_id": "6abe38de7a1eaff542bb4ab9",
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": null,
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:34.172Z"
+                  }
+                ],
+                "providerCalls": 1,
+                "elapsedMs": 3280
+              },
+              {
+                "step": "medium_skip",
+                "request": {
+                  "overallSupportNeed": "medium",
+                  "difficultyType": null
+                },
+                "httpStatus": 200,
+                "response": {
+                  "understanding": "medium",
+                  "status": "in_progress",
+                  "adaptationRound": 1,
+                  "route": "stage_5_scaffold",
+                  "responseEvent": {
+                    "overallSupportNeed": "medium",
+                    "difficultyType": null,
+                    "route": "stage_5_scaffold",
+                    "roundBefore": 0,
+                    "roundAfter": 1,
+                    "createdAt": "2026-10-01T10:41:37.626Z"
+                  },
+                  "adaptation": {
+                    "learnerResponse": "medium",
+                    "supportType": "another_example",
+                    "content": {
+                      "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                      "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                    },
+                    "round": 1,
+                    "createdAt": "2026-10-01T10:41:37.626Z"
+                  }
+                },
+                "before": [
+                  {
+                    "_id": "6abe38de7a1eaff542bb4ab9",
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": null,
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:34.172Z"
+                  }
+                ],
+                "after": [
+                  {
+                    "_id": "6abe38de7a1eaff542bb4ab9",
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": "medium",
+                    "status": "in_progress",
+                    "adaptationRound": 1,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [
+                      {
+                        "learnerResponse": "medium",
+                        "supportType": "another_example",
+                        "content": {
+                          "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                          "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "medium",
+                        "difficultyType": null,
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:37.626Z"
+                  }
+                ],
+                "providerCalls": 1,
+                "elapsedMs": 3453
+              },
+              {
+                "step": "high",
+                "request": {
+                  "overallSupportNeed": "high",
+                  "difficultyType": null
+                },
+                "httpStatus": 200,
+                "response": {
+                  "understanding": "high",
+                  "status": "in_progress",
+                  "adaptationRound": 1,
+                  "route": "fade",
+                  "responseEvent": {
+                    "overallSupportNeed": "high",
+                    "difficultyType": null,
+                    "route": "fade",
+                    "roundBefore": 1,
+                    "roundAfter": 1,
+                    "createdAt": "2026-10-01T10:41:37.636Z"
+                  },
+                  "adaptation": null
+                },
+                "before": [
+                  {
+                    "_id": "6abe38de7a1eaff542bb4ab9",
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": "medium",
+                    "status": "in_progress",
+                    "adaptationRound": 1,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [
+                      {
+                        "learnerResponse": "medium",
+                        "supportType": "another_example",
+                        "content": {
+                          "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                          "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "medium",
+                        "difficultyType": null,
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:37.626Z"
+                  }
+                ],
+                "after": [
+                  {
+                    "_id": "6abe38de7a1eaff542bb4ab9",
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "in_progress",
+                    "adaptationRound": 1,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [
+                      {
+                        "learnerResponse": "medium",
+                        "supportType": "another_example",
+                        "content": {
+                          "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                          "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "medium",
+                        "difficultyType": null,
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      },
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 1,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.636Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:37.636Z"
+                  }
+                ],
+                "providerCalls": 0,
+                "elapsedMs": 6
+              },
+              {
+                "step": "finish",
+                "request": {
+                  "status": "completed"
+                },
+                "httpStatus": 200,
+                "response": {
+                  "session": {
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "completed",
+                    "adaptationRound": 1,
+                    "adaptations": [
+                      {
+                        "learnerResponse": "medium",
+                        "supportType": "another_example",
+                        "content": {
+                          "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                          "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "medium",
+                        "difficultyType": null,
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      },
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 1,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.636Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:37.644Z"
+                  }
+                },
+                "before": [
+                  {
+                    "_id": "6abe38de7a1eaff542bb4ab9",
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "in_progress",
+                    "adaptationRound": 1,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [
+                      {
+                        "learnerResponse": "medium",
+                        "supportType": "another_example",
+                        "content": {
+                          "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                          "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "medium",
+                        "difficultyType": null,
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      },
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 1,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.636Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:37.636Z"
+                  }
+                ],
+                "after": [
+                  {
+                    "_id": "6abe38de7a1eaff542bb4ab9",
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "completed",
+                    "adaptationRound": 1,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [
+                      {
+                        "learnerResponse": "medium",
+                        "supportType": "another_example",
+                        "content": {
+                          "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                          "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "medium",
+                        "difficultyType": null,
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      },
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 1,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.636Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:37.644Z"
+                  }
+                ],
+                "providerCalls": 0,
+                "elapsedMs": 3
+              },
+              {
+                "step": "retrieve",
+                "request": null,
+                "httpStatus": 200,
+                "response": {
+                  "session": {
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "completed",
+                    "adaptationRound": 1,
+                    "adaptations": [
+                      {
+                        "learnerResponse": "medium",
+                        "supportType": "another_example",
+                        "content": {
+                          "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                          "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "medium",
+                        "difficultyType": null,
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      },
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 1,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.636Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:37.644Z"
+                  }
+                },
+                "before": [
+                  {
+                    "_id": "6abe38de7a1eaff542bb4ab9",
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "completed",
+                    "adaptationRound": 1,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [
+                      {
+                        "learnerResponse": "medium",
+                        "supportType": "another_example",
+                        "content": {
+                          "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                          "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "medium",
+                        "difficultyType": null,
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      },
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 1,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.636Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:37.644Z"
+                  }
+                ],
+                "after": [
+                  {
+                    "_id": "6abe38de7a1eaff542bb4ab9",
+                    "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                    "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+                    "originalQuestion": "What is an ion?",
+                    "concept": {
+                      "name": "ion",
+                      "domain": "chemistry and atomic structure"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                        "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                      },
+                      "realWorldExample": {
+                        "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                        "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                      },
+                      "technical": {
+                        "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                        "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                      "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                    },
+                    "hint": {
+                      "en": "Compare the number of protons and electrons.",
+                      "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "completed",
+                    "adaptationRound": 1,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [
+                      {
+                        "learnerResponse": "medium",
+                        "supportType": "another_example",
+                        "content": {
+                          "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                          "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "medium",
+                        "difficultyType": null,
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.626Z"
+                      },
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 1,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:41:37.636Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:41:34.171Z",
+                    "updatedAt": "2026-10-01T10:41:37.644Z"
+                  }
+                ],
+                "providerCalls": 0,
+                "elapsedMs": 2
+              }
+            ],
+            "checks": [
+              {
+                "step": "initial",
+                "name": "exactly one initial provider call",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "initial",
+                "name": "initial HTTP 201",
+                "pass": true,
+                "observed": 201
+              },
+              {
+                "step": "initial",
+                "name": "fresh initial state persisted",
+                "pass": true,
+                "observed": "51ea45d7-31d1-432c-83e4-0957c765fc4a"
+              },
+              {
+                "step": "initial",
+                "name": "profile snapshot persisted",
+                "pass": true,
+                "observed": {
+                  "uiLanguage": "en",
+                  "supportLanguage": "bilingual",
+                  "explanationLevel": "beginner",
+                  "learningStyle": "guided",
+                  "theme": "light"
+                }
+              },
+              {
+                "step": "medium_skip",
+                "name": "response HTTP 200",
+                "pass": true,
+                "observed": 200
+              },
+              {
+                "step": "medium_skip",
+                "name": "application-selected route",
+                "pass": true,
+                "observed": "stage_5_scaffold"
+              },
+              {
+                "step": "medium_skip",
+                "name": "round before/after",
+                "pass": true,
+                "observed": {
+                  "overallSupportNeed": "medium",
+                  "difficultyType": null,
+                  "route": "stage_5_scaffold",
+                  "roundBefore": 0,
+                  "roundAfter": 1,
+                  "createdAt": "2026-10-01T10:41:37.626Z"
+                }
+              },
+              {
+                "step": "medium_skip",
+                "name": "one atomic response event",
+                "pass": true,
+                "observed": [
+                  {
+                    "overallSupportNeed": "medium",
+                    "difficultyType": null,
+                    "route": "stage_5_scaffold",
+                    "roundBefore": 0,
+                    "roundAfter": 1,
+                    "createdAt": "2026-10-01T10:41:37.626Z"
+                  }
+                ]
+              },
+              {
+                "step": "medium_skip",
+                "name": "provider-call bound",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "medium_skip",
+                "name": "adaptation count bound",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "medium_skip",
+                "name": "round never exceeds two",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "medium_skip",
+                "name": "status",
+                "pass": true,
+                "observed": "in_progress"
+              },
+              {
+                "step": "medium_skip",
+                "name": "self-report stored without changing follow-up state",
+                "pass": true,
+                "observed": "medium"
+              },
+              {
+                "step": "medium_skip",
+                "name": "support type and route persisted",
+                "pass": true,
+                "observed": {
+                  "learnerResponse": "medium",
+                  "supportType": "another_example",
+                  "content": {
+                    "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                    "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                  },
+                  "round": 1,
+                  "createdAt": "2026-10-01T10:41:37.626Z"
+                }
+              },
+              {
+                "step": "medium_skip",
+                "name": "both content fields nonempty",
+                "pass": true,
+                "observed": true
+              },
+              {
+                "step": "high",
+                "name": "response HTTP 200",
+                "pass": true,
+                "observed": 200
+              },
+              {
+                "step": "high",
+                "name": "application-selected route",
+                "pass": true,
+                "observed": "fade"
+              },
+              {
+                "step": "high",
+                "name": "round before/after",
+                "pass": true,
+                "observed": {
+                  "overallSupportNeed": "high",
+                  "difficultyType": null,
+                  "route": "fade",
+                  "roundBefore": 1,
+                  "roundAfter": 1,
+                  "createdAt": "2026-10-01T10:41:37.636Z"
+                }
+              },
+              {
+                "step": "high",
+                "name": "one atomic response event",
+                "pass": true,
+                "observed": [
+                  {
+                    "overallSupportNeed": "medium",
+                    "difficultyType": null,
+                    "route": "stage_5_scaffold",
+                    "roundBefore": 0,
+                    "roundAfter": 1,
+                    "createdAt": "2026-10-01T10:41:37.626Z"
+                  },
+                  {
+                    "overallSupportNeed": "high",
+                    "difficultyType": null,
+                    "route": "fade",
+                    "roundBefore": 1,
+                    "roundAfter": 1,
+                    "createdAt": "2026-10-01T10:41:37.636Z"
+                  }
+                ]
+              },
+              {
+                "step": "high",
+                "name": "provider-call bound",
+                "pass": true,
+                "observed": 0
+              },
+              {
+                "step": "high",
+                "name": "adaptation count bound",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "high",
+                "name": "round never exceeds two",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "high",
+                "name": "status",
+                "pass": true,
+                "observed": "in_progress"
+              },
+              {
+                "step": "high",
+                "name": "self-report stored without changing follow-up state",
+                "pass": true,
+                "observed": "high"
+              },
+              {
+                "step": "high",
+                "name": "no adaptation returned",
+                "pass": true,
+                "observed": null
+              },
+              {
+                "step": "finish",
+                "name": "explicit finish completed without generation",
+                "pass": true,
+                "observed": 200
+              },
+              {
+                "step": "retrieve",
+                "name": "retrieval reconstructs persisted route history",
+                "pass": true,
+                "observed": 200
+              },
+              {
+                "step": "retrieve",
+                "name": "saved profile unchanged",
+                "pass": true,
+                "observed": {
+                  "explanationLevel": "beginner",
+                  "learningStyle": "guided",
+                  "supportLanguage": "bilingual",
+                  "theme": "light",
+                  "uiLanguage": "en"
+                }
+              }
+            ],
+            "executionStatus": "Executed",
+            "technicalOutcome": "Pass",
+            "contentOutcome": "Not assessed",
+            "humanScores": {},
+            "assessor": "",
+            "reference": "",
+            "limitations": [],
+            "profileBefore": {
+              "_id": "6abe38da37b8b0c001fba36f",
+              "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+              "createdAt": "2026-10-01T10:41:30.895Z",
+              "preferences": {
+                "explanationLevel": "beginner",
+                "learningStyle": "guided",
+                "supportLanguage": "bilingual",
+                "theme": "light",
+                "uiLanguage": "en"
+              },
+              "updatedAt": "2026-10-01T10:41:30.895Z"
+            },
+            "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+            "pathOutcome": "Pass",
+            "profileAfter": {
+              "_id": "6abe38da37b8b0c001fba36f",
+              "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+              "createdAt": "2026-10-01T10:41:30.895Z",
+              "preferences": {
+                "explanationLevel": "beginner",
+                "learningStyle": "guided",
+                "supportLanguage": "bilingual",
+                "theme": "light",
+                "uiLanguage": "en"
+              },
+              "updatedAt": "2026-10-01T10:41:30.895Z"
+            },
+            "finalStoredState": [
+              {
+                "_id": "6abe38de7a1eaff542bb4ab9",
+                "sessionId": "51ea45d7-31d1-432c-83e4-0957c765fc4a",
+                "learnerId": "1ab31c81-1a3a-4d99-8101-1c57d7cea07f",
+                "originalQuestion": "What is an ion?",
+                "concept": {
+                  "name": "ion",
+                  "domain": "chemistry and atomic structure"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.",
+                    "my": "Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။"
+                  },
+                  "realWorldExample": {
+                    "en": "For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.",
+                    "my": "ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။"
+                  },
+                  "technical": {
+                    "en": "An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.",
+                    "my": "Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "If an atom gains one electron, what kind of charge does it become and why?",
+                  "my": "Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။"
+                },
+                "hint": {
+                  "en": "Compare the number of protons and electrons.",
+                  "my": "Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။"
+                },
+                "understanding": "high",
+                "status": "completed",
+                "adaptationRound": 1,
+                "preferencesSnapshot": {
+                  "uiLanguage": "en",
+                  "supportLanguage": "bilingual",
+                  "explanationLevel": "beginner",
+                  "learningStyle": "guided",
+                  "theme": "light"
+                },
+                "adaptations": [
+                  {
+                    "learnerResponse": "medium",
+                    "supportType": "another_example",
+                    "content": {
+                      "en": "Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.",
+                      "my": "နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။"
+                    },
+                    "round": 1,
+                    "createdAt": "2026-10-01T10:41:37.626Z"
+                  }
+                ],
+                "responseEvents": [
+                  {
+                    "overallSupportNeed": "medium",
+                    "difficultyType": null,
+                    "route": "stage_5_scaffold",
+                    "roundBefore": 0,
+                    "roundAfter": 1,
+                    "createdAt": "2026-10-01T10:41:37.626Z"
+                  },
+                  {
+                    "overallSupportNeed": "high",
+                    "difficultyType": null,
+                    "route": "fade",
+                    "roundBefore": 1,
+                    "roundAfter": 1,
+                    "createdAt": "2026-10-01T10:41:37.636Z"
+                  }
+                ],
+                "followUps": [],
+                "createdAt": "2026-10-01T10:41:34.171Z",
+                "updatedAt": "2026-10-01T10:41:37.644Z"
+              }
+            ],
+            "providerCalls": 2,
+            "finishedAt": "2026-10-01T10:41:37.649Z"
+          }
+        }
+      ],
+      "providerRecords": [
+        {
+          "source": {
+            "file": "SIM-RUN-01-provider.jsonl",
+            "line": 44
+          },
+          "record": {
+            "caseId": "SIM08-B",
+            "step": "initial",
+            "call": 44,
+            "startedAt": "2026-10-01T10:41:30.901Z",
+            "request": {
+              "model": "gpt-5.4-mini",
+              "store": false,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: beginner\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n",
+              "input": "{\"learnerQuestion\":\"What is an ion?\",\"preferences\":{\"supportLanguage\":\"bilingual\",\"explanationLevel\":\"beginner\",\"learningStyle\":\"guided\"}}",
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "name": "initial_learning_session",
+                  "strict": true,
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "outcome": {
+                        "type": "string",
+                        "enum": [
+                          "ready",
+                          "ambiguous",
+                          "out_of_scope"
+                        ]
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "concept": {
+                        "description": "Stages 1 and 2: identified STEM term and interpreted technical context",
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Stage 1 primary STEM term"
+                          },
+                          "domain": {
+                            "type": "string",
+                            "description": "Stage 2 technical domain or context"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "domain"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "explanations": {
+                        "type": "object",
+                        "properties": {
+                          "simple": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 accessible explanation of the core meaning"
+                          },
+                          "realWorldExample": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 5 concrete scaffold linked to the core meaning"
+                          },
+                          "technical": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 precise explanation of the same core meaning"
+                          }
+                        },
+                        "required": [
+                          "simple",
+                          "realWorldExample",
+                          "technical"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "reflectivePrompt": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single reflective scaffold"
+                      },
+                      "hint": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single concise optional hint"
+                      }
+                    },
+                    "required": [
+                      "outcome",
+                      "message",
+                      "concept",
+                      "explanations",
+                      "reflectivePrompt",
+                      "hint"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            },
+            "httpStatus": 200,
+            "response": {
+              "id": "resp_0682be0dbf62eb17016abe38db1f9c87d09d692beb5adab616",
+              "object": "response",
+              "created_at": 1790851291,
+              "status": "completed",
+              "access_programs": null,
+              "background": false,
+              "billing": {
+                "payer": "openai"
+              },
+              "completed_at": 1790851294,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: beginner\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n",
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-5.4-mini-2026-03-17",
+              "moderation": null,
+              "output": [
+                {
+                  "id": "msg_0682be0dbf62eb17016abe38dba60087d0b26736241ae178a2",
+                  "type": "message",
+                  "status": "completed",
+                  "content": [
+                    {
+                      "type": "output_text",
+                      "annotations": [],
+                      "logprobs": [],
+                      "text": "{\"outcome\":\"ready\",\"message\":\"\",\"concept\":{\"name\":\"ion\",\"domain\":\"chemistry and atomic structure\"},\"explanations\":{\"simple\":{\"en\":\"An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.\",\"my\":\"Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။\"},\"realWorldExample\":{\"en\":\"For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.\",\"my\":\"ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။\"},\"technical\":{\"en\":\"An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.\",\"my\":\"Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။\"}},\"reflectivePrompt\":{\"en\":\"If an atom gains one electron, what kind of charge does it become and why?\",\"my\":\"Atom တစ်ခုက electron တစ်လုံးထပ်ရလာရင် ဘယ်လို charge ဖြစ်လာမလဲ၊ ဘာကြောင့်လဲ။\"},\"hint\":{\"en\":\"Compare the number of protons and electrons.\",\"my\":\"Proton နဲ့ electron အရေအတွက်ကို နှိုင်းယှဉ်ကြည့်ပါ။\"}}"
+                    }
+                  ],
+                  "phase": "final_answer",
+                  "role": "assistant"
+                }
+              ],
+              "parallel_tool_calls": true,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": null,
+              "prompt_cache_retention": "24h",
+              "reasoning": {
+                "context": "current_turn",
+                "effort": "none",
+                "mode": "standard",
+                "summary": null
+              },
+              "safety_identifier": null,
+              "service_tier": "default",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "description": null,
+                  "name": "initial_learning_session",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "outcome": {
+                        "type": "string",
+                        "enum": [
+                          "ready",
+                          "ambiguous",
+                          "out_of_scope"
+                        ]
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "concept": {
+                        "description": "Stages 1 and 2: identified STEM term and interpreted technical context",
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Stage 1 primary STEM term"
+                          },
+                          "domain": {
+                            "type": "string",
+                            "description": "Stage 2 technical domain or context"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "domain"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "explanations": {
+                        "type": "object",
+                        "properties": {
+                          "simple": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 accessible explanation of the core meaning"
+                          },
+                          "realWorldExample": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 5 concrete scaffold linked to the core meaning"
+                          },
+                          "technical": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 precise explanation of the same core meaning"
+                          }
+                        },
+                        "required": [
+                          "simple",
+                          "realWorldExample",
+                          "technical"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "reflectivePrompt": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single reflective scaffold"
+                      },
+                      "hint": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single concise optional hint"
+                      }
+                    },
+                    "required": [
+                      "outcome",
+                      "message",
+                      "concept",
+                      "explanations",
+                      "reflectivePrompt",
+                      "hint"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "strict": true
+                },
+                "verbosity": "medium"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": {
+                "input_tokens": 1166,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 564,
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "total_tokens": 1730
+              },
+              "user": null,
+              "metadata": {}
+            },
+            "elapsedMs": 3268
+          }
+        },
+        {
+          "source": {
+            "file": "SIM-RUN-01-provider.jsonl",
+            "line": 45
+          },
+          "record": {
+            "caseId": "SIM08-B",
+            "step": "medium_skip",
+            "call": 45,
+            "startedAt": "2026-10-01T10:41:34.184Z",
+            "request": {
+              "model": "gpt-5.4-mini",
+              "store": false,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator supporting a Burmese-speaking\nuniversity student.\n\n# Goal\n\nThe learner reported \"medium\".\nThe application selected the \"stage_5_scaffold\" route.\nGenerate exactly one \"another_example\" support item that helps the\nlearner understand the existing STEM concept.\n\nThe application, not the model, selected both route and support type. Return\nonly the bilingual content required by the strict schema.\n\n# Stages 3–5 contract\n\n- Stage 3 language strategy is a presentation constraint. Use the stored\n  preferences and retain useful English STEM terminology where appropriate;\n  do not alter the learner profile.\n- Stage 4 core meaning must remain technically consistent with the active\n  concept supplied by the application.\n- Stage 5 scaffold form is fixed by \"another_example\". Do not choose a\n  different scaffold or return route, state or persistence fields.\n\n# Adaptation strategy\n\nFollow the selected support type exactly:\n\n- another_example:\n  Provide one new, concrete example that was not used in the initial\n  explanation or previous adaptations.\n  Explain how the example connects to the concept.\n\n# Context constraints\n\n- Stay focused on the supplied concept.\n- Do not introduce an unrelated concept.\n- Do not contradict the initial explanation.\n- Examine previousAdaptations and avoid repeating their explanation,\n  wording, example or analogy.\n- Respect the supplied explanation level and learning style.\n- Do not repeat the complete initial explanation.\n- Do not create a quiz, question sequence, grade or score.\n- Do not make decisions about understanding, status or adaptation round.\n- Do not choose learner identity, persistence, route permission, lifecycle or\n  follow-up allowance.\n- Do not claim that the learner now understands the concept.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- Write the Burmese content directly from the underlying meaning.\n- The English and Burmese fields must communicate the same information.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari or\n  characters from any other unrelated writing system.\n- Burmese fields may contain only Myanmar script, Latin characters for\n  English STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Success criteria\n\nBefore returning the result, verify that:\n\n1. The content follows \"another_example\" and the \"stage_5_scaffold\" route.\n2. It materially differs from previous support.\n3. It is concise and appropriate for the learner’s reported support need.\n4. English and Burmese communicate the same technical meaning.\n5. Burmese sounds natural rather than machine-translated.\n6. No unsupported writing system appears.\n",
+              "input": "{\"learnerResponse\":\"medium\",\"adaptationRoute\":\"stage_5_scaffold\",\"supportType\":\"another_example\",\"presentationOverride\":null,\"concept\":{\"name\":\"ion\",\"domain\":\"chemistry and atomic structure\"},\"initialExplanations\":{\"simple\":{\"en\":\"An ion is an atom or molecule that has a net electric charge because it has lost or gained one or more electrons.\",\"my\":\"Ion ဆိုတာ electron ကိုဆုံးရှုံးလိုက်ရတာ ဒါမှမဟုတ် electron ကိုထပ်ရလိုက်တာကြောင့် electric charge ရှိလာတဲ့ atom သို့မဟုတ် molecule ဖြစ်ပါတယ်။\"},\"realWorldExample\":{\"en\":\"For example, when sodium loses one electron, it becomes a sodium ion with a positive charge. This is important in salt, batteries, and nerve signals because charged particles can move and interact in predictable ways.\",\"my\":\"ဥပမာ၊ sodium atom တစ်ခုက electron တစ်လုံးဆုံးရှုံးလိုက်ရင် sodium ion ဖြစ်ပြီး positive charge ရှိလာပါတယ်။ Salt, battery, နဲ့ nerve signal တွေမှာ ဒါကအရေးကြီးပါတယ်။ ဘာလို့လဲဆိုတော့ charge ရှိတဲ့ particles တွေက သတ်မှတ်ထားတဲ့ပုံစံနဲ့ ရွေ့လျားပြီး အချင်းချင်း သက်ရောက်နိုင်လို့ပါ။\"},\"technical\":{\"en\":\"An ion is a chemically significant species formed when an atom or molecule acquires a nonzero net charge through the loss or gain of electrons. Loss of electrons produces a cation, and gain of electrons produces an anion. The number of protons stays the same; the imbalance between protons and electrons creates the charge.\",\"my\":\"Ion ဆိုတာ atom သို့မဟုတ် molecule တစ်ခုက electron ကိုဆုံးရှုံးတာ သို့မဟုတ် ထပ်ရတာကြောင့် net charge မရှိတော့ဘဲ charge အပေါင်း သို့မဟုတ် အနှုတ် ဖြစ်လာတဲ့ chemical species ပါ။ Electron ဆုံးရှုံးသွားရင် cation ဖြစ်ပြီး၊ electron ထပ်ရရင် anion ဖြစ်ပါတယ်။ Proton အရေအတွက်ကတော့ မပြောင်းပါဘူး။ Proton နဲ့ electron အရေအတွက် မညီတော့တာက charge ကိုဖြစ်စေပါတယ်။\"}},\"previousAdaptations\":[],\"preferences\":{\"uiLanguage\":\"en\",\"supportLanguage\":\"bilingual\",\"explanationLevel\":\"beginner\",\"learningStyle\":\"guided\",\"theme\":\"light\"}}",
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "name": "learning_adaptation",
+                  "strict": true,
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "content": {
+                        "description": "Application-selected route output combining required Stage 4 meaning and/or Stage 5 scaffold",
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "content"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            },
+            "httpStatus": 200,
+            "response": {
+              "id": "resp_0b0880c0f16db5a5016abe38df3d1487d098df7158b7c989cc",
+              "object": "response",
+              "created_at": 1790851295,
+              "status": "completed",
+              "access_programs": null,
+              "background": false,
+              "billing": {
+                "payer": "openai"
+              },
+              "completed_at": 1790851296,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator supporting a Burmese-speaking\nuniversity student.\n\n# Goal\n\nThe learner reported \"medium\".\nThe application selected the \"stage_5_scaffold\" route.\nGenerate exactly one \"another_example\" support item that helps the\nlearner understand the existing STEM concept.\n\nThe application, not the model, selected both route and support type. Return\nonly the bilingual content required by the strict schema.\n\n# Stages 3–5 contract\n\n- Stage 3 language strategy is a presentation constraint. Use the stored\n  preferences and retain useful English STEM terminology where appropriate;\n  do not alter the learner profile.\n- Stage 4 core meaning must remain technically consistent with the active\n  concept supplied by the application.\n- Stage 5 scaffold form is fixed by \"another_example\". Do not choose a\n  different scaffold or return route, state or persistence fields.\n\n# Adaptation strategy\n\nFollow the selected support type exactly:\n\n- another_example:\n  Provide one new, concrete example that was not used in the initial\n  explanation or previous adaptations.\n  Explain how the example connects to the concept.\n\n# Context constraints\n\n- Stay focused on the supplied concept.\n- Do not introduce an unrelated concept.\n- Do not contradict the initial explanation.\n- Examine previousAdaptations and avoid repeating their explanation,\n  wording, example or analogy.\n- Respect the supplied explanation level and learning style.\n- Do not repeat the complete initial explanation.\n- Do not create a quiz, question sequence, grade or score.\n- Do not make decisions about understanding, status or adaptation round.\n- Do not choose learner identity, persistence, route permission, lifecycle or\n  follow-up allowance.\n- Do not claim that the learner now understands the concept.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- Write the Burmese content directly from the underlying meaning.\n- The English and Burmese fields must communicate the same information.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari or\n  characters from any other unrelated writing system.\n- Burmese fields may contain only Myanmar script, Latin characters for\n  English STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Success criteria\n\nBefore returning the result, verify that:\n\n1. The content follows \"another_example\" and the \"stage_5_scaffold\" route.\n2. It materially differs from previous support.\n3. It is concise and appropriate for the learner’s reported support need.\n4. English and Burmese communicate the same technical meaning.\n5. Burmese sounds natural rather than machine-translated.\n6. No unsupported writing system appears.\n",
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-5.4-mini-2026-03-17",
+              "moderation": null,
+              "output": [
+                {
+                  "id": "msg_0b0880c0f16db5a5016abe38dfd50c87d09fba357dede6c336",
+                  "type": "message",
+                  "status": "completed",
+                  "content": [
+                    {
+                      "type": "output_text",
+                      "annotations": [],
+                      "logprobs": [],
+                      "text": "{\"content\":{\"en\":\"Another example: chlorine can gain one electron and become a chloride ion, written as Cl⁻. The atom is still chlorine, but because it now has one more electron than protons, it has a negative charge. This shows the same idea that an ion forms when electron number changes, creating a net charge.\",\"my\":\"နောက်ထပ် ဥပမာတစ်ခုက chlorine က electron တစ်လုံးထပ်ရပြီး chloride ion ဖြစ်သွားတာပါ၊ Cl⁻ လို့ရေးပါတယ်။ အဲဒီ atom က chlorine ပဲဖြစ်နေသေးပေမယ့် proton ထက် electron တစ်လုံးပိုများသွားလို့ negative charge ရှိလာပါတယ်။ ဒီဥပမာက electron အရေအတွက် ပြောင်းလဲသွားတဲ့အခါ net charge ရှိတဲ့ ion ဖြစ်လာတယ်ဆိုတာကို ပြထားပါတယ်။\"}}"
+                    }
+                  ],
+                  "phase": "final_answer",
+                  "role": "assistant"
+                }
+              ],
+              "parallel_tool_calls": true,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": null,
+              "prompt_cache_retention": "24h",
+              "reasoning": {
+                "context": "current_turn",
+                "effort": "none",
+                "mode": "standard",
+                "summary": null
+              },
+              "safety_identifier": null,
+              "service_tier": "default",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "description": null,
+                  "name": "learning_adaptation",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "content": {
+                        "description": "Application-selected route output combining required Stage 4 meaning and/or Stage 5 scaffold",
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "content"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "strict": true
+                },
+                "verbosity": "medium"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": {
+                "input_tokens": 1147,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 200,
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "total_tokens": 1347
+              },
+              "user": null,
+              "metadata": {}
+            },
+            "elapsedMs": 3440
+          }
+        }
+      ]
+    }
+  }
+}

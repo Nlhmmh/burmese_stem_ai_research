@@ -377,7 +377,3 @@ The MQM-informed error-analysis warrant comes from
 [Hevner et al. (2004)](https://doi.org/10.2307/25148625) classification applies
 to the simulation generating the outputs. This new retrospective annotation
 does not become a new controlled experiment simply because a rubric was used.
-
-## Preservation and review scope
-
-Detailed records above were recovered from the pre-consolidation archive, not newly executed or re-scored. Repeated planning, sign-off and summary text is omitted. The [shared protocol](../00_protocol/evaluation_protocol.md) records preparation, execution and subsequent human verification. Original capture-time statements and complete documents remain in the [archive](../archive/pre_consolidation_markdown_20261008.zip).

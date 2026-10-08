@@ -1,0 +1,1284 @@
+{
+  "format": "simulation-evidence-by-case-v2",
+  "scope": "Only SIM11-A.",
+  "notes": [
+    "This is a formatted evidence copy, not a new simulation or human review.",
+    "All original execution-log fields and source line numbers are retained.",
+    "simulationRecords contain capture-time contentOutcome and reviewer fields, which were blank or Not assessed.",
+    "Human judgements and scores are separate in the case register and human_content_scores.csv; they are not imported here.",
+    "Provider records include rejected or undelivered outputs. These are not additional delivered content assessments.",
+    "Sources describe complete input files; includedCounts describe this export."
+  ],
+  "sources": [
+    {
+      "file": "SIM-RUN-01-results.jsonl",
+      "records": 55,
+      "sha256": "3cd1db9135bd92e86a8b96bd1df5955d503e679ad84140be6a6a3763b8042afe"
+    },
+    {
+      "file": "SIM-RUN-01-provider.jsonl",
+      "records": 102,
+      "sha256": "127ae59f140371b9652992351f86788f42efa4b275bcc232e987bd6a52d62c8b"
+    }
+  ],
+  "includedCounts": {
+    "cases": 1,
+    "simulationRecords": 1,
+    "providerRecords": 1
+  },
+  "cases": {
+    "SIM11-A": {
+      "simulationRecords": [
+        {
+          "source": {
+            "file": "SIM-RUN-01-results.jsonl",
+            "line": 31
+          },
+          "record": {
+            "id": "SIM11-A",
+            "base": "SIM11",
+            "path": "A",
+            "question": "What is an algorithm?",
+            "language": "bilingual",
+            "clarification": null,
+            "runId": "RUN-B01-20261001-SIMULATION-02",
+            "attempt": 1,
+            "owner": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+            "startedAt": "2026-10-01T10:42:13.283Z",
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "steps": [
+              {
+                "step": "initial",
+                "request": {
+                  "question": "What is an algorithm?"
+                },
+                "httpStatus": 201,
+                "response": {
+                  "session": {
+                    "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                    "originalQuestion": "What is an algorithm?",
+                    "concept": {
+                      "name": "algorithm",
+                      "domain": "computer science and mathematics"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                        "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                        "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                      },
+                      "technical": {
+                        "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                        "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                      "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                    },
+                    "hint": {
+                      "en": "Look for a problem-solving process with a clear order of steps.",
+                      "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                    },
+                    "understanding": null,
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "createdAt": "2026-10-01T10:42:16.756Z",
+                    "updatedAt": "2026-10-01T10:42:16.756Z"
+                  }
+                },
+                "before": [],
+                "after": [
+                  {
+                    "_id": "6abe39087a1eaff542bb4ac1",
+                    "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                    "learnerId": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+                    "originalQuestion": "What is an algorithm?",
+                    "concept": {
+                      "name": "algorithm",
+                      "domain": "computer science and mathematics"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                        "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                        "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                      },
+                      "technical": {
+                        "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                        "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                      "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                    },
+                    "hint": {
+                      "en": "Look for a problem-solving process with a clear order of steps.",
+                      "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                    },
+                    "understanding": null,
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:42:16.756Z",
+                    "updatedAt": "2026-10-01T10:42:16.756Z"
+                  }
+                ],
+                "providerCalls": 1,
+                "elapsedMs": 3477
+              },
+              {
+                "step": "high",
+                "request": {
+                  "overallSupportNeed": "high",
+                  "difficultyType": null
+                },
+                "httpStatus": 200,
+                "response": {
+                  "understanding": "high",
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "route": "fade",
+                  "responseEvent": {
+                    "overallSupportNeed": "high",
+                    "difficultyType": null,
+                    "route": "fade",
+                    "roundBefore": 0,
+                    "roundAfter": 0,
+                    "createdAt": "2026-10-01T10:42:16.765Z"
+                  },
+                  "adaptation": null
+                },
+                "before": [
+                  {
+                    "_id": "6abe39087a1eaff542bb4ac1",
+                    "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                    "learnerId": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+                    "originalQuestion": "What is an algorithm?",
+                    "concept": {
+                      "name": "algorithm",
+                      "domain": "computer science and mathematics"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                        "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                        "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                      },
+                      "technical": {
+                        "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                        "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                      "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                    },
+                    "hint": {
+                      "en": "Look for a problem-solving process with a clear order of steps.",
+                      "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                    },
+                    "understanding": null,
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:42:16.756Z",
+                    "updatedAt": "2026-10-01T10:42:16.756Z"
+                  }
+                ],
+                "after": [
+                  {
+                    "_id": "6abe39087a1eaff542bb4ac1",
+                    "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                    "learnerId": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+                    "originalQuestion": "What is an algorithm?",
+                    "concept": {
+                      "name": "algorithm",
+                      "domain": "computer science and mathematics"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                        "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                        "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                      },
+                      "technical": {
+                        "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                        "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                      "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                    },
+                    "hint": {
+                      "en": "Look for a problem-solving process with a clear order of steps.",
+                      "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 0,
+                        "roundAfter": 0,
+                        "createdAt": "2026-10-01T10:42:16.765Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:42:16.756Z",
+                    "updatedAt": "2026-10-01T10:42:16.765Z"
+                  }
+                ],
+                "providerCalls": 0,
+                "elapsedMs": 5
+              },
+              {
+                "step": "finish",
+                "request": {
+                  "status": "completed"
+                },
+                "httpStatus": 200,
+                "response": {
+                  "session": {
+                    "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                    "originalQuestion": "What is an algorithm?",
+                    "concept": {
+                      "name": "algorithm",
+                      "domain": "computer science and mathematics"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                        "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                        "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                      },
+                      "technical": {
+                        "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                        "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                      "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                    },
+                    "hint": {
+                      "en": "Look for a problem-solving process with a clear order of steps.",
+                      "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "completed",
+                    "adaptationRound": 0,
+                    "adaptations": [],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 0,
+                        "roundAfter": 0,
+                        "createdAt": "2026-10-01T10:42:16.765Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "createdAt": "2026-10-01T10:42:16.756Z",
+                    "updatedAt": "2026-10-01T10:42:16.769Z"
+                  }
+                },
+                "before": [
+                  {
+                    "_id": "6abe39087a1eaff542bb4ac1",
+                    "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                    "learnerId": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+                    "originalQuestion": "What is an algorithm?",
+                    "concept": {
+                      "name": "algorithm",
+                      "domain": "computer science and mathematics"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                        "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                        "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                      },
+                      "technical": {
+                        "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                        "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                      "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                    },
+                    "hint": {
+                      "en": "Look for a problem-solving process with a clear order of steps.",
+                      "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 0,
+                        "roundAfter": 0,
+                        "createdAt": "2026-10-01T10:42:16.765Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:42:16.756Z",
+                    "updatedAt": "2026-10-01T10:42:16.765Z"
+                  }
+                ],
+                "after": [
+                  {
+                    "_id": "6abe39087a1eaff542bb4ac1",
+                    "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                    "learnerId": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+                    "originalQuestion": "What is an algorithm?",
+                    "concept": {
+                      "name": "algorithm",
+                      "domain": "computer science and mathematics"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                        "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                        "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                      },
+                      "technical": {
+                        "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                        "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                      "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                    },
+                    "hint": {
+                      "en": "Look for a problem-solving process with a clear order of steps.",
+                      "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "completed",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 0,
+                        "roundAfter": 0,
+                        "createdAt": "2026-10-01T10:42:16.765Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:42:16.756Z",
+                    "updatedAt": "2026-10-01T10:42:16.769Z"
+                  }
+                ],
+                "providerCalls": 0,
+                "elapsedMs": 3
+              },
+              {
+                "step": "retrieve",
+                "request": null,
+                "httpStatus": 200,
+                "response": {
+                  "session": {
+                    "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                    "originalQuestion": "What is an algorithm?",
+                    "concept": {
+                      "name": "algorithm",
+                      "domain": "computer science and mathematics"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                        "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                        "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                      },
+                      "technical": {
+                        "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                        "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                      "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                    },
+                    "hint": {
+                      "en": "Look for a problem-solving process with a clear order of steps.",
+                      "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "completed",
+                    "adaptationRound": 0,
+                    "adaptations": [],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 0,
+                        "roundAfter": 0,
+                        "createdAt": "2026-10-01T10:42:16.765Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "createdAt": "2026-10-01T10:42:16.756Z",
+                    "updatedAt": "2026-10-01T10:42:16.769Z"
+                  }
+                },
+                "before": [
+                  {
+                    "_id": "6abe39087a1eaff542bb4ac1",
+                    "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                    "learnerId": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+                    "originalQuestion": "What is an algorithm?",
+                    "concept": {
+                      "name": "algorithm",
+                      "domain": "computer science and mathematics"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                        "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                        "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                      },
+                      "technical": {
+                        "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                        "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                      "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                    },
+                    "hint": {
+                      "en": "Look for a problem-solving process with a clear order of steps.",
+                      "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "completed",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 0,
+                        "roundAfter": 0,
+                        "createdAt": "2026-10-01T10:42:16.765Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:42:16.756Z",
+                    "updatedAt": "2026-10-01T10:42:16.769Z"
+                  }
+                ],
+                "after": [
+                  {
+                    "_id": "6abe39087a1eaff542bb4ac1",
+                    "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                    "learnerId": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+                    "originalQuestion": "What is an algorithm?",
+                    "concept": {
+                      "name": "algorithm",
+                      "domain": "computer science and mathematics"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                        "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                        "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                      },
+                      "technical": {
+                        "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                        "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                      "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                    },
+                    "hint": {
+                      "en": "Look for a problem-solving process with a clear order of steps.",
+                      "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                    },
+                    "understanding": "high",
+                    "status": "completed",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "high",
+                        "difficultyType": null,
+                        "route": "fade",
+                        "roundBefore": 0,
+                        "roundAfter": 0,
+                        "createdAt": "2026-10-01T10:42:16.765Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:42:16.756Z",
+                    "updatedAt": "2026-10-01T10:42:16.769Z"
+                  }
+                ],
+                "providerCalls": 0,
+                "elapsedMs": 1
+              }
+            ],
+            "checks": [
+              {
+                "step": "initial",
+                "name": "exactly one initial provider call",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "initial",
+                "name": "initial HTTP 201",
+                "pass": true,
+                "observed": 201
+              },
+              {
+                "step": "initial",
+                "name": "fresh initial state persisted",
+                "pass": true,
+                "observed": "160ccd91-1245-4780-97e4-bd2791e08cb1"
+              },
+              {
+                "step": "initial",
+                "name": "profile snapshot persisted",
+                "pass": true,
+                "observed": {
+                  "uiLanguage": "en",
+                  "supportLanguage": "bilingual",
+                  "explanationLevel": "beginner",
+                  "learningStyle": "guided",
+                  "theme": "light"
+                }
+              },
+              {
+                "step": "high",
+                "name": "response HTTP 200",
+                "pass": true,
+                "observed": 200
+              },
+              {
+                "step": "high",
+                "name": "application-selected route",
+                "pass": true,
+                "observed": "fade"
+              },
+              {
+                "step": "high",
+                "name": "round before/after",
+                "pass": true,
+                "observed": {
+                  "overallSupportNeed": "high",
+                  "difficultyType": null,
+                  "route": "fade",
+                  "roundBefore": 0,
+                  "roundAfter": 0,
+                  "createdAt": "2026-10-01T10:42:16.765Z"
+                }
+              },
+              {
+                "step": "high",
+                "name": "one atomic response event",
+                "pass": true,
+                "observed": [
+                  {
+                    "overallSupportNeed": "high",
+                    "difficultyType": null,
+                    "route": "fade",
+                    "roundBefore": 0,
+                    "roundAfter": 0,
+                    "createdAt": "2026-10-01T10:42:16.765Z"
+                  }
+                ]
+              },
+              {
+                "step": "high",
+                "name": "provider-call bound",
+                "pass": true,
+                "observed": 0
+              },
+              {
+                "step": "high",
+                "name": "adaptation count bound",
+                "pass": true,
+                "observed": 0
+              },
+              {
+                "step": "high",
+                "name": "round never exceeds two",
+                "pass": true,
+                "observed": 0
+              },
+              {
+                "step": "high",
+                "name": "status",
+                "pass": true,
+                "observed": "in_progress"
+              },
+              {
+                "step": "high",
+                "name": "self-report stored without changing follow-up state",
+                "pass": true,
+                "observed": "high"
+              },
+              {
+                "step": "high",
+                "name": "no adaptation returned",
+                "pass": true,
+                "observed": null
+              },
+              {
+                "step": "finish",
+                "name": "explicit finish completed without generation",
+                "pass": true,
+                "observed": 200
+              },
+              {
+                "step": "retrieve",
+                "name": "retrieval reconstructs persisted route history",
+                "pass": true,
+                "observed": 200
+              },
+              {
+                "step": "retrieve",
+                "name": "saved profile unchanged",
+                "pass": true,
+                "observed": {
+                  "explanationLevel": "beginner",
+                  "learningStyle": "guided",
+                  "supportLanguage": "bilingual",
+                  "theme": "light",
+                  "uiLanguage": "en"
+                }
+              }
+            ],
+            "executionStatus": "Executed",
+            "technicalOutcome": "Pass",
+            "contentOutcome": "Not assessed",
+            "humanScores": {},
+            "assessor": "",
+            "reference": "",
+            "limitations": [],
+            "profileBefore": {
+              "_id": "6abe390537b8b0c001fba377",
+              "learnerId": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+              "createdAt": "2026-10-01T10:42:13.283Z",
+              "preferences": {
+                "explanationLevel": "beginner",
+                "learningStyle": "guided",
+                "supportLanguage": "bilingual",
+                "theme": "light",
+                "uiLanguage": "en"
+              },
+              "updatedAt": "2026-10-01T10:42:13.283Z"
+            },
+            "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+            "pathOutcome": "Pass",
+            "profileAfter": {
+              "_id": "6abe390537b8b0c001fba377",
+              "learnerId": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+              "createdAt": "2026-10-01T10:42:13.283Z",
+              "preferences": {
+                "explanationLevel": "beginner",
+                "learningStyle": "guided",
+                "supportLanguage": "bilingual",
+                "theme": "light",
+                "uiLanguage": "en"
+              },
+              "updatedAt": "2026-10-01T10:42:13.283Z"
+            },
+            "finalStoredState": [
+              {
+                "_id": "6abe39087a1eaff542bb4ac1",
+                "sessionId": "160ccd91-1245-4780-97e4-bd2791e08cb1",
+                "learnerId": "95f9c3c9-e4a2-45f2-9ce7-bc1a1cb19e6b",
+                "originalQuestion": "What is an algorithm?",
+                "concept": {
+                  "name": "algorithm",
+                  "domain": "computer science and mathematics"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.",
+                    "my": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။"
+                  },
+                  "realWorldExample": {
+                    "en": "A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.",
+                    "my": "ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။"
+                  },
+                  "technical": {
+                    "en": "In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.",
+                    "my": "Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "Can you think of one daily task that you already do step by step, like an algorithm?",
+                  "my": "နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။"
+                },
+                "hint": {
+                  "en": "Look for a problem-solving process with a clear order of steps.",
+                  "my": "အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။"
+                },
+                "understanding": "high",
+                "status": "completed",
+                "adaptationRound": 0,
+                "preferencesSnapshot": {
+                  "uiLanguage": "en",
+                  "supportLanguage": "bilingual",
+                  "explanationLevel": "beginner",
+                  "learningStyle": "guided",
+                  "theme": "light"
+                },
+                "adaptations": [],
+                "responseEvents": [
+                  {
+                    "overallSupportNeed": "high",
+                    "difficultyType": null,
+                    "route": "fade",
+                    "roundBefore": 0,
+                    "roundAfter": 0,
+                    "createdAt": "2026-10-01T10:42:16.765Z"
+                  }
+                ],
+                "followUps": [],
+                "createdAt": "2026-10-01T10:42:16.756Z",
+                "updatedAt": "2026-10-01T10:42:16.769Z"
+              }
+            ],
+            "providerCalls": 1,
+            "finishedAt": "2026-10-01T10:42:16.773Z"
+          }
+        }
+      ],
+      "providerRecords": [
+        {
+          "source": {
+            "file": "SIM-RUN-01-provider.jsonl",
+            "line": 61
+          },
+          "record": {
+            "caseId": "SIM11-A",
+            "step": "initial",
+            "call": 61,
+            "startedAt": "2026-10-01T10:42:13.286Z",
+            "request": {
+              "model": "gpt-5.4-mini",
+              "store": false,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: beginner\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n",
+              "input": "{\"learnerQuestion\":\"What is an algorithm?\",\"preferences\":{\"supportLanguage\":\"bilingual\",\"explanationLevel\":\"beginner\",\"learningStyle\":\"guided\"}}",
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "name": "initial_learning_session",
+                  "strict": true,
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "outcome": {
+                        "type": "string",
+                        "enum": [
+                          "ready",
+                          "ambiguous",
+                          "out_of_scope"
+                        ]
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "concept": {
+                        "description": "Stages 1 and 2: identified STEM term and interpreted technical context",
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Stage 1 primary STEM term"
+                          },
+                          "domain": {
+                            "type": "string",
+                            "description": "Stage 2 technical domain or context"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "domain"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "explanations": {
+                        "type": "object",
+                        "properties": {
+                          "simple": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 accessible explanation of the core meaning"
+                          },
+                          "realWorldExample": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 5 concrete scaffold linked to the core meaning"
+                          },
+                          "technical": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 precise explanation of the same core meaning"
+                          }
+                        },
+                        "required": [
+                          "simple",
+                          "realWorldExample",
+                          "technical"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "reflectivePrompt": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single reflective scaffold"
+                      },
+                      "hint": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single concise optional hint"
+                      }
+                    },
+                    "required": [
+                      "outcome",
+                      "message",
+                      "concept",
+                      "explanations",
+                      "reflectivePrompt",
+                      "hint"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            },
+            "httpStatus": 200,
+            "response": {
+              "id": "resp_01bba661ae3e55af016abe39057bcc87d0bee4fa2753ab61b6",
+              "object": "response",
+              "created_at": 1790851333,
+              "status": "completed",
+              "access_programs": null,
+              "background": false,
+              "billing": {
+                "payer": "openai"
+              },
+              "completed_at": 1790851336,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: beginner\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n",
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-5.4-mini-2026-03-17",
+              "moderation": null,
+              "output": [
+                {
+                  "id": "msg_01bba661ae3e55af016abe39062c4487d0a5a76a9cb1d1b62e",
+                  "type": "message",
+                  "status": "completed",
+                  "content": [
+                    {
+                      "type": "output_text",
+                      "annotations": [],
+                      "logprobs": [],
+                      "text": "{\"outcome\":\"ready\",\"message\":\"\",\"concept\":{\"name\":\"algorithm\",\"domain\":\"computer science and mathematics\"},\"explanations\":{\"simple\":{\"en\":\"An algorithm is a clear, step-by-step set of instructions for solving a problem or completing a task.\",\"my\":\"Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့ သို့မဟုတ် အလုပ်တစ်ခုကို ပြီးစီးအောင် လုပ်ဖို့ သေချာပြီး အဆင့်လိုက် ညွှန်ကြားချက်တွေ စုစည်းထားတာပါ။\"},\"realWorldExample\":{\"en\":\"A recipe is like an algorithm: if you follow each step in order, you get the expected result, such as baking a cake.\",\"my\":\"ချက်နည်းတစ်ခုဟာ algorithm နဲ့တူပါတယ်။ အဆင့်တွေကို အစဉ်လိုက်လိုက်နာမယ်ဆိုရင် မျှော်လင့်ထားတဲ့ ရလဒ်ကို ရနိုင်ပါတယ်။ ဥပမာ ကိတ်မုန့်ဖုတ်တာလိုပါ။\"},\"technical\":{\"en\":\"In computer science, an algorithm is a finite, well-defined procedure that takes input, processes it through a series of rules, and produces output. The same problem can often be solved by different algorithms, and we compare them by correctness, efficiency, and clarity.\",\"my\":\"Computer science မှာ algorithm ဆိုတာ input ကိုယူပြီး သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေနဲ့ အဆင့်လိုက်လုပ်ဆောင်ကာ output ထုတ်ပေးတဲ့ လုပ်ငန်းစဉ်တစ်ခုပါ။ ပြဿနာတစ်ခုတည်းကို algorithm မတူညီတာတွေနဲ့ ဖြေရှင်းနိုင်တတ်ပြီး မှန်ကန်မှု၊ ထိရောက်မှု၊ ရှင်းလင်းမှုတွေကို ကြည့်ပြီး နှိုင်းယှဉ်ပါတယ်။\"}},\"reflectivePrompt\":{\"en\":\"Can you think of one daily task that you already do step by step, like an algorithm?\",\"my\":\"နေ့စဉ်လုပ်နေတဲ့ အလုပ်တစ်ခုကို အဆင့်လိုက် လုပ်တတ်တာရှိလား။ အဲဒါကို algorithm တစ်ခုလို စဉ်းစားကြည့်နိုင်မလား။\"},\"hint\":{\"en\":\"Look for a problem-solving process with a clear order of steps.\",\"my\":\"အဆင့်တွေ သေချာစီထားတဲ့ ပြဿနာဖြေရှင်းနည်းတစ်ခုကို စဉ်းစားကြည့်ပါ။\"}}"
+                    }
+                  ],
+                  "phase": "final_answer",
+                  "role": "assistant"
+                }
+              ],
+              "parallel_tool_calls": true,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": null,
+              "prompt_cache_retention": "24h",
+              "reasoning": {
+                "context": "current_turn",
+                "effort": "none",
+                "mode": "standard",
+                "summary": null
+              },
+              "safety_identifier": null,
+              "service_tier": "default",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "description": null,
+                  "name": "initial_learning_session",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "outcome": {
+                        "type": "string",
+                        "enum": [
+                          "ready",
+                          "ambiguous",
+                          "out_of_scope"
+                        ]
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "concept": {
+                        "description": "Stages 1 and 2: identified STEM term and interpreted technical context",
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Stage 1 primary STEM term"
+                          },
+                          "domain": {
+                            "type": "string",
+                            "description": "Stage 2 technical domain or context"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "domain"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "explanations": {
+                        "type": "object",
+                        "properties": {
+                          "simple": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 accessible explanation of the core meaning"
+                          },
+                          "realWorldExample": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 5 concrete scaffold linked to the core meaning"
+                          },
+                          "technical": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 precise explanation of the same core meaning"
+                          }
+                        },
+                        "required": [
+                          "simple",
+                          "realWorldExample",
+                          "technical"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "reflectivePrompt": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single reflective scaffold"
+                      },
+                      "hint": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single concise optional hint"
+                      }
+                    },
+                    "required": [
+                      "outcome",
+                      "message",
+                      "concept",
+                      "explanations",
+                      "reflectivePrompt",
+                      "hint"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "strict": true
+                },
+                "verbosity": "medium"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": {
+                "input_tokens": 1166,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 551,
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "total_tokens": 1717
+              },
+              "user": null,
+              "metadata": {}
+            },
+            "elapsedMs": 3467
+          }
+        }
+      ]
+    }
+  }
+}

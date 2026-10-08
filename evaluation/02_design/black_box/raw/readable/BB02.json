@@ -1,0 +1,1011 @@
+{
+  "format": "black-box-evidence-by-case-v1",
+  "runDirectory": "RUN-B01-20261002-BLACKBOX-01",
+  "scope": "Only BB02; other records are not included.",
+  "notes": [
+    "This is a formatted copy for review, not a new test run or a Pass/Fail judgement.",
+    "Every record keeps all original fields and its original source line number.",
+    "HTTP records use caseId; provider records use label. Only exact BB## labels go into cases.",
+    "Setup, browser and addendum labels remain in otherRecords. No case mapping is guessed.",
+    "Records remain in source order within each array; arrays do not pair requests automatically.",
+    "A case may include a provider request for session creation even when its response makes none.",
+    "The counts in sources describe the complete logs; includedCounts describe this export."
+  ],
+  "sources": [
+    {
+      "file": "http.jsonl",
+      "records": 164,
+      "sha256": "5d549cc665223c66924216318d93f2afc98c027796826e958e8005583488ab1a"
+    },
+    {
+      "file": "provider.jsonl",
+      "records": 112,
+      "sha256": "1136acf46dbb66569cd8bdb6d3b77122c640926aa5baec6d5082ad6d6a6d7c22"
+    }
+  ],
+  "includedCounts": {
+    "cases": 1,
+    "otherGroups": 0,
+    "httpRecords": 5,
+    "providerRecords": 0
+  },
+  "cases": {
+    "BB02": {
+      "httpRecords": [
+        {
+          "source": {
+            "file": "http.jsonl",
+            "line": 5
+          },
+          "record": {
+            "caseId": "BB02",
+            "endpoint": "/api/sessions",
+            "method": "POST",
+            "owner": "6bf9083b-1c73-453c-9a88-afb307a21810",
+            "request": {
+              "question": ""
+            },
+            "rawBody": false,
+            "headers": {
+              "cookie": "learnerId=6bf9083b-1c73-453c-9a88-afb307a21810",
+              "content-type": "application/json"
+            },
+            "status": 400,
+            "responseHeaders": {
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Fri, 02 Oct 2026 05:58:49 GMT",
+              "keep-alive": "timeout=5",
+              "transfer-encoding": "chunked",
+              "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+            },
+            "data": {
+              "error": {
+                "code": "INVALID_SESSION_REQUEST",
+                "message": "Question must be a non-empty string"
+              }
+            },
+            "before": {
+              "sessions": [
+                {
+                  "_id": "6abf48193d378ea1c1f717d5",
+                  "sessionId": "f06abccd-06c5-4ba7-98b4-4e2095d04cbc",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                  "concept": {
+                    "name": "photosynthesis",
+                    "domain": "biology, plant physiology"
+                  },
+                  "explanations": {
+                    "simple": {
+                      "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                    },
+                    "realWorldExample": {
+                      "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                      "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+                    },
+                    "technical": {
+                      "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+                    }
+                  },
+                  "reflectivePrompt": {
+                    "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+                    "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                  },
+                  "hint": {
+                    "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+                    "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+                  },
+                  "understanding": null,
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "preferencesSnapshot": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "adaptations": [],
+                  "responseEvents": [],
+                  "followUps": [],
+                  "createdAt": "2026-10-02T05:58:49.355Z",
+                  "updatedAt": "2026-10-02T05:58:49.355Z"
+                }
+              ],
+              "profiles": [
+                {
+                  "_id": "6abf481993f9c4a160eabc3f",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "createdAt": "2026-10-02T05:58:49.227Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.230Z"
+                },
+                {
+                  "_id": "6abf481993f9c4a160eabc40",
+                  "learnerId": "71efdb5b-cbab-4de3-a7f6-9e30aa337010",
+                  "createdAt": "2026-10-02T05:58:49.335Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.336Z"
+                }
+              ]
+            },
+            "after": {
+              "sessions": [
+                {
+                  "_id": "6abf48193d378ea1c1f717d5",
+                  "sessionId": "f06abccd-06c5-4ba7-98b4-4e2095d04cbc",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                  "concept": {
+                    "name": "photosynthesis",
+                    "domain": "biology, plant physiology"
+                  },
+                  "explanations": {
+                    "simple": {
+                      "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                    },
+                    "realWorldExample": {
+                      "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                      "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+                    },
+                    "technical": {
+                      "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+                    }
+                  },
+                  "reflectivePrompt": {
+                    "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+                    "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                  },
+                  "hint": {
+                    "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+                    "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+                  },
+                  "understanding": null,
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "preferencesSnapshot": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "adaptations": [],
+                  "responseEvents": [],
+                  "followUps": [],
+                  "createdAt": "2026-10-02T05:58:49.355Z",
+                  "updatedAt": "2026-10-02T05:58:49.355Z"
+                }
+              ],
+              "profiles": [
+                {
+                  "_id": "6abf481993f9c4a160eabc3f",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "createdAt": "2026-10-02T05:58:49.227Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.230Z"
+                },
+                {
+                  "_id": "6abf481993f9c4a160eabc40",
+                  "learnerId": "71efdb5b-cbab-4de3-a7f6-9e30aa337010",
+                  "createdAt": "2026-10-02T05:58:49.335Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.336Z"
+                }
+              ]
+            },
+            "providerCalls": 0,
+            "elapsedMs": 4
+          }
+        },
+        {
+          "source": {
+            "file": "http.jsonl",
+            "line": 6
+          },
+          "record": {
+            "caseId": "BB02",
+            "endpoint": "/api/sessions",
+            "method": "POST",
+            "owner": "6bf9083b-1c73-453c-9a88-afb307a21810",
+            "request": {
+              "question": "   "
+            },
+            "rawBody": false,
+            "headers": {
+              "cookie": "learnerId=6bf9083b-1c73-453c-9a88-afb307a21810",
+              "content-type": "application/json"
+            },
+            "status": 400,
+            "responseHeaders": {
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Fri, 02 Oct 2026 05:58:49 GMT",
+              "keep-alive": "timeout=5",
+              "transfer-encoding": "chunked",
+              "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+            },
+            "data": {
+              "error": {
+                "code": "INVALID_SESSION_REQUEST",
+                "message": "Question must be a non-empty string"
+              }
+            },
+            "before": {
+              "sessions": [
+                {
+                  "_id": "6abf48193d378ea1c1f717d5",
+                  "sessionId": "f06abccd-06c5-4ba7-98b4-4e2095d04cbc",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                  "concept": {
+                    "name": "photosynthesis",
+                    "domain": "biology, plant physiology"
+                  },
+                  "explanations": {
+                    "simple": {
+                      "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                    },
+                    "realWorldExample": {
+                      "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                      "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+                    },
+                    "technical": {
+                      "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+                    }
+                  },
+                  "reflectivePrompt": {
+                    "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+                    "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                  },
+                  "hint": {
+                    "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+                    "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+                  },
+                  "understanding": null,
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "preferencesSnapshot": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "adaptations": [],
+                  "responseEvents": [],
+                  "followUps": [],
+                  "createdAt": "2026-10-02T05:58:49.355Z",
+                  "updatedAt": "2026-10-02T05:58:49.355Z"
+                }
+              ],
+              "profiles": [
+                {
+                  "_id": "6abf481993f9c4a160eabc3f",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "createdAt": "2026-10-02T05:58:49.227Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.230Z"
+                },
+                {
+                  "_id": "6abf481993f9c4a160eabc40",
+                  "learnerId": "71efdb5b-cbab-4de3-a7f6-9e30aa337010",
+                  "createdAt": "2026-10-02T05:58:49.335Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.336Z"
+                }
+              ]
+            },
+            "after": {
+              "sessions": [
+                {
+                  "_id": "6abf48193d378ea1c1f717d5",
+                  "sessionId": "f06abccd-06c5-4ba7-98b4-4e2095d04cbc",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                  "concept": {
+                    "name": "photosynthesis",
+                    "domain": "biology, plant physiology"
+                  },
+                  "explanations": {
+                    "simple": {
+                      "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                    },
+                    "realWorldExample": {
+                      "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                      "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+                    },
+                    "technical": {
+                      "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+                    }
+                  },
+                  "reflectivePrompt": {
+                    "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+                    "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                  },
+                  "hint": {
+                    "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+                    "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+                  },
+                  "understanding": null,
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "preferencesSnapshot": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "adaptations": [],
+                  "responseEvents": [],
+                  "followUps": [],
+                  "createdAt": "2026-10-02T05:58:49.355Z",
+                  "updatedAt": "2026-10-02T05:58:49.355Z"
+                }
+              ],
+              "profiles": [
+                {
+                  "_id": "6abf481993f9c4a160eabc3f",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "createdAt": "2026-10-02T05:58:49.227Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.230Z"
+                },
+                {
+                  "_id": "6abf481993f9c4a160eabc40",
+                  "learnerId": "71efdb5b-cbab-4de3-a7f6-9e30aa337010",
+                  "createdAt": "2026-10-02T05:58:49.335Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.336Z"
+                }
+              ]
+            },
+            "providerCalls": 0,
+            "elapsedMs": 5
+          }
+        },
+        {
+          "source": {
+            "file": "http.jsonl",
+            "line": 7
+          },
+          "record": {
+            "caseId": "BB02",
+            "endpoint": "/api/sessions",
+            "method": "POST",
+            "owner": "6bf9083b-1c73-453c-9a88-afb307a21810",
+            "request": {},
+            "rawBody": false,
+            "headers": {
+              "cookie": "learnerId=6bf9083b-1c73-453c-9a88-afb307a21810",
+              "content-type": "application/json"
+            },
+            "status": 400,
+            "responseHeaders": {
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Fri, 02 Oct 2026 05:58:49 GMT",
+              "keep-alive": "timeout=5",
+              "transfer-encoding": "chunked",
+              "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+            },
+            "data": {
+              "error": {
+                "code": "INVALID_SESSION_REQUEST",
+                "message": "Question must be a non-empty string"
+              }
+            },
+            "before": {
+              "sessions": [
+                {
+                  "_id": "6abf48193d378ea1c1f717d5",
+                  "sessionId": "f06abccd-06c5-4ba7-98b4-4e2095d04cbc",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                  "concept": {
+                    "name": "photosynthesis",
+                    "domain": "biology, plant physiology"
+                  },
+                  "explanations": {
+                    "simple": {
+                      "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                    },
+                    "realWorldExample": {
+                      "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                      "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+                    },
+                    "technical": {
+                      "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+                    }
+                  },
+                  "reflectivePrompt": {
+                    "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+                    "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                  },
+                  "hint": {
+                    "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+                    "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+                  },
+                  "understanding": null,
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "preferencesSnapshot": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "adaptations": [],
+                  "responseEvents": [],
+                  "followUps": [],
+                  "createdAt": "2026-10-02T05:58:49.355Z",
+                  "updatedAt": "2026-10-02T05:58:49.355Z"
+                }
+              ],
+              "profiles": [
+                {
+                  "_id": "6abf481993f9c4a160eabc3f",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "createdAt": "2026-10-02T05:58:49.227Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.230Z"
+                },
+                {
+                  "_id": "6abf481993f9c4a160eabc40",
+                  "learnerId": "71efdb5b-cbab-4de3-a7f6-9e30aa337010",
+                  "createdAt": "2026-10-02T05:58:49.335Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.336Z"
+                }
+              ]
+            },
+            "after": {
+              "sessions": [
+                {
+                  "_id": "6abf48193d378ea1c1f717d5",
+                  "sessionId": "f06abccd-06c5-4ba7-98b4-4e2095d04cbc",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                  "concept": {
+                    "name": "photosynthesis",
+                    "domain": "biology, plant physiology"
+                  },
+                  "explanations": {
+                    "simple": {
+                      "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                    },
+                    "realWorldExample": {
+                      "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                      "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+                    },
+                    "technical": {
+                      "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+                    }
+                  },
+                  "reflectivePrompt": {
+                    "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+                    "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                  },
+                  "hint": {
+                    "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+                    "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+                  },
+                  "understanding": null,
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "preferencesSnapshot": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "adaptations": [],
+                  "responseEvents": [],
+                  "followUps": [],
+                  "createdAt": "2026-10-02T05:58:49.355Z",
+                  "updatedAt": "2026-10-02T05:58:49.355Z"
+                }
+              ],
+              "profiles": [
+                {
+                  "_id": "6abf481993f9c4a160eabc3f",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "createdAt": "2026-10-02T05:58:49.227Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.230Z"
+                },
+                {
+                  "_id": "6abf481993f9c4a160eabc40",
+                  "learnerId": "71efdb5b-cbab-4de3-a7f6-9e30aa337010",
+                  "createdAt": "2026-10-02T05:58:49.335Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.336Z"
+                }
+              ]
+            },
+            "providerCalls": 0,
+            "elapsedMs": 3
+          }
+        },
+        {
+          "source": {
+            "file": "http.jsonl",
+            "line": 8
+          },
+          "record": {
+            "caseId": "BB02",
+            "endpoint": "/api/sessions",
+            "method": "POST",
+            "owner": "6bf9083b-1c73-453c-9a88-afb307a21810",
+            "request": {
+              "question": 42
+            },
+            "rawBody": false,
+            "headers": {
+              "cookie": "learnerId=6bf9083b-1c73-453c-9a88-afb307a21810",
+              "content-type": "application/json"
+            },
+            "status": 400,
+            "responseHeaders": {
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Fri, 02 Oct 2026 05:58:49 GMT",
+              "keep-alive": "timeout=5",
+              "transfer-encoding": "chunked",
+              "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+            },
+            "data": {
+              "error": {
+                "code": "INVALID_SESSION_REQUEST",
+                "message": "Question must be a non-empty string"
+              }
+            },
+            "before": {
+              "sessions": [
+                {
+                  "_id": "6abf48193d378ea1c1f717d5",
+                  "sessionId": "f06abccd-06c5-4ba7-98b4-4e2095d04cbc",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                  "concept": {
+                    "name": "photosynthesis",
+                    "domain": "biology, plant physiology"
+                  },
+                  "explanations": {
+                    "simple": {
+                      "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                    },
+                    "realWorldExample": {
+                      "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                      "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+                    },
+                    "technical": {
+                      "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+                    }
+                  },
+                  "reflectivePrompt": {
+                    "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+                    "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                  },
+                  "hint": {
+                    "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+                    "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+                  },
+                  "understanding": null,
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "preferencesSnapshot": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "adaptations": [],
+                  "responseEvents": [],
+                  "followUps": [],
+                  "createdAt": "2026-10-02T05:58:49.355Z",
+                  "updatedAt": "2026-10-02T05:58:49.355Z"
+                }
+              ],
+              "profiles": [
+                {
+                  "_id": "6abf481993f9c4a160eabc3f",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "createdAt": "2026-10-02T05:58:49.227Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.230Z"
+                },
+                {
+                  "_id": "6abf481993f9c4a160eabc40",
+                  "learnerId": "71efdb5b-cbab-4de3-a7f6-9e30aa337010",
+                  "createdAt": "2026-10-02T05:58:49.335Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.336Z"
+                }
+              ]
+            },
+            "after": {
+              "sessions": [
+                {
+                  "_id": "6abf48193d378ea1c1f717d5",
+                  "sessionId": "f06abccd-06c5-4ba7-98b4-4e2095d04cbc",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                  "concept": {
+                    "name": "photosynthesis",
+                    "domain": "biology, plant physiology"
+                  },
+                  "explanations": {
+                    "simple": {
+                      "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                    },
+                    "realWorldExample": {
+                      "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                      "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+                    },
+                    "technical": {
+                      "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+                    }
+                  },
+                  "reflectivePrompt": {
+                    "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+                    "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                  },
+                  "hint": {
+                    "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+                    "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+                  },
+                  "understanding": null,
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "preferencesSnapshot": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "adaptations": [],
+                  "responseEvents": [],
+                  "followUps": [],
+                  "createdAt": "2026-10-02T05:58:49.355Z",
+                  "updatedAt": "2026-10-02T05:58:49.355Z"
+                }
+              ],
+              "profiles": [
+                {
+                  "_id": "6abf481993f9c4a160eabc3f",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "createdAt": "2026-10-02T05:58:49.227Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.230Z"
+                },
+                {
+                  "_id": "6abf481993f9c4a160eabc40",
+                  "learnerId": "71efdb5b-cbab-4de3-a7f6-9e30aa337010",
+                  "createdAt": "2026-10-02T05:58:49.335Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.336Z"
+                }
+              ]
+            },
+            "providerCalls": 0,
+            "elapsedMs": 4
+          }
+        },
+        {
+          "source": {
+            "file": "http.jsonl",
+            "line": 9
+          },
+          "record": {
+            "caseId": "BB02",
+            "endpoint": "/api/sessions",
+            "method": "POST",
+            "owner": "6bf9083b-1c73-453c-9a88-afb307a21810",
+            "request": "{",
+            "rawBody": true,
+            "headers": {
+              "cookie": "learnerId=6bf9083b-1c73-453c-9a88-afb307a21810",
+              "content-type": "application/json"
+            },
+            "status": 400,
+            "responseHeaders": {
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Fri, 02 Oct 2026 05:58:49 GMT",
+              "keep-alive": "timeout=5",
+              "transfer-encoding": "chunked",
+              "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+            },
+            "data": {
+              "error": {
+                "code": "INVALID_SESSION_REQUEST",
+                "message": "Request body must contain valid JSON"
+              }
+            },
+            "before": {
+              "sessions": [
+                {
+                  "_id": "6abf48193d378ea1c1f717d5",
+                  "sessionId": "f06abccd-06c5-4ba7-98b4-4e2095d04cbc",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                  "concept": {
+                    "name": "photosynthesis",
+                    "domain": "biology, plant physiology"
+                  },
+                  "explanations": {
+                    "simple": {
+                      "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                    },
+                    "realWorldExample": {
+                      "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                      "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+                    },
+                    "technical": {
+                      "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+                    }
+                  },
+                  "reflectivePrompt": {
+                    "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+                    "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                  },
+                  "hint": {
+                    "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+                    "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+                  },
+                  "understanding": null,
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "preferencesSnapshot": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "adaptations": [],
+                  "responseEvents": [],
+                  "followUps": [],
+                  "createdAt": "2026-10-02T05:58:49.355Z",
+                  "updatedAt": "2026-10-02T05:58:49.355Z"
+                }
+              ],
+              "profiles": [
+                {
+                  "_id": "6abf481993f9c4a160eabc3f",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "createdAt": "2026-10-02T05:58:49.227Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.230Z"
+                },
+                {
+                  "_id": "6abf481993f9c4a160eabc40",
+                  "learnerId": "71efdb5b-cbab-4de3-a7f6-9e30aa337010",
+                  "createdAt": "2026-10-02T05:58:49.335Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.336Z"
+                }
+              ]
+            },
+            "after": {
+              "sessions": [
+                {
+                  "_id": "6abf48193d378ea1c1f717d5",
+                  "sessionId": "f06abccd-06c5-4ba7-98b4-4e2095d04cbc",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "originalQuestion": "What is photosynthesis, and how do plants make food?",
+                  "concept": {
+                    "name": "photosynthesis",
+                    "domain": "biology, plant physiology"
+                  },
+                  "explanations": {
+                    "simple": {
+                      "en": "Photosynthesis is the process plants use to make their own food from sunlight, water, and carbon dioxide. They capture light energy and store it as sugar, which the plant can use for growth and energy.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေက နေရောင်ခြည်၊ ရေနဲ့ carbon dioxide ကိုသုံးပြီး ကိုယ်တိုင် အစာလုပ်တဲ့ လုပ်ငန်းစဉ်ပါ။ အလင်းရဲ့ စွမ်းအင်ကို ဖမ်းယူပြီး သကြားအဖြစ် သိမ်းထားတတ်ပြီး အဲဒီသကြားကို အပင်က ကြီးထွားဖို့နဲ့ စွမ်းအင်ရဖို့ သုံးပါတယ်။"
+                    },
+                    "realWorldExample": {
+                      "en": "For example, a leaf in sunlight takes in water from the roots and carbon dioxide from the air. Using chlorophyll, it turns those inputs into glucose, which helps the plant grow.",
+                      "my": "ဥပမာဆိုရင် နေရောင်ထဲက အရွက်တစ်ရွက်က အမြစ်ကနေ ရေကိုယူပြီး လေထဲက carbon dioxide ကိုလည်း စုပ်ယူပါတယ်။ Chlorophyll အကူအညီနဲ့ အဲဒီအရာတွေကို glucose အဖြစ်ပြောင်းပြီး အပင်ကြီးထွားအောင် ကူညီပါတယ်။"
+                    },
+                    "technical": {
+                      "en": "Photosynthesis is the biochemical process in which plants, algae, and some bacteria convert light energy into chemical energy. In plants, chlorophyll absorbs light, and the energy is used to combine carbon dioxide and water to form glucose and oxygen.",
+                      "my": "Photosynthesis ဆိုတာ အပင်တွေ၊ algae တွေနဲ့ bacteria တချို့က အလင်းစွမ်းအင်ကို ဓာတုစွမ်းအင်အဖြစ် ပြောင်းလဲတဲ့ biochemical process ပါ။ အပင်တွေထဲမှာ chlorophyll က အလင်းကို စုပ်ယူပြီး carbon dioxide နဲ့ ရေကို ပေါင်းစည်းကာ glucose နဲ့ oxygen ကို ဖြစ်စေဖို့ စွမ်းအင်ကို အသုံးချပါတယ်။"
+                    }
+                  },
+                  "reflectivePrompt": {
+                    "en": "What inputs does a plant need for photosynthesis, and what useful product does it make?",
+                    "my": "Photosynthesis လုပ်ဖို့ အပင်က ဘာတွေလိုအပ်ပြီး ဘာအသုံးဝင်တဲ့ ပစ္စည်းကို ထုတ်လုပ်သလဲဆိုတာ စဉ်းစားကြည့်ပါ။"
+                  },
+                  "hint": {
+                    "en": "Remember: light provides the energy, while water and carbon dioxide are the raw materials.",
+                    "my": "မှတ်ထားပါ။ အလင်းက စွမ်းအင်ပေးပြီး ရေနဲ့ carbon dioxide က အခြေခံကုန်ကြမ်းတွေပါ။"
+                  },
+                  "understanding": null,
+                  "status": "in_progress",
+                  "adaptationRound": 0,
+                  "preferencesSnapshot": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "adaptations": [],
+                  "responseEvents": [],
+                  "followUps": [],
+                  "createdAt": "2026-10-02T05:58:49.355Z",
+                  "updatedAt": "2026-10-02T05:58:49.355Z"
+                }
+              ],
+              "profiles": [
+                {
+                  "_id": "6abf481993f9c4a160eabc3f",
+                  "learnerId": "6bf9083b-1c73-453c-9a88-afb307a21810",
+                  "createdAt": "2026-10-02T05:58:49.227Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.230Z"
+                },
+                {
+                  "_id": "6abf481993f9c4a160eabc40",
+                  "learnerId": "71efdb5b-cbab-4de3-a7f6-9e30aa337010",
+                  "createdAt": "2026-10-02T05:58:49.335Z",
+                  "preferences": {
+                    "uiLanguage": "en",
+                    "supportLanguage": "bilingual",
+                    "explanationLevel": "beginner",
+                    "learningStyle": "guided",
+                    "theme": "light"
+                  },
+                  "updatedAt": "2026-10-02T05:58:49.336Z"
+                }
+              ]
+            },
+            "providerCalls": 0,
+            "elapsedMs": 6
+          }
+        }
+      ],
+      "providerRecords": []
+    }
+  },
+  "otherRecords": {}
+}

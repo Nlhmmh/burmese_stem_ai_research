@@ -336,7 +336,3 @@ Design evaluation task:
 | Provide structured support, collect learner response, and adapt subsequent assistance | RQ3 | Stages 5–7 + feedback loop | GenAI + SLR + informed argument + scenario | **Strongly supported structurally; adaptation quality remains unproven** |
 
 ---
-
-## Preservation and review scope
-
-Detailed records above were recovered from the pre-consolidation archive, not newly executed or re-scored. Repeated planning, sign-off and summary text is omitted. The [shared protocol](../00_protocol/evaluation_protocol.md) records preparation, execution and subsequent human verification. Original capture-time statements and complete documents remain in the [archive](../archive/pre_consolidation_markdown_20261008.zip).

@@ -1,0 +1,557 @@
+{
+  "format": "simulation-evidence-by-case-v2",
+  "scope": "Only SIM-CM-14.",
+  "notes": [
+    "This is a formatted evidence copy, not a new simulation or human review.",
+    "All original execution-log fields and source line numbers are retained.",
+    "simulationRecords contain capture-time contentOutcome and reviewer fields, which were blank or Not assessed.",
+    "Human judgements and scores are separate in the case register and human_content_scores.csv; they are not imported here.",
+    "Provider records include rejected or undelivered outputs. These are not additional delivered content assessments.",
+    "Sources describe complete input files; includedCounts describe this export."
+  ],
+  "sources": [
+    {
+      "file": "SIM-RUN-01-results.jsonl",
+      "records": 55,
+      "sha256": "3cd1db9135bd92e86a8b96bd1df5955d503e679ad84140be6a6a3763b8042afe"
+    },
+    {
+      "file": "SIM-RUN-01-provider.jsonl",
+      "records": 102,
+      "sha256": "127ae59f140371b9652992351f86788f42efa4b275bcc232e987bd6a52d62c8b"
+    }
+  ],
+  "includedCounts": {
+    "cases": 1,
+    "simulationRecords": 1,
+    "providerRecords": 1
+  },
+  "cases": {
+    "SIM-CM-14": {
+      "simulationRecords": [
+        {
+          "source": {
+            "file": "SIM-RUN-01-results.jsonl",
+            "line": 53
+          },
+          "record": {
+            "id": "SIM-CM-14",
+            "base": "SIM14",
+            "path": "CM",
+            "question": "What is current?",
+            "language": "bilingual",
+            "clarification": "I mean electric current",
+            "runId": "RUN-B01-20261001-SIMULATION-02",
+            "attempt": 1,
+            "owner": "df9bb65c-5f14-49f4-9c6f-f0fcb17fb9df",
+            "startedAt": "2026-10-01T10:43:44.781Z",
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "steps": [
+              {
+                "step": "initial",
+                "request": {
+                  "question": "What is current?"
+                },
+                "httpStatus": 422,
+                "response": {
+                  "error": {
+                    "code": "AMBIGUOUS_STEM_CONTEXT",
+                    "message": "Your question could mean different STEM ideas, such as electric current in physics or current in fluids. Please give a bit more context so I can explain the right one."
+                  }
+                },
+                "before": [],
+                "after": [],
+                "providerCalls": 1,
+                "elapsedMs": 1386
+              }
+            ],
+            "checks": [
+              {
+                "step": "initial",
+                "name": "exactly one initial provider call",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "initial",
+                "name": "ambiguous output creates no session",
+                "pass": true,
+                "observed": 0
+              },
+              {
+                "step": "initial",
+                "name": "ambiguity belongs to fixed ambiguous corpus",
+                "pass": true,
+                "observed": "SIM14"
+              },
+              {
+                "step": "initial",
+                "name": "saved profile unchanged",
+                "pass": true,
+                "observed": {
+                  "explanationLevel": "beginner",
+                  "learningStyle": "guided",
+                  "supportLanguage": "bilingual",
+                  "theme": "light",
+                  "uiLanguage": "en"
+                }
+              }
+            ],
+            "executionStatus": "Executed",
+            "technicalOutcome": "Controlled ambiguity",
+            "contentOutcome": "Not assessed",
+            "humanScores": {},
+            "assessor": "",
+            "reference": "",
+            "limitations": [
+              "Initial clarification is returned without creating a session; no response/correction endpoint can operate on this attempt."
+            ],
+            "profileBefore": {
+              "_id": "6abe396037b8b0c001fba38d",
+              "learnerId": "df9bb65c-5f14-49f4-9c6f-f0fcb17fb9df",
+              "createdAt": "2026-10-01T10:43:44.782Z",
+              "preferences": {
+                "explanationLevel": "beginner",
+                "learningStyle": "guided",
+                "supportLanguage": "bilingual",
+                "theme": "light",
+                "uiLanguage": "en"
+              },
+              "updatedAt": "2026-10-01T10:43:44.782Z"
+            },
+            "pathOutcome": "Not applicable: no session",
+            "profileAfter": {
+              "_id": "6abe396037b8b0c001fba38d",
+              "learnerId": "df9bb65c-5f14-49f4-9c6f-f0fcb17fb9df",
+              "createdAt": "2026-10-01T10:43:44.782Z",
+              "preferences": {
+                "explanationLevel": "beginner",
+                "learningStyle": "guided",
+                "supportLanguage": "bilingual",
+                "theme": "light",
+                "uiLanguage": "en"
+              },
+              "updatedAt": "2026-10-01T10:43:44.782Z"
+            },
+            "finalStoredState": [],
+            "providerCalls": 1,
+            "finishedAt": "2026-10-01T10:43:46.177Z"
+          }
+        }
+      ],
+      "providerRecords": [
+        {
+          "source": {
+            "file": "SIM-RUN-01-provider.jsonl",
+            "line": 99
+          },
+          "record": {
+            "caseId": "SIM-CM-14",
+            "step": "initial",
+            "call": 99,
+            "startedAt": "2026-10-01T10:43:44.791Z",
+            "request": {
+              "model": "gpt-5.4-mini",
+              "store": false,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: beginner\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n",
+              "input": "{\"learnerQuestion\":\"What is current?\",\"preferences\":{\"supportLanguage\":\"bilingual\",\"explanationLevel\":\"beginner\",\"learningStyle\":\"guided\"}}",
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "name": "initial_learning_session",
+                  "strict": true,
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "outcome": {
+                        "type": "string",
+                        "enum": [
+                          "ready",
+                          "ambiguous",
+                          "out_of_scope"
+                        ]
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "concept": {
+                        "description": "Stages 1 and 2: identified STEM term and interpreted technical context",
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Stage 1 primary STEM term"
+                          },
+                          "domain": {
+                            "type": "string",
+                            "description": "Stage 2 technical domain or context"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "domain"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "explanations": {
+                        "type": "object",
+                        "properties": {
+                          "simple": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 accessible explanation of the core meaning"
+                          },
+                          "realWorldExample": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 5 concrete scaffold linked to the core meaning"
+                          },
+                          "technical": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 precise explanation of the same core meaning"
+                          }
+                        },
+                        "required": [
+                          "simple",
+                          "realWorldExample",
+                          "technical"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "reflectivePrompt": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single reflective scaffold"
+                      },
+                      "hint": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single concise optional hint"
+                      }
+                    },
+                    "required": [
+                      "outcome",
+                      "message",
+                      "concept",
+                      "explanations",
+                      "reflectivePrompt",
+                      "hint"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            },
+            "httpStatus": 200,
+            "response": {
+              "id": "resp_0158e9202da37456016abe3961021087d0be4081911029bef6",
+              "object": "response",
+              "created_at": 1790851425,
+              "status": "completed",
+              "access_programs": null,
+              "background": false,
+              "billing": {
+                "payer": "openai"
+              },
+              "completed_at": 1790851426,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: beginner\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n",
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-5.4-mini-2026-03-17",
+              "moderation": null,
+              "output": [
+                {
+                  "id": "msg_0158e9202da37456016abe3961b72c87d08a9511762442b9e8",
+                  "type": "message",
+                  "status": "completed",
+                  "content": [
+                    {
+                      "type": "output_text",
+                      "annotations": [],
+                      "logprobs": [],
+                      "text": "{\"outcome\":\"ambiguous\",\"message\":\"Your question could mean different STEM ideas, such as electric current in physics or current in fluids. Please give a bit more context so I can explain the right one.\",\"concept\":{\"name\":\"\",\"domain\":\"\"},\"explanations\":{\"simple\":{\"en\":\"\",\"my\":\"\"},\"realWorldExample\":{\"en\":\"\",\"my\":\"\"},\"technical\":{\"en\":\"\",\"my\":\"\"}},\"reflectivePrompt\":{\"en\":\"\",\"my\":\"\"},\"hint\":{\"en\":\"\",\"my\":\"\"}}"
+                    }
+                  ],
+                  "phase": "final_answer",
+                  "role": "assistant"
+                }
+              ],
+              "parallel_tool_calls": true,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": null,
+              "prompt_cache_retention": "24h",
+              "reasoning": {
+                "context": "current_turn",
+                "effort": "none",
+                "mode": "standard",
+                "summary": null
+              },
+              "safety_identifier": null,
+              "service_tier": "default",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "description": null,
+                  "name": "initial_learning_session",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "outcome": {
+                        "type": "string",
+                        "enum": [
+                          "ready",
+                          "ambiguous",
+                          "out_of_scope"
+                        ]
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "concept": {
+                        "description": "Stages 1 and 2: identified STEM term and interpreted technical context",
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Stage 1 primary STEM term"
+                          },
+                          "domain": {
+                            "type": "string",
+                            "description": "Stage 2 technical domain or context"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "domain"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "explanations": {
+                        "type": "object",
+                        "properties": {
+                          "simple": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 accessible explanation of the core meaning"
+                          },
+                          "realWorldExample": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 5 concrete scaffold linked to the core meaning"
+                          },
+                          "technical": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 precise explanation of the same core meaning"
+                          }
+                        },
+                        "required": [
+                          "simple",
+                          "realWorldExample",
+                          "technical"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "reflectivePrompt": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single reflective scaffold"
+                      },
+                      "hint": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single concise optional hint"
+                      }
+                    },
+                    "required": [
+                      "outcome",
+                      "message",
+                      "concept",
+                      "explanations",
+                      "reflectivePrompt",
+                      "hint"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "strict": true
+                },
+                "verbosity": "medium"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": {
+                "input_tokens": 1165,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 108,
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "total_tokens": 1273
+              },
+              "user": null,
+              "metadata": {}
+            },
+            "elapsedMs": 1379
+          }
+        }
+      ]
+    }
+  }
+}

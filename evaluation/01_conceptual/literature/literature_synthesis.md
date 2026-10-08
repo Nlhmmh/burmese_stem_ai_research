@@ -601,7 +601,3 @@ Tran, H. T. H., Martinc, M., Caporusso, J., Delaunay, J., Doucet, A., & Pollak, 
 Vatsal, S., Dubey, H., & Singh, A. (2026). Multilingual prompt engineering in large language models: A survey across NLP tasks. *IEEE Access, 14*, 99057–99093. https://doi.org/10.1109/ACCESS.2026.3702852
 
 Zhang, C., & Pang, G. (2025). An interactive video learning framework enhanced by large language models. *Proceedings of the 2025 International Conference on Educational Technology and Artificial Intelligence*, 458–463. https://doi.org/10.1145/3766557.3766635
-
-## Preservation and review scope
-
-Detailed records above were recovered from the pre-consolidation archive, not newly executed or re-scored. Repeated planning, sign-off and summary text is omitted. The [shared protocol](../../00_protocol/evaluation_protocol.md) records preparation, execution and subsequent human verification. Original capture-time statements and complete documents remain in the [archive](../../archive/pre_consolidation_markdown_20261008.zip).

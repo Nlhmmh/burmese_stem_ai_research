@@ -87,7 +87,3 @@ retained qualifications:
    revision; and
 5. architecture inspection establishes structure, not runtime, content,
    language, usability, or educational-effectiveness outcomes.
-
-## Preservation and review scope
-
-Detailed records above were recovered from the pre-consolidation archive, not newly executed or re-scored. Repeated planning, sign-off and summary text is omitted. The [shared protocol](../../00_protocol/evaluation_protocol.md) records preparation, execution and subsequent human verification. Original capture-time statements and complete documents remain in the [archive](../../archive/pre_consolidation_markdown_20261008.zip).

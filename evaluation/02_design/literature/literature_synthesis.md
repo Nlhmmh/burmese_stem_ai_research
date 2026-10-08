@@ -280,7 +280,3 @@ their bibliographic completeness does not imply original-text verification.
 - He, J., Wang, F., Li, S., Lei, Y., Zhu, J., & Lv, L. (2025). A comparative study on the translation capabilities of multimodal large language models with independent intellectual property rights—Taking cross-cultural online education scenarios as an example. *Proceedings of the 2025 2nd International Conference on Big Data and Digital Management*, 834–839. https://doi.org/10.1145/3768801.3768938
 - Vatsal, S., Dubey, H., & Singh, A. (2026). Multilingual prompt engineering in large language models: A survey across NLP tasks. *IEEE Access, 14*, 99057–99093. https://doi.org/10.1109/ACCESS.2026.3702852
 - Candé, A., & Martinho, D. (2026). Artificial intelligence in translation and interpreting in education: A systematic review of trends, applications and challenges. *Information, 17*(6), 543. https://doi.org/10.3390/info17060543
-
-## Preservation and review scope
-
-Detailed records above were recovered from the pre-consolidation archive, not newly executed or re-scored. Repeated planning, sign-off and summary text is omitted. The [shared protocol](../../00_protocol/evaluation_protocol.md) records preparation, execution and subsequent human verification. Original capture-time statements and complete documents remain in the [archive](../../archive/pre_consolidation_markdown_20261008.zip).

@@ -1,0 +1,1326 @@
+{
+  "format": "simulation-evidence-by-case-v2",
+  "scope": "Only SIM05-C.",
+  "notes": [
+    "This is a formatted evidence copy, not a new simulation or human review.",
+    "All original execution-log fields and source line numbers are retained.",
+    "simulationRecords contain capture-time contentOutcome and reviewer fields, which were blank or Not assessed.",
+    "Human judgements and scores are separate in the case register and human_content_scores.csv; they are not imported here.",
+    "Provider records include rejected or undelivered outputs. These are not additional delivered content assessments.",
+    "Sources describe complete input files; includedCounts describe this export."
+  ],
+  "sources": [
+    {
+      "file": "SIM-RUN-01-results.jsonl",
+      "records": 55,
+      "sha256": "3cd1db9135bd92e86a8b96bd1df5955d503e679ad84140be6a6a3763b8042afe"
+    },
+    {
+      "file": "SIM-RUN-01-provider.jsonl",
+      "records": 102,
+      "sha256": "127ae59f140371b9652992351f86788f42efa4b275bcc232e987bd6a52d62c8b"
+    }
+  ],
+  "includedCounts": {
+    "cases": 1,
+    "simulationRecords": 1,
+    "providerRecords": 3
+  },
+  "cases": {
+    "SIM05-C": {
+      "simulationRecords": [
+        {
+          "source": {
+            "file": "SIM-RUN-01-results.jsonl",
+            "line": 15
+          },
+          "record": {
+            "id": "SIM05-C",
+            "base": "SIM05",
+            "path": "C",
+            "question": "What is electric current?",
+            "language": "bilingual",
+            "clarification": null,
+            "runId": "RUN-B01-20261001-SIMULATION-02",
+            "attempt": 1,
+            "owner": "76ad29cf-7a8d-4d6b-a9ff-e4a259eab4d2",
+            "startedAt": "2026-10-01T10:39:57.763Z",
+            "preferences": {
+              "uiLanguage": "en",
+              "supportLanguage": "bilingual",
+              "explanationLevel": "beginner",
+              "learningStyle": "guided",
+              "theme": "light"
+            },
+            "steps": [
+              {
+                "step": "initial",
+                "request": {
+                  "question": "What is electric current?"
+                },
+                "httpStatus": 201,
+                "response": {
+                  "session": {
+                    "sessionId": "7a59e036-f066-4dda-a36b-9699dba9d8d5",
+                    "originalQuestion": "What is electric current?",
+                    "concept": {
+                      "name": "electric current",
+                      "domain": "physics, electricity"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.",
+                        "my": "Electric current ဆိုတာ လျှပ်စစ်အ charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေတဲ့ အမြန်နှုန်းပါ။ အများအားဖြင့် ဝါယာကြိုးထဲမှာ charge ဘယ်လောက် တစ်စက္ကန့်အတွင်း ရွေ့လျားနေသလဲ ကို ပြောတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "When you turn on a lamp, electric current flows through the wire and the bulb lights up. The current is what carries energy to the bulb.",
+                        "my": "မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ ဝါယာကြိုးထဲမှာ electric current စီးသွားပြီး မီးလုံး တောက်လာပါတယ်။ အဲဒီ current က energy ကို မီးလုံးဆီ သယ်ပေးတာပါ။"
+                      },
+                      "technical": {
+                        "en": "In physics, electric current is the rate of flow of electric charge past a point in a circuit. Its SI unit is the ampere, where 1 ampere equals 1 coulomb of charge passing a point each second.",
+                        "my": "Physics မှာ electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ flow rate ပါ။ SI unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ ၁ second အတွင်း ၁ coulomb charge ဖြတ်သန်းသွားတာကို ဆိုလိုပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If more charge passes through a wire each second, what happens to the current?",
+                      "my": "ဝါယာကြိုးထဲကနေ တစ်စက္ကန့်အတွင်း charge ပိုများများ ဖြတ်သန်းသွားရင် current က ဘာဖြစ်မလဲ။"
+                    },
+                    "hint": {
+                      "en": "Think of current as charge per second.",
+                      "my": "current ကို တစ်စက္ကန့်အလိုက် charge ပမာဏလို့ စဉ်းစားပါ။"
+                    },
+                    "understanding": null,
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "createdAt": "2026-10-01T10:40:01.207Z",
+                    "updatedAt": "2026-10-01T10:40:01.207Z"
+                  }
+                },
+                "before": [],
+                "after": [
+                  {
+                    "_id": "6abe38817a1eaff542bb4ab1",
+                    "sessionId": "7a59e036-f066-4dda-a36b-9699dba9d8d5",
+                    "learnerId": "76ad29cf-7a8d-4d6b-a9ff-e4a259eab4d2",
+                    "originalQuestion": "What is electric current?",
+                    "concept": {
+                      "name": "electric current",
+                      "domain": "physics, electricity"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.",
+                        "my": "Electric current ဆိုတာ လျှပ်စစ်အ charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေတဲ့ အမြန်နှုန်းပါ။ အများအားဖြင့် ဝါယာကြိုးထဲမှာ charge ဘယ်လောက် တစ်စက္ကန့်အတွင်း ရွေ့လျားနေသလဲ ကို ပြောတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "When you turn on a lamp, electric current flows through the wire and the bulb lights up. The current is what carries energy to the bulb.",
+                        "my": "မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ ဝါယာကြိုးထဲမှာ electric current စီးသွားပြီး မီးလုံး တောက်လာပါတယ်။ အဲဒီ current က energy ကို မီးလုံးဆီ သယ်ပေးတာပါ။"
+                      },
+                      "technical": {
+                        "en": "In physics, electric current is the rate of flow of electric charge past a point in a circuit. Its SI unit is the ampere, where 1 ampere equals 1 coulomb of charge passing a point each second.",
+                        "my": "Physics မှာ electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ flow rate ပါ။ SI unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ ၁ second အတွင်း ၁ coulomb charge ဖြတ်သန်းသွားတာကို ဆိုလိုပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If more charge passes through a wire each second, what happens to the current?",
+                      "my": "ဝါယာကြိုးထဲကနေ တစ်စက္ကန့်အတွင်း charge ပိုများများ ဖြတ်သန်းသွားရင် current က ဘာဖြစ်မလဲ။"
+                    },
+                    "hint": {
+                      "en": "Think of current as charge per second.",
+                      "my": "current ကို တစ်စက္ကန့်အလိုက် charge ပမာဏလို့ စဉ်းစားပါ။"
+                    },
+                    "understanding": null,
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:40:01.207Z",
+                    "updatedAt": "2026-10-01T10:40:01.207Z"
+                  }
+                ],
+                "providerCalls": 1,
+                "elapsedMs": 3449
+              },
+              {
+                "step": "simpler",
+                "request": {
+                  "overallSupportNeed": "needs_support",
+                  "difficultyType": "simpler_explanation"
+                },
+                "httpStatus": 200,
+                "response": {
+                  "understanding": "needs_support",
+                  "status": "in_progress",
+                  "adaptationRound": 1,
+                  "route": "stage_5_scaffold",
+                  "responseEvent": {
+                    "overallSupportNeed": "needs_support",
+                    "difficultyType": "simpler_explanation",
+                    "route": "stage_5_scaffold",
+                    "roundBefore": 0,
+                    "roundAfter": 1,
+                    "createdAt": "2026-10-01T10:40:02.910Z"
+                  },
+                  "adaptation": {
+                    "learnerResponse": "needs_support",
+                    "supportType": "simpler_explanation",
+                    "content": {
+                      "en": "Electric current is simply the movement of electric charge through a wire or other material. A bigger current means more charge is moving each second.",
+                      "my": "Electric current ဆိုတာ ဝါယာကြိုး ဒါမှမဟုတ် ပစ္စည်းတစ်ခုထဲမှာ electric charge တွေ ရွေ့လျားသွားတာပါ။ current ပိုကြီးရင် တစ်စက္ကန့်အတွင်း charge ပိုများများ ရွေ့လျားနေတယ်လို့ ဆိုနိုင်ပါတယ်။"
+                    },
+                    "round": 1,
+                    "createdAt": "2026-10-01T10:40:02.910Z"
+                  }
+                },
+                "before": [
+                  {
+                    "_id": "6abe38817a1eaff542bb4ab1",
+                    "sessionId": "7a59e036-f066-4dda-a36b-9699dba9d8d5",
+                    "learnerId": "76ad29cf-7a8d-4d6b-a9ff-e4a259eab4d2",
+                    "originalQuestion": "What is electric current?",
+                    "concept": {
+                      "name": "electric current",
+                      "domain": "physics, electricity"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.",
+                        "my": "Electric current ဆိုတာ လျှပ်စစ်အ charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေတဲ့ အမြန်နှုန်းပါ။ အများအားဖြင့် ဝါယာကြိုးထဲမှာ charge ဘယ်လောက် တစ်စက္ကန့်အတွင်း ရွေ့လျားနေသလဲ ကို ပြောတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "When you turn on a lamp, electric current flows through the wire and the bulb lights up. The current is what carries energy to the bulb.",
+                        "my": "မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ ဝါယာကြိုးထဲမှာ electric current စီးသွားပြီး မီးလုံး တောက်လာပါတယ်။ အဲဒီ current က energy ကို မီးလုံးဆီ သယ်ပေးတာပါ။"
+                      },
+                      "technical": {
+                        "en": "In physics, electric current is the rate of flow of electric charge past a point in a circuit. Its SI unit is the ampere, where 1 ampere equals 1 coulomb of charge passing a point each second.",
+                        "my": "Physics မှာ electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ flow rate ပါ။ SI unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ ၁ second အတွင်း ၁ coulomb charge ဖြတ်သန်းသွားတာကို ဆိုလိုပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If more charge passes through a wire each second, what happens to the current?",
+                      "my": "ဝါယာကြိုးထဲကနေ တစ်စက္ကန့်အတွင်း charge ပိုများများ ဖြတ်သန်းသွားရင် current က ဘာဖြစ်မလဲ။"
+                    },
+                    "hint": {
+                      "en": "Think of current as charge per second.",
+                      "my": "current ကို တစ်စက္ကန့်အလိုက် charge ပမာဏလို့ စဉ်းစားပါ။"
+                    },
+                    "understanding": null,
+                    "status": "in_progress",
+                    "adaptationRound": 0,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [],
+                    "responseEvents": [],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:40:01.207Z",
+                    "updatedAt": "2026-10-01T10:40:01.207Z"
+                  }
+                ],
+                "after": [
+                  {
+                    "_id": "6abe38817a1eaff542bb4ab1",
+                    "sessionId": "7a59e036-f066-4dda-a36b-9699dba9d8d5",
+                    "learnerId": "76ad29cf-7a8d-4d6b-a9ff-e4a259eab4d2",
+                    "originalQuestion": "What is electric current?",
+                    "concept": {
+                      "name": "electric current",
+                      "domain": "physics, electricity"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.",
+                        "my": "Electric current ဆိုတာ လျှပ်စစ်အ charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေတဲ့ အမြန်နှုန်းပါ။ အများအားဖြင့် ဝါယာကြိုးထဲမှာ charge ဘယ်လောက် တစ်စက္ကန့်အတွင်း ရွေ့လျားနေသလဲ ကို ပြောတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "When you turn on a lamp, electric current flows through the wire and the bulb lights up. The current is what carries energy to the bulb.",
+                        "my": "မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ ဝါယာကြိုးထဲမှာ electric current စီးသွားပြီး မီးလုံး တောက်လာပါတယ်။ အဲဒီ current က energy ကို မီးလုံးဆီ သယ်ပေးတာပါ။"
+                      },
+                      "technical": {
+                        "en": "In physics, electric current is the rate of flow of electric charge past a point in a circuit. Its SI unit is the ampere, where 1 ampere equals 1 coulomb of charge passing a point each second.",
+                        "my": "Physics မှာ electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ flow rate ပါ။ SI unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ ၁ second အတွင်း ၁ coulomb charge ဖြတ်သန်းသွားတာကို ဆိုလိုပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If more charge passes through a wire each second, what happens to the current?",
+                      "my": "ဝါယာကြိုးထဲကနေ တစ်စက္ကန့်အတွင်း charge ပိုများများ ဖြတ်သန်းသွားရင် current က ဘာဖြစ်မလဲ။"
+                    },
+                    "hint": {
+                      "en": "Think of current as charge per second.",
+                      "my": "current ကို တစ်စက္ကန့်အလိုက် charge ပမာဏလို့ စဉ်းစားပါ။"
+                    },
+                    "understanding": "needs_support",
+                    "status": "in_progress",
+                    "adaptationRound": 1,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [
+                      {
+                        "learnerResponse": "needs_support",
+                        "supportType": "simpler_explanation",
+                        "content": {
+                          "en": "Electric current is simply the movement of electric charge through a wire or other material. A bigger current means more charge is moving each second.",
+                          "my": "Electric current ဆိုတာ ဝါယာကြိုး ဒါမှမဟုတ် ပစ္စည်းတစ်ခုထဲမှာ electric charge တွေ ရွေ့လျားသွားတာပါ။ current ပိုကြီးရင် တစ်စက္ကန့်အတွင်း charge ပိုများများ ရွေ့လျားနေတယ်လို့ ဆိုနိုင်ပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:40:02.910Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "needs_support",
+                        "difficultyType": "simpler_explanation",
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:40:02.910Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:40:01.207Z",
+                    "updatedAt": "2026-10-01T10:40:02.910Z"
+                  }
+                ],
+                "providerCalls": 1,
+                "elapsedMs": 1702
+              },
+              {
+                "step": "conceptual",
+                "request": {
+                  "overallSupportNeed": "needs_support",
+                  "difficultyType": "concept_unclear"
+                },
+                "httpStatus": 502,
+                "response": {
+                  "error": {
+                    "code": "ADAPTATION_GENERATION_FAILED",
+                    "message": "Unable to prepare additional support right now"
+                  }
+                },
+                "before": [
+                  {
+                    "_id": "6abe38817a1eaff542bb4ab1",
+                    "sessionId": "7a59e036-f066-4dda-a36b-9699dba9d8d5",
+                    "learnerId": "76ad29cf-7a8d-4d6b-a9ff-e4a259eab4d2",
+                    "originalQuestion": "What is electric current?",
+                    "concept": {
+                      "name": "electric current",
+                      "domain": "physics, electricity"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.",
+                        "my": "Electric current ဆိုတာ လျှပ်စစ်အ charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေတဲ့ အမြန်နှုန်းပါ။ အများအားဖြင့် ဝါယာကြိုးထဲမှာ charge ဘယ်လောက် တစ်စက္ကန့်အတွင်း ရွေ့လျားနေသလဲ ကို ပြောတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "When you turn on a lamp, electric current flows through the wire and the bulb lights up. The current is what carries energy to the bulb.",
+                        "my": "မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ ဝါယာကြိုးထဲမှာ electric current စီးသွားပြီး မီးလုံး တောက်လာပါတယ်။ အဲဒီ current က energy ကို မီးလုံးဆီ သယ်ပေးတာပါ။"
+                      },
+                      "technical": {
+                        "en": "In physics, electric current is the rate of flow of electric charge past a point in a circuit. Its SI unit is the ampere, where 1 ampere equals 1 coulomb of charge passing a point each second.",
+                        "my": "Physics မှာ electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ flow rate ပါ။ SI unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ ၁ second အတွင်း ၁ coulomb charge ဖြတ်သန်းသွားတာကို ဆိုလိုပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If more charge passes through a wire each second, what happens to the current?",
+                      "my": "ဝါယာကြိုးထဲကနေ တစ်စက္ကန့်အတွင်း charge ပိုများများ ဖြတ်သန်းသွားရင် current က ဘာဖြစ်မလဲ။"
+                    },
+                    "hint": {
+                      "en": "Think of current as charge per second.",
+                      "my": "current ကို တစ်စက္ကန့်အလိုက် charge ပမာဏလို့ စဉ်းစားပါ။"
+                    },
+                    "understanding": "needs_support",
+                    "status": "in_progress",
+                    "adaptationRound": 1,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [
+                      {
+                        "learnerResponse": "needs_support",
+                        "supportType": "simpler_explanation",
+                        "content": {
+                          "en": "Electric current is simply the movement of electric charge through a wire or other material. A bigger current means more charge is moving each second.",
+                          "my": "Electric current ဆိုတာ ဝါယာကြိုး ဒါမှမဟုတ် ပစ္စည်းတစ်ခုထဲမှာ electric charge တွေ ရွေ့လျားသွားတာပါ။ current ပိုကြီးရင် တစ်စက္ကန့်အတွင်း charge ပိုများများ ရွေ့လျားနေတယ်လို့ ဆိုနိုင်ပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:40:02.910Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "needs_support",
+                        "difficultyType": "simpler_explanation",
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:40:02.910Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:40:01.207Z",
+                    "updatedAt": "2026-10-01T10:40:02.910Z"
+                  }
+                ],
+                "after": [
+                  {
+                    "_id": "6abe38817a1eaff542bb4ab1",
+                    "sessionId": "7a59e036-f066-4dda-a36b-9699dba9d8d5",
+                    "learnerId": "76ad29cf-7a8d-4d6b-a9ff-e4a259eab4d2",
+                    "originalQuestion": "What is electric current?",
+                    "concept": {
+                      "name": "electric current",
+                      "domain": "physics, electricity"
+                    },
+                    "explanations": {
+                      "simple": {
+                        "en": "Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.",
+                        "my": "Electric current ဆိုတာ လျှပ်စစ်အ charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေတဲ့ အမြန်နှုန်းပါ။ အများအားဖြင့် ဝါယာကြိုးထဲမှာ charge ဘယ်လောက် တစ်စက္ကန့်အတွင်း ရွေ့လျားနေသလဲ ကို ပြောတာပါ။"
+                      },
+                      "realWorldExample": {
+                        "en": "When you turn on a lamp, electric current flows through the wire and the bulb lights up. The current is what carries energy to the bulb.",
+                        "my": "မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ ဝါယာကြိုးထဲမှာ electric current စီးသွားပြီး မီးလုံး တောက်လာပါတယ်။ အဲဒီ current က energy ကို မီးလုံးဆီ သယ်ပေးတာပါ။"
+                      },
+                      "technical": {
+                        "en": "In physics, electric current is the rate of flow of electric charge past a point in a circuit. Its SI unit is the ampere, where 1 ampere equals 1 coulomb of charge passing a point each second.",
+                        "my": "Physics မှာ electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ flow rate ပါ။ SI unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ ၁ second အတွင်း ၁ coulomb charge ဖြတ်သန်းသွားတာကို ဆိုလိုပါတယ်။"
+                      }
+                    },
+                    "reflectivePrompt": {
+                      "en": "If more charge passes through a wire each second, what happens to the current?",
+                      "my": "ဝါယာကြိုးထဲကနေ တစ်စက္ကန့်အတွင်း charge ပိုများများ ဖြတ်သန်းသွားရင် current က ဘာဖြစ်မလဲ။"
+                    },
+                    "hint": {
+                      "en": "Think of current as charge per second.",
+                      "my": "current ကို တစ်စက္ကန့်အလိုက် charge ပမာဏလို့ စဉ်းစားပါ။"
+                    },
+                    "understanding": "needs_support",
+                    "status": "in_progress",
+                    "adaptationRound": 1,
+                    "preferencesSnapshot": {
+                      "uiLanguage": "en",
+                      "supportLanguage": "bilingual",
+                      "explanationLevel": "beginner",
+                      "learningStyle": "guided",
+                      "theme": "light"
+                    },
+                    "adaptations": [
+                      {
+                        "learnerResponse": "needs_support",
+                        "supportType": "simpler_explanation",
+                        "content": {
+                          "en": "Electric current is simply the movement of electric charge through a wire or other material. A bigger current means more charge is moving each second.",
+                          "my": "Electric current ဆိုတာ ဝါယာကြိုး ဒါမှမဟုတ် ပစ္စည်းတစ်ခုထဲမှာ electric charge တွေ ရွေ့လျားသွားတာပါ။ current ပိုကြီးရင် တစ်စက္ကန့်အတွင်း charge ပိုများများ ရွေ့လျားနေတယ်လို့ ဆိုနိုင်ပါတယ်။"
+                        },
+                        "round": 1,
+                        "createdAt": "2026-10-01T10:40:02.910Z"
+                      }
+                    ],
+                    "responseEvents": [
+                      {
+                        "overallSupportNeed": "needs_support",
+                        "difficultyType": "simpler_explanation",
+                        "route": "stage_5_scaffold",
+                        "roundBefore": 0,
+                        "roundAfter": 1,
+                        "createdAt": "2026-10-01T10:40:02.910Z"
+                      }
+                    ],
+                    "followUps": [],
+                    "createdAt": "2026-10-01T10:40:01.207Z",
+                    "updatedAt": "2026-10-01T10:40:02.910Z"
+                  }
+                ],
+                "providerCalls": 1,
+                "elapsedMs": 52911
+              }
+            ],
+            "checks": [
+              {
+                "step": "initial",
+                "name": "exactly one initial provider call",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "initial",
+                "name": "initial HTTP 201",
+                "pass": true,
+                "observed": 201
+              },
+              {
+                "step": "initial",
+                "name": "fresh initial state persisted",
+                "pass": true,
+                "observed": "7a59e036-f066-4dda-a36b-9699dba9d8d5"
+              },
+              {
+                "step": "initial",
+                "name": "profile snapshot persisted",
+                "pass": true,
+                "observed": {
+                  "uiLanguage": "en",
+                  "supportLanguage": "bilingual",
+                  "explanationLevel": "beginner",
+                  "learningStyle": "guided",
+                  "theme": "light"
+                }
+              },
+              {
+                "step": "simpler",
+                "name": "response HTTP 200",
+                "pass": true,
+                "observed": 200
+              },
+              {
+                "step": "simpler",
+                "name": "application-selected route",
+                "pass": true,
+                "observed": "stage_5_scaffold"
+              },
+              {
+                "step": "simpler",
+                "name": "round before/after",
+                "pass": true,
+                "observed": {
+                  "overallSupportNeed": "needs_support",
+                  "difficultyType": "simpler_explanation",
+                  "route": "stage_5_scaffold",
+                  "roundBefore": 0,
+                  "roundAfter": 1,
+                  "createdAt": "2026-10-01T10:40:02.910Z"
+                }
+              },
+              {
+                "step": "simpler",
+                "name": "one atomic response event",
+                "pass": true,
+                "observed": [
+                  {
+                    "overallSupportNeed": "needs_support",
+                    "difficultyType": "simpler_explanation",
+                    "route": "stage_5_scaffold",
+                    "roundBefore": 0,
+                    "roundAfter": 1,
+                    "createdAt": "2026-10-01T10:40:02.910Z"
+                  }
+                ]
+              },
+              {
+                "step": "simpler",
+                "name": "provider-call bound",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "simpler",
+                "name": "adaptation count bound",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "simpler",
+                "name": "round never exceeds two",
+                "pass": true,
+                "observed": 1
+              },
+              {
+                "step": "simpler",
+                "name": "status",
+                "pass": true,
+                "observed": "in_progress"
+              },
+              {
+                "step": "simpler",
+                "name": "self-report stored without changing follow-up state",
+                "pass": true,
+                "observed": "needs_support"
+              },
+              {
+                "step": "simpler",
+                "name": "support type and route persisted",
+                "pass": true,
+                "observed": {
+                  "learnerResponse": "needs_support",
+                  "supportType": "simpler_explanation",
+                  "content": {
+                    "en": "Electric current is simply the movement of electric charge through a wire or other material. A bigger current means more charge is moving each second.",
+                    "my": "Electric current ဆိုတာ ဝါယာကြိုး ဒါမှမဟုတ် ပစ္စည်းတစ်ခုထဲမှာ electric charge တွေ ရွေ့လျားသွားတာပါ။ current ပိုကြီးရင် တစ်စက္ကန့်အတွင်း charge ပိုများများ ရွေ့လျားနေတယ်လို့ ဆိုနိုင်ပါတယ်။"
+                  },
+                  "round": 1,
+                  "createdAt": "2026-10-01T10:40:02.910Z"
+                }
+              },
+              {
+                "step": "simpler",
+                "name": "both content fields nonempty",
+                "pass": true,
+                "observed": true
+              },
+              {
+                "step": "conceptual",
+                "name": "response HTTP 200",
+                "pass": false,
+                "observed": 502
+              }
+            ],
+            "executionStatus": "Executed",
+            "technicalOutcome": "Fail",
+            "contentOutcome": "Not assessed",
+            "humanScores": {},
+            "assessor": "",
+            "reference": "",
+            "limitations": [
+              "No automatic retry; subsequent dependent steps were not claimed passed."
+            ],
+            "profileBefore": {
+              "_id": "6abe387d37b8b0c001fba367",
+              "learnerId": "76ad29cf-7a8d-4d6b-a9ff-e4a259eab4d2",
+              "createdAt": "2026-10-01T10:39:57.763Z",
+              "preferences": {
+                "explanationLevel": "beginner",
+                "learningStyle": "guided",
+                "supportLanguage": "bilingual",
+                "theme": "light",
+                "uiLanguage": "en"
+              },
+              "updatedAt": "2026-10-01T10:39:57.763Z"
+            },
+            "sessionId": "7a59e036-f066-4dda-a36b-9699dba9d8d5",
+            "pathOutcome": "Incomplete",
+            "failure": "Assertion failed: response HTTP 200",
+            "finalStoredState": [
+              {
+                "_id": "6abe38817a1eaff542bb4ab1",
+                "sessionId": "7a59e036-f066-4dda-a36b-9699dba9d8d5",
+                "learnerId": "76ad29cf-7a8d-4d6b-a9ff-e4a259eab4d2",
+                "originalQuestion": "What is electric current?",
+                "concept": {
+                  "name": "electric current",
+                  "domain": "physics, electricity"
+                },
+                "explanations": {
+                  "simple": {
+                    "en": "Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.",
+                    "my": "Electric current ဆိုတာ လျှပ်စစ်အ charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေတဲ့ အမြန်နှုန်းပါ။ အများအားဖြင့် ဝါယာကြိုးထဲမှာ charge ဘယ်လောက် တစ်စက္ကန့်အတွင်း ရွေ့လျားနေသလဲ ကို ပြောတာပါ။"
+                  },
+                  "realWorldExample": {
+                    "en": "When you turn on a lamp, electric current flows through the wire and the bulb lights up. The current is what carries energy to the bulb.",
+                    "my": "မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ ဝါယာကြိုးထဲမှာ electric current စီးသွားပြီး မီးလုံး တောက်လာပါတယ်။ အဲဒီ current က energy ကို မီးလုံးဆီ သယ်ပေးတာပါ။"
+                  },
+                  "technical": {
+                    "en": "In physics, electric current is the rate of flow of electric charge past a point in a circuit. Its SI unit is the ampere, where 1 ampere equals 1 coulomb of charge passing a point each second.",
+                    "my": "Physics မှာ electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ flow rate ပါ။ SI unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ ၁ second အတွင်း ၁ coulomb charge ဖြတ်သန်းသွားတာကို ဆိုလိုပါတယ်။"
+                  }
+                },
+                "reflectivePrompt": {
+                  "en": "If more charge passes through a wire each second, what happens to the current?",
+                  "my": "ဝါယာကြိုးထဲကနေ တစ်စက္ကန့်အတွင်း charge ပိုများများ ဖြတ်သန်းသွားရင် current က ဘာဖြစ်မလဲ။"
+                },
+                "hint": {
+                  "en": "Think of current as charge per second.",
+                  "my": "current ကို တစ်စက္ကန့်အလိုက် charge ပမာဏလို့ စဉ်းစားပါ။"
+                },
+                "understanding": "needs_support",
+                "status": "in_progress",
+                "adaptationRound": 1,
+                "preferencesSnapshot": {
+                  "uiLanguage": "en",
+                  "supportLanguage": "bilingual",
+                  "explanationLevel": "beginner",
+                  "learningStyle": "guided",
+                  "theme": "light"
+                },
+                "adaptations": [
+                  {
+                    "learnerResponse": "needs_support",
+                    "supportType": "simpler_explanation",
+                    "content": {
+                      "en": "Electric current is simply the movement of electric charge through a wire or other material. A bigger current means more charge is moving each second.",
+                      "my": "Electric current ဆိုတာ ဝါယာကြိုး ဒါမှမဟုတ် ပစ္စည်းတစ်ခုထဲမှာ electric charge တွေ ရွေ့လျားသွားတာပါ။ current ပိုကြီးရင် တစ်စက္ကန့်အတွင်း charge ပိုများများ ရွေ့လျားနေတယ်လို့ ဆိုနိုင်ပါတယ်။"
+                    },
+                    "round": 1,
+                    "createdAt": "2026-10-01T10:40:02.910Z"
+                  }
+                ],
+                "responseEvents": [
+                  {
+                    "overallSupportNeed": "needs_support",
+                    "difficultyType": "simpler_explanation",
+                    "route": "stage_5_scaffold",
+                    "roundBefore": 0,
+                    "roundAfter": 1,
+                    "createdAt": "2026-10-01T10:40:02.910Z"
+                  }
+                ],
+                "followUps": [],
+                "createdAt": "2026-10-01T10:40:01.207Z",
+                "updatedAt": "2026-10-01T10:40:02.910Z"
+              }
+            ],
+            "providerCalls": 3,
+            "finishedAt": "2026-10-01T10:40:56.347Z"
+          }
+        }
+      ],
+      "providerRecords": [
+        {
+          "source": {
+            "file": "SIM-RUN-01-provider.jsonl",
+            "line": 28
+          },
+          "record": {
+            "caseId": "SIM05-C",
+            "step": "initial",
+            "call": 28,
+            "startedAt": "2026-10-01T10:39:57.766Z",
+            "request": {
+              "model": "gpt-5.4-mini",
+              "store": false,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: beginner\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n",
+              "input": "{\"learnerQuestion\":\"What is electric current?\",\"preferences\":{\"supportLanguage\":\"bilingual\",\"explanationLevel\":\"beginner\",\"learningStyle\":\"guided\"}}",
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "name": "initial_learning_session",
+                  "strict": true,
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "outcome": {
+                        "type": "string",
+                        "enum": [
+                          "ready",
+                          "ambiguous",
+                          "out_of_scope"
+                        ]
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "concept": {
+                        "description": "Stages 1 and 2: identified STEM term and interpreted technical context",
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Stage 1 primary STEM term"
+                          },
+                          "domain": {
+                            "type": "string",
+                            "description": "Stage 2 technical domain or context"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "domain"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "explanations": {
+                        "type": "object",
+                        "properties": {
+                          "simple": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 accessible explanation of the core meaning"
+                          },
+                          "realWorldExample": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 5 concrete scaffold linked to the core meaning"
+                          },
+                          "technical": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 precise explanation of the same core meaning"
+                          }
+                        },
+                        "required": [
+                          "simple",
+                          "realWorldExample",
+                          "technical"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "reflectivePrompt": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single reflective scaffold"
+                      },
+                      "hint": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single concise optional hint"
+                      }
+                    },
+                    "required": [
+                      "outcome",
+                      "message",
+                      "concept",
+                      "explanations",
+                      "reflectivePrompt",
+                      "hint"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            },
+            "httpStatus": 200,
+            "response": {
+              "id": "resp_052be1ff35a60959016abe387e0be487d0b1382bf55d508dbd",
+              "object": "response",
+              "created_at": 1790851198,
+              "status": "completed",
+              "access_programs": null,
+              "background": false,
+              "billing": {
+                "payer": "openai"
+              },
+              "completed_at": 1790851201,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator for Burmese-speaking university students.\n\n# Goal\n\nUse one generation call to classify the supplied learnerQuestion as ready,\nambiguous, or out_of_scope. For ready input, follow Stages 1–5 in order and\nreturn the complete bounded learning-session structure.\n\n# Stages 1–5 contract\n\n## Stage 1 — Identify STEM Terminology\n\n- Identify exactly one primary STEM term or concept in concept.name.\n- Do not return a list of candidate terms.\n\n## Stage 2 — Interpret Technical Context\n\n- Put the specific technical domain or context in concept.domain.\n- If the term has multiple plausible STEM meanings and the supplied question\n  does not resolve them, return outcome=\"ambiguous\" instead of guessing.\n- If the question is not about STEM, return outcome=\"out_of_scope\".\n\n## Stage 3 — Select Language Support\n\n- Apply the supplied supportLanguage, explanationLevel and learningStyle only\n  as presentation constraints.\n- Always populate both stored language fields; supportLanguage does not permit\n  an empty language field and does not change the learner profile.\n- Retain established English STEM terminology when it is clearer or commonly\n  used, while explaining its meaning naturally in Burmese.\n\n## Stage 4 — Explain the Core STEM Meaning\n\n- explanations.simple and explanations.technical must explain the same core\n  concept at different depths.\n- Explain meaning rather than merely translating the term.\n- Keep Stage 4 concept meaning distinct from Stage 5 scaffold presentation.\n\n## Stage 5 — Provide Bounded Scaffolding\n\n- explanations.realWorldExample must contain one concrete example connected\n  explicitly to the Stage 4 meaning.\n- reflectivePrompt must contain exactly one reflective prompt.\n- hint must contain exactly one concise optional hint.\n- Do not add a quiz, multi-turn dialogue, grade, score or extra scaffold fields.\n\n# Outcome contract\n\nFor outcome=\"ready\", leave message empty and populate every Stage 1–5 field.\nFor outcome=\"ambiguous\" or outcome=\"out_of_scope\", provide one concise\nlearner-facing message and return empty strings in concept and every learning\ncontent field. Do not produce partial learning content for these outcomes.\n\n# Strict language contract\n\nEach language field has a strict purpose:\n\n- \"en\" fields must contain English only.\n- \"my\" fields must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may appear inside \"my\" fields using Latin\n  characters when it is clearer than translating the term.\n\nAllowed writing systems:\n\n- Myanmar script\n- Basic Latin script for English STEM terms\n- Numbers, whitespace and ordinary punctuation\n\nDo not output characters, words or phrases from any other writing\nsystem or language. This includes Chinese Han characters, Japanese,\nKorean, Thai, Arabic, Devanagari and other non-Myanmar/non-Latin\nscripts.\n\nWrite the Burmese explanation directly from the underlying concept.\nDo not produce the Burmese text by translating the English sentences\nword by word.\n\nThe Burmese text must:\n\n- sound naturally written by an educated native Burmese speaker;\n- preserve the complete technical meaning;\n- use clear and contemporary Burmese;\n- use short and readable sentences;\n- retain commonly used English STEM terms when appropriate;\n- avoid invented, overly literary or unnatural Burmese terminology.\n\n# Application-control boundary\n\nDo not choose or output learner identity, persistence operations, lifecycle\nstatus, route permission, adaptation round, follow-up allowance or completion.\nThose decisions belong to the application.\n\n# Final internal check\n\nBefore returning the JSON:\n\n1. Check that every \"en\" field is English.\n2. Check that every \"my\" field is natural Burmese.\n3. Check that Burmese and English communicate the same meaning.\n4. Check every character in every \"my\" field.\n5. If any writing system other than Myanmar or Latin is present,\n   rewrite the affected field before returning the response.\n\nLearner preferences:\n- Support language: bilingual\n- Explanation level: beginner\n- Learning style: guided\n\nAlways include both language fields because the structured contract is\nbilingual; populate them for ready outcomes and leave them empty for the two\ncontrolled non-ready outcomes.\n",
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-5.4-mini-2026-03-17",
+              "moderation": null,
+              "output": [
+                {
+                  "id": "msg_052be1ff35a60959016abe387eca5487d0907636d1f969ec12",
+                  "type": "message",
+                  "status": "completed",
+                  "content": [
+                    {
+                      "type": "output_text",
+                      "annotations": [],
+                      "logprobs": [],
+                      "text": "{\"outcome\":\"ready\",\"message\":\"\",\"concept\":{\"name\":\"electric current\",\"domain\":\"physics, electricity\"},\"explanations\":{\"simple\":{\"en\":\"Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.\",\"my\":\"Electric current ဆိုတာ လျှပ်စစ်အ charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေတဲ့ အမြန်နှုန်းပါ။ အများအားဖြင့် ဝါယာကြိုးထဲမှာ charge ဘယ်လောက် တစ်စက္ကန့်အတွင်း ရွေ့လျားနေသလဲ ကို ပြောတာပါ။\"},\"realWorldExample\":{\"en\":\"When you turn on a lamp, electric current flows through the wire and the bulb lights up. The current is what carries energy to the bulb.\",\"my\":\"မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ ဝါယာကြိုးထဲမှာ electric current စီးသွားပြီး မီးလုံး တောက်လာပါတယ်။ အဲဒီ current က energy ကို မီးလုံးဆီ သယ်ပေးတာပါ။\"},\"technical\":{\"en\":\"In physics, electric current is the rate of flow of electric charge past a point in a circuit. Its SI unit is the ampere, where 1 ampere equals 1 coulomb of charge passing a point each second.\",\"my\":\"Physics မှာ electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ flow rate ပါ။ SI unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ ၁ second အတွင်း ၁ coulomb charge ဖြတ်သန်းသွားတာကို ဆိုလိုပါတယ်။\"}},\"reflectivePrompt\":{\"en\":\"If more charge passes through a wire each second, what happens to the current?\",\"my\":\"ဝါယာကြိုးထဲကနေ တစ်စက္ကန့်အတွင်း charge ပိုများများ ဖြတ်သန်းသွားရင် current က ဘာဖြစ်မလဲ။\"},\"hint\":{\"en\":\"Think of current as charge per second.\",\"my\":\"current ကို တစ်စက္ကန့်အလိုက် charge ပမာဏလို့ စဉ်းစားပါ။\"}}"
+                    }
+                  ],
+                  "phase": "final_answer",
+                  "role": "assistant"
+                }
+              ],
+              "parallel_tool_calls": true,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": null,
+              "prompt_cache_retention": "24h",
+              "reasoning": {
+                "context": "current_turn",
+                "effort": "none",
+                "mode": "standard",
+                "summary": null
+              },
+              "safety_identifier": null,
+              "service_tier": "default",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "description": null,
+                  "name": "initial_learning_session",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "outcome": {
+                        "type": "string",
+                        "enum": [
+                          "ready",
+                          "ambiguous",
+                          "out_of_scope"
+                        ]
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "concept": {
+                        "description": "Stages 1 and 2: identified STEM term and interpreted technical context",
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Stage 1 primary STEM term"
+                          },
+                          "domain": {
+                            "type": "string",
+                            "description": "Stage 2 technical domain or context"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "domain"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "explanations": {
+                        "type": "object",
+                        "properties": {
+                          "simple": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 accessible explanation of the core meaning"
+                          },
+                          "realWorldExample": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 5 concrete scaffold linked to the core meaning"
+                          },
+                          "technical": {
+                            "type": "object",
+                            "properties": {
+                              "en": {
+                                "type": "string"
+                              },
+                              "my": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "en",
+                              "my"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Stage 4 precise explanation of the same core meaning"
+                          }
+                        },
+                        "required": [
+                          "simple",
+                          "realWorldExample",
+                          "technical"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "reflectivePrompt": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single reflective scaffold"
+                      },
+                      "hint": {
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Stage 5 single concise optional hint"
+                      }
+                    },
+                    "required": [
+                      "outcome",
+                      "message",
+                      "concept",
+                      "explanations",
+                      "reflectivePrompt",
+                      "hint"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "strict": true
+                },
+                "verbosity": "medium"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": {
+                "input_tokens": 1166,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 490,
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "total_tokens": 1656
+              },
+              "user": null,
+              "metadata": {}
+            },
+            "elapsedMs": 3438
+          }
+        },
+        {
+          "source": {
+            "file": "SIM-RUN-01-provider.jsonl",
+            "line": 29
+          },
+          "record": {
+            "caseId": "SIM05-C",
+            "step": "simpler",
+            "call": 29,
+            "startedAt": "2026-10-01T10:40:01.219Z",
+            "request": {
+              "model": "gpt-5.4-mini",
+              "store": false,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator supporting a Burmese-speaking\nuniversity student.\n\n# Goal\n\nThe learner reported \"needs_support\".\nThe application selected the \"stage_5_scaffold\" route.\nGenerate exactly one \"simpler_explanation\" support item that helps the\nlearner understand the existing STEM concept.\n\nThe application, not the model, selected both route and support type. Return\nonly the bilingual content required by the strict schema.\n\n# Stages 3–5 contract\n\n- Stage 3 language strategy is a presentation constraint. Use the stored\n  preferences and retain useful English STEM terminology where appropriate;\n  do not alter the learner profile.\n- Stage 4 core meaning must remain technically consistent with the active\n  concept supplied by the application.\n- Stage 5 scaffold form is fixed by \"simpler_explanation\". Do not choose a\n  different scaffold or return route, state or persistence fields.\n\n# Adaptation strategy\n\nFollow the selected support type exactly:\n\n- simpler_explanation:\n  Explain only the most important idea using shorter sentences,\n  simpler language and lower technical complexity.\n  Use a different analogy or perspective when helpful.\n\n# Context constraints\n\n- Stay focused on the supplied concept.\n- Do not introduce an unrelated concept.\n- Do not contradict the initial explanation.\n- Examine previousAdaptations and avoid repeating their explanation,\n  wording, example or analogy.\n- Respect the supplied explanation level and learning style.\n- Do not repeat the complete initial explanation.\n- Do not create a quiz, question sequence, grade or score.\n- Do not make decisions about understanding, status or adaptation round.\n- Do not choose learner identity, persistence, route permission, lifecycle or\n  follow-up allowance.\n- Do not claim that the learner now understands the concept.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- Write the Burmese content directly from the underlying meaning.\n- The English and Burmese fields must communicate the same information.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari or\n  characters from any other unrelated writing system.\n- Burmese fields may contain only Myanmar script, Latin characters for\n  English STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Success criteria\n\nBefore returning the result, verify that:\n\n1. The content follows \"simpler_explanation\" and the \"stage_5_scaffold\" route.\n2. It materially differs from previous support.\n3. It is concise and appropriate for the learner’s reported support need.\n4. English and Burmese communicate the same technical meaning.\n5. Burmese sounds natural rather than machine-translated.\n6. No unsupported writing system appears.\n",
+              "input": "{\"learnerResponse\":\"needs_support\",\"adaptationRoute\":\"stage_5_scaffold\",\"supportType\":\"simpler_explanation\",\"presentationOverride\":null,\"concept\":{\"name\":\"electric current\",\"domain\":\"physics, electricity\"},\"initialExplanations\":{\"simple\":{\"en\":\"Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.\",\"my\":\"Electric current ဆိုတာ လျှပ်စစ်အ charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေတဲ့ အမြန်နှုန်းပါ။ အများအားဖြင့် ဝါယာကြိုးထဲမှာ charge ဘယ်လောက် တစ်စက္ကန့်အတွင်း ရွေ့လျားနေသလဲ ကို ပြောတာပါ။\"},\"realWorldExample\":{\"en\":\"When you turn on a lamp, electric current flows through the wire and the bulb lights up. The current is what carries energy to the bulb.\",\"my\":\"မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ ဝါယာကြိုးထဲမှာ electric current စီးသွားပြီး မီးလုံး တောက်လာပါတယ်။ အဲဒီ current က energy ကို မီးလုံးဆီ သယ်ပေးတာပါ။\"},\"technical\":{\"en\":\"In physics, electric current is the rate of flow of electric charge past a point in a circuit. Its SI unit is the ampere, where 1 ampere equals 1 coulomb of charge passing a point each second.\",\"my\":\"Physics မှာ electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ flow rate ပါ။ SI unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ ၁ second အတွင်း ၁ coulomb charge ဖြတ်သန်းသွားတာကို ဆိုလိုပါတယ်။\"}},\"previousAdaptations\":[],\"preferences\":{\"uiLanguage\":\"en\",\"supportLanguage\":\"bilingual\",\"explanationLevel\":\"beginner\",\"learningStyle\":\"guided\",\"theme\":\"light\"}}",
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "name": "learning_adaptation",
+                  "strict": true,
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "content": {
+                        "description": "Application-selected route output combining required Stage 4 meaning and/or Stage 5 scaffold",
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "content"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            },
+            "httpStatus": 200,
+            "response": {
+              "id": "resp_02842277409bff84016abe388179bc87d0b0ef16ff594d2fc2",
+              "object": "response",
+              "created_at": 1790851202,
+              "status": "completed",
+              "access_programs": null,
+              "background": false,
+              "billing": {
+                "payer": "openai"
+              },
+              "completed_at": 1790851202,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator supporting a Burmese-speaking\nuniversity student.\n\n# Goal\n\nThe learner reported \"needs_support\".\nThe application selected the \"stage_5_scaffold\" route.\nGenerate exactly one \"simpler_explanation\" support item that helps the\nlearner understand the existing STEM concept.\n\nThe application, not the model, selected both route and support type. Return\nonly the bilingual content required by the strict schema.\n\n# Stages 3–5 contract\n\n- Stage 3 language strategy is a presentation constraint. Use the stored\n  preferences and retain useful English STEM terminology where appropriate;\n  do not alter the learner profile.\n- Stage 4 core meaning must remain technically consistent with the active\n  concept supplied by the application.\n- Stage 5 scaffold form is fixed by \"simpler_explanation\". Do not choose a\n  different scaffold or return route, state or persistence fields.\n\n# Adaptation strategy\n\nFollow the selected support type exactly:\n\n- simpler_explanation:\n  Explain only the most important idea using shorter sentences,\n  simpler language and lower technical complexity.\n  Use a different analogy or perspective when helpful.\n\n# Context constraints\n\n- Stay focused on the supplied concept.\n- Do not introduce an unrelated concept.\n- Do not contradict the initial explanation.\n- Examine previousAdaptations and avoid repeating their explanation,\n  wording, example or analogy.\n- Respect the supplied explanation level and learning style.\n- Do not repeat the complete initial explanation.\n- Do not create a quiz, question sequence, grade or score.\n- Do not make decisions about understanding, status or adaptation round.\n- Do not choose learner identity, persistence, route permission, lifecycle or\n  follow-up allowance.\n- Do not claim that the learner now understands the concept.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- Write the Burmese content directly from the underlying meaning.\n- The English and Burmese fields must communicate the same information.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari or\n  characters from any other unrelated writing system.\n- Burmese fields may contain only Myanmar script, Latin characters for\n  English STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Success criteria\n\nBefore returning the result, verify that:\n\n1. The content follows \"simpler_explanation\" and the \"stage_5_scaffold\" route.\n2. It materially differs from previous support.\n3. It is concise and appropriate for the learner’s reported support need.\n4. English and Burmese communicate the same technical meaning.\n5. Burmese sounds natural rather than machine-translated.\n6. No unsupported writing system appears.\n",
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-5.4-mini-2026-03-17",
+              "moderation": null,
+              "output": [
+                {
+                  "id": "msg_02842277409bff84016abe38826b2887d0811cd3a671d88b30",
+                  "type": "message",
+                  "status": "completed",
+                  "content": [
+                    {
+                      "type": "output_text",
+                      "annotations": [],
+                      "logprobs": [],
+                      "text": "{\"content\":{\"en\":\"Electric current is simply the movement of electric charge through a wire or other material. A bigger current means more charge is moving each second.\",\"my\":\"Electric current ဆိုတာ ဝါယာကြိုး ဒါမှမဟုတ် ပစ္စည်းတစ်ခုထဲမှာ electric charge တွေ ရွေ့လျားသွားတာပါ။ current ပိုကြီးရင် တစ်စက္ကန့်အတွင်း charge ပိုများများ ရွေ့လျားနေတယ်လို့ ဆိုနိုင်ပါတယ်။\"}}"
+                    }
+                  ],
+                  "phase": "final_answer",
+                  "role": "assistant"
+                }
+              ],
+              "parallel_tool_calls": true,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": null,
+              "prompt_cache_retention": "24h",
+              "reasoning": {
+                "context": "current_turn",
+                "effort": "none",
+                "mode": "standard",
+                "summary": null
+              },
+              "safety_identifier": null,
+              "service_tier": "default",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "description": null,
+                  "name": "learning_adaptation",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "content": {
+                        "description": "Application-selected route output combining required Stage 4 meaning and/or Stage 5 scaffold",
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "content"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "strict": true
+                },
+                "verbosity": "medium"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": {
+                "input_tokens": 1070,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 125,
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "total_tokens": 1195
+              },
+              "user": null,
+              "metadata": {}
+            },
+            "elapsedMs": 1690
+          }
+        },
+        {
+          "source": {
+            "file": "SIM-RUN-01-provider.jsonl",
+            "line": 30
+          },
+          "record": {
+            "caseId": "SIM05-C",
+            "step": "conceptual",
+            "call": 30,
+            "startedAt": "2026-10-01T10:40:02.922Z",
+            "request": {
+              "model": "gpt-5.4-mini",
+              "store": false,
+              "instructions": "\n# Role\n\nYou are a bilingual STEM educator supporting a Burmese-speaking\nuniversity student.\n\n# Goal\n\nThe learner reported \"needs_support\".\nThe application selected the \"concept_clarification\" route.\nGenerate exactly one \"concept_clarification\" support item that helps the\nlearner understand the existing STEM concept.\n\nThe application, not the model, selected both route and support type. Return\nonly the bilingual content required by the strict schema.\n\n# Stages 3–5 contract\n\n- Stage 3 language strategy is a presentation constraint. Use the stored\n  preferences and retain useful English STEM terminology where appropriate;\n  do not alter the learner profile.\n- Stage 4 core meaning must remain technically consistent with the active\n  concept supplied by the application.\n- Stage 5 scaffold form is fixed by \"concept_clarification\". Do not choose a\n  different scaffold or return route, state or persistence fields.\n\n# Adaptation strategy\n\nFollow the selected support type exactly:\n\n- concept_clarification (Stage 4 → Stage 5):\n  Treat this only as the learner's self-reported request for conceptual help,\n  not as evidence of an objectively diagnosed misconception.\n  Reconsider the active concept's core meaning and provide a revised core\n  explanation from a different perspective than the initial explanation and\n  every previous adaptation.\n  Follow the revised core explanation with one concise, appropriate scaffold,\n  such as an analogy, concrete connection or short guided reasoning step.\n  Keep both parts focused on the active concept. Do not respond with merely\n  another example and do not repeat a prior explanation, example or analogy.\n\n# Context constraints\n\n- Stay focused on the supplied concept.\n- Do not introduce an unrelated concept.\n- Do not contradict the initial explanation.\n- Examine previousAdaptations and avoid repeating their explanation,\n  wording, example or analogy.\n- Respect the supplied explanation level and learning style.\n- Do not repeat the complete initial explanation.\n- Do not create a quiz, question sequence, grade or score.\n- Do not make decisions about understanding, status or adaptation round.\n- Do not choose learner identity, persistence, route permission, lifecycle or\n  follow-up allowance.\n- Do not claim that the learner now understands the concept.\n\n# Language contract\n\n- The \"en\" field must contain clear, natural English.\n- The \"my\" field must contain natural Burmese written in Myanmar Unicode.\n- English STEM terminology may remain in Latin characters when clearer.\n- Do not translate English word by word.\n- Write the Burmese content directly from the underlying meaning.\n- The English and Burmese fields must communicate the same information.\n- Do not output Chinese, Japanese, Korean, Thai, Arabic, Devanagari or\n  characters from any other unrelated writing system.\n- Burmese fields may contain only Myanmar script, Latin characters for\n  English STEM terms, numbers, whitespace and ordinary punctuation.\n\n# Success criteria\n\nBefore returning the result, verify that:\n\n1. The content follows \"concept_clarification\" and the \"concept_clarification\" route.\n2. It materially differs from previous support.\n3. It is concise and appropriate for the learner’s reported support need.\n4. English and Burmese communicate the same technical meaning.\n5. Burmese sounds natural rather than machine-translated.\n6. No unsupported writing system appears.\n",
+              "input": "{\"learnerResponse\":\"needs_support\",\"adaptationRoute\":\"concept_clarification\",\"supportType\":\"concept_clarification\",\"presentationOverride\":null,\"concept\":{\"name\":\"electric current\",\"domain\":\"physics, electricity\"},\"initialExplanations\":{\"simple\":{\"en\":\"Electric current is the flow of electric charge through a material, usually a wire. It tells us how much charge is moving each second.\",\"my\":\"Electric current ဆိုတာ လျှပ်စစ်အ charge တွေ ပစ္စည်းတစ်ခုထဲကနေ စီးဆင်းနေတဲ့ အမြန်နှုန်းပါ။ အများအားဖြင့် ဝါယာကြိုးထဲမှာ charge ဘယ်လောက် တစ်စက္ကန့်အတွင်း ရွေ့လျားနေသလဲ ကို ပြောတာပါ။\"},\"realWorldExample\":{\"en\":\"When you turn on a lamp, electric current flows through the wire and the bulb lights up. The current is what carries energy to the bulb.\",\"my\":\"မီးလုံးကို ဖွင့်လိုက်တဲ့အခါ ဝါယာကြိုးထဲမှာ electric current စီးသွားပြီး မီးလုံး တောက်လာပါတယ်။ အဲဒီ current က energy ကို မီးလုံးဆီ သယ်ပေးတာပါ။\"},\"technical\":{\"en\":\"In physics, electric current is the rate of flow of electric charge past a point in a circuit. Its SI unit is the ampere, where 1 ampere equals 1 coulomb of charge passing a point each second.\",\"my\":\"Physics မှာ electric current ဆိုတာ circuit ထဲက အချက်တစ်ခုကို ဖြတ်သန်းသွားတဲ့ electric charge ရဲ့ flow rate ပါ။ SI unit က ampere ဖြစ်ပြီး 1 ampere ဆိုတာ ၁ second အတွင်း ၁ coulomb charge ဖြတ်သန်းသွားတာကို ဆိုလိုပါတယ်။\"}},\"previousAdaptations\":[{\"learnerResponse\":\"needs_support\",\"supportType\":\"simpler_explanation\",\"content\":{\"en\":\"Electric current is simply the movement of electric charge through a wire or other material. A bigger current means more charge is moving each second.\",\"my\":\"Electric current ဆိုတာ ဝါယာကြိုး ဒါမှမဟုတ် ပစ္စည်းတစ်ခုထဲမှာ electric charge တွေ ရွေ့လျားသွားတာပါ။ current ပိုကြီးရင် တစ်စက္ကန့်အတွင်း charge ပိုများများ ရွေ့လျားနေတယ်လို့ ဆိုနိုင်ပါတယ်။\"},\"round\":1,\"createdAt\":\"2026-10-01T10:40:02.910Z\"}],\"preferences\":{\"uiLanguage\":\"en\",\"supportLanguage\":\"bilingual\",\"explanationLevel\":\"beginner\",\"learningStyle\":\"guided\",\"theme\":\"light\"}}",
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "name": "learning_adaptation",
+                  "strict": true,
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "content": {
+                        "description": "Application-selected route output combining required Stage 4 meaning and/or Stage 5 scaffold",
+                        "type": "object",
+                        "properties": {
+                          "en": {
+                            "type": "string"
+                          },
+                          "my": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "en",
+                          "my"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "content"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            },
+            "transportError": "AbortError",
+            "elapsedMs": 52825
+          }
+        }
+      ]
+    }
+  }
+}

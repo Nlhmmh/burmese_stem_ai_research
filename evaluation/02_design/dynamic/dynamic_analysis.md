@@ -419,8 +419,3 @@ Completed for `RUN-B01-20261001-DYNAMIC-UI-01` after all files existed:
    ID, UI-01–UI-12 outcomes, evidence IDs, deviations and remaining limits.
 6. Update U1–U9 in `evaluation_protocol.md` only where this inspection provides
    direct evidence. Call it evaluator inspection, never participant feedback.
-
-
-## Preservation and review scope
-
-Detailed records above were recovered from the pre-consolidation archive, not newly executed or re-scored. Repeated planning, sign-off and summary text is omitted. The [shared protocol](../../00_protocol/evaluation_protocol.md) records preparation, execution and subsequent human verification. Original capture-time statements and complete documents remain in the [archive](../../archive/pre_consolidation_markdown_20261008.zip).

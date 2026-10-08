@@ -144,7 +144,7 @@ release remain unchanged. R01 was reopened on 3 October to check the saved
 text. One **post-generation supplemental source**, SCN-R02, is explicitly
 recorded below; it is not silently added to the frozen reference set.
 
-The SCN-CQ01–05 content observations and qualifications are included in the corresponding case-register rows. Source locators and review scope are retained below.
+The SCN-CQ01–05 content observations and qualifications are included in the corresponding case-register rows. Source locators are retained below.
 
 Examples were inspected in the saved bilingual payloads and screenshots.
 No translation, prompt or output was edited. No claim is made about learner
@@ -197,7 +197,3 @@ separately from application outcomes.
 9. **Untraceable implemented features?** No new stage was needed. Preferences, History and bounded follow-up are supporting implementation features already justified in Step 16, not separate learning-efficacy evidence.
 
 ![Completed Review with both persisted adaptations](raw/RUN-B01-20261003-SCENARIO-02/screenshots/SCN-J05.jpg)
-
-## Preservation and review scope
-
-Detailed records above were recovered from the pre-consolidation archive, not newly executed or re-scored. Repeated planning, sign-off and summary text is omitted. The [shared protocol](../../00_protocol/evaluation_protocol.md) records preparation, execution and subsequent human verification. Original capture-time statements and complete documents remain in the [archive](../../archive/pre_consolidation_markdown_20261008.zip).
