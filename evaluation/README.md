@@ -1,6 +1,6 @@
 # Evaluation guide
 
-Start here. Each method now has one main Markdown report containing its scope, criteria/cases, results, interpretation and evidence links. Full historical documents are archived, not discarded. Logs, screenshots, CSV/JSON scores, execution scripts, coverage reports and historical manifests remain separate evidence rather than additional reading requirements.
+Start here. Each method has one main Markdown report. System test reports use one integrated case table with action, conditions/inputs, expected result, actual result, outcome, qualification and observation notes/evidence. Exact outputs, screenshots, scholarly warrants and raw records remain supporting evidence. The full GenAI interview and all 55 simulation case records are available inside their reports. Repetition is reduced without replacing substantive evidence with summaries. Exact historical documents also remain archived. Logs, screenshots, CSV/JSON scores, execution scripts, coverage reports and historical manifests remain separate evidence rather than additional reading requirements.
 
 ## Reading order
 
@@ -33,9 +33,9 @@ FURPS definitions and the baseline/environment are in the protocol, not separate
 
 ## Archive and recovery
 
-[pre_consolidation_markdown_20261008.zip](archive/pre_consolidation_markdown_20261008.zip) preserves all 162 original Markdown files at their exact paths, including the GenAI transcript, 55 human-review worksheets, frozen protocols, command logs, source/reference verification, baseline records, conceptual refinements and paper revision history. [consolidation_index.json](archive/consolidation_index.json) records original hashes and current destinations. Entries retain AI provenance and human-confirmation timing; scores/failures were not changed.
+[pre_consolidation_markdown_20261008.zip](archive/pre_consolidation_markdown_20261008.zip) preserves all 162 original Markdown files at their exact paths, including the original standalone GenAI transcript and 55 human-review worksheets (also restored within the main reports), frozen protocols, command logs, source/reference verification, baseline records, conceptual refinements and paper revision history. [consolidation_index.json](archive/consolidation_index.json) records original hashes and current destinations. Entries retain AI provenance and human-confirmation timing; scores/failures were not changed.
 
-The active reading set is 21 Markdown files rather than 162. Full originals were verified before redundant files were removed. The pre-cleanup documentation commit is 3884b83bd08fad5e4fd4bc0ff3c205469955f037. CSV/JSON evidence and screenshots remain in place. The ZIP freezes the state immediately before cleanup. Older evidence-register hashes may identify earlier Git versions, not this ZIP or rewritten current reports. Use the index for relocated paths and Git history for those earlier captured versions.
+The active reading set is 21 Markdown files rather than 162. The reports restore substantive details from the verified originals. Repeated planning checklists, sign-off text and paper revision history remain archive-only. The pre-cleanup documentation commit is 3884b83bd08fad5e4fd4bc0ff3c205469955f037. CSV/JSON evidence and screenshots remain in place. The ZIP freezes the state immediately before cleanup. Older evidence-register hashes may identify earlier Git versions, not this ZIP or rewritten current reports. Use the index for relocated paths and Git history for those earlier captured versions.
 
 Read one original without extracting everything, from the repository root:
 

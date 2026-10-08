@@ -7,7 +7,7 @@
   "originalMarkdownFiles": 162,
   "currentMarkdownFiles": 21,
   "removedStandaloneMarkdownFiles": 141,
-  "scope": "Consolidation only; no changed scores, application source, tests, raw non-Markdown evidence or submission PDF",
+  "scope": "One detailed report per evaluation. Exact interview exchanges, operational test contracts, references, argument warrants, scenario traces and all simulation score rationales restored; repeated planning, signatures and duplicate summaries centralised. Original archive and non-Markdown evidence unchanged. System case definitions and outcomes are joined in one eight-column table per test report; supporting exact-output and score evidence is retained.",
   "protectedNonMarkdown": {
     "files": 622,
     "sha256": "55d635b5c0cb5c73f7f257f58a5c7e038d4f156f26dfc8ab68e12d4a7cfe9e64"
@@ -90,7 +90,7 @@
       "originalSha256": "7b427c6e27c923211b1aff549c975790cdba33f94d9f6d74e73067701316abe3",
       "currentReport": "evaluation/01_conceptual/conceptual_triangulation.md",
       "standaloneRetained": true,
-      "currentSha256": "62f4ce106c2ec268949e279ada0009f9c69c1a40726bc0324a432a46e03a6d4e"
+      "currentSha256": "fc81081b0fadba346f4232a910705bec10bc0a0865189c37f51308afc912e6b1"
     },
     {
       "originalPath": "evaluation/01_conceptual/framework_refinements.md",
@@ -104,7 +104,7 @@
       "originalSha256": "ee0e89288d3ee0d82f679fdc0b028501dfabacb1d5fb3b75717a2760eb20854c",
       "currentReport": "evaluation/01_conceptual/genai/GENAI-01_analysis.md",
       "standaloneRetained": true,
-      "currentSha256": "51fcf98d74ebb692994b6049fad96d0a827993e6e2d7b8c87b5c374b4821cfa6"
+      "currentSha256": "749441977c64954b9e0994465dd6d9d7f8b47c7a17bbb6923c607776e809e5ba"
     },
     {
       "originalPath": "evaluation/01_conceptual/genai/GENAI-01_interview.md",
@@ -139,7 +139,7 @@
       "originalSha256": "87a1bf04427a73efc72a7dcf0864ad1167c8076522f803597f1ec739824d1a98",
       "currentReport": "evaluation/01_conceptual/informed_argument/traceability.md",
       "standaloneRetained": true,
-      "currentSha256": "8559ef4a3194afd40abbab92a3e2aa17a86f7e470268d18fdc5b3d6b13bd606a"
+      "currentSha256": "d253177049fb36f68d69793f2e450085bb9397d9bac2032fc648dbb3f97a986a"
     },
     {
       "originalPath": "evaluation/01_conceptual/informed_argument/traceability_v2.md",
@@ -153,14 +153,14 @@
       "originalSha256": "84ff4f1bf55f7e398f4358ad348a7ff12675377a67a4160593007fbd62b10839",
       "currentReport": "evaluation/01_conceptual/literature/literature_synthesis.md",
       "standaloneRetained": true,
-      "currentSha256": "78eadf50763357468249c6ec1f5d6c35bbd4aa2974e27889a07b3e98af174d75"
+      "currentSha256": "1276e0e01886a4ccced13cc2d5ef39f943c589aae62279ff0961fe418e80e0f2"
     },
     {
       "originalPath": "evaluation/01_conceptual/scenario/photosynthesis_scenario.md",
       "originalSha256": "8a01bba013d59b866d1b4b528874f1ff68f6b31e8fff2f01e02f6bcd0963c02c",
       "currentReport": "evaluation/01_conceptual/scenario/photosynthesis_scenario.md",
       "standaloneRetained": true,
-      "currentSha256": "c6b8440c7a893deeb7cb2fa6abd0750062055dba8c4c881ce5cd9df1abc697e9"
+      "currentSha256": "fab523e1ed05287ad057502e923777bd0324bcf1188dc7634b0d54ce2da2f21b"
     },
     {
       "originalPath": "evaluation/02_design/black_box/00_run_metadata.md",
@@ -174,7 +174,7 @@
       "originalSha256": "5bc149aef4ce66811e493364d025204493ad8aa37ac8b066e9c824f2a6fec6e8",
       "currentReport": "evaluation/02_design/black_box/black_box_analysis.md",
       "standaloneRetained": true,
-      "currentSha256": "868ff73680f48844eacc1e2044d545d97d4bc4d03089e0cf18d157a02bf8204c"
+      "currentSha256": "b0062c32db58dbabfcb6ef855d1dc9927e99df543cd8d75eb013a8cbef1d3332"
     },
     {
       "originalPath": "evaluation/02_design/black_box/black_box_test_cases.md",
@@ -202,7 +202,7 @@
       "originalSha256": "93dbdfd3e3889cc562257afd89103fddf1a4112ab120eb7324fdb464da296079",
       "currentReport": "evaluation/02_design/dynamic/dynamic_analysis.md",
       "standaloneRetained": true,
-      "currentSha256": "3e992e0ed37fd197bedcc48c74e056ab6feecf106509f33377078de0ddc51027"
+      "currentSha256": "5dca48f137e65718e0a759c90c63372a5fa0cbde61016752ace1b8e3295d4405"
     },
     {
       "originalPath": "evaluation/02_design/dynamic/dynamic_analysis_test_cases.md",
@@ -251,7 +251,7 @@
       "originalSha256": "d4ff7724dd09545543f082f487e067d5ed7908f0f6e60c5dc87b36ad0bf29e9c",
       "currentReport": "evaluation/02_design/informed_argument/traceability.md",
       "standaloneRetained": true,
-      "currentSha256": "4b3f5eee04b88ce7e57ded5b0e4e2b04631ec871d2b6667c46e0be9b7fcfeffb"
+      "currentSha256": "cc4c534c283ed60a0886f9438da704b6d40591bb4d487bf739efa49e55e459a4"
     },
     {
       "originalPath": "evaluation/02_design/informed_argument/traceability_bilingual_addendum.md",
@@ -265,7 +265,7 @@
       "originalSha256": "36695a2debef17341886a642af71ae4bc79c2fc495fcfe2d3a67b15958dd6ae4",
       "currentReport": "evaluation/02_design/literature/literature_synthesis.md",
       "standaloneRetained": true,
-      "currentSha256": "0c6eeeada635ff6a96c07247a429f8646f08fe7ef732ba9e7a4dc43535d711d7"
+      "currentSha256": "ba2319643d84e43e6b719fb76927b09b1244f496d7efb7df004483dd7f9c0136"
     },
     {
       "originalPath": "evaluation/02_design/literature/reference_verification.md",
@@ -279,7 +279,7 @@
       "originalSha256": "09038add526ee47150e942c9200575b9157e589a5408b400291cdabcb0a76ebc",
       "currentReport": "evaluation/02_design/optimisation/bounds_analysis.md",
       "standaloneRetained": true,
-      "currentSha256": "f0e16f7e7a38317826b19b81f638e00e1d230867e4343d6c995d88fe220ad650"
+      "currentSha256": "8d1672fa58bac90b643232e79f370b926e135e50733fae2ff3326407c5888226"
     },
     {
       "originalPath": "evaluation/02_design/optimisation/bounds_analysis_test_cases.md",
@@ -300,7 +300,7 @@
       "originalSha256": "d997d745aa1fcb02db5c4ec964f6208f8a0dd559e2d6efdc18030f3cbd20ee6e",
       "currentReport": "evaluation/02_design/scenario/photosynthesis_scenario.md",
       "standaloneRetained": true,
-      "currentSha256": "ef93db89aa68830e05812cc44cea596a9244345462638ae89e133b54992c2d4a"
+      "currentSha256": "f10ffb42366727894899491d68e471efa58da7d409c51785557d48665fd73b10"
     },
     {
       "originalPath": "evaluation/02_design/scenario/raw/RUN-B01-20261003-SCENARIO-01/README.md",
@@ -377,7 +377,7 @@
       "originalSha256": "33b45f15ab04e86e69b61de4ed33bf776c57a317f4a8f3f9403934ec7290121a",
       "currentReport": "evaluation/02_design/simulation/bilingual_assessment/results.md",
       "standaloneRetained": true,
-      "currentSha256": "437670b7a154ea59900eac231351e144ec7e7c345a2b4f660a9fa374dfbd033a"
+      "currentSha256": "377a1abe0709fa23bf3a953df7a4b80873e8902a83524819e8611e1eb27dbad9"
     },
     {
       "originalPath": "evaluation/02_design/simulation/content_reference_notes.md",
@@ -811,7 +811,7 @@
       "originalSha256": "120a026eddc4e1d6a9f68f16ef9fbd3a8bdbedc21500be601292318207cda57c",
       "currentReport": "evaluation/02_design/simulation/simulation_analysis.md",
       "standaloneRetained": true,
-      "currentSha256": "1c3eb813ec2fb1e7d477fe4790a87d344ff18f18e4e6ebe1d7d94b8beb9f3807"
+      "currentSha256": "cf19826dfeb03cef385648edefb149ce724b1b8fea436b9f8cbdc8faae5894ec"
     },
     {
       "originalPath": "evaluation/02_design/simulation/simulation_test_cases.md",
@@ -832,7 +832,7 @@
       "originalSha256": "bb031c4f72ff7739d0be3959d829833b34656e94536baef60573b8cf9535a1e1",
       "currentReport": "evaluation/02_design/static/static_analysis_test_cases.md",
       "standaloneRetained": true,
-      "currentSha256": "d9d7e3fc27abdb39a8170812a136e2cb7666815f907b6923642f347d180d2b44"
+      "currentSha256": "38111f5501d1ed08ed0cb1e9f0d274dfac7f989b3750f0c8d84a146ed622924c"
     },
     {
       "originalPath": "evaluation/02_design/usability/raw/RUN-B01-20261002-USABILITY-01/00_run_metadata.md",
@@ -853,7 +853,7 @@
       "originalSha256": "cd4b48e5324cbf25166f6ef976f88d9241b118915da7b9daa4b56d10539dc92f",
       "currentReport": "evaluation/02_design/usability/usability_inspection.md",
       "standaloneRetained": true,
-      "currentSha256": "e3e850024ba9fadb24055009fc6918b8476f53d6cdc7b692f6c6499f698306f2"
+      "currentSha256": "558b65e84247fd9e56734e2f7284cff691d857ca68b2f0beac44a571d70120d0"
     },
     {
       "originalPath": "evaluation/02_design/white_box/00_run_metadata.md",
@@ -874,7 +874,7 @@
       "originalSha256": "f7b3b7cb9dac89453de511ab80b9756c0b934298b197e33bfedf2430c3258c3f",
       "currentReport": "evaluation/02_design/white_box/white_box_evaluation.md",
       "standaloneRetained": true,
-      "currentSha256": "0c6cf2bae97be045a931baee33440ec318e836e9c4dd0c236f7d70e756ae18b5"
+      "currentSha256": "f2b6c2657e8ed0c6b0b1492b6654f1b14157a33599e049702e193e272ca2dc5e"
     },
     {
       "originalPath": "evaluation/02_design/white_box/white_box_test_cases.md",
@@ -930,7 +930,7 @@
       "originalSha256": "3e4f81df3bef21d4c95324a363d0ef1076223928bfc4b291ee74923338787c08",
       "currentReport": "evaluation/03_results/results_interpretation.md",
       "standaloneRetained": true,
-      "currentSha256": "981cd468889921dd51433975f0a769941af1b1a533a2fc3a13d507c1ab3ea936"
+      "currentSha256": "211fe596da6d161d537319d2bfffb14ab294b19d8ef0b710facf411496e961e0"
     },
     {
       "originalPath": "evaluation/03_results/supplementary_evidence_register.md",
@@ -1119,7 +1119,7 @@
       "originalSha256": "fe3dc8b9eccfeb63d2be6a7490e8629197455d3ac98397ea792a88d5c78d2168",
       "currentReport": "evaluation/README.md",
       "standaloneRetained": true,
-      "currentSha256": "d5981106e1f3db9337b36b8f4a80696d0ef2a03473d0d934eaa6e07c1c9a5cb6"
+      "currentSha256": "c8ac8719f2b02fb3b6d668852ee573dccf65930b00c20b3b93ed373adb4c1ed8"
     },
     {
       "originalPath": "evaluation/burmese_stem_ai_refinement_review.md",
@@ -1157,71 +1157,71 @@
     },
     {
       "path": "evaluation/01_conceptual/conceptual_triangulation.md",
-      "sha256": "62f4ce106c2ec268949e279ada0009f9c69c1a40726bc0324a432a46e03a6d4e"
+      "sha256": "fc81081b0fadba346f4232a910705bec10bc0a0865189c37f51308afc912e6b1"
     },
     {
       "path": "evaluation/01_conceptual/genai/GENAI-01_analysis.md",
-      "sha256": "51fcf98d74ebb692994b6049fad96d0a827993e6e2d7b8c87b5c374b4821cfa6"
+      "sha256": "749441977c64954b9e0994465dd6d9d7f8b47c7a17bbb6923c607776e809e5ba"
     },
     {
       "path": "evaluation/01_conceptual/informed_argument/traceability.md",
-      "sha256": "8559ef4a3194afd40abbab92a3e2aa17a86f7e470268d18fdc5b3d6b13bd606a"
+      "sha256": "d253177049fb36f68d69793f2e450085bb9397d9bac2032fc648dbb3f97a986a"
     },
     {
       "path": "evaluation/01_conceptual/literature/literature_synthesis.md",
-      "sha256": "78eadf50763357468249c6ec1f5d6c35bbd4aa2974e27889a07b3e98af174d75"
+      "sha256": "1276e0e01886a4ccced13cc2d5ef39f943c589aae62279ff0961fe418e80e0f2"
     },
     {
       "path": "evaluation/01_conceptual/scenario/photosynthesis_scenario.md",
-      "sha256": "c6b8440c7a893deeb7cb2fa6abd0750062055dba8c4c881ce5cd9df1abc697e9"
+      "sha256": "fab523e1ed05287ad057502e923777bd0324bcf1188dc7634b0d54ce2da2f21b"
     },
     {
       "path": "evaluation/02_design/black_box/black_box_analysis.md",
-      "sha256": "868ff73680f48844eacc1e2044d545d97d4bc4d03089e0cf18d157a02bf8204c"
+      "sha256": "b0062c32db58dbabfcb6ef855d1dc9927e99df543cd8d75eb013a8cbef1d3332"
     },
     {
       "path": "evaluation/02_design/dynamic/dynamic_analysis.md",
-      "sha256": "3e992e0ed37fd197bedcc48c74e056ab6feecf106509f33377078de0ddc51027"
+      "sha256": "5dca48f137e65718e0a759c90c63372a5fa0cbde61016752ace1b8e3295d4405"
     },
     {
       "path": "evaluation/02_design/informed_argument/traceability.md",
-      "sha256": "4b3f5eee04b88ce7e57ded5b0e4e2b04631ec871d2b6667c46e0be9b7fcfeffb"
+      "sha256": "cc4c534c283ed60a0886f9438da704b6d40591bb4d487bf739efa49e55e459a4"
     },
     {
       "path": "evaluation/02_design/literature/literature_synthesis.md",
-      "sha256": "0c6eeeada635ff6a96c07247a429f8646f08fe7ef732ba9e7a4dc43535d711d7"
+      "sha256": "ba2319643d84e43e6b719fb76927b09b1244f496d7efb7df004483dd7f9c0136"
     },
     {
       "path": "evaluation/02_design/optimisation/bounds_analysis.md",
-      "sha256": "f0e16f7e7a38317826b19b81f638e00e1d230867e4343d6c995d88fe220ad650"
+      "sha256": "8d1672fa58bac90b643232e79f370b926e135e50733fae2ff3326407c5888226"
     },
     {
       "path": "evaluation/02_design/scenario/photosynthesis_scenario.md",
-      "sha256": "ef93db89aa68830e05812cc44cea596a9244345462638ae89e133b54992c2d4a"
+      "sha256": "f10ffb42366727894899491d68e471efa58da7d409c51785557d48665fd73b10"
     },
     {
       "path": "evaluation/02_design/simulation/bilingual_assessment/results.md",
-      "sha256": "437670b7a154ea59900eac231351e144ec7e7c345a2b4f660a9fa374dfbd033a"
+      "sha256": "377a1abe0709fa23bf3a953df7a4b80873e8902a83524819e8611e1eb27dbad9"
     },
     {
       "path": "evaluation/02_design/simulation/simulation_analysis.md",
-      "sha256": "1c3eb813ec2fb1e7d477fe4790a87d344ff18f18e4e6ebe1d7d94b8beb9f3807"
+      "sha256": "cf19826dfeb03cef385648edefb149ce724b1b8fea436b9f8cbdc8faae5894ec"
     },
     {
       "path": "evaluation/02_design/static/static_analysis_test_cases.md",
-      "sha256": "d9d7e3fc27abdb39a8170812a136e2cb7666815f907b6923642f347d180d2b44"
+      "sha256": "38111f5501d1ed08ed0cb1e9f0d274dfac7f989b3750f0c8d84a146ed622924c"
     },
     {
       "path": "evaluation/02_design/usability/usability_inspection.md",
-      "sha256": "e3e850024ba9fadb24055009fc6918b8476f53d6cdc7b692f6c6499f698306f2"
+      "sha256": "558b65e84247fd9e56734e2f7284cff691d857ca68b2f0beac44a571d70120d0"
     },
     {
       "path": "evaluation/02_design/white_box/white_box_evaluation.md",
-      "sha256": "0c6cf2bae97be045a931baee33440ec318e836e9c4dd0c236f7d70e756ae18b5"
+      "sha256": "f2b6c2657e8ed0c6b0b1492b6654f1b14157a33599e049702e193e272ca2dc5e"
     },
     {
       "path": "evaluation/03_results/results_interpretation.md",
-      "sha256": "981cd468889921dd51433975f0a769941af1b1a533a2fc3a13d507c1ab3ea936"
+      "sha256": "211fe596da6d161d537319d2bfffb14ab294b19d8ef0b710facf411496e961e0"
     },
     {
       "path": "evaluation/04_paper/assignment_5_working_paper.md",
@@ -1229,7 +1229,7 @@
     },
     {
       "path": "evaluation/README.md",
-      "sha256": "d5981106e1f3db9337b36b8f4a80696d0ef2a03473d0d934eaa6e07c1c9a5cb6"
+      "sha256": "c8ac8719f2b02fb3b6d668852ee573dccf65930b00c20b3b93ed373adb4c1ed8"
     },
     {
       "path": "evaluation/rubric/instructions.md",
@@ -1243,8 +1243,8 @@
     "activeMarkdownFiles": 21,
     "removedStandaloneMarkdownFiles": 141,
     "unchangedNonMarkdownEvidenceFiles": 622,
-    "localLinksChecked": 209,
-    "headingLinksChecked": 19,
+    "localLinksChecked": 453,
+    "headingLinksChecked": 42,
     "contentScoresVerified": 91,
     "contentOutcomes": {
       "Pass": 18,
@@ -1253,8 +1253,1010 @@
     },
     "bilingualAnnotationsVerified": 41,
     "applicationUnchanged": true,
+    "verbatimInterviewBlocksVerified": 20,
+    "detailedOperationalCasesVerified": 68,
+    "fullSimulationCasesVerified": 55,
+    "outputAssessmentRationaleTablesVerified": 92,
+    "distinctAssessedOutputsVerified": 91,
+    "integratedCaseTablesVerified": 8,
+    "integratedRegisterRowsVerified": 179,
+    "namedWhiteBoxAssertionsVerified": 373,
+    "routeCombinationsVerified": 39,
     "workingPaperUnchanged": true,
     "submissionPdfUnchanged": true,
-    "evaluationRerun": false
+    "evaluationRerun": false,
+    "command": "node evaluation/archive/verify_consolidation.mjs",
+    "scope": "Documentation layout, case contracts, named assertions, state/call trails, evidence and navigation only; no runtime tests rerun"
+  },
+  "detailRestoration": {
+    "date": "2026-10-08",
+    "documentationBaseCommit": "c350e6e066021db18626aafd9681c9a7e3a6c723",
+    "reportsExpanded": 18,
+    "verbatimInterviewQuestions": 9,
+    "simulationCaseRecords": 55,
+    "deliveredOutputAssessments": 91,
+    "ratingsChanged": false,
+    "evaluationsRerun": false,
+    "namedWhiteBoxAssertions": 373,
+    "routeCombinations": 39,
+    "coverageFiles": 42,
+    "scoreRationaleTables": 92,
+    "distinctDeliveredOutputAssessments": 91
+  },
+  "unifiedCaseTables": {
+    "date": "2026-10-08",
+    "columns": [
+      "Case",
+      "Case details / action",
+      "Conditions / inputs",
+      "Expected result",
+      "Actual result",
+      "Outcome",
+      "Qualification",
+      "Observation notes / evidence"
+    ],
+    "reports": [
+      {
+        "path": "evaluation/02_design/static/static_analysis_test_cases.md",
+        "caseIds": [
+          "STA-01",
+          "STA-02",
+          "STA-03",
+          "STA-04",
+          "STA-05",
+          "STA-06",
+          "STA-07",
+          "STA-08",
+          "STA-09",
+          "STA-10",
+          "STA-11",
+          "STA-12",
+          "STA-13",
+          "STA-14"
+        ],
+        "rowCount": 14,
+        "expectedContractHashes": [
+          {
+            "id": "STA-01",
+            "sha256": "aea7c6013d047a3427547474e20c352741238f87312eb96e6effd9f348615f98"
+          },
+          {
+            "id": "STA-02",
+            "sha256": "fe1612796c0bbaef7a2b4b2b858970f6bce956843f70b76759ee79aa5e172122"
+          },
+          {
+            "id": "STA-03",
+            "sha256": "cd6c06a35a6712d43d3fc70ff1af93e80c9e851979ebecdfab28ecf7d86ef5f1"
+          },
+          {
+            "id": "STA-04",
+            "sha256": "21f756ee90d5299dbaf6d22706b9dc94e587c28f241055788886d8666ea7c650"
+          },
+          {
+            "id": "STA-05",
+            "sha256": "61ddf269f5ae56390bf045cd4a305816a4d5bd8e157f5017bc871c1ab247aa96"
+          },
+          {
+            "id": "STA-06",
+            "sha256": "1dfd9185602b7757576ab58637bf0a5f68ece7c0427041a49e963a413088a16a"
+          },
+          {
+            "id": "STA-07",
+            "sha256": "79d4c8a2604030e368d5c32244111ce5bc4df230c3a49a144bb037d2c727d62b"
+          },
+          {
+            "id": "STA-08",
+            "sha256": "d2928c0aa808a0e8eb2d50706d88260ddd1b238e21c9c9d6ccc7d734b543d149"
+          },
+          {
+            "id": "STA-09",
+            "sha256": "884425ddacec4bce939e73f80a747c9d2d49ae913fb3edbcd7a651b3be4b09c0"
+          },
+          {
+            "id": "STA-10",
+            "sha256": "087a9e23a1acf9d34f01d27004c8c659fc6594d49032eca39aef9c01bed9d569"
+          },
+          {
+            "id": "STA-11",
+            "sha256": "8a859baa25617ded1208ade9dd2bb87e06411acb2fa10aac38f40c0a0872895b"
+          },
+          {
+            "id": "STA-12",
+            "sha256": "b52e3ab8563a2801073bfd93f98105ecade0c9612941d8c7f697f5b70ee50547"
+          },
+          {
+            "id": "STA-13",
+            "sha256": "a9e5a84cad59d84081ed544cfcd7e6c25c0103ec34dce529ba09ab569f71110b"
+          },
+          {
+            "id": "STA-14",
+            "sha256": "34e39d619c5a477e5c032fc2a64a7acffffb856da3505b4fe9edc6d10b743bc6"
+          }
+        ]
+      },
+      {
+        "path": "evaluation/02_design/dynamic/dynamic_analysis.md",
+        "caseIds": [
+          "DYN-01",
+          "DYN-02",
+          "DYN-03",
+          "DYN-04",
+          "DYN-05",
+          "DYN-06",
+          "DYN-07",
+          "DYN-08",
+          "DYN-09",
+          "DYN-10",
+          "DYN-11",
+          "DYN-12",
+          "DYN-13",
+          "TIM-PHOTO-01",
+          "TIM-PHOTO-02",
+          "TIM-PHOTO-03",
+          "TIM-GRAV-01",
+          "TIM-GRAV-02",
+          "TIM-GRAV-03",
+          "TIM-CURRENT-01",
+          "TIM-CURRENT-02",
+          "TIM-CURRENT-03",
+          "TIM-INHERIT-01",
+          "TIM-INHERIT-02",
+          "TIM-INHERIT-03",
+          "TIM-PH-01",
+          "TIM-PH-02",
+          "TIM-PH-03",
+          "UI-01",
+          "UI-02",
+          "UI-03",
+          "UI-04",
+          "UI-05",
+          "UI-06",
+          "UI-07",
+          "UI-08",
+          "UI-09",
+          "UI-10",
+          "UI-11",
+          "UI-12"
+        ],
+        "rowCount": 40,
+        "expectedContractHashes": [
+          {
+            "id": "DYN-01",
+            "sha256": "23771c66b2d5539475b2f4bcf97214b22672e451509005b5174e9bd58fc26a27"
+          },
+          {
+            "id": "DYN-02",
+            "sha256": "02000601e37fecc38da9457a8eee26782e5c41d768d50f061e4e30c1c72c5b1f"
+          },
+          {
+            "id": "DYN-03",
+            "sha256": "76d0dff9cd25b70010201d7176d16f22d7c42cafa69d350409fe522b49c2083a"
+          },
+          {
+            "id": "DYN-04",
+            "sha256": "b0f06f8331ddac4be1e010ff5b944e62ba46653d2174b6afa45027a8abfdf4df"
+          },
+          {
+            "id": "DYN-05",
+            "sha256": "13408bb16460754982e26d1804d3ea671dac576c05f4ae2daff1a96da1606934"
+          },
+          {
+            "id": "DYN-06",
+            "sha256": "1ac15ff5af25822f247a5e078c48be62a5b08665f3af579b5cf57ff8a06dce55"
+          },
+          {
+            "id": "DYN-07",
+            "sha256": "14cefd4db4e1293b144f43293ca5bd79f8fc4547bfbf9ac31bbac727763205ec"
+          },
+          {
+            "id": "DYN-08",
+            "sha256": "a142330abbcb931cd380075154438b80ffeac7061a10a364cc53849819e6e090"
+          },
+          {
+            "id": "DYN-09",
+            "sha256": "ff93bd05e4f664c67fe3479de3cd88f2a13d9231eb58bdb3082f701c2a0c76db"
+          },
+          {
+            "id": "DYN-10",
+            "sha256": "f02285c005cd84589a91f0aeada6ffec415a9be835e02e9125d6f4dccedf5110"
+          },
+          {
+            "id": "DYN-11",
+            "sha256": "f42372bc43f7df1d96495d16c4d578bbcaa71d5ddd9a47725f2665b8342cd267"
+          },
+          {
+            "id": "DYN-12",
+            "sha256": "c93a6ce6ad4aa188aea4b10331089b4af8bb977a3efd43ef69694c79b14c20e4"
+          },
+          {
+            "id": "DYN-13",
+            "sha256": "e71f4860ff244f8480eeea04f629f7ff567e83220efe06e80777bcbcb09492ac"
+          },
+          {
+            "id": "TIM-PHOTO-01",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-PHOTO-02",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-PHOTO-03",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-GRAV-01",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-GRAV-02",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-GRAV-03",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-CURRENT-01",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-CURRENT-02",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-CURRENT-03",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-INHERIT-01",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-INHERIT-02",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-INHERIT-03",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-PH-01",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-PH-02",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "TIM-PH-03",
+            "sha256": "4ca693d73fdcab99a9e8c27ec9cedb5f97d4039f257cb255cf9bcb0727192606"
+          },
+          {
+            "id": "UI-01",
+            "sha256": "25a872c741774523744439470675d5159a9d356a88906b71d182ec656a76129e"
+          },
+          {
+            "id": "UI-02",
+            "sha256": "0f2d5c0544fe4a54b8f9c9f6b25a42b18ab990df2126e22ca71d49c99750acdc"
+          },
+          {
+            "id": "UI-03",
+            "sha256": "fb3b1aa7649206456cb4c687c91f7debee8cb6a895e47af8e0017bbbad7887ae"
+          },
+          {
+            "id": "UI-04",
+            "sha256": "9e5dd71b1cfe0294d51d2bf64e472b4513748b9de08fd01d04865bf18b3b4168"
+          },
+          {
+            "id": "UI-05",
+            "sha256": "85aae511a5025e1e962e1bc3eca4241be23e6fe8e2b86f5617c970c4ca7abe13"
+          },
+          {
+            "id": "UI-06",
+            "sha256": "4c969118761766e65d92890d6acd3dc0c007267f2c207c3a1191a7cfdb2e426b"
+          },
+          {
+            "id": "UI-07",
+            "sha256": "6973bc4fb08cbf8b6b777520b31fbcd167970dc21975129deba8f62ca4fd7896"
+          },
+          {
+            "id": "UI-08",
+            "sha256": "f7105197300de23a1d12e75ec75215050302d6627095779d095e709d21faac5d"
+          },
+          {
+            "id": "UI-09",
+            "sha256": "ba083a8a79a3b0e847373dacfee7a7c775f85c352878867fc6598c4789747671"
+          },
+          {
+            "id": "UI-10",
+            "sha256": "af167c0d260fee71f153898c031bfac2da98980ef14239de0dc8ae296cb8f1fe"
+          },
+          {
+            "id": "UI-11",
+            "sha256": "fb73bfb2463d328f2059c2e60126edef07b19995909aa206ca46ad8eebfd217e"
+          },
+          {
+            "id": "UI-12",
+            "sha256": "8a6537aec30caa7a810b2df99d0c14cd4bdc9bd4709deea9c6b340d498f56ba8"
+          }
+        ]
+      },
+      {
+        "path": "evaluation/02_design/optimisation/bounds_analysis.md",
+        "caseIds": [
+          "BND-01",
+          "BND-02",
+          "BND-03",
+          "BND-04",
+          "BND-05",
+          "BND-06",
+          "BND-07",
+          "BND-08",
+          "BND-09",
+          "BND-10",
+          "BND-11",
+          "BND-12",
+          "BND-13",
+          "BND-14",
+          "BND-15",
+          "BND-16",
+          "BND-17"
+        ],
+        "rowCount": 17,
+        "expectedContractHashes": [
+          {
+            "id": "BND-01",
+            "sha256": "b0278673bd459f546c1fb3b0dbef9bb4de6534b7be2b2f75bdcfb6f446d2f3d0"
+          },
+          {
+            "id": "BND-02",
+            "sha256": "bcea01f3f58c9ef6d0aef21bf4722c5f38d70aaa8c20e499393a6495a62512bf"
+          },
+          {
+            "id": "BND-03",
+            "sha256": "d92167f7e45a6e91931c10d19f408406a564aaeb6b5abeca32fd17b5a1a6b646"
+          },
+          {
+            "id": "BND-04",
+            "sha256": "cc44f8ffbe5d40ec2748e627048359cda9dc5bfebf063e89bc103c9712e8cab5"
+          },
+          {
+            "id": "BND-05",
+            "sha256": "08814105bf320825a12b54e981326086572ca33baa4fd9ac926e8b5d28d0b333"
+          },
+          {
+            "id": "BND-06",
+            "sha256": "f3e3b33641ad28f906d9d7bbfb164a5e533d65cd4796c7b763c3bc288739b155"
+          },
+          {
+            "id": "BND-07",
+            "sha256": "034f35883fdfc5190a912957990b045099e0b34d074fc093bf1e43b4aacb3c52"
+          },
+          {
+            "id": "BND-08",
+            "sha256": "fde9bb94ed893917abd4737e9e7ab56064cfbc35256969170cf1b51eefb52e06"
+          },
+          {
+            "id": "BND-09",
+            "sha256": "34f1044fc46a3761cfbfb072ade2c148ea4b7753eb783032fdd0ca80fa647fe2"
+          },
+          {
+            "id": "BND-10",
+            "sha256": "2200c9fb239a52bd622a25a9f4d7343d85324bd05acb3845ef9fc51f4a211303"
+          },
+          {
+            "id": "BND-11",
+            "sha256": "418831178fb69e7e94284c36ed03e89e3a4a2d83f87d00bebcf6af58ac40bfc6"
+          },
+          {
+            "id": "BND-12",
+            "sha256": "476a6086690ce38c79b69ae69244c7552fd95ef56cb322c047d87cf7413f3bf0"
+          },
+          {
+            "id": "BND-13",
+            "sha256": "a4642191408e337477c06aa5e33047cfbf280ccdfa1a396c498fcfed1aede7fc"
+          },
+          {
+            "id": "BND-14",
+            "sha256": "5bfd3df518d1b8a8d41e00dd7bc3a41289a9d5e7cf1a2f40ea1fd51e4cf477b0"
+          },
+          {
+            "id": "BND-15",
+            "sha256": "045017ba9cfb2c62a2736a30a64dd9bd833c89ab85559b5ba92f69169a6f90e7"
+          },
+          {
+            "id": "BND-16",
+            "sha256": "ed8a0cf872443625f135152437b904e2546056ded0613704d4f9722b42def0a9"
+          },
+          {
+            "id": "BND-17",
+            "sha256": "f7a9ad961214513a287098adeec973d1d6a9e75ea55ef46e6df32509aa8cc86a"
+          }
+        ]
+      },
+      {
+        "path": "evaluation/02_design/black_box/black_box_analysis.md",
+        "caseIds": [
+          "BB01",
+          "BB02",
+          "BB03",
+          "BB04",
+          "BB05",
+          "BB06",
+          "BB07",
+          "BB08",
+          "BB09",
+          "BB10",
+          "BB11",
+          "BB12",
+          "BB13",
+          "BB14",
+          "BB15",
+          "BB16",
+          "BB17",
+          "BB18",
+          "BB19",
+          "BB20",
+          "BB21",
+          "BB22",
+          "BB23",
+          "BB24"
+        ],
+        "rowCount": 24,
+        "expectedContractHashes": [
+          {
+            "id": "BB01",
+            "sha256": "777c26f5ded6fc18199ed0fd549e2c27dc0d3adbc6331bafcebbaef9c0416e11"
+          },
+          {
+            "id": "BB02",
+            "sha256": "248810df6c0229905705e1a72164b79ffcb34a0226c9cefa0f27caf62379e615"
+          },
+          {
+            "id": "BB03",
+            "sha256": "099fe2861752c94197963a6800b222a80628d36a497a91594b9b3b566eb3e17f"
+          },
+          {
+            "id": "BB04",
+            "sha256": "6ee1376b7fffb4d8285b387029ba486056134bb695edd7f930b165c9f6a3839b"
+          },
+          {
+            "id": "BB05",
+            "sha256": "f0107287f0c5f8bd7d8a53eea91e92985870621e4e6c99a5e7614f916dac3b4b"
+          },
+          {
+            "id": "BB06",
+            "sha256": "66b8d8453ad6fb8a508edb7fcd92c81d55436c59eb3e4b23c1155f550c43d6e9"
+          },
+          {
+            "id": "BB07",
+            "sha256": "8160c25609aa698f176155dafa4b79c83efdba4a50c0de6acfa99fbf05e8c4c5"
+          },
+          {
+            "id": "BB08",
+            "sha256": "92b2b64a9ed809a8930fb7f68e54c0631b487865e932e8e401c4b09a5a3619c6"
+          },
+          {
+            "id": "BB09",
+            "sha256": "2ed3a9fe3e7478a2cbe93799f176fac9ed883fcae3ebd107b948c31df9512251"
+          },
+          {
+            "id": "BB10",
+            "sha256": "566ec606ff347d93180239ffa390f5d45fa575571cce3a50e8cd84de60959a30"
+          },
+          {
+            "id": "BB11",
+            "sha256": "9458a52ad051a898f4f8f579dff32fa40b8a9ee0caa1ab6542cc0b8d7f6bffee"
+          },
+          {
+            "id": "BB12",
+            "sha256": "e889f2c3309a12816b0de806fbd122e7df5310a953e3f82863defd87a9a44916"
+          },
+          {
+            "id": "BB13",
+            "sha256": "64b25ebd47ade22616eb786c020be1e4928a9e333330db8a8b5bb6f597ccabe6"
+          },
+          {
+            "id": "BB14",
+            "sha256": "69f2bed7391adca0d51012b13d4e382446dfad8b0bcef8f497576ff6eda028e3"
+          },
+          {
+            "id": "BB15",
+            "sha256": "32b59119b31c84a8cee6c14e1948242b94cd511ba343327179d0ba81e0a32715"
+          },
+          {
+            "id": "BB16",
+            "sha256": "955af02583d8641628ebbc6944b2747531c9ecff361e931b3174bc1456cf70b3"
+          },
+          {
+            "id": "BB17",
+            "sha256": "07a0fdb22da3fee919027000b49dd2df99dbe829cd0ca64a2e98bcdae836f5bd"
+          },
+          {
+            "id": "BB18",
+            "sha256": "e9b868af3b911aa55085bfb03902c8ea43f7c55de061c961e4aa0a4c1029f05a"
+          },
+          {
+            "id": "BB19",
+            "sha256": "96ea476ca97304ca1f99bd6cb1bcabde9853fd87b90ab8707c83215a4a8e5965"
+          },
+          {
+            "id": "BB20",
+            "sha256": "6a8ef0dd1d4e85f1b587565f287191afb3342e75ad672d14b6cf27974319ab0f"
+          },
+          {
+            "id": "BB21",
+            "sha256": "8abc152d53bb59d1449d8c922f101b6ceba96be2320401b29c4c419b35819035"
+          },
+          {
+            "id": "BB22",
+            "sha256": "02e0756847028f556ebae1e58de7807e7a3acf945248a851d6833b0445d9cc96"
+          },
+          {
+            "id": "BB23",
+            "sha256": "aa183996aadb54d524d1ec3607e1fbb14378749e66be059976ffb46cf0ee3bfe"
+          },
+          {
+            "id": "BB24",
+            "sha256": "3d80ae072c8d0c93170f6ba0ce92692371a72abd2e75314ef79c73ae8f80922d"
+          }
+        ]
+      },
+      {
+        "path": "evaluation/02_design/white_box/white_box_evaluation.md",
+        "caseIds": [
+          "WB01",
+          "WB02",
+          "WB03",
+          "WB04",
+          "WB05",
+          "WB06"
+        ],
+        "rowCount": 6,
+        "expectedContractHashes": [
+          {
+            "id": "WB01",
+            "sha256": "4a695b9be7d0d87e8c8ddbc15251e33ddee7a5c05353042cef337841ddc23115"
+          },
+          {
+            "id": "WB02",
+            "sha256": "a83543f1ed64009b20a30d54e36561329d86dcf099970bfb15818f4b74a25d6c"
+          },
+          {
+            "id": "WB03",
+            "sha256": "ec0fe6cc29e335841b591af8bc8413595548f940a1197d3e08746627eadb9e25"
+          },
+          {
+            "id": "WB04",
+            "sha256": "669d40dbc4adbca960cf22e46a23b3f66a6a691fdb938c6e40b341fa8678ee81"
+          },
+          {
+            "id": "WB05",
+            "sha256": "86970c8a787a5a6900ee9f7fdee6016ceeb67ec08a26fb443ea4c60eac7ddd6e"
+          },
+          {
+            "id": "WB06",
+            "sha256": "e4b72c7683bc089a0e0e0b25a024fe1c354ffd3f1a05dec8be0ffff621d540d7"
+          }
+        ]
+      },
+      {
+        "path": "evaluation/02_design/usability/usability_inspection.md",
+        "caseIds": [
+          "U1",
+          "U2",
+          "U3",
+          "U4",
+          "U5",
+          "U6",
+          "U7",
+          "U8",
+          "U9"
+        ],
+        "rowCount": 9,
+        "expectedContractHashes": [
+          {
+            "id": "U1",
+            "sha256": "0deff88d1691a095d6c45032a51bf728970e4413372b621554b401b963e2e450"
+          },
+          {
+            "id": "U2",
+            "sha256": "6600e8c2dba5e1d3b111cd31ddb96861004d15f21629fe0cdda816b257af0e24"
+          },
+          {
+            "id": "U3",
+            "sha256": "56df2ed0bf109ceb3405090904f812765b93c95592cc89b7b7608b17a6924cff"
+          },
+          {
+            "id": "U4",
+            "sha256": "e8295af618be90a1d80e8c45febabb3b63fc256b8ee2025cae309114d09aa8c2"
+          },
+          {
+            "id": "U5",
+            "sha256": "7e3b3577f66375089017b4b3ea4d6983c70b606a535cba066f54a5a6858589c6"
+          },
+          {
+            "id": "U6",
+            "sha256": "bc1312e362616f2fcfb08093b490bb501e6993b6e31c74161c3841971166e864"
+          },
+          {
+            "id": "U7",
+            "sha256": "72273c26d93391733ec850093860e7ea773ab9f36a69cb27f6bf4b951de2ce51"
+          },
+          {
+            "id": "U8",
+            "sha256": "8e798790c2595c675a91b62d69aa573b7f2a7d5055617c09650aa78f9cefa03a"
+          },
+          {
+            "id": "U9",
+            "sha256": "bc5fd95f72fce4f30f2fe142babb93d7be775650a7461cf9544946bea5be8e62"
+          }
+        ]
+      },
+      {
+        "path": "evaluation/02_design/simulation/simulation_analysis.md",
+        "caseIds": [
+          "SIM01-A",
+          "SIM01-B",
+          "SIM01-C",
+          "SIM02-A",
+          "SIM02-B",
+          "SIM02-C",
+          "SIM03-A",
+          "SIM03-B",
+          "SIM03-C",
+          "SIM04-A",
+          "SIM04-B",
+          "SIM04-C",
+          "SIM05-A",
+          "SIM05-B",
+          "SIM05-C",
+          "SIM06-A",
+          "SIM06-B",
+          "SIM06-C",
+          "SIM07-A",
+          "SIM07-B",
+          "SIM07-C",
+          "SIM08-A",
+          "SIM08-B",
+          "SIM08-C",
+          "SIM09-A",
+          "SIM09-B",
+          "SIM09-C",
+          "SIM10-A",
+          "SIM10-B",
+          "SIM10-C",
+          "SIM11-A",
+          "SIM11-B",
+          "SIM11-C",
+          "SIM12-A",
+          "SIM12-B",
+          "SIM12-C",
+          "SIM13-A",
+          "SIM13-B",
+          "SIM13-C",
+          "SIM14-A",
+          "SIM14-B",
+          "SIM14-C",
+          "SIM15-A",
+          "SIM15-B",
+          "SIM15-C",
+          "SIM16-A",
+          "SIM16-B",
+          "SIM16-C",
+          "SIM-LANG-01",
+          "SIM-LANG-02",
+          "SIM-LANG-03",
+          "SIM-CM-13",
+          "SIM-CM-14",
+          "SIM-CM-15",
+          "SIM-CM-16"
+        ],
+        "rowCount": 55,
+        "expectedContractHashes": [
+          {
+            "id": "SIM01-A",
+            "sha256": "57de378af3d743fe220125f1920d0d802182ede9ee29fa2681aaa9504390a28f"
+          },
+          {
+            "id": "SIM01-B",
+            "sha256": "a464d23f132cd56def6df1a935a9f4ab158bc3edb1016737645756e55feeb84f"
+          },
+          {
+            "id": "SIM01-C",
+            "sha256": "3e110ab40fe18850cfe60d03996e2ade9f32816bc87d6e0d3440ddcc0723bf15"
+          },
+          {
+            "id": "SIM02-A",
+            "sha256": "14658508a42178e8c7cdd414ba641b8a771763448a1711045256705e642aeadb"
+          },
+          {
+            "id": "SIM02-B",
+            "sha256": "1b2ea0bdee12bf24d7a0bf6a1c7cd4ae78ea927d9a786d870d73e6ca5c6187c1"
+          },
+          {
+            "id": "SIM02-C",
+            "sha256": "9ebf9876af161f4ef7884b209d5a9b6014a6f0f11b20022a4b6f7201379861cc"
+          },
+          {
+            "id": "SIM03-A",
+            "sha256": "37a55df2f56ef5cc97755af1a100b4bd1bd9798b3e37acf680d7e68559de4e50"
+          },
+          {
+            "id": "SIM03-B",
+            "sha256": "93b9d2ba023b35711b8e11086415ecb8398c9df1202bc1571f9bb624d6e4bcb0"
+          },
+          {
+            "id": "SIM03-C",
+            "sha256": "68177ab39b2166fdf6bbe82e69fba7b17fdc2ddd2855770d6b6810a8af2481d3"
+          },
+          {
+            "id": "SIM04-A",
+            "sha256": "afda6ff2d8ed525f840085d3eb655dfd201c83147ad352d22d9249b918ebea4e"
+          },
+          {
+            "id": "SIM04-B",
+            "sha256": "a2a14ff19d99628e6b0ddec4441a4cfb15ac3c90a5b084ce8048af56cb1ef64b"
+          },
+          {
+            "id": "SIM04-C",
+            "sha256": "468d9b4cb3946e49eeda3b8eb656f7f52a5eced1f93d6c933925e9ff58651cc6"
+          },
+          {
+            "id": "SIM05-A",
+            "sha256": "6b9a96d83a3be63574e5014183379b1a12cc4141a09a5eea018e2f5f729c3d95"
+          },
+          {
+            "id": "SIM05-B",
+            "sha256": "ece9637e956aa263773e740b28e677e4088b2322211c6a985c4bf814911fed12"
+          },
+          {
+            "id": "SIM05-C",
+            "sha256": "25ab01b1ce79a09419ca62b74fd284add0befce2bf4334545b8de344e362df85"
+          },
+          {
+            "id": "SIM06-A",
+            "sha256": "1b76b1bb823fc0ee1ad1971cb32eb264f035f829ca3ea3bb37643dbaa2b8d35a"
+          },
+          {
+            "id": "SIM06-B",
+            "sha256": "08c1f047717b33db482dc599bd78b650acd1eefe5a0029d1eb744625848a59a8"
+          },
+          {
+            "id": "SIM06-C",
+            "sha256": "450351afa90847d9cac7754a1497ce5497b4d3a735c4eb1a8101e525af6ce15f"
+          },
+          {
+            "id": "SIM07-A",
+            "sha256": "3d8c940d900cc0fbc8eefecc89eb30901e6420c86a75275bbfb1c2da9f1af781"
+          },
+          {
+            "id": "SIM07-B",
+            "sha256": "98802177d2a4c5c54dc13d65083910368ff9633705e21dad022832726b0213b9"
+          },
+          {
+            "id": "SIM07-C",
+            "sha256": "8d3beb8f8299529117530b5030e92a3e844481de17368d1cf44bc4e9c8569a2c"
+          },
+          {
+            "id": "SIM08-A",
+            "sha256": "1a52d6756a8aa99b202d027cc80d90847643efc0d97f2bf68e1c2c83cbfe9c04"
+          },
+          {
+            "id": "SIM08-B",
+            "sha256": "bbc10fed9fed6463ceee36aa3b23c2f18860542105e203d7718e8d5c6e6292e3"
+          },
+          {
+            "id": "SIM08-C",
+            "sha256": "e1ac37878b39af69444429eb9d8cbcf66c234a415d5bfbf5d0fa4b12da2c7ab5"
+          },
+          {
+            "id": "SIM09-A",
+            "sha256": "fc2073320f4705bb8e8032f23060b02688a19f170e7dcb9d995c0867832b2663"
+          },
+          {
+            "id": "SIM09-B",
+            "sha256": "058a6c00ed1f22faa2c5f87815fa50b2b356eae371c6837240cb8fed60151a31"
+          },
+          {
+            "id": "SIM09-C",
+            "sha256": "21db034a857d6ce601891300007f847d9dd54f71ac71a334dcc73908c01887ad"
+          },
+          {
+            "id": "SIM10-A",
+            "sha256": "fc4c4861da97d089e6b3eb16adb4a039c47cd6fa40c63849723db14796dfe842"
+          },
+          {
+            "id": "SIM10-B",
+            "sha256": "43116e850b6fcfab1ff41c83c42aa617018c64c6902cbf50ca2a76be59f4ab1e"
+          },
+          {
+            "id": "SIM10-C",
+            "sha256": "85aa9d45aa4816be1a1612b7f5df113d829a236baaf052d55cf89e18083d039c"
+          },
+          {
+            "id": "SIM11-A",
+            "sha256": "f4ac92b12e109076ed43d1e483a061e3ea89eee22beb3eb43f006cf2f0013fd9"
+          },
+          {
+            "id": "SIM11-B",
+            "sha256": "ec2a4390c394a00e5889b7e297605254c15316440eb6662d0850e1fd20d9e8f0"
+          },
+          {
+            "id": "SIM11-C",
+            "sha256": "90db25da89412c1e460246bdd5da09256716df1f80119e4ca10b6effea856b43"
+          },
+          {
+            "id": "SIM12-A",
+            "sha256": "98602a775382b6469b52dc9e80ba2b551449c0be96a00963f8e7ed65183e34cb"
+          },
+          {
+            "id": "SIM12-B",
+            "sha256": "3a3ffe66c030a7b1e89e92678c78338bf96e7adde00edfd0b050036f80eff6b1"
+          },
+          {
+            "id": "SIM12-C",
+            "sha256": "4545258d37b1c07b2a5c55a67bd3823f5b0fe9981db55312f5b4e4494bda820d"
+          },
+          {
+            "id": "SIM13-A",
+            "sha256": "86565949353ab7b3935d3e7edde96b6cac31d652e62b620754779dcc3b20de9d"
+          },
+          {
+            "id": "SIM13-B",
+            "sha256": "9f06af6740119afd358ff5303f342477d4f59dd3179ffc30660e02029a88e949"
+          },
+          {
+            "id": "SIM13-C",
+            "sha256": "4d4823ce8cc74f885e37476a4829a9b8db23aef0f1a10bc884194b193c1672db"
+          },
+          {
+            "id": "SIM14-A",
+            "sha256": "5acab7239f314bf4b632bb5b4a4a9c7d856713414f0d077a3ef6814d484d969f"
+          },
+          {
+            "id": "SIM14-B",
+            "sha256": "21ddb13c0dadfe2a11a80697e708580483e52ecc715ddcf3ade73ab341ed15d8"
+          },
+          {
+            "id": "SIM14-C",
+            "sha256": "3e65b922445ea12a3ce5be2c5212eff35795a33ff8a7249d96c176db013312ba"
+          },
+          {
+            "id": "SIM15-A",
+            "sha256": "9330d82d1b2499386378374b56df4c0e46c74cd0b98cb424e958ba591f2f9eb0"
+          },
+          {
+            "id": "SIM15-B",
+            "sha256": "f225636023ef211100936cafb67c7ddfe19053583581a38587b76080237f6887"
+          },
+          {
+            "id": "SIM15-C",
+            "sha256": "796c896ebb748e6c5e08b93a159519f12eeb50d4ad33270c0bd912259174e58e"
+          },
+          {
+            "id": "SIM16-A",
+            "sha256": "85b383cdae56b24ceb2d8076298f1377cdcb9281e1c2d90ba04bd1beecbee55b"
+          },
+          {
+            "id": "SIM16-B",
+            "sha256": "5ac1c03cba2764f19635429d98ec4b71926941a5bfb38eef5b4f911e01dda3eb"
+          },
+          {
+            "id": "SIM16-C",
+            "sha256": "7629b0cbcb96580800c09da5f509ffa134d33dd06010b8eca0af4b47141d8732"
+          },
+          {
+            "id": "SIM-LANG-01",
+            "sha256": "9a26ec3cb3f0f25e12f6fce0a3ebdf597cbce12c354b909e7ff2d301ea96cf66"
+          },
+          {
+            "id": "SIM-LANG-02",
+            "sha256": "a3cf6ad09e851692c53b30da74bee76be97607889088da47a56c8ff9f23ff24a"
+          },
+          {
+            "id": "SIM-LANG-03",
+            "sha256": "d9c8f29d725292189135cdb2bbf5df93adaad0a2350620c985b2f020333bbf44"
+          },
+          {
+            "id": "SIM-CM-13",
+            "sha256": "a8cd3b1eee0a828ec054e48b84718993c8c438c23c2e6c993d6e27464eee593c"
+          },
+          {
+            "id": "SIM-CM-14",
+            "sha256": "209d8107c9b4f3a379c0ab2e304dac5bff5d75c30e89607f5e6a7a0965f38549"
+          },
+          {
+            "id": "SIM-CM-15",
+            "sha256": "af0dc507452418db77d0afd2c3e7bafc95a79ef8d1ffa4ca829316f6056f1017"
+          },
+          {
+            "id": "SIM-CM-16",
+            "sha256": "c75d546bc57df8e743e78b8a991eb33e174b02398e01cd7a0668957036e59630"
+          }
+        ]
+      },
+      {
+        "path": "evaluation/02_design/scenario/photosynthesis_scenario.md",
+        "caseIds": [
+          "A / SCN-A",
+          "B / SCN-B",
+          "C / SCN-C",
+          "D / SCN-D",
+          "E / SCN-E",
+          "Cap UI observation",
+          "SCN-CAP-API-01",
+          "F / SCN-F",
+          "SCN-FADE-API-01",
+          "G / SCN-G",
+          "H / SCN-H",
+          "I / SCN-I",
+          "J / SCN-J",
+          "SCN-COMPLETED-API-01"
+        ],
+        "rowCount": 14,
+        "expectedContractHashes": [
+          {
+            "id": "A / SCN-A",
+            "sha256": "9393d7d7a69785e33ec50f7de95e7f42f8d295014d0c2aca8b7799763f0328b2"
+          },
+          {
+            "id": "B / SCN-B",
+            "sha256": "f52b7abb0288e83a9584930022e6c72d4b77f80390648094cc75f324c17fbd4a"
+          },
+          {
+            "id": "C / SCN-C",
+            "sha256": "4d7ef17eaa65dd15eb4e5c028b0935d73ff225fc1ddf97026e075e75960ac593"
+          },
+          {
+            "id": "D / SCN-D",
+            "sha256": "648d8c906aae2f9e46193d34c0c407f3c7038d9b5c4b06c626fec32d3c11442e"
+          },
+          {
+            "id": "E / SCN-E",
+            "sha256": "67aef0eafc3b409c128257e3a4f0cef81fe2d23103bd74221afd9b280ca2634f"
+          },
+          {
+            "id": "Cap UI observation",
+            "sha256": "f1ea39cdd4f371d9c0b58ef4eb91b6d2d1001df4937ec5abcf5021990c0beb37"
+          },
+          {
+            "id": "SCN-CAP-API-01",
+            "sha256": "82b2061ae525ced6bd8c09fb1e8d1f27bd6f749d196d10ad786f1fba34dacfd0"
+          },
+          {
+            "id": "F / SCN-F",
+            "sha256": "6d737612027e31b5d5ccac718a3076e9b4da99f7cbc0d70bd783d05ed6036a90"
+          },
+          {
+            "id": "SCN-FADE-API-01",
+            "sha256": "99dbaf0d2ed24291efc99eee023f520a14b215ddc8d980636bc884bbc57dfc53"
+          },
+          {
+            "id": "G / SCN-G",
+            "sha256": "0159ce0ddae577c9fca689501751e19b3b93a508e69662d5f13adcec104efae2"
+          },
+          {
+            "id": "H / SCN-H",
+            "sha256": "56d4a593bfbe1db57b92736f3ab24858458ac8e2b8b6c4b31ff72ecbda298199"
+          },
+          {
+            "id": "I / SCN-I",
+            "sha256": "d89ca590605fd09e676e7bc408107c2170df270a1823eb18093b53e182210874"
+          },
+          {
+            "id": "J / SCN-J",
+            "sha256": "dea0f86fe24bb03f3a996d3c090d5d0ef59b0b279bb8ed6d950e4b38d72c61ec"
+          },
+          {
+            "id": "SCN-COMPLETED-API-01",
+            "sha256": "0349b3a8dedd289f95a5973639e6beb234c0b587d97e69bb33a6e3ead8aac292"
+          }
+        ]
+      }
+    ],
+    "ratingsChanged": false,
+    "evaluationsRerun": false
   }
 }
