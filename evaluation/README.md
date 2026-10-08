@@ -1,6 +1,6 @@
 # Evaluation guide
 
-Start here. Each method has one main Markdown report. System test reports use one integrated case table with action, conditions/inputs, expected result, actual result, outcome, qualification and observation notes/evidence. Exact outputs, screenshots, scholarly warrants and raw records remain supporting evidence. The full GenAI interview and all 55 simulation case records are available inside their reports. Repetition is reduced without replacing substantive evidence with summaries. Exact historical documents also remain archived. Logs, screenshots, CSV/JSON scores, execution scripts, coverage reports and historical manifests remain separate evidence rather than additional reading requirements.
+Start here. Each method has one main Markdown report. System test reports use one integrated case table with action, conditions/inputs, expected result, actual result, outcome, limitation and observation notes/evidence. Exact outputs, screenshots, scholarly warrants and raw records remain supporting evidence. The full GenAI interview and all 55 simulation case records are available inside their reports. Repetition is reduced without replacing substantive evidence with summaries. Exact historical documents also remain archived. Logs, screenshots, CSV/JSON scores, execution scripts, coverage reports and historical manifests remain separate evidence rather than additional reading requirements.
 
 ## Reading order
 

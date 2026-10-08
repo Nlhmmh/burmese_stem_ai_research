@@ -10,9 +10,9 @@ The assessed register is **21 Pass, two Partial and one Fail** across BB01–BB2
 
 ## Case register
 
-Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and qualifications are retained from the evidence; this layout change is not a new test run.
+Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and limitations are retained from the evidence; this layout change is not a new test run.
 
-| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Qualification | Observation notes / evidence |
+| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Limitation | Observation notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | BB01 | Valid STEM inquiry | Precondition: Owner A, bilingual/beginner/guided preferences; controlled ready provider output or recorded live provider.<br>Input: `What is photosynthesis, and how do plants make food?` | Expected: HTTP 201; one retrievable session; correct ID linkage; `in_progress`, round 0, understanding null; concept/domain and structured support present; no adaptation/event/follow-up yet. | 201 creation, structured bilingual content, round-zero state and retrieval passed with controlled ready output. | Pass | Public-boundary fixture result; does not establish live scientific or Burmese quality. | Execution: Executed. Mapping: F1–F4, F9; REQ-01–03/RQ1–RQ3.. E024–E027; first attempts and rechecks retained. |
 | BB02 | Empty, whitespace, malformed, and missing inquiry | Inputs: `{ "question": "" }`, whitespace, missing `question`, non-string, malformed JSON. | Expected: HTTP 400 `INVALID_SESSION_REQUEST`; no provider call/session creation or database mutation. | All five invalid/malformed inquiry variants returned safe 400 without writes/provider-seam calls. | Pass | Public-boundary fixture result; does not establish live scientific or Burmese quality. | Execution: Executed. Mapping: F1, F13; U8.. E024–E027; first attempts and rechecks retained. |

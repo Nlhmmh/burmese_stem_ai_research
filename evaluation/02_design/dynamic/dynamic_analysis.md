@@ -8,9 +8,9 @@ RUN-B01-20261001-DYNAMIC-01 used the real local B01 application, live provider a
 
 ## Case register
 
-Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and qualifications are retained from the evidence; this layout change is not a new test run.
+Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and limitations are retained from the evidence; this layout change is not a new test run.
 
-| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Qualification | Observation notes / evidence |
+| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Limitation | Observation notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | DYN-01 | Application and dependency readiness<br>Start the B01 application and dedicated database, open Home, and call the health/root API. | B01 source, isolated MongoDB and configured live provider; application readiness precedes session creation. | Application responds; database connection succeeds on first stateful operation; actual ports and configuration are recorded; no secret is captured in evidence. | API/DB readiness and rendered Home controls | Pass | Desktop Chrome, English, Light scope | enabling technical evidence; F13.<br>E004–E009; browser addendum E010–E013. |
 | DYN-02 | Initial live session creation<br> | Precondition: `DYN-OWNER-A` has bilingual/beginner/guided preferences.<br>Input: `What is photosynthesis, and how do plants make food?` | One initial provider request produces HTTP 201; visible and stored session IDs match; concept/domain and all Stage 4/5 fields are present; status is `in_progress`, round is 0, understanding is null, and refined collections start empty. | Live HTTP 201, stored round-0 state and structured Osmosis UI | Pass | Initial support structure/state observed in one local workflow; content quality is assessed separately. | F1–F4, F9, F12; RQ1–RQ3.<br>E004–E009; browser addendum E010–E013.<br>Recorded observation: UI/state agreement observed |

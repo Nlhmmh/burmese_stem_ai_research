@@ -8,9 +8,9 @@ RUN-B01-20261001-BOUNDS-01 used B01, a real isolated MongoDB 8.2.6 database and 
 
 ## Case register
 
-Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and qualifications are retained from the evidence; this layout change is not a new test run.
+Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and limitations are retained from the evidence; this layout change is not a new test run.
 
-| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Qualification | Observation notes / evidence |
+| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Limitation | Observation notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | BND-01 | Initial state<br>Create a valid session. | No learning session yet; create an owned valid session using the controlled fixture.<br>Real isolated MongoDB; deterministic provider/call instrumentation. | round 0; zero adaptations/events; `in_progress`; understanding null. | round 0; 0 adaptations; 0 events; `in_progress`; null self-report<br>Provider calls during action: 0; persistence: Creation only. | Pass | Engineering/state boundary only, not educational optimality. | Create session<br>E014–E017; before/after round, status, support and collection counts retained in raw instrumentation. |
 | BND-02 | First generated adaptation<br>At round 0, send Medium with no Stage 6B choice. | Owned session at round 0, in_progress.<br>Real isolated MongoDB; deterministic provider/call instrumentation. | route `stage_5_scaffold`/`another_example`; one provider call; event 0→1; one adaptation at round 1; stored round 1; `in_progress`. | round 0→1; adaptations 0→1; events 0→1; `in_progress`<br>Provider calls during action: 1; persistence: 1 response write, succeeded. | Pass | Engineering/state boundary only, not educational optimality. | Medium/default at round 0<br>E014–E017; before/after round, status, support and collection counts retained in raw instrumentation. |

@@ -10,9 +10,9 @@ Desktop 1440 × 900 and simulated mobile 390 × 844, English/Burmese UI and ligh
 
 ## Case register
 
-Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and qualifications are retained from the evidence; this layout change is not a new test run.
+Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and limitations are retained from the evidence; this layout change is not a new test run.
 
-| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Qualification | Observation notes / evidence |
+| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Limitation | Observation notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | U1 | Task clarity — Home and keyboard inspection | B01 root build; fixture provider; desktop/mobile, English/Burmese, light/dark. Later states use selected configurations; shared capture matrix gives actual reach. | Inquiry purpose and entry evident | Purpose, labelled inquiry, empty/whitespace prevention, keyboard submission and recoverable entry inspected on both widths/locales. D01/D07–D09/M24–M27/C-H. | Pass | Highest severity 0. Structured evaluator inspection, not participant feedback. | No case-specific issue recorded. E036–E038; observation and screenshot locators are included in Actual result. |
 | U2 | Visual structure — Organisation of initial, revised and follow-up support | B01 root build; fixture provider; desktop/mobile, English/Burmese, light/dark. Later states use selected configurations; shared capture matrix gives actual reach. | Explanation areas and hint distinguishable | Simple/example/technical/reflection/hint, adaptation history and follow-up answers remain distinguishable on both widths. D10–D11/D18/M03–M04/M17/F02–F04. | Pass | Highest severity 0. Structured evaluator inspection, not participant feedback. | No case-specific issue recorded. E036–E038; observation and screenshot locators are included in Actual result. |

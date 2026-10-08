@@ -30,9 +30,9 @@ optimality.
 
 ## Case register
 
-Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and qualifications are retained from the evidence; this layout change is not a new test run.
+Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and limitations are retained from the evidence; this layout change is not a new test run.
 
-| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Qualification | Observation notes / evidence |
+| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Limitation | Observation notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | STA-01 | ESLint<br>`npm run lint` | B01 source and locked dependencies.<br>Working directory: `burmese_stem_ai/` | Exit code 0; no blocking ESLint errors | Exit 0; ESLint produced no blocking diagnostics | Pass | Scoped to the stated structural assertion. | Mapping: F13; enabling technical evidence. Evidence: E001. Capture required: Complete stdout/stderr, command, start/end, exit code. |
 | STA-02 | Deterministic unit/component/API suite<br>`npm test` | B01 source and locked dependencies.<br>Working directory: `burmese_stem_ai/` | Exit code 0; all discovered `tests/unit/**/*.test.{ts,tsx}` cases pass; exact file/test counts retained | Exit 0; 23 files and 208 tests passed | Pass | Scoped to the stated structural assertion. | Mapping: F1–F13 as asserted by individual tests; structural evidence only. Evidence: E001. Capture required: Complete Vitest log and test-source commit. |

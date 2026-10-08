@@ -81,9 +81,9 @@ application input, output, storage or production source was changed to pass.
 
 ## Case register
 
-Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and qualifications are retained from the evidence; this layout change is not a new test run.
+Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and limitations are retained from the evidence; this layout change is not a new test run.
 
-| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Qualification | Observation notes / evidence |
+| Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Limitation | Observation notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | A / SCN-A | Save content-support preferences. | Fresh synthetic learner; configure Burmese with useful English term retention, beginner explanation and guided learning. | Save Burmese support with useful English retention, beginner explanation and full preferences | `Burmese + English Terms`, Beginner, Guided inspected in SCN-A01; HTTP 2 PATCH 200. Session snapshot and final profile match exactly | Technical Pass | Single live scenario, not every route/domain or participant effectiveness. | E042–E044; source screenshot/HTTP locators retained in Actual result. |
 | B / SCN-B | Submit the fixed photosynthesis inquiry. | Preferences saved in SCN-A; no learning session yet. Exact input: `What is photosynthesis, and how do plants make food?`. | Submit unchanged inquiry; identify concept/context with one generation | Exact input: `What is photosynthesis, and how do plants make food?`; HTTP 3 POST 201; `photosynthesis` / `plant biology`; one live call; fresh round 0<br>State/call trace: 3 initial: round 0; events 0; adaptations 0; stored follow-ups 0; status in_progress; action provider calls 1. | Technical Pass; SCN-B01/B02/C01 | Single live scenario, not every route/domain or participant effectiveness. | E042–E044; source screenshot/HTTP locators retained in Actual result. |
