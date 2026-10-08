@@ -1,5 +1,9 @@
 # Evaluating Adaptive LLM Scaffolding for Burmese-Speaking STEM Learners
 
+**Nay Lin Htet**
+
+¹ Master of Information Technology Student, Faculty of Science, University of Auckland
+
 ## Abstract
 
 Burmese-speaking STEM learners may require contextual support for English terminology and unfamiliar concepts. A Context-Aware Adaptive STEM Scaffolding Framework and a bilingual large language model application were evaluated through complementary conceptual and design methods. Conceptual evaluation combined GenAI critique, literature analysis, informed argument and a photosynthesis scenario. Design evaluation comprised functionality and usability assessment, static and dynamic analysis, bounds analysis, simulation, black-box and white-box testing, literature comparison and a live scenario. Application-controlled routing, response persistence and session continuity were supported under tested conditions. Among 91 delivered outputs, 18 were rated pass, 71 partial and two fail. Supplementary assessment of 32 saved outputs identified bilingual errors without revising these ratings. Six usability criteria were rated pass and three partial. The contribution is an evaluated integration of terminology support, structured conceptual explanation and bounded, learner-responsive assistance. Educational effectiveness and the pedagogical suitability of support levels and the two-adaptation limit were not established.
@@ -17,13 +21,13 @@ Burmese-speaking STEM learners may require contextual support for English termin
 
 Burmese-speaking STEM learners may need English STEM terms and unfamiliar concepts explained in context, rather than translated word for word. An approach combining terminology support, conceptual explanation and help based on learner responses was evaluated. The proposed support was assessed, but how often learners experience these difficulties and how serious they are were not measured. Three research questions guided the evaluation.
 
-1. RQ1 — How can specialised English STEM terminology be supported for Burmese-speaking learners?
+1. RQ1 — How can specialized English STEM terminology be supported for Burmese-speaking learners?
 2. RQ2 — How can LLM-based support help learners understand STEM concepts beyond translation?
 3. RQ3 — How can LLM-based scaffolding provide structured and adaptive support for Burmese-speaking STEM learners?
 
 Two artefacts were examined. Seven support responsibilities are defined in the Context-Aware Adaptive STEM Scaffolding Framework and implemented in a bilingual large language model (LLM) proof-of-concept application. Learners enter a STEM inquiry, receive structured support, report their support need and can request a revision within a fixed limit. Responses and support history are stored for later review.
 
-Conceptual evaluation included GenAI critique, literature analysis, informed argument and a photosynthesis scenario. Design evaluation included criteria-based inspection, static and dynamic analysis, bounds analysis, simulation, black-box and white-box testing, literature comparison and a fresh scenario. Methods were selected from the analytical, experimental, testing and descriptive categories of Hevner et al. (2004). [Venable et al. (2016)](https://doi.org/10.1057/ejis.2014.36) distinguish evaluation in controlled settings from evaluation in real use. Most activities used controlled tests, scripted inquiries or structured inspection. Behaviour was assessed under these conditions, but usefulness during everyday study was not established. No participant learning experiment or independent expert interview was conducted.
+Conceptual evaluation included GenAI critique, literature analysis, informed argument and a photosynthesis scenario. Design evaluation included criteria-based inspection, static and dynamic analysis, bounds analysis, simulation, black-box and white-box testing, literature comparison and a fresh scenario. Methods were selected from the analytical, experimental, testing and descriptive categories of Hevner et al. (2004). [Venable et al. (2016)](https://doi.org/10.1057/ejis.2014.36) distinguish evaluation in controlled settings from evaluation in real use. Most activities used controlled tests, scripted inquiries or structured inspection. Behavior was assessed under these conditions, but usefulness during everyday study was not established. No participant learning experiment or independent expert interview was conducted.
 
 ## 2. Conceptual Artefact Evaluation
 
@@ -33,13 +37,13 @@ The framework's responsibilities and design rationale were examined through four
 
 Seven responsibilities are coordinated in the framework. These are identifying STEM terminology, interpreting technical context, selecting language support, explaining core meaning, providing scaffolding, collecting learner responses and adapting support. Together, they address the three research questions. Figure 1 shows the original framework before its feedback decisions were clarified using evaluation findings. In the refined design, language support, core meaning or intended context can be reconsidered without adding an eighth stage. The stages represent design responsibilities, not seven separate model calls.
 
-![Original seven-stage Context-Aware Adaptive STEM Scaffolding Framework](../03_results/paper_assets/figure_1_framework.png)
-
 **Figure 1. Context-Aware Adaptive STEM Scaffolding Framework before refinement.**
+
+![Original seven-stage Context-Aware Adaptive STEM Scaffolding Framework](../03_results/paper_assets/figure_1_framework.png)
 
 *Note.* The original framework is shown unchanged. Later refinements allow language support, core explanations and intended meaning to be revisited within fixed limits. These additional routes are not shown in the diagram.
 
-Five criteria were used to assess whether the requirements were addressed and the educational rationale was reasonable (Table 1). Coverage of support responsibilities, relationships between stages, consistency with theory and literature, and use in a scenario were examined. Each method provided evidence within its own limits. Requirement coverage means that necessary support responsibilities are included. It does not mean that exactly seven stages are the only valid design.
+Five criteria were used to assess whether the requirements were addressed, and the educational rationale was reasonable (Table 1). Coverage of support responsibilities, relationships between stages, consistency with theory and literature, and use in a scenario were examined. Each method provided evidence within its own limits. Requirement coverage means that necessary support responsibilities are included. It does not mean that exactly seven stages are the only valid design.
 
 **Table 1. Conceptual Evaluation Criteria and Methods**
 
@@ -47,7 +51,7 @@ Five criteria were used to assess whether the requirements were addressed and th
 | --- | --- | --- |
 | C1 — Requirement coverage | Does the framework assign responsibilities for terminology, explanation and adaptive assistance? | GenAI critique, literature analysis, informed argument, conceptual scenario |
 | C2 — Logical coherence | Are stage relationships, feedback decisions and limited revisiting of earlier stages reasonable? | GenAI critique, informed argument, conceptual scenario |
-| C3 — Theoretical consistency | Are task needs, responsive support, gradual withdrawal and self-report limits recognised? | Literature analysis, informed argument, GenAI critique |
+| C3 — Theoretical consistency | Are task needs, responsive support, gradual withdrawal and self-report limits recognized? | Literature analysis, informed argument, GenAI critique |
 | C4 — Literature consistency | Are relevant studies, limits of applying their findings here and unsupported assumptions identified? | Literature analysis, informed argument, GenAI critique as supplementary challenge |
 | C5 — Scenario applicability | Can the seven stages be applied meaningfully to a learning situation? | Conceptual scenario, informed argument |
 
@@ -57,9 +61,9 @@ Five criteria were used to assess whether the requirements were addressed and th
 
 Nine fixed questions were asked in a fresh Temporary Chat without browsing. GPT-5.6 Sol with High reasoning was displayed in the interface, but the provider version was not independently verified. The persona of a critical evaluator of a conceptual artefact in information systems research was assigned through the context prompt. Strengths and weaknesses were to be identified, evidence separated from judgements and assumptions, and the supplied artefact assessed before redesigns were suggested. The framework, requirements, theories and photosynthesis scenario were supplied as text. The original framework, not later refinements, was assessed. Responses and their analysis were retained separately.
 
-Responses were grouped as support, concern, missing element, unsupported assumption, suggested improvement or out of scope, then linked to the conceptual criteria. Requirement coverage and support beyond translation were recognised. Risks in self-report, interpretation, explanation quality and adaptation decisions were also identified. Core explanation and additional assistance were distinguished, helping clarify their roles. Suggestions were compared with literature, informed argument and scenario findings before acceptance. The original judgements are retained in Table 2. Confident wording was not treated as proof. The interview challenged assumptions but did not provide expert testimony or evidence of learner benefit.
+Responses were grouped as support, concern, missing element, unsupported assumption, suggested improvement or out of scope, then linked to the conceptual criteria. Requirement coverage and support beyond translation were recognized. Risks in self-report, interpretation, explanation quality and adaptation decisions were also identified. Core explanation and additional assistance were distinguished, helping clarify their roles. Suggestions were compared with literature, informed argument and scenario findings before acceptance. The original judgements are retained in Table 2. Confident wording was not treated as proof. The interview challenged assumptions but did not provide expert testimony or evidence of learner benefit.
 
-Interview scope and principal findings are summarised in Table H1.
+Interview scope and principal findings are summarized in Table H1.
 
 ### 2.3 Academic Literature Evaluation
 
@@ -69,13 +73,13 @@ Native-language technical help has been studied in Sinhala programming education
 
 Responsibilities for context, language and assistance were supported by these comparisons, but the exact stages, routes and two-round policy were not validated. Some comparisons used secondary summaries rather than original studies. Those comparisons were therefore not independent checks of the original research. Differences in language, learners and setting also limit how far the findings can be applied here.
 
-The conceptual literature comparison is summarised in Table H1.
+The conceptual literature comparison is summarized in Table H1.
 
 ### 2.4 Informed Argument
 
 Informed argument was applied to the original seven-stage framework shown in Figure 1, before refinement. Each responsibility and its relationships were examined for usefulness, consequences of removal and remaining objections. Scholarly sources were used, following descriptive evaluation in information systems research ([Hevner et al., 2004](https://doi.org/10.2307/25148625), p. 86, Table 2). Later application routes and limits were not treated as features of the original framework.
 
-Whether technology suits its intended tasks should be considered ([Goodhue & Thompson, 1995](https://doi.org/10.2307/249689)). This supports task-focused terminology, explanation and assistance, but task–technology fit was not measured. The wrong concept could be explained without term and context interpretation. Domain terminology requires attention ([Tran et al., 2023](https://arxiv.org/abs/2301.06767v1)), although context can also help determine a term's meaning. The one-way link in the diagram may therefore be insufficient in ambiguous cases. Selected English terms can be useful in scientific translation ([Kleidermacher & Zou, 2026](https://doi.org/10.18653/v1/2026.findings-eacl.204)), but their retention needs a clear rationale. Without conceptual explanation, examples may not communicate the underlying meaning. Structured support has an instructional rationale in considering cognitive demands ([Sweller, 1988](https://doi.org/10.1207/s15516709cog1202_4)), but cognitive load was not measured. Fluent generated content is not necessarily reliable ([Ji et al., 2024](https://arxiv.org/abs/2202.03629v7)).
+Whether technology suits its intended tasks should be considered ([Goodhue & Thompson, 1995](https://doi.org/10.2307/249689)). This supports task-focused terminology, explanation and assistance, but task–technology fit was not measured. The wrong concept could be explained without term and context interpretation. Domain terminology requires attention , although context can also help determine a term's meaning. The one-way link in the diagram may therefore be insufficient in ambiguous cases. Selected English terms can be useful in scientific translation ([Kleidermacher & Zou, 2026](https://doi.org/10.18653/v1/2026.findings-eacl.204)), but their retention needs a clear rationale. Without conceptual explanation, examples may not communicate the underlying meaning. Structured support has an instructional rationale in considering cognitive demands ([Sweller, 1988](https://doi.org/10.1207/s15516709cog1202_4)), but cognitive load was not measured. Fluent generated content is not necessarily reliable ([Ji et al., 2023](https://doi.org/10.1145/3571730)).
 
 Support adjusted to learner need, gradual withdrawal and transfer of responsibility are central to scaffolding ([van de Pol et al., 2010](https://doi.org/10.1007/s10648-010-9127-6)). Examples and hints alone do not establish these qualities. The response-to-adaptation link provides a basis for revising scaffolding, but the choice of adaptation is not explained in the original diagram. Self-reported understanding may also be inaccurate ([Dunlosky & Rawson, 2012](https://doi.org/10.1016/j.learninstruc.2011.08.003)). Feedback would be lost if response collection or adaptation were removed, but appropriate support and fading are not established by the loop alone. Term identification and conceptual explanation were rated conceptually justified. The other five responsibilities were justified with qualification. Clearer explanation/scaffolding roles, language-selection principles and adaptation decisions were therefore needed.
 
@@ -105,7 +109,7 @@ Original method judgements and the combined conclusions are separated in Table 2
 | Conceptual photosynthesis scenario | All seven responsibilities illustrated. Core meaning distinguished from scaffolding. Self-report choices, another example and a repeated check illustrated feedback | Reasons for retained English terms and the response triggering adaptation unspecified. Appropriate matching of support to learner need not established | RQ1 — terms/context/language, RQ2 — explanation/scaffolding, RQ3 — response/adaptation relationships |
 | Current synthesis | Responsibility coverage (C1) fully supported. Stage relationships, theory, literature and scenario applicability (C2–C5) partially supported | Combines four methods, not an additional independent evaluation. Improved learning not demonstrated | RQ1–RQ3 — responsibility coverage supported, coherence, theory, literature and scenario support qualified |
 
-*Note.* “fully supported” means the criterion was supported within the evaluation's scope. “partially supported” means support was found, but important gaps remain. Neither rating demonstrates educational effectiveness. Each method's rating scale is retained, not averaged. The interview's fourth criterion concerned scope and limits rather than literature consistency, so those judgements are kept separate.
+*Note.* “Fully supported” means the criterion was supported within the evaluation's scope. “Partially supported” means support was found, but important gaps remain. Neither rating demonstrates educational effectiveness. Each method's rating scale is retained, not averaged. The interview's fourth criterion concerned scope and limits rather than literature consistency, so those judgements are kept separate.
 
 ## 3. Design Artefact Evaluation
 
@@ -119,7 +123,7 @@ Production code was kept unchanged. Local evaluation used macOS 26.6.2, Node.js 
 
 ### 3.1 FURPS Criteria and Usability Inspection
 
-FURPS covers functionality, usability, reliability, performance and supportability. Thirteen functionality and nine usability criteria were assessed (Table 3), without separate grades for other dimensions. Expectations were defined before testing. Technical behaviour and content quality were rated separately. Scientific correctness, context, language, explanation and adaptation were examined, not output structure alone.
+FURPS covers functionality, usability, reliability, performance and supportability. Thirteen functionality and nine usability criteria were assessed (Table 3), without separate grades for other dimensions. Expectations were defined before testing. Technical behavior and content quality were rated separately. Scientific correctness, context, language, explanation and adaptation were examined, not output structure alone.
 
 Desktop/simulated mobile layouts, English/Burmese interfaces, light/dark themes and keyboard interaction were inspected in Chrome (Tables F1–F2). Home, preferences, initial support and Stage 6B covered all eight combinations. Other states covered selected combinations. Delayed simulated responses exposed waiting states without external calls.
 
@@ -147,7 +151,7 @@ Desktop/simulated mobile layouts, English/Burmese interfaces, light/dark themes 
 | U5 — Navigation consistency | History, Review, Resume and preferences reachable | Navigation and modal focus | partial, RQ3, enabling |
 | U6 — Bilingual readability | Readable characters and line wrapping without cut-off text | Screen sizes, interface languages, themes and bilingual display | pass, RQ1/RQ2, visual only |
 | U7 — State visibility | Self-report, route, limits and completion distinct | Status, events and interpretation displays | pass, RQ3, enabling |
-| U8 — Error clarity | Localised error and recovery action understandable | Failure, retry and ownership inspection | partial, RQ1/RQ3, enabling |
+| U8 — Error clarity | Localized error and recovery action understandable | Failure, retry and ownership inspection | partial, RQ1/RQ3, enabling |
 | U9 — Consistency | Labels/interactions consistent across configurations | Language, theme, screen width and keyboard checks | partial, RQ1–RQ3, enabling |
 
 *Note.* “enabling” means that an interaction or storage function supports the workflow, not that the educational requirement was met. Bilingual readability refers to visual presentation, not accuracy of meaning. Usability ratings are based on technical inspection, not a participant study or full accessibility audit.
@@ -156,7 +160,7 @@ Six usability criteria were pass and three partial. Modal keyboard focus and Eng
 
 ### 3.2 Analytical Evaluation
 
-Static, dynamic and bounds analysis examined code structure, runtime behaviour and state limits respectively.
+Static, dynamic and bounds analysis examined code structure, runtime behavior and state limits respectively.
 
 #### 3.2.1 Static Analysis
 
@@ -166,7 +170,7 @@ Fourteen checks examined separation of software layers, input validation, learne
 
 Session state and recovery were examined through thirteen runtime cases and twelve browser captures. Two cases remained partial pass because provider calls were inferred rather than directly counted. A test assertion was corrected, but the first attempt was retained. Fifteen initial requests had a median response time of 3.331 seconds, ranging from 2.593–4.640 seconds. These requests were run one at a time locally, not under load.
 
-#### 3.2.3 Optimisation / Bounds Analysis
+#### 3.2.3 Optimization / Bounds Analysis
 
 Seventeen cases with fixed responses and real MongoDB passed checks for fade, the adaptation limit, completion and simultaneous requests. Updates prevented a third stored adaptation. However, simultaneous requests made two provider calls for one saved adaptation. The limit therefore guarantees neither a spending limit nor the best support amount.
 
@@ -180,9 +184,9 @@ Of 91 delivered outputs, 18 were rated pass, 71 partial and two fail (Tables C1�
 
 #### 3.3.1 Supplementary Bilingual Error Assessment
 
-Burmese meaning and clarity were checked in 104 matching English–Burmese passages from 32 selected outputs. Every delivered main concept and all three language-help cases were included. Categories were adapted from [Freitag et al. (2021)](https://doi.org/10.1162/tacl_a_00437) and the [MQM Council (n.d.)](https://www.themqm.org/mqm-pillars/the-mqm-core-typology/). Unexplained English and problems shared by both languages were added as categories. Scientific references supported meaning checks (Table C5).
+Burmese meaning and clarity were checked in 104 matching English–Burmese passages from 32 selected outputs. Every delivered main concept and all three language-help cases were included. Categories were adapted from [Freitag et al. (2021)](https://doi.org/10.1162/tacl_a_00437) and the [MQM Council (n.d.)](https://www.themqm.org/mqm-pillars/the-mqm-core-typology/). Unexplained English and problems shared by both languages were added as categories. Examples of the assessed meaning and terminology issues are presented in Table C5.
 
-Four issues across three outputs were labelled major and 27 minor. Major issues changed or seriously obscured scientific meaning. Minor issues reduced clarity but left meaning recoverable. Ten concerns shared by both languages were not counted as translation errors (Tables C4–C5). Gravity and ion errors explain existing fail ratings. Unclear pH wording was labelled major in one passage, but the output remained partial. Original totals of 18 pass, 71 partial and two fail were unchanged.
+Four issues across three outputs were labelled major and 27 minor issues. Major issues changed or seriously obscured scientific meaning. Minor issues reduced clarity but left meaning recoverable. Ten concerns shared by both languages were not counted as translation errors (Tables C4–C5). Gravity and ion errors explain existing fail ratings. Unclear pH wording was labelled major in one passage, but the output remained partial. Original totals of 18 pass, 71 partial and two fail were unchanged.
 
 No independent qualified bilingual review, standard MQM score or validated Burmese glossary was available. Outputs were deliberately selected, not randomly sampled. The findings therefore do not show how common these errors were across all simulation outputs.
 
@@ -194,15 +198,15 @@ Routing, ownership, errors, older sessions and simultaneous requests were tested
 
 ### 3.5 Informed Argument and Scenario
 
-Of eight literature-based arguments, two were supported and six partially supported (Table H2). Design choices were compared with observations and objections following [Hevner et al. (2004)](https://doi.org/10.2307/25148625). Task–Technology Fit supports matching help to tasks, but suitability for learners was not measured ([Goodhue & Thompson, 1995](https://doi.org/10.2307/249689)). Whether support matches learner competence cannot be established from self-report or history ([van de Pol et al., 2010](https://doi.org/10.1007/s10648-010-9127-6)). Controls were introduced in response to generated-content risks ([Ji et al., 2024](https://arxiv.org/abs/2202.03629v7)). Protection of stored state was supported by tests, not those sources. Bilingual errors further limit the conclusions.
-
-Two adaptations, four response events, one follow-up and completion were recorded in a photosynthesis walkthrough. Fifteen technical checks passed (Figure 2, Tables G1–G2). The adaptation limit and post-completion behaviour were checked through application programming interface (API) requests rather than learner clicks. Stored state was restored through Resume/Review. Content remains provisionally partial because of overly broad scientific wording, unexplained nontechnical English and similar examples.
-
-![Photosynthesis walkthrough with browser actions and separately labelled API-only checks](assets/figure_2_photosynthesis_reader.png)
+Of eight literature-based arguments, two were supported and six partially supported (Table H2). Design choices were compared with observations and objections following [Hevner et al. (2004)](https://doi.org/10.2307/25148625). Task–Technology Fit supports matching help to tasks, but suitability for learners was not measured ([Goodhue & Thompson, 1995](https://doi.org/10.2307/249689)). Whether support matches learner competence cannot be established from self-report or history ([van de Pol et al., 2010](https://doi.org/10.1007/s10648-010-9127-6)). Controls were introduced in response to generated-content risks ([Ji et al., 2023](https://doi.org/10.1145/3571730)). Protection of stored state was supported by tests, not those sources. Bilingual errors further limit the conclusions.
 
 **Figure 2. Recorded Photosynthesis walkthrough.**
 
+![Photosynthesis walkthrough with browser actions and separately labelled API-only checks](assets/figure_2_photosynthesis_reader.png)
+
 *Note.* Solid boxes show browser actions and support. Dashed boxes show API-only checks. High records fade without generation or completion. Finish completes the session. This is one technical scenario, not a learner study. Detailed checks and provisional content findings are reported in Appendix G.
+
+Two adaptations, four response events, one follow-up and completion were recorded in a photosynthesis walkthrough. Fifteen technical checks passed (Figure 2, Tables G1–G2). The adaptation limit and post-completion behavior were checked through application programming interface (API) requests rather than learner clicks. Stored state was restored through Resume/Review. Content remains provisionally partial because of overly broad scientific wording, unexplained nontechnical English and similar examples.
 
 ### 3.6 Academic Literature Evaluation
 
@@ -229,33 +233,25 @@ Methods, results, limitations and research-question links are summarised in Tabl
 | Fresh photosynthesis scenario | Fifteen technical checks pass, two adaptations, four events, one stored follow-up | High, cap and post-completion checked through API only. Content provisional due to broad claims, unexplained English and similar examples | RQ1–RQ3 — one integrated workflow, with terminology/explanation qualifications |
 | Design literature comparison | Thirteen comparisons — one strong, nine moderate, two limited, one contradictory/uncertain | Some studies had limited access or relevance here. Better content and an ideal adaptation limit were not demonstrated | RQ1–RQ3 — relevant prior systems and unvalidated support rules |
 
-*Note.* For technical checks, pass means expected behaviour was confirmed, fail means a required check failed, and partial means evidence or coverage was incomplete. Content ratings follow Table C2. These assessments measure different things and are not combined into one success rate. Later successful checks do not erase earlier failures.
+*Note.* For technical checks, pass means expected behavior was confirmed, fail means a required check failed, and partial means evidence or coverage was incomplete. Content ratings follow Table C2. These assessments measure different things and are not combined into one success rate. Later successful checks do not erase earlier failures.
 
 ## 4. Results and Interpretation
 
-Technical behaviour, successful delivery, content quality and design rationale are considered separately. Educational effects were not measured.
+Technical behavior, successful delivery, content quality and design rationale are considered separately. Educational effects were not measured.
 
 ### 4.1 Consolidated Results
 
 The original combined analysis contains 225 findings, including criteria ratings and further analysis of earlier results. These are not 225 independent tests or participants. Routing, response/adaptation storage and session recovery were supported by external observations, bounds tests and internal checks. Provider calls during fade and at the adaptation limit were directly counted in later checks, extending earlier indirect observations. Follow-up used the corrected concept without changing adaptation state. The findings apply to tested conditions, not every possible use.
 
-The supplementary bilingual assessment was recorded separately. Existing gravity and ion errors, unclear pH wording and further language problems were identified. Ten concerns involved scientific meaning in both languages, not translation errors. Content limitations were clarified, but learning outcomes were not established. The 41 recorded issues and 104 examined passages are not additional independent simulation runs.
+The supplementary bilingual assessment was recorded separately. Existing gravity and ion errors, unclear pH wording and further language problems were identified. Ten concerns involved scientific meaning in both languages, not translation errors. Content limitations were clarified but learning outcomes were not established. The 41 recorded issues and 104 examined passages are not additional independent simulation runs.
 
-Outputs can have the required structure yet contain scientific or Burmese-language errors, or repeat earlier support. The two content fail ratings remain despite better later outputs. Sessions were not created for eight ambiguous initial responses, and three live attempts failed. These results limit confidence in interpretation and adaptation. The combined workflow was demonstrated in the fresh scenario, but content ratings remain provisional and some checks used only the API. Stored state can be protected through error handling without guaranteeing useful help.
+Outputs can have the required structure yet contain scientific or Burmese-language errors or repeat earlier support. The two content fail ratings remain despite better later outputs. Sessions were not created for eight ambiguous initial responses, and three live attempts failed. These results limit confidence in interpretation and adaptation. The combined workflow was demonstrated in the fresh scenario, but content ratings remain provisional and some checks used only the API. Stored state can be protected through error handling without guaranteeing useful help.
 
-All thirteen functionality criteria remain partial. Six usability criteria were pass and three partial. Technical checks alone do not show that educational requirements were met. A design rationale can be supported by literature without demonstrating learner benefit. Bounds tests, coverage, screenshots and content ratings were not averaged because different qualities were measured. Earlier attempts, differences between expected and observed behaviour, and later analyses were kept separate. Content, delivery and interface problems remain unresolved despite support for tested controls.
+All thirteen functionality criteria remain partial. Six usability criteria were pass and three partial. Technical checks alone do not show that educational requirements were met. A design rationale can be supported by literature without demonstrating learner benefit. Bounds tests, coverage, screenshots and content ratings were not averaged because different qualities were measured. Earlier attempts, differences between expected and observed behavior, and later analyses were kept separate. Content, delivery and interface problems remain unresolved despite support for tested controls.
 
 ### 4.2 Research Question Traceability
 
 Twenty-four documented chains linked problems, requirements, questions, objectives and artefacts to evaluation criteria and findings. Methods and outcomes are mapped to the questions in Tables 2–4. The problems, requirements and objectives behind each conclusion are shown in Table 5. All three questions remain partially supported. A complete mapping does not mean that every requirement was met.
-
-For RQ1, a reasonable approach to terminology was provided through context interpretation and selective bilingual support. Concept-correction and language-help routes were implemented. However, corrections returning unchanged interpretations were rejected, and Burmese terminology errors remained. Reliable automatic term extraction and reduced language barriers were not established.
-
-For RQ2, support beyond word-for-word translation was provided through core explanations, examples, reflection and hints. Content quality was limited by incorrect definitions and repeated examples. Understanding and retention were not measured. Explanations were made available, but whether learners understood them was not established.
-
-For RQ3, predefined routes were selected from self-reported need, generation was limited and response history was stored. These controls were supported by simultaneous-request and session-transition tests. Support matched to assessed competence, appropriate withdrawal, transfer of responsibility and an ideal two-adaptation limit were not demonstrated. Self-report, reaching the adaptation limit and choosing Finish are different actions. Completing a session does not show mastery.
-
-Terminology and meaning problems in the bilingual assessment further limit RQ1 and RQ2. Unclear wording and scientific concerns shared by both languages remained after language help, limiting claims about adaptation quality under RQ3. All three conclusions remain partially supported. Earlier ratings are not independently confirmed by reassessing the same outputs.
 
 **Table 5. Research Questions, Artefact Mechanisms and Evaluation Conclusions**
 
@@ -267,9 +263,17 @@ Terminology and meaning problems in the bilingual assessment further limit RQ1 a
 
 *Note.* Full research questions appear in Section 1. Criteria and findings in Tables 1–4 support these conclusions. The problems explain the research motivation, not their measured frequency. Implemented features and successful technical checks do not establish educational effectiveness.
 
+For RQ1, a reasonable approach to terminology was provided through context interpretation and selective bilingual support. Concept-correction and language-help routes were implemented. However, corrections returning unchanged interpretations were rejected, and Burmese terminology errors remained. Reliable automatic term extraction and reduced language barriers were not established.
+
+For RQ2, support beyond word-for-word translation was provided through core explanations, examples, reflection and hints. Content quality was limited by incorrect definitions and repeated examples. Understanding and retention were not measured. Explanations were made available, but whether learners understood them was not established.
+
+For RQ3, predefined routes were selected from self-reported need, generation was limited and response history was stored. These controls were supported by simultaneous-request and session-transition tests. Support matched to assessed competence, appropriate withdrawal, transfer of responsibility and an ideal two-adaptation limit were not demonstrated. Self-report, reaching the adaptation limit and choosing Finish are different actions. Completing a session does not show mastery.
+
+Terminology and meaning problems in the bilingual assessment further limit RQ1 and RQ2. Unclear wording and scientific concerns shared by both languages remained after language help, limiting claims about adaptation quality under RQ3. All three conclusions remain partially supported. Earlier ratings are not independently confirmed by reassessing the same outputs.
+
 ### 4.3 What the Evaluation Does and Does Not Show
 
-The application's routing, storage and session recovery were supported under tested conditions. Consistently accurate content and reliable correction of misunderstood concepts were not established. Following [Venable et al. (2016)](https://doi.org/10.1057/ejis.2014.36), controlled evaluation is distinguished from everyday learner use. Selected cases, variable model responses and limited configurations prevent generalisation to all uses. More detail, not independent confirmation, is obtained by reassessing the same outputs.
+The application's routing, storage and session recovery were supported under tested conditions. Consistently accurate content and reliable correction of misunderstood concepts were not established. Following [Venable et al. (2016)](https://doi.org/10.1057/ejis.2014.36), controlled evaluation is distinguished from everyday learner use. Selected cases, variable model responses and limited configurations prevent generalization to all uses. More detail, not independent confirmation, is obtained by reassessing the same outputs.
 
 No learner study, independent expert review, assessment of suitable support levels or full accessibility audit was conducted. Recovery from preference-save failures and whether support differed from earlier explanations in two cases remain untested. Some literature comparisons used abstracts or summaries, which do not validate Burmese terms. Concurrent requests can make extra provider calls despite the two-adaptation limit. Cancellation can also exceed the configured twenty seconds. Better content than other systems and improved learning were not demonstrated.
 
@@ -287,11 +291,7 @@ Content errors, delivery failures and interface problems should be corrected in 
 
 Athukorala, K. S. N., & De Silva, D. I. (2025). Bridging language barriers in programming education: Java programming assistance tool for Sinhala native speakers. *International Journal of Computer Theory and Engineering, 17*(3), 151–169. [https://doi.org/10.7763/IJCTE.2025.V17.1378](https://doi.org/10.7763/IJCTE.2025.V17.1378)
 
-Clark, M. A., Douglas, M., & Choi, J. (2018). *Biology* (2nd ed.). OpenStax. [https://openstax.org/books/biology-2e/pages/1-introduction](https://openstax.org/books/biology-2e/pages/1-introduction)
-
 Dunlosky, J., & Rawson, K. A. (2012). Overconfidence produces underachievement: Inaccurate self evaluations undermine students' learning and retention. *Learning and Instruction, 22*(4), 271–280. [https://doi.org/10.1016/j.learninstruc.2011.08.003](https://doi.org/10.1016/j.learninstruc.2011.08.003)
-
-Flowers, P., Theopold, K., Langley, R., & Robinson, W. R. (2019). *Chemistry* (2nd ed.). OpenStax. [https://openstax.org/books/chemistry-2e/pages/1-introduction](https://openstax.org/books/chemistry-2e/pages/1-introduction)
 
 Freitag, M., Foster, G., Grangier, D., Ratnakar, V., Tan, Q., & Macherey, W. (2021). Experts, errors, and context: A large-scale study of human evaluation for machine translation. *Transactions of the Association for Computational Linguistics, 9*, 1460–1474. [https://doi.org/10.1162/tacl_a_00437](https://doi.org/10.1162/tacl_a_00437)
 
@@ -299,19 +299,17 @@ Goodhue, D. L., & Thompson, R. L. (1995). Task-technology fit and individual per
 
 Hevner, A. R., March, S. T., Park, J., & Ram, S. (2004). Design science in information systems research. *MIS Quarterly, 28*(1), 75–105. [https://doi.org/10.2307/25148625](https://doi.org/10.2307/25148625)
 
-Ji, Z., Lee, N., Frieske, R., Yu, T., Su, D., Xu, Y., Ishii, E., Bang, Y., Chen, D., Dai, W., Chan, H. S., Madotto, A., & Fung, P. (2024). *Survey of hallucination in natural language generation* (Version 7) [Preprint]. arXiv. [https://arxiv.org/abs/2202.03629v7](https://arxiv.org/abs/2202.03629v7)
+Ji, Z., Lee, N., Frieske, R., Yu, T., Su, D., Xu, Y., Ishii, E., Bang, Y. J., Madotto, A., & Fung, P. (2023). Survey of hallucination in natural language generation. *ACM Computing Surveys, 55*(12), Article 248. [https://doi.org/10.1145/3571730](https://doi.org/10.1145/3571730)
 
 Kleidermacher, H. C., & Zou, J. (2026). Science across languages: Assessing LLM multilingual translation of scientific papers. In V. Demberg, K. Inui, & L. Marquez (Eds.), *Findings of the Association for Computational Linguistics: EACL 2026* (pp. 3932–3947). Association for Computational Linguistics. [https://doi.org/10.18653/v1/2026.findings-eacl.204](https://doi.org/10.18653/v1/2026.findings-eacl.204)
 
 Kuzu, T. E. (2026). AI-supported translanguaging processes in primary school: Empirical insights into ChatGPT's role in multilingual interactions. *Technology, Knowledge and Learning*. Advance online publication. [https://doi.org/10.1007/s10758-026-09974-7](https://doi.org/10.1007/s10758-026-09974-7)
 
-MQM Council. (n.d.). *The MQM core typology*. [https://www.themqm.org/mqm-pillars/the-mqm-core-typology/](https://www.themqm.org/mqm-pillars/the-mqm-core-typology/)
+MQM Council. (n.d.). *The MQM core typology*. Retrieved October 6, 2026, from [https://www.themqm.org/mqm-pillars/the-mqm-core-typology/](https://www.themqm.org/mqm-pillars/the-mqm-core-typology/)
 
 Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. *Cognitive Science, 12*(2), 257–285. [https://doi.org/10.1207/s15516709cog1202_4](https://doi.org/10.1207/s15516709cog1202_4)
 
-Tran, H. T. H., Martinc, M., Caporusso, J., Doucet, A., & Pollak, S. (2023). *The recent advances in automatic term extraction: A survey* (Version 1) [Preprint]. arXiv. [https://arxiv.org/abs/2301.06767v1](https://arxiv.org/abs/2301.06767v1)
-
-Urone, P. P., & Hinrichs, R. (2022). *College physics* (2nd ed.). OpenStax. [https://openstax.org/books/college-physics-2e/pages/1-introduction-to-science-and-the-realm-of-physics-physical-quantities-and-units](https://openstax.org/books/college-physics-2e/pages/1-introduction-to-science-and-the-realm-of-physics-physical-quantities-and-units)
+Tran, H. T. H., Martinc, M., Caporusso, J., Delaunay, J., Doucet, A., & Pollak, S. (2026). Recent advances in automatic term extraction: A comprehensive survey. *ACM Computing Surveys, 58*(9), Article 226. [https://doi.org/10.1145/3787584](https://doi.org/10.1145/3787584)
 
 van de Pol, J., Volman, M., & Beishuizen, J. (2010). Scaffolding in teacher–student interaction: A decade of research. *Educational Psychology Review, 22*(3), 271–296. [https://doi.org/10.1007/s10648-010-9127-6](https://doi.org/10.1007/s10648-010-9127-6)
 
@@ -368,7 +366,7 @@ The main inquiries are listed in Table A1. Inputs, technical outcomes and conten
 
 ## Appendix B. Analytical Evaluation Records
 
-Code structure, runtime behaviour and session limits were examined through analytical evaluation. Observed behaviour is distinguished from content quality and guaranteed performance.
+Code structure, runtime behavior and session limits were examined through analytical evaluation. Observed behavior is distinguished from content quality and guaranteed performance.
 
 **Table B1. Analytical Evaluation Summary**
 
@@ -391,7 +389,7 @@ Code structure, runtime behaviour and session limits were examined through analy
 
 ## Appendix C. Simulation Results and Content Assessment
 
-Fixed inputs and paths are listed in Appendix A. Artificial identities and an isolated database were used with a live provider. Technical execution, original content ratings and supplementary bilingual findings were assessed separately and were not combined into one score.
+Fixed inputs and paths are listed in Appendix A. Artificial identities, and an isolated database were used with a live provider. Technical execution, original content ratings and supplementary bilingual findings were assessed separately and were not combined into one score.
 
 **Table C1. Technical Simulation Outcomes**
 
@@ -427,7 +425,7 @@ Only delivered support received content ratings. Fade, limit responses and unrea
 
 ### C.1 Focused Bilingual Error Assessment
 
-Thirty-two saved outputs were selected using known content concerns. Every delivered main concept, all three language-help cases and selected adaptations were included. All 104 matching passages were examined using categories informed by Freitag et al. (2021) and MQM Council (n.d.). Accessibility and problems shared by both languages were added as local categories. Selection was not random, and earlier findings were known. English was used for comparison, not assumed to be scientifically correct. Scientific references and stored text were checked separately. No approved Burmese glossary or independent qualified verification was available.
+Thirty-two saved outputs were selected using known content concerns. Every delivered main concept, all three language-help cases and selected adaptations were included. All 104 matching passages were examined using categories informed by Freitag et al. (2021) and MQM Council (n.d.). Accessibility and problems shared by both languages were added as local categories. Selection was not random, and earlier findings were known. English was used for comparison, not assumed to be scientifically correct. No approved Burmese glossary or independent qualified verification was available.
 
 **Table C4. Supplementary Annotation Summary**
 
@@ -458,13 +456,13 @@ Of 41 recorded issues, four were major across three outputs, 27 were minor and t
 | Current, Burmese-preference initial example | bulb lights up | မီးလုံး روشن ဖြစ်လာတာပါ။ | minor — an Arabic-script fragment interrupts Burmese | Replace the fragment with မီးလုံး လင်းလာသည်။ |
 | Current, Burmese-preference language revision | how fast charge is passing a point | charge ဘယ်လောက်မြန်မြန် ဖြတ်သန်းနေသလဲ | shared-content concern — speed-like wording is used in both languages | Revise both versions to charge quantity per unit time |
 
-*Note.* Scientific checks used Urone and Hinrichs (2022, Sections 6.5 and 20.1) for mass, weight and current, Flowers et al. (2019, Sections 2.6 and 14.2) for ions and pH, and Clark et al. (2018, Section 8.1) for photosynthesis. Scientific meaning, not certified Burmese wording, is supported by these sources. Excerpts are copied exactly from saved outputs. Suggested revisions were not applied to stored text. Both gravity issues belong to one failed output. The original pH rating remains partial despite a major passage-level issue. Totals remain 18 pass, 71 partial and two fail. Reused evidence, assessor limitations and deliberate selection prevent claims about overall translation accuracy or learner benefit.
+*Note.* Scientific meaning and English–Burmese consistency were assessed using postgraduate-level STEM knowledge and bilingual proficiency. These judgements were not independently verified by a second qualified assessor. Excerpts are copied exactly from saved outputs. Suggested revisions were not applied to stored text. Both gravity issues belong to one failed output. The original pH rating remains partial despite a major passage-level issue. Totals remain 18 pass, 71 partial and two fail. Reused evidence, assessor limitations and deliberate selection prevent claims about overall translation accuracy or learner benefit.
 
 ## Appendix D. Black-Box Testing Records
 
-Externally visible behaviour was checked through public HTTP requests and browser actions using controlled provider responses. Of 24 cases, 21 were pass, two partial and one fail. Observations are grouped below, not counted as additional cases.
+Externally visible behavior was checked through public HTTP requests and browser actions using controlled provider responses. Of 24 cases, 21 were pass, two partial and one fail. Observations are grouped below, not counted as additional cases.
 
-**Table D1. External Behaviour and Material Qualifications**
+**Table D1. External Behavior and Material Qualifications**
 
 | Area tested | Illustrative observation | Outcome or limitation |
 | --- | --- | --- |
@@ -531,7 +529,7 @@ Browser captures containing cookies must be kept securely. Sensitive details mus
 | English-only errors in Burmese interface | Recovery meaning was unavailable in the selected language although retry controls worked | 2 |
 | Generic Concept Correction label during unresolved ambiguity | Correction was suggested by the label, although unresolved meaning was accurately recorded | 1 |
 
-*Note.* Severity 1 means a cosmetic issue, 2 a difficulty with a workaround and 3 a blocked task or seriously misleading behaviour. Error presentation after an infrastructure failure when saving preferences was not assessed.
+*Note.* Severity 1 means a cosmetic issue, 2 a difficulty with a workaround and 3 a blocked task or seriously misleading behavior. Error presentation after an infrastructure failure when saving preferences was not assessed.
 
 ## Appendix G. Photosynthesis Scenario Records
 
@@ -567,9 +565,9 @@ Evaluation through critique, literature, informed argument and scenarios is summ
 
 | Activity and scope | Principal finding | Boundary or refinement |
 | --- | --- | --- |
-| GenAI interview — nine fixed questions and 47 coded findings | Requirement coverage and support beyond translation were recognised. Self-report, adaptation decisions and overlapping explanation/scaffolding roles were challenged | Critique, not expert testimony. Clearer explanation/scaffolding roles and limited revisiting of earlier stages were informed by the findings |
+| GenAI interview — nine fixed questions and 47 coded findings | Requirement coverage and support beyond translation were recognized. Self-report, adaptation decisions and overlapping explanation/scaffolding roles were challenged | Critique, not expert testimony. Clearer explanation/scaffolding roles and limited revisiting of earlier stages were informed by the findings |
 | Literature comparison — existing 17-study corpus, 19 findings | Contextual terminology, selective language support and structured assistance were justified in principle | Findings from other languages/subjects and secondary summaries have limits. Exact stage relationships and adaptation rules were not validated |
-| Informed argument — original seven-stage framework | Term identification and conceptual explanation were conceptually justified. Five responsibilities were justified with qualification. Later refinements were excluded | Tran et al. (2023), Goodhue and Thompson (1995), Sweller (1988), Ji et al. (2024), Kleidermacher and Zou (2026), van de Pol et al. (2010), and Dunlosky and Rawson (2012) support design reasons and objections, not learner outcomes |
+| Informed argument — original seven-stage framework | Term identification and conceptual explanation were conceptually justified. Five responsibilities were justified with qualification. Later refinements were excluded | Tran et al. (2026), Goodhue and Thompson (1995), Sweller (1988), Ji et al. (2023), Kleidermacher and Zou (2026), van de Pol et al. (2010), and Dunlosky and Rawson (2012) support design reasons and objections, not learner outcomes |
 | Conceptual photosynthesis scenario | All seven stages applied meaningfully. Core explanation and scaffolding distinguished. Another example illustrated adaptation returning to scaffolding | Language-selection reasons and the triggering learner response unspecified. Applicability illustrated, not measured learning or optimal adaptation |
 
 *Note.* Table 2 reports the final conceptual evaluation synthesis.
@@ -578,20 +576,20 @@ Evaluation through critique, literature, informed argument and scenarios is summ
 
 | Mechanism examined | Scholarly basis, design inference and limitation | Conclusion |
 | --- | --- | --- |
-| Terminology/context and intended-meaning correction | Tran et al. (2023) and Goodhue and Thompson (1995). The intended concept may still be misunderstood or left uncorrected | partially supported |
+| Terminology/context and intended-meaning correction | Tran et al. (2026) and Goodhue and Thompson (1995). The intended concept may still be misunderstood or left uncorrected | partially supported |
 | Selective bilingual language support | Kleidermacher and Zou (2026) and Goodhue and Thompson (1995). Term retention does not guarantee clear Burmese support | partially supported |
 | Core explanation and additional support | Athukorala and De Silva (2025) and van de Pol et al. (2010). Structured content can remain inaccurate or repetitive | partially supported |
 | Optional stated-need collection | van de Pol et al. (2010) and Goodhue and Thompson (1995). Stated need is recorded, but competence is not measured | supported for stated-need collection only |
 | Limited adaptation and fade | van de Pol et al. (2010). Routing and storage controls work, but suitable support levels and adaptation limits remain unproven | partially supported |
 | Concept-scoped follow-up | Goodhue and Thompson (1995), applied to the supporting task. Tested topic limits do not establish accuracy for every question | supported for the tested scoped mechanism |
 | History and preference continuity | Goodhue and Thompson (1995), applied to task continuity. Storage works, but interface problems and unmeasured task suitability remain | partially supported |
-| Application-controlled boundaries | Controls were introduced in response to generated-content risks described by Ji et al. (2024). Stored-state protection was supported by tests, not directly validated by that literature. Duplicate calls and delivery failures remain | partially supported |
+| Application-controlled boundaries | Controls were introduced in response to generated-content risks described by Ji et al. (2023). Stored-state protection was supported by tests, not directly validated by that literature. Duplicate calls and delivery failures remain | partially supported |
 
 **Table H3. Design Literature Comparison Summary**
 
 | Rationale rating | Comparisons | Interpretation |
 | --- | --- | --- |
-| strong | 1 | Critical evaluation of specialised/low-resource output was well justified. Output quality was not certified |
+| strong | 1 | Critical evaluation of specialized/low-resource output was well justified. Output quality was not certified |
 | moderate | 9 | Native-language help, structured explanation, multilingual interaction and adaptive support had relevant prior examples, but findings may not apply here |
 | limited | 2 | Term-identification and workflow evidence did not establish extraction accuracy or suitability for learners |
 | contradictory/uncertain | 1 | Stopping generation after High and the two-adaptation limit were not validated as teaching decisions |
