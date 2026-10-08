@@ -1,0 +1,78 @@
+$ npm run test:coverage -- --reporter=default --reporter=json --outputFile=/Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-04/02-coverage.json
+
+> burmese_stem_ai@0.1.0 test:coverage
+> vitest run --coverage --reporter=default --reporter=json --outputFile=/Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-04/02-coverage.json
+
+
+ RUN  v4.1.11 /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai
+      Coverage enabled with v8
+
+ ✓ tests/unit/services/generation-error-extensions.test.ts (99 tests) 41ms
+ ✓ tests/unit/services/adaptation-full-matrix.test.ts (47 tests) 87ms
+ ✓ tests/unit/data/database-initialization.test.ts (4 tests) 18ms
+ ✓ tests/unit/app/application-shell.test.tsx (6 tests) 221ms
+ ✓ tests/unit/components/navigation-controls.test.tsx (10 tests) 317ms
+ ✓ tests/unit/components/session-continuity.test.tsx (9 tests) 413ms
+ ✓ tests/unit/services/adaptation-routing-branches.test.ts (20 tests) 13ms
+ ✓ tests/unit/data/mongodb.test.ts (3 tests) 17ms
+ ✓ tests/unit/api/refined-route-contracts.test.ts (28 tests) 44ms
+ ✓ tests/unit/data/profile-schema.test.ts (22 tests) 36ms
+ ✓ tests/unit/data/session-schema.test.ts (10 tests) 57ms
+ ✓ tests/unit/api/provider-route-boundary.test.ts (2 tests) 14ms
+ ✓ tests/unit/data/session-dao.test.ts (11 tests) 9ms
+ ✓ tests/unit/services/concept-reinterpretation.test.ts (8 tests) 11ms
+ ✓ tests/unit/data/transactions.test.ts (11 tests) 7ms
+ ✓ tests/unit/api/preference-error-boundary.test.ts (5 tests) 10ms
+ ✓ tests/unit/services/session-generation-contract.test.ts (13 tests) 15ms
+ ✓ tests/unit/services/adaptation-boundary.test.ts (4 tests) 7ms
+ ✓ tests/unit/api/learner-proxy.test.ts (8 tests) 13ms
+ ✓ tests/unit/components/session-content.test.tsx (11 tests) 11ms
+ ✓ tests/unit/components/session-recovery.test.tsx (33 tests) 1385ms
+ ✓ tests/unit/components/home-inquiry.test.tsx (22 tests) 1415ms
+ ✓ tests/unit/data/model-registration.test.ts (4 tests) 20ms
+ ✓ tests/unit/data/profile-dao.test.ts (7 tests) 10ms
+ ✓ tests/unit/services/adaptation-generation-contract.test.ts (9 tests) 12ms
+ ✓ tests/unit/api/preference-write-guards.test.ts (8 tests) 20ms
+ ✓ tests/unit/services/followup-context.test.ts (8 tests) 10ms
+ ✓ tests/unit/services/llm-provider.test.ts (9 tests) 15ms
+ ✓ tests/unit/components/stage6b-interface.test.tsx (16 tests) 1588ms
+     ✓ submits the bounded 'concept_mismatch' choice  322ms
+ ✓ tests/unit/services/adaptation-defensive-paths.test.ts (7 tests) 14ms
+ ✓ tests/unit/services/session-lifecycle-ownership.test.ts (6 tests) 5ms
+ ✓ tests/unit/services/adaptation-routing.test.ts (14 tests) 3ms
+ ✓ tests/unit/i18n/request-config.test.ts (6 tests) 4ms
+ ✓ tests/unit/lib/session-domain.test.ts (5 tests) 4ms
+ ✓ tests/unit/api/session-detail-route.test.ts (2 tests) 24ms
+ ✓ tests/unit/api/session-action-error-boundary.test.ts (2 tests) 8ms
+ ✓ tests/unit/lib/session-view.test.ts (10 tests) 2ms
+ ✓ tests/unit/services/request-validation.test.ts (13 tests) 4ms
+ ✓ tests/unit/i18n/request.test.ts (6 tests) 2ms
+
+ Test Files  39 passed (39)
+      Tests  518 passed (518)
+   Start at  20:51:50
+   Duration  2.89s (transform 1.25s, setup 394ms, import 4.07s, tests 5.90s, environment 3.18s)
+
+JSON report written to /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-04/02-coverage.json
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   99.38 |    97.56 |     100 |   99.89 |                   
+ ..._ai/components |     100 |    83.33 |     100 |     100 |                   
+  ...lSwitcher.tsx |     100 |    83.33 |     100 |     100 | 14                
+ ...mponents/learn |    97.1 |    93.71 |     100 |     100 |                   
+  ...ngSession.tsx |   96.32 |    90.44 |     100 |     100 | ...99,217,246,435 
+ ...e_stem_ai/data |   97.22 |    94.11 |     100 |   97.22 |                   
+  init-db.ts       |   93.33 |       50 |     100 |   93.33 | 22                
+ ...em_ai/services |     100 |    98.74 |     100 |     100 |                   
+  ...up.service.ts |     100 |    97.05 |     100 |     100 | 77,125            
+  ...on.service.ts |     100 |    95.08 |     100 |     100 | 130,137,177       
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 99.38% ( 970/976 )
+Branches     : 97.56% ( 801/821 )
+Functions    : 100% ( 200/200 )
+Lines        : 99.89% ( 921/922 )
+================================================================================

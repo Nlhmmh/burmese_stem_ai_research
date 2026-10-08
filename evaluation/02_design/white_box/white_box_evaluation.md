@@ -4,23 +4,23 @@ Detailed sections: [Case register](#case-register).
 
 ## Run and scope
 
-RUN-B01-20261008-COVERAGE-03 executed against the root burmese_stem_ai application. WB01–WB06 passed structurally. Provider/DAO mocks supported deterministic tests and real isolated MongoDB supported persistence/concurrency. All 66 production-file hashes matched the recorded baseline. No source copy, live model call or production-code change occurred.
+RUN-B01-20261008-COVERAGE-04 executed deterministic checks against the root burmese_stem_ai application. Provider/DAO mocks supported these tests. The 12 real isolated MongoDB persistence/concurrency results are retained from RUN-B01-20261008-COVERAGE-03 and were not rerun here. WB01–WB06 remain structurally supported by these recorded runs. All 66 production-file hashes matched the recorded baseline. No source copy, live model call or production-code change occurred.
 
 ## Recorded commands
 
 | Check | Actual result |
 | --- | --- |
-| `npm test` | 511/511 deterministic tests, 38 files, none skipped |
-| `npm run test:coverage` | 511/511 tests; V8 application-wide report; coverage thresholds passed |
-| `npm run test:integration` | 12/12 tests, 2 files, real isolated MongoDB |
+| `npm test` | 518/518 deterministic tests, 39 files, none skipped |
+| `npm run test:coverage` | 518/518 tests; V8 application-wide report; coverage thresholds passed |
+| `npm run test:integration` | 12/12 tests, 2 files, real isolated MongoDB; retained from RUN-B01-20261008-COVERAGE-03, not rerun here |
 | `npm run lint -- --max-warnings 0` | Exit 0; no warnings |
 | `npm exec -- tsc --noEmit --incremental false` | Exit 0 |
 
-These executions contain 523 unique tests. Repeated execution of the same tests is not counted again. Actual commands and timestamps are recorded in [commands.jsonl](raw/RUN-B01-20261008-COVERAGE-03/commands.jsonl). [Named deterministic results](raw/RUN-B01-20261008-COVERAGE-03/01-unit.json), [verification](raw/RUN-B01-20261008-COVERAGE-03/verification.json) and [metadata](raw/RUN-B01-20261008-COVERAGE-03/metadata.json) record outcomes, source identities and environment. Reproduction commands are in the shared protocol and application test README.
+The suite contains 530 distinct tests: 518 deterministic tests executed in the current run and 12 integration tests passed in the retained run. Repeated execution of the same tests is not counted again. Current commands and timestamps are recorded in [commands.jsonl](raw/RUN-B01-20261008-COVERAGE-04/commands.jsonl). [Named deterministic results](raw/RUN-B01-20261008-COVERAGE-04/01-unit.json), [verification](raw/RUN-B01-20261008-COVERAGE-04/verification.json) and [metadata](raw/RUN-B01-20261008-COVERAGE-04/metadata.json) record outcomes, source identities and environment. The retained [integration log](raw/RUN-B01-20261008-COVERAGE-03/05-integration.log) records the separate database execution. Reproduction commands are in the shared protocol and application test README.
 
 ## Case register
 
-Each row contains the case contract, result and retained assertion IDs. Shared run conditions above apply unless a row states otherwise. The register retains 373 mapped assertion IDs. The named deterministic results also include 150 boundary checks described under [Tested boundaries](#tested-boundaries). All 523 tests passed in the current execution.
+Each row contains the case contract, result and retained assertion IDs. Shared run conditions above apply unless a row states otherwise. The register retains 373 mapped assertion IDs. The named deterministic results also include 157 boundary checks described under [Tested boundaries](#tested-boundaries). All 518 deterministic tests passed in the current execution; the 12 integration results are retained from the previous run.
 
 | Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Limitation | Observation notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -37,18 +37,20 @@ Current deterministic V8 coverage is reported below.
 
 | Metric | Hits / total | Percent |
 | --- | --- | --- |
-| Statements | 967 / 976 | 99.07% |
-| Branches | 797 / 821 | 97.07% |
+| Statements | 970 / 976 | 99.38% |
+| Branches | 801 / 821 | 97.56% |
 | Functions | 200 / 200 | 100% |
-| Lines | 919 / 922 | 99.67% |
+| Lines | 921 / 922 | 99.89% |
 
 Coverage includes 42 executable files across pages/API routes, components, services, data, lib, i18n and proxy. Tests, config, dependencies, generated output, styles and assets are excluded. Type-only modules may have no executable counters. Untested code contributes zero hits; structural group Pass does not mean exhaustive coverage.
 
-The [machine summary](raw/RUN-B01-20261008-COVERAGE-03/coverage-summary.json) retains these counters. Run `npm run test:coverage` from `burmese_stem_ai/` and open `coverage/index.html` for the HTML report. MongoDB/browser execution is separate, not merged into V8 totals. Regression floors are 95% statements, 90% branches, 95% functions and 95% lines.
+The [machine summary](raw/RUN-B01-20261008-COVERAGE-04/coverage-summary.json) retains these counters. Run `npm run test:coverage` from `burmese_stem_ai/` and open `coverage/index.html` for the HTML report. MongoDB/browser execution is separate, not merged into V8 totals. Regression floors are 95% statements, 90% branches, 95% functions and 95% lines.
+
+`adaptation.service.ts` has 100% statements (137/137), branches (176/176), functions (22/22) and lines (129/129). Its defensive helper-error catches, bilingual correction validators and legacy event-count fallback are exercised. This is execution coverage, not proof of complete correctness or translation quality.
 
 ## Limitations and evidence continuity
 
-Assertions do not certify scientific/Burmese quality, semantic novelty, pedagogical suitability or learner benefit. BB07/08 Partials, BB22's public-boundary mismatch and live simulation failures remain unchanged. Remaining uncovered paths include defensive React state guards, the locale-switch fallback, unexpected generation-error catches and the initialization CLI's missing-URL exit. Function coverage does not mean every function path was exercised. Provider/DAO mocks and jsdom do not prove live-provider behaviour or browser layout.
+Assertions do not certify scientific/Burmese quality, semantic novelty, pedagogical suitability or learner benefit. BB07/08 Partials, BB22's public-boundary mismatch and live simulation failures remain unchanged. Remaining uncovered paths elsewhere include defensive React state guards, the locale-switch fallback, unexpected follow-up generation-error handling and the initialization CLI's missing-URL exit. The adaptation helper's unexpected errors were injected at its mock boundary, not observed from a live provider. Function coverage does not mean every function path was exercised. Provider/DAO mocks and jsdom do not prove live-provider behaviour or browser layout.
 
 An initial sandbox-only integration attempt was blocked by loopback permissions. The suite passed after permission was granted, without a code change. Existing Mongoose `new`-option deprecation warnings remain. Earlier raw execution evidence and assertion IDs are retained for traceability. E028–E032 remain retired. The working paper and submission PDF were not changed.
 
@@ -97,7 +99,7 @@ The captured deterministic V8 scope is shown below. Zero-hit files remain visibl
 | lib/session-view.ts | 100 | 100 | 100 | 100 |
 | lib/utils.ts | 100 | 100 | 100 | 100 |
 | services/adaptation-routing.service.ts | 100 | 100 | 100 | 100 |
-| services/adaptation.service.ts | 97.81 | 97.72 | 100 | 98.44 |
+| services/adaptation.service.ts | 100 | 100 | 100 | 100 |
 | services/followup.service.ts | 100 | 97.05 | 100 | 100 |
 | services/learner.service.ts | 100 | 100 | 100 | 100 |
 | services/llm-provider.ts | 100 | 100 | 100 | 100 |
@@ -112,6 +114,8 @@ The captured deterministic V8 scope is shown below. Zero-hit files remain visibl
 ## Tested boundaries
 
 Tests cover the following boundaries in addition to the WB01–WB06 contracts.
+
+- WB01/WB04/WB06: [Seven adaptation defensive-boundary tests](../../../burmese_stem_ai/tests/unit/services/adaptation-defensive-paths.test.ts) assert safe domain errors for unexpected helper failures, no diagnostic leakage, no save/retry and unchanged input state. Missing/non-string bilingual correction fields are rejected before persistence. Legacy sessions without `responseEvents` use a zero event-count guard; High still records fade without generation or a round increment. Their exact names and outcomes appear in the current named deterministic results.
 
 - Home rejects blank submissions, trims questions, blocks duplicate pending requests, handles malformed responses and permits retry. Preferences load/save failures preserve the correct modal state. Only the three learning preferences are sent, not browser locale/theme.
 - Locale switching, current navigation, saved theme restoration and both theme toggles are checked. Session and History loading failures, request cancellation, date rendering, Finish failures and follow-up recovery are exercised. Follow-up answers remain visible and the two-question limit is retained.

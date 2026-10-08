@@ -1,0 +1,54 @@
+$ npm test -- --reporter=default --reporter=json --outputFile=/Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-04/01-unit.json
+
+> burmese_stem_ai@0.1.0 test
+> vitest run --reporter=default --reporter=json --outputFile=/Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-04/01-unit.json
+
+
+ RUN  v4.1.11 /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/burmese_stem_ai
+
+ ✓ tests/unit/services/adaptation-full-matrix.test.ts (47 tests) 21ms
+ ✓ tests/unit/services/generation-error-extensions.test.ts (99 tests) 29ms
+ ✓ tests/unit/data/profile-schema.test.ts (22 tests) 16ms
+ ✓ tests/unit/app/application-shell.test.tsx (6 tests) 261ms
+ ✓ tests/unit/components/navigation-controls.test.tsx (10 tests) 290ms
+ ✓ tests/unit/components/session-continuity.test.tsx (9 tests) 400ms
+ ✓ tests/unit/components/session-content.test.tsx (11 tests) 9ms
+ ✓ tests/unit/data/session-schema.test.ts (10 tests) 16ms
+ ✓ tests/unit/data/transactions.test.ts (11 tests) 10ms
+ ✓ tests/unit/services/adaptation-boundary.test.ts (4 tests) 9ms
+ ✓ tests/unit/api/refined-route-contracts.test.ts (28 tests) 18ms
+ ✓ tests/unit/data/session-dao.test.ts (11 tests) 13ms
+ ✓ tests/unit/services/adaptation-routing-branches.test.ts (20 tests) 17ms
+ ✓ tests/unit/components/home-inquiry.test.tsx (22 tests) 860ms
+ ✓ tests/unit/api/preference-error-boundary.test.ts (5 tests) 13ms
+ ✓ tests/unit/api/provider-route-boundary.test.ts (2 tests) 15ms
+ ✓ tests/unit/data/database-initialization.test.ts (4 tests) 19ms
+ ✓ tests/unit/api/learner-proxy.test.ts (8 tests) 9ms
+ ✓ tests/unit/components/session-recovery.test.tsx (33 tests) 937ms
+ ✓ tests/unit/services/session-generation-contract.test.ts (13 tests) 9ms
+ ✓ tests/unit/services/adaptation-generation-contract.test.ts (9 tests) 7ms
+ ✓ tests/unit/data/model-registration.test.ts (4 tests) 8ms
+ ✓ tests/unit/services/llm-provider.test.ts (9 tests) 7ms
+ ✓ tests/unit/services/followup-context.test.ts (8 tests) 7ms
+ ✓ tests/unit/services/concept-reinterpretation.test.ts (8 tests) 11ms
+ ✓ tests/unit/data/mongodb.test.ts (3 tests) 17ms
+ ✓ tests/unit/api/preference-write-guards.test.ts (8 tests) 9ms
+ ✓ tests/unit/data/profile-dao.test.ts (7 tests) 8ms
+ ✓ tests/unit/services/adaptation-routing.test.ts (14 tests) 3ms
+ ✓ tests/unit/services/session-lifecycle-ownership.test.ts (6 tests) 5ms
+ ✓ tests/unit/api/session-detail-route.test.ts (2 tests) 7ms
+ ✓ tests/unit/i18n/request-config.test.ts (6 tests) 4ms
+ ✓ tests/unit/components/stage6b-interface.test.tsx (16 tests) 1291ms
+ ✓ tests/unit/lib/session-domain.test.ts (5 tests) 3ms
+ ✓ tests/unit/i18n/request.test.ts (6 tests) 2ms
+ ✓ tests/unit/lib/session-view.test.ts (10 tests) 2ms
+ ✓ tests/unit/api/session-action-error-boundary.test.ts (2 tests) 5ms
+ ✓ tests/unit/services/adaptation-defensive-paths.test.ts (7 tests) 5ms
+ ✓ tests/unit/services/request-validation.test.ts (13 tests) 3ms
+
+ Test Files  39 passed (39)
+      Tests  518 passed (518)
+   Start at  20:51:47
+   Duration  2.37s (transform 1.37s, setup 351ms, import 4.08s, tests 4.38s, environment 3.18s)
+
+JSON report written to /Users/nlh/Downloads/uoa_lectures/INFOSYS720/burmese_stem_ai_research/evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-04/01-unit.json
