@@ -44,3 +44,27 @@ Preserve recorded execution logs; document later evidence-index changes separate
 The refined-state integration tests optionally export synthetic per-case state
 when `TEST_EVIDENCE_DIRECTORY` is set. Normal project test runs do not write
 those exports. Any evidence directory must be dedicated to that run.
+
+## Expanded white-box coverage
+
+The supplementary suite adds 150 deterministic tests in the root application.
+It covers Home submission and preferences, locale/theme controls, session and
+History recovery, follow-up presentation, server-rendered entry points, learner
+identity spoofing, connection caching/recovery, model hot reload, profile
+validation/DAO writes, mocked database initialization and transaction cleanup.
+Legacy session IDs and stored support rendering remain compatible. New High
+responses still fade without generation or a round increment.
+
+The suite contains 511 deterministic tests in 38 files, plus 12 separate MongoDB
+integration tests. Application-wide V8 coverage is 99.07% statements, 97.07%
+branches, 100% functions and 99.67% lines. Coverage scope and executable counters
+are unchanged. Global regression floors are 95% statements, 90% branches, 95%
+functions and 95% lines, enforced by `npm run test:coverage`.
+
+Results are recorded separately in the existing
+[white-box report](../../evaluation/02_design/white_box/white_box_evaluation.md#supplementary-root-project-coverage).
+The earlier evaluation and paper results are not overwritten. All provider
+calls and CLI index operations are mocked. Integration uses only an isolated
+temporary MongoDB database. Remaining uncovered paths include defensive state
+guards, unexpected generation errors and the initialization CLI's missing-URL
+exit. These percentages do not establish learning or translation quality.

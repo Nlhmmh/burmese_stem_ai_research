@@ -4,24 +4,23 @@ Detailed sections: [Case register](#case-register).
 
 ## Run and scope
 
-RUN-B01-20261002-ROOTTESTS-02 executed against the root burmese_stem_ai application, not a source copy. WB01–WB06 passed structurally. Provider/DAO mocks supported deterministic tests; real isolated MongoDB supported persistence/concurrency. No live model call or production-code fix occurred. Evidence E033–E035.
+RUN-B01-20261008-COVERAGE-03 executed against the root burmese_stem_ai application. WB01–WB06 passed structurally. Provider/DAO mocks supported deterministic tests and real isolated MongoDB supported persistence/concurrency. All 66 production-file hashes matched the recorded baseline. No source copy, live model call or production-code change occurred.
 
 ## Recorded commands
 
 | Check | Actual result |
 | --- | --- |
-| `npm test` | 361/361 deterministic tests, 26 files, none skipped |
-| `npm run test:coverage` | Same 361 tests; V8 application-wide report |
+| `npm test` | 511/511 deterministic tests, 38 files, none skipped |
+| `npm run test:coverage` | 511/511 tests; V8 application-wide report; coverage thresholds passed |
 | `npm run test:integration` | 12/12 tests, 2 files, real isolated MongoDB |
-| `npm run test:all` | 361 deterministic + 12 integration tests passed |
-| `npm run lint` | Exit 0 |
+| `npm run lint -- --max-warnings 0` | Exit 0; no warnings |
 | `npm exec -- tsc --noEmit --incremental false` | Exit 0 |
 
-These executions contain 373 unique tests, not additional tests each time a command repeated them. Commands and timestamps remain in [commands.jsonl](raw/RUN-B01-20261002-ROOTTESTS-02/commands.jsonl). Reproduction commands are in the shared protocol and application test README.
+These executions contain 523 unique tests. Repeated execution of the same tests is not counted again. Actual commands and timestamps are recorded in [commands.jsonl](raw/RUN-B01-20261008-COVERAGE-03/commands.jsonl). [Named deterministic results](raw/RUN-B01-20261008-COVERAGE-03/01-unit.json), [verification](raw/RUN-B01-20261008-COVERAGE-03/verification.json) and [metadata](raw/RUN-B01-20261008-COVERAGE-03/metadata.json) record outcomes, source identities and environment. Reproduction commands are in the shared protocol and application test README.
 
 ## Case register
 
-Each row contains the case contract and its recorded result. Shared run conditions above apply unless a row states otherwise. Outcomes and limitations are retained from the evidence; this layout change is not a new test run.
+Each row contains the case contract, result and retained assertion IDs. Shared run conditions above apply unless a row states otherwise. The register retains 373 mapped assertion IDs. The named deterministic results also include 150 boundary checks described under [Tested boundaries](#tested-boundaries). All 523 tests passed in the current execution.
 
 | Case | Case details / action | Conditions / inputs | Expected result | Actual result | Outcome | Limitation | Observation notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -34,20 +33,24 @@ Each row contains the case contract and its recorded result. Shared run conditio
 
 ## Application-wide coverage
 
+Current deterministic V8 coverage is reported below.
+
 | Metric | Hits / total | Percent |
 | --- | --- | --- |
-| Statements | 708 / 976 | 72.54% |
-| Branches | 627 / 821 | 76.37% |
-| Functions | 128 / 200 | 64.00% |
-| Lines | 680 / 922 | 73.75% |
+| Statements | 967 / 976 | 99.07% |
+| Branches | 797 / 821 | 97.07% |
+| Functions | 200 / 200 | 100% |
+| Lines | 919 / 922 | 99.67% |
 
 Coverage includes 42 executable files across pages/API routes, components, services, data, lib, i18n and proxy. Tests, config, dependencies, generated output, styles and assets are excluded. Type-only modules may have no executable counters. Untested code contributes zero hits; structural group Pass does not mean exhaustive coverage.
 
-Open the [captured HTML report](raw/RUN-B01-20261002-ROOTTESTS-02/coverage/index.html) or regenerate burmese_stem_ai/coverage/index.html with npm run test:coverage. [Coverage gaps](white_box_uncovered.csv) and [machine summary](raw/RUN-B01-20261002-ROOTTESTS-02/coverage/coverage-summary.json) remain available. MongoDB/browser execution is separate, not merged into V8 totals.
+The [machine summary](raw/RUN-B01-20261008-COVERAGE-03/coverage-summary.json) retains these counters. Run `npm run test:coverage` from `burmese_stem_ai/` and open `coverage/index.html` for the HTML report. MongoDB/browser execution is separate, not merged into V8 totals. Regression floors are 95% statements, 90% branches, 95% functions and 95% lines.
 
 ## Limitations and evidence continuity
 
-Assertions do not certify scientific/Burmese quality, semantic novelty, pedagogical suitability or learner benefit. BB07/08 Partials, BB22's public-boundary mismatch and live simulation failures remain unchanged. The earlier source-copy run was removed under user direction; E028–E032 remain retired. The retained root run's [post-cleanup manifest](raw/RUN-B01-20261002-ROOTTESTS-02/manifest_after_cleanup.sha256) is historical; archived Markdown paths are resolved through the consolidation index.
+Assertions do not certify scientific/Burmese quality, semantic novelty, pedagogical suitability or learner benefit. BB07/08 Partials, BB22's public-boundary mismatch and live simulation failures remain unchanged. Remaining uncovered paths include defensive React state guards, the locale-switch fallback, unexpected generation-error catches and the initialization CLI's missing-URL exit. Function coverage does not mean every function path was exercised. Provider/DAO mocks and jsdom do not prove live-provider behaviour or browser layout.
+
+An initial sandbox-only integration attempt was blocked by loopback permissions. The suite passed after permission was granted, without a code change. Existing Mongoose `new`-option deprecation warnings remain. Earlier raw execution evidence and assertion IDs are retained for traceability. E028–E032 remain retired. The working paper and submission PDF were not changed.
 
 
 ## Per-file coverage and gaps
@@ -59,35 +62,35 @@ The captured deterministic V8 scope is shown below. Zero-hit files remain visibl
 
 | File under burmese_stem_ai | Statements % | Branches % | Functions % | Lines % |
 | --- | --- | --- | --- | --- |
-| proxy.ts | 0 | 0 | 0 | 0 |
-| app/layout.tsx | 0 | 0 | 0 | 0 |
-| app/page.tsx | 0 | 100 | 0 | 0 |
-| app/api/route.ts | 0 | 100 | 0 | 0 |
-| app/api/preferences/route.ts | 95.83 | 87.5 | 100 | 95.83 |
+| proxy.ts | 100 | 100 | 100 | 100 |
+| app/layout.tsx | 100 | 100 | 100 | 100 |
+| app/page.tsx | 100 | 100 | 100 | 100 |
+| app/api/route.ts | 100 | 100 | 100 | 100 |
+| app/api/preferences/route.ts | 100 | 100 | 100 | 100 |
 | app/api/sessions/route.ts | 100 | 100 | 100 | 100 |
-| app/api/sessions/[sessionId]/route.ts | 100 | 85.71 | 100 | 100 |
+| app/api/sessions/[sessionId]/route.ts | 100 | 100 | 100 | 100 |
 | app/api/sessions/[sessionId]/followup/route.ts | 100 | 100 | 100 | 100 |
-| app/api/sessions/[sessionId]/respond/route.ts | 96.29 | 92.85 | 100 | 96.29 |
-| app/history/page.tsx | 0 | 100 | 0 | 0 |
-| app/learn/[sessionId]/page.tsx | 0 | 100 | 0 | 0 |
-| components/LocalSwitcher.tsx | 0 | 0 | 0 | 0 |
-| components/history/HistoryList.tsx | 69.38 | 42.42 | 66.66 | 72.09 |
-| components/home/HomeInquiry.tsx | 0 | 0 | 0 | 0 |
-| components/home/PreferencesDialog.tsx | 0 | 0 | 0 | 0 |
-| components/layout/AppHeader.tsx | 0 | 0 | 0 | 0 |
-| components/learn/FollowUpSection.tsx | 50 | 35.71 | 25 | 57.14 |
-| components/learn/LearningSession.tsx | 69.85 | 64.7 | 75 | 74.16 |
-| components/learn/SessionContent.tsx | 100 | 89.47 | 100 | 100 |
+| app/api/sessions/[sessionId]/respond/route.ts | 100 | 100 | 100 | 100 |
+| app/history/page.tsx | 100 | 100 | 100 | 100 |
+| app/learn/[sessionId]/page.tsx | 100 | 100 | 100 | 100 |
+| components/LocalSwitcher.tsx | 100 | 83.33 | 100 | 100 |
+| components/history/HistoryList.tsx | 100 | 100 | 100 | 100 |
+| components/home/HomeInquiry.tsx | 100 | 100 | 100 | 100 |
+| components/home/PreferencesDialog.tsx | 100 | 100 | 100 | 100 |
+| components/layout/AppHeader.tsx | 100 | 100 | 100 | 100 |
+| components/learn/FollowUpSection.tsx | 100 | 100 | 100 | 100 |
+| components/learn/LearningSession.tsx | 96.32 | 90.44 | 100 | 100 |
+| components/learn/SessionContent.tsx | 100 | 100 | 100 | 100 |
 | components/learn/types.ts | 100 | 100 | 100 | 100 |
-| data/init-db.ts | 0 | 0 | 0 | 0 |
-| data/mongodb.ts | 20 | 25 | 0 | 20 |
-| data/schema.ts | 83.33 | 57.14 | 100 | 83.33 |
-| data/dao/profile.dao.ts | 0 | 100 | 0 | 0 |
-| data/dao/session.dao.ts | 66.66 | 100 | 66.66 | 66.66 |
-| data/schemas/profile.schema.ts | 66.66 | 0 | 0 | 75 |
-| data/schemas/session.schema.ts | 92.85 | 50 | 100 | 92.85 |
-| data/tx/index.js | 0 | 0 | 0 | 0 |
-| i18n/request.ts | 16.66 | 100 | 33.33 | 20 |
+| data/init-db.ts | 93.33 | 50 | 100 | 93.33 |
+| data/mongodb.ts | 100 | 100 | 100 | 100 |
+| data/schema.ts | 100 | 100 | 100 | 100 |
+| data/dao/profile.dao.ts | 100 | 100 | 100 | 100 |
+| data/dao/session.dao.ts | 100 | 100 | 100 | 100 |
+| data/schemas/profile.schema.ts | 100 | 100 | 100 | 100 |
+| data/schemas/session.schema.ts | 100 | 100 | 100 | 100 |
+| data/tx/index.js | 100 | 100 | 100 | 100 |
+| i18n/request.ts | 100 | 100 | 100 | 100 |
 | lib/api-error.ts | 100 | 100 | 100 | 100 |
 | lib/constants.ts | 100 | 100 | 100 | 100 |
 | lib/session-domain.ts | 100 | 100 | 100 | 100 |
@@ -104,6 +107,15 @@ The captured deterministic V8 scope is shown below. Zero-hit files remain visibl
 
 </details>
 
-## Preservation and review scope
+<a id="supplementary-root-project-coverage"></a>
 
-Detailed records above were recovered from the pre-consolidation archive, not newly executed or re-scored. Repeated planning, sign-off and summary text is omitted. The [shared protocol](../../00_protocol/evaluation_protocol.md) records preparation, execution and subsequent human verification. Original capture-time statements and complete documents remain in the [archive](../../archive/pre_consolidation_markdown_20261008.zip).
+## Tested boundaries
+
+Tests cover the following boundaries in addition to the WB01–WB06 contracts.
+
+- Home rejects blank submissions, trims questions, blocks duplicate pending requests, handles malformed responses and permits retry. Preferences load/save failures preserve the correct modal state. Only the three learning preferences are sent, not browser locale/theme.
+- Locale switching, current navigation, saved theme restoration and both theme toggles are checked. Session and History loading failures, request cancellation, date rendering, Finish failures and follow-up recovery are exercised. Follow-up answers remain visible and the two-question limit is retained.
+- Incomplete learner-response output cannot update visible Stage 7 state. Session pages receive their route IDs. Layout locale/cookie handling, metadata and API health output are checked.
+- Missing, invalid and non-v4 identity cookies are replaced. Forged client identity headers are discarded. Valid identity cookies are retained and production cookies are secure.
+- Concurrent database connection requests share one promise. Failed connections can recover on a later request. Model hot reload is restricted to development. Profile defaults, enum validation, legacy IDs, scoped updates and rejected writes are checked. Database initialization runs only behind mocks.
+- Transaction success, unsupported-transaction fallback, ordinary write failures, fallback failures and session cleanup are asserted. Legacy session ID recovery and stored `key_takeaway` rendering are checked for compatibility only. New High responses still use fade.

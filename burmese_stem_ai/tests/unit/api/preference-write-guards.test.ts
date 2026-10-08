@@ -6,6 +6,13 @@ import { GET, PATCH } from '@/app/api/preferences/route';
 import { DEFAULT_PREFERENCES } from '@/lib/constants';
 describe('WB06 preference API write guards', () => {
   beforeEach(() => vi.spyOn(console, 'error').mockImplementation(() => {}));
+  it('rejects a null DAO update without exposing internal details', async () => {
+    profiles.updatePreferences.mockResolvedValue(null);
+    const result = await PATCH(new NextRequest('http://localhost/api/preferences', { method: 'PATCH', headers: { 'x-learner-id': 'owner', 'Content-Type': 'application/json' }, body: '{"supportLanguage":"english"}' }));
+    expect(result.status).toBe(500);
+    expect(await result.json()).toEqual({ error: { code: 'PREFERENCE_UPDATE_FAILED', message: 'Unable to update preferences' } });
+    expect(profiles.updatePreferences).toHaveBeenCalledExactlyOnceWith('owner', { supportLanguage: 'english' });
+  });
   it.each(['GET', 'PATCH'])('guards %s missing identity before database access', async method => {
     const req = new NextRequest('http://localhost/api/preferences', { method, ...(method === 'PATCH' ? { body: '{"supportLanguage":"english"}' } : {}) });
     const result = await (method === 'GET' ? GET(req) : PATCH(req));

@@ -20,6 +20,8 @@ export default defineConfig({
       provider: "v8",
       reporter: ["text", "json-summary", "html"],
       reportsDirectory: "coverage",
+      // Application-wide regression floors; retain uncovered runtime files in scope.
+      thresholds: { statements: 95, branches: 90, functions: 95, lines: 95 },
       include: [
         "app/**/*.{ts,tsx}",
         "components/**/*.{ts,tsx}",

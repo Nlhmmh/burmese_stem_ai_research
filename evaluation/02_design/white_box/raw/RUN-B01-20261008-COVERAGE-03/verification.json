@@ -1,0 +1,52 @@
+{
+  "result": "Pass",
+  "endedAt": "2026-10-08T02:40:34.039Z",
+  "deterministicTests": 511,
+  "deterministicFiles": 38,
+  "integrationTests": 12,
+  "newDeterministicTests": 150,
+  "uniqueTests": 523,
+  "skippedTests": 0,
+  "productionFilesVerified": 66,
+  "productionChanges": 0,
+  "sourceCopiesCreated": 0,
+  "coverage": {
+    "lines": {
+      "total": 922,
+      "covered": 919,
+      "skipped": 0,
+      "pct": 99.67
+    },
+    "statements": {
+      "total": 976,
+      "covered": 967,
+      "skipped": 0,
+      "pct": 99.07
+    },
+    "functions": {
+      "total": 200,
+      "covered": 200,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 821,
+      "covered": 797,
+      "skipped": 0,
+      "pct": 97.07
+    },
+    "branchesTrue": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "coverageEntries": 42,
+  "thresholds": {
+    "statements": 95,
+    "branches": 90,
+    "functions": 95,
+    "lines": 95
+  }
+}

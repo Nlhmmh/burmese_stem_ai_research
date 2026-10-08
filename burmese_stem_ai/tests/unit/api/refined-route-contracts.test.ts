@@ -70,6 +70,7 @@ import {
   SessionGenerationError,
   SessionScopeError
 } from "@/services/session.service";
+import { InvalidAdaptationRouteInputError } from "@/services/adaptation-routing.service";
 
 const sessionId = "2fba6e7a-1225-4d1f-971f-5ae58704e3d5";
 const learnerId = "route-owner";
@@ -180,6 +181,12 @@ describe("refined public API contracts", () => {
   });
 
   describe("session detail and completion", () => {
+    it("returns a stable error for an unexpected completion write failure", async () => {
+      mocks.completeLearningSession.mockRejectedValueOnce(new Error("private database diagnostic"));
+      const result = await completeSession(request(`/api/sessions/${sessionId}`, { method: "PATCH", body: { status: "completed" } }), context());
+      expect(result.status).toBe(500);
+      expect(await result.json()).toEqual({ error: { code: "SESSION_UPDATE_FAILED", message: "Unable to update session" } });
+    });
     it("rejects missing identity and an invalid detail UUID before lookup", async () => {
       const missingIdentity = await getSession(
         request(`/api/sessions/${sessionId}`, { identity: false }),
@@ -262,6 +269,12 @@ describe("refined public API contracts", () => {
   });
 
   describe("respond route", () => {
+    it("maps a route-selector rejection into a controlled public envelope", async () => {
+      mocks.respondToLearningSession.mockRejectedValueOnce(new InvalidAdaptationRouteInputError("A difficulty type cannot accompany a high support-need response"));
+      const result = await respond(request(`/api/sessions/${sessionId}/respond`, { method: "POST", body: { overallSupportNeed: "high" } }), context());
+      expect(result.status).toBe(400);
+      expect(await result.json()).toEqual({ error: { code: "INVALID_ADAPTATION_ROUTE", message: "A difficulty type cannot accompany a high support-need response" } });
+    });
     it("requires learner identity before parsing a response", async () => {
       const response = await respond(
         request(`/api/sessions/${sessionId}/respond`, {

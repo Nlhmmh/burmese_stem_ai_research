@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 
-import { AdaptationCard, AdaptationContent } from "@/components/learn/SessionContent";
+import { AdaptationCard, AdaptationContent, BilingualContent } from "@/components/learn/SessionContent";
 import type { Adaptation } from "@/components/learn/types";
 
 vi.mock("next-intl", () => ({
@@ -26,6 +26,27 @@ const languageAdaptation: Adaptation = {
   round: 1,
   createdAt: "2026-01-15T10:00:00.000Z"
 };
+
+describe("language order and legacy support presentation", () => {
+  it.each(["en", "my"])("orders bilingual paragraphs for locale %s", (locale) => {
+    const html = renderToStaticMarkup(<BilingualContent content={languageAdaptation.content} locale={locale} supportLanguage="bilingual" italic />);
+    expect(html.indexOf('lang="my"') < html.indexOf('lang="en"')).toBe(locale === "my");
+    expect(html).toContain("text-base");
+    expect(html).toContain("italic");
+  });
+  it("shows only Burmese for a Burmese-only preference without an override", () => {
+    const html = renderToStaticMarkup(<BilingualContent content={languageAdaptation.content} locale="en" supportLanguage="burmese" />);
+    expect(html).toContain('lang="my"');
+    expect(html).not.toContain('lang="en"');
+  });
+  it.each([["key_takeaway", "border-teal-200", "text-teal-700"], ["simpler_explanation", "border-rose-200", "text-rose-700"], ["another_example", "border-amber-200", "text-amber-700"]] as const)("renders stored %s support using its own style", (supportType, box, label) => {
+    // key_takeaway is display compatibility only, not a requirement for new High responses.
+    const html = renderToStaticMarkup(<AdaptationCard adaptation={{ ...languageAdaptation, supportType }} locale="en" supportLanguage="bilingual" />);
+    expect(html).toContain(supportType);
+    expect(html).toContain(box);
+    expect(html).toContain(label);
+  });
+});
 
 describe("language-support adaptation rendering", () => {
   it.each(["english", "burmese"] as const)(

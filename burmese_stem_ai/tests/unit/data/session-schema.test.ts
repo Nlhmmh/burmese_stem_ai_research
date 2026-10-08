@@ -13,6 +13,19 @@ afterAll(() => {
 });
 
 describe("session response-event schema", () => {
+  it("preserves a legacy Mongo identifier when the stored session ID is absent", async () => {
+    const record = makeSessionRecord();
+    const id = new mongoose.Types.ObjectId();
+    const document = new SessionSchemaModel({ ...record, sessionId: undefined, _id: id });
+    await expect(document.validate()).resolves.toBeUndefined();
+    expect(document.get("sessionId")).toBe(id.toString());
+  });
+
+  it("rejects a document missing both session identifiers", async () => {
+    const document = new SessionSchemaModel({ ...makeSessionRecord(), sessionId: undefined, _id: null });
+    await expect(document.validate()).rejects.toThrow("sessionId");
+  });
+
   it("loads a legacy document with an empty response-event history", async () => {
     const legacySession = makeSessionRecord();
     delete legacySession.responseEvents;

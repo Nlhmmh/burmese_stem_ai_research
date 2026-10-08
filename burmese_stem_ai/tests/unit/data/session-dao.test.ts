@@ -4,6 +4,7 @@ import { makeSessionRecord } from "../../fixtures/session";
 
 const persistenceMocks = vi.hoisted(() => ({
   connectMongoDB: vi.fn(),
+  create: vi.fn(),
   find: vi.fn(),
   findOne: vi.fn(),
   findOneAndUpdate: vi.fn()
@@ -15,6 +16,7 @@ vi.mock("@/data/mongodb", () => ({
 
 vi.mock("@/data/schema", () => ({
   SessionModel: {
+    create: persistenceMocks.create,
     find: persistenceMocks.find,
     findOne: persistenceMocks.findOne,
     findOneAndUpdate: persistenceMocks.findOneAndUpdate
@@ -23,6 +25,8 @@ vi.mock("@/data/schema", () => ({
 
 import {
   appendFollowUp,
+  completeSession,
+  createSession,
   findSession,
   findSessionsByLearner,
   recordSessionResponse,
@@ -40,6 +44,31 @@ describe("session DAO persistence invariants", () => {
 
   afterEach(() => {
     vi.useRealTimers();
+  });
+
+  it("creates a session and returns its plain persisted document", async () => {
+    const record = makeSessionRecord();
+    const toObject = vi.fn().mockReturnValue(record);
+    persistenceMocks.create.mockResolvedValue({ toObject });
+    expect(await createSession(record)).toBe(record);
+    expect(persistenceMocks.create).toHaveBeenCalledExactlyOnceWith(record);
+    expect(toObject).toHaveBeenCalledTimes(1);
+    expect(persistenceMocks.connectMongoDB).toHaveBeenCalledTimes(1);
+  });
+
+  it("finishes only an owned, unfinished session without modifying round or event state", async () => {
+    const record = makeSessionRecord({ status: "completed" });
+    persistenceMocks.findOneAndUpdate.mockReturnValue({ lean: vi.fn().mockResolvedValue(record) });
+    expect(await completeSession(record.learnerId, record.sessionId)).toBe(record);
+    expect(persistenceMocks.findOneAndUpdate).toHaveBeenCalledExactlyOnceWith({
+      learnerId: record.learnerId, sessionId: record.sessionId,
+      status: { $in: ["in_progress", "review_recommended"] }
+    }, { $set: { status: "completed", updatedAt: now } }, { returnDocument: "after", runValidators: true });
+  });
+
+  it("returns a null match for a finish rejected by the persistence guard", async () => {
+    persistenceMocks.findOneAndUpdate.mockReturnValue({ lean: vi.fn().mockResolvedValue(null) });
+    expect(await completeSession("other-learner", "session-1")).toBeNull();
   });
 
   it("scopes session retrieval by learner and session identifiers", async () => {

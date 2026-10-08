@@ -11,6 +11,13 @@ const run = (command, args, options = {}) => cp.execFileSync(command, args, { cw
 const read = file => fs.readFileSync(path.join(root, file));
 const sha = value => crypto.createHash('sha256').update(value).digest('hex');
 const index = JSON.parse(read('evaluation/archive/consolidation_index.json'));
+// Later test-only runs may add evidence without changing protected historical records.
+const supplemental = index.supplementalWhiteBoxCoverage;
+const supplementalFiles = supplemental ? Object.keys(supplemental.files) : [];
+for (const file of supplementalFiles) {
+  assert.ok(file.startsWith(supplemental.directory + '/'), 'Supplement must be inside its own run directory');
+  assert.equal(sha(read(file)), supplemental.files[file], 'Supplementary evidence changed: ' + file);
+}
 assert.equal(sha(read(index.archive)), index.archiveSha256, 'Archive identity changed');
 const archivedPaths = run('unzip', ['-Z1', index.archive], { encoding: 'utf8' }).trim().split('\n').sort();
 assert.deepEqual(archivedPaths, index.entries.map(entry => entry.originalPath).sort());
@@ -25,13 +32,30 @@ assert.deepEqual(active, index.currentReports.map(report => report.path).sort())
 assert.equal(active.length, 21);
 for (const report of index.currentReports) assert.equal(sha(read(report.path)), report.sha256, 'Current report changed: ' + report.path);
 
-const protectedFiles = run('rg', ['--files', 'evaluation', '-g', '!*.md'], { encoding: 'utf8' }).trim().split('\n').filter(file => !file.startsWith('evaluation/archive/')).sort();
+const protectedFiles = run('rg', ['--files', 'evaluation', '-g', '!*.md'], { encoding: 'utf8' }).trim().split('\n').filter(file => !file.startsWith('evaluation/archive/') && !supplementalFiles.includes(file)).sort();
 const protectedDigest = sha(protectedFiles.map(file => file + '\0' + sha(read(file))).join('\n'));
 assert.equal(protectedFiles.length, index.protectedNonMarkdown.files);
 assert.equal(protectedDigest, index.protectedNonMarkdown.sha256, 'Original non-Markdown evidence changed');
 assert.equal(sha(read('evaluation/04_paper/assignment_5_working_paper.md')), index.paperSha256, 'Paper changed');
 assert.equal(sha(read('docs/INFOSYS_720_Assignment_5.pdf')), index.submissionPdfSha256, 'Submission PDF changed');
-run('git', ['diff', '--exit-code', index.priorCommit, '--', 'burmese_stem_ai']);
+// The coverage supplement permits only root tests and their unit-test configuration to change.
+const testOnlyExclusions = supplemental ? [':(exclude)burmese_stem_ai/tests/**', ':(exclude)burmese_stem_ai/vitest.config.mts'] : [];
+run('git', ['diff', '--exit-code', index.priorCommit, '--', 'burmese_stem_ai', ...testOnlyExclusions]);
+if (supplemental) {
+  const verified = JSON.parse(read(supplemental.directory + '/verification.json'));
+  assert.equal(verified.result, 'Pass');
+  assert.equal(verified.deterministicTests, 511);
+  assert.equal(verified.integrationTests, 12);
+  assert.equal(verified.productionChanges, 0);
+  assert.equal(verified.sourceCopiesCreated, 0);
+  const metadata = JSON.parse(read(supplemental.directory + '/metadata.json'));
+  for (const [file, expected] of Object.entries(metadata.productionHashes)) {
+    assert.equal(sha(read(file)), expected, 'Production file changed after supplement: ' + file);
+  }
+  for (const [file, expected] of Object.entries(metadata.testHashes)) {
+    assert.equal(sha(read(file)), expected, 'Test/config changed after supplement: ' + file);
+  }
+}
 run('git', ['diff', '--check']);
 
 let localLinks = 0, fragments = 0;
@@ -219,11 +243,14 @@ console.log(JSON.stringify({
   activeMarkdownFiles: active.length, removedStandaloneMarkdownFiles: index.removedStandaloneMarkdownFiles,
   unchangedNonMarkdownEvidenceFiles: protectedFiles.length, localLinksChecked: localLinks,
   headingLinksChecked: fragments, contentScoresVerified: scores.length, contentOutcomes: totals,
-  bilingualAnnotationsVerified: annotations.findings.length, applicationUnchanged: true,
+  bilingualAnnotationsVerified: annotations.findings.length,
+  applicationUnchanged: !supplemental, productionApplicationUnchanged: true,
+  supplementaryWhiteBoxRunVerified: supplemental?.runId ?? null,
   verbatimInterviewBlocksVerified: fencedExchanges.length, detailedOperationalCasesVerified: detailedTestCases,
   fullSimulationCasesVerified: reviewFiles.length, outputAssessmentRationaleTablesVerified: assessmentTables,
   distinctAssessedOutputsVerified: assessedOutputs.size,
   integratedCaseTablesVerified: index.unifiedCaseTables.reports.length, integratedRegisterRowsVerified: integratedRegisterRows,
   namedWhiteBoxAssertionsVerified: 373, routeCombinationsVerified: 39,
-  workingPaperUnchanged: true, submissionPdfUnchanged: true, evaluationRerun: false,
+  workingPaperUnchanged: true, submissionPdfUnchanged: true,
+  evaluationRerun: Boolean(supplemental), historicalEvaluationResultsReplaced: false,
 }, null, 2));

@@ -14,6 +14,23 @@
   },
   "paperSha256": "82ef36dedf7eeb9a655060e83309d141df11ac3de679f048e87d6db62d079329",
   "submissionPdfSha256": "4138a89e4c189d6da2781053081f9d4cd7665288c4c589c3c1b704151576ddcf",
+  "supplementalWhiteBoxCoverage": {
+    "runId": "RUN-B01-20261008-COVERAGE-03",
+    "directory": "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03",
+    "note": "Later root-project test/configuration version. Original 622 non-Markdown evidence files, baseline production, paper and PDF remain unchanged.",
+    "files": {
+      "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03/01-unit.json": "e3cf9a9d16084495c8c7be7fe4fa904a4d62a489596640583337489974a9e8ab",
+      "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03/01-unit.log": "ef8932e1c0e90c07a934a9e9f720e67460fafeef82a45580711c327baf0de873",
+      "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03/02-coverage.log": "3be529d20cd040a5d2505f8ba1f574d6e64bc0891ebe950e61e496825b32e3de",
+      "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03/03-lint.log": "2832fd4f179111569b10e2b11d808c2251d5e185a573a92049bc0299fae18a29",
+      "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03/04-typescript.log": "487b4c51e44223bb16033857fc09d1fc54e93f1691cdbae24b6298e6eadaa78c",
+      "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03/05-integration.log": "b19727cc5faef345eb73594c8db13784d3262e3768ef7054abc56b23368524de",
+      "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03/commands.jsonl": "1b78a73422610ec7b24b4d2b0b21bd43ae4ca74daf5e15ea1bf74df169396378",
+      "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03/coverage-summary.json": "e5440f04e9ed4a6e762334f51957a5fd599fc6f697c12e48f6f4013a6c506499",
+      "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03/metadata.json": "51237278c37858e3276a3a9922bae7476dd499176d8330b6d3cd9256fd45ff54",
+      "evaluation/02_design/white_box/raw/RUN-B01-20261008-COVERAGE-03/verification.json": "3088bc19e1fbbafb6fff68c2536885b6a33ed69da369517d9da05840c03fbdd9"
+    }
+  },
   "entries": [
     {
       "originalPath": "evaluation/00_protocol/artefact_versions.md",
@@ -1217,7 +1234,7 @@
     },
     {
       "path": "evaluation/02_design/white_box/white_box_evaluation.md",
-      "sha256": "d9a6c6b3a56ad71642444a0606b0b2014bc26042be39b6f1a97dd582bf6252f5"
+      "sha256": "36822692de712729e3824585de4fbc4a8ce7064855f31384db76a8834bf868e8"
     },
     {
       "path": "evaluation/03_results/results_interpretation.md",
