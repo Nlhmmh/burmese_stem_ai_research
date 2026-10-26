@@ -1,0 +1,24 @@
+{
+  "method": "GenAI conceptual interview",
+  "current_record": "CV2-INT-03",
+  "status": "completed",
+  "baseline_id": "CA-V2-20261023",
+  "expected_questions": 9,
+  "received_answers": 9,
+  "earlier_attempt": {
+    "record": "CV2-INT-02",
+    "status": "unsuccessful_web_attempt",
+    "substantive_answers": 0
+  },
+  "earlier_desk_critique": "supplementary_analysis_only",
+  "received_acknowledgement": true,
+  "transcript": "raw/manual_transcript.json",
+  "analysis": "interview_analysis.md",
+  "settings": {
+    "model": "GPT-6",
+    "thinking_effort": "high",
+    "temporary_chat": true
+  },
+  "reported_start": "2026-10-23 12:34 Pacific/Auckland",
+  "reported_end": "2026-10-23 12:39 Pacific/Auckland"
+}

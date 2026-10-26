@@ -1,0 +1,62 @@
+{
+  "record_id": "CV2-INT-03",
+  "baseline_id": "CA-V2-20261023",
+  "received_answers": 9,
+  "entries": [
+    {
+      "path": "genai/raw/manual_transcript_part_01.txt",
+      "sha256": "7feb68a02625c4d43145553acc0090b7d0420a858044449989ac15eceb9c7a0b",
+      "bytes": 23686
+    },
+    {
+      "path": "genai/raw/manual_transcript_part_02.txt",
+      "sha256": "cb6905d2bc1837af8d0c1558b2a61cf618565c5ac36450f6174f85f09c32be01",
+      "bytes": 13722
+    },
+    {
+      "path": "genai/raw/manual_transcript.json",
+      "sha256": "f72169ac594ece412566beefc5fac5b9f52d62e65aec577be49e7a91ed3d75d2",
+      "bytes": 44076
+    },
+    {
+      "path": "genai/raw/manual_context.txt",
+      "sha256": "411de719f52d67f508d9855064b50991e1ba5cc744c2cfb8e4ff971e1c235061",
+      "bytes": 5456
+    },
+    {
+      "path": "genai/raw/questions.json",
+      "sha256": "5c34212e727742efecf276a5bf4359a2628cfdac1eb88aac2f1697e0c2ff3565",
+      "bytes": 4150
+    },
+    {
+      "path": "genai/raw/analysis_corrections.json",
+      "sha256": "36e49704d2b4556ec5404ed728dd1bd179eca284b84d579c9f66419d60359388",
+      "bytes": 619
+    },
+    {
+      "path": "baseline/artefacts/v2-concept-1.png",
+      "sha256": "a8a9bae32afb73fe5f548001b5fc4cdbc841ddd0252c8ef6ab3a13fc4df3836e",
+      "bytes": 941701
+    },
+    {
+      "path": "baseline/artefacts/v2-concept-2.png",
+      "sha256": "df22c735cb42a4fdc04c9887ec7c297a0a4723934f4efdcaf83c3d274ca5616f",
+      "bytes": 529552
+    },
+    {
+      "path": "baseline/artefacts/v2-concept-3.png",
+      "sha256": "58ef464a0540486adca4ac95298ad61b1f7e681207b76394f2ca214d860dfd21",
+      "bytes": 880578
+    },
+    {
+      "path": "genai/raw/native_ratings.json",
+      "sha256": "553d8498e4d2bb082be6c28f6d6e4b8d9f8f39e91315e8a5875ee72b367f9b4d",
+      "bytes": 2214
+    }
+  ],
+  "notes": [
+    "Part 1 is a byte-for-byte copy of the supplied attachment.",
+    "Part 2 preserves the text reply with a final newline.",
+    "Prompt/response text is preserved; analytical text correction is recorded separately."
+  ]
+}

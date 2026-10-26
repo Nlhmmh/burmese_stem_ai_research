@@ -1,0 +1,37 @@
+{
+  "status": "Superseded completion statements; desk-review evidence only, no separate interview had been performed",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "508ddfa6b7cd43f59037d12b3d2231c9ce7d25fe6c9c57b17bf57881f01654e4"
+    },
+    {
+      "path": "00_protocol/evaluation_protocol.md",
+      "sha256": "eb45e681045cf38aa03c23f7e4dd3f4f6e3f06a92266d6b85c677c156fa11eab"
+    },
+    {
+      "path": "structured_interview/interview_analysis.md",
+      "sha256": "0a2ade0cd16b9c04e96f5afeda16195de4f296aaa75503408508f78b6ac03600"
+    },
+    {
+      "path": "conceptual_triangulation.md",
+      "sha256": "d185836511aaeb90b2c2e6544888fb51f881cd0a12d333146a95998ed9b348c0"
+    },
+    {
+      "path": "refinement_review.md",
+      "sha256": "fbf93dbc6ee6094dca0fbbbdb071ebfd3662293e0afdd5e0c3af424238437c3e"
+    },
+    {
+      "path": "findings.csv",
+      "sha256": "3753e6857cfb4c540cb41e16e48a0e85aaa245f4f9371242adb72c9a45ac5394"
+    },
+    {
+      "path": "pirqoa_traceability.csv",
+      "sha256": "a25b3658d895d13904d86661398ada732494dab4313a7a169c0a0cfd4cafb58e"
+    },
+    {
+      "path": "raw/verification.json",
+      "sha256": "24bd5df387d4827badc01714ac54b4e1f3b2cb8639733a8be8000b70467dd213"
+    }
+  ]
+}

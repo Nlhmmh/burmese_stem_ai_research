@@ -1,0 +1,113 @@
+{
+  "baseline_id": "CA-V2-20261023",
+  "evaluation_date": "2026-10-23",
+  "date_timezone": "Pacific/Auckland",
+  "scope": "Three supplied v2 conceptual diagrams; supporting inputs do not add undocumented features",
+  "inputs": [
+    {
+      "path": "artefacts/conceptual/v1-concept-1.png",
+      "sha256": "8dc7d6e6f6e35cfd1d2d11925dac18d047410615e251161c608a5911df1471c4",
+      "bytes": 814729,
+      "width": 5170,
+      "height": 3520
+    },
+    {
+      "path": "artefacts/conceptual/v1-concept-2.png",
+      "sha256": "e5c9c440a16d2d51aa14a444f753898c2673c6bbfbc940a47af3d0d77b5d41cb",
+      "bytes": 451903,
+      "width": 3820,
+      "height": 3020
+    },
+    {
+      "path": "artefacts/conceptual/v1-concept-3.png",
+      "sha256": "00343d0d9f931431931813a784c7254da14fcbaab7ab1d2ba00c72356e4737e6",
+      "bytes": 596646,
+      "width": 3980,
+      "height": 3020
+    },
+    {
+      "path": "artefacts/conceptual/v2-concept-1.png",
+      "sha256": "a8a9bae32afb73fe5f548001b5fc4cdbc841ddd0252c8ef6ab3a13fc4df3836e",
+      "bytes": 941701,
+      "width": 5520,
+      "height": 3620,
+      "snapshot": "evaluation/05_conceptual_v2/baseline/artefacts/v2-concept-1.png"
+    },
+    {
+      "path": "artefacts/conceptual/v2-concept-2.png",
+      "sha256": "df22c735cb42a4fdc04c9887ec7c297a0a4723934f4efdcaf83c3d274ca5616f",
+      "bytes": 529552,
+      "width": 3820,
+      "height": 3020,
+      "snapshot": "evaluation/05_conceptual_v2/baseline/artefacts/v2-concept-2.png"
+    },
+    {
+      "path": "artefacts/conceptual/v2-concept-3.png",
+      "sha256": "58ef464a0540486adca4ac95298ad61b1f7e681207b76394f2ca214d860dfd21",
+      "bytes": 880578,
+      "width": 3970,
+      "height": 3220,
+      "snapshot": "evaluation/05_conceptual_v2/baseline/artefacts/v2-concept-3.png"
+    },
+    {
+      "path": "docs/INFOSYS_720_Assignment_2.pdf",
+      "sha256": "5216a6e0aae17ade68007c665f7ab698d22998ed826f68d3672a2b0829f1baba",
+      "bytes": 773870
+    },
+    {
+      "path": "docs/INFOSYS_720_Assignment_3.pdf",
+      "sha256": "1dca168d4909d9c75746ff9363ca291c66269e1e4c0a96dfa6b7e814ff87e860",
+      "bytes": 491726
+    },
+    {
+      "path": "evaluation/00_protocol/evaluation_protocol.md",
+      "sha256": "1964c40619827b1b76d3fde059861e6c77110cd972699d62aeff5b2212844240",
+      "bytes": 15158
+    },
+    {
+      "path": "evaluation/01_conceptual/conceptual_triangulation.md",
+      "sha256": "828bc0cb8d0f9440e7eea71af9d08cbc11b974c83bd7939afa47fb31414ee54b",
+      "bytes": 18883
+    },
+    {
+      "path": "evaluation/01_conceptual/genai/GENAI-01_analysis.md",
+      "sha256": "a7d74e799a8532e4914953acff3e0b0a23333f49bcd3a757f62fc1ac72396e08",
+      "bytes": 118434
+    },
+    {
+      "path": "evaluation/01_conceptual/literature/literature_matrix.csv",
+      "sha256": "8b2d6c0cb68bd68d1ae677ef86aa89d2ab3b2ea88fc1a4cd211ea24638bd47c4",
+      "bytes": 9239
+    },
+    {
+      "path": "evaluation/01_conceptual/literature/literature_synthesis.md",
+      "sha256": "d1bcb1ecee2c08a8db7fe4cf6e305bc654977d5fc756347da7e4f7e0b43f9503",
+      "bytes": 27193
+    },
+    {
+      "path": "evaluation/01_conceptual/informed_argument/traceability.md",
+      "sha256": "3f16380d9509b98c55dabad899a80b38db4f2e82fb53664115178bb1a3ca233f",
+      "bytes": 25471
+    },
+    {
+      "path": "evaluation/01_conceptual/scenario/photosynthesis_scenario.md",
+      "sha256": "a44a3bd46b6d30d839f7cb09ee3aec9d8e288812648e5492f1243672bc128a93",
+      "bytes": 15523
+    },
+    {
+      "path": "evaluation/rubric/instructions.md",
+      "sha256": "70d9a79dc7100029b4d381c4c31fc131e67f48f4d20e3bc10aaec17ac400afe6",
+      "bytes": 6836
+    },
+    {
+      "path": "evaluation/rubric/720_A5_Specifications_V3.pdf",
+      "sha256": "3c4ed7db8ebcb6f249f4b56dfb3617d881d15421104e6f895a2eaed2ef92a3a7",
+      "bytes": 490014
+    },
+    {
+      "path": "evaluation/rubric/720_Assignment_5_Rubric.pdf",
+      "sha256": "3cd410876710fbfe1fbea6ff89d6e8323459ba5f6bb7a95acfb5b1d90ab4a476",
+      "bytes": 217626
+    }
+  ]
+}

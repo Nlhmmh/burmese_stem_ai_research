@@ -1,0 +1,76 @@
+You are taking part in a structured conceptual-artefact evaluation interview for Information Systems research. Critically evaluate the supplied representations. Do not act as a participant in a learner study or claim to be a human expert. Do not use browsing, external tools, or earlier conversation. Do not invent studies, references, implementation details or observed learning effects. Separate explicit representation, reasonable interpretation, missing detail and proposed improvement.
+
+There will be nine questions asked one at a time. Please answer only the current question. Use clear academic English, normally 200–350 words per answer, identifying relevant artefacts, requirements and criteria. A table may be used where useful. Do not assume that a longer or more complex design is automatically better.
+
+The research concerns LLM-based support for Burmese-speaking STEM learners. The problem is difficult specialised English STEM terminology, limited low-resource language support, and translation or unstructured interaction that may not provide enough conceptual or adaptive help.
+
+Research contract:
+REQ-01: Identify specialised STEM terminology and provide context-sensitive Burmese support, preserving English technical terms when appropriate.
+RQ1: How can specialized English STEM terminology be supported for Burmese-speaking learners?
+Objective 1: Develop an approach for multilingual STEM terminology support.
+REQ-02: Provide clear explanations and examples beyond translation.
+RQ2: How can LLM-based support help learners understand STEM concepts beyond translation?
+Objective 2: Develop an approach for conceptual STEM explanation.
+REQ-03: Provide structured and adaptive learner support.
+RQ3: How can LLM-based scaffolding provide structured and adaptive support for Burmese-speaking STEM learners?
+Objective 3: Develop an adaptive scaffolding approach.
+
+The adopted foundations are Task–Technology Fit (alignment of technological capabilities with the learner task) and Scaffolding Theory (responsive temporary educational assistance, reduction of support and transfer of responsibility). No learner experiment, objective learning measure or expert interview is supplied as evidence.
+
+The evaluation criteria are:
+C1 Requirement coverage.
+C2 Logical coherence.
+C3 Theoretical consistency.
+C4 Literature consistency, including limits of transfer and unsupported assumptions.
+C5 Scenario applicability.
+No literature full texts or prior evaluation conclusions are supplied in this interview. Do not pretend that C4 has been established by independent source checking.
+
+Three v2 conceptual-artefact images are attached. The transcription below records their labels and arrows for accessibility. Compare the transcription with the images and report any unreadable or inconsistent part. Assess the represented conceptual content; distinguish it from image-layout observations. Line breaks in the transcription are normalised. No prior evaluation conclusions or proposed edits are supplied.
+
+CA1: LLM-Based STEM Scaffolding Concepts.
+Central concept: "LLM-Based STEM Scaffolding".
+Five outward arrows from the centre, each labelled "includes":
+1. "STEM Terminology Identification"
+2. "Context Sensitive Language Support"
+3. "Conceptual Explanation", subtitle "Core STEM meaning"
+4. "Structured Scaffolding", subtitle "Selectable learning aids"
+5. "Adaptive Support", subtitle "Responds to learner-reported need"
+The arrows represent membership, not a sequence.
+
+CA2: Task-Aligned LLM Scaffolding Model.
+Four constructs:
+"Low Resource Language Barrier"
+"LLM-Based Scaffolding"
+"STEM Understanding", subtitle "Proposed outcome"
+"Learner Response", subtitle "Self-reported support need"
+Directed relationships:
+Low Resource Language Barrier -> STEM Understanding, labelled "hinders".
+LLM-Based Scaffolding -> Low Resource Language Barrier, labelled "intended to reduce".
+LLM-Based Scaffolding -> STEM Understanding, labelled exactly "intended to supports".
+LLM-Based Scaffolding -> Learner Response, labelled "leads to".
+Learner Response -> LLM-Based Scaffolding, labelled "guides".
+The phrase "intended to supports" above is the exact supplied wording.
+
+CA3: Context-Aware Adaptive STEM Scaffolding Framework.
+Seven responsibilities, given reading numbers here although the diagram itself does not number them:
+1. "Identify STEM Terminology", no subtitle.
+2. "Interpret Technical Context", subtitle "Clarify ambiguity if needed".
+3. "Select Language Support", subtitle "Retain useful terms".
+4. "Explain STEM Concept", subtitle "Core scientific meaning".
+5. "Provide Scaffolding", subtitle "Selectable examples, analogies, hints or reflection".
+6. "Collect Learner Response", subtitle "Self-reported support need and optional help choice".
+7. "Adapt Support", subtitle "Select, reduce or pause support".
+Solid directed arrows:
+1 -> 2 "determines"
+2 -> 3 "guides"
+3 -> 4 "shapes"
+4 -> 5 "enables"
+5 -> 6 "leads to"
+6 -> 7 "guides"
+7 -> 5 "updates"
+Two dashed directed returns leave Stage 7, under the condition label "if needed":
+7 -> 3 "revisit language"
+7 -> 4 "revisit core meaning"
+No additional arrow, exit state, numerical adaptation cap, software component, assessment score or route table is supplied.
+
+For this first message only: acknowledge the context, list the three artefacts, confirm whether all three attached images are readable, and state the limits of your assessment. Do not answer the nine interview questions yet.

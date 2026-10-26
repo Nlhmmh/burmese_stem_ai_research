@@ -1,0 +1,19 @@
+ID,Earlier decision,V2 evidence,Iteration 2 status,Remaining boundary
+R01,Clarify core meaning versus additional scaffolding,CA1 “Core STEM meaning”/“Selectable learning aids”; CA3 core meaning/selectable aid subtitles,Addressed,Content may overlap; suitability remains untested
+R02,Do not merge Stages 4 and 5,Both responsibilities remain,Scope retained,Separate responsibilities do not require separate calls
+R03,Clarify language-selection principles,CA3 says “Retain useful terms”; CA1 retains context-sensitive support,Partly addressed,"Burmese/English choice, technical context and expressed need are not explicit selection factors"
+R04,Do not add an unvalidated deterministic language-selection algorithm,No algorithm added,Scope retained,A short conceptual principle is still useful
+R05,Label Stage 6 as learner-reported support need,"CA1, CA2 and CA3 explicitly use reported-need wording",Addressed,Report specificity/accuracy is not validated
+R06,Do not treat self-report as objective measurement,“Self-reported support need” is visible; no objective score is added,Scope retained,Incorrect confidence remains possible
+R07,Locate learner-response interpretation inside Stage 7,"Stage 7 says “Select, reduce or pause support” and receives Stage 6 input",Partly addressed,Interpretation is implicit rather than stated
+R08,Do not add an eighth response-evaluation stage,Seven responsibilities retained,Scope retained,Clarify interpretation inside Stage 7
+R09,Permit bounded feedback to Stages 3–5,Two dashed returns to 3/4 plus solid return to 5,Partly addressed,"Destinations are addressed; “if needed” does not define selection, unresolved need or a review/pause boundary"
+R10,Do not add a permanent Stage 2 → 1 reverse loop,No permanent reverse loop is drawn,Scope retained,This does not resolve late intended-meaning correction
+R11,Allow ambiguity correction as an exception,Stage 2 says “Clarify ambiguity if needed”,Partly addressed,Initial ambiguity is recognised; re-entry/restart after a late mismatch is not specified
+R12,Make scaffold forms selectable rather than always cumulative,"CA1 “Selectable learning aids”; CA3 “Selectable examples, analogies, hints or reflection”",Addressed,Selection quality and exact combinations remain unestablished
+R13,Do not add objective mastery/quiz functionality,No quiz/mastery stage added,Scope retained,No mastery or learning-effect claim follows
+R14,Do not add full proficiency profiling,No profile construct added,Scope retained,Reported need is not diagnosed proficiency
+R15,State that generated content is not automatically correct or effective,The diagrams contain no content-verification guarantee; the limitation is retained in this evaluation,Boundary retained,The limitation is not explicitly printed in the supplied images; retain it in accompanying text
+R16,Do not add a separate verification core stage,No verification stage added,Scope retained,Independent content evaluation remains a separate need
+R17,Retain seven responsibilities,All seven remain in CA3,Addressed,The exact number/order is not uniquely validated
+R18,Do not require wholesale redesign from the earlier concerns,V2 retains the conceptual structures; current findings favour focused clarification,Scope retained,"This is a scope judgement, not proof against every alternative design"

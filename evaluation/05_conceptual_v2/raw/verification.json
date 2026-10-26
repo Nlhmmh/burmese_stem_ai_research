@@ -1,0 +1,42 @@
+{
+  "baseline_id": "CA-V2-20261023",
+  "evaluation_date": "2026-10-23",
+  "status": "passed",
+  "separate_interview_complete": true,
+  "scope": "Input identity, record consistency, document completeness and local links only",
+  "checks": {
+    "baseline_inputs_unchanged": 18,
+    "frozen_v2_images": 3,
+    "record_counts": {
+      "findings.csv": 15,
+      "pirqoa_traceability.csv": 3,
+      "refinement_review.csv": 18,
+      "literature/literature_matrix.csv": 14,
+      "scenario/scenario_matrix.csv": 10,
+      "genai/interview_findings.csv": 16
+    },
+    "supplementary_desk_critique_questions": 9,
+    "informed_arguments": 10,
+    "detailed_scenarios": 10,
+    "separate_interview_questions_prepared": 9,
+    "separate_interview_answers_received": 9,
+    "verbatim_interview_messages_verified": 20,
+    "fixed_interview_prompts_matched": 9,
+    "interview_evidence_hashes_verified": 10,
+    "native_criterion_ratings_preserved": 5,
+    "scenario_outcomes": {
+      "Representable": 4,
+      "Partly specified": 4,
+      "Not resolved": 2
+    },
+    "refinement_statuses": {
+      "Addressed": 4,
+      "Scope retained": 9,
+      "Partly addressed": 4,
+      "Boundary retained": 1
+    },
+    "existing_corpus_entries": 17,
+    "local_links_checked": 84
+  },
+  "errors": []
+}

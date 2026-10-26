@@ -9,6 +9,10 @@ Start here. Each method has one main Markdown report. System test reports use on
 3. [Consolidated results and research-question conclusions](03_results/results_interpretation.md)
 4. [Working paper](04_paper/assignment_5_working_paper.md)
 
+## Conceptual evaluation — second iteration
+
+The [v2 conceptual evaluation](05_conceptual_v2/README.md) assesses the three refined diagrams supplied on 23 October 2026. It contains a new protocol and baseline, four conceptual method reports, cross-method findings, PIRQOA traceability and a review of the earlier refinement decisions. The original conceptual evaluation and existing system results remain separate records.
+
 ## One report per evaluation
 
 | Evaluation | Main report |

@@ -1,0 +1,11 @@
+ID,Constructed input or condition,Expected responsibility,Trace through the supplied diagram,Judgement
+S01,“What is photosynthesis? Explain in Burmese and keep useful English terms.”,"Establish target/context, language treatment, core meaning and a purposeful aid",Stages 1 → 2 → 3 → 4 → 5; CA1 categories and CA2 proposed rationale remain consistent,Representable
+S02,Reported need: more help; optional choice: “another example”,Change the aid while keeping the target/core meaning,6 → 7 → 5 → 6 through the solid feedback loop,Representable
+S03,Reported need: more help; optional choice: “language help”,Reconsider language treatment and regenerate relevant explanation/support,6 → 7 → 3 → 4 → 5 → 6 through the dashed language branch,Representable
+S04,Reported need: more help; optional choice: “clarify core meaning”; explicit question about the role of soil,Revisit the explanation rather than only replace the example,6 → 7 → 4 → 5 → 6 through the dashed core-meaning branch,Representable
+S05,“I do not need more help now.”,Permit reduced/paused support without claiming mastery,Stage 7 names reduce/pause; no exit or continuation condition is drawn,Partly specified
+S06,“I still need help”; optional help choice skipped,Interpret the incomplete signal without assuming its cause,6 → 7 is explicit; choice among 3/4/5 or clarification is not specified,Partly specified
+S07,Initial inquiry: “Explain cell”; intended domain absent,Clarify ambiguity before committing to a meaning,Stage 2 says clarify ambiguity; the clarification interaction/resumption condition is not shown,Partly specified
+S08,After a biological-cell explanation: “I meant a battery cell.”,Repair intended target/context or explicitly restart,Stage 7 returns only to 3/4/5; an exception back to 1/2 or restart is not specified,Partly specified
+S09,"“No more help needed”, while the constructed learner explanation remains wrong",Avoid treating expressed confidence as demonstrated competence,Stage 6 records self-report; no performance check or competence evidence is represented,Not resolved
+S10,A fluent but scientifically wrong core explanation is assumed as input to later stages,Establish whether the framework itself detects content error,Later support can follow the process without a verification mechanism,Not resolved

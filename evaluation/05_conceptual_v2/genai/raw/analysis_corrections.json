@@ -1,0 +1,12 @@
+{
+  "id": "CV2-TEXT-CORRECTION-01",
+  "date": "2026-10-23",
+  "target": "CA2 relationship M3",
+  "earlier_transcription": "intended to supports",
+  "confirmed_image_text": "indented to supports",
+  "recommended_image_text": "intended to support",
+  "basis": "CV2-INT-03 acknowledgement and direct inspection of the unchanged frozen image",
+  "preserved_records": "Submitted context and all original replies retain their exact wording",
+  "image_modified": false,
+  "interpretation": "The right-hand intended-effect reading is an interpretation until wording is corrected; the proposed-outcome label remains explicit"
+}

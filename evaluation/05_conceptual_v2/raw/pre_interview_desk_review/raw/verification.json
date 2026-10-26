@@ -1,0 +1,34 @@
+{
+  "baseline_id": "CA-V2-20261023",
+  "evaluation_date": "2026-10-23",
+  "status": "passed",
+  "scope": "Input identity, record consistency, document completeness and local links only",
+  "checks": {
+    "baseline_inputs_unchanged": 18,
+    "frozen_v2_images": 3,
+    "record_counts": {
+      "findings.csv": 14,
+      "pirqoa_traceability.csv": 3,
+      "refinement_review.csv": 18,
+      "literature/literature_matrix.csv": 14,
+      "scenario/scenario_matrix.csv": 10
+    },
+    "interview_questions": 9,
+    "informed_arguments": 10,
+    "detailed_scenarios": 10,
+    "scenario_outcomes": {
+      "Representable": 4,
+      "Partly specified": 4,
+      "Not resolved": 2
+    },
+    "refinement_statuses": {
+      "Addressed": 4,
+      "Scope retained": 9,
+      "Partly addressed": 4,
+      "Boundary retained": 1
+    },
+    "existing_corpus_entries": 17,
+    "local_links_checked": 52
+  },
+  "errors": []
+}

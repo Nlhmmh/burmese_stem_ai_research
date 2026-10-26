@@ -1,0 +1,41 @@
+{
+  "record_id": "CV2-INT-03",
+  "source_response": "A9",
+  "ratings": [
+    {
+      "criterion": "C1 — Requirement coverage",
+      "judgement": "Supported with qualification",
+      "main_evidence": "CA1–CA3 collectively represent terminology identification, contextual language support, conceptual explanation and adaptive scaffolding.",
+      "main_limitation": "Burmese-language handling, terminology retention and adaptation criteria lack sufficient specification.",
+      "confidence": "High for conceptual coverage"
+    },
+    {
+      "criterion": "C2 — Logical coherence",
+      "judgement": "Supported with qualification",
+      "main_evidence": "Complementary abstraction levels, a plausible seven-responsibility process and explicit feedback routes.",
+      "main_limitation": "Ambiguous dependencies, overlapping responsibilities and unspecified route-selection conditions.",
+      "confidence": "Moderate–high"
+    },
+    {
+      "criterion": "C3 — Theoretical consistency",
+      "judgement": "Partly supported",
+      "main_evidence": "Task-oriented language assistance aligns conceptually with TTF; responsive support and potential fading align with Scaffolding Theory.",
+      "main_limitation": "Measured fit, appropriate withdrawal of assistance and transfer of learner responsibility are not established.",
+      "confidence": "Moderate"
+    },
+    {
+      "criterion": "C4 — Literature consistency",
+      "judgement": "Not resolved",
+      "main_evidence": "The stated theoretical foundations provide a basis for examining consistency.",
+      "main_limitation": "No literature full texts or independent source verification are available; transfer to Burmese STEM learning remains unverified.",
+      "confidence": "High confidence in this assessment limitation"
+    },
+    {
+      "criterion": "C5 — Scenario applicability",
+      "judgement": "Supported with qualification",
+      "main_evidence": "CA3 accommodates the constructed photosynthesis scenario, differentiated help requests and reduced support.",
+      "main_limitation": "Decision conditions, contextual-error recovery and actual system behaviour remain unspecified.",
+      "confidence": "Moderate"
+    }
+  ]
+}
